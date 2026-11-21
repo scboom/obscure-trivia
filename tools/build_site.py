@@ -2,7 +2,8 @@
 import sys, os, json, shutil, datetime, html
 
 SRC, OUT = sys.argv[1], sys.argv[2]
-SITE = "https://scboom.github.io/tavern-trivia/"
+SITE = os.environ.get("SITE_URL", "https://scboom.github.io/tavern-trivia/")
+QUESTIONS_PER_GAME = 20   # what every quiz tile advertises
 VERIFY = "WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho"
 TEX = json.load(open(os.path.join(SRC, "textures.json")))
 E = html.escape
@@ -11,7 +12,7 @@ QUIZZES = [
     {
         "id": "hearthstone", "dir": "hearthstone", "bank_src": "hs_questions.json",
         "title": "Hearthstone Battlegrounds Quiz – Obscure Trivia",
-        "desc": "A free Hearthstone Battlegrounds quiz with 1,000 questions on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or co-op with a friend.",
+        "desc": "A free Hearthstone Battlegrounds quiz: 20 random questions per game on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or co-op with a friend.",
         "fonts": "family=Bree+Serif&family=Figtree:wght@400;500;600;700",
         "theme_color": "#1d1512",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E",
@@ -54,13 +55,15 @@ QUIZZES = [
   display: grid; place-items: center; color: var(--accent-ink); font-family: var(--f-display); font-size: 0.9rem;
 }
 """,
+        "tile": {"cls": "hs", "title": "Hearthstone Battlegrounds", "art": '<span class="coin" aria-hidden="true">?</span>',
+                 "blurb": "Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies."},
         "intro": ("Hearthstone Battlegrounds quiz", "How well do you really know Bob's Tavern?",
-                  "A free Hearthstone Battlegrounds quiz with 1,000 questions: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play 20 random questions on your own, or co-op with a friend using a 5-letter code."),
+                  "A free Hearthstone Battlegrounds quiz, 20 questions per game: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play on your own, or co-op with a friend using a 5-letter code."),
     },
     {
         "id": "minecraft", "dir": "minecraft", "bank_src": "mc_questions.json",
         "title": "Minecraft Bedrock Quiz – Obscure Trivia",
-        "desc": "A free Minecraft: Bedrock Edition quiz with 1,000 questions on crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes. Play solo or co-op with a friend.",
+        "desc": "A free Minecraft: Bedrock Edition quiz: 20 random questions per game on crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes. Play solo or co-op with a friend.",
         "fonts": "family=Pixelify+Sans:wght@400;600;700&family=Noto+Sans:wght@400;600;700",
         "theme_color": "#1b1c1e",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23866043'/%3E%3Crect width='8' height='3' fill='%235f9f35'/%3E%3Crect y='3' width='2' height='1' fill='%235f9f35'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%235f9f35'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23694b33'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%23694b33'/%3E%3C/svg%3E",
@@ -114,8 +117,10 @@ body { image-rendering: pixelated; }
 .qtext { letter-spacing: 0.01em; }
 .cardtext { box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555; border-width: 2px; font-weight: 600; }
 """ % {"deep": TEX["deep"], "grass_side": TEX["grass_side"]},
+        "tile": {"cls": "mc", "title": "Minecraft", "art": "",
+                 "blurb": "Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes."},
         "intro": ("Minecraft: Bedrock Edition quiz", "Think you know every block, mob and recipe?",
-                  "A free Minecraft: Bedrock Edition quiz with 1,000 questions: crafting recipes, blocks and ores, tools, mobs, enchanting, brewing, biomes and villagers. Play 20 random questions on your own, or co-op with a friend using a 5-letter code."),
+                  "A free Minecraft: Bedrock Edition quiz, 20 questions per game: crafting recipes, blocks and ores, tools, mobs, enchanting, brewing, biomes and villagers. Play on your own, or co-op with a friend using a 5-letter code."),
     },
 ]
 
@@ -200,7 +205,7 @@ for qz in QUIZZES:
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
 
 # ------------------------------------------------------------------ hub
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 1,000 questions each on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or co-op with a friend."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or co-op with a friend."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -279,18 +284,13 @@ hub += """<div class="wrap">
     <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or send a friend a 5-letter code and answer the same questions together.</p>
   </section>
   <section class="shelf" aria-label="Quizzes">
-    <a class="quiz hs" href="hearthstone/">
-      <span class="coin" aria-hidden="true">?</span>
-      <h3>Hearthstone Battlegrounds</h3>
-      <p>Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies.</p>
-      <div class="meta"><span class="pill">1,000 questions</span><span class="pill">Solo &amp; co-op</span><span class="play">Play →</span></div>
+""" + "".join(f"""    <a class="quiz {q['tile']['cls']}" href="{q['dir']}/">
+      {q['tile']['art']}
+      <h3>{E(q['tile']['title'])}</h3>
+      <p>{E(q['tile']['blurb'])}</p>
+      <div class="meta"><span class="pill">{QUESTIONS_PER_GAME} questions</span><span class="pill">Solo &amp; co-op</span><span class="play">Play →</span></div>
     </a>
-    <a class="quiz mc" href="minecraft/">
-      <h3>Minecraft</h3>
-      <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
-      <div class="meta"><span class="pill">1,000 questions</span><span class="pill">Solo &amp; co-op</span><span class="play">Play →</span></div>
-    </a>
-  </section>
+""" for q in QUIZZES) + """  </section>
   <section class="joinbox">
     <h3>Got a code from a friend?</h3>
     <p>Type it in and you'll go straight to the right quiz.</p>
@@ -304,7 +304,7 @@ hub += """<div class="wrap">
 </div>
 <script>
 (() => {
-  const routes = { H: "hearthstone/", M: "minecraft/" };
+  const routes = """ + json.dumps({q["config"]["letter"]: q["dir"] + "/" for q in QUIZZES}) + """;
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -312,7 +312,7 @@ hub += """<div class="wrap">
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a quiz. Hearthstone codes start with H and Minecraft codes start with M."; return; }
+    if (!r) { err.textContent = """ + json.dumps("That code doesn't match a quiz. " + " and ".join(q["tile"]["title"] + " codes start with " + q["config"]["letter"] for q in QUIZZES) + ".") + """; return; }
     location.href = r + "?join=" + c;
   });
 })();
