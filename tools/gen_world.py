@@ -2,7 +2,7 @@
 
 Country questions (capitals, currencies, languages, continents, flags, landlocked, size) use the
 mledoze/countries dataset (ODbL) and flag-icons (MIT). Everything else is hand-written below and
-sticks to well-established, easy-to-medium fun facts.
+sticks to well-established fun facts.
 """
 import sys, os, json, random, hashlib, collections, shutil
 
