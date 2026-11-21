@@ -216,6 +216,44 @@ button { cursor: pointer; }
 .resultcode { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95rem; background: #1a1210; border: 1px dashed var(--line); border-radius: var(--r); padding: 10px 12px; overflow-wrap: anywhere; user-select: all; }
 .foot { color: #8a7666; font-size: 0.8rem; text-align: center; }
 .loading { text-align: center; padding: 60px 0; color: var(--muted); }
+
+/* waiting + reveal */
+.bigmsg { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; color: var(--gold); }
+.reveal.center { padding-block: 48px; }
+.pop { animation: pop .45s cubic-bezier(.2,1.4,.4,1) both; }
+@keyframes pop { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
+.timer { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.timer span { display: block; height: 100%; width: 100%; background: var(--gold); transform-origin: left; animation: drain linear forwards; }
+@keyframes drain { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+.btn.skip { padding: 6px 12px; font-size: 0.85rem; align-self: center; background: transparent; color: var(--muted); }
+.reveal:not(.center) .btn.skip { align-self: auto; }
+.who-lines { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.who-line { font-size: 0.98rem; }
+.you-t { color: var(--gold); }
+.pip.done { background: var(--muted); }
+.hourglass { width: 44px; height: 44px; margin: 4px auto; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1.1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* leaderboard */
+.head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.lb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 560px) { .lb-cols { grid-template-columns: 1fr; } }
+.lb-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.lb-col h3 { font-size: 1.05rem; color: var(--ink); }
+.lb { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lb li { display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; background: #221914; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.lb li.mine { border-color: var(--gold); background: rgba(232,180,80,0.08); }
+.lb-rank { font-family: var(--f-display); color: var(--gold); text-align: center; }
+.lb li:first-child .lb-rank { color: var(--gold-ink); background: var(--gold); border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; font-size: .85rem; }
+.lb-names { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.lb-score { font-family: var(--f-display); font-size: 1.1rem; }
+.lb-score small { color: var(--muted); font-size: .8rem; }
+.lb-time { color: var(--muted); font-size: .85rem; }
+.lb-empty { margin: 0; }
+.lb-note { margin: 0; padding: 10px 12px; border-radius: 8px; background: #221914; border: 1px solid var(--line); }
+.lb-note.good { border-color: var(--good); color: var(--good); }
+.review-wrap summary { cursor: pointer; font-weight: 700; color: var(--muted); padding: 6px 0; }
+.review-wrap[open] summary { margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
@@ -308,10 +346,14 @@ const MQTT_SRC = "https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js";
 const BROKERS = ["wss://broker.emqx.io:8084/mqtt", "wss://broker.hivemq.com:8884/mqtt"];
 let pals = new Map(), leftIds = new Set(), transport = null, gen = 0;
 
-function myState() { return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done: S.screen === "results" }; }
+function myState() {
+  const done = !!S.finishedAt;
+  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0 };
+}
 function setPal(id, st) {
   if (!st || typeof st !== "object" || st.code !== S.code) return;
-  pals.set(id, { id, name: String(st.name || "Your friend").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, left: leftIds.has(id) });
+  const t = Number.isFinite(st.t) && st.t > 0 && st.t < 86400 ? Math.round(st.t) : 0;
+  pals.set(id, { id, name: String(st.name || "Your friend").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, left: leftIds.has(id) });
   refreshPartnerBits();
 }
 function markLeft(id) { leftIds.add(id); const p = pals.get(id); if (p && !p.left) { p.left = true; refreshPartnerBits(); } }
@@ -432,12 +474,160 @@ function leaveRoom() {
 function pushPresence() { if (transport) transport.send(); }
 window.addEventListener("pagehide", () => { try { transport && transport.close(); } catch (e) {} });
 
+// ------------------------------------------------------------ leaderboard
+// Kept on the same public relays as co-op. Each game is one saved message that never expires.
+// Every visitor's browser also remembers the top 5 and puts them back if a relay ever loses them.
+const BOARD_BASE = "tavern-trivia/v1/board/";
+const BOARD_SHOW = 5, BOARD_KEEP = 25;
+const BOARD = { entries: new Map(), state: "idle", clients: [], ready: false, waiters: [] };
+
+function fmtTime(sec) { sec = Math.max(0, Math.round(sec || 0)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
+function validEntry(mode, key, e) {
+  if (!e || typeof e !== "object" || e.v !== 1 || e.mode !== mode || !Array.isArray(e.p)) return null;
+  if (mode === "coop" ? (e.p.length < 2 || e.p.length > 4) : e.p.length !== 1) return null;
+  const p = e.p.map(x => ({ n: String((x && x.n) || "Player").slice(0, 20), s: x && Number.isInteger(x.s) && x.s >= 0 && x.s <= LEN ? x.s : -1 }));
+  if (p.some(x => x.s < 0)) return null;
+  const t = Number.isFinite(e.t) && e.t > 0 && e.t < 86400 ? Math.round(e.t) : 0;
+  if (!t) return null;
+  const total = p.reduce((a, x) => a + x.s, 0);
+  return { v: 1, key, mode, code: String(e.code || "").slice(0, 5), p, t, at: Number.isFinite(e.at) ? e.at : 0, total, max: p.length * LEN };
+}
+function rankList(mode, extra) {
+  const list = [...BOARD.entries.values()].filter(e => e.mode === mode && (!extra || e.key !== extra.key));
+  if (extra) list.push(extra);
+  return list.sort((a, b) => (b.total / b.max) - (a.total / a.max) || a.t - b.t || a.at - b.at);
+}
+function wire(e) { return JSON.stringify({ v: 1, mode: e.mode, code: e.code, p: e.p, t: e.t, at: e.at }); }
+function boardPublish(e, del) {
+  const topic = BOARD_BASE + e.mode + "/" + e.key;
+  BOARD.clients.forEach(c => { if (c.connected) c.publish(topic, del ? "" : wire(e), { qos: 1, retain: true }); });
+}
+function boardCacheSave() {
+  const top = [...rankList("coop").slice(0, BOARD_SHOW), ...rankList("solo").slice(0, BOARD_SHOW)];
+  store("tt-board-v1", JSON.stringify(top.map(e => ({ ...JSON.parse(wire(e)), key: e.key }))));
+}
+function boardReady() {
+  if (BOARD.ready) return;
+  BOARD.ready = true;
+  // put back any top-5 games this browser remembers that the relay no longer has
+  try {
+    const cached = JSON.parse(store("tt-board-v1") || "[]");
+    cached.forEach(c => {
+      const e = c && validEntry(c.mode, String(c.key || ""), c);
+      if (e && /^[A-Z0-9]{5}(-[a-z0-9]{12})?$/.test(e.key) && !BOARD.entries.has(e.mode + "/" + e.key)) {
+        BOARD.entries.set(e.mode + "/" + e.key, e); boardPublish(e);
+      }
+    });
+  } catch (x) {}
+  // keep the stored list short
+  ["coop", "solo"].forEach(m => rankList(m).slice(BOARD_KEEP).forEach(e => { BOARD.entries.delete(m + "/" + e.key); boardPublish(e, true); }));
+  boardCacheSave();
+  BOARD.waiters.splice(0).forEach(fn => fn());
+  renderBoardBits();
+}
+function boardConnect() {
+  if (BOARD.state !== "idle") return;
+  BOARD.state = "connecting";
+  loadMqtt().then(mqtt => {
+    const cfg = window.TT_MQTT || {};
+    BOARD.clients = (cfg.brokers || BROKERS).map(url => {
+      const c = mqtt.connect(url, { protocolVersion: cfg.protocolVersion === 4 ? 4 : 5, clientId: "ttb_" + Math.random().toString(36).slice(2, 12),
+        clean: true, connectTimeout: 10000, reconnectPeriod: 8000, keepalive: 60 });
+      c.on("connect", () => {
+        BOARD.state = "on";
+        c.subscribe(BOARD_BASE + "#", { qos: 1 }, () => setTimeout(boardReady, 1500));
+      });
+      c.on("message", (topic, buf) => {
+        const parts = topic.slice(BOARD_BASE.length).split("/");
+        if (parts.length !== 2 || !/^(coop|solo)$/.test(parts[0]) || !/^[A-Z0-9]{5}(-[a-z0-9]{12})?$/.test(parts[1]) || buf.length > 1500) return;
+        const id = parts[0] + "/" + parts[1];
+        if (!buf.length) { BOARD.entries.delete(id); renderBoardBits(); return; }
+        let raw = null; try { raw = JSON.parse(buf.toString()); } catch (x) { return; }
+        const e = validEntry(parts[0], parts[1], raw);
+        if (e) { BOARD.entries.set(id, e); renderBoardBits(); }
+      });
+      c.on("error", () => {});
+      return c;
+    });
+    setTimeout(() => { if (!BOARD.clients.some(c => c.connected)) { BOARD.state = "off"; BOARD.waiters.splice(0).forEach(fn => fn()); renderBoardBits(); } }, 12000);
+  }).catch(() => { BOARD.state = "off"; BOARD.waiters.splice(0).forEach(fn => fn()); renderBoardBits(); });
+}
+function whenBoardReady(fn) { if (BOARD.ready || BOARD.state === "off") fn(); else { BOARD.waiters.push(fn); boardConnect(); } }
+
+function submitScore() {
+  if (S.submitted || !S.finishedAt) return;
+  S.submitted = true;
+  const coop = S.final && S.final.length > 0;
+  const me = { n: (S.nick || "Player").slice(0, 20), s: myScore(), t: elapsedSec() };
+  const all = coop ? [me, ...S.final.map(p => ({ n: p.name, s: scoreOf(p.answers), t: p.t || 0 }))] : [me];
+  all.sort((a, b) => a.n.localeCompare(b.n) || b.s - a.s);
+  const key = coop ? S.code : S.code + "-" + playerId(S.code);
+  const e = validEntry(coop ? "coop" : "solo", key, { v: 1, mode: coop ? "coop" : "solo", code: S.code, p: all.map(x => ({ n: x.n, s: x.s })), t: Math.max(...all.map(x => x.t)) || me.t, at: Date.now() });
+  if (!e) { S.board = { status: "skipped" }; return; }
+  S.board = { status: "saving", key: e.mode + "/" + e.key, mode: e.mode };
+  saveSession(); renderBoardBits();
+  whenBoardReady(() => {
+    if (BOARD.state === "off" || !BOARD.clients.some(c => c.connected)) { S.board.status = "offline"; saveSession(); renderBoardBits(); return; }
+    const ranked = rankList(e.mode, e);
+    const rank = ranked.findIndex(x => x.key === e.key) + 1;
+    if (rank >= 1 && rank <= BOARD_SHOW) { BOARD.entries.set(e.mode + "/" + e.key, e); boardPublish(e); boardCacheSave(); S.board.status = "saved"; S.board.rank = rank; }
+    else { S.board.status = "missed"; S.board.need = ranked[BOARD_SHOW - 1] ? ranked[BOARD_SHOW - 1].total : null; }
+    saveSession(); renderBoardBits();
+  });
+}
+function boardList(mode, mineKey) {
+  const list = rankList(mode).slice(0, BOARD_SHOW);
+  if (!list.length) return `<p class="small muted lb-empty">${BOARD.ready ? "No games yet. Be the first!" : BOARD.state === "off" ? "Couldn't load." : "Loading…"}</p>`;
+  return `<ol class="lb">${list.map((e, i) => `<li class="${mineKey === mode + "/" + e.key ? "mine" : ""}">
+      <span class="lb-rank">${i + 1}</span>
+      <span class="lb-names">${e.p.map(x => esc(x.n)).join(" &amp; ")}</span>
+      <span class="lb-score">${e.total}<small>/${e.max}</small></span>
+      <span class="lb-time" title="Time taken">${fmtTime(e.t)}</span></li>`).join("")}</ol>`;
+}
+function boardHtml() {
+  const mine = S.board && S.board.key;
+  let note = "";
+  if (S.board && S.screen === "results") {
+    const b = S.board;
+    note = b.status === "saving" ? `<p class="lb-note">Checking the leaderboard…</p>`
+      : b.status === "saved" ? `<p class="lb-note good">Your game made it onto the leaderboard at <b>#${b.rank}</b>!</p>`
+      : b.status === "missed" ? `<p class="lb-note">Not in the top ${BOARD_SHOW} this time.${b.need !== null && b.need !== undefined ? ` The #${BOARD_SHOW} game scored ${b.need}.` : ""}</p>`
+      : b.status === "offline" ? `<p class="lb-note">The leaderboard couldn't be reached, so this score wasn't saved.</p>` : "";
+  }
+  return `<section class="board stack" id="board">
+    <div class="head-row"><span class="eyebrow">Leaderboard · top ${BOARD_SHOW}</span><span class="small muted">Ranked by score, then fastest time</span></div>
+    ${note}
+    <div class="lb-cols">
+      <div class="lb-col"><h3>Co-op games</h3>${boardList("coop", mine)}</div>
+      <div class="lb-col"><h3>Solo games</h3>${boardList("solo", mine)}</div>
+    </div>
+  </section>`;
+}
+let boardRaf = 0;
+function renderBoardBits() {
+  if (boardRaf) return;
+  boardRaf = requestAnimationFrame(() => { boardRaf = 0; const el = $("#board"); if (el) el.outerHTML = boardHtml(); });
+}
+
 // ------------------------------------------------------------ actions
+function fresh(extra) {
+  return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
+    startedAt: 0, finishedAt: 0, final: null, step: 0, submitted: false, board: null }, extra || {});
+}
+function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.round((S.finishedAt - S.startedAt) / 1000)) : 0; }
+function needName() {
+  if (S.nick) return false;
+  const el = $("#nickerr"); if (el) el.textContent = "Type your name first. It shows to your friend and on the leaderboard.";
+  const n = $("#nick"); n && n.focus();
+  return true;
+}
 function startGame(mode, code, role) {
-  S = { screen: "ready", mode, role: role || "host", code, nick: S.nick, qs: buildQuiz(code), answers: Array(LEN).fill(null), cur: 0, compare: null };
-  if (mode === "solo") S.screen = "quiz";
+  stopReveal();
+  S = fresh({ screen: mode === "solo" ? "quiz" : "ready", mode, role: role || "host", code, qs: buildQuiz(code), answers: Array(LEN).fill(null),
+    startedAt: mode === "solo" ? Date.now() : 0 });
   render();
   if (mode === "coop") joinRoom(); else leaveRoom();
+  boardConnect();
 }
 function answer(k) {
   if (S.answers[S.cur] !== null) return;
@@ -446,21 +636,58 @@ function answer(k) {
 }
 function next() {
   if (S.answers[S.cur] === null) return;
-  if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
-  else { S.screen = "results"; pushPresence(); render(); window.scrollTo({ top: 0 }); }
+  if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+  S.finishedAt = Date.now();
+  if (S.mode === "coop" && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
+  else { S.screen = "results"; pushPresence(); render(); submitScore(); }
+  window.scrollTo({ top: 0 });
 }
-function home() { leaveRoom(); S = { screen: "home", mode: "solo", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null }; render(); }
+function checkAllDone() {
+  if (S.screen !== "waiting") return;
+  const ps = others();
+  const playing = ps.filter(p => !p.done && !p.left);
+  if (ps.some(p => p.done) && !playing.length) startReveal();
+}
+function finishWithoutWaiting() { startReveal(); }
+
+// the reveal: "Quiz completed!" 5 s, "Let's have a look at the answers" 2 s, then 5 s per question
+let revealTimer = 0;
+const STEP_MS = k => (k === 0 ? 5000 : k === 1 ? 2000 : 5000) * (window.TT_SPEED || 1);
+function startReveal() {
+  S.final = others().filter(p => p.done || p.answers.some(a => a !== null))
+    .map(p => ({ id: p.id, name: p.name, answers: p.answers.slice(), t: p.t, done: p.done }));
+  if (!S.final.length) { S.final = null; S.screen = "results"; render(); submitScore(); return; }
+  S.screen = "reveal"; S.step = 0; render(); window.scrollTo({ top: 0 });
+  scheduleStep();
+}
+function scheduleStep() {
+  clearTimeout(revealTimer);
+  revealTimer = setTimeout(() => {
+    if (S.screen !== "reveal") return;
+    if (S.step >= LEN + 1) { endReveal(); return; }
+    S.step++; render(); scheduleStep();
+  }, STEP_MS(S.step));
+}
+function stopReveal() { clearTimeout(revealTimer); revealTimer = 0; }
+function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); submitScore(); }
+
+function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); boardConnect(); }
 function copyText(text, btn) {
   const done = ok => { if (btn) { const t = btn.textContent; btn.textContent = ok ? "Copied" : "Select it and copy"; setTimeout(() => btn.textContent = t, 1600); } };
   try { navigator.clipboard.writeText(text).then(() => done(true), () => done(false)); } catch (e) { done(false); }
 }
+function saveSession() {
+  if (S.screen === "home") return;
+  try { sessionStorage.setItem("tt-game", JSON.stringify({ ...S, qs: undefined })); } catch (e) {}
+}
+function clearSession() { try { sessionStorage.removeItem("tt-game"); } catch (e) {} }
 
 // ------------------------------------------------------------ rendering
 function header() {
-  const inGame = S.screen === "quiz" || S.screen === "results";
+  const showScore = S.screen === "quiz" || S.screen === "results";
   return `<header class="top">
     <button class="brand" id="go-home" aria-label="Tavern Trivia home"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></button>
-    ${inGame ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>` : ""}
+    ${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>` : ""}
   </header>`;
 }
 function homeView() {
@@ -474,52 +701,53 @@ function homeView() {
     <div class="facts">${Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<span class="chip">${n} ${esc(g)}</span>`).join("")}</div>
   </section>
   <div class="field" style="max-width:320px">
-    <label for="nick">Your name (shown to your friend)</label>
+    <label for="nick">Your name (shown to your friend and on the leaderboard)</label>
     <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
+    <p class="err" id="nickerr" role="alert"></p>
   </div>
   <div class="modes">
     <section class="board mode">
       <span class="eyebrow">Solo</span>
       <h3>Play alone</h3>
-      <p>Twenty fresh questions. You get a code at the end so a friend can try the same set.</p>
+      <p>Twenty fresh questions. Beat the top 5 to get your name on the leaderboard.</p>
       <div class="spacer"></div>
       <button class="btn gold block" id="solo">Start 20 questions</button>
     </section>
     <section class="board mode">
       <span class="eyebrow">Co-op</span>
       <h3>Play with a friend</h3>
-      <p>Get a 5-letter code and send it to a friend. You both answer the same 20 questions and see each other's picks.</p>
+      <p>Get a 5-letter code and send it to a friend. You both answer the same 20 questions, then watch the answers revealed together.</p>
       <button class="btn gold block" id="create">Create a game</button>
       <div class="divider">or join one</div>
       <form class="row" id="joinform" autocomplete="off">
-        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Invite code" value="${esc(S.pendingCode || "")}">
+        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Invite code">
         <button class="btn" type="submit">Join</button>
       </form>
       <p class="err" id="joinerr" role="alert"></p>
     </section>
   </div>
+  ${boardHtml()}
   <p class="foot">Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.</p>`;
 }
-function partnerStrip(context) {
+function palStatus(p) {
+  const n = p.answers.filter(a => a !== null).length;
+  return p.done ? "Finished" : p.left ? "Left the game" : `On question ${Math.min(n + 1, LEN)} of ${LEN}`;
+}
+function partnerStrip() {
   if (S.mode !== "coop") return "";
   const list = others();
   let body;
   const guest = S.role === "guest";
   if (roomState === "off" && !list.length) {
-    body = `<p class="small muted" style="margin:0">Couldn't reach the live server, so you won't see your friend's answers as you go. You still get the same questions. Swap result codes at the end to compare.</p>`;
+    body = `<p class="small muted" style="margin:0">Couldn't reach the live server, so you won't see your friend's progress. You still get the same questions. Swap result codes at the end to compare.</p>`;
   } else if (!list.length) {
     const msg = roomState === "connecting" ? "Connecting…"
       : guest ? `Connected to game ${esc(S.code)}. Nobody else is here yet. Check that your friend clicked <b>Create a game</b> and sent you this exact code.`
       : "Waiting for your friend to join with the code";
     body = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">${msg}</span></div>`;
   } else {
-    body = list.map(p => {
-      const n = p.answers.filter(a => a !== null).length;
-      const sc = scoreOf(p.answers);
-      const status = p.done ? "Finished" : p.left ? "Left the game" : `Question ${Math.min(n + 1, LEN)} of ${LEN}`;
-      return `<div class="pal-row"><span class="dot${p.left && !p.done ? " wait" : ""}" aria-hidden="true"></span><span class="pal-name">${esc(p.name)}</span>
-        <span class="pal-prog">${status} · ${sc} correct</span></div>`;
-    }).join("");
+    body = list.map(p => `<div class="pal-row"><span class="dot${p.left && !p.done ? " wait" : ""}" aria-hidden="true"></span><span class="pal-name">${esc(p.name)}</span>
+        <span class="pal-prog">${palStatus(p)}</span></div>`).join("");
   }
   return `<section class="board partners" id="partners" aria-live="polite">
     <div class="head"><span class="eyebrow">Co-op · code <span class="codechip">${esc(S.code)}</span></span>
@@ -528,6 +756,7 @@ function partnerStrip(context) {
   </section>`;
 }
 function readyView() {
+  const after = "You'll see which question each other is on, and all the answers are revealed together at the end.";
   if (S.role === "guest") {
     const pals = others();
     const who = pals.length ? pals.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ") : "";
@@ -535,7 +764,7 @@ function readyView() {
   <section class="board stack center">
     <span class="eyebrow">You joined game</span>
     <div class="code-big" aria-label="Game code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:44ch">${who ? `You're playing with ${who}. ` : ""}You'll both get the same 20 questions in the same order, and you'll see each other's picks after you answer.</p>
+    <p class="muted" style="margin:0 auto;max-width:46ch">${who ? `You're playing with ${who}. ` : ""}You'll both get the same 20 questions in the same order. ${after}</p>
     <div class="row" style="justify-content:center">
       <button class="btn gold" id="begin">Start the quiz</button>
     </div>
@@ -546,83 +775,129 @@ function readyView() {
   <section class="board stack center">
     <span class="eyebrow">Your invite code</span>
     <div class="code-big" aria-label="Invite code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:44ch">Send this code to your friend. They choose <b>Join</b> on the home screen and type it in. You'll both get the same 20 questions in the same order.</p>
+    <p class="muted" style="margin:0 auto;max-width:46ch">Send this code to your friend. They choose <b>Join</b> on the home screen and type it in. You'll both get the same 20 questions in the same order.</p>
     <div class="row" style="justify-content:center">
       <button class="btn" data-copy="${esc(S.code)}">Copy code</button>
       <button class="btn gold" id="begin">Start the quiz</button>
     </div>
-    <p class="small muted" style="margin:0">You don't have to wait. Your friend's answers appear as they go.</p>
+    <p class="small muted" style="margin:0 auto;max-width:46ch">You can start before your friend joins. ${after}</p>
   </section>
   ${partnerStrip()}`;
 }
-function quizView() {
-  const item = S.qs[S.cur], q = qOf(item), mine = S.answers[S.cur], done = mine !== null;
+function optionsHtml(item, picks, reveal) {
+  // picks: [{label, cls, a}] for each player; reveal: show correct answer
+  const q = qOf(item), bigLabels = !q.r;
+  return item.opts.map((o, k) => {
+    const chosen = picks.filter(p => p.a === k);
+    let cls = "";
+    if (reveal) cls = k === item.correct ? "right" : chosen.length ? "wrong" : "faded";
+    const marks = chosen.map(p => `<span class="tag ${p.cls}">${esc(p.label)}</span>`).join("");
+    return `<button class="opt ${cls}" data-opt="${k}" ${reveal ? "disabled" : ""}>
+      <span class="key">${LET[k]}</span><span class="lbl ${bigLabels ? "big" : ""}">${rich(o)}</span>
+      ${marks ? `<span class="marks">${marks}</span>` : ""}</button>`;
+  }).join("");
+}
+function qHead(item, k) {
+  const q = qOf(item), g = GROUP[q.c];
   const [qline, ...rest] = q.q.split("\n");
   const card = rest.join(" ");
-  const pals = S.mode === "coop" ? others() : [];
+  return `<div class="qmeta"><span class="eyebrow">Question ${k + 1} of ${LEN}</span>
+      <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
+    <h2 class="qtext">${esc(qline)}</h2>
+    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}`;
+}
+function quizView() {
+  const item = S.qs[S.cur], mine = S.answers[S.cur], done = mine !== null;
   const pips = S.qs.map((it, k) => {
     const a = S.answers[k];
     const cls = k === S.cur && !done ? "now" : a === null ? "" : a === it.correct ? "ok" : "no";
     return `<span class="pip ${cls}"></span>`;
   }).join("");
-  const bigLabels = !q.r;
-  const opts = item.opts.map((o, k) => {
-    let cls = "";
-    if (done) cls = k === item.correct ? "right" : k === mine ? "wrong" : "faded";
-    const marks = [];
-    if (done && k === mine) marks.push(`<span class="tag you">You</span>`);
-    if (done) pals.forEach(p => { if (p.answers[S.cur] === k) marks.push(`<span class="tag pal">${esc(p.name)}</span>`); });
-    return `<button class="opt ${cls}" data-opt="${k}" ${done ? "disabled" : ""}>
-      <span class="key">${LET[k]}</span><span class="lbl ${bigLabels ? "big" : ""}">${rich(o)}</span>
-      ${marks.length ? `<span class="marks">${marks.join("")}</span>` : ""}</button>`;
-  }).join("");
-  let palNote = "";
-  if (done && pals.length) {
-    palNote = pals.map(p => {
-      const a = p.answers[S.cur];
-      return a === null ? `<span class="muted">${esc(p.name)} hasn't answered this one yet.</span>`
-        : `<span><b class="pal-name">${esc(p.name)}</b> ${a === item.correct ? `<span class="ok-t">got it right</span>` : `<span class="no-t">picked ${LET[a]}</span>`}.</span>`;
-    }).join(" ");
-  }
-  const g = GROUP[q.c];
   return `${header()}
   <div class="pips" aria-label="Progress: question ${S.cur + 1} of ${LEN}">${pips}</div>
   <section class="board stack">
-    <div class="qmeta"><span class="eyebrow">Question ${S.cur + 1} of ${LEN}</span>
-      <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
-    <h2 class="qtext">${esc(qline)}</h2>
-    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}
-    <div class="opts" role="group" aria-label="Answers">${opts}</div>
+    ${qHead(item, S.cur)}
+    <div class="opts" role="group" aria-label="Answers">${optionsHtml(item, done ? [{ label: "You", cls: "you", a: mine }] : [], done)}</div>
     ${done ? `<div class="feedback">
         <span class="verdict ${mine === item.correct ? "ok" : "no"}">${mine === item.correct ? "Correct!" : "Not quite."}</span>
-        <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "See results"}</button>
-      </div>${palNote ? `<p class="small" style="margin:0" id="palnote">${palNote}</p>` : ""}` : `<p class="small muted" style="margin:0">Tip: press 1 to 4 to answer, Enter for the next question.</p>`}
+        <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "Finish"}</button>
+      </div>` : `<p class="small muted" style="margin:0">Tip: press 1 to 4 to answer, Enter for the next question.</p>`}
   </section>
   ${partnerStrip()}`;
 }
+function waitingView() {
+  const ps = others();
+  const playing = ps.filter(p => !p.done && !p.left);
+  const nobody = !ps.length;
+  const leftEarly = ps.some(p => p.left && !p.done);
+  const names = playing.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ");
+  return `${header()}
+  <section class="board stack center waiting">
+    <span class="eyebrow">Game ${esc(S.code)}</span>
+    <h2 class="bigmsg">You're done!</h2>
+    <p class="muted" style="margin:0 auto;max-width:44ch">${nobody ? "Nobody else has joined this game yet. Send them the code, or see your results now."
+      : playing.length ? `Waiting for ${names} to finish. The answers are revealed as soon as everyone's done.`
+      : leftEarly ? "Your friend left before finishing." : "Getting the reveal ready…"}</p>
+    <div class="hourglass" aria-hidden="true"><span></span></div>
+    ${nobody || leftEarly ? `<div class="row" style="justify-content:center"><button class="btn gold" id="nowait">Show my results now</button></div>` : ""}
+  </section>
+  ${partnerStrip()}`;
+}
+function revealView() {
+  const players = [{ label: S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal", answers: p.answers })));
+  const ms = STEP_MS(S.step);
+  const timer = `<div class="timer" aria-hidden="true"><span style="animation-duration:${ms}ms"></span></div>`;
+  const skip = `<button class="btn skip" id="skip">Skip to scores</button>`;
+  if (S.step === 0) {
+    return `${header()}<section class="board stack center reveal">
+      <span class="eyebrow">Game ${esc(S.code)} · ${players.map(p => esc(p.label)).join(" &amp; ")}</span>
+      <h2 class="bigmsg pop">Quiz completed!</h2>${timer}${skip}</section>`;
+  }
+  if (S.step === 1) {
+    return `${header()}<section class="board stack center reveal">
+      <h2 class="bigmsg pop">Let's have a look at the answers</h2>${timer}${skip}</section>`;
+  }
+  const k = S.step - 2, item = S.qs[k];
+  const picks = players.map(p => ({ label: p.label, cls: p.cls, a: p.answers[k] }));
+  const lines = players.map(p => {
+    const a = p.answers[k];
+    return `<span class="who-line"><b class="${p.cls === "you" ? "you-t" : "pal-name"}">${esc(p.label)}</b> ${a === null || a === undefined ? `<span class="muted">didn't answer</span>` : a === item.correct ? `<span class="ok-t">✓ right</span>` : `<span class="no-t">✗ picked ${LET[a]}</span>`}</span>`;
+  }).join("");
+  return `${header()}
+  <div class="pips" aria-label="Reveal: question ${k + 1} of ${LEN}">${S.qs.map((_, i) => `<span class="pip ${i < k ? "done" : i === k ? "now" : ""}"></span>`).join("")}</div>
+  <section class="board stack reveal">
+    ${qHead(item, k)}
+    <div class="opts">${optionsHtml(item, picks, true)}</div>
+    <div class="who-lines">${lines}</div>
+    ${timer}
+    <div class="row" style="justify-content:flex-end">${skip}</div>
+  </section>`;
+}
 function resultsView() {
   const me = myScore();
-  const pals = S.mode === "coop" ? partnerList() : (S.compare ? [S.compare] : []);
+  const pals = S.final && S.final.length ? S.final : (S.compare ? [S.compare] : []);
   const myCode = S.code + "-" + encodeAnswers(S.answers);
   const byGroup = {};
   S.qs.forEach((it, k) => { const g = GROUP[qOf(it).c]; byGroup[g] = byGroup[g] || [0, 0]; byGroup[g][1]++; if (S.answers[k] === it.correct) byGroup[g][0]++; });
   const verdict = me >= 18 ? "Tavern legend." : me >= 14 ? "Top four, easily." : me >= 10 ? "Solid lobby. Bob approves." : me >= 6 ? "You held on to your Armor." : "Bob says: keep practising.";
-  const tiles = [`<div class="tile you"><span class="eyebrow">${esc(S.nick || "You")}</span><span class="n">${me}<small> / ${LEN}</small></span></div>`]
-    .concat(pals.map(p => `<div class="tile pal"><span class="eyebrow">${esc(p.name)}${p.done ? "" : " · still playing"}</span><span class="n">${scoreOf(p.answers)}<small> / ${LEN}</small></span></div>`));
-  if (pals.length === 1) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${me + scoreOf(pals[0].answers)}<small> / ${LEN * 2}</small></span></div>`);
+  const scores = [{ name: S.nick || "You", s: me, cls: "you" }].concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), cls: "pal" })));
+  const best = Math.max(...scores.map(x => x.s));
+  const tiles = scores.map(x => `<div class="tile ${x.cls}"><span class="eyebrow">${esc(x.name)}${pals.length && x.s === best && scores.filter(y => y.s === best).length === 1 ? " · winner" : ""}</span><span class="n">${x.s}<small> / ${LEN}</small></span></div>`);
+  if (pals.length) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${scores.reduce((a, x) => a + x.s, 0)}<small> / ${LEN * scores.length}</small></span></div>`);
   const review = S.qs.map((it, k) => {
     const q = qOf(it);
     const [qline, ...rest] = q.q.split("\n");
-    const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer yet</span></div>`
+    const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
       : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
     return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
       ${line(S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal", p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
   }).join("");
+  const showCompare = !(S.final && S.final.length);
   return `${header()}
   <section class="board stack">
-    <span class="eyebrow">Results · code <span class="codechip">${esc(S.code)}</span></span>
+    <span class="eyebrow">Results · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
     <h2 style="font-size:1.9rem">${verdict}</h2>
     <div class="tally">${tiles.join("")}</div>
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
@@ -631,10 +906,10 @@ function resultsView() {
       <button class="btn" id="go-home2">Home</button>
     </div>
   </section>
-  ${partnerStrip()}
-  <section class="board stack">
+  ${boardHtml()}
+  ${showCompare ? `<section class="board stack">
     <span class="eyebrow">Compare with result codes</span>
-    <p class="small muted" style="margin:0">Your result code holds your code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
+    <p class="small muted" style="margin:0">Your result code holds your game code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
     <div class="row"><div class="resultcode" style="flex:1 1 220px">${esc(myCode)}</div><button class="btn" data-copy="${esc(myCode)}">Copy</button></div>
     <form class="row" id="cmpform" autocomplete="off">
       <input class="input" id="cmpname" maxlength="20" placeholder="Friend's name" aria-label="Friend's name" style="flex:1 1 120px">
@@ -642,26 +917,26 @@ function resultsView() {
       <button class="btn" type="submit">Compare</button>
     </form>
     <p class="err" id="cmperr" role="alert"></p>
-  </section>
-  <section class="stack">
-    <span class="eyebrow">Question by question</span>
+  </section>` : ""}
+  <details class="stack review-wrap"><summary>See every question again</summary>
     <div class="review">${review}</div>
-  </section>`;
+  </details>`;
 }
 
 function render() {
   const app = $("#app");
   if (!BANK) return;
-  app.innerHTML = S.screen === "home" ? homeView() : S.screen === "ready" ? readyView() : S.screen === "quiz" ? quizView() : resultsView();
+  const v = { home: homeView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView }[S.screen] || resultsView;
+  app.innerHTML = v();
   bind();
+  saveSession();
 }
 function refreshPartnerBits() {
-  // re-render only when something partner-related is on screen
-  if (S.screen === "home") return;
-  const active = document.activeElement && document.activeElement.id;
-  if (active === "cmpcode" || active === "cmpname") { const el = $("#partners"); if (el) el.outerHTML = partnerStrip(); bindCopy(); return; }
-  render();
-  if (active) { const el = document.getElementById(active); el && el.focus({ preventScroll: true }); }
+  if (S.screen === "home" || S.screen === "reveal" || S.screen === "results") return;
+  if (S.screen === "waiting") { render(); checkAllDone(); return; }
+  if (S.screen === "ready") { render(); return; }
+  const el = $("#partners");
+  if (el) { el.outerHTML = partnerStrip(); bindCopy(); }
 }
 function bindCopy() { document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyText(b.dataset.copy, b)); }
 function bind() {
@@ -669,19 +944,22 @@ function bind() {
   const on = (id, fn) => { const el = document.getElementById(id); if (el) el.onclick = fn; };
   on("go-home", home); on("go-home2", home);
   const nick = $("#nick");
-  if (nick) nick.oninput = () => { S.nick = nick.value.trim().slice(0, 20); store("tt-nick", S.nick); };
-  on("solo", () => startGame("solo", newCode()));
-  on("create", () => startGame("coop", newCode(), "host"));
+  if (nick) nick.oninput = () => { S.nick = nick.value.trim().slice(0, 20); store("tt-nick", S.nick); const e = $("#nickerr"); if (e && S.nick) e.textContent = ""; };
+  on("solo", () => { if (!needName()) startGame("solo", newCode()); });
+  on("create", () => { if (!needName()) startGame("coop", newCode(), "host"); });
   const jf = $("#joinform");
   if (jf) jf.onsubmit = e => {
     e.preventDefault();
+    if (needName()) return;
     const c = normCode($("#joincode").value);
     if (!validCode(c)) { $("#joinerr").textContent = "Codes are 5 letters or numbers, like K7QX2. Check it and try again."; return; }
     startGame("coop", c, "guest");
   };
-  on("begin", () => { S.screen = "quiz"; render(); });
-  document.querySelectorAll("[data-opt]").forEach(b => b.onclick = () => answer(+b.dataset.opt));
+  on("begin", () => { S.screen = "quiz"; S.startedAt = Date.now(); render(); });
+  document.querySelectorAll("[data-opt]:not([disabled])").forEach(b => b.onclick = () => answer(+b.dataset.opt));
   on("next", next);
+  on("nowait", finishWithoutWaiting);
+  on("skip", endReveal);
   on("again", () => startGame(S.mode, newCode(), "host"));
   const cf = $("#cmpform");
   if (cf) cf.onsubmit = e => {
@@ -702,19 +980,31 @@ document.addEventListener("keydown", e => {
 });
 
 // ------------------------------------------------------------ boot
+function restore(saved) {
+  if (!saved || !saved.code || !validCode(saved.code) || saved.screen === "home") return false;
+  S = fresh(saved); S.nick = store("tt-nick") || saved.nick || "";
+  S.qs = buildQuiz(S.code);
+  if (!Array.isArray(S.answers) || S.answers.length !== LEN) S.answers = Array(LEN).fill(null);
+  if (S.screen === "reveal") S.screen = "results";
+  if (S.board && S.board.status === "saving") { S.submitted = false; S.board = null; }
+  render();
+  if (S.mode === "coop" && S.screen !== "results") joinRoom();
+  if (S.screen === "results") { boardConnect(); submitScore(); }
+  return true;
+}
 function start(saved) {
   S.nick = store("tt-nick") || "";
   fetch("questions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(bank => {
     BANK = bank;
-    if (saved && saved.S && saved.S.code && saved.S.qs && saved.S.qs.length === LEN) {
-      S = saved.S; S.qs = buildQuiz(S.code);
-      render(); if (S.mode === "coop") joinRoom();
-    } else render();
+    let session = null;
+    try { session = JSON.parse(sessionStorage.getItem("tt-game") || "null"); } catch (e) {}
+    if (!restore(saved && saved.S) && !restore(session)) render();
+    boardConnect();
   }).catch(() => {
     $("#app").innerHTML = `<div class="loading">The question bank didn't load. Reload the page to try again.</div>`;
   });
 }
-window.claude?.hot?.snapshot?.(() => ({ S }));
+window.claude?.hot?.snapshot?.(() => ({ S: { ...S, qs: undefined } }));
 window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
 })();
 </script>
