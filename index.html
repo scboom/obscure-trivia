@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tavern Trivia</title>
+<meta name="description" content="A Hearthstone Battlegrounds trivia quiz: 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<meta property="og:title" content="Tavern Trivia">
+<meta property="og:description" content="A Hearthstone Battlegrounds trivia quiz: 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d1512">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one centred tavern-board column; a header bar with score, the quiz card, and a partner strip under it. */
+:root {
+  --wood: #1d1512;        /* page ground: dark stained oak */
+  --plank: #2a1f1a;       /* raised boards */
+  --plank-2: #37291f;     /* hover / inset */
+  --line: #4a382c;        /* board seams */
+  --ink: #f4eadf;         /* text */
+  --muted: #b8a391;       /* secondary text */
+  --gold: #e8b450;        /* coin gold, the accent */
+  --gold-ink: #2a1b08;    /* text on gold */
+  --mana: #6fc6d8;        /* partner colour */
+  --good: #86d16f;
+  --bad: #e9725f;
+  --f-display: "Bree Serif", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 10px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 9px),
+    radial-gradient(ellipse at 50% -10%, #3a2618 0%, transparent 60%),
+    var(--wood);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; text-wrap: balance; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 0; }
+.brand h1 { font-size: 1.35rem; letter-spacing: 0.01em; }
+.coin {
+  width: 30px; height: 30px; border-radius: 50%; flex: none;
+  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, var(--gold) 38%, #a8721f 100%);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.4);
+  display: grid; place-items: center; color: var(--gold-ink); font-family: var(--f-display); font-size: 0.9rem;
+}
+.score { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.score .coin { width: 24px; height: 24px; font-size: 0.75rem; }
+
+/* generic board */
+.board {
+  background: linear-gradient(180deg, var(--plank) 0%, #251b16 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.small { font-size: 0.88rem; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border-radius: var(--r); padding: 12px 18px; font-weight: 700; border: 1px solid var(--line);
+  background: var(--plank-2); transition: transform .08s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { border-color: #6a5140; }
+.btn:active { transform: translateY(1px); }
+.btn.gold { background: var(--gold); color: var(--gold-ink); border-color: #f5cf7f; box-shadow: 0 2px 0 #9b6a1c; }
+.btn.gold:hover { background: #f0c063; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+.btn.block { width: 100%; }
+
+/* home */
+.hero { display: flex; flex-direction: column; gap: 10px; }
+.hero h2 { font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.12; }
+.hero p { margin: 0; color: var(--muted); max-width: 52ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip {
+  font-size: 0.78rem; font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  background: rgba(232,180,80,0.1); color: #f2cf8a; border: 1px solid rgba(232,180,80,0.25);
+}
+.chip.mana { background: rgba(111,198,216,0.1); color: var(--mana); border-color: rgba(111,198,216,0.3); }
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .modes { grid-template-columns: 1fr; } }
+.mode { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.mode h3 { font-size: 1.3rem; }
+.mode p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.mode .spacer { flex: 1; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+.input {
+  width: 100%; background: #1a1210; border: 1px solid var(--line); border-radius: var(--r);
+  padding: 11px 12px; min-width: 0;
+}
+.input::placeholder { color: #7d6a5b; }
+.codein { text-transform: uppercase; letter-spacing: 0.3em; font-family: var(--f-display); font-size: 1.2rem; text-align: center; }
+.row { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; }
+.row > .input { flex: 1 1 140px; }
+.err { color: var(--bad); font-size: 0.88rem; min-height: 1.2em; margin: 0; }
+.divider { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.8rem; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* ready screen */
+.code-big {
+  font-family: var(--f-display); font-size: clamp(2.4rem, 11vw, 3.6rem); letter-spacing: 0.22em;
+  color: var(--gold); text-align: center; padding: 8px 0 4px; user-select: all; padding-left: 0.22em;
+}
+.center { text-align: center; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+
+/* quiz */
+.pips { display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; }
+.pip { height: 6px; border-radius: 3px; background: var(--line); }
+.pip.now { background: var(--gold); }
+.pip.ok { background: var(--good); }
+.pip.no { background: var(--bad); }
+.qmeta { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.qtext { font-family: var(--f-display); font-size: clamp(1.25rem, 4.4vw, 1.6rem); line-height: 1.25; margin: 4px 0 0; }
+.cardtext {
+  margin: 4px 0 0; padding: 14px 16px; border-radius: var(--r);
+  background: #f1e4cc; color: #2b1f14; font-size: 1rem; line-height: 1.45;
+  border: 1px solid #c9b48f; box-shadow: inset 0 0 0 3px #e6d5b5;
+}
+.cardtext b { color: #1a120b; }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt {
+  display: flex; align-items: flex-start; gap: 12px; text-align: left; width: 100%;
+  padding: 12px 14px; border-radius: var(--r); border: 1px solid var(--line); background: #231a15;
+  transition: background .12s ease, border-color .12s ease;
+}
+.opt:hover:not([disabled]) { background: var(--plank-2); border-color: #6a5140; }
+.opt[disabled] { cursor: default; }
+.opt .key {
+  flex: none; width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center;
+  background: var(--plank-2); border: 1px solid var(--line); font-weight: 700; font-size: 0.85rem; color: var(--muted);
+}
+.opt .lbl { flex: 1; min-width: 0; padding-top: 2px; overflow-wrap: anywhere; }
+.opt .lbl.big { font-family: var(--f-display); font-size: 1.15rem; padding-top: 0; }
+.opt .marks { flex: none; display: flex; gap: 4px; align-items: center; padding-top: 2px; }
+.opt.right { border-color: var(--good); background: rgba(134,209,111,0.12); }
+.opt.right .key { background: var(--good); color: #10200a; border-color: var(--good); }
+.opt.wrong { border-color: var(--bad); background: rgba(233,114,95,0.12); }
+.opt.wrong .key { background: var(--bad); color: #2a0b06; border-color: var(--bad); }
+.opt.faded { opacity: 0.55; }
+.tag { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.tag.you { background: var(--gold); color: var(--gold-ink); }
+.tag.pal { background: var(--mana); color: #062026; }
+.feedback { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.verdict { font-family: var(--f-display); font-size: 1.2rem; }
+.verdict.ok { color: var(--good); }
+.verdict.no { color: var(--bad); }
+
+/* partner strip */
+.partners { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; }
+.partners .head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pal-row { display: flex; align-items: center; gap: 10px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--mana); flex: none; box-shadow: 0 0 0 3px rgba(111,198,216,0.18); }
+.dot.wait { background: var(--line); box-shadow: none; animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.4; } }
+.pal-name { font-weight: 700; color: var(--mana); overflow-wrap: anywhere; }
+.pal-prog { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+.copy { padding: 6px 10px; font-size: 0.85rem; }
+.codechip { font-family: var(--f-display); letter-spacing: 0.15em; color: var(--gold); }
+
+/* results */
+.tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.tile { padding: 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tile .n { font-family: var(--f-display); font-size: 2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .n small { font-size: 1rem; color: var(--muted); }
+.tile.you .n { color: var(--gold); }
+.tile.pal .n { color: var(--mana); }
+.review { display: flex; flex-direction: column; gap: 8px; }
+.rv { padding: 12px 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.rv .q { font-weight: 600; }
+.rv .q .num { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.rv .ans { font-size: 0.92rem; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.rv .ans .who { font-weight: 700; font-size: 0.78rem; min-width: 64px; }
+.rv .ans .who.you { color: var(--gold); }
+.rv .ans .who.pal { color: var(--mana); }
+.rv .ans .who.key { color: var(--good); }
+.rv .ans .v { min-width: 0; overflow-wrap: anywhere; }
+.ok-t { color: var(--good); } .no-t { color: var(--bad); }
+.resultcode { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95rem; background: #1a1210; border: 1px dashed var(--line); border-radius: var(--r); padding: 10px 12px; overflow-wrap: anywhere; user-select: all; }
+.foot { color: #8a7666; font-size: 0.8rem; text-align: center; }
+.loading { text-align: center; padding: 60px 0; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap" id="app">
+  <div class="loading">Pouring the questions…</div>
+</div>
+
+<script>
+(() => {
+"use strict";
+const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+const LEN = 20;
+const LET = ["A", "B", "C", "D"];
+const GROUP = {
+  tier: "Minion", stats: "Minion", type: "Minion", effect: "Minion", whois: "Minion", golden: "Minion",
+  oldstats: "Minion", oldeffect: "Minion", duos: "Minion",
+  armor: "Hero", duoarmor: "Hero", health: "Hero", hpname: "Hero", hpwho: "Hero", hpeffect: "Hero",
+  hpcost: "Hero", buddy: "Hero", buddywho: "Hero",
+  quest: "Quest", questwho: "Quest", trinket: "Trinket", trinketcost: "Trinket", trinketkind: "Trinket",
+  spell: "Tavern spell", spellcost: "Tavern spell", spelltier: "Tavern spell",
+  anomaly: "Anomaly", anomalywho: "Anomaly"
+};
+const CAP = { Minion: 9, Hero: 7, Quest: 3, Trinket: 3, "Tavern spell": 3, Anomaly: 3 };
+
+let BANK = null;
+let S = { screen: "home", mode: "solo", code: "", nick: "", qs: [], answers: [], cur: 0, compare: null };
+let roomState = "idle";
+
+// ------------------------------------------------------------ helpers
+const $ = (sel, el = document) => el.querySelector(sel);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const rich = s => esc(s).replace(/&lt;(\/?)(b|i)&gt;/g, "<$1$2>");
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+function xmur3(str) {
+  let h = 1779033703 ^ str.length;
+  for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
+  return () => { h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; };
+}
+function mulberry32(a) {
+  return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+function shuffle(arr, rand) {
+  for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
+  return arr;
+}
+function newCode() {
+  const r = new Uint32Array(5); crypto.getRandomValues(r);
+  return Array.from(r, x => ALPH[x % ALPH.length]).join("");
+}
+function normCode(s) { return String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1"); }
+function validCode(c) { return c.length === 5 && [...c].every(ch => ALPH.includes(ch)); }
+
+function buildQuiz(code) {
+  const rand = mulberry32(xmur3("tavern-trivia-v1:" + code)());
+  const order = shuffle([...BANK.keys()], rand);
+  const picked = [], keys = new Set(), groups = {};
+  for (const i of order) {
+    const q = BANK[i], g = GROUP[q.c] || "Minion";
+    if (keys.has(q.k) || (groups[g] || 0) >= CAP[g]) continue;
+    keys.add(q.k); groups[g] = (groups[g] || 0) + 1; picked.push(i);
+    if (picked.length === LEN) break;
+  }
+  return picked.map(i => {
+    const q = BANK[i];
+    const opts = q.c === "trinketkind" ? ["Lesser Trinket", "Greater Trinket"] : shuffle([q.a, ...q.o], rand);
+    return { i, opts, correct: opts.indexOf(q.a) };
+  });
+}
+const qOf = item => BANK[item.i];
+const myScore = () => S.answers.reduce((n, a, k) => n + (a === S.qs[k].correct ? 1 : 0), 0);
+const answeredCount = () => S.answers.filter(a => a !== null && a !== undefined).length;
+function encodeAnswers(arr) { return S.qs.map((_, k) => (arr[k] === null || arr[k] === undefined) ? "-" : LET[arr[k]]).join(""); }
+function decodeAnswers(str) { return [...String(str || "")].slice(0, LEN).map(ch => { const n = LET.indexOf(ch); return n < 0 ? null : n; }); }
+function scoreOf(arr) { return arr.reduce((n, a, k) => n + (S.qs[k] && a === S.qs[k].correct ? 1 : 0), 0); }
+
+// ------------------------------------------------------------ live co-op
+// Two ways to reach a friend: the claude.ai room (when the page runs there), otherwise a
+// peer-to-peer link through the free PeerJS service. Either way, each player shares
+// { code, name, ans, done } and every page keeps a map of the other players.
+const PEERJS_SRC = "https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js";
+let pals = new Map(), transport = null, gen = 0, retryTimer = null, retries = 0;
+
+function myState() { return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done: S.screen === "results" }; }
+function setPal(id, st) {
+  if (!st || typeof st !== "object" || st.code !== S.code) return;
+  pals.set(id, { id, name: String(st.name || "Your friend").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, left: false });
+  refreshPartnerBits();
+}
+function markLeft(id) { const p = pals.get(id); if (p && !p.left) { p.left = true; refreshPartnerBits(); } }
+function others() { return [...pals.values()]; }
+function partnerList() {
+  const live = others();
+  if (S.compare && !live.some(p => p.name === S.compare.name)) live.push(S.compare);
+  return live;
+}
+function setLive(state) { if (roomState !== state) { roomState = state; refreshPartnerBits(); } }
+function withTimeout(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]); }
+
+async function viaRoom(code, my) {
+  let lobby = null;
+  try { lobby = await window.claude?.use?.("room"); } catch (e) { lobby = null; }
+  if (!lobby) return null;
+  const r = await lobby.join("q-" + code.toLowerCase());
+  const unsub = r.onPeers(ch => {
+    if (my !== gen) return;
+    const here = new Set();
+    ch.peers.forEach(p => { if (p.sameTab || !p.presence || !p.presence.code) return; here.add("r:" + p.peer); setPal("r:" + p.peer, p.presence); });
+    for (const id of pals.keys()) if (id.startsWith("r:") && !here.has(id)) markLeft(id);
+  }, () => { if (my === gen) setLive("off"); });
+  return {
+    send() { r.presence(myState()).catch(() => {}); },
+    close() { try { unsub(); } catch (e) {} try { r.leave(); } catch (e) {} }
+  };
+}
+
+function loadPeerJs() {
+  if (window.Peer) return Promise.resolve(window.Peer);
+  return new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = PEERJS_SRC; s.async = true;
+    s.onload = () => window.Peer ? res(window.Peer) : rej(new Error("no Peer"));
+    s.onerror = () => rej(new Error("load failed"));
+    document.head.appendChild(s);
+  });
+}
+async function viaPeer(code, my) {
+  const Peer = await withTimeout(loadPeerJs(), 10000);
+  const opts = Object.assign({ debug: 0 }, window.TT_PEER_OPTS || {});
+  const hostId = "tavern-trivia-v1-" + code.toLowerCase();
+  const conns = new Set();
+  let peer = null, isHost = false, closed = false;
+  const open = id => new Promise((res, rej) => {
+    const p = id ? new Peer(id, opts) : new Peer(opts);
+    p.once("open", () => res(p));
+    p.once("error", e => { try { p.destroy(); } catch (x) {} rej(e); });
+  });
+  const sendTo = (c, msg) => { try { c.open && c.send(msg); } catch (e) {} };
+  const wire = conn => {
+    conns.add(conn);
+    conn.on("open", () => {
+      sendTo(conn, { t: "state", s: myState() });
+      if (isHost) others().forEach(p => { if (!p.left && p.id !== "p:" + conn.peer) sendTo(conn, { t: "relay", id: p.id.slice(2), s: { ...myState(), name: p.name, ans: encodeAnswers(p.answers), done: p.done } }); });
+    });
+    conn.on("data", d => {
+      if (my !== gen || !d || typeof d !== "object") return;
+      if (d.t === "state") {
+        setPal("p:" + conn.peer, d.s);
+        if (isHost) conns.forEach(c => { if (c !== conn) sendTo(c, { t: "relay", id: conn.peer, s: d.s }); });
+      } else if (d.t === "relay" && typeof d.id === "string" && d.id !== peer.id) {
+        setPal("p:" + d.id, d.s);
+      } else if (d.t === "left" && typeof d.id === "string") {
+        markLeft("p:" + d.id);
+      }
+    });
+    conn.on("close", () => {
+      conns.delete(conn);
+      if (my !== gen) return;
+      markLeft("p:" + conn.peer);
+      if (isHost) conns.forEach(c => sendTo(c, { t: "left", id: conn.peer }));
+      else if (!closed) scheduleRetry(my);      // the host left: try to take over the code
+    });
+    conn.on("error", () => {});
+  };
+  try {
+    peer = await withTimeout(open(hostId), 12000);
+    isHost = true;
+  } catch (e) {
+    if (!e || e.type !== "unavailable-id") throw e;   // the code is taken, so a friend is hosting it
+    peer = await withTimeout(open(null), 12000);
+    const c = peer.connect(hostId, { reliable: true });
+    wire(c);
+    setTimeout(() => { if (my === gen && !c.open && !closed) { try { c.close(); } catch (x) {} scheduleRetry(my); } }, 15000);
+  }
+  peer.on("connection", c => { if (isHost) wire(c); else try { c.close(); } catch (x) {} });
+  peer.on("error", e => { if (my === gen && e && e.type === "peer-unavailable") scheduleRetry(my); });
+  peer.on("disconnected", () => { if (!closed) try { peer.reconnect(); } catch (x) {} });
+  return {
+    send() { const s = myState(); conns.forEach(c => sendTo(c, { t: "state", s })); },
+    close() { closed = true; try { peer.destroy(); } catch (x) {} }
+  };
+}
+function scheduleRetry(my) {
+  if (my !== gen || retryTimer || retries > 40) return;
+  retryTimer = setTimeout(() => { retryTimer = null; if (my === gen) { retries++; connectLive(true); } }, 4000);
+}
+async function connectLive(isRetry) {
+  if (S.mode !== "coop" || !S.code) return;
+  const my = ++gen, code = S.code;
+  try { transport && transport.close(); } catch (e) {}
+  transport = null;
+  if (!isRetry) { retries = 0; setLive("connecting"); }
+  let t = null;
+  try { t = await viaRoom(code, my); } catch (e) { t = null; }
+  if (!t) { try { t = await viaPeer(code, my); } catch (e) { t = null; } }
+  if (my !== gen) { try { t && t.close(); } catch (e) {} return; }
+  if (!t) { if (isRetry) scheduleRetry(my); setLive(isRetry && roomState === "on" ? "on" : "off"); return; }
+  transport = t; setLive("on"); t.send();
+}
+function joinRoom() { connectLive(false); }
+function leaveRoom() {
+  gen++;
+  clearTimeout(retryTimer); retryTimer = null;
+  try { transport && transport.close(); } catch (e) {}
+  transport = null; pals = new Map(); roomState = "idle";
+}
+function pushPresence() { if (transport) transport.send(); }
+window.addEventListener("pagehide", () => { try { transport && transport.close(); } catch (e) {} });
+
+// ------------------------------------------------------------ actions
+function startGame(mode, code) {
+  S = { screen: "ready", mode, code, nick: S.nick, qs: buildQuiz(code), answers: Array(LEN).fill(null), cur: 0, compare: null };
+  if (mode === "solo") S.screen = "quiz";
+  render();
+  if (mode === "coop") joinRoom(); else leaveRoom();
+}
+function answer(k) {
+  if (S.answers[S.cur] !== null) return;
+  S.answers[S.cur] = k; pushPresence(); render();
+  const nb = $("#next"); nb && nb.focus({ preventScroll: true });
+}
+function next() {
+  if (S.answers[S.cur] === null) return;
+  if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  else { S.screen = "results"; pushPresence(); render(); window.scrollTo({ top: 0 }); }
+}
+function home() { leaveRoom(); S = { screen: "home", mode: "solo", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null }; render(); }
+function copyText(text, btn) {
+  const done = ok => { if (btn) { const t = btn.textContent; btn.textContent = ok ? "Copied" : "Select it and copy"; setTimeout(() => btn.textContent = t, 1600); } };
+  try { navigator.clipboard.writeText(text).then(() => done(true), () => done(false)); } catch (e) { done(false); }
+}
+
+// ------------------------------------------------------------ rendering
+function header() {
+  const inGame = S.screen === "quiz" || S.screen === "results";
+  return `<header class="top">
+    <button class="brand" id="go-home" aria-label="Tavern Trivia home"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></button>
+    ${inGame ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>` : ""}
+  </header>`;
+}
+function homeView() {
+  const counts = {};
+  BANK.forEach(q => { const g = GROUP[q.c]; counts[g] = (counts[g] || 0) + 1; });
+  return `${header()}
+  <section class="hero">
+    <span class="eyebrow">Hearthstone Battlegrounds quiz</span>
+    <h2>How well do you really know Bob's Tavern?</h2>
+    <p>Twenty random questions from a bank of ${BANK.length.toLocaleString()}: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies.</p>
+    <div class="facts">${Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<span class="chip">${n} ${esc(g)}</span>`).join("")}</div>
+  </section>
+  <div class="field" style="max-width:320px">
+    <label for="nick">Your name (shown to your friend)</label>
+    <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
+  </div>
+  <div class="modes">
+    <section class="board mode">
+      <span class="eyebrow">Solo</span>
+      <h3>Play alone</h3>
+      <p>Twenty fresh questions. You get a code at the end so a friend can try the same set.</p>
+      <div class="spacer"></div>
+      <button class="btn gold block" id="solo">Start 20 questions</button>
+    </section>
+    <section class="board mode">
+      <span class="eyebrow">Co-op</span>
+      <h3>Play with a friend</h3>
+      <p>Get a 5-letter code and send it to a friend. You both answer the same 20 questions and see each other's picks.</p>
+      <button class="btn gold block" id="create">Create a game</button>
+      <div class="divider">or join one</div>
+      <form class="row" id="joinform" autocomplete="off">
+        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Invite code" value="${esc(S.pendingCode || "")}">
+        <button class="btn" type="submit">Join</button>
+      </form>
+      <p class="err" id="joinerr" role="alert"></p>
+    </section>
+  </div>
+  <p class="foot">Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.</p>`;
+}
+function partnerStrip(context) {
+  if (S.mode !== "coop") return "";
+  const list = others();
+  let body;
+  if (roomState === "off" && !list.length) {
+    body = `<p class="small muted" style="margin:0">Couldn't connect for live updates. You still get the same questions as your friend. Swap result codes at the end to compare.</p>`;
+  } else if (!list.length) {
+    body = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">${roomState === "connecting" ? "Connecting…" : "Waiting for your friend to join with the code"}</span></div>`;
+  } else {
+    body = list.map(p => {
+      const n = p.answers.filter(a => a !== null).length;
+      const sc = scoreOf(p.answers);
+      const status = p.done ? "Finished" : p.left ? "Left the game" : `Question ${Math.min(n + 1, LEN)} of ${LEN}`;
+      return `<div class="pal-row"><span class="dot${p.left && !p.done ? " wait" : ""}" aria-hidden="true"></span><span class="pal-name">${esc(p.name)}</span>
+        <span class="pal-prog">${status} · ${sc} correct</span></div>`;
+    }).join("");
+  }
+  return `<section class="board partners" id="partners" aria-live="polite">
+    <div class="head"><span class="eyebrow">Co-op · code <span class="codechip">${esc(S.code)}</span></span>
+    <button class="btn copy" data-copy="${esc(S.code)}">Copy code</button></div>
+    ${body}
+  </section>`;
+}
+function readyView() {
+  return `${header()}
+  <section class="board stack center">
+    <span class="eyebrow">Your invite code</span>
+    <div class="code-big" aria-label="Invite code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
+    <p class="muted" style="margin:0 auto;max-width:44ch">Send this code to your friend. They choose <b>Join</b> on the home screen and type it in. You'll both get the same 20 questions in the same order.</p>
+    <div class="row" style="justify-content:center">
+      <button class="btn" data-copy="${esc(S.code)}">Copy code</button>
+      <button class="btn gold" id="begin">Start the quiz</button>
+    </div>
+    <p class="small muted" style="margin:0">You don't have to wait. Your friend's answers appear as they go.</p>
+  </section>
+  ${partnerStrip()}`;
+}
+function quizView() {
+  const item = S.qs[S.cur], q = qOf(item), mine = S.answers[S.cur], done = mine !== null;
+  const [qline, ...rest] = q.q.split("\n");
+  const card = rest.join(" ");
+  const pals = S.mode === "coop" ? others() : [];
+  const pips = S.qs.map((it, k) => {
+    const a = S.answers[k];
+    const cls = k === S.cur && !done ? "now" : a === null ? "" : a === it.correct ? "ok" : "no";
+    return `<span class="pip ${cls}"></span>`;
+  }).join("");
+  const bigLabels = !q.r;
+  const opts = item.opts.map((o, k) => {
+    let cls = "";
+    if (done) cls = k === item.correct ? "right" : k === mine ? "wrong" : "faded";
+    const marks = [];
+    if (done && k === mine) marks.push(`<span class="tag you">You</span>`);
+    if (done) pals.forEach(p => { if (p.answers[S.cur] === k) marks.push(`<span class="tag pal">${esc(p.name)}</span>`); });
+    return `<button class="opt ${cls}" data-opt="${k}" ${done ? "disabled" : ""}>
+      <span class="key">${LET[k]}</span><span class="lbl ${bigLabels ? "big" : ""}">${rich(o)}</span>
+      ${marks.length ? `<span class="marks">${marks.join("")}</span>` : ""}</button>`;
+  }).join("");
+  let palNote = "";
+  if (done && pals.length) {
+    palNote = pals.map(p => {
+      const a = p.answers[S.cur];
+      return a === null ? `<span class="muted">${esc(p.name)} hasn't answered this one yet.</span>`
+        : `<span><b class="pal-name">${esc(p.name)}</b> ${a === item.correct ? `<span class="ok-t">got it right</span>` : `<span class="no-t">picked ${LET[a]}</span>`}.</span>`;
+    }).join(" ");
+  }
+  const g = GROUP[q.c];
+  return `${header()}
+  <div class="pips" aria-label="Progress: question ${S.cur + 1} of ${LEN}">${pips}</div>
+  <section class="board stack">
+    <div class="qmeta"><span class="eyebrow">Question ${S.cur + 1} of ${LEN}</span>
+      <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
+    <h2 class="qtext">${esc(qline)}</h2>
+    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}
+    <div class="opts" role="group" aria-label="Answers">${opts}</div>
+    ${done ? `<div class="feedback">
+        <span class="verdict ${mine === item.correct ? "ok" : "no"}">${mine === item.correct ? "Correct!" : "Not quite."}</span>
+        <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "See results"}</button>
+      </div>${palNote ? `<p class="small" style="margin:0" id="palnote">${palNote}</p>` : ""}` : `<p class="small muted" style="margin:0">Tip: press 1 to 4 to answer, Enter for the next question.</p>`}
+  </section>
+  ${partnerStrip()}`;
+}
+function resultsView() {
+  const me = myScore();
+  const pals = S.mode === "coop" ? partnerList() : (S.compare ? [S.compare] : []);
+  const myCode = S.code + "-" + encodeAnswers(S.answers);
+  const byGroup = {};
+  S.qs.forEach((it, k) => { const g = GROUP[qOf(it).c]; byGroup[g] = byGroup[g] || [0, 0]; byGroup[g][1]++; if (S.answers[k] === it.correct) byGroup[g][0]++; });
+  const verdict = me >= 18 ? "Tavern legend." : me >= 14 ? "Top four, easily." : me >= 10 ? "Solid lobby. Bob approves." : me >= 6 ? "You held on to your Armor." : "Bob says: keep practising.";
+  const tiles = [`<div class="tile you"><span class="eyebrow">${esc(S.nick || "You")}</span><span class="n">${me}<small> / ${LEN}</small></span></div>`]
+    .concat(pals.map(p => `<div class="tile pal"><span class="eyebrow">${esc(p.name)}${p.done ? "" : " · still playing"}</span><span class="n">${scoreOf(p.answers)}<small> / ${LEN}</small></span></div>`));
+  if (pals.length === 1) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${me + scoreOf(pals[0].answers)}<small> / ${LEN * 2}</small></span></div>`);
+  const review = S.qs.map((it, k) => {
+    const q = qOf(it);
+    const [qline, ...rest] = q.q.split("\n");
+    const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer yet</span></div>`
+      : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
+    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
+      ${line(S.nick || "You", "you", S.answers[k])}
+      ${pals.map(p => line(p.name, "pal", p.answers[k])).join("")}
+      ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
+  }).join("");
+  return `${header()}
+  <section class="board stack">
+    <span class="eyebrow">Results · code <span class="codechip">${esc(S.code)}</span></span>
+    <h2 style="font-size:1.9rem">${verdict}</h2>
+    <div class="tally">${tiles.join("")}</div>
+    <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
+    <div class="row">
+      <button class="btn gold" id="again">${S.mode === "coop" ? "New co-op game" : "Play 20 more"}</button>
+      <button class="btn" id="go-home2">Home</button>
+    </div>
+  </section>
+  ${partnerStrip()}
+  <section class="board stack">
+    <span class="eyebrow">Compare with result codes</span>
+    <p class="small muted" style="margin:0">Your result code holds your code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
+    <div class="row"><div class="resultcode" style="flex:1 1 220px">${esc(myCode)}</div><button class="btn" data-copy="${esc(myCode)}">Copy</button></div>
+    <form class="row" id="cmpform" autocomplete="off">
+      <input class="input" id="cmpname" maxlength="20" placeholder="Friend's name" aria-label="Friend's name" style="flex:1 1 120px">
+      <input class="input" id="cmpcode" placeholder="Paste their result code" aria-label="Friend's result code" style="flex:2 1 200px">
+      <button class="btn" type="submit">Compare</button>
+    </form>
+    <p class="err" id="cmperr" role="alert"></p>
+  </section>
+  <section class="stack">
+    <span class="eyebrow">Question by question</span>
+    <div class="review">${review}</div>
+  </section>`;
+}
+
+function render() {
+  const app = $("#app");
+  if (!BANK) return;
+  app.innerHTML = S.screen === "home" ? homeView() : S.screen === "ready" ? readyView() : S.screen === "quiz" ? quizView() : resultsView();
+  bind();
+}
+function refreshPartnerBits() {
+  // re-render only when something partner-related is on screen
+  if (S.screen === "home") return;
+  const active = document.activeElement && document.activeElement.id;
+  if (active === "cmpcode" || active === "cmpname") { const el = $("#partners"); if (el) el.outerHTML = partnerStrip(); bindCopy(); return; }
+  render();
+  if (active) { const el = document.getElementById(active); el && el.focus({ preventScroll: true }); }
+}
+function bindCopy() { document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyText(b.dataset.copy, b)); }
+function bind() {
+  bindCopy();
+  const on = (id, fn) => { const el = document.getElementById(id); if (el) el.onclick = fn; };
+  on("go-home", home); on("go-home2", home);
+  const nick = $("#nick");
+  if (nick) nick.oninput = () => { S.nick = nick.value.trim().slice(0, 20); store("tt-nick", S.nick); };
+  on("solo", () => startGame("solo", newCode()));
+  on("create", () => startGame("coop", newCode()));
+  const jf = $("#joinform");
+  if (jf) jf.onsubmit = e => {
+    e.preventDefault();
+    const c = normCode($("#joincode").value);
+    if (!validCode(c)) { $("#joinerr").textContent = "Codes are 5 letters or numbers, like K7QX2. Check it and try again."; return; }
+    startGame("coop", c);
+  };
+  on("begin", () => { S.screen = "quiz"; render(); });
+  document.querySelectorAll("[data-opt]").forEach(b => b.onclick = () => answer(+b.dataset.opt));
+  on("next", next);
+  on("again", () => startGame(S.mode, newCode()));
+  const cf = $("#cmpform");
+  if (cf) cf.onsubmit = e => {
+    e.preventDefault();
+    const raw = $("#cmpcode").value.trim().toUpperCase();
+    const m = raw.match(/^([A-Z0-9]{5})-([ABCD-]{20})$/);
+    if (!m) { $("#cmperr").textContent = "That doesn't look like a result code. It should look like K7QX2- followed by 20 letters."; return; }
+    if (normCode(m[1]) !== S.code) { $("#cmperr").textContent = `That result is for game ${m[1]}, but you played ${S.code}. You need the same code to compare.`; return; }
+    S.compare = { name: ($("#cmpname").value.trim() || "Friend").slice(0, 20), answers: decodeAnswers(m[2]), done: true };
+    render();
+  };
+}
+document.addEventListener("keydown", e => {
+  if (S.screen !== "quiz" || e.target.tagName === "INPUT") return;
+  const k = "1234".indexOf(e.key) >= 0 ? "1234".indexOf(e.key) : "abcd".indexOf(e.key.toLowerCase());
+  if (k >= 0 && k < S.qs[S.cur].opts.length && e.key.length === 1) { answer(k); e.preventDefault(); }
+  else if (e.key === "Enter" && S.answers[S.cur] !== null && !(e.target.id === "next")) { next(); e.preventDefault(); }
+});
+
+// ------------------------------------------------------------ boot
+function start(saved) {
+  S.nick = store("tt-nick") || "";
+  fetch("questions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(bank => {
+    BANK = bank;
+    if (saved && saved.S && saved.S.code && saved.S.qs && saved.S.qs.length === LEN) {
+      S = saved.S; S.qs = buildQuiz(S.code);
+      render(); if (S.mode === "coop") joinRoom();
+    } else render();
+  }).catch(() => {
+    $("#app").innerHTML = `<div class="loading">The question bank didn't load. Reload the page to try again.</div>`;
+  });
+}
+window.claude?.hot?.snapshot?.(() => ({ S }));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+})();
+</script>
+
+</body>
+</html>
