@@ -27,9 +27,19 @@ def fixname(t):
     return re.sub(r"\ba ([AEIOU])", r"an \1", t)
 
 
+def halves(points, unit):
+    n = points / 2
+    num = f"{n:g}"
+    return f"{num} {unit}" if n == 1 else f"{num} {unit}s"
+
+
 def add(cat, key, q, a, opts, tag=None, rich=False):
     if not opts:
         return False
+    if cat == "health":
+        a, opts = halves(int(a), "heart"), [halves(int(o), "heart") for o in opts]
+    elif cat == "food":
+        a, opts = halves(int(a), "drumstick"), [halves(int(o), "drumstick") for o in opts]
     q, a, opts = fixname(q), fixname(a), [fixname(o) for o in opts]
     if any(DROP_IF.search(x) for x in [q, a] + opts):
         return False
@@ -396,7 +406,7 @@ for mob, hp in HEALTH.items():
     spread = max(4, hp // 4)
     cand = sorted({hp + d for d in (-spread * 2, -spread, spread, spread * 2, -2, 2, 4, -4, hp, -hp // 2) if hp + d > 0 and hp + d != hp})
     ds = pick([str(c) for c in cand], 3)
-    add("health", "mh:" + mob, f"How much health does {'the ' if mob in ('Ender Dragon', 'Wither', 'Warden') else 'a '}{mob} have? (2 health = 1 heart)", str(hp), ds)
+    add("health", "mh:" + mob, f"How many hearts of health does {'the ' if mob in ('Ender Dragon', 'Wither', 'Warden') else 'a '}{mob} have?", str(hp), ds)
 HOSTILE = "Zombie Creeper Skeleton Witch Stray Husk Wither Skeleton Guardian Vindicator Pillager Ravager Evoker Vex Drowned Blaze Ghast Magma Cube Slime Phantom Shulker Silverfish Endermite Hoglin Zoglin Piglin Brute Warden Breeze Bogged".split(" ")
 HOSTILE = ["Zombie", "Creeper", "Skeleton", "Witch", "Stray", "Husk", "Wither Skeleton", "Guardian", "Vindicator", "Pillager", "Ravager",
            "Evoker", "Vex", "Drowned", "Blaze", "Ghast", "Magma Cube", "Slime", "Phantom", "Shulker", "Silverfish", "Endermite", "Hoglin",
@@ -456,7 +466,7 @@ FOOD = {"Steak": 8, "Cooked Porkchop": 8, "Bread": 5, "Golden Carrot": 6, "Apple
         "Rotten Flesh": 4, "Spider Eye": 2, "Chorus Fruit": 4, "Golden Apple": 4, "Raw Beef": 3, "Raw Porkchop": 3, "Raw Chicken": 2,
         "Raw Mutton": 2, "Raw Rabbit": 3, "Cooked Rabbit": 5, "Raw Cod": 2, "Raw Salmon": 2, "Tropical Fish": 1, "Pufferfish": 1}
 for f, v in FOOD.items():
-    add("food", "fd:" + f, f"How many hunger points does eating {f} restore? (2 points = 1 drumstick)", str(v), [str(x) for x in near(v, 1, 12, spread=3)])
+    add("food", "fd:" + f, f"How many drumsticks of hunger does eating {f} fill?", str(v), [str(x) for x in near(v, 1, 12, spread=3)])
 
 # ------------------------------------------------------------------ world and game facts
 FACTS = [
@@ -493,7 +503,7 @@ FACTS = [
     ("How far do you have to fall before you take fall damage?", "More than 3 blocks", ["More than 1 block", "More than 5 blocks", "More than 10 blocks"]),
     ("How many slots are in the hotbar?", "9", ["8", "10", "12"]),
     ("How many inventory slots does a player have, not counting armor and the off-hand?", "36", ["27", "40", "45"]),
-    ("How many hunger points is a full hunger bar?", "20", ["10", "16", "30"]),
+    ("How many drumsticks make up a full hunger bar?", "10", ["8", "12", "20"]),
     ("What do you need to brew any potion first?", "Nether Wart", ["Blaze Powder", "Sugar", "Glowstone Dust"]),
     ("What fuels a Brewing Stand?", "Blaze Powder", ["Coal", "Redstone Dust", "Lava"]),
     ("What do you add to a potion to turn it into a Splash Potion?", "Gunpowder", ["Dragon's Breath", "Redstone Dust", "Glowstone Dust"]),
