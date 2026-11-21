@@ -234,24 +234,14 @@ button { cursor: pointer; }
 .hourglass { width: 44px; height: 44px; margin: 4px auto; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1.1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* leaderboard */
-.head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.lb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-@media (max-width: 560px) { .lb-cols { grid-template-columns: 1fr; } }
-.lb-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.lb-col h3 { font-size: 1.05rem; color: var(--ink); }
-.lb { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.lb li { display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; background: #221914; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
-.lb li.mine { border-color: var(--gold); background: rgba(232,180,80,0.08); }
-.lb-rank { font-family: var(--f-display); color: var(--gold); text-align: center; }
-.lb li:first-child .lb-rank { color: var(--gold-ink); background: var(--gold); border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; font-size: .85rem; }
-.lb-names { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
-.lb-score { font-family: var(--f-display); font-size: 1.1rem; }
-.lb-score small { color: var(--muted); font-size: .8rem; }
-.lb-time { color: var(--muted); font-size: .85rem; }
-.lb-empty { margin: 0; }
-.lb-note { margin: 0; padding: 10px 12px; border-radius: 8px; background: #221914; border: 1px solid var(--line); }
-.lb-note.good { border-color: var(--good); color: var(--good); }
+/* recent quizzes */
+.recent { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.rc { padding: 12px 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.rc-top, .rc-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.rc-title { font-family: var(--f-display); font-size: 1.1rem; overflow-wrap: anywhere; }
+.rc-scores { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-variant-numeric: tabular-nums; }
+.rc-score b { font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; }
+.rc-score small { color: var(--muted); }
 .review-wrap summary { cursor: pointer; font-weight: 700; color: var(--muted); padding: 6px 0; }
 .review-wrap[open] summary { margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
@@ -474,150 +464,79 @@ function leaveRoom() {
 function pushPresence() { if (transport) transport.send(); }
 window.addEventListener("pagehide", () => { try { transport && transport.close(); } catch (e) {} });
 
-// ------------------------------------------------------------ leaderboard
-// Kept on the same public relays as co-op. Each game is one saved message that never expires.
-// Every visitor's browser also remembers the top 5 and puts them back if a relay ever loses them.
-const BOARD_BASE = "tavern-trivia/v1/board/";
-const BOARD_SHOW = 5, BOARD_KEEP = 25;
-const BOARD = { entries: new Map(), state: "idle", clients: [], ready: false, waiters: [] };
-
+// ------------------------------------------------------------ recent quizzes (saved in this browser only)
+const RECENT_KEY = "tt-recent-v1", RECENT_MAX = 5;
 function fmtTime(sec) { sec = Math.max(0, Math.round(sec || 0)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
-function validEntry(mode, key, e) {
-  if (!e || typeof e !== "object" || e.v !== 1 || e.mode !== mode || !Array.isArray(e.p)) return null;
-  if (mode === "coop" ? (e.p.length < 2 || e.p.length > 4) : e.p.length !== 1) return null;
-  const p = e.p.map(x => ({ n: String((x && x.n) || "Player").slice(0, 20), s: x && Number.isInteger(x.s) && x.s >= 0 && x.s <= LEN ? x.s : -1 }));
-  if (p.some(x => x.s < 0)) return null;
-  const t = Number.isFinite(e.t) && e.t > 0 && e.t < 86400 ? Math.round(e.t) : 0;
-  if (!t) return null;
-  const total = p.reduce((a, x) => a + x.s, 0);
-  return { v: 1, key, mode, code: String(e.code || "").slice(0, 5), p, t, at: Number.isFinite(e.at) ? e.at : 0, total, max: p.length * LEN };
+function bankVersion() {
+  let h = 0; const str = BANK.length + BANK.slice(0, 20).map(q => q.q).join("|");
+  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
+  return String(h);
 }
-function rankList(mode, extra) {
-  const list = [...BOARD.entries.values()].filter(e => e.mode === mode && (!extra || e.key !== extra.key));
-  if (extra) list.push(extra);
-  return list.sort((a, b) => (b.total / b.max) - (a.total / a.max) || a.t - b.t || a.at - b.at);
-}
-function wire(e) { return JSON.stringify({ v: 1, mode: e.mode, code: e.code, p: e.p, t: e.t, at: e.at }); }
-function boardPublish(e, del) {
-  const topic = BOARD_BASE + e.mode + "/" + e.key;
-  BOARD.clients.forEach(c => { if (c.connected) c.publish(topic, del ? "" : wire(e), { qos: 1, retain: true }); });
-}
-function boardCacheSave() {
-  const top = [...rankList("coop").slice(0, BOARD_SHOW), ...rankList("solo").slice(0, BOARD_SHOW)];
-  store("tt-board-v1", JSON.stringify(top.map(e => ({ ...JSON.parse(wire(e)), key: e.key }))));
-}
-function boardReady() {
-  if (BOARD.ready) return;
-  BOARD.ready = true;
-  // put back any top-5 games this browser remembers that the relay no longer has
+function loadRecent() {
   try {
-    const cached = JSON.parse(store("tt-board-v1") || "[]");
-    cached.forEach(c => {
-      const e = c && validEntry(c.mode, String(c.key || ""), c);
-      if (e && /^[A-Z0-9]{5}(-[a-z0-9]{12})?$/.test(e.key) && !BOARD.entries.has(e.mode + "/" + e.key)) {
-        BOARD.entries.set(e.mode + "/" + e.key, e); boardPublish(e);
-      }
-    });
-  } catch (x) {}
-  // keep the stored list short
-  ["coop", "solo"].forEach(m => rankList(m).slice(BOARD_KEEP).forEach(e => { BOARD.entries.delete(m + "/" + e.key); boardPublish(e, true); }));
-  boardCacheSave();
-  BOARD.waiters.splice(0).forEach(fn => fn());
-  renderBoardBits();
+    const a = JSON.parse(store(RECENT_KEY) || "[]");
+    return Array.isArray(a) ? a.filter(e => e && validCode(String(e.code)) && e.me && typeof e.me.ans === "string").slice(0, RECENT_MAX) : [];
+  } catch (e) { return []; }
 }
-function boardConnect() {
-  if (BOARD.state !== "idle") return;
-  BOARD.state = "connecting";
-  loadMqtt().then(mqtt => {
-    const cfg = window.TT_MQTT || {};
-    BOARD.clients = (cfg.brokers || BROKERS).map(url => {
-      const c = mqtt.connect(url, { protocolVersion: cfg.protocolVersion === 4 ? 4 : 5, clientId: "ttb_" + Math.random().toString(36).slice(2, 12),
-        clean: true, connectTimeout: 10000, reconnectPeriod: 8000, keepalive: 60 });
-      c.on("connect", () => {
-        BOARD.state = "on";
-        c.subscribe(BOARD_BASE + "#", { qos: 1 }, () => setTimeout(boardReady, 1500));
-      });
-      c.on("message", (topic, buf) => {
-        const parts = topic.slice(BOARD_BASE.length).split("/");
-        if (parts.length !== 2 || !/^(coop|solo)$/.test(parts[0]) || !/^[A-Z0-9]{5}(-[a-z0-9]{12})?$/.test(parts[1]) || buf.length > 1500) return;
-        const id = parts[0] + "/" + parts[1];
-        if (!buf.length) { BOARD.entries.delete(id); renderBoardBits(); return; }
-        let raw = null; try { raw = JSON.parse(buf.toString()); } catch (x) { return; }
-        const e = validEntry(parts[0], parts[1], raw);
-        if (e) { BOARD.entries.set(id, e); renderBoardBits(); }
-      });
-      c.on("error", () => {});
-      return c;
-    });
-    setTimeout(() => { if (!BOARD.clients.some(c => c.connected)) { BOARD.state = "off"; BOARD.waiters.splice(0).forEach(fn => fn()); renderBoardBits(); } }, 12000);
-  }).catch(() => { BOARD.state = "off"; BOARD.waiters.splice(0).forEach(fn => fn()); renderBoardBits(); });
+function saveRecent() {
+  if (S.saved || !S.finishedAt || S.past) return;
+  S.saved = true;
+  const pals = (S.final || []).map(p => ({ n: p.name, ans: encodeAnswers(p.answers), s: scoreOf(p.answers) }));
+  const e = { code: S.code, mode: S.mode, at: S.finishedAt, t: elapsedSec(), bv: bankVersion(),
+    me: { n: S.meName || S.nick || "You", ans: encodeAnswers(S.answers), s: myScore() }, pals };
+  const list = loadRecent().filter(x => !(x.code === e.code && x.at === e.at));
+  list.unshift(e);
+  store(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX)));
+  saveSession();
 }
-function whenBoardReady(fn) { if (BOARD.ready || BOARD.state === "off") fn(); else { BOARD.waiters.push(fn); boardConnect(); } }
-
-function submitScore() {
-  if (S.submitted || !S.finishedAt) return;
-  S.submitted = true;
-  const coop = S.final && S.final.length > 0;
-  const me = { n: (S.nick || "Player").slice(0, 20), s: myScore(), t: elapsedSec() };
-  const all = coop ? [me, ...S.final.map(p => ({ n: p.name, s: scoreOf(p.answers), t: p.t || 0 }))] : [me];
-  all.sort((a, b) => a.n.localeCompare(b.n) || b.s - a.s);
-  const key = coop ? S.code : S.code + "-" + playerId(S.code);
-  const e = validEntry(coop ? "coop" : "solo", key, { v: 1, mode: coop ? "coop" : "solo", code: S.code, p: all.map(x => ({ n: x.n, s: x.s })), t: Math.max(...all.map(x => x.t)) || me.t, at: Date.now() });
-  if (!e) { S.board = { status: "skipped" }; return; }
-  S.board = { status: "saving", key: e.mode + "/" + e.key, mode: e.mode };
-  saveSession(); renderBoardBits();
-  whenBoardReady(() => {
-    if (BOARD.state === "off" || !BOARD.clients.some(c => c.connected)) { S.board.status = "offline"; saveSession(); renderBoardBits(); return; }
-    const ranked = rankList(e.mode, e);
-    const rank = ranked.findIndex(x => x.key === e.key) + 1;
-    if (rank >= 1 && rank <= BOARD_SHOW) { BOARD.entries.set(e.mode + "/" + e.key, e); boardPublish(e); boardCacheSave(); S.board.status = "saved"; S.board.rank = rank; }
-    else { S.board.status = "missed"; S.board.need = ranked[BOARD_SHOW - 1] ? ranked[BOARD_SHOW - 1].total : null; }
-    saveSession(); renderBoardBits();
-  });
+function openRecent(i) {
+  const e = loadRecent()[i];
+  if (!e) return;
+  stopReveal(); leaveRoom();
+  S = fresh({ screen: "results", mode: e.mode, code: e.code, qs: buildQuiz(e.code), answers: decodeAnswers(e.me.ans),
+    final: (e.pals || []).map(p => ({ name: String(p.n).slice(0, 20), answers: decodeAnswers(p.ans), done: true })),
+    startedAt: e.at - (e.t || 0) * 1000, finishedAt: e.at, saved: true, past: true, meName: String(e.me.n || "You").slice(0, 20) });
+  render(); window.scrollTo({ top: 0 });
 }
-function boardList(mode, mineKey) {
-  const list = rankList(mode).slice(0, BOARD_SHOW);
-  if (!list.length) return `<p class="small muted lb-empty">${BOARD.ready ? "No games yet. Be the first!" : BOARD.state === "off" ? "Couldn't load." : "Loading…"}</p>`;
-  return `<ol class="lb">${list.map((e, i) => `<li class="${mineKey === mode + "/" + e.key ? "mine" : ""}">
-      <span class="lb-rank">${i + 1}</span>
-      <span class="lb-names">${e.p.map(x => esc(x.n)).join(" &amp; ")}</span>
-      <span class="lb-score">${e.total}<small>/${e.max}</small></span>
-      <span class="lb-time" title="Time taken">${fmtTime(e.t)}</span></li>`).join("")}</ol>`;
-}
-function boardHtml() {
-  const mine = S.board && S.board.key;
-  let note = "";
-  if (S.board && S.screen === "results") {
-    const b = S.board;
-    note = b.status === "saving" ? `<p class="lb-note">Checking the leaderboard…</p>`
-      : b.status === "saved" ? `<p class="lb-note good">Your game made it onto the leaderboard at <b>#${b.rank}</b>!</p>`
-      : b.status === "missed" ? `<p class="lb-note">Not in the top ${BOARD_SHOW} this time.${b.need !== null && b.need !== undefined ? ` The #${BOARD_SHOW} game scored ${b.need}.` : ""}</p>`
-      : b.status === "offline" ? `<p class="lb-note">The leaderboard couldn't be reached, so this score wasn't saved.</p>` : "";
-  }
-  return `<section class="board stack" id="board">
-    <div class="head-row"><span class="eyebrow">Leaderboard · top ${BOARD_SHOW}</span><span class="small muted">Ranked by score, then fastest time</span></div>
-    ${note}
-    <div class="lb-cols">
-      <div class="lb-col"><h3>Co-op games</h3>${boardList("coop", mine)}</div>
-      <div class="lb-col"><h3>Solo games</h3>${boardList("solo", mine)}</div>
-    </div>
+function recentView() {
+  const list = loadRecent(), bv = bankVersion();
+  const when = ms => { try { return new Date(ms).toLocaleString(undefined, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }); } catch (x) { return ""; } };
+  const items = list.map((e, i) => {
+    const others = e.pals || [];
+    const title = others.length ? `Co-op with ${others.map(p => esc(p.n)).join(" &amp; ")}` : e.mode === "coop" ? "Co-op (nobody joined)" : "Solo";
+    let outcome = "";
+    if (others.length) {
+      const all = [e.me, ...others], best = Math.max(...all.map(p => p.s));
+      outcome = all.filter(p => p.s === best).length > 1 ? "Tie" : e.me.s === best ? "You won" : `${esc(others.find(p => p.s === best).n)} won`;
+    }
+    const scores = [`<span class="rc-score"><span class="you-t">${esc(e.me.n)}</span> <b>${e.me.s}</b><small>/${LEN}</small></span>`]
+      .concat(others.map(p => `<span class="rc-score"><span class="pal-name">${esc(p.n)}</span> <b>${p.s}</b><small>/${LEN}</small></span>`)).join("");
+    return `<li class="rc">
+      <div class="rc-top"><span class="rc-title">${title}</span><span class="small muted">${esc(when(e.at))}</span></div>
+      <div class="rc-scores">${scores}${outcome ? `<span class="chip${outcome === "You won" ? "" : " mana"}">${outcome}</span>` : ""}</div>
+      <div class="rc-foot"><span class="small muted">Game <span class="codechip">${esc(e.code)}</span> · ${fmtTime(e.t)}</span>
+        ${e.bv === bv ? `<button class="btn copy" data-recent="${i}">See answers</button>` : ""}</div>
+    </li>`;
+  }).join("");
+  return `${header()}
+  <section class="board stack">
+    <span class="eyebrow">Recent quizzes</span>
+    <h2 style="font-size:1.6rem">Your last ${RECENT_MAX} games</h2>
+    ${list.length ? `<ol class="recent">${items}</ol>` : `<p class="muted" style="margin:0">No quizzes yet. Your last ${RECENT_MAX} games show up here once you finish one.</p>`}
+    <p class="small muted" style="margin:0">Saved on this device and browser only.</p>
+    <div class="row"><button class="btn gold" id="go-home2">Back to home</button></div>
   </section>`;
-}
-let boardRaf = 0;
-function renderBoardBits() {
-  if (boardRaf) return;
-  boardRaf = requestAnimationFrame(() => { boardRaf = 0; const el = $("#board"); if (el) el.outerHTML = boardHtml(); });
 }
 
 // ------------------------------------------------------------ actions
 function fresh(extra) {
   return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
-    startedAt: 0, finishedAt: 0, final: null, step: 0, submitted: false, board: null }, extra || {});
+    startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "" }, extra || {});
 }
 function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.round((S.finishedAt - S.startedAt) / 1000)) : 0; }
 function needName() {
   if (S.nick) return false;
-  const el = $("#nickerr"); if (el) el.textContent = "Type your name first. It shows to your friend and on the leaderboard.";
+  const el = $("#nickerr"); if (el) el.textContent = "Type your name first so your friend knows who you are.";
   const n = $("#nick"); n && n.focus();
   return true;
 }
@@ -627,7 +546,6 @@ function startGame(mode, code, role) {
     startedAt: mode === "solo" ? Date.now() : 0 });
   render();
   if (mode === "coop") joinRoom(); else leaveRoom();
-  boardConnect();
 }
 function answer(k) {
   if (S.answers[S.cur] !== null) return;
@@ -639,7 +557,7 @@ function next() {
   if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
   S.finishedAt = Date.now();
   if (S.mode === "coop" && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
-  else { S.screen = "results"; pushPresence(); render(); submitScore(); }
+  else { S.screen = "results"; pushPresence(); render(); saveRecent(); }
   window.scrollTo({ top: 0 });
 }
 function checkAllDone() {
@@ -656,7 +574,7 @@ const STEP_MS = k => (k === 0 ? 5000 : k === 1 ? 2000 : 5000) * (window.TT_SPEED
 function startReveal() {
   S.final = others().filter(p => p.done || p.answers.some(a => a !== null))
     .map(p => ({ id: p.id, name: p.name, answers: p.answers.slice(), t: p.t, done: p.done }));
-  if (!S.final.length) { S.final = null; S.screen = "results"; render(); submitScore(); return; }
+  if (!S.final.length) { S.final = null; S.screen = "results"; render(); saveRecent(); return; }
   S.screen = "reveal"; S.step = 0; render(); window.scrollTo({ top: 0 });
   scheduleStep();
 }
@@ -669,15 +587,16 @@ function scheduleStep() {
   }, STEP_MS(S.step));
 }
 function stopReveal() { clearTimeout(revealTimer); revealTimer = 0; }
-function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); submitScore(); }
+function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); saveRecent(); }
 
-function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); boardConnect(); }
+function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); }
+function showRecent() { stopReveal(); leaveRoom(); S = fresh({ screen: "recent" }); clearSession(); render(); window.scrollTo({ top: 0 }); }
 function copyText(text, btn) {
   const done = ok => { if (btn) { const t = btn.textContent; btn.textContent = ok ? "Copied" : "Select it and copy"; setTimeout(() => btn.textContent = t, 1600); } };
   try { navigator.clipboard.writeText(text).then(() => done(true), () => done(false)); } catch (e) { done(false); }
 }
 function saveSession() {
-  if (S.screen === "home") return;
+  if (S.screen === "home" || S.screen === "recent") return;
   try { sessionStorage.setItem("tt-game", JSON.stringify({ ...S, qs: undefined })); } catch (e) {}
 }
 function clearSession() { try { sessionStorage.removeItem("tt-game"); } catch (e) {} }
@@ -687,7 +606,8 @@ function header() {
   const showScore = S.screen === "quiz" || S.screen === "results";
   return `<header class="top">
     <button class="brand" id="go-home" aria-label="Tavern Trivia home"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></button>
-    ${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>` : ""}
+    ${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
+      : S.screen === "home" ? `<button class="btn copy" id="recent-btn">Recent quizzes</button>` : ""}
   </header>`;
 }
 function homeView() {
@@ -701,7 +621,7 @@ function homeView() {
     <div class="facts">${Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<span class="chip">${n} ${esc(g)}</span>`).join("")}</div>
   </section>
   <div class="field" style="max-width:320px">
-    <label for="nick">Your name (shown to your friend and on the leaderboard)</label>
+    <label for="nick">Your name (shown to your friend)</label>
     <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
     <p class="err" id="nickerr" role="alert"></p>
   </div>
@@ -709,7 +629,7 @@ function homeView() {
     <section class="board mode">
       <span class="eyebrow">Solo</span>
       <h3>Play alone</h3>
-      <p>Twenty fresh questions. Beat the top 5 to get your name on the leaderboard.</p>
+      <p>Twenty fresh questions from the bank. Your last 5 games are saved under <b>Recent quizzes</b>.</p>
       <div class="spacer"></div>
       <button class="btn gold block" id="solo">Start 20 questions</button>
     </section>
@@ -726,7 +646,6 @@ function homeView() {
       <p class="err" id="joinerr" role="alert"></p>
     </section>
   </div>
-  ${boardHtml()}
   <p class="foot">Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.</p>`;
 }
 function palStatus(p) {
@@ -844,7 +763,7 @@ function waitingView() {
   ${partnerStrip()}`;
 }
 function revealView() {
-  const players = [{ label: S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal", answers: p.answers })));
+  const players = [{ label: S.meName || S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal", answers: p.answers })));
   const ms = STEP_MS(S.step);
   const timer = `<div class="timer" aria-hidden="true"><span style="animation-duration:${ms}ms"></span></div>`;
   const skip = `<button class="btn skip" id="skip">Skip to scores</button>`;
@@ -880,7 +799,7 @@ function resultsView() {
   const byGroup = {};
   S.qs.forEach((it, k) => { const g = GROUP[qOf(it).c]; byGroup[g] = byGroup[g] || [0, 0]; byGroup[g][1]++; if (S.answers[k] === it.correct) byGroup[g][0]++; });
   const verdict = me >= 18 ? "Tavern legend." : me >= 14 ? "Top four, easily." : me >= 10 ? "Solid lobby. Bob approves." : me >= 6 ? "You held on to your Armor." : "Bob says: keep practising.";
-  const scores = [{ name: S.nick || "You", s: me, cls: "you" }].concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), cls: "pal" })));
+  const scores = [{ name: S.meName || S.nick || "You", s: me, cls: "you" }].concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), cls: "pal" })));
   const best = Math.max(...scores.map(x => x.s));
   const tiles = scores.map(x => `<div class="tile ${x.cls}"><span class="eyebrow">${esc(x.name)}${pals.length && x.s === best && scores.filter(y => y.s === best).length === 1 ? " · winner" : ""}</span><span class="n">${x.s}<small> / ${LEN}</small></span></div>`);
   if (pals.length) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${scores.reduce((a, x) => a + x.s, 0)}<small> / ${LEN * scores.length}</small></span></div>`);
@@ -890,23 +809,22 @@ function resultsView() {
     const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
       : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
     return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
-      ${line(S.nick || "You", "you", S.answers[k])}
+      ${line(S.meName || S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal", p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
   }).join("");
-  const showCompare = !(S.final && S.final.length);
+  const showCompare = !(S.final && S.final.length) && !S.past;
   return `${header()}
   <section class="board stack">
-    <span class="eyebrow">Results · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
+    <span class="eyebrow">${S.past ? "Past game" : "Results"} · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
     <h2 style="font-size:1.9rem">${verdict}</h2>
     <div class="tally">${tiles.join("")}</div>
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
     <div class="row">
-      <button class="btn gold" id="again">${S.mode === "coop" ? "New co-op game" : "Play 20 more"}</button>
+      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>` : `<button class="btn gold" id="again">${S.mode === "coop" ? "New co-op game" : "Play 20 more"}</button>`}
       <button class="btn" id="go-home2">Home</button>
     </div>
   </section>
-  ${boardHtml()}
   ${showCompare ? `<section class="board stack">
     <span class="eyebrow">Compare with result codes</span>
     <p class="small muted" style="margin:0">Your result code holds your game code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
@@ -926,13 +844,13 @@ function resultsView() {
 function render() {
   const app = $("#app");
   if (!BANK) return;
-  const v = { home: homeView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView }[S.screen] || resultsView;
+  const v = { home: homeView, recent: recentView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView }[S.screen] || resultsView;
   app.innerHTML = v();
   bind();
   saveSession();
 }
 function refreshPartnerBits() {
-  if (S.screen === "home" || S.screen === "reveal" || S.screen === "results") return;
+  if (S.screen === "home" || S.screen === "recent" || S.screen === "reveal" || S.screen === "results") return;
   if (S.screen === "waiting") { render(); checkAllDone(); return; }
   if (S.screen === "ready") { render(); return; }
   const el = $("#partners");
@@ -945,7 +863,9 @@ function bind() {
   on("go-home", home); on("go-home2", home);
   const nick = $("#nick");
   if (nick) nick.oninput = () => { S.nick = nick.value.trim().slice(0, 20); store("tt-nick", S.nick); const e = $("#nickerr"); if (e && S.nick) e.textContent = ""; };
-  on("solo", () => { if (!needName()) startGame("solo", newCode()); });
+  on("solo", () => startGame("solo", newCode()));
+  on("recent-btn", showRecent);
+  document.querySelectorAll("[data-recent]").forEach(b => b.onclick = () => openRecent(+b.dataset.recent));
   on("create", () => { if (!needName()) startGame("coop", newCode(), "host"); });
   const jf = $("#joinform");
   if (jf) jf.onsubmit = e => {
@@ -986,10 +906,9 @@ function restore(saved) {
   S.qs = buildQuiz(S.code);
   if (!Array.isArray(S.answers) || S.answers.length !== LEN) S.answers = Array(LEN).fill(null);
   if (S.screen === "reveal") S.screen = "results";
-  if (S.board && S.board.status === "saving") { S.submitted = false; S.board = null; }
   render();
   if (S.mode === "coop" && S.screen !== "results") joinRoom();
-  if (S.screen === "results") { boardConnect(); submitScore(); }
+  if (S.screen === "results") saveRecent();
   return true;
 }
 function start(saved) {
@@ -999,7 +918,6 @@ function start(saved) {
     let session = null;
     try { session = JSON.parse(sessionStorage.getItem("tt-game") || "null"); } catch (e) {}
     if (!restore(saved && saved.S) && !restore(session)) render();
-    boardConnect();
   }).catch(() => {
     $("#app").innerHTML = `<div class="loading">The question bank didn't load. Reload the page to try again.</div>`;
   });
