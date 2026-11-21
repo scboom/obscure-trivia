@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tavern Trivia</title>
-<meta name="description" content="A Hearthstone Battlegrounds trivia quiz: 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
-<meta property="og:title" content="Tavern Trivia">
-<meta property="og:description" content="A Hearthstone Battlegrounds trivia quiz: 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<title>Tavern Trivia – Hearthstone Battlegrounds Quiz</title>
+<meta name="description" content="Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<link rel="canonical" href="https://scboom.github.io/tavern-trivia/">
+
+<meta property="og:site_name" content="Tavern Trivia">
+<meta property="og:title" content="Tavern Trivia – Hearthstone Battlegrounds Quiz">
+<meta property="og:description" content="Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/tavern-trivia/">
+<meta property="og:image" content="https://scboom.github.io/tavern-trivia/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1d1512">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Tavern Trivia", "alternateName": ["Tavern Trivia Hearthstone Quiz", "Tavern Trivia Battlegrounds"], "url": "https://scboom.github.io/tavern-trivia/"}, {"@type": "WebApplication", "name": "Tavern Trivia", "url": "https://scboom.github.io/tavern-trivia/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}]}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -211,7 +220,14 @@ button { cursor: pointer; }
 </style>
 
 <div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></div></header>
+  <section class="hero">
+    <span class="eyebrow">Hearthstone Battlegrounds quiz</span>
+    <h2>How well do you really know Bob's Tavern?</h2>
+    <p>Tavern Trivia is a free Hearthstone Battlegrounds quiz with 1,000 questions: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play 20 random questions on your own, or play co-op with a friend using a 5-letter code.</p>
+  </section>
   <div class="loading">Pouring the questions…</div>
+  <noscript><p class="center muted">Tavern Trivia needs JavaScript turned on to run the quiz.</p></noscript>
 </div>
 
 <script>
