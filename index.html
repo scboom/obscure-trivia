@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Obscure Trivia – Hearthstone &amp; Minecraft Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or in party mode with up to 6 players.">
+<title>Obscure Trivia – Hearthstone, Minecraft &amp; General Knowledge Quizzes</title>
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition and general knowledge, solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
-<meta property="og:title" content="Obscure Trivia – Hearthstone &amp; Minecraft Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or in party mode with up to 6 players.">
+<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft &amp; General Knowledge Quizzes">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition and general knowledge, solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700&family=Outfit:wght@800&family=Atkinson+Hyperlegible&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/obscure-trivia/"}</script>
 <style>
 /* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: radial-gradient(ellipse at 20% -10%, #2a2636 0%, transparent 55%), var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 48px; }
-.wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.wrap { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .top { display: flex; align-items: center; gap: 12px; }
@@ -44,8 +44,18 @@ a { color: inherit; }
 .hero h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; text-wrap: balance; max-width: 16ch; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
 .eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-@media (max-width: 640px) { .shelf { grid-template-columns: 1fr; } }
+.shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
+/* globe tile: a lit Earth in space, clean sans titles */
+.gk { border-radius: 22px; color: #f2f7ff;
+  background: linear-gradient(180deg, rgba(5,10,24,0) 25%, rgba(5,10,24,0.82) 80%), url(general-knowledge/earth-tile.jpg) 62% 40% / cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), 0 0 0 2px #7dd3fc, inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk h3 { font-family: "Outfit", system-ui, sans-serif; font-weight: 800; font-size: clamp(1.7rem, 4.4vw, 2.2rem); letter-spacing: -0.015em; }
+.gk p { color: #cfe0f5; font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+.gk .pill { border-radius: 999px; background: rgba(125,211,252,0.16); border: 1px solid rgba(125,211,252,0.45); color: #c4ecff; }
+.gk .play { color: #8edbff; }
 .quiz { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 260px; padding: 22px; text-decoration: none; overflow: hidden; min-width: 0;
   transition: transform .15s ease, box-shadow .15s ease; }
 .quiz:hover { transform: translateY(-3px); }
@@ -109,6 +119,12 @@ a { color: inherit; }
       <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
       <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
     </a>
+    <a class="quiz gk" href="general-knowledge/">
+      
+      <h3>General Knowledge</h3>
+      <p>Space, animals, the human body, countries and flags, history, science and culture. Fun facts that are easy to medium.</p>
+      <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+    </a>
   </section>
   <section class="joinbox">
     <h3>Got a code from a friend?</h3>
@@ -123,7 +139,7 @@ a { color: inherit; }
 </div>
 <script>
 (() => {
-  const routes = {"H": "hearthstone/", "M": "minecraft/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -131,7 +147,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a quiz. Hearthstone Battlegrounds codes start with H and Minecraft codes start with M."; return; }
+    if (!r) { err.textContent = "That code doesn't match a quiz. Hearthstone Battlegrounds codes start with H and Minecraft codes start with M and General Knowledge codes start with W."; return; }
     location.href = r + "?join=" + c;
   });
 })();

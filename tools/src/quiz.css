@@ -221,3 +221,8 @@ button { cursor: pointer; }
 .rank .rscore small { font-size: 0.85rem; color: var(--muted); }
 .rank .rtime { color: var(--muted); font-size: 0.85rem; min-width: 3.2em; text-align: right; }
 .head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+
+/* question pictures (e.g. flags) */
+.qimg { display: block; width: min(280px, 80%); max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin: 2px auto 0;
+  border-radius: var(--r-key); box-shadow: 0 0 0 1px var(--line), 0 8px 20px rgba(0,0,0,0.35); background: var(--tile); }
+.rvimg { display: inline-block; width: 36px; height: 27px; object-fit: cover; vertical-align: middle; margin-left: 6px; border-radius: 3px; box-shadow: 0 0 0 1px var(--line); }

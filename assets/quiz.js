@@ -555,6 +555,7 @@ function qHead(item, k) {
   return `<div class="qmeta"><span class="eyebrow">Question ${k + 1} of ${LEN}</span>
       <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
     <h2 class="qtext">${esc(qline)}</h2>
+    ${q.i ? `<img class="qimg" src="${esc(q.i)}" alt="Picture for this question" decoding="async">` : ""}
     ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}`;
 }
 function quizView() {
@@ -654,7 +655,7 @@ function resultsView() {
     const [qline, ...rest] = q.q.split("\n");
     const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
       : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
-    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
+    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}${q.i ? ` <img class="rvimg" src="${esc(q.i)}" alt="" loading="lazy">` : ""}</div>
       ${line(S.meName || S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal " + (p.c || "c1"), p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;

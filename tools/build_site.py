@@ -122,6 +122,62 @@ body { image-rendering: pixelated; }
         "intro": ("Minecraft: Bedrock Edition quiz", "Think you know every block, mob and recipe?",
                   "A free Minecraft: Bedrock Edition quiz, 20 questions per game: crafting recipes, blocks and ores, tools, mobs, enchanting, brewing, biomes and villagers. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
+    {
+        "id": "world", "dir": "general-knowledge", "bank_src": "world_questions.json",
+        "title": "General Knowledge Quiz – Obscure Trivia",
+        "desc": "A free general knowledge quiz: 20 random questions per game on space, animals, the human body, countries and flags, geography, history, science and culture. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Outfit:wght@500;600;700;800&family=Atkinson+Hyperlegible:wght@400;700",
+        "theme_color": "#050a18",
+        "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%232f7fd0'/%3E%3Cpath d='M18 18c6-4 12-2 14 3s-3 8 1 12 9 1 10 7-6 10-10 9' fill='none' stroke='%2366b45a' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23bfe3ff' stroke-width='3'/%3E%3C/svg%3E",
+        "extra": [("world/earth-bg.jpg", "earth-bg.jpg"), ("world/earth-tile.jpg", "earth-tile.jpg"), ("world/flags", "flags")],
+        "config": {
+            "id": "world", "letter": "W", "short": "General Knowledge", "icon": "",
+            "eyebrow": "General knowledge quiz", "headline": "How much do you know about our world?",
+            "topics": "space, animals, the human body, countries and flags, geography, history and inventions, science, food, sport and culture",
+            "foot": "Country facts from the open mledoze/countries dataset (ODbL) and flags from flag-icons (MIT). The Earth picture is drawn from Natural Earth map data. Fan-made quiz.",
+            "seed": "obscure-trivia-world-v1:", "topic": "obscure-trivia/world/v1/", "recentKey": "ot-recent-world-v1", "sessionKey": "ot-game-world",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"space": "Space", "animals": "Animals", "body": "Human body", "geo": "Geography", "history": "History", "science": "Science",
+                       "culture": "Culture", "capital": "Countries", "capitalwho": "Countries", "currency": "Countries", "currencywho": "Countries",
+                       "language": "Countries", "continent": "Countries", "landlocked": "Countries", "bigger": "Countries", "flag": "Countries"},
+            "caps": {"Countries": 7, "Space": 2, "Animals": 3, "Human body": 2, "Geography": 3, "History": 2, "Science": 2, "Culture": 3},
+            "verdicts": [[19, "Walking encyclopedia."], [16, "World class!"], [12, "Well travelled."], [8, "Tourist. Keep exploring!"], [0, "Time to pack your bags and explore!"]],
+        },
+        "theme": """
+:root {
+  --bg: #050a18; --bg-art: none;
+  --panel: rgba(12, 22, 48, 0.78); --panel-fill: linear-gradient(180deg, rgba(16, 30, 64, 0.82), rgba(9, 18, 42, 0.86)); --panel-2: rgba(38, 60, 110, 0.75);
+  --panel-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --line: rgba(150, 190, 255, 0.2); --line-hover: rgba(160, 210, 255, 0.55); --ink: #f2f7ff; --muted: #a9bbd8; --faint: #8296b8; --placeholder: #7186a8;
+  --accent: #7dd3fc; --accent-ink: #04213a; --accent-text: #8edbff; --accent-hover: #a5e2ff; --accent-edge: #bfeaff; --accent-shadow: 0 6px 18px rgba(125, 211, 252, 0.28);
+  --chip-bg: rgba(125, 211, 252, 0.1); --chip-line: rgba(125, 211, 252, 0.32); --chip-ink: #b9e8ff;
+  --pal: #ff9b7a; --pal-ink: #3a1206; --pal-bg: rgba(255, 155, 122, 0.12); --pal-line: rgba(255, 155, 122, 0.4);
+  --good: #5ee0a0; --good-ink: #03261a; --good-bg: rgba(94, 224, 160, 0.14); --bad: #ff7a85; --bad-ink: #3a060c; --bad-bg: rgba(255, 122, 133, 0.14);
+  --inset: rgba(4, 10, 26, 0.7); --opt: rgba(20, 36, 74, 0.7); --tile: rgba(14, 26, 56, 0.75);
+  --card-bg: #eef6ff; --card-ink: #0b1a33; --card-line: #bcd6f5; --card-inner: #dcebfd; --card-strong: #06122a;
+  --f-display: "Outfit", "Segoe UI", system-ui, sans-serif; --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --r: 14px; --r-panel: 22px; --r-pill: 999px; --r-key: 10px;
+  color-scheme: dark;
+}
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 10, 24, 0.15) 0%, rgba(5, 10, 24, 0.35) 55%, rgba(5, 10, 24, 0.55) 100%), url(earth-bg.jpg) center bottom / cover no-repeat, #050a18; }
+.board { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; }
+.qtext { font-weight: 600; letter-spacing: -0.005em; }
+.opt .lbl.big { font-weight: 600; }
+.code-big { font-weight: 800; }
+.coin {
+  width: 30px; height: 30px; border-radius: 50%; flex: none; display: block;
+  background: radial-gradient(circle at 70% 70%, transparent 46%, rgba(2, 8, 30, 0.55) 70%), radial-gradient(circle at 34% 38%, #6fbf5c 0 16%, transparent 17%),
+    radial-gradient(circle at 62% 62%, #6fbf5c 0 13%, transparent 14%), radial-gradient(circle at 30% 30%, #8fd0ff, #2f7fd0 55%, #123f8a);
+  box-shadow: 0 0 0 1px rgba(191, 227, 255, 0.5), 0 0 14px rgba(125, 211, 252, 0.45);
+}
+""",
+        "tile": {"cls": "gk", "title": "General Knowledge", "art": "",
+                 "blurb": "Space, animals, the human body, countries and flags, history, science and culture. Fun facts that are easy to medium."},
+        "intro": ("General knowledge quiz", "How much do you know about our world?",
+                  "A free general knowledge quiz, 20 questions per game: space, animals, the human body, countries and flags, geography, history, science and culture. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
 ]
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -172,9 +228,17 @@ with open(os.path.join(OUT, "assets", "quiz.css"), "a", encoding="utf-8") as f:
 shutil.copy(os.path.join(SRC, "engine.js"), os.path.join(OUT, "assets", "quiz.js"))
 
 for qz in QUIZZES:
+    qz["config"]["others"] = {o["config"]["letter"]: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz}
+for qz in QUIZZES:
     d = os.path.join(OUT, qz["dir"])
     os.makedirs(d, exist_ok=True)
     shutil.copy(os.path.join(SRC, qz["bank_src"]), os.path.join(d, "questions.json"))
+    for src, dst in qz.get("extra", []):
+        sp, dp = os.path.join(SRC, src), os.path.join(d, dst)
+        if os.path.isdir(sp):
+            shutil.rmtree(dp, ignore_errors=True); shutil.copytree(sp, dp)
+        else:
+            shutil.copy(sp, dp)
     url = SITE + qz["dir"] + "/"
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebApplication", "name": qz["title"].split(" – ")[0], "url": url, "applicationCategory": "GameApplication",
@@ -205,7 +269,7 @@ for qz in QUIZZES:
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
 
 # ------------------------------------------------------------------ hub
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition and general knowledge, solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -220,7 +284,7 @@ hub_css = """
 * { box-sizing: border-box; }
 body { margin: 0; background: radial-gradient(ellipse at 20% -10%, #2a2636 0%, transparent 55%), var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 48px; }
-.wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.wrap { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .top { display: flex; align-items: center; gap: 12px; }
@@ -230,8 +294,18 @@ a { color: inherit; }
 .hero h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; text-wrap: balance; max-width: 16ch; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
 .eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-@media (max-width: 640px) { .shelf { grid-template-columns: 1fr; } }
+.shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
+/* globe tile: a lit Earth in space, clean sans titles */
+.gk { border-radius: 22px; color: #f2f7ff;
+  background: linear-gradient(180deg, rgba(5,10,24,0) 25%, rgba(5,10,24,0.82) 80%), url(general-knowledge/earth-tile.jpg) 62% 40% / cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), 0 0 0 2px #7dd3fc, inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk h3 { font-family: "Outfit", system-ui, sans-serif; font-weight: 800; font-size: clamp(1.7rem, 4.4vw, 2.2rem); letter-spacing: -0.015em; }
+.gk p { color: #cfe0f5; font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+.gk .pill { border-radius: 999px; background: rgba(125,211,252,0.16); border: 1px solid rgba(125,211,252,0.45); color: #c4ecff; }
+.gk .play { color: #8edbff; }
 .quiz { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 260px; padding: 22px; text-decoration: none; overflow: hidden; min-width: 0;
   transition: transform .15s ease, box-shadow .15s ease; }
 .quiz:hover { transform: translateY(-3px); }
@@ -273,8 +347,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone & Minecraft Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700",
+hub = head("Obscure Trivia – Hearthstone, Minecraft & General Knowledge Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700&family=Outfit:wght@800&family=Atkinson+Hyperlegible",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
