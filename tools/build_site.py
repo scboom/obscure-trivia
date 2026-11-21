@@ -174,7 +174,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; }
 }
 """,
         "tile": {"cls": "gk", "title": "General Knowledge", "art": "",
-                 "blurb": "Fun facts about space, animals, the human body, countries and flags, history, science and culture."},
+                 "blurb": "Fun facts that you might not know!"},
         "intro": ("General knowledge quiz", "How much do you know about our world?",
                   "A free general knowledge quiz, 20 questions per game: space, animals, the human body, countries and flags, geography, history, science and culture. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
