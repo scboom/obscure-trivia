@@ -3,929 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tavern Trivia – Hearthstone Battlegrounds Quiz</title>
-<meta name="description" content="Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<title>Obscure Trivia – Hearthstone &amp; Minecraft Quizzes</title>
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 1,000 questions each on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or co-op with a friend.">
 <link rel="canonical" href="https://scboom.github.io/tavern-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
-<meta property="og:site_name" content="Tavern Trivia">
-<meta property="og:title" content="Tavern Trivia – Hearthstone Battlegrounds Quiz">
-<meta property="og:description" content="Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Obscure Trivia – Hearthstone &amp; Minecraft Quizzes">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 1,000 questions each on Hearthstone Battlegrounds and Minecraft: Bedrock Edition, solo or co-op with a friend.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/tavern-trivia/">
 <meta property="og:image" content="https://scboom.github.io/tavern-trivia/social.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1d1512">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Tavern Trivia", "alternateName": ["Tavern Trivia Hearthstone Quiz", "Tavern Trivia Battlegrounds"], "url": "https://scboom.github.io/tavern-trivia/"}, {"@type": "WebApplication", "name": "Tavern Trivia", "url": "https://scboom.github.io/tavern-trivia/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "Tavern Trivia: a free Hearthstone Battlegrounds quiz with 1,000 questions on minions, heroes, armor, quests, trinkets and anomalies. Play solo or co-op with a friend using a 5-letter code.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}]}</script>
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#121117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/tavern-trivia/"}</script>
 <style>
-/* Layout: one centred tavern-board column; a header bar with score, the quiz card, and a partner strip under it. */
+/* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
 :root {
-  --wood: #1d1512;        /* page ground: dark stained oak */
-  --plank: #2a1f1a;       /* raised boards */
-  --plank-2: #37291f;     /* hover / inset */
-  --line: #4a382c;        /* board seams */
-  --ink: #f4eadf;         /* text */
-  --muted: #b8a391;       /* secondary text */
-  --gold: #e8b450;        /* coin gold, the accent */
-  --gold-ink: #2a1b08;    /* text on gold */
-  --mana: #6fc6d8;        /* partner colour */
-  --good: #86d16f;
-  --bad: #e9725f;
-  --f-display: "Bree Serif", Georgia, "Times New Roman", serif;
-  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --r: 10px;
+  --bg: #121117; --panel: #1c1b23; --line: #2e2c39; --ink: #f2efe6; --muted: #a7a3b5; --faint: #7a7689;
+  --hs-ink: #f6e7cf; --hs-gold: #e8b450; --mc-ink: #ffffff; --mc-green: #7ad155; --focus: #f2efe6;
+  --f-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif; --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: dark;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  background:
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 9px),
-    radial-gradient(ellipse at 50% -10%, #3a2618 0%, transparent 60%),
-    var(--wood);
-  color: var(--ink);
-  font-family: var(--f-body);
-  font-size: 16px;
-  line-height: 1.5;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 20px 40px;
-}
-.wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
-h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; text-wrap: balance; }
-button, input { font: inherit; color: inherit; }
-button { cursor: pointer; }
-:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-
-/* header */
-.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 0; }
-.brand h1 { font-size: 1.35rem; letter-spacing: 0.01em; }
-.coin {
-  width: 30px; height: 30px; border-radius: 50%; flex: none;
-  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, var(--gold) 38%, #a8721f 100%);
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.4);
-  display: grid; place-items: center; color: var(--gold-ink); font-family: var(--f-display); font-size: 0.9rem;
-}
-.score { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; font-weight: 600; }
-.score .coin { width: 24px; height: 24px; font-size: 0.75rem; }
-
-/* generic board */
-.board {
-  background: linear-gradient(180deg, var(--plank) 0%, #251b16 100%);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
-}
-.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
-.muted { color: var(--muted); }
-.small { font-size: 0.88rem; }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  border-radius: var(--r); padding: 12px 18px; font-weight: 700; border: 1px solid var(--line);
-  background: var(--plank-2); transition: transform .08s ease, background .15s ease, border-color .15s ease;
-}
-.btn:hover { border-color: #6a5140; }
-.btn:active { transform: translateY(1px); }
-.btn.gold { background: var(--gold); color: var(--gold-ink); border-color: #f5cf7f; box-shadow: 0 2px 0 #9b6a1c; }
-.btn.gold:hover { background: #f0c063; }
-.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
-.btn.block { width: 100%; }
-
-/* home */
-.hero { display: flex; flex-direction: column; gap: 10px; }
-.hero h2 { font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.12; }
-.hero p { margin: 0; color: var(--muted); max-width: 52ch; }
-.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-.chip {
-  font-size: 0.78rem; font-weight: 600; padding: 4px 10px; border-radius: 999px;
-  background: rgba(232,180,80,0.1); color: #f2cf8a; border: 1px solid rgba(232,180,80,0.25);
-}
-.chip.mana { background: rgba(111,198,216,0.1); color: var(--mana); border-color: rgba(111,198,216,0.3); }
-.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 560px) { .modes { grid-template-columns: 1fr; } }
-.mode { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.mode h3 { font-size: 1.3rem; }
-.mode p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.mode .spacer { flex: 1; }
-.field { display: flex; flex-direction: column; gap: 6px; }
-.field label { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
-.input {
-  width: 100%; background: #1a1210; border: 1px solid var(--line); border-radius: var(--r);
-  padding: 11px 12px; min-width: 0;
-}
-.input::placeholder { color: #7d6a5b; }
-.codein { text-transform: uppercase; letter-spacing: 0.3em; font-family: var(--f-display); font-size: 1.2rem; text-align: center; }
-.row { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; }
-.row > .input { flex: 1 1 140px; }
-.err { color: var(--bad); font-size: 0.88rem; min-height: 1.2em; margin: 0; }
-.divider { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.8rem; }
-.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-
-/* ready screen */
-.code-big {
-  font-family: var(--f-display); font-size: clamp(2.4rem, 11vw, 3.6rem); letter-spacing: 0.22em;
-  color: var(--gold); text-align: center; padding: 8px 0 4px; user-select: all; padding-left: 0.22em;
-}
-.center { text-align: center; }
-.stack { display: flex; flex-direction: column; gap: 14px; }
-
-/* quiz */
-.pips { display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; }
-.pip { height: 6px; border-radius: 3px; background: var(--line); }
-.pip.now { background: var(--gold); }
-.pip.ok { background: var(--good); }
-.pip.no { background: var(--bad); }
-.qmeta { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
-.qtext { font-family: var(--f-display); font-size: clamp(1.25rem, 4.4vw, 1.6rem); line-height: 1.25; margin: 4px 0 0; }
-.cardtext {
-  margin: 4px 0 0; padding: 14px 16px; border-radius: var(--r);
-  background: #f1e4cc; color: #2b1f14; font-size: 1rem; line-height: 1.45;
-  border: 1px solid #c9b48f; box-shadow: inset 0 0 0 3px #e6d5b5;
-}
-.cardtext b { color: #1a120b; }
-.opts { display: flex; flex-direction: column; gap: 10px; }
-.opt {
-  display: flex; align-items: flex-start; gap: 12px; text-align: left; width: 100%;
-  padding: 12px 14px; border-radius: var(--r); border: 1px solid var(--line); background: #231a15;
-  transition: background .12s ease, border-color .12s ease;
-}
-.opt:hover:not([disabled]) { background: var(--plank-2); border-color: #6a5140; }
-.opt[disabled] { cursor: default; }
-.opt .key {
-  flex: none; width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center;
-  background: var(--plank-2); border: 1px solid var(--line); font-weight: 700; font-size: 0.85rem; color: var(--muted);
-}
-.opt .lbl { flex: 1; min-width: 0; padding-top: 2px; overflow-wrap: anywhere; }
-.opt .lbl.big { font-family: var(--f-display); font-size: 1.15rem; padding-top: 0; }
-.opt .marks { flex: none; display: flex; gap: 4px; align-items: center; padding-top: 2px; }
-.opt.right { border-color: var(--good); background: rgba(134,209,111,0.12); }
-.opt.right .key { background: var(--good); color: #10200a; border-color: var(--good); }
-.opt.wrong { border-color: var(--bad); background: rgba(233,114,95,0.12); }
-.opt.wrong .key { background: var(--bad); color: #2a0b06; border-color: var(--bad); }
-.opt.faded { opacity: 0.55; }
-.tag { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
-.tag.you { background: var(--gold); color: var(--gold-ink); }
-.tag.pal { background: var(--mana); color: #062026; }
-.feedback { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.verdict { font-family: var(--f-display); font-size: 1.2rem; }
-.verdict.ok { color: var(--good); }
-.verdict.no { color: var(--bad); }
-
-/* partner strip */
-.partners { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; }
-.partners .head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
-.pal-row { display: flex; align-items: center; gap: 10px; }
-.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--mana); flex: none; box-shadow: 0 0 0 3px rgba(111,198,216,0.18); }
-.dot.wait { background: var(--line); box-shadow: none; animation: pulse 1.6s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: 0.4; } }
-.pal-name { font-weight: 700; color: var(--mana); overflow-wrap: anywhere; }
-.pal-prog { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
-.copy { padding: 6px 10px; font-size: 0.85rem; }
-.codechip { font-family: var(--f-display); letter-spacing: 0.15em; color: var(--gold); }
-
-/* results */
-.tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-.tile { padding: 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.tile .n { font-family: var(--f-display); font-size: 2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.tile .n small { font-size: 1rem; color: var(--muted); }
-.tile.you .n { color: var(--gold); }
-.tile.pal .n { color: var(--mana); }
-.review { display: flex; flex-direction: column; gap: 8px; }
-.rv { padding: 12px 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
-.rv .q { font-weight: 600; }
-.rv .q .num { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 6px; }
-.rv .ans { font-size: 0.92rem; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-.rv .ans .who { font-weight: 700; font-size: 0.78rem; min-width: 64px; }
-.rv .ans .who.you { color: var(--gold); }
-.rv .ans .who.pal { color: var(--mana); }
-.rv .ans .who.key { color: var(--good); }
-.rv .ans .v { min-width: 0; overflow-wrap: anywhere; }
-.ok-t { color: var(--good); } .no-t { color: var(--bad); }
-.resultcode { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95rem; background: #1a1210; border: 1px dashed var(--line); border-radius: var(--r); padding: 10px 12px; overflow-wrap: anywhere; user-select: all; }
-.foot { color: #8a7666; font-size: 0.8rem; text-align: center; }
-.loading { text-align: center; padding: 60px 0; color: var(--muted); }
-
-/* waiting + reveal */
-.bigmsg { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; color: var(--gold); }
-.reveal.center { padding-block: 48px; }
-.pop { animation: pop .45s cubic-bezier(.2,1.4,.4,1) both; }
-@keyframes pop { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
-.timer { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
-.timer span { display: block; height: 100%; width: 100%; background: var(--gold); transform-origin: left; animation: drain linear forwards; }
-@keyframes drain { from { transform: scaleX(1); } to { transform: scaleX(0); } }
-.btn.skip { padding: 6px 12px; font-size: 0.85rem; align-self: center; background: transparent; color: var(--muted); }
-.reveal:not(.center) .btn.skip { align-self: auto; }
-.who-lines { display: flex; flex-wrap: wrap; gap: 8px 18px; }
-.who-line { font-size: 0.98rem; }
-.you-t { color: var(--gold); }
-.pip.done { background: var(--muted); }
-.hourglass { width: 44px; height: 44px; margin: 4px auto; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--gold); animation: spin 1.1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* recent quizzes */
-.recent { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.rc { padding: 12px 14px; border-radius: var(--r); background: #221914; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.rc-top, .rc-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
-.rc-title { font-family: var(--f-display); font-size: 1.1rem; overflow-wrap: anywhere; }
-.rc-scores { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-variant-numeric: tabular-nums; }
-.rc-score b { font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; }
-.rc-score small { color: var(--muted); }
-.review-wrap summary { cursor: pointer; font-weight: 700; color: var(--muted); padding: 6px 0; }
-.review-wrap[open] summary { margin-bottom: 8px; }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+body { margin: 0; background: radial-gradient(ellipse at 20% -10%, #2a2636 0%, transparent 55%), var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 48px; }
+.wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.top { display: flex; align-items: center; gap: 12px; }
+.mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; transform: rotate(-6deg); }
+.brand { font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0; }
+.hero { display: flex; flex-direction: column; gap: 12px; }
+.hero h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; text-wrap: balance; max-width: 16ch; }
+.hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
+.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .shelf { grid-template-columns: 1fr; } }
+.quiz { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 260px; padding: 22px; text-decoration: none; overflow: hidden; min-width: 0;
+  transition: transform .15s ease, box-shadow .15s ease; }
+.quiz:hover { transform: translateY(-3px); }
+.quiz h3 { margin: 0; line-height: 1.05; text-wrap: balance; }
+.quiz p { margin: 0; font-size: 0.95rem; max-width: 36ch; }
+.quiz .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.quiz .pill { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; }
+.quiz .play { margin-left: auto; font-weight: 800; }
+/* tavern tile: oak planks, a gold coin and a serif title */
+.hs { border-radius: 16px; color: var(--hs-ink);
+  background: linear-gradient(180deg, rgba(20,12,7,0.15) 0%, rgba(20,12,7,0.85) 78%), url(data:image/png;base64,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) center / cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.35); }
+.hs:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 2px var(--hs-gold); }
+.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
+.hs p { color: #e3cfb2; }
+.hs .pill { border-radius: 999px; background: rgba(232,180,80,0.16); border: 1px solid rgba(232,180,80,0.45); color: #f6d58f; }
+.hs .play { color: var(--hs-gold); }
+.hs .coin { position: absolute; top: 20px; right: 20px; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, #e8b450 38%, #a8721f 100%); color: #2a1b08; font-family: "Bree Serif", Georgia, serif; font-size: 1.6rem;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), 0 4px 10px rgba(0,0,0,0.5); }
+/* block tile: pixel grass-and-dirt, square corners, a pixel title */
+.mc { border-radius: 0; color: var(--mc-ink); image-rendering: pixelated;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.78) 82%), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAB70lEQVR42k2RzW7TQBSFTx03Zjwed3ATTJVYKC1tmkUUViBWsEZiw4Kn4GXYsOUFeIlKLNggEWVRKVUTIbsLE8Wa2B67k4qfxQWTWYxmRt89594ze2/fT5jfzhId9HmW6GgUxJdZ0Of4t+p8C6BhLABcOMzfp7suTENnia7zbacndhmL+W1dGABBn3Ph1Pk2SzQJM38fgC4MMXV+F40Ca3jhE8GF8/tjffKZE/3yqlfnd8xvA3j2tet++vX8+kgXpvX09OhBeu/R+mDB1TAPRoOH3vfWeXl/tkxfd86rL1pctXJ9e9rv3G5/Pl77VhRKVRkAb34MAUznifSc2TKVrnPx7RqA4ExwpkoDQJXGAvDiyQmAxc36uHcIIE5V1JVNSoWuAcQrRWdrtkwXN2vpOce9w2xTRqEUnBW6FpyRPAASot2WriM9J06VKg1xha4nZ30A9E7mUVdmm1JVxibfKJREkG+2Kame3lVpyF+6ji04i1MlOPvrU5nxIKQyoncDGA9CmzqbzhPqR1UmOPCm84RoAFFXSs9BqqJQxqna+/DuVRMIZUfaqjTUYTMbMTZBuwmSkuBstkyjrmySEJzFK2URRGK04lRNzvrxSknXiVcqCv/XSNexKcFsUxa6VpWhL5vOk/EgVKWJQklDN139AblRJtz0pSXOAAAAAElFTkSuQmCC) 0 0 / 56px 56px;
+  box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+.mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
+.mc h3 { font-family: "Pixelify Sans", ui-monospace, monospace; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
+.mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
+.mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
+.mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Pixelify Sans", ui-monospace, monospace; font-size: 1.1rem; }
+.joinbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.joinbox h3 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
+.joinbox p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.input { flex: 1 1 160px; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; color: var(--ink); font: inherit;
+  text-transform: uppercase; letter-spacing: 0.3em; text-align: center; font-weight: 700; }
+.input::placeholder { color: var(--faint); }
+.btn { border-radius: 10px; border: 0; padding: 12px 20px; font: inherit; font-weight: 800; background: var(--ink); color: var(--bg); cursor: pointer; }
+.err { color: #f08a7c; font-size: 0.9rem; min-height: 1.3em; margin: 0; }
+.foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
-
-<div class="wrap" id="app">
-  <header class="top"><div class="brand"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></div></header>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
   <section class="hero">
-    <span class="eyebrow">Hearthstone Battlegrounds quiz</span>
-    <h2>How well do you really know Bob's Tavern?</h2>
-    <p>Tavern Trivia is a free Hearthstone Battlegrounds quiz with 1,000 questions: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play 20 random questions on your own, or play co-op with a friend using a 5-letter code.</p>
+    <span class="eyebrow">Free game quizzes</span>
+    <h2>Trivia for the details only real players know.</h2>
+    <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or send a friend a 5-letter code and answer the same questions together.</p>
   </section>
-  <div class="loading">Pouring the questions…</div>
-  <noscript><p class="center muted">Tavern Trivia needs JavaScript turned on to run the quiz.</p></noscript>
+  <section class="shelf" aria-label="Quizzes">
+    <a class="quiz hs" href="hearthstone/">
+      <span class="coin" aria-hidden="true">?</span>
+      <h3>Hearthstone Battlegrounds</h3>
+      <p>Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies.</p>
+      <div class="meta"><span class="pill">1,000 questions</span><span class="pill">Solo &amp; co-op</span><span class="play">Play →</span></div>
+    </a>
+    <a class="quiz mc" href="minecraft/">
+      <h3>Minecraft</h3>
+      <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
+      <div class="meta"><span class="pill">1,000 questions</span><span class="pill">Solo &amp; co-op</span><span class="play">Play →</span></div>
+    </a>
+  </section>
+  <section class="joinbox">
+    <h3>Got a code from a friend?</h3>
+    <p>Type it in and you'll go straight to the right quiz.</p>
+    <form class="row" id="join" autocomplete="off">
+      <input class="input" id="code" maxlength="5" placeholder="CODE" aria-label="Game code">
+      <button class="btn" type="submit">Join game</button>
+    </form>
+    <p class="err" id="err" role="alert"></p>
+  </section>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang or Microsoft.</p>
 </div>
-
 <script>
 (() => {
-"use strict";
-const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
-const LEN = 20;
-const LET = ["A", "B", "C", "D"];
-const GROUP = {
-  tier: "Minion", stats: "Minion", type: "Minion", effect: "Minion", whois: "Minion", golden: "Minion",
-  oldstats: "Minion", oldeffect: "Minion", duos: "Minion",
-  armor: "Hero", duoarmor: "Hero", health: "Hero", hpname: "Hero", hpwho: "Hero", hpeffect: "Hero",
-  hpcost: "Hero", buddy: "Hero", buddywho: "Hero",
-  quest: "Quest", questwho: "Quest", trinket: "Trinket", trinketcost: "Trinket", trinketkind: "Trinket",
-  spell: "Tavern spell", spellcost: "Tavern spell", spelltier: "Tavern spell",
-  anomaly: "Anomaly", anomalywho: "Anomaly"
-};
-const CAP = { Minion: 9, Hero: 7, Quest: 3, Trinket: 3, "Tavern spell": 3, Anomaly: 3 };
-
-let BANK = null;
-let S = { screen: "home", mode: "solo", code: "", nick: "", qs: [], answers: [], cur: 0, compare: null };
-let roomState = "idle";
-
-// ------------------------------------------------------------ helpers
-const $ = (sel, el = document) => el.querySelector(sel);
-const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const rich = s => esc(s).replace(/&lt;(\/?)(b|i)&gt;/g, "<$1$2>");
-function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
-
-function xmur3(str) {
-  let h = 1779033703 ^ str.length;
-  for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
-  return () => { h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; };
-}
-function mulberry32(a) {
-  return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-}
-function shuffle(arr, rand) {
-  for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
-  return arr;
-}
-function newCode() {
-  const r = new Uint32Array(5); crypto.getRandomValues(r);
-  return Array.from(r, x => ALPH[x % ALPH.length]).join("");
-}
-function normCode(s) { return String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1"); }
-function validCode(c) { return c.length === 5 && [...c].every(ch => ALPH.includes(ch)); }
-
-function buildQuiz(code) {
-  const rand = mulberry32(xmur3("tavern-trivia-v1:" + code)());
-  const order = shuffle([...BANK.keys()], rand);
-  const picked = [], keys = new Set(), groups = {};
-  for (const i of order) {
-    const q = BANK[i], g = GROUP[q.c] || "Minion";
-    if (keys.has(q.k) || (groups[g] || 0) >= CAP[g]) continue;
-    keys.add(q.k); groups[g] = (groups[g] || 0) + 1; picked.push(i);
-    if (picked.length === LEN) break;
-  }
-  return picked.map(i => {
-    const q = BANK[i];
-    const opts = q.c === "trinketkind" ? ["Lesser Trinket", "Greater Trinket"] : shuffle([q.a, ...q.o], rand);
-    return { i, opts, correct: opts.indexOf(q.a) };
-  });
-}
-const qOf = item => BANK[item.i];
-const myScore = () => S.answers.reduce((n, a, k) => n + (a === S.qs[k].correct ? 1 : 0), 0);
-const answeredCount = () => S.answers.filter(a => a !== null && a !== undefined).length;
-function encodeAnswers(arr) { return S.qs.map((_, k) => (arr[k] === null || arr[k] === undefined) ? "-" : LET[arr[k]]).join(""); }
-function decodeAnswers(str) { return [...String(str || "")].slice(0, LEN).map(ch => { const n = LET.indexOf(ch); return n < 0 ? null : n; }); }
-function scoreOf(arr) { return arr.reduce((n, a, k) => n + (S.qs[k] && a === S.qs[k].correct ? 1 : 0), 0); }
-
-// ------------------------------------------------------------ live co-op
-// Two ways to reach a friend: the claude.ai room (when the page runs there), otherwise a
-// free public MQTT relay. Each player shares { code, name, ans, done }. On the relay every
-// player's latest state is kept for two days, so a friend who joins late, or reloads, still
-// sees everyone's answers. Two relays are used at once in case one is down.
-const MQTT_SRC = "https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js";
-const BROKERS = ["wss://broker.emqx.io:8084/mqtt", "wss://broker.hivemq.com:8884/mqtt"];
-let pals = new Map(), leftIds = new Set(), transport = null, gen = 0;
-
-function myState() {
-  const done = !!S.finishedAt;
-  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0 };
-}
-function setPal(id, st) {
-  if (!st || typeof st !== "object" || st.code !== S.code) return;
-  const t = Number.isFinite(st.t) && st.t > 0 && st.t < 86400 ? Math.round(st.t) : 0;
-  pals.set(id, { id, name: String(st.name || "Your friend").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, left: leftIds.has(id) });
-  refreshPartnerBits();
-}
-function markLeft(id) { leftIds.add(id); const p = pals.get(id); if (p && !p.left) { p.left = true; refreshPartnerBits(); } }
-function markBack(id) { leftIds.delete(id); const p = pals.get(id); if (p && p.left) { p.left = false; refreshPartnerBits(); } }
-function others() { return [...pals.values()]; }
-function partnerList() {
-  const live = others();
-  if (S.compare && !live.some(p => p.name === S.compare.name)) live.push(S.compare);
-  return live;
-}
-function setLive(state) { if (roomState !== state) { roomState = state; refreshPartnerBits(); } }
-function withTimeout(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]); }
-
-async function viaRoom(code, my) {
-  let lobby = null;
-  try { lobby = await window.claude?.use?.("room"); } catch (e) { lobby = null; }
-  if (!lobby) return null;
-  const r = await lobby.join("q-" + code.toLowerCase());
-  const unsub = r.onPeers(ch => {
-    if (my !== gen) return;
-    const here = new Set();
-    ch.peers.forEach(p => { if (p.sameTab || !p.presence || !p.presence.code) return; here.add("r:" + p.peer); setPal("r:" + p.peer, p.presence); });
-    for (const id of pals.keys()) if (id.startsWith("r:") && !here.has(id)) markLeft(id);
-  }, () => { if (my === gen) setLive("off"); });
-  return {
-    send() { r.presence(myState()).catch(() => {}); },
-    close() { try { unsub(); } catch (e) {} try { r.leave(); } catch (e) {} }
-  };
-}
-
-function loadMqtt() {
-  if (window.mqtt) return Promise.resolve(window.mqtt);
-  return new Promise((res, rej) => {
-    const s = document.createElement("script");
-    s.src = MQTT_SRC; s.async = true;
-    s.onload = () => window.mqtt ? res(window.mqtt) : rej(new Error("no mqtt"));
-    s.onerror = () => rej(new Error("load failed"));
-    document.head.appendChild(s);
-  });
-}
-function playerId(code) {
-  // one id per browser tab and game, kept across reloads so a refresh doesn't create a second "you"
-  const key = "tt-pid-" + code;
-  let id = null;
-  try { id = sessionStorage.getItem(key); } catch (e) {}
-  if (!id || !/^[a-z0-9]{12}$/.test(id)) {
-    const r = new Uint32Array(3); crypto.getRandomValues(r);
-    id = Array.from(r, x => x.toString(36).padStart(7, "0").slice(-4)).join("");
-    try { sessionStorage.setItem(key, id); } catch (e) {}
-  }
-  return id;
-}
-async function viaMqtt(code, my) {
-  const mqtt = await withTimeout(loadMqtt(), 12000);
-  const cfg = window.TT_MQTT || {};
-  const v5 = cfg.protocolVersion !== 4;
-  const pid = playerId(code);
-  const base = "tavern-trivia/v1/" + code + "/";
-  const stateTopic = base + pid, onTopic = base + pid + "/on";
-  const keep = v5 ? { properties: { messageExpiryInterval: 172800 } } : {};   // relay forgets it after 2 days
-  const pubOpts = { qos: 1, retain: true, ...keep };
-  const clients = (cfg.brokers || BROKERS).map(url => {
-    const c = mqtt.connect(url, {
-      protocolVersion: v5 ? 5 : 4,
-      clientId: "tt_" + pid + "_" + Math.random().toString(36).slice(2, 8),
-      clean: true, connectTimeout: 10000, reconnectPeriod: 5000, keepalive: 30,
-      will: { topic: onTopic, payload: "0", qos: 1, retain: true, ...keep }
-    });
-    c.on("connect", () => {
-      if (my !== gen) return;
-      c.subscribe(base + "#", { qos: 1 });
-      c.publish(onTopic, "1", pubOpts);
-      c.publish(stateTopic, JSON.stringify(myState()), pubOpts);
-      setLive("on");
-    });
-    c.on("message", (topic, buf) => {
-      if (my !== gen || !topic.startsWith(base)) return;
-      const parts = topic.slice(base.length).split("/");
-      const id = parts[0];
-      if (!/^[a-z0-9]{12}$/.test(id) || id === pid || buf.length > 2000) return;
-      const text = buf.toString();
-      if (parts.length === 1) {
-        let st = null; try { st = JSON.parse(text); } catch (e) { return; }
-        setPal("m:" + id, st);
-      } else if (parts.length === 2 && parts[1] === "on") {
-        text === "1" ? markBack("m:" + id) : markLeft("m:" + id);
-      }
-    });
-    c.on("error", () => {});
-    return c;
-  });
-  setTimeout(() => { if (my === gen && !clients.some(c => c.connected)) setLive("off"); }, 15000);
-  return {
-    send() { const s = JSON.stringify(myState()); clients.forEach(c => { if (c.connected) c.publish(stateTopic, s, pubOpts); }); },
-    close() { clients.forEach(c => { try { if (c.connected) c.publish(onTopic, "0", pubOpts); c.end(false); } catch (e) {} }); }
-  };
-}
-async function connectLive() {
-  if (S.mode !== "coop" || !S.code) return;
-  const my = ++gen, code = S.code;
-  try { transport && transport.close(); } catch (e) {}
-  transport = null; pals = new Map(); leftIds = new Set();
-  setLive("connecting");
-  let t = null, viaClaude = false;
-  try { t = await viaRoom(code, my); viaClaude = !!t; } catch (e) { t = null; }
-  if (!t) { try { t = await viaMqtt(code, my); } catch (e) { t = null; } }
-  if (my !== gen) { try { t && t.close(); } catch (e) {} return; }
-  if (!t) { setLive("off"); return; }
-  transport = t;
-  if (viaClaude) { setLive("on"); t.send(); }       // the relay sets "on" itself once it connects
-}
-function joinRoom() { connectLive(); }
-function leaveRoom() {
-  gen++;
-  try { transport && transport.close(); } catch (e) {}
-  transport = null; pals = new Map(); leftIds = new Set(); roomState = "idle";
-}
-function pushPresence() { if (transport) transport.send(); }
-window.addEventListener("pagehide", () => { try { transport && transport.close(); } catch (e) {} });
-
-// ------------------------------------------------------------ recent quizzes (saved in this browser only)
-const RECENT_KEY = "tt-recent-v1", RECENT_MAX = 5;
-function fmtTime(sec) { sec = Math.max(0, Math.round(sec || 0)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
-function bankVersion() {
-  let h = 0; const str = BANK.length + BANK.slice(0, 20).map(q => q.q).join("|");
-  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
-  return String(h);
-}
-function loadRecent() {
-  try {
-    const a = JSON.parse(store(RECENT_KEY) || "[]");
-    return Array.isArray(a) ? a.filter(e => e && validCode(String(e.code)) && e.me && typeof e.me.ans === "string").slice(0, RECENT_MAX) : [];
-  } catch (e) { return []; }
-}
-function saveRecent() {
-  if (S.saved || !S.finishedAt || S.past) return;
-  S.saved = true;
-  const pals = (S.final || []).map(p => ({ n: p.name, ans: encodeAnswers(p.answers), s: scoreOf(p.answers) }));
-  const e = { code: S.code, mode: S.mode, at: S.finishedAt, t: elapsedSec(), bv: bankVersion(),
-    me: { n: S.meName || S.nick || "You", ans: encodeAnswers(S.answers), s: myScore() }, pals };
-  const list = loadRecent().filter(x => !(x.code === e.code && x.at === e.at));
-  list.unshift(e);
-  store(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX)));
-  saveSession();
-}
-function openRecent(i) {
-  const e = loadRecent()[i];
-  if (!e) return;
-  stopReveal(); leaveRoom();
-  S = fresh({ screen: "results", mode: e.mode, code: e.code, qs: buildQuiz(e.code), answers: decodeAnswers(e.me.ans),
-    final: (e.pals || []).map(p => ({ name: String(p.n).slice(0, 20), answers: decodeAnswers(p.ans), done: true })),
-    startedAt: e.at - (e.t || 0) * 1000, finishedAt: e.at, saved: true, past: true, meName: String(e.me.n || "You").slice(0, 20) });
-  render(); window.scrollTo({ top: 0 });
-}
-function recentView() {
-  const list = loadRecent(), bv = bankVersion();
-  const when = ms => { try { return new Date(ms).toLocaleString(undefined, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }); } catch (x) { return ""; } };
-  const items = list.map((e, i) => {
-    const others = e.pals || [];
-    const title = others.length ? `Co-op with ${others.map(p => esc(p.n)).join(" &amp; ")}` : e.mode === "coop" ? "Co-op (nobody joined)" : "Solo";
-    let outcome = "";
-    if (others.length) {
-      const all = [e.me, ...others], best = Math.max(...all.map(p => p.s));
-      outcome = all.filter(p => p.s === best).length > 1 ? "Tie" : e.me.s === best ? "You won" : `${esc(others.find(p => p.s === best).n)} won`;
-    }
-    const scores = [`<span class="rc-score"><span class="you-t">${esc(e.me.n)}</span> <b>${e.me.s}</b><small>/${LEN}</small></span>`]
-      .concat(others.map(p => `<span class="rc-score"><span class="pal-name">${esc(p.n)}</span> <b>${p.s}</b><small>/${LEN}</small></span>`)).join("");
-    return `<li class="rc">
-      <div class="rc-top"><span class="rc-title">${title}</span><span class="small muted">${esc(when(e.at))}</span></div>
-      <div class="rc-scores">${scores}${outcome ? `<span class="chip${outcome === "You won" ? "" : " mana"}">${outcome}</span>` : ""}</div>
-      <div class="rc-foot"><span class="small muted">Game <span class="codechip">${esc(e.code)}</span> · ${fmtTime(e.t)}</span>
-        ${e.bv === bv ? `<button class="btn copy" data-recent="${i}">See answers</button>` : ""}</div>
-    </li>`;
-  }).join("");
-  return `${header()}
-  <section class="board stack">
-    <span class="eyebrow">Recent quizzes</span>
-    <h2 style="font-size:1.6rem">Your last ${RECENT_MAX} games</h2>
-    ${list.length ? `<ol class="recent">${items}</ol>` : `<p class="muted" style="margin:0">No quizzes yet. Your last ${RECENT_MAX} games show up here once you finish one.</p>`}
-    <p class="small muted" style="margin:0">Saved on this device and browser only.</p>
-    <div class="row"><button class="btn gold" id="go-home2">Back to home</button></div>
-  </section>`;
-}
-
-// ------------------------------------------------------------ actions
-function fresh(extra) {
-  return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
-    startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "" }, extra || {});
-}
-function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.round((S.finishedAt - S.startedAt) / 1000)) : 0; }
-function needName() {
-  if (S.nick) return false;
-  const el = $("#nickerr"); if (el) el.textContent = "Type your name first so your friend knows who you are.";
-  const n = $("#nick"); n && n.focus();
-  return true;
-}
-function startGame(mode, code, role) {
-  stopReveal();
-  S = fresh({ screen: mode === "solo" ? "quiz" : "ready", mode, role: role || "host", code, qs: buildQuiz(code), answers: Array(LEN).fill(null),
-    startedAt: mode === "solo" ? Date.now() : 0 });
-  render();
-  if (mode === "coop") joinRoom(); else leaveRoom();
-}
-function answer(k) {
-  if (S.answers[S.cur] !== null) return;
-  S.answers[S.cur] = k; pushPresence(); render();
-  const nb = $("#next"); nb && nb.focus({ preventScroll: true });
-}
-function next() {
-  if (S.answers[S.cur] === null) return;
-  if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
-  S.finishedAt = Date.now();
-  if (S.mode === "coop" && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
-  else { S.screen = "results"; pushPresence(); render(); saveRecent(); }
-  window.scrollTo({ top: 0 });
-}
-function checkAllDone() {
-  if (S.screen !== "waiting") return;
-  const ps = others();
-  const playing = ps.filter(p => !p.done && !p.left);
-  if (ps.some(p => p.done) && !playing.length) startReveal();
-}
-function finishWithoutWaiting() { startReveal(); }
-
-// the reveal: "Quiz completed!" 5 s, "Let's have a look at the answers" 2 s, then 5 s per question
-let revealTimer = 0;
-const STEP_MS = k => (k === 0 ? 5000 : k === 1 ? 2000 : 5000) * (window.TT_SPEED || 1);
-function startReveal() {
-  S.final = others().filter(p => p.done || p.answers.some(a => a !== null))
-    .map(p => ({ id: p.id, name: p.name, answers: p.answers.slice(), t: p.t, done: p.done }));
-  if (!S.final.length) { S.final = null; S.screen = "results"; render(); saveRecent(); return; }
-  S.screen = "reveal"; S.step = 0; render(); window.scrollTo({ top: 0 });
-  scheduleStep();
-}
-function scheduleStep() {
-  clearTimeout(revealTimer);
-  revealTimer = setTimeout(() => {
-    if (S.screen !== "reveal") return;
-    if (S.step >= LEN + 1) { endReveal(); return; }
-    S.step++; render(); scheduleStep();
-  }, STEP_MS(S.step));
-}
-function stopReveal() { clearTimeout(revealTimer); revealTimer = 0; }
-function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); saveRecent(); }
-
-function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); }
-function showRecent() { stopReveal(); leaveRoom(); S = fresh({ screen: "recent" }); clearSession(); render(); window.scrollTo({ top: 0 }); }
-function copyText(text, btn) {
-  const done = ok => { if (btn) { const t = btn.textContent; btn.textContent = ok ? "Copied" : "Select it and copy"; setTimeout(() => btn.textContent = t, 1600); } };
-  try { navigator.clipboard.writeText(text).then(() => done(true), () => done(false)); } catch (e) { done(false); }
-}
-function saveSession() {
-  if (S.screen === "home" || S.screen === "recent") return;
-  try { sessionStorage.setItem("tt-game", JSON.stringify({ ...S, qs: undefined })); } catch (e) {}
-}
-function clearSession() { try { sessionStorage.removeItem("tt-game"); } catch (e) {} }
-
-// ------------------------------------------------------------ rendering
-function header() {
-  const showScore = S.screen === "quiz" || S.screen === "results";
-  return `<header class="top">
-    <button class="brand" id="go-home" aria-label="Tavern Trivia home"><span class="coin" aria-hidden="true">?</span><h1>Tavern Trivia</h1></button>
-    ${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
-      : S.screen === "home" ? `<button class="btn copy" id="recent-btn">Recent quizzes</button>` : ""}
-  </header>`;
-}
-function homeView() {
-  const counts = {};
-  BANK.forEach(q => { const g = GROUP[q.c]; counts[g] = (counts[g] || 0) + 1; });
-  return `${header()}
-  <section class="hero">
-    <span class="eyebrow">Hearthstone Battlegrounds quiz</span>
-    <h2>How well do you really know Bob's Tavern?</h2>
-    <p>Twenty random questions from a bank of ${BANK.length.toLocaleString()}: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies.</p>
-    <div class="facts">${Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<span class="chip">${n} ${esc(g)}</span>`).join("")}</div>
-  </section>
-  <div class="field" style="max-width:320px">
-    <label for="nick">Your name (shown to your friend)</label>
-    <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
-    <p class="err" id="nickerr" role="alert"></p>
-  </div>
-  <div class="modes">
-    <section class="board mode">
-      <span class="eyebrow">Solo</span>
-      <h3>Play alone</h3>
-      <p>Twenty fresh questions from the bank. Your last 5 games are saved under <b>Recent quizzes</b>.</p>
-      <div class="spacer"></div>
-      <button class="btn gold block" id="solo">Start 20 questions</button>
-    </section>
-    <section class="board mode">
-      <span class="eyebrow">Co-op</span>
-      <h3>Play with a friend</h3>
-      <p>Get a 5-letter code and send it to a friend. You both answer the same 20 questions, then watch the answers revealed together.</p>
-      <button class="btn gold block" id="create">Create a game</button>
-      <div class="divider">or join one</div>
-      <form class="row" id="joinform" autocomplete="off">
-        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Invite code">
-        <button class="btn" type="submit">Join</button>
-      </form>
-      <p class="err" id="joinerr" role="alert"></p>
-    </section>
-  </div>
-  <p class="foot">Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.</p>`;
-}
-function palStatus(p) {
-  const n = p.answers.filter(a => a !== null).length;
-  return p.done ? "Finished" : p.left ? "Left the game" : `On question ${Math.min(n + 1, LEN)} of ${LEN}`;
-}
-function partnerStrip() {
-  if (S.mode !== "coop") return "";
-  const list = others();
-  let body;
-  const guest = S.role === "guest";
-  if (roomState === "off" && !list.length) {
-    body = `<p class="small muted" style="margin:0">Couldn't reach the live server, so you won't see your friend's progress. You still get the same questions. Swap result codes at the end to compare.</p>`;
-  } else if (!list.length) {
-    const msg = roomState === "connecting" ? "Connecting…"
-      : guest ? `Connected to game ${esc(S.code)}. Nobody else is here yet. Check that your friend clicked <b>Create a game</b> and sent you this exact code.`
-      : "Waiting for your friend to join with the code";
-    body = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">${msg}</span></div>`;
-  } else {
-    body = list.map(p => `<div class="pal-row"><span class="dot${p.left && !p.done ? " wait" : ""}" aria-hidden="true"></span><span class="pal-name">${esc(p.name)}</span>
-        <span class="pal-prog">${palStatus(p)}</span></div>`).join("");
-  }
-  return `<section class="board partners" id="partners" aria-live="polite">
-    <div class="head"><span class="eyebrow">Co-op · code <span class="codechip">${esc(S.code)}</span></span>
-    <button class="btn copy" data-copy="${esc(S.code)}">Copy code</button></div>
-    ${body}
-  </section>`;
-}
-function readyView() {
-  const after = "You'll see which question each other is on, and all the answers are revealed together at the end.";
-  if (S.role === "guest") {
-    const pals = others();
-    const who = pals.length ? pals.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ") : "";
-    return `${header()}
-  <section class="board stack center">
-    <span class="eyebrow">You joined game</span>
-    <div class="code-big" aria-label="Game code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:46ch">${who ? `You're playing with ${who}. ` : ""}You'll both get the same 20 questions in the same order. ${after}</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn gold" id="begin">Start the quiz</button>
-    </div>
-  </section>
-  ${partnerStrip()}`;
-  }
-  return `${header()}
-  <section class="board stack center">
-    <span class="eyebrow">Your invite code</span>
-    <div class="code-big" aria-label="Invite code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:46ch">Send this code to your friend. They choose <b>Join</b> on the home screen and type it in. You'll both get the same 20 questions in the same order.</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn" data-copy="${esc(S.code)}">Copy code</button>
-      <button class="btn gold" id="begin">Start the quiz</button>
-    </div>
-    <p class="small muted" style="margin:0 auto;max-width:46ch">You can start before your friend joins. ${after}</p>
-  </section>
-  ${partnerStrip()}`;
-}
-function optionsHtml(item, picks, reveal) {
-  // picks: [{label, cls, a}] for each player; reveal: show correct answer
-  const q = qOf(item), bigLabels = !q.r;
-  return item.opts.map((o, k) => {
-    const chosen = picks.filter(p => p.a === k);
-    let cls = "";
-    if (reveal) cls = k === item.correct ? "right" : chosen.length ? "wrong" : "faded";
-    const marks = chosen.map(p => `<span class="tag ${p.cls}">${esc(p.label)}</span>`).join("");
-    return `<button class="opt ${cls}" data-opt="${k}" ${reveal ? "disabled" : ""}>
-      <span class="key">${LET[k]}</span><span class="lbl ${bigLabels ? "big" : ""}">${rich(o)}</span>
-      ${marks ? `<span class="marks">${marks}</span>` : ""}</button>`;
-  }).join("");
-}
-function qHead(item, k) {
-  const q = qOf(item), g = GROUP[q.c];
-  const [qline, ...rest] = q.q.split("\n");
-  const card = rest.join(" ");
-  return `<div class="qmeta"><span class="eyebrow">Question ${k + 1} of ${LEN}</span>
-      <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
-    <h2 class="qtext">${esc(qline)}</h2>
-    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}`;
-}
-function quizView() {
-  const item = S.qs[S.cur], mine = S.answers[S.cur], done = mine !== null;
-  const pips = S.qs.map((it, k) => {
-    const a = S.answers[k];
-    const cls = k === S.cur && !done ? "now" : a === null ? "" : a === it.correct ? "ok" : "no";
-    return `<span class="pip ${cls}"></span>`;
-  }).join("");
-  return `${header()}
-  <div class="pips" aria-label="Progress: question ${S.cur + 1} of ${LEN}">${pips}</div>
-  <section class="board stack">
-    ${qHead(item, S.cur)}
-    <div class="opts" role="group" aria-label="Answers">${optionsHtml(item, done ? [{ label: "You", cls: "you", a: mine }] : [], done)}</div>
-    ${done ? `<div class="feedback">
-        <span class="verdict ${mine === item.correct ? "ok" : "no"}">${mine === item.correct ? "Correct!" : "Not quite."}</span>
-        <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "Finish"}</button>
-      </div>` : `<p class="small muted" style="margin:0">Tip: press 1 to 4 to answer, Enter for the next question.</p>`}
-  </section>
-  ${partnerStrip()}`;
-}
-function waitingView() {
-  const ps = others();
-  const playing = ps.filter(p => !p.done && !p.left);
-  const nobody = !ps.length;
-  const leftEarly = ps.some(p => p.left && !p.done);
-  const names = playing.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ");
-  return `${header()}
-  <section class="board stack center waiting">
-    <span class="eyebrow">Game ${esc(S.code)}</span>
-    <h2 class="bigmsg">You're done!</h2>
-    <p class="muted" style="margin:0 auto;max-width:44ch">${nobody ? "Nobody else has joined this game yet. Send them the code, or see your results now."
-      : playing.length ? `Waiting for ${names} to finish. The answers are revealed as soon as everyone's done.`
-      : leftEarly ? "Your friend left before finishing." : "Getting the reveal ready…"}</p>
-    <div class="hourglass" aria-hidden="true"><span></span></div>
-    ${nobody || leftEarly ? `<div class="row" style="justify-content:center"><button class="btn gold" id="nowait">Show my results now</button></div>` : ""}
-  </section>
-  ${partnerStrip()}`;
-}
-function revealView() {
-  const players = [{ label: S.meName || S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal", answers: p.answers })));
-  const ms = STEP_MS(S.step);
-  const timer = `<div class="timer" aria-hidden="true"><span style="animation-duration:${ms}ms"></span></div>`;
-  const skip = `<button class="btn skip" id="skip">Skip to scores</button>`;
-  if (S.step === 0) {
-    return `${header()}<section class="board stack center reveal">
-      <span class="eyebrow">Game ${esc(S.code)} · ${players.map(p => esc(p.label)).join(" &amp; ")}</span>
-      <h2 class="bigmsg pop">Quiz completed!</h2>${timer}${skip}</section>`;
-  }
-  if (S.step === 1) {
-    return `${header()}<section class="board stack center reveal">
-      <h2 class="bigmsg pop">Let's have a look at the answers</h2>${timer}${skip}</section>`;
-  }
-  const k = S.step - 2, item = S.qs[k];
-  const picks = players.map(p => ({ label: p.label, cls: p.cls, a: p.answers[k] }));
-  const lines = players.map(p => {
-    const a = p.answers[k];
-    return `<span class="who-line"><b class="${p.cls === "you" ? "you-t" : "pal-name"}">${esc(p.label)}</b> ${a === null || a === undefined ? `<span class="muted">didn't answer</span>` : a === item.correct ? `<span class="ok-t">✓ right</span>` : `<span class="no-t">✗ picked ${LET[a]}</span>`}</span>`;
-  }).join("");
-  return `${header()}
-  <div class="pips" aria-label="Reveal: question ${k + 1} of ${LEN}">${S.qs.map((_, i) => `<span class="pip ${i < k ? "done" : i === k ? "now" : ""}"></span>`).join("")}</div>
-  <section class="board stack reveal">
-    ${qHead(item, k)}
-    <div class="opts">${optionsHtml(item, picks, true)}</div>
-    <div class="who-lines">${lines}</div>
-    ${timer}
-    <div class="row" style="justify-content:flex-end">${skip}</div>
-  </section>`;
-}
-function resultsView() {
-  const me = myScore();
-  const pals = S.final && S.final.length ? S.final : (S.compare ? [S.compare] : []);
-  const myCode = S.code + "-" + encodeAnswers(S.answers);
-  const byGroup = {};
-  S.qs.forEach((it, k) => { const g = GROUP[qOf(it).c]; byGroup[g] = byGroup[g] || [0, 0]; byGroup[g][1]++; if (S.answers[k] === it.correct) byGroup[g][0]++; });
-  const verdict = me >= 18 ? "Tavern legend." : me >= 14 ? "Top four, easily." : me >= 10 ? "Solid lobby. Bob approves." : me >= 6 ? "You held on to your Armor." : "Bob says: keep practising.";
-  const scores = [{ name: S.meName || S.nick || "You", s: me, cls: "you" }].concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), cls: "pal" })));
-  const best = Math.max(...scores.map(x => x.s));
-  const tiles = scores.map(x => `<div class="tile ${x.cls}"><span class="eyebrow">${esc(x.name)}${pals.length && x.s === best && scores.filter(y => y.s === best).length === 1 ? " · winner" : ""}</span><span class="n">${x.s}<small> / ${LEN}</small></span></div>`);
-  if (pals.length) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${scores.reduce((a, x) => a + x.s, 0)}<small> / ${LEN * scores.length}</small></span></div>`);
-  const review = S.qs.map((it, k) => {
-    const q = qOf(it);
-    const [qline, ...rest] = q.q.split("\n");
-    const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
-      : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
-    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
-      ${line(S.meName || S.nick || "You", "you", S.answers[k])}
-      ${pals.map(p => line(p.name, "pal", p.answers[k])).join("")}
-      ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
-  }).join("");
-  const showCompare = !(S.final && S.final.length) && !S.past;
-  return `${header()}
-  <section class="board stack">
-    <span class="eyebrow">${S.past ? "Past game" : "Results"} · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
-    <h2 style="font-size:1.9rem">${verdict}</h2>
-    <div class="tally">${tiles.join("")}</div>
-    <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
-    <div class="row">
-      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>` : `<button class="btn gold" id="again">${S.mode === "coop" ? "New co-op game" : "Play 20 more"}</button>`}
-      <button class="btn" id="go-home2">Home</button>
-    </div>
-  </section>
-  ${showCompare ? `<section class="board stack">
-    <span class="eyebrow">Compare with result codes</span>
-    <p class="small muted" style="margin:0">Your result code holds your game code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
-    <div class="row"><div class="resultcode" style="flex:1 1 220px">${esc(myCode)}</div><button class="btn" data-copy="${esc(myCode)}">Copy</button></div>
-    <form class="row" id="cmpform" autocomplete="off">
-      <input class="input" id="cmpname" maxlength="20" placeholder="Friend's name" aria-label="Friend's name" style="flex:1 1 120px">
-      <input class="input" id="cmpcode" placeholder="Paste their result code" aria-label="Friend's result code" style="flex:2 1 200px">
-      <button class="btn" type="submit">Compare</button>
-    </form>
-    <p class="err" id="cmperr" role="alert"></p>
-  </section>` : ""}
-  <details class="stack review-wrap"><summary>See every question again</summary>
-    <div class="review">${review}</div>
-  </details>`;
-}
-
-function render() {
-  const app = $("#app");
-  if (!BANK) return;
-  const v = { home: homeView, recent: recentView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView }[S.screen] || resultsView;
-  app.innerHTML = v();
-  bind();
-  saveSession();
-}
-function refreshPartnerBits() {
-  if (S.screen === "home" || S.screen === "recent" || S.screen === "reveal" || S.screen === "results") return;
-  if (S.screen === "waiting") { render(); checkAllDone(); return; }
-  if (S.screen === "ready") { render(); return; }
-  const el = $("#partners");
-  if (el) { el.outerHTML = partnerStrip(); bindCopy(); }
-}
-function bindCopy() { document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyText(b.dataset.copy, b)); }
-function bind() {
-  bindCopy();
-  const on = (id, fn) => { const el = document.getElementById(id); if (el) el.onclick = fn; };
-  on("go-home", home); on("go-home2", home);
-  const nick = $("#nick");
-  if (nick) nick.oninput = () => { S.nick = nick.value.trim().slice(0, 20); store("tt-nick", S.nick); const e = $("#nickerr"); if (e && S.nick) e.textContent = ""; };
-  on("solo", () => startGame("solo", newCode()));
-  on("recent-btn", showRecent);
-  document.querySelectorAll("[data-recent]").forEach(b => b.onclick = () => openRecent(+b.dataset.recent));
-  on("create", () => { if (!needName()) startGame("coop", newCode(), "host"); });
-  const jf = $("#joinform");
-  if (jf) jf.onsubmit = e => {
+  const routes = { H: "hearthstone/", M: "minecraft/" };
+  const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
-    if (needName()) return;
-    const c = normCode($("#joincode").value);
-    if (!validCode(c)) { $("#joinerr").textContent = "Codes are 5 letters or numbers, like K7QX2. Check it and try again."; return; }
-    startGame("coop", c, "guest");
-  };
-  on("begin", () => { S.screen = "quiz"; S.startedAt = Date.now(); render(); });
-  document.querySelectorAll("[data-opt]:not([disabled])").forEach(b => b.onclick = () => answer(+b.dataset.opt));
-  on("next", next);
-  on("nowait", finishWithoutWaiting);
-  on("skip", endReveal);
-  on("again", () => startGame(S.mode, newCode(), "host"));
-  const cf = $("#cmpform");
-  if (cf) cf.onsubmit = e => {
-    e.preventDefault();
-    const raw = $("#cmpcode").value.trim().toUpperCase();
-    const m = raw.match(/^([A-Z0-9]{5})-([ABCD-]{20})$/);
-    if (!m) { $("#cmperr").textContent = "That doesn't look like a result code. It should look like K7QX2- followed by 20 letters."; return; }
-    if (normCode(m[1]) !== S.code) { $("#cmperr").textContent = `That result is for game ${m[1]}, but you played ${S.code}. You need the same code to compare.`; return; }
-    S.compare = { name: ($("#cmpname").value.trim() || "Friend").slice(0, 20), answers: decodeAnswers(m[2]), done: true };
-    render();
-  };
-}
-document.addEventListener("keydown", e => {
-  if (S.screen !== "quiz" || e.target.tagName === "INPUT") return;
-  const k = "1234".indexOf(e.key) >= 0 ? "1234".indexOf(e.key) : "abcd".indexOf(e.key.toLowerCase());
-  if (k >= 0 && k < S.qs[S.cur].opts.length && e.key.length === 1) { answer(k); e.preventDefault(); }
-  else if (e.key === "Enter" && S.answers[S.cur] !== null && !(e.target.id === "next")) { next(); e.preventDefault(); }
-});
-
-// ------------------------------------------------------------ boot
-function restore(saved) {
-  if (!saved || !saved.code || !validCode(saved.code) || saved.screen === "home") return false;
-  S = fresh(saved); S.nick = store("tt-nick") || saved.nick || "";
-  S.qs = buildQuiz(S.code);
-  if (!Array.isArray(S.answers) || S.answers.length !== LEN) S.answers = Array(LEN).fill(null);
-  if (S.screen === "reveal") S.screen = "results";
-  render();
-  if (S.mode === "coop" && S.screen !== "results") joinRoom();
-  if (S.screen === "results") saveRecent();
-  return true;
-}
-function start(saved) {
-  S.nick = store("tt-nick") || "";
-  fetch("questions.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(bank => {
-    BANK = bank;
-    let session = null;
-    try { session = JSON.parse(sessionStorage.getItem("tt-game") || "null"); } catch (e) {}
-    if (!restore(saved && saved.S) && !restore(session)) render();
-  }).catch(() => {
-    $("#app").innerHTML = `<div class="loading">The question bank didn't load. Reload the page to try again.</div>`;
+    const c = String(document.getElementById("code").value || "").toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1");
+    const err = document.getElementById("err");
+    if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
+    const r = routes[c[0]];
+    if (!r) { err.textContent = "That code doesn't match a quiz. Hearthstone codes start with H and Minecraft codes start with M."; return; }
+    location.href = r + "?join=" + c;
   });
-}
-window.claude?.hot?.snapshot?.(() => ({ S: { ...S, qs: undefined } }));
-window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
 })();
 </script>
-
 </body>
 </html>

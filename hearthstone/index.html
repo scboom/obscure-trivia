@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hearthstone Battlegrounds Quiz – Obscure Trivia</title>
+<meta name="description" content="A free Hearthstone Battlegrounds quiz with 1,000 questions on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or co-op with a friend.">
+<link rel="canonical" href="https://scboom.github.io/tavern-trivia/hearthstone/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Hearthstone Battlegrounds Quiz – Obscure Trivia">
+<meta property="og:description" content="A free Hearthstone Battlegrounds quiz with 1,000 questions on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or co-op with a friend.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/tavern-trivia/hearthstone/">
+<meta property="og:image" content="https://scboom.github.io/tavern-trivia/hearthstone/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d1512">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Hearthstone Battlegrounds Quiz", "url": "https://scboom.github.io/tavern-trivia/hearthstone/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "A free Hearthstone Battlegrounds quiz with 1,000 questions on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or co-op with a friend.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/tavern-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/tavern-trivia/"}, {"@type": "ListItem", "position": 2, "name": "Hearthstone Battlegrounds Quiz", "item": "https://scboom.github.io/tavern-trivia/hearthstone/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css">
+<style>
+:root {
+  --bg: #1d1512;
+  --bg-art: repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 9px), radial-gradient(ellipse at 50% -10%, #3a2618 0%, transparent 60%);
+  --panel: #2a1f1a; --panel-fill: linear-gradient(180deg, #2a1f1a 0%, #251b16 100%); --panel-2: #37291f;
+  --panel-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+  --line: #4a382c; --line-hover: #6a5140; --ink: #f4eadf; --muted: #b8a391; --faint: #8a7666; --placeholder: #7d6a5b;
+  --accent: #e8b450; --accent-ink: #2a1b08; --accent-text: #e8b450; --accent-hover: #f0c063; --accent-edge: #f5cf7f; --accent-shadow: 0 2px 0 #9b6a1c;
+  --chip-bg: rgba(232,180,80,0.1); --chip-line: rgba(232,180,80,0.25); --chip-ink: #f2cf8a;
+  --pal: #6fc6d8; --pal-ink: #062026; --pal-bg: rgba(111,198,216,0.1); --pal-line: rgba(111,198,216,0.3);
+  --good: #86d16f; --good-ink: #10200a; --good-bg: rgba(134,209,111,0.12); --bad: #e9725f; --bad-ink: #2a0b06; --bad-bg: rgba(233,114,95,0.12);
+  --inset: #1a1210; --opt: #231a15; --tile: #221914;
+  --card-bg: #f1e4cc; --card-ink: #2b1f14; --card-line: #c9b48f; --card-inner: #e6d5b5; --card-strong: #1a120b;
+  --f-display: "Bree Serif", Georgia, "Times New Roman", serif; --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 10px; --r-panel: 14px; --r-pill: 999px; --r-key: 7px;
+  color-scheme: dark;
+}
+.coin {
+  width: 30px; height: 30px; border-radius: 50%; flex: none;
+  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, var(--accent) 38%, #a8721f 100%);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.4);
+  display: grid; place-items: center; color: var(--accent-ink); font-family: var(--f-display); font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true">?</span><h1>Battlegrounds</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Hearthstone Battlegrounds quiz</span>
+    <h2>How well do you really know Bob&#x27;s Tavern?</h2>
+    <p>A free Hearthstone Battlegrounds quiz with 1,000 questions: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play 20 random questions on your own, or co-op with a friend using a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "hearthstone", "letter": "H", "short": "Battlegrounds", "icon": "?", "eyebrow": "Hearthstone Battlegrounds quiz", "headline": "How well do you really know Bob's Tavern?", "topics": "minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies", "foot": "Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.", "seed": "tavern-trivia-v1:", "topic": "tavern-trivia/v1/", "recentKey": "tt-recent-v1", "sessionKey": "tt-game", "bank": "questions.json", "hub": "../", "others": {"M": "../minecraft/"}, "groups": {"tier": "Minion", "stats": "Minion", "type": "Minion", "effect": "Minion", "whois": "Minion", "golden": "Minion", "oldstats": "Minion", "oldeffect": "Minion", "duos": "Minion", "armor": "Hero", "duoarmor": "Hero", "health": "Hero", "hpname": "Hero", "hpwho": "Hero", "hpeffect": "Hero", "hpcost": "Hero", "buddy": "Hero", "buddywho": "Hero", "quest": "Quest", "questwho": "Quest", "trinket": "Trinket", "trinketcost": "Trinket", "trinketkind": "Trinket", "spell": "Tavern spell", "spellcost": "Tavern spell", "spelltier": "Tavern spell", "anomaly": "Anomaly", "anomalywho": "Anomaly"}, "caps": {"Minion": 9, "Hero": 7, "Quest": 3, "Trinket": 3, "Tavern spell": 3, "Anomaly": 3}, "verdicts": [[18, "Tavern legend."], [14, "Top four, easily."], [10, "Solid lobby. Bob approves."], [6, "You held on to your Armor."], [0, "Bob says: keep practising."]]};</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
