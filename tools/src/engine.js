@@ -62,7 +62,7 @@ function encodeAnswers(arr) { return S.qs.map((_, k) => (arr[k] === null || arr[
 function decodeAnswers(str) { return [...String(str || "")].slice(0, LEN).map(ch => { const n = LET.indexOf(ch); return n < 0 ? null : n; }); }
 function scoreOf(arr) { return arr.reduce((n, a, k) => n + (S.qs[k] && a === S.qs[k].correct ? 1 : 0), 0); }
 
-// ------------------------------------------------------------ live co-op
+// ------------------------------------------------------------ live party
 // Two ways to reach a friend: the claude.ai room (when the page runs there), otherwise a
 // free public MQTT relay. Each player shares { code, name, ans, done }. On the relay every
 // player's latest state is kept for two days, so a friend who joins late, or reloads, still
@@ -73,13 +73,66 @@ let pals = new Map(), leftIds = new Set(), transport = null, gen = 0;
 
 function myState() {
   const done = !!S.finishedAt;
-  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0 };
+  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0, j: S.joinedAt || 0 };
+}
+const MULTI = m => m === "coop" || m === "party";
+const PARTY_MAX = 6;
+function capOf() { return S.meta && S.meta.cap ? S.meta.cap : PARTY_MAX; }
+// everyone in the game, me included, in join order: earliest first
+function orderedAll() {
+  const list = others().map(p => ({ id: p.id, pid: p.id.slice(2), j: p.j || Infinity, name: p.name }));
+  list.push({ id: "me", pid: S.pid || "", j: S.joinedAt || 0, name: S.nick || "You", me: true });
+  return list.sort((a, b) => a.j - b.j || (a.pid < b.pid ? -1 : a.pid > b.pid ? 1 : 0));
+}
+// the other players who are actually in my game (not ones turned away as extra)
+function gamePlayers() {
+  const m = S.meta;
+  if (m && m.started && Array.isArray(m.players)) return others().filter(p => m.players.includes(p.id.slice(2)));
+  const allowed = new Set(orderedAll().slice(0, capOf()).map(x => x.id));
+  return others().filter(p => allowed.has(p.id));
+}
+function colorOf(id) {
+  const ids = orderedAll().filter(x => !x.me).map(x => x.id);
+  const i = ids.indexOf(id);
+  return "c" + ((i < 0 ? 0 : i) % 5 + 1);
+}
+function effectiveHost() {
+  const all = orderedAll().slice(0, capOf());
+  const named = S.meta && S.meta.host;
+  const h = all.find(x => (x.me ? S.pid : x.pid) === named && !(pals.get(x.id) || {}).left);
+  return h || all.find(x => x.me || !(pals.get(x.id) || {}).left) || all[0];
+}
+function iAmHost() { const h = effectiveHost(); return !!(h && h.me); }
+function setMeta(m) {
+  if (!m || typeof m !== "object" || !/^(coop|party)$/.test(m.mode)) return;
+  const cap = Math.max(2, Math.min(PARTY_MAX, parseInt(m.cap, 10) || PARTY_MAX));
+  S.meta = { mode: m.mode, cap, host: String(m.host || ""), started: Number(m.started) || 0,
+    players: Array.isArray(m.players) ? m.players.filter(x => /^[a-z0-9]{12}$/.test(x)).slice(0, cap) : null };
+  if (S.role === "guest" && S.mode !== m.mode) S.mode = m.mode;
+  if (S.meta.started && S.screen === "ready") {
+    if (S.meta.players && S.meta.players.includes(S.pid)) { S.screen = "quiz"; S.startedAt = Date.now(); render(); window.scrollTo({ top: 0 }); return; }
+    turnAway("started"); return;
+  }
+  refreshPartnerBits();
+}
+function checkCapacity() {
+  if (!S.synced || S.screen !== "ready" || (S.meta && S.meta.started)) return;
+  const idx = orderedAll().findIndex(x => x.me);
+  if (idx >= capOf()) turnAway("full");
+}
+function turnAway(reason) {
+  S.fullReason = reason; S.fullCount = capOf();
+  try { transport && transport.close(true); } catch (e) {}
+  transport = null; gen++;
+  S.screen = "full"; render();
 }
 function setPal(id, st) {
   if (!st || typeof st !== "object" || st.code !== S.code) return;
   const t = Number.isFinite(st.t) && st.t > 0 && st.t < 86400 ? Math.round(st.t) : 0;
-  pals.set(id, { id, name: String(st.name || "Your friend").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, left: leftIds.has(id) });
+  const j = Number.isFinite(st.j) && st.j > 0 ? st.j : 0;
+  pals.set(id, { id, name: String(st.name || "Player").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, j, left: leftIds.has(id) });
   refreshPartnerBits();
+  checkCapacity();
 }
 function markLeft(id) { leftIds.add(id); const p = pals.get(id); if (p && !p.left) { p.left = true; refreshPartnerBits(); } }
 function markBack(id) { leftIds.delete(id); const p = pals.get(id); if (p && p.left) { p.left = false; refreshPartnerBits(); } }
@@ -91,23 +144,6 @@ function partnerList() {
 }
 function setLive(state) { if (roomState !== state) { roomState = state; refreshPartnerBits(); } }
 function withTimeout(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]); }
-
-async function viaRoom(code, my) {
-  let lobby = null;
-  try { lobby = await window.claude?.use?.("room"); } catch (e) { lobby = null; }
-  if (!lobby) return null;
-  const r = await lobby.join("q-" + code.toLowerCase());
-  const unsub = r.onPeers(ch => {
-    if (my !== gen) return;
-    const here = new Set();
-    ch.peers.forEach(p => { if (p.sameTab || !p.presence || !p.presence.code) return; here.add("r:" + p.peer); setPal("r:" + p.peer, p.presence); });
-    for (const id of pals.keys()) if (id.startsWith("r:") && !here.has(id)) markLeft(id);
-  }, () => { if (my === gen) setLive("off"); });
-  return {
-    send() { r.presence(myState()).catch(() => {}); },
-    close() { try { unsub(); } catch (e) {} try { r.leave(); } catch (e) {} }
-  };
-}
 
 function loadMqtt() {
   if (window.mqtt) return Promise.resolve(window.mqtt);
@@ -149,17 +185,28 @@ async function viaMqtt(code, my) {
     });
     c.on("connect", () => {
       if (my !== gen) return;
-      c.subscribe(base + "#", { qos: 1 });
+      c.subscribe(base + "#", { qos: 1 }, () => setTimeout(() => { if (my === gen) { S.synced = true; checkCapacity(); refreshPartnerBits(); } }, 1500));
       c.publish(onTopic, "1", pubOpts);
       c.publish(stateTopic, JSON.stringify(myState()), pubOpts);
+      if (S.role === "host" && !S.metaSent) {
+        S.metaSent = true;
+        S.meta = { mode: "party", cap: PARTY_MAX, host: pid, started: 0, players: null };
+        c.publish(base + "meta", JSON.stringify(S.meta), pubOpts);
+        saveSession();
+      }
       setLive("on");
     });
     c.on("message", (topic, buf) => {
       if (my !== gen || !topic.startsWith(base)) return;
       const parts = topic.slice(base.length).split("/");
       const id = parts[0];
+      if (id === "meta" && parts.length === 1 && buf.length && buf.length < 2000) {
+        let m = null; try { m = JSON.parse(buf.toString()); } catch (e) { return; }
+        setMeta(m); return;
+      }
       if (!/^[a-z0-9]{12}$/.test(id) || id === pid || buf.length > 2000) return;
       const text = buf.toString();
+      if (!buf.length) { if (parts.length === 1 && pals.delete("m:" + id)) refreshPartnerBits(); return; }
       if (parts.length === 1) {
         let st = null; try { st = JSON.parse(text); } catch (e) { return; }
         setPal("m:" + id, st);
@@ -173,34 +220,45 @@ async function viaMqtt(code, my) {
   setTimeout(() => { if (my === gen && !clients.some(c => c.connected)) setLive("off"); }, 15000);
   return {
     send() { const s = JSON.stringify(myState()); clients.forEach(c => { if (c.connected) c.publish(stateTopic, s, pubOpts); }); },
-    close() { clients.forEach(c => { try { if (c.connected) c.publish(onTopic, "0", pubOpts); c.end(false); } catch (e) {} }); }
+    meta(m) { const s = JSON.stringify(m); clients.forEach(c => { if (c.connected) c.publish(base + "meta", s, pubOpts); }); },
+    // leaving a lobby before the game starts frees the seat; leaving mid-game keeps your answers
+    close(remove) {
+      clients.forEach(c => {
+        try {
+          if (c.connected) {
+            if (remove) { c.publish(stateTopic, "", { qos: 1, retain: true }); c.publish(onTopic, "", { qos: 1, retain: true }); }
+            else c.publish(onTopic, "0", pubOpts);
+          }
+          c.end(false);
+        } catch (e) {}
+      });
+    }
   };
 }
 async function connectLive() {
-  if (S.mode !== "coop" || !S.code) return;
+  if (!MULTI(S.mode) || !S.code) return;
   const my = ++gen, code = S.code;
   try { transport && transport.close(); } catch (e) {}
-  transport = null; pals = new Map(); leftIds = new Set();
+  transport = null; pals = new Map(); leftIds = new Set(); S.synced = false;
   setLive("connecting");
-  let t = null, viaClaude = false;
-  try { t = await viaRoom(code, my); viaClaude = !!t; } catch (e) { t = null; }
-  if (!t) { try { t = await viaMqtt(code, my); } catch (e) { t = null; } }
+  let t = null;
+  try { t = await viaMqtt(code, my); } catch (e) { t = null; }
   if (my !== gen) { try { t && t.close(); } catch (e) {} return; }
   if (!t) { setLive("off"); return; }
-  transport = t;
-  if (viaClaude) { setLive("on"); t.send(); }       // the relay sets "on" itself once it connects
+  transport = t;                                     // the relay sets "on" itself once it connects
 }
 function joinRoom() { connectLive(); }
 function leaveRoom() {
   gen++;
-  try { transport && transport.close(); } catch (e) {}
+  try { transport && transport.close(S.screen === "ready"); } catch (e) {}
   transport = null; pals = new Map(); leftIds = new Set(); roomState = "idle";
 }
 function pushPresence() { if (transport) transport.send(); }
-window.addEventListener("pagehide", () => { try { transport && transport.close(); } catch (e) {} });
+window.addEventListener("pagehide", () => { try { transport && transport.close(S.screen === "ready"); } catch (e) {} });
 
 // ------------------------------------------------------------ recent quizzes (saved in this browser only)
 const RECENT_KEY = QUIZ.recentKey, RECENT_MAX = 5;
+function ordinal(n) { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
 function fmtTime(sec) { sec = Math.max(0, Math.round(sec || 0)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
 function bankVersion() {
   let h = 0; const str = BANK.length + BANK.slice(0, 20).map(q => q.q).join("|");
@@ -216,7 +274,7 @@ function loadRecent() {
 function saveRecent() {
   if (S.saved || !S.finishedAt || S.past) return;
   S.saved = true;
-  const pals = (S.final || []).map(p => ({ n: p.name, ans: encodeAnswers(p.answers), s: scoreOf(p.answers) }));
+  const pals = (S.final || []).map(p => ({ n: p.name, ans: encodeAnswers(p.answers), s: scoreOf(p.answers), t: p.t || 0 }));
   const e = { code: S.code, mode: S.mode, at: S.finishedAt, t: elapsedSec(), bv: bankVersion(),
     me: { n: S.meName || S.nick || "You", ans: encodeAnswers(S.answers), s: myScore() }, pals };
   const list = loadRecent().filter(x => !(x.code === e.code && x.at === e.at));
@@ -229,7 +287,7 @@ function openRecent(i) {
   if (!e) return;
   stopReveal(); leaveRoom();
   S = fresh({ screen: "results", mode: e.mode, code: e.code, qs: buildQuiz(e.code), answers: decodeAnswers(e.me.ans),
-    final: (e.pals || []).map(p => ({ name: String(p.n).slice(0, 20), answers: decodeAnswers(p.ans), done: true })),
+    final: (e.pals || []).map((p, i) => ({ id: "h" + i, name: String(p.n).slice(0, 20), answers: decodeAnswers(p.ans), done: true, t: p.t || 0, c: "c" + (i % 5 + 1) })),
     startedAt: e.at - (e.t || 0) * 1000, finishedAt: e.at, saved: true, past: true, meName: String(e.me.n || "You").slice(0, 20) });
   render(); window.scrollTo({ top: 0 });
 }
@@ -238,14 +296,17 @@ function recentView() {
   const when = ms => { try { return new Date(ms).toLocaleString(undefined, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }); } catch (x) { return ""; } };
   const items = list.map((e, i) => {
     const others = e.pals || [];
-    const title = others.length ? `Co-op with ${others.map(p => esc(p.n)).join(" &amp; ")}` : e.mode === "coop" ? "Co-op (nobody joined)" : "Solo";
+    const names = others.map(p => esc(p.n));
+    const title = others.length ? `Party with ${names.length > 3 ? names.slice(0, 3).join(", ") + " &amp; " + (names.length - 3) + " more" : names.join(" &amp; ")}`
+      : MULTI(e.mode) ? "Party (nobody joined)" : "Solo";
     let outcome = "";
     if (others.length) {
-      const all = [e.me, ...others], best = Math.max(...all.map(p => p.s));
-      outcome = all.filter(p => p.s === best).length > 1 ? "Tie" : e.me.s === best ? "You won" : `${esc(others.find(p => p.s === best).n)} won`;
+      const place = 1 + others.filter(p => p.s > e.me.s).length;
+      const tied = others.some(p => p.s === e.me.s);
+      outcome = place === 1 ? (tied ? "Tied for 1st" : "You won") : `You came ${ordinal(place)} of ${others.length + 1}`;
     }
     const scores = [`<span class="rc-score"><span class="you-t">${esc(e.me.n)}</span> <b>${e.me.s}</b><small>/${LEN}</small></span>`]
-      .concat(others.map(p => `<span class="rc-score"><span class="pal-name">${esc(p.n)}</span> <b>${p.s}</b><small>/${LEN}</small></span>`)).join("");
+      .concat(others.map((p, i) => `<span class="rc-score"><span class="pal-name c${i % 5 + 1}">${esc(p.n)}</span> <b>${p.s}</b><small>/${LEN}</small></span>`)).join("");
     return `<li class="rc">
       <div class="rc-top"><span class="rc-title">${title}</span><span class="small muted">${esc(when(e.at))}</span></div>
       <div class="rc-scores">${scores}${outcome ? `<span class="chip${outcome === "You won" ? "" : " mana"}">${outcome}</span>` : ""}</div>
@@ -266,21 +327,31 @@ function recentView() {
 // ------------------------------------------------------------ actions
 function fresh(extra) {
   return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
-    startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "" }, extra || {});
+    startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "",
+    pid: "", joinedAt: 0, meta: null, metaSent: false, synced: false, fullReason: "" }, extra || {});
 }
 function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.round((S.finishedAt - S.startedAt) / 1000)) : 0; }
 function needName() {
   if (S.nick) return false;
-  const el = $("#nickerr"); if (el) el.textContent = "Type your name first so your friend knows who you are.";
+  const el = $("#nickerr"); if (el) el.textContent = "Type your name first so the other players know who you are.";
   const n = $("#nick"); n && n.focus();
   return true;
 }
 function startGame(mode, code, role) {
   stopReveal();
+  if (MULTI(S.mode)) leaveRoom();
   S = fresh({ screen: mode === "solo" ? "quiz" : "ready", mode, role: role || "host", code, qs: buildQuiz(code), answers: Array(LEN).fill(null),
-    startedAt: mode === "solo" ? Date.now() : 0 });
+    startedAt: mode === "solo" ? Date.now() : 0, pid: MULTI(mode) ? playerId(code) : "", joinedAt: Date.now() });
   render();
-  if (mode === "coop") joinRoom(); else leaveRoom();
+  if (MULTI(mode)) joinRoom(); else leaveRoom();
+}
+function startParty() {
+  if (!iAmHost() || !transport) return;
+  const ids = orderedAll().slice(0, capOf()).filter(x => x.me || !(pals.get(x.id) || {}).left).map(x => x.me ? S.pid : x.pid);
+  if (ids.length < 2) return;
+  S.meta = Object.assign({}, S.meta || { mode: "party", cap: PARTY_MAX, host: S.pid }, { started: Date.now(), players: ids });
+  transport.meta(S.meta);
+  S.screen = "quiz"; S.startedAt = Date.now(); render(); window.scrollTo({ top: 0 });
 }
 function answer(k) {
   if (S.answers[S.cur] !== null) return;
@@ -291,13 +362,13 @@ function next() {
   if (S.answers[S.cur] === null) return;
   if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
   S.finishedAt = Date.now();
-  if (S.mode === "coop" && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
+  if (MULTI(S.mode) && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
   else { S.screen = "results"; pushPresence(); render(); saveRecent(); }
   window.scrollTo({ top: 0 });
 }
 function checkAllDone() {
   if (S.screen !== "waiting") return;
-  const ps = others();
+  const ps = gamePlayers();
   const playing = ps.filter(p => !p.done && !p.left);
   if (ps.some(p => p.done) && !playing.length) startReveal();
 }
@@ -307,8 +378,8 @@ function finishWithoutWaiting() { startReveal(); }
 let revealTimer = 0;
 const STEP_MS = k => (k === 0 ? 5000 : k === 1 ? 2000 : 5000) * (window.TT_SPEED || 1);
 function startReveal() {
-  S.final = others().filter(p => p.done || p.answers.some(a => a !== null))
-    .map(p => ({ id: p.id, name: p.name, answers: p.answers.slice(), t: p.t, done: p.done }));
+  S.final = gamePlayers().filter(p => p.done || p.answers.some(a => a !== null))
+    .map(p => ({ id: p.id, name: p.name, answers: p.answers.slice(), t: p.t, done: p.done, c: colorOf(p.id) }));
   if (!S.final.length) { S.final = null; S.screen = "results"; render(); saveRecent(); return; }
   S.screen = "reveal"; S.step = 0; render(); window.scrollTo({ top: 0 });
   scheduleStep();
@@ -356,7 +427,7 @@ function homeView() {
     <div class="facts">${Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<span class="chip">${n} ${esc(g)}</span>`).join("")}</div>
   </section>
   <div class="field" style="max-width:320px">
-    <label for="nick">Your name (shown to your friend)</label>
+    <label for="nick">Your name (shown to other players)</label>
     <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
     <p class="err" id="nickerr" role="alert"></p>
   </div>
@@ -364,18 +435,18 @@ function homeView() {
     <section class="board mode">
       <span class="eyebrow">Solo</span>
       <h3>Play alone</h3>
-      <p>Twenty fresh questions from the bank. Your last 5 games are saved under <b>Recent quizzes</b>.</p>
+      <p>Twenty random questions. Your last 5 games are saved under <b>Recent quizzes</b>.</p>
       <div class="spacer"></div>
       <button class="btn gold block" id="solo">Start 20 questions</button>
     </section>
     <section class="board mode">
-      <span class="eyebrow">Co-op</span>
-      <h3>Play with a friend</h3>
-      <p>Get a 5-letter code and send it to a friend. You both answer the same 20 questions, then watch the answers revealed together.</p>
-      <button class="btn gold block" id="create">Create a game</button>
+      <span class="eyebrow">Party · 2 to ${PARTY_MAX} players</span>
+      <h3>Play with friends</h3>
+      <p>Get a 5-letter code and share it. Everyone answers the same 20 questions, then you watch the answers revealed together and see who wins.</p>
+      <button class="btn gold block" id="create">Create a party</button>
       <div class="divider">or join one</div>
       <form class="row" id="joinform" autocomplete="off">
-        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Invite code">
+        <input class="input codein" id="joincode" maxlength="5" placeholder="CODE" aria-label="Party code">
         <button class="btn" type="submit">Join</button>
       </form>
       <p class="err" id="joinerr" role="alert"></p>
@@ -383,60 +454,86 @@ function homeView() {
   </div>
   <p class="foot">${esc(QUIZ.foot)}</p>`;
 }
+const CROWN = `<svg class="crown" viewBox="0 0 24 18" aria-label="Host" role="img"><path d="M2 16h20l1.5-12-6.5 5L12 1 7 9 .5 4z" fill="currentColor"/></svg>`;
 function palStatus(p) {
   const n = p.answers.filter(a => a !== null).length;
-  return p.done ? "Finished" : p.left ? "Left the game" : `On question ${Math.min(n + 1, LEN)} of ${LEN}`;
+  return p.done ? "Finished" : p.left ? "Left the quiz" : `On question ${Math.min(n + 1, LEN)} of ${LEN}`;
+}
+function hostId() { const h = effectiveHost(); return h ? h.id : null; }
+// one row per player: colour dot, name (you marked), crown for the host, and an optional status
+function playerRows(withStatus) {
+  const hid = hostId();
+  const inGame = S.meta && S.meta.started && S.meta.players ? new Set(S.meta.players) : null;
+  const rows = orderedAll().slice(0, capOf()).filter(x => !inGame || inGame.has(x.me ? S.pid : x.pid));
+  return rows.map(x => {
+    const p = pals.get(x.id);
+    const left = p && p.left && !p.done;
+    const status = !withStatus ? (left ? "Left" : "") : x.me ? (S.finishedAt ? "Finished" : S.screen === "quiz" ? `On question ${S.cur + 1} of ${LEN}` : "") : palStatus(p);
+    return `<li class="player${left ? " gone" : ""}">
+      <span class="dot ${x.me ? "you" : colorOf(x.id)}" aria-hidden="true"></span>
+      <span class="pname ${x.me ? "you-t" : "pal-name " + colorOf(x.id)}">${esc(x.me ? (S.nick || "You") : x.name)}${x.me ? ' <span class="muted">(you)</span>' : ""}</span>
+      ${x.id === hid ? CROWN : ""}
+      ${status ? `<span class="pal-prog">${status}</span>` : ""}
+    </li>`;
+  }).join("");
 }
 function partnerStrip() {
-  if (S.mode !== "coop") return "";
-  const list = others();
+  if (!MULTI(S.mode)) return "";
   let body;
-  const guest = S.role === "guest";
-  if (roomState === "off" && !list.length) {
-    body = `<p class="small muted" style="margin:0">Couldn't reach the live server, so you won't see your friend's progress. You still get the same questions. Swap result codes at the end to compare.</p>`;
-  } else if (!list.length) {
-    const msg = roomState === "connecting" ? "Connecting…"
-      : guest ? `Connected to game ${esc(S.code)}. Nobody else is here yet. Check that your friend clicked <b>Create a game</b> and sent you this exact code.`
-      : "Waiting for your friend to join with the code";
-    body = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">${msg}</span></div>`;
+  if (roomState === "off") {
+    body = `<p class="small muted" style="margin:0">Couldn't reach the party server, so you won't see the other players' progress. Everyone still gets the same questions.</p>`;
+  } else if (roomState === "connecting" || roomState === "idle") {
+    body = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">Connecting…</span></div>`;
   } else {
-    body = list.map(p => `<div class="pal-row"><span class="dot${p.left && !p.done ? " wait" : ""}" aria-hidden="true"></span><span class="pal-name">${esc(p.name)}</span>
-        <span class="pal-prog">${palStatus(p)}</span></div>`).join("");
+    body = `<ul class="players">${playerRows(true)}</ul>`;
   }
   return `<section class="board partners" id="partners" aria-live="polite">
-    <div class="head"><span class="eyebrow">Co-op · code <span class="codechip">${esc(S.code)}</span></span>
+    <div class="head"><span class="eyebrow">Party · code <span class="codechip">${esc(S.code)}</span></span>
     <button class="btn copy" data-copy="${esc(S.code)}">Copy code</button></div>
     ${body}
   </section>`;
 }
 function readyView() {
-  const after = "You'll see which question each other is on, and all the answers are revealed together at the end.";
-  if (S.role === "guest") {
-    const pals = others();
-    const who = pals.length ? pals.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ") : "";
-    return `${header()}
-  <section class="board stack center">
-    <span class="eyebrow">You joined game</span>
-    <div class="code-big" aria-label="Game code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:46ch">${who ? `You're playing with ${who}. ` : ""}You'll both get the same 20 questions in the same order. ${after}</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn gold" id="begin">Start the quiz</button>
-    </div>
-  </section>
-  ${partnerStrip()}`;
+  const n = orderedAll().slice(0, capOf()).length;
+  const host = effectiveHost();
+  const me = iAmHost();
+  let list, action;
+  if (roomState === "off") {
+    list = `<p class="muted" style="margin:0">Couldn't reach the party server. Check your internet connection and try again.</p>`;
+    action = `<button class="btn gold" id="retry">Try again</button>`;
+  } else if (roomState !== "on" || !S.synced) {
+    list = `<div class="pal-row"><span class="dot wait" aria-hidden="true"></span><span class="muted">Connecting to the lobby…</span></div>`;
+    action = "";
+  } else {
+    list = `<ul class="players lobby">${playerRows(false)}</ul>`;
+    action = me
+      ? (n >= 2 ? `<button class="btn gold" id="begin">Start the quiz</button><p class="small muted" style="margin:0">Everyone starts at the same moment. Nobody can join once it's started.</p>`
+               : `<button class="btn gold" id="begin" disabled>Start the quiz</button><p class="small muted" style="margin:0">You need at least 2 players to start.</p>`)
+      : `<p class="muted" style="margin:0">Waiting for <b class="${host && host.me ? "you-t" : "pal-name " + (host ? colorOf(host.id) : "")}">${esc(host ? host.name : "the host")}</b> to start the quiz…</p>`;
   }
   return `${header()}
   <section class="board stack center">
-    <span class="eyebrow">Your invite code</span>
-    <div class="code-big" aria-label="Invite code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
-    <p class="muted" style="margin:0 auto;max-width:46ch">Send this code to your friend. They choose <b>Join</b> on the home screen and type it in. You'll both get the same 20 questions in the same order.</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn" data-copy="${esc(S.code)}">Copy code</button>
-      <button class="btn gold" id="begin">Start the quiz</button>
-    </div>
-    <p class="small muted" style="margin:0 auto;max-width:46ch">You can start before your friend joins. ${after}</p>
+    <span class="eyebrow">Quiz lobby · party code</span>
+    <div class="code-big" aria-label="Party code ${esc(S.code.split("").join(" "))}">${esc(S.code)}</div>
+    <div class="row" style="justify-content:center"><button class="btn copy" data-copy="${esc(S.code)}">Copy code</button></div>
+    <p class="muted" style="margin:0 auto;max-width:46ch">Share this code. Friends choose <b>Join</b> on the ${esc(QUIZ.short)} page and type it in. Up to ${PARTY_MAX} players.</p>
   </section>
-  ${partnerStrip()}`;
+  <section class="board stack">
+    <div class="head-row"><h3 class="lobby-title">Current list of players</h3><span class="muted small">${roomState === "on" && S.synced ? `${n} of ${PARTY_MAX}` : ""}</span></div>
+    ${list}
+    <div class="stack" style="gap:8px">${action}</div>
+  </section>`;
+}
+function fullView() {
+  const started = S.fullReason === "started";
+  return `${header()}
+  <section class="board stack center">
+    <span class="eyebrow">Party code ${esc(S.code)}</span>
+    <h2 class="bigmsg">${started ? "This quiz is already ongoing" : "This quiz lobby is full"}</h2>
+    <p class="muted" style="margin:0 auto;max-width:44ch">${started ? "The host has already started this quiz, so nobody else can join. Ask them for a new code when it's finished."
+      : `A party can have up to ${PARTY_MAX} players, and this one already has ${PARTY_MAX}.`}</p>
+    <div class="row" style="justify-content:center"><button class="btn gold" id="go-home2">Back to home</button></div>
+  </section>`;
 }
 function optionsHtml(item, picks, reveal) {
   // picks: [{label, cls, a}] for each player; reveal: show correct answer
@@ -480,31 +577,32 @@ function quizView() {
   ${partnerStrip()}`;
 }
 function waitingView() {
-  const ps = others();
+  const ps = gamePlayers();
   const playing = ps.filter(p => !p.done && !p.left);
   const nobody = !ps.length;
   const leftEarly = ps.some(p => p.left && !p.done);
-  const names = playing.map(p => `<b class="pal-name">${esc(p.name)}</b>`).join(" and ");
+  const nm = playing.map(p => `<b class="pal-name ${colorOf(p.id)}">${esc(p.name)}</b>`);
+  const names = nm.length > 1 ? nm.slice(0, -1).join(", ") + " and " + nm[nm.length - 1] : nm.join("");
   return `${header()}
   <section class="board stack center waiting">
     <span class="eyebrow">Game ${esc(S.code)}</span>
     <h2 class="bigmsg">You're done!</h2>
-    <p class="muted" style="margin:0 auto;max-width:44ch">${nobody ? "Nobody else has joined this game yet. Send them the code, or see your results now."
+    <p class="muted" style="margin:0 auto;max-width:44ch">${nobody ? "Nobody else is in this quiz. You can see your results now."
       : playing.length ? `Waiting for ${names} to finish. The answers are revealed as soon as everyone's done.`
-      : leftEarly ? "Your friend left before finishing." : "Getting the reveal ready…"}</p>
+      : leftEarly ? "Someone left before finishing." : "Getting the reveal ready…"}</p>
     <div class="hourglass" aria-hidden="true"><span></span></div>
     ${nobody || leftEarly ? `<div class="row" style="justify-content:center"><button class="btn gold" id="nowait">Show my results now</button></div>` : ""}
   </section>
   ${partnerStrip()}`;
 }
 function revealView() {
-  const players = [{ label: S.meName || S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal", answers: p.answers })));
+  const players = [{ label: S.meName || S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal " + (p.c || "c1"), answers: p.answers })));
   const ms = STEP_MS(S.step);
   const timer = `<div class="timer" aria-hidden="true"><span style="animation-duration:${ms}ms"></span></div>`;
   const skip = `<button class="btn skip" id="skip">Skip to scores</button>`;
   if (S.step === 0) {
     return `${header()}<section class="board stack center reveal">
-      <span class="eyebrow">Game ${esc(S.code)} · ${players.map(p => esc(p.label)).join(" &amp; ")}</span>
+      <span class="eyebrow">Party ${esc(S.code)} · ${players.length} players</span>
       <h2 class="bigmsg pop">Quiz completed!</h2>${timer}${skip}</section>`;
   }
   if (S.step === 1) {
@@ -515,7 +613,7 @@ function revealView() {
   const picks = players.map(p => ({ label: p.label, cls: p.cls, a: p.answers[k] }));
   const lines = players.map(p => {
     const a = p.answers[k];
-    return `<span class="who-line"><b class="${p.cls === "you" ? "you-t" : "pal-name"}">${esc(p.label)}</b> ${a === null || a === undefined ? `<span class="muted">didn't answer</span>` : a === item.correct ? `<span class="ok-t">✓ right</span>` : `<span class="no-t">✗ picked ${LET[a]}</span>`}</span>`;
+    return `<span class="who-line"><b class="${p.cls === "you" ? "you-t" : "pal-name " + p.cls.split(" ")[1]}">${esc(p.label)}</b> ${a === null || a === undefined ? `<span class="muted">didn't answer</span>` : a === item.correct ? `<span class="ok-t">✓ right</span>` : `<span class="no-t">✗ picked ${LET[a]}</span>`}</span>`;
   }).join("");
   return `${header()}
   <div class="pips" aria-label="Reveal: question ${k + 1} of ${LEN}">${S.qs.map((_, i) => `<span class="pip ${i < k ? "done" : i === k ? "now" : ""}"></span>`).join("")}</div>
@@ -534,10 +632,23 @@ function resultsView() {
   const byGroup = {};
   S.qs.forEach((it, k) => { const g = GROUP[qOf(it).c]; byGroup[g] = byGroup[g] || [0, 0]; byGroup[g][1]++; if (S.answers[k] === it.correct) byGroup[g][0]++; });
   const verdict = (QUIZ.verdicts.find(([min]) => me >= min) || QUIZ.verdicts[QUIZ.verdicts.length - 1])[1];
-  const scores = [{ name: S.meName || S.nick || "You", s: me, cls: "you" }].concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), cls: "pal" })));
-  const best = Math.max(...scores.map(x => x.s));
-  const tiles = scores.map(x => `<div class="tile ${x.cls}"><span class="eyebrow">${esc(x.name)}${pals.length && x.s === best && scores.filter(y => y.s === best).length === 1 ? " · winner" : ""}</span><span class="n">${x.s}<small> / ${LEN}</small></span></div>`);
-  if (pals.length) tiles.push(`<div class="tile"><span class="eyebrow">Team total</span><span class="n">${scores.reduce((a, x) => a + x.s, 0)}<small> / ${LEN * scores.length}</small></span></div>`);
+  const scores = [{ name: S.meName || S.nick || "You", s: me, t: elapsedSec(), cls: "you", me: true }]
+    .concat(pals.map(p => ({ name: p.name, s: scoreOf(p.answers), t: p.t || 0, cls: "pal " + (p.c || "c1") })));
+  scores.sort((a, b) => b.s - a.s || (a.t || 1e9) - (b.t || 1e9));
+  // places: same score shares a place, faster time breaks ties
+  let tiles;
+  if (pals.length) {
+    let place = 0, prev = null;
+    tiles = scores.map((x, i) => {
+      if (!prev || x.s !== prev.s || x.t !== prev.t) place = i + 1;
+      prev = x;
+      return `<li class="rank${place === 1 ? " first" : ""}"><span class="place">${ordinal(place)}</span>
+        <span class="pname ${x.me ? "you-t" : "pal-name " + x.cls.split(" ")[1]}">${esc(x.name)}${x.me ? ' <span class="muted">(you)</span>' : ""}</span>
+        <span class="rscore">${x.s}<small>/${LEN}</small></span><span class="rtime">${x.t ? fmtTime(x.t) : ""}</span></li>`;
+    });
+  } else {
+    tiles = [`<div class="tile you"><span class="eyebrow">${esc(scores[0].name)}</span><span class="n">${me}<small> / ${LEN}</small></span></div>`];
+  }
   const review = S.qs.map((it, k) => {
     const q = qOf(it);
     const [qline, ...rest] = q.q.split("\n");
@@ -545,7 +656,7 @@ function resultsView() {
       : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
     return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}</div>
       ${line(S.meName || S.nick || "You", "you", S.answers[k])}
-      ${pals.map(p => line(p.name, "pal", p.answers[k])).join("")}
+      ${pals.map(p => line(p.name, "pal " + (p.c || "c1"), p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
   }).join("");
   const showCompare = !(S.final && S.final.length) && !S.past;
@@ -553,10 +664,10 @@ function resultsView() {
   <section class="board stack">
     <span class="eyebrow">${S.past ? "Past game" : "Results"} · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
     <h2 style="font-size:1.9rem">${verdict}</h2>
-    <div class="tally">${tiles.join("")}</div>
+    ${pals.length ? `<ol class="ranking">${tiles.join("")}</ol><p class="small muted" style="margin:0">Same score? The faster time ranks higher.</p>` : `<div class="tally">${tiles.join("")}</div>`}
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
     <div class="row">
-      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>` : `<button class="btn gold" id="again">${S.mode === "coop" ? "New co-op game" : "Play 20 more"}</button>`}
+      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>` : `<button class="btn gold" id="again">${MULTI(S.mode) ? "Start a new party" : "Play 20 more"}</button>`}
       <button class="btn" id="go-home2">Home</button>
     </div>
   </section>
@@ -579,13 +690,13 @@ function resultsView() {
 function render() {
   const app = $("#app");
   if (!BANK) return;
-  const v = { home: homeView, recent: recentView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView }[S.screen] || resultsView;
+  const v = { home: homeView, recent: recentView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView, full: fullView }[S.screen] || resultsView;
   app.innerHTML = v();
   bind();
   saveSession();
 }
 function refreshPartnerBits() {
-  if (S.screen === "home" || S.screen === "recent" || S.screen === "reveal" || S.screen === "results") return;
+  if (S.screen === "home" || S.screen === "recent" || S.screen === "reveal" || S.screen === "results" || S.screen === "full") return;
   if (S.screen === "waiting") { render(); checkAllDone(); return; }
   if (S.screen === "ready") { render(); return; }
   const el = $("#partners");
@@ -601,7 +712,7 @@ function bind() {
   on("solo", () => startGame("solo", newCode()));
   on("recent-btn", showRecent);
   document.querySelectorAll("[data-recent]").forEach(b => b.onclick = () => openRecent(+b.dataset.recent));
-  on("create", () => { if (!needName()) startGame("coop", newCode(), "host"); });
+  on("create", () => { if (!needName()) startGame("party", newCode(), "host"); });
   const jf = $("#joinform");
   if (jf) jf.onsubmit = e => {
     e.preventDefault();
@@ -610,14 +721,15 @@ function bind() {
     if (!validCode(c)) { $("#joinerr").textContent = `Codes are 5 letters or numbers, like ${QUIZ.letter}7QX2. Check it and try again.`; return; }
     const other = otherQuizFor(c);
     if (other) { location.href = other + "?join=" + c; return; }
-    startGame("coop", c, "guest");
+    startGame("party", c, "guest");
   };
-  on("begin", () => { S.screen = "quiz"; S.startedAt = Date.now(); render(); });
+  on("begin", startParty);
+  on("retry", joinRoom);
   document.querySelectorAll("[data-opt]:not([disabled])").forEach(b => b.onclick = () => answer(+b.dataset.opt));
   on("next", next);
   on("nowait", finishWithoutWaiting);
   on("skip", endReveal);
-  on("again", () => startGame(S.mode, newCode(), "host"));
+  on("again", () => startGame(MULTI(S.mode) ? "party" : "solo", newCode(), "host"));
   const cf = $("#cmpform");
   if (cf) cf.onsubmit = e => {
     e.preventDefault();
@@ -643,8 +755,9 @@ function restore(saved) {
   S.qs = buildQuiz(S.code);
   if (!Array.isArray(S.answers) || S.answers.length !== LEN) S.answers = Array(LEN).fill(null);
   if (S.screen === "reveal") S.screen = "results";
+  if (S.screen === "full") return false;
   render();
-  if (S.mode === "coop" && S.screen !== "results") joinRoom();
+  if (MULTI(S.mode) && S.screen !== "results") joinRoom();
   if (S.screen === "results") saveRecent();
   return true;
 }
@@ -658,7 +771,7 @@ function start(saved) {
     try { join = normCode(new URLSearchParams(location.search).get("join") || ""); } catch (e) {}
     if (join && validCode(join) && !otherQuizFor(join)) {
       try { history.replaceState(null, "", location.pathname); } catch (e) {}
-      if (S.nick) { startGame("coop", join, "guest"); return; }
+      if (S.nick) { startGame("party", join, "guest"); return; }
       render();
       const jc = $("#joincode"); if (jc) jc.value = join;
       const n = $("#nick"); n && n.focus();

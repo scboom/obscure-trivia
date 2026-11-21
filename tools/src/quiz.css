@@ -192,3 +192,32 @@ button { cursor: pointer; }
 .review-wrap summary { cursor: pointer; font-weight: 700; color: var(--muted); padding: 6px 0; }
 .review-wrap[open] summary { margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* party: player colours (c1 follows the theme's partner colour), lobby list, crown, ranking */
+.c1 { --pc: var(--pal); --pc-ink: var(--pal-ink); }
+.c2 { --pc: #b69cff; --pc-ink: #1b1033; }
+.c3 { --pc: #ff86b6; --pc-ink: #33071a; }
+.c4 { --pc: #ffa45c; --pc-ink: #331702; }
+.c5 { --pc: #4fd6a8; --pc-ink: #032a1d; }
+.pal-name[class*=" c"] { color: var(--pc); }
+.tag.pal[class*=" c"] { background: var(--pc); color: var(--pc-ink); }
+.dot.you { background: var(--accent); box-shadow: none; }
+.dot[class*=" c"] { background: var(--pc); box-shadow: none; }
+.players { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.player { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.players.lobby .player { padding: 10px 12px; background: var(--tile); border: 1px solid var(--line); border-radius: var(--r); }
+.player.gone { opacity: 0.55; }
+.pname { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.pname .muted { font-weight: 500; }
+.crown { width: 20px; height: 15px; flex: none; color: var(--accent-text); filter: drop-shadow(0 1px 0 rgba(0,0,0,0.5)); }
+.lobby-title { font-size: 1.25rem; }
+.ranking { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rank { display: grid; grid-template-columns: 52px 1fr auto auto; align-items: center; gap: 12px; padding: 12px 14px;
+  background: var(--tile); border: 1px solid var(--line); border-radius: var(--r); font-variant-numeric: tabular-nums; }
+.rank.first { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.rank .place { font-family: var(--f-display); font-size: 1.35rem; color: var(--muted); }
+.rank.first .place { color: var(--accent-text); }
+.rank .rscore { font-family: var(--f-display); font-size: 1.4rem; }
+.rank .rscore small { font-size: 0.85rem; color: var(--muted); }
+.rank .rtime { color: var(--muted); font-size: 0.85rem; min-width: 3.2em; text-align: right; }
+.head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
