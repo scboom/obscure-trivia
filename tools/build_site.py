@@ -2,7 +2,7 @@
 import sys, os, json, shutil, datetime, html
 
 SRC, OUT = sys.argv[1], sys.argv[2]
-SITE = os.environ.get("SITE_URL", "https://scboom.github.io/tavern-trivia/")
+SITE = os.environ.get("SITE_URL", "https://scboom.github.io/obscure-trivia/")
 QUESTIONS_PER_GAME = 20   # what every quiz tile advertises
 VERIFY = "WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho"
 TEX = json.load(open(os.path.join(SRC, "textures.json")))

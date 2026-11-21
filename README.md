@@ -1,6 +1,6 @@
 # Obscure Trivia
 
-Free game quizzes for the details only real players know: https://scboom.github.io/tavern-trivia/
+Free game quizzes for the details only real players know: https://scboom.github.io/obscure-trivia/
 
 Each quiz has its own themed page, a bank of 1,000 questions, 20 random questions per game, solo play, co-op with a 5-letter code (answers revealed together at the end), and a "Recent quizzes" list of your last 5 games.
 
