@@ -1,5 +1,5 @@
 """Build the Obscure Trivia site: a hub page plus one themed page per quiz, sharing one engine."""
-import sys, os, json, shutil, datetime, html
+import sys, os, json, shutil, datetime, html, hashlib
 
 SRC, OUT = sys.argv[1], sys.argv[2]
 SITE = os.environ.get("SITE_URL", "https://scboom.github.io/obscure-trivia/")
@@ -227,6 +227,9 @@ with open(os.path.join(OUT, "assets", "quiz.css"), "a", encoding="utf-8") as f:
     f.write("\n" + BASE_CSS)
 shutil.copy(os.path.join(SRC, "engine.js"), os.path.join(OUT, "assets", "quiz.js"))
 
+def stamp(path):
+    return hashlib.sha1(open(path, "rb").read()).hexdigest()[:10]
+V_CSS, V_JS = stamp(os.path.join(OUT, "assets", "quiz.css")), stamp(os.path.join(OUT, "assets", "quiz.js"))
 for qz in QUIZZES:
     qz["config"]["others"] = {o["config"]["letter"]: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz}
 for qz in QUIZZES:
@@ -248,7 +251,7 @@ for qz in QUIZZES:
             {"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": SITE},
             {"@type": "ListItem", "position": 2, "name": qz["title"].split(" – ")[0], "item": url}]}]}
     page = head(qz["title"], qz["desc"], url, qz["fonts"], qz["theme_color"], qz["favicon"],
-                extra_head=f'<link rel="stylesheet" href="../assets/quiz.css">\n<style>{qz["theme"]}</style>', ld=ld)
+                extra_head=f'<link rel="stylesheet" href="../assets/quiz.css?v={V_CSS}">\n<style>{qz["theme"]}</style>', ld=ld)
     eb, h2, p = qz["intro"]
     cfg = qz["config"]
     page += f"""<div class="wrap" id="app">
@@ -262,7 +265,7 @@ for qz in QUIZZES:
   <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
 </div>
 <script>window.QUIZ = {json.dumps(cfg)};</script>
-<script src="../assets/quiz.js"></script>
+<script src="../assets/quiz.js?v={V_JS}"></script>
 </body>
 </html>
 """
