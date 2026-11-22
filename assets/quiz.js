@@ -344,18 +344,21 @@ function recentView() {
 }
 
 
-// ------------------------------------------------------------ recent top scores
-// Each finished game posts its top score to the relay; every visitor sees the 3 most recent.
+// ------------------------------------------------------------ top scores this week
+// Each finished game posts every player's score to the relay; every visitor sees the 3 best from the last 7 days
+// (the same person can hold all three). Ties go to the faster time, then the more recent game.
 const FEED_BASE = QUIZ.topic + "feed/";
+const WEEK = 7 * 864e5;
 const FEED = { entries: new Map(), clients: [], state: "idle", queue: [], open: false };
 function feedValid(e) {
   if (!e || typeof e !== "object" || e.v !== 1) return null;
   const s = Number(e.s), p = Number(e.p), at = Number(e.at), t = Number(e.t);
   if (!Number.isInteger(s) || s < 0 || s > LEN || !Number.isInteger(p) || p < 1 || p > PARTY_MAX) return null;
-  if (!Number.isFinite(at) || at > Date.now() + 864e5 || at < Date.now() - 30 * 864e5) return null;
+  if (!Number.isFinite(at) || at > Date.now() + 864e5 || at < Date.now() - WEEK) return null;
   return { n: String(e.n || "Someone").slice(0, 20), s, p, at, t: Number.isFinite(t) ? Math.max(0, Math.min(LIMIT_MS / 1000, Math.round(t))) : 0, m: e.m === "party" ? "party" : "solo" };
 }
-function feedTop() { return [...FEED.entries.values()].sort((a, b) => b.at - a.at).slice(0, 3); }
+function feedRank(a, b) { return b.s - a.s || (a.t || 1e9) - (b.t || 1e9) || b.at - a.at; }
+function feedTop() { const cut = Date.now() - WEEK; return [...FEED.entries.values()].filter(e => e.at >= cut).sort(feedRank).slice(0, 3); }
 function feedConnect() {
   if (FEED.state !== "idle") return;
   FEED.state = "connecting";
@@ -376,8 +379,10 @@ function feedConnect() {
         const id = topic.slice(FEED_BASE.length);
         if (!/^[a-z0-9]{10}$/.test(id) || buf.length > 600) return;
         if (!buf.length) { FEED.entries.delete(id); renderFeed(); return; }
-        let e = null; try { e = feedValid(JSON.parse(buf.toString())); } catch (x) { return; }
+        let raw = null; try { raw = JSON.parse(buf.toString()); } catch (x) { return; }
+        const e = feedValid(raw);
         if (e) { FEED.entries.set(id, e); renderFeed(); }
+        else if (raw && Number(raw.at) < Date.now() - WEEK) c.publish(topic, "", { qos: 1, retain: true });   // over a week old: clear it
       });
       c.on("error", () => {});
       return c;
@@ -391,8 +396,12 @@ function feedPublish(id, msg) {
   const opts = { qos: 1, retain: true, ...(FEED.v5 ? { properties: { messageExpiryInterval: 7 * 86400 } } : {}) };
   live.forEach(c => c.publish(FEED_BASE + id, msg, opts));
 }
-function feedPrune() {   // keep the relay tidy: only the 12 newest entries stay
-  [...FEED.entries.entries()].sort((a, b) => b[1].at - a[1].at).slice(12).forEach(([id]) => {
+function feedPrune() {   // keep the relay tidy: drop scores over a week old and scores that can never be top 3 again
+  const cut = Date.now() - WEEK, all = [...FEED.entries.entries()];
+  // a score is beaten for good once 3 better scores exist that will last at least as long (posted no earlier)
+  const beaten = ([id, e]) => all.filter(([j, f]) => j !== id && f.at >= e.at && feedRank(f, e) < 0).length >= 3;
+  const keep = all.filter(x => x[1].at >= cut && !beaten(x)).sort((a, b) => feedRank(a[1], b[1])).slice(0, 40).map(x => x[0]);
+  all.filter(([id]) => !keep.includes(id)).forEach(([id]) => {
     FEED.entries.delete(id);
     FEED.clients.forEach(c => { if (c.connected) c.publish(FEED_BASE + id, "", { qos: 1, retain: true }); });
   });
@@ -404,12 +413,15 @@ function postScore() {
   const all = [{ n: S.nick || (MULTI(S.mode) ? "Player" : "Someone"), s: myScore(), t: elapsedSec() }]
     .concat(pals.map(p => ({ n: p.name, s: scoreOf(p.answers), t: p.t || 0 })));
   all.sort((a, b) => b.s - a.s || (a.t || 1e9) - (b.t || 1e9));
-  const top = all[0];
-  const id = Array.from(crypto.getRandomValues(new Uint32Array(2)), x => x.toString(36).padStart(7, "0").slice(-5)).join("");
-  const e = { v: 1, n: top.n.slice(0, 20), s: top.s, t: top.t, m: MULTI(S.mode) ? "party" : "solo", p: Math.min(PARTY_MAX, all.length), at: Date.now() };
+  const at = Date.now(), m = MULTI(S.mode) ? "party" : "solo", p = Math.min(PARTY_MAX, all.length);
   S.posted = true;
-  FEED.entries.set(id, feedValid(e));
-  feedPublish(id, JSON.stringify(e));
+  all.slice(0, PARTY_MAX).forEach(pl => {   // every player's score counts, one relay entry each
+    const id = Array.from(crypto.getRandomValues(new Uint32Array(2)), x => x.toString(36).padStart(7, "0").slice(-5)).join("");
+    const e = { v: 1, n: String(pl.n).slice(0, 20), s: pl.s, t: pl.t, m, p, at };
+    FEED.entries.set(id, feedValid(e));
+    feedPublish(id, JSON.stringify(e));
+  });
+  if (FEED.state === "on") feedPrune();
   renderFeed();
 }
 function ago(ms) {
@@ -420,11 +432,11 @@ const TROPHY = `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="tru
 function feedTab() {
   if (S.screen !== "home" && S.screen !== "results") return "";
   const list = feedTop();
-  const body = list.length ? `<ol class="feed-list">${list.map(e => `<li><b>${esc(e.n)}</b> scored <b class="feed-score">${e.s}/${LEN}</b>
-      <span class="muted">${e.m === "party" ? `party of ${e.p}` : "solo"} · ${ago(e.at)}</span></li>`).join("")}</ol>`
-    : `<p class="small muted" style="margin:0">${FEED.state === "off" ? "Couldn't load scores right now." : FEED.state === "on" ? "No scores yet. Finish a quiz to be the first!" : "Loading…"}</p>`;
+  const body = list.length ? `<ol class="feed-list">${list.map((e, i) => `<li><span class="feed-rank">${i + 1}</span><b>${esc(e.n)}</b> scored <b class="feed-score">${e.s}/${LEN}</b>
+      <span class="muted">${e.m === "party" ? `party of ${e.p}` : "solo"}${e.t ? ` · ${fmtTime(e.t)}` : ""} · ${ago(e.at)}</span></li>`).join("")}</ol>`
+    : `<p class="small muted" style="margin:0">${FEED.state === "off" ? "Couldn't load scores right now." : FEED.state === "on" ? "No scores this week yet. Finish a quiz to set one!" : "Loading…"}</p>`;
   return `<aside class="feed${FEED.open ? " open" : ""}" id="feed">
-    ${FEED.open ? `<div class="feed-panel" id="feed-panel"><div class="feed-head"><span class="eyebrow">Recent top scores</span><button class="feed-x" id="feed-close" aria-label="Close">×</button></div>${body}</div>` : ""}
+    ${FEED.open ? `<div class="feed-panel" id="feed-panel"><div class="feed-head"><span class="eyebrow">Top scores this week</span><button class="feed-x" id="feed-close" aria-label="Close">×</button></div>${body}</div>` : ""}
     <button class="feed-btn" id="feed-btn" aria-expanded="${FEED.open}" aria-controls="feed-panel">${TROPHY}<span>Top scores</span></button>
   </aside>`;
 }

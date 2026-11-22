@@ -2,7 +2,7 @@
 
 Free game quizzes for the details only real players know: https://scboom.github.io/obscure-trivia/
 
-Each quiz and game has its own themed page, a bank of 1,000 questions, 20 random questions per game, solo play, a 10-minute time limit, party mode for 2 to 6 players with a 5-letter code (host starts the quiz; answers revealed together at the end, skipped only if every player votes, then a ranking; afterwards the host can "Play again" or "Change quiz" and the whole party moves with them), a small "Top scores" tab with the 3 most recent top scores, and a "Recent quizzes" list of your last 5 games.
+Each quiz and game has its own themed page, a bank of 1,000 questions, 20 random questions per game, solo play, a 10-minute time limit, party mode for 2 to 6 players with a 5-letter code (host starts the quiz; answers revealed together at the end, skipped only if every player votes, then a ranking; afterwards the host can "Play again" or "Change quiz" and the whole party moves with them), a small "Top scores" tab with the 3 best scores of the last 7 days (every player in a party counts, and one person can hold all three; ties go to the faster time), and a "Recent quizzes" list of your last 5 games.
 
 | Quiz | Page | Codes start with |
 | --- | --- | --- |

@@ -261,6 +261,9 @@ button { cursor: pointer; }
 .feed-list li { display: flex; flex-wrap: wrap; gap: 2px 6px; align-items: baseline; overflow-wrap: anywhere; }
 .feed-list .feed-score { color: var(--accent-text); font-variant-numeric: tabular-nums; }
 .feed-list .muted { font-size: 0.8rem; width: 100%; }
+.feed-list .feed-rank { display: inline-grid; place-items: center; min-width: 1.35em; height: 1.35em; border-radius: 999px; font-size: 0.75rem; font-weight: 800;
+  background: var(--accent-text); color: var(--bg, #111); align-self: center; }
+.feed-list .muted { padding-left: calc(1.35em + 6px); }
 
 /* head-to-head questions: two cards with a VS badge; the values show once answered */
 .opts.duel { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: 12px; }
