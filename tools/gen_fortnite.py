@@ -61,6 +61,18 @@ def near_seasons(label, n=3, pool=None, spread=4):
     return out
 
 
+def fair_seasons(label, pool=None):
+    """One neighbouring season and two a little further away: still hard, but answerable if you know the era."""
+    pool = pool or ORDER
+    i = pool.index(label)
+    near = [pool[j] for j in (i - 1, i + 1) if 0 <= j < len(pool)]
+    far = [pool[j] for j in range(max(0, i - 5), min(len(pool), i + 6)) if abs(j - i) >= 2]
+    out = rng.sample(near, 1) + rng.sample(far, min(2, len(far)))
+    if len(out) < 3:
+        out += rng.sample([s for s in pool if s != label and s not in out], 3 - len(out))
+    return out
+
+
 # ------------------------------------------------------------------ outfits and emotes from Chapters 1 and 2
 cos = json.load(open(COS))["data"]
 first = {}
@@ -69,6 +81,8 @@ for c in cos:
     if not intro or c["type"]["value"] not in ("outfit", "emote"):
         continue
     if str(intro.get("chapter")) not in ("1", "2"):
+        continue
+    if not c.get("name") or re.search(r"_|NPC|^TBD$|^null$", c["name"]):   # placeholders from the game files, not real items
         continue
     lab = f"Chapter {intro['chapter']} Season {intro.get('season')}"
     if lab not in POS:
@@ -98,7 +112,7 @@ OUTFIT_NOTE = {
 }
 for o in OUTFITS:
     the = "" if o["name"].startswith("The ") else "the "
-    add("outseason", "outseason:" + o["name"], f"In which season was {the}{o['name']} outfit added to Fortnite?", o["season"], near_seasons(o["season"]),
+    add("outseason", "outseason:" + o["name"], f"In which season was {the}{o['name']} outfit added to Fortnite?", o["season"], fair_seasons(o["season"]),
         OUTFIT_NOTE.get(o["name"]), ks=["outfit:" + o["name"]] + (["outfit:John Wick"] if o["name"] == "The Reaper" else []))
 tries = 0
 while len(Q["outfirst"]) < 80 and tries < 80000:
@@ -123,7 +137,35 @@ emotes = {n: o for (t, n), o in first.items() if t == "emote"}
 for n in EMOTES:
     if n in emotes:
         o = emotes[n]
-        add("emote", "emote:" + n, f"In which season was the '{n}' emote added?", o["season"], near_seasons(o["season"]), ks=["emote:" + n])
+        add("emote", "emote:" + n, f'In which season was the "{n}" emote added?', o["season"], fair_seasons(o["season"]), ks=["emote:" + n])
+
+# ------------------------------------------------------------------ Battle Pass outfits (each checked on its Fortnite Wiki page)
+TOP = [("Chapter 1 Season 3", "The Reaper"), ("Chapter 1 Season 4", "Omega"), ("Chapter 1 Season 5", "Ragnarok"), ("Chapter 1 Season 6", "Dire"),
+       ("Chapter 1 Season 7", "The Ice King"), ("Chapter 1 Season 8", "Luxe"), ("Chapter 1 Season 9", "Vendetta"), ("Chapter 1 Season X", "Ultima Knight"),
+       ("Chapter 2 Season 1", "Fusion"), ("Chapter 2 Season 2", "Midas")]
+INSTANT = {"Chapter 1 Season 2": ["Blue Squire"], "Chapter 1 Season 3": ["Mission Specialist"], "Chapter 1 Season 5": ["Drift", "Huntress"],
+           "Chapter 1 Season 6": ["Calamity"], "Chapter 1 Season 7": ["Zenith", "Lynx"], "Chapter 1 Season 8": ["Blackheart", "Hybrid"],
+           "Chapter 1 Season 9": ["Rox", "Sentinel"], "Chapter 1 Season X": ["Catalyst", "X-Lord"], "Chapter 2 Season 2": ["Maya"],
+           "Chapter 2 Season 4": ["Thor"], "Chapter 2 Season 5": ["The Mandalorian"], "Chapter 2 Season 6": ["Agent Jones"],
+           "Chapter 2 Season 7": ["Kymera"], "Chapter 2 Season 8": ["Charlotte"]}
+tops = [o for _, o in TOP] + ["Black Knight"]
+for season, o in TOP:
+    tier = "Level 100" if season.startswith("Chapter 2") else "Tier 100"
+    add("outbp", f"bptop:{season}", f"Which outfit was the {tier} reward of the {season} Battle Pass?", o, rng.sample([t for t in tops if t != o], 3),
+        ks=["outfit:" + o, "bp:" + season])
+    add("outbp", f"bptopwhich:{o}", f"{o} was the {tier} reward of which season's Battle Pass?", season,
+        fair_seasons(season, pool=ORDER[ORDER.index("Chapter 1 Season 2"):]), ks=["outfit:" + o, "bp:" + season])
+add("outbp", "bptop:s2", "Which outfit was the final reward (Tier 70) of the Season 2 Battle Pass, the first Battle Pass ever?", "Black Knight",
+    ["The Reaper", "Blue Squire", "Omega"], ks=["outfit:Black Knight", "bp:Chapter 1 Season 2"])
+add("outbp", "bptiers:s2", "How many tiers did the very first Battle Pass (Chapter 1 Season 2) have?", "70", ["50", "100", "90"],
+    "Black Knight was the Tier 70 reward. From Season 3 the Battle Pass had 100 tiers.", ks=["bp:Chapter 1 Season 2"])
+instants = [o for v in INSTANT.values() for o in v]
+for season, os_ in INSTANT.items():
+    for o in os_:
+        add("outbp", f"bpinstant:{o}", f"Which outfit did you unlock straight away by buying the {season} Battle Pass?", o,
+            rng.sample([x for x in instants if x not in os_], 3), " and ".join(os_) + (" were" if len(os_) > 1 else " was") + " unlocked as soon as you bought it.",
+            ks=["outfit:" + o, "bp:" + season])
+add("outbp", "bppeely", "At which tier of the Chapter 1 Season 8 Battle Pass was Peely unlocked?", "47", ["1", "23", "100"], ks=["outfit:Peely"])
 
 # ------------------------------------------------------------------ seasons
 named = [s for s in SEASONS if s["subtitle"]]
@@ -133,13 +175,13 @@ for s in named:
     other = [t for t in subs if t != s["subtitle"] and t not in same]
     opts = (rng.sample(same, min(2, len(same))) + rng.sample(other, 3))[:3]
     add("seasonname", "seasonname:" + s["name"], f"What was {s['name']} called?", s["subtitle"], opts, f"It started on {s['start']}.", ks=["season:" + s["name"]])
-    add("seasonname", "seasonwhich:" + s["name"], f"Which season was called '{s['subtitle']}'?", s["name"], near_seasons(s["name"], pool=[t["name"] for t in named]),
+    add("seasonname", "seasonwhich:" + s["name"], f'Which season was called "{s["subtitle"]}"?', s["name"], near_seasons(s["name"], pool=[t["name"] for t in named]),
         ks=["season:" + s["name"]])
 themes = collections.Counter(s["theme"] for s in SEASONS)
 for s in SEASONS:
     if s["theme"] in ("None", "") or themes[s["theme"]] > 1 or s["theme"] == s["subtitle"]:
         continue
-    add("seasontheme", "seasontheme:" + s["name"], f"Which season's theme was '{s['theme']}'?", s["name"], near_seasons(s["name"]), ks=["season:" + s["name"]])
+    add("seasontheme", "seasontheme:" + s["name"], 'Which season' + "'" + f's theme was "{s["theme"]}"?', s["name"], fair_seasons(s["name"]), ks=["season:" + s["name"]])
 
 
 def month_year(d):
@@ -252,7 +294,7 @@ for e in evs:
     lab = wiki_label(e["chapter"], lab) if ":" in lab else lab
     if lab not in POS or e["name"] in dupes:
         continue
-    add("event", "event:" + e["name"], f"In which season did the live event '{e['name']}' take place?", lab, near_seasons(lab),
+    add("event", "event:" + e["name"], f'In which season did the live event "{e["name"]}" take place?', lab, fair_seasons(lab),
         f"{e['summary']} ({e['date'].split(' / ')[0]})" if e["summary"] else None, ks=["event:" + e["name"]])
 
 # ------------------------------------------------------------------ hand-written, checked against the wiki
@@ -295,14 +337,14 @@ FACTS = [
     F("season", "In which month and year did Fortnite open to everyone on iPhone?", "April 2018", ["September 2017", "December 2018", "July 2019"]),
     F("season", "What did fans name the purple cube that rolled across the island in Chapter 1 Season 5?", "Kevin", ["Steve", "Gary", "Dave"], "It rolled into Loot Lake and dissolved, turning the lake bouncy."),
     F("season", "What happened to Loot Lake when the Cube dissolved into it in 2018?", "It turned bouncy", ["It froze solid", "It turned to lava", "It drained away"]),
-    F("season", "What happened at 'The End' live event in October 2019?", "The island was sucked into a black hole", ["The volcano erupted", "A rocket launched", "The island flooded"], "Fortnite showed only the black hole for about two days before Chapter 2."),
+    F("season", 'What happened in the live event "The End" in October 2019?', "The island was sucked into a black hole", ["The volcano erupted", "A rocket launched", "The island flooded"], "Fortnite showed only the black hole for about two days before Chapter 2."),
     F("season", "Which Chapter 1 live event let players vote to bring back an item?", "The Unvaulting", ["The Final Showdown", "The End", "The Butterfly"], "Players chose the Drum Gun."),
     F("season", "In The Unvaulting, which weapon did players vote to bring back?", "The Drum Gun", ["The Double Barrel Shotgun", "The Zapotron", "The Infinity Blade"]),
     F("season", "In The Final Showdown event in Chapter 1 Season 9, what fought the giant monster?", "A giant robot", ["The Battle Bus", "Kevin the Cube", "Galactus"]),
     F("season", "Which Marvel villain came to eat the island in Chapter 2 Season 4?", "Galactus", ["Thanos", "Doctor Doom", "Loki"]),
     F("season", "Which DJ played the first big in-game concert, at Pleasant Park in February 2019?", "Marshmello", ["Travis Scott", "Ariana Grande", "Eminem"]),
-    F("season", "Which rapper's 'Astronomical' concert happened in April 2020?", "Travis Scott", ["Eminem", "Snoop Dogg", "Juice WRLD"]),
-    F("season", "Which singer headlined the 'Rift Tour' in August 2021?", "Ariana Grande", ["Billie Eilish", "Lady Gaga", "Dua Lipa"]),
+    F("season", "Which rapper's \"Astronomical\" concert happened in April 2020?", "Travis Scott", ["Eminem", "Snoop Dogg", "Juice WRLD"]),
+    F("season", 'Which singer headlined the "Rift Tour" in August 2021?', "Ariana Grande", ["Billie Eilish", "Lady Gaga", "Dua Lipa"]),
     # Battle Pass outfits
     F("outbp", "Which bounty hunter was the Chapter 2 Season 5 Battle Pass outfit?", "The Mandalorian", ["Boba Fett", "Master Chief", "Bossk"]),
     F("outbp", "Which footballer was in the Chapter 2 Season 6 Battle Pass?", "Neymar Jr", ["Lionel Messi", "Cristiano Ronaldo", "Harry Kane"]),
@@ -331,8 +373,20 @@ FACTS = [
     F("item", "What does a Port-a-Fort do?", "Builds an instant tower fort", ["Teleports you", "Heals your team", "Calls in a Supply Drop"]),
     F("item", "What does a Launch Pad do?", "Launches you into the air so you can glide", ["Builds a ramp", "Heals you", "Spawns a vehicle"]),
     F("item", "Which loot container looks like a piñata?", "Loot Llama", ["Supply Drop", "Ammo Box", "Rare Chest"]),
+    F("item", "How much shield does a Shield Mushroom give?", "5", ["1", "10", "25"], "Shield Mushrooms arrived in Chapter 1 Season 4."),
+    F("item", "How much health does an Apple give?", "5", ["2", "10", "15"]),
+    F("item", "What did Hop Rocks do?", "Gave you low gravity for a short time", ["Made you invisible", "Healed you over time", "Fired a homing missile"], "They came from the meteor in Chapter 1 Season 4."),
+    F("item", "In which season was the Jetpack added?", "Chapter 1 Season 4", ["Chapter 1 Season 3", "Chapter 1 Season 6", "Chapter 1 Season 7"]),
+    F("item", "What does a Cozy Campfire do?", "Heals players standing near it", ["Gives your team shield", "Burns nearby enemies", "Revives downed players"]),
+    F("item", "What did the Bush item do?", "Disguised you as a bush", ["Healed you inside a bush", "Hid your footsteps", "Grew a wall of bushes"]),
+    F("item", "What does Slurp Juice do?", "Restores health and shield over time", ["Gives 50 shield instantly", "Makes you run faster", "Lowers gravity"]),
+    F("item", 'Which gun did players call the "SCAR"?', "The gold (Legendary) Assault Rifle", ["The Pump Shotgun", "The Heavy Sniper", "The Tactical SMG"]),
     # general
     F("fact", "Which company makes Fortnite?", "Epic Games", ["Activision", "EA", "Ubisoft"]),
+    F("fact", "How many players start a normal Battle Royale match?", "100", ["50", "64", "150"]),
+    F("fact", "Which limited-time mode split the players into two teams of 50?", "50v50", ["Playground", "Solid Gold", "Disco Domination"]),
+    F("fact", "Which limited-time mode gave out only gold (Legendary) weapons?", "Solid Gold", ["Gold Standard", "Midas Touch", "Golden Ticket"]),
+    F("fact", "Who won the duos at the 2019 Fortnite World Cup?", "Aqua and Nyhrox", ["Ninja and Tfue", "Bugha and Mongraal", "Benjyfishy and Mrsavage"], "They shared $3 million."),
     F("fact", "In which year did Fortnite Battle Royale come out?", "2017", ["2015", "2016", "2018"]),
     F("fact", "Which Fortnite mode came first?", "Save the World", ["Battle Royale", "Creative", "Party Royale"], "Battle Royale came out a couple of months later in 2017."),
     F("fact", "What do players ride across the island before dropping in?", "The Battle Bus", ["The Loot Llama", "The Storm Wagon", "The Drop Ship"]),
