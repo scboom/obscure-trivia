@@ -411,6 +411,57 @@ h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-displ
                   "A free OG Fortnite quiz on Chapter 1, 20 questions per game: outfits and the seasons they arrived in, Battle Passes, the big moments of every season from the Pre-Season to Season X, the map and its named locations, live events, items and the game's history. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "random", "dir": "random-games", "bank_src": "random_questions.json", "extra": [("rg-pad.svg", "pad.svg")],
+        "title": "Random Games Quiz – Obscure Trivia",
+        "desc": "A free mixed gaming quiz: 20 random questions per game across Clash of Clans, Clash Royale, Hay Day, Phasmophobia, Bee Swarm Simulator, Hearthstone Battlegrounds and Minecraft. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;700",
+        "theme_color": "#1b1640",
+        "favicon": "pad.svg",
+        "config": {
+            "id": "random", "letter": "R", "short": "Random Games", "icon": "", "namePh": "e.g. Player 1",
+            "eyebrow": "Random games quiz · 7 games", "headline": "Seven games, twenty questions. How many do you really know?",
+            "topics": "Clash of Clans, Clash Royale, Hay Day, Phasmophobia, Bee Swarm Simulator, Hearthstone Battlegrounds and Minecraft, about 3 questions from each game every round",
+            "foot": "Clash of Clans, Clash Royale, Hay Day, Phasmophobia and Bee Swarm Simulator questions come from each game's fan wiki, plus hand-written questions. Hearthstone Battlegrounds and Minecraft questions come from this site's quizzes for those games. Fan-made quiz, not affiliated with Supercell, Kinetic Games, Onett, Roblox, Blizzard, Mojang or Microsoft.",
+            "seed": "obscure-trivia-random-v1:", "topic": "obscure-trivia/random/v1/", "recentKey": "ot-recent-random-v1", "sessionKey": "ot-game-random",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"coc": "Clash of Clans", "cr": "Clash Royale", "hd": "Hay Day", "ph": "Phasmophobia", "bss": "Bee Swarm Simulator",
+                       "hs": "Hearthstone Battlegrounds", "mc": "Minecraft"},
+            "caps": {"Clash of Clans": 3, "Clash Royale": 3, "Hay Day": 3, "Phasmophobia": 3, "Bee Swarm Simulator": 3, "Hearthstone Battlegrounds": 3, "Minecraft": 3},
+            "verdicts": [[19, "Game over, you win!"], [16, "High score!"], [12, "Level up!"], [8, "Respawning..."], [0, "Press start to try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #1b1640;
+  --bg-art: radial-gradient(circle at 12% 8%, rgba(255, 205, 41, 0.16), transparent 30%), radial-gradient(circle at 88% 12%, rgba(63, 169, 255, 0.18), transparent 32%),
+    radial-gradient(circle at 85% 95%, rgba(255, 79, 94, 0.16), transparent 34%), radial-gradient(circle at 10% 92%, rgba(51, 209, 122, 0.14), transparent 32%),
+    linear-gradient(180deg, #221b52 0%, #1b1640 60%, #140f31 100%);
+  --panel: #2a2260; --panel-fill: linear-gradient(180deg, rgba(44, 36, 100, 0.95), rgba(33, 27, 78, 0.96)); --panel-2: #352c75;
+  --panel-shadow: 0 14px 34px rgba(8, 5, 30, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.16); --line-hover: rgba(255, 205, 41, 0.75); --ink: #ffffff; --muted: #c9c4ef; --faint: #9d97cf; --placeholder: #8a84c0;
+  --accent: #ffcd29; --accent-ink: #231a00; --accent-text: #ffd84f; --accent-hover: #ffd94d; --accent-edge: #ffe58a; --accent-shadow: 0 4px 0 #b88f00;
+  --chip-bg: rgba(255, 255, 255, 0.1); --chip-line: rgba(255, 255, 255, 0.26); --chip-ink: #ffffff;
+  --pal: #3fa9ff; --pal-ink: #001a33; --pal-bg: rgba(63, 169, 255, 0.15); --pal-line: rgba(63, 169, 255, 0.5);
+  --good: #33d17a; --good-ink: #022b14; --good-bg: rgba(51, 209, 122, 0.15); --bad: #ff4f5e; --bad-ink: #3a0610; --bad-bg: rgba(255, 79, 94, 0.15);
+  --inset: #150f36; --opt: rgba(40, 32, 92, 0.94); --tile: rgba(34, 27, 80, 0.94);
+  --card-bg: #ffffff; --card-ink: #221b52; --card-line: #d4cff3; --card-inner: #eeecfb; --card-strong: #000000;
+  --f-display: "Fredoka", "Rubik", system-ui, sans-serif; --f-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 12px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 700; letter-spacing: 0; }
+.hero h2 { font-size: clamp(2rem, 7.4vw, 3rem); line-height: 1.05; }
+.qtext { font-family: var(--f-body); font-weight: 700; font-size: clamp(1.12rem, 4vw, 1.36rem); line-height: 1.32; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 600; }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 10px; background: url("pad.svg") center / 86% auto no-repeat, #ffcd29;
+  box-shadow: 0 3px 0 #b88f00; }
+""",
+        "tile": {"cls": "rgm", "title": "Random Games", "art": "",
+                 "blurb": "Clash of Clans, Clash Royale, Hay Day, Phasmophobia, Bee Swarm Simulator, Battlegrounds and Minecraft, all mixed."},
+        "intro": ("Random games quiz", "Seven games, twenty questions. How many do you really know?",
+                  "A free mixed gaming quiz, 20 questions per game: Clash of Clans, Clash Royale, Hay Day, Phasmophobia, Bee Swarm Simulator, Hearthstone Battlegrounds and Minecraft, about 3 from each game every round. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -491,7 +542,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     },
 ]
 # the order tiles appear in on the home page: games first, then everything else
-HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "world", "football", "cars", "music", "bigger"]
+HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "random", "world", "football", "cars", "music", "bigger"]
 QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -611,7 +662,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and OG Fortnite (Chapter 1), plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1) and a Random Games mix (Clash of Clans, Clash Royale, Hay Day, Phasmophobia, Bee Swarm Simulator and more), plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -726,6 +777,19 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
+/* random games tile: a game controller on arcade purple with four button-coloured glows */
+.rgm { border-radius: 18px; color: #fff;
+  background: url(random-games/pad.svg) right 20px top 18px / auto 38% no-repeat,
+    radial-gradient(circle at 92% 8%, rgba(255, 205, 41, 0.35), transparent 30%), radial-gradient(circle at 60% 0%, rgba(63, 169, 255, 0.3), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(255, 79, 94, 0.3), transparent 36%), radial-gradient(circle at 0% 100%, rgba(51, 209, 122, 0.25), transparent 36%),
+    linear-gradient(180deg, #2a2266 0%, #1b1640 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(255, 205, 41, 0.45); }
+.rgm:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 3px #ffcd29; }
+.rgm h3 { font-family: "Fredoka", "Rubik", sans-serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0; }
+.rgm p { color: #dcd8f7; font-family: "Rubik", system-ui, sans-serif; font-weight: 500; max-width: 31ch; }
+.rgm .pill { border-radius: 999px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 205, 41, 0.55); color: #fff; }
+.rgm .play { color: #ffcd29; font-family: "Fredoka", sans-serif; font-weight: 700; }
+@media (max-width: 620px) { .rgm { min-height: 330px; background-size: auto 34%, auto, auto, auto, auto, auto; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -773,8 +837,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Random Games, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Fredoka:wght@600;700",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -804,7 +868,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, Supercell, Kinetic Games, Roblox, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {
