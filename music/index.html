@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Music Quiz – Obscure Trivia</title>
+<meta name="description" content="A free music quiz: 20 random questions per game on the world&#x27;s biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision and film songs. Play solo or in party mode with up to 6 players.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/music/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Music Quiz – Obscure Trivia">
+<meta property="og:description" content="A free music quiz: 20 random questions per game on the world&#x27;s biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision and film songs. Play solo or in party mode with up to 6 players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/music/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/music/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e0a1c">
+<link rel="icon" href="vinyl.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Music Quiz", "url": "https://scboom.github.io/obscure-trivia/music/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "A free music quiz: 20 random questions per game on the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision and film songs. Play solo or in party mode with up to 6 players.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/obscure-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/obscure-trivia/"}, {"@type": "ListItem", "position": 2, "name": "Music Quiz", "item": "https://scboom.github.io/obscure-trivia/music/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css?v=0266b04f52">
+<style>
+:root {
+  --bg: #0e0a1c;
+  --bg-art: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  --panel: #1a1230; --panel-fill: linear-gradient(180deg, rgba(34, 22, 62, 0.92), rgba(22, 14, 42, 0.94)); --panel-2: #2b1e4d;
+  --panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.13); --line-hover: rgba(255, 122, 192, 0.6); --ink: #f6f0ff; --muted: #b8acd6; --faint: #8f83ad; --placeholder: #7d7299;
+  --accent: #ff4fa3; --accent-ink: #1d0012; --accent-text: #ff8ac6; --accent-hover: #ff6fb4; --accent-edge: #ffa6d3; --accent-shadow: 0 0 0 1px #ff4fa3, 0 6px 22px rgba(255, 79, 163, 0.45);
+  --chip-bg: rgba(255, 255, 255, 0.07); --chip-line: rgba(255, 255, 255, 0.18); --chip-ink: #eadfff;
+  --pal: #4de3ff; --pal-ink: #00222b; --pal-bg: rgba(77, 227, 255, 0.12); --pal-line: rgba(77, 227, 255, 0.45);
+  --good: #5cf2a5; --good-ink: #00281a; --good-bg: rgba(92, 242, 165, 0.13); --bad: #ff6b7d; --bad-ink: #2e0007; --bad-bg: rgba(255, 107, 125, 0.14);
+  --inset: #0b0717; --opt: rgba(30, 20, 56, 0.9); --tile: rgba(24, 16, 46, 0.9);
+  --card-bg: #f6f0ff; --card-ink: #1a1230; --card-line: #cfc2ee; --card-inner: #e9e0fb; --card-strong: #000000;
+  --f-display: "Unbounded", "Arial Black", system-ui, sans-serif; --f-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 12px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+/* concert lights: a pink spotlight and a blue one over a dark stage */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 60% 70% at 12% -12%, rgba(255, 79, 163, 0.32), transparent 60%),
+    radial-gradient(ellipse 60% 70% at 90% -12%, rgba(77, 227, 255, 0.24), transparent 60%),
+    radial-gradient(ellipse at 50% 120%, rgba(140, 80, 255, 0.22), transparent 55%); }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; letter-spacing: -0.01em; }
+.qtext { font-weight: 600; font-size: clamp(1.15rem, 4vw, 1.45rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; font-size: 1.08rem; }
+.board { backdrop-filter: blur(6px); }
+.btn.gold { font-family: var(--f-display); font-weight: 600; font-size: 0.95rem; }
+.coin { width: 32px; height: 32px; flex: none; display: block; border-radius: 50%; background: url("vinyl.svg") center / 100% 100%;
+  box-shadow: 0 0 14px rgba(255, 79, 163, 0.45); }
+@media (prefers-reduced-motion: no-preference) { .brand .coin { animation: spin 6s linear infinite; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true"></span><h1>Music</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Music quiz</span>
+    <h2>From the 60s to now: how well do you know your music?</h2>
+    <p>A free music quiz, 20 questions per game: the world&#x27;s biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision, film songs and music facts. Play on your own, or start a party of up to 6 players with a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "music", "letter": "S", "short": "Music", "icon": "", "eyebrow": "Music quiz", "headline": "From the 60s to now: how well do you know your music?", "topics": "the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision, film songs and music facts", "foot": "US chart questions are worked out from every Billboard Hot 100 since 1958. Streaming and sales records are as of 2026. No lyrics are used. Fan-made quiz, not affiliated with any artist or record label.", "seed": "obscure-trivia-music-v1:", "topic": "obscure-trivia/music/v1/", "recentKey": "ot-recent-music-v1", "sessionKey": "ot-game-music", "bank": "questions.json", "hub": "../", "groups": {"usno1": "US charts", "usfirst": "US charts", "usdecade": "US charts", "usweeks": "Records", "record": "Records", "song": "Songs", "songby": "Songs", "songdecade": "Songs", "songfirst": "Songs", "album": "Albums", "albumfirst": "Albums", "realname": "Artists", "band": "Artists", "from": "Artists", "euro": "Eurovision", "film": "Film & TV", "music": "Music facts"}, "caps": {"US charts": 4, "Songs": 5, "Albums": 2, "Artists": 3, "Records": 2, "Eurovision": 1, "Film & TV": 2, "Music facts": 2}, "verdicts": [[19, "Headliner."], [16, "Platinum record."], [12, "Top 10 hit."], [8, "One-hit wonder."], [0, "Still in the garage band. Keep practising!"]], "others": {"H": "../hearthstone/", "M": "../minecraft/", "W": "../general-knowledge/", "F": "../football/", "C": "../cars/", "T": "../this-or-that/", "B": "../this-or-that/"}, "catalog": [{"letter": "H", "name": "Hearthstone Battlegrounds", "url": "../hearthstone/"}, {"letter": "M", "name": "Minecraft", "url": "../minecraft/"}, {"letter": "W", "name": "General Knowledge", "url": "../general-knowledge/"}, {"letter": "F", "name": "Football", "url": "../football/"}, {"letter": "C", "name": "Cars", "url": "../cars/"}, {"letter": "S", "name": "Music", "url": "./"}, {"letter": "T", "name": "This or That", "url": "../this-or-that/"}]};</script>
+<script src="../assets/quiz.js?v=0bfcc7801f"></script>
+</body>
+</html>

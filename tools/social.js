@@ -4,9 +4,10 @@ const [,, texPath, outDir] = process.argv;
 const T = JSON.parse(fs.readFileSync(texPath, 'utf8'));
 const MONO = 'data:font/woff2;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'fonts', 'Monocraft.woff2')).toString('base64');
 const EMBLEM = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/hearthstone/emblem.svg').toString('base64');
+const VINYL = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/music/vinyl.svg').toString('base64');
 const SHEEP = 'data:image/png;base64,' + fs.readFileSync(outDir + '/minecraft/sheep.png').toString('base64');
 const EARTH = 'data:image/jpeg;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'world', 'earth-social.jpg')).toString('base64');
-const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&display=swap">';
+const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&family=Unbounded:wght@700&family=DM+Sans:wght@500&display=swap">';
 const base = '@font-face{font-family:Monocraft;src:url(' + MONO + ')}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{box-sizing:border-box;padding:70px 80px;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;font-family:Inter,system-ui,sans-serif}';
 const pages = {
   'hub': `<style>${base}body{background:radial-gradient(ellipse at 20% -10%,#2a2636 0%,transparent 55%),#121117;color:#f2efe6;justify-content:center}
@@ -19,9 +20,10 @@ const pages = {
     .mc{background:linear-gradient(180deg,#70b540,#4a8627);image-rendering:pixelated;color:#fff;font-family:Monocraft;text-shadow:2px 2px 0 #1f1f1f;box-shadow:inset 0 0 0 3px #0f0f10}
     .wb{border-radius:14px;background:linear-gradient(115deg,#ff8a78 0 50%,#6d9bff 50% 100%);color:#1b1b2f;font-family:'Lilita One';font-weight:400;border:3px solid #1b1b2f}
     .cr{border-radius:10px;background:linear-gradient(100deg,#202227 0 74%,#e10600 74% 84%,#202227 84% 88%,#f3f4f6 88% 92%,#202227 92%);color:#fff;font-family:'Chakra Petch';font-style:italic;font-weight:700;text-transform:uppercase}
+    .mu{border-radius:14px;background:radial-gradient(ellipse at 0% 0%,rgba(255,79,163,.55),transparent 65%),linear-gradient(180deg,#2a1650,#160d2c);color:#fff;font-family:Unbounded;font-weight:700;box-shadow:inset 0 0 0 1px rgba(255,122,192,.5)}
     .tiles{flex-wrap:wrap;max-width:1040px}</style>
     <div class="mark">?</div><h1>Obscure Trivia</h1><p>Trivia for the details only real players know.</p>
-    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t wb">This or That</div></div>`,
+    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t mu">Music</div><div class="t wb">This or That</div></div>`,
   'hearthstone': `<style>${base}body{background:radial-gradient(circle at 84% 26%,rgba(255,196,96,.5) 0,rgba(255,150,50,.18) 22%,transparent 46%),radial-gradient(ellipse at 8% 115%,rgba(255,120,40,.25),transparent 55%),repeating-linear-gradient(180deg,transparent 0 102px,rgba(0,0,0,.22) 102px 106px),linear-gradient(180deg,#4b2e19,#301d10 55%,#1b100a);color:#f6e7cf;box-shadow:inset 0 0 0 3px rgba(232,180,80,.45)}
     .coin{background:url(${EMBLEM}) center/100% 100% !important;filter:drop-shadow(0 0 40px rgba(255,170,70,.55));position:absolute;top:60px;right:100px;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25),0 0 0 10px rgba(232,180,80,.16),0 0 80px rgba(255,180,80,.6);width:250px;height:250px;font-size:84px!important;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3c4 0 12%,#e8b450 38%,#a8721f 100%);color:#2a1b08;font:400 64px 'Bree Serif'}
     h1{font:400 92px/1.02 'Bree Serif',serif;margin:0}p{font-size:34px;color:#e3cfb2;margin:0}.by{font:800 26px 'Bricolage Grotesque';color:#e8b450;letter-spacing:.02em}</style>
@@ -43,6 +45,10 @@ const pages = {
     h1{font:italic 700 132px/1 'Chakra Petch',sans-serif;margin:0;text-transform:uppercase;letter-spacing:.01em}p{font:600 36px 'Titillium Web',sans-serif;margin:0;color:#d4d7dd}
     .by{font:800 26px 'Bricolage Grotesque';color:#ff5a4d;letter-spacing:.02em}</style>
     <h1>Car Quiz</h1><p>Horsepower · top speeds · badges · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+  'music': `<style>${base}body{background:url(${VINYL}) right 90px top 50px/auto 52% no-repeat,radial-gradient(ellipse 60% 80% at 0% -10%,rgba(255,79,163,.55),transparent 60%),radial-gradient(ellipse 60% 80% at 100% 0%,rgba(77,227,255,.35),transparent 55%),linear-gradient(180deg,#2a1650,#160d2c 60%,#0e0a1c);color:#fff}
+    h1{font:700 110px/1 Unbounded,sans-serif;margin:0;letter-spacing:-.02em}p{font:500 34px 'DM Sans',sans-serif;margin:0;color:#ddd2f5}
+    .by{font:800 26px 'Bricolage Grotesque';color:#ff8ac6;letter-spacing:.02em}</style>
+    <h1>Music Quiz</h1><p>Hits from the 60s to now · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
   'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(14,34,8,.6)),url(${SHEEP}) right 80px top 40px/auto 44% no-repeat,repeating-conic-gradient(rgba(255,255,255,.05) 0 25%,rgba(0,0,0,0) 0 50%) 0 0/52px 52px,linear-gradient(180deg,#70b540,#5b9d32 60%,#4a8627);color:#fff}
     h1{font:400 110px/1 Monocraft,monospace;margin:0;text-shadow:6px 6px 0 #1f1f1f}p{font-size:34px;margin:0;text-shadow:2px 2px 0 #000}
     .by{font:800 26px 'Bricolage Grotesque';color:#7ad155;letter-spacing:.02em;text-shadow:2px 2px 0 #000}</style>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+ <radialGradient id="disc" cx=".5" cy=".5" r=".5"><stop offset=".3" stop-color="#1b1b20"/><stop offset=".95" stop-color="#0b0b0e"/><stop offset="1" stop-color="#000"/></radialGradient>
+ <radialGradient id="label" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ff9ccc"/><stop offset=".6" stop-color="#ff4fa3"/><stop offset="1" stop-color="#c2186f"/></radialGradient>
+</defs>
+<circle cx="50" cy="50" r="49" fill="url(#disc)"/>
+<g fill="none" stroke="#fff" stroke-opacity=".07" stroke-width=".6">
+ <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="28"/><circle cx="50" cy="50" r="24"/>
+</g>
+<path d="M50 50 L22 8 A49 49 0 0 1 50 1 Z" fill="#fff" fill-opacity=".07"/>
+<path d="M50 50 L78 92 A49 49 0 0 1 50 99 Z" fill="#fff" fill-opacity=".05"/>
+<circle cx="50" cy="50" r="17" fill="url(#label)"/>
+<circle cx="50" cy="50" r="12.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width=".5"/>
+<circle cx="50" cy="50" r="2.2" fill="#0b0b0e"/>
+</svg>

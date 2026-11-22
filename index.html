@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football &amp; Car Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<title>Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car &amp; Music Quizzes</title>
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
-<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football &amp; Car Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car &amp; Music Quizzes">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/obscure-trivia/"}</script>
 <style>
 /* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
@@ -121,6 +121,19 @@ a { color: inherit; }
 .cr p { color: #d4d7dd; font-family: "Titillium Web", system-ui, sans-serif; }
 .cr .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 90, 77, 0.6); color: #fff; }
 .cr .play { color: #ff5a4d; }
+/* music tile: a dark stage, two spotlights and a vinyl record */
+.mu { border-radius: 18px; color: #fff;
+  background: url(music/vinyl.svg) right 26px top 18px / auto 54% no-repeat,
+    radial-gradient(ellipse 70% 80% at 0% -10%, rgba(255, 79, 163, 0.5), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(77, 227, 255, 0.35), transparent 55%),
+    linear-gradient(180deg, #2a1650 0%, #160d2c 60%, #0e0a1c 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 0 2px #ff4fa3, inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu h3 { font-family: "Unbounded", "Arial Black", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.3rem); letter-spacing: -0.01em; }
+.mu p { color: #ddd2f5; font-family: "DM Sans", system-ui, sans-serif; }
+.mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
+.mu .play { color: #ff8ac6; }
+@media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -196,6 +209,12 @@ a { color: inherit; }
         <p>Horsepower, top speeds, prices, badges, car makers and their history, and famous film cars.</p>
         <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
       </a>
+      <a class="quiz mu" href="music/">
+        
+        <h3>Music</h3>
+        <p>The world&#x27;s biggest songs and records, chart hits from the 60s to now, artists, albums and Eurovision.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
     </div>
   </section>
   <section class="sect" aria-labelledby="h-games">
@@ -219,11 +238,11 @@ a { color: inherit; }
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA or any car maker.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {
-  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "T": "this-or-that/", "B": "this-or-that/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "S": "music/", "T": "this-or-that/", "B": "this-or-that/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -231,7 +250,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football), C (Cars) or T (This or That)."; return; }
+    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football), C (Cars), S (Music) or T (This or That)."; return; }
     location.href = r + "?join=" + c;
   });
 })();

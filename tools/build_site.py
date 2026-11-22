@@ -304,6 +304,60 @@ h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; font-style: italic;
                   "A free car quiz, 20 questions per game: horsepower, top speeds, prices, car makers and their owners, founding dates, engines, badges, famous film cars and the rules of the road. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "music", "dir": "music", "bank_src": "music_questions.json", "extra": [("vinyl.svg", "vinyl.svg")],
+        "title": "Music Quiz – Obscure Trivia",
+        "desc": "A free music quiz: 20 random questions per game on the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision and film songs. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Unbounded:wght@600;700&family=DM+Sans:wght@400;500;700",
+        "theme_color": "#0e0a1c",
+        "favicon": "vinyl.svg",
+        "config": {
+            "id": "music", "letter": "S", "short": "Music", "icon": "",
+            "eyebrow": "Music quiz", "headline": "From the 60s to now: how well do you know your music?",
+            "topics": "the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision, film songs and music facts",
+            "foot": "US chart questions are worked out from every Billboard Hot 100 since 1958. Streaming and sales records are as of 2026. No lyrics are used. Fan-made quiz, not affiliated with any artist or record label.",
+            "seed": "obscure-trivia-music-v1:", "topic": "obscure-trivia/music/v1/", "recentKey": "ot-recent-music-v1", "sessionKey": "ot-game-music",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"usno1": "US charts", "usfirst": "US charts", "usdecade": "US charts", "usweeks": "Records", "record": "Records", "song": "Songs", "songby": "Songs", "songdecade": "Songs", "songfirst": "Songs", "album": "Albums", "albumfirst": "Albums", "realname": "Artists", "band": "Artists", "from": "Artists", "euro": "Eurovision", "film": "Film & TV", "music": "Music facts"},
+            "caps": {"US charts": 4, "Songs": 5, "Albums": 2, "Artists": 3, "Records": 2, "Eurovision": 1, "Film & TV": 2, "Music facts": 2},
+            "verdicts": [[19, "Headliner."], [16, "Platinum record."], [12, "Top 10 hit."], [8, "One-hit wonder."], [0, "Still in the garage band. Keep practising!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0e0a1c;
+  --bg-art: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  --panel: #1a1230; --panel-fill: linear-gradient(180deg, rgba(34, 22, 62, 0.92), rgba(22, 14, 42, 0.94)); --panel-2: #2b1e4d;
+  --panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.13); --line-hover: rgba(255, 122, 192, 0.6); --ink: #f6f0ff; --muted: #b8acd6; --faint: #8f83ad; --placeholder: #7d7299;
+  --accent: #ff4fa3; --accent-ink: #1d0012; --accent-text: #ff8ac6; --accent-hover: #ff6fb4; --accent-edge: #ffa6d3; --accent-shadow: 0 0 0 1px #ff4fa3, 0 6px 22px rgba(255, 79, 163, 0.45);
+  --chip-bg: rgba(255, 255, 255, 0.07); --chip-line: rgba(255, 255, 255, 0.18); --chip-ink: #eadfff;
+  --pal: #4de3ff; --pal-ink: #00222b; --pal-bg: rgba(77, 227, 255, 0.12); --pal-line: rgba(77, 227, 255, 0.45);
+  --good: #5cf2a5; --good-ink: #00281a; --good-bg: rgba(92, 242, 165, 0.13); --bad: #ff6b7d; --bad-ink: #2e0007; --bad-bg: rgba(255, 107, 125, 0.14);
+  --inset: #0b0717; --opt: rgba(30, 20, 56, 0.9); --tile: rgba(24, 16, 46, 0.9);
+  --card-bg: #f6f0ff; --card-ink: #1a1230; --card-line: #cfc2ee; --card-inner: #e9e0fb; --card-strong: #000000;
+  --f-display: "Unbounded", "Arial Black", system-ui, sans-serif; --f-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 12px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+/* concert lights: a pink spotlight and a blue one over a dark stage */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 60% 70% at 12% -12%, rgba(255, 79, 163, 0.32), transparent 60%),
+    radial-gradient(ellipse 60% 70% at 90% -12%, rgba(77, 227, 255, 0.24), transparent 60%),
+    radial-gradient(ellipse at 50% 120%, rgba(140, 80, 255, 0.22), transparent 55%); }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; letter-spacing: -0.01em; }
+.qtext { font-weight: 600; font-size: clamp(1.15rem, 4vw, 1.45rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; font-size: 1.08rem; }
+.board { backdrop-filter: blur(6px); }
+.btn.gold { font-family: var(--f-display); font-weight: 600; font-size: 0.95rem; }
+.coin { width: 32px; height: 32px; flex: none; display: block; border-radius: 50%; background: url("vinyl.svg") center / 100% 100%;
+  box-shadow: 0 0 14px rgba(255, 79, 163, 0.45); }
+@media (prefers-reduced-motion: no-preference) { .brand .coin { animation: spin 6s linear infinite; } }
+""",
+        "tile": {"cls": "mu", "title": "Music", "art": "",
+                 "blurb": "The world's biggest songs and records, chart hits from the 60s to now, artists, albums and Eurovision."},
+        "intro": ("Music quiz", "From the 60s to now: how well do you know your music?",
+                  "A free music quiz, 20 questions per game: the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision, film songs and music facts. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -501,7 +555,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -603,6 +657,19 @@ a { color: inherit; }
 .cr p { color: #d4d7dd; font-family: "Titillium Web", system-ui, sans-serif; }
 .cr .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 90, 77, 0.6); color: #fff; }
 .cr .play { color: #ff5a4d; }
+/* music tile: a dark stage, two spotlights and a vinyl record */
+.mu { border-radius: 18px; color: #fff;
+  background: url(music/vinyl.svg) right 26px top 18px / auto 54% no-repeat,
+    radial-gradient(ellipse 70% 80% at 0% -10%, rgba(255, 79, 163, 0.5), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(77, 227, 255, 0.35), transparent 55%),
+    linear-gradient(180deg, #2a1650 0%, #160d2c 60%, #0e0a1c 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 0 2px #ff4fa3, inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu h3 { font-family: "Unbounded", "Arial Black", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.3rem); letter-spacing: -0.01em; }
+.mu p { color: #ddd2f5; font-family: "DM Sans", system-ui, sans-serif; }
+.mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
+.mu .play { color: #ff8ac6; }
+@media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -636,8 +703,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football & Car Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -667,7 +734,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA or any car maker.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {

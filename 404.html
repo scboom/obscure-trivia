@@ -121,6 +121,19 @@ a { color: inherit; }
 .cr p { color: #d4d7dd; font-family: "Titillium Web", system-ui, sans-serif; }
 .cr .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 90, 77, 0.6); color: #fff; }
 .cr .play { color: #ff5a4d; }
+/* music tile: a dark stage, two spotlights and a vinyl record */
+.mu { border-radius: 18px; color: #fff;
+  background: url(music/vinyl.svg) right 26px top 18px / auto 54% no-repeat,
+    radial-gradient(ellipse 70% 80% at 0% -10%, rgba(255, 79, 163, 0.5), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(77, 227, 255, 0.35), transparent 55%),
+    linear-gradient(180deg, #2a1650 0%, #160d2c 60%, #0e0a1c 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 0 2px #ff4fa3, inset 0 0 0 1px rgba(255, 122, 192, 0.35); }
+.mu h3 { font-family: "Unbounded", "Arial Black", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.3rem); letter-spacing: -0.01em; }
+.mu p { color: #ddd2f5; font-family: "DM Sans", system-ui, sans-serif; }
+.mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
+.mu .play { color: #ff8ac6; }
+@media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -163,7 +176,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>
