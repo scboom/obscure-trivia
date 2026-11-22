@@ -438,6 +438,8 @@ def stamp(path):
 V_CSS, V_JS = stamp(os.path.join(OUT, "assets", "quiz.css")), stamp(os.path.join(OUT, "assets", "quiz.js"))
 for qz in QUIZZES:
     qz["config"]["others"] = {l: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz for l in [o["config"]["letter"]] + o.get("aliases", [])}
+    # every quiz a host can move their party to (this one included)
+    qz["config"]["catalog"] = [{"letter": o["config"]["letter"], "name": o["tile"]["title"], "url": "./" if o is qz else "../" + o["dir"] + "/"} for o in QUIZZES]
 for qz in QUIZZES:
     d = os.path.join(OUT, qz["dir"])
     os.makedirs(d, exist_ok=True)

@@ -98,10 +98,15 @@ function colorOf(id) {
 }
 function effectiveHost() {
   const all = orderedAll().slice(0, capOf());
-  const named = S.meta && S.meta.host;
+  const fromMeta = S.meta && S.meta.host;
+  // a party moved here by its host: that player is host, even before they arrive (for 20 seconds)
+  const named = fromMeta || (S.expectHost && Date.now() < S.expectUntil ? S.expectHost : "");
   const h = all.find(x => (x.me ? S.pid : x.pid) === named && !(pals.get(x.id) || {}).left);
-  return h || all.find(x => x.me || !(pals.get(x.id) || {}).left) || all[0];
+  if (h) return h;
+  if (named && !fromMeta) return null;
+  return all.find(x => x.me || !(pals.get(x.id) || {}).left) || all[0];
 }
+function hostPid() { const h = effectiveHost(); return h ? (h.me ? S.pid : h.pid) : ""; }
 function iAmHost() { const h = effectiveHost(); return !!(h && h.me); }
 function setMeta(m) {
   if (!m || typeof m !== "object" || !/^(coop|party)$/.test(m.mode)) return;
@@ -204,6 +209,10 @@ async function viaMqtt(code, my) {
         let m = null; try { m = JSON.parse(buf.toString()); } catch (e) { return; }
         setMeta(m); return;
       }
+      if (id === "next" && parts.length === 1 && buf.length && buf.length < 500) {
+        let m = null; try { m = JSON.parse(buf.toString()); } catch (e) { return; }
+        onNext(m); return;
+      }
       if (!/^[a-z0-9]{12}$/.test(id) || id === pid || buf.length > 2000) return;
       const text = buf.toString();
       if (!buf.length) { if (parts.length === 1 && pals.delete("m:" + id)) refreshPartnerBits(); return; }
@@ -221,6 +230,15 @@ async function viaMqtt(code, my) {
   return {
     send() { const s = JSON.stringify(myState()); clients.forEach(c => { if (c.connected) c.publish(stateTopic, s, pubOpts); }); },
     meta(m) { const s = JSON.stringify(m); clients.forEach(c => { if (c.connected) c.publish(base + "meta", s, pubOpts); }); },
+    // the host moving the party on to a new game; resolves once a relay has it (or after 1.5 s)
+    next(m) {
+      const s = JSON.stringify(m), opts = { qos: 1, retain: true, ...(v5 ? { properties: { messageExpiryInterval: 3600 } } : {}) };
+      return new Promise(res => {
+        let done = false; const fin = () => { if (!done) { done = true; res(); } };
+        setTimeout(fin, 1500);
+        clients.forEach(c => { if (c.connected) c.publish(base + "next", s, opts, fin); });
+      });
+    },
     // leaving a lobby before the game starts frees the seat; leaving mid-game keeps your answers
     close(remove) {
       clients.forEach(c => {
@@ -423,7 +441,8 @@ function bindFeed() {
 function fresh(extra) {
   return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
     startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "",
-    pid: "", joinedAt: 0, meta: null, metaSent: false, synced: false, fullReason: "", timedOut: false, skipVote: false, posted: false }, extra || {});
+    pid: "", joinedAt: 0, meta: null, metaSent: false, synced: false, fullReason: "", timedOut: false, skipVote: false, posted: false,
+    expectHost: "", expectUntil: 0, pickQuiz: false }, extra || {});
 }
 function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.min(LIMIT_MS / 1000, Math.round((S.finishedAt - S.startedAt) / 1000))) : 0; }
 
@@ -525,6 +544,70 @@ function onSkip() {
   const el = $("#skip"); if (el) { el.textContent = skipLabel(); el.disabled = true; }
   checkSkip();
 }
+// ------------------------------------------------------------ keep the party going: play again / change quiz
+function quizUrl(letter) {
+  const c = (QUIZ.catalog || []).find(x => x.letter === letter);
+  return c ? c.url : (QUIZ.others || {})[letter];
+}
+function expectHost(pid) {
+  if (!/^[a-z0-9]{12}$/.test(pid || "")) return;
+  S.expectHost = pid; S.expectUntil = Date.now() + 20000;
+  setTimeout(refreshPartnerBits, 20500);
+}
+async function nextGame(letter) {
+  if (!iAmHost() || !transport || S.moving) return;
+  const target = letter || QUIZ.letter;
+  if (target !== QUIZ.letter && !quizUrl(target)) return;
+  S.moving = true; render();
+  const r = new Uint32Array(4); crypto.getRandomValues(r);
+  const code = target + Array.from(r, x => ALPH[x % ALPH.length]).join("");
+  const me = playerId(code);                       // the same id the new lobby will use for me
+  await transport.next({ code, host: me, from: S.pid, t: Date.now() });
+  if (target === QUIZ.letter) { startGame("party", code, "host"); window.scrollTo({ top: 0 }); }
+  else location.href = quizUrl(target) + "?host=" + code;
+}
+function onNext(m) {
+  if (!m || typeof m !== "object" || !validCode(String(m.code || "")) || m.code === S.code) return;
+  if (!MULTI(S.mode) || !(S.screen === "results" || S.screen === "reveal") || S.past) return;
+  if (m.from === S.pid || m.from !== hostPid() || !(Date.now() - Number(m.t) < 3600000)) return;
+  if (S.screen === "reveal") { stopReveal(); saveRecent(); }
+  const code = m.code;
+  if (code[0] === QUIZ.letter) {
+    startGame("party", code, "guest");
+    expectHost(m.host); render(); window.scrollTo({ top: 0 });
+  } else {
+    const url = quizUrl(code[0]);
+    if (url) location.href = url + "?join=" + code + (/^[a-z0-9]{12}$/.test(m.host || "") ? "&h=" + m.host : "");
+  }
+}
+function nextGameHtml() {
+  const live = MULTI(S.mode) && !S.past && transport && roomState === "on";
+  if (!live) return `<div id="nextgame" hidden></div>`;
+  if (S.moving) return `<section class="board stack center" id="nextgame"><span class="eyebrow">Next game</span><p class="muted" style="margin:0">Moving everyone to the new lobby…</p></section>`;
+  const here = 1 + (S.final || []).filter(p => { const q = pals.get(p.id); return q && !q.left; }).length;
+  if (iAmHost()) {
+    const quizzes = (QUIZ.catalog || []).filter(c => c.letter !== QUIZ.letter);
+    return `<section class="board stack" id="nextgame">
+      <span class="eyebrow">Next game · ${here} ${here === 1 ? "player" : "players"} still here</span>
+      <h3 style="font-size:1.3rem">Keep the party going</h3>
+      <p class="small muted" style="margin:0">Everyone still on this screen moves with you into a new lobby. Press Start once they're all in.</p>
+      <div class="row"><button class="btn gold" id="again-party">Play again</button>
+        <button class="btn" id="change-quiz" aria-expanded="${S.pickQuiz ? "true" : "false"}">Change quiz</button></div>
+      ${S.pickQuiz ? `<div class="quizpick" role="group" aria-label="Choose a quiz">${quizzes.map(c => `<button class="btn" data-quiz="${esc(c.letter)}">${esc(c.name)}</button>`).join("")}</div>` : ""}
+    </section>`;
+  }
+  const h = effectiveHost();
+  return `<section class="board stack" id="nextgame">
+    <span class="eyebrow">Next game</span>
+    <p class="muted" style="margin:0">Waiting for <b class="${h ? "pal-name " + colorOf(h.id) : ""}">${esc(h ? h.name : "the host")}</b> to start another game. Stay on this screen and you'll be moved there automatically.</p>
+  </section>`;
+}
+function bindNext() {
+  const a = $("#again-party"); if (a) a.onclick = () => nextGame();
+  const c = $("#change-quiz"); if (c) c.onclick = () => { S.pickQuiz = !S.pickQuiz; refreshNext(); };
+  document.querySelectorAll("[data-quiz]").forEach(b => b.onclick = () => nextGame(b.dataset.quiz));
+}
+function refreshNext() { const el = $("#nextgame"); if (el) { el.outerHTML = nextGameHtml(); bindNext(); } }
 function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); saveRecent(); }
 
 function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); }
@@ -826,10 +909,12 @@ function resultsView() {
     ${pals.length ? `<ol class="ranking">${tiles.join("")}</ol><p class="small muted" style="margin:0">Same score? The faster time ranks higher.</p>` : `<div class="tally">${tiles.join("")}</div>`}
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
     <div class="row">
-      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>` : `<button class="btn gold" id="again">${MULTI(S.mode) ? "Start a new party" : "Play 20 more"}</button>`}
+      ${S.past ? `<button class="btn gold" id="recent-btn">Back to recent quizzes</button>`
+        : MULTI(S.mode) && transport && roomState === "on" ? "" : `<button class="btn gold" id="again">${MULTI(S.mode) ? "Start a new party" : "Play 20 more"}</button>`}
       <button class="btn" id="go-home2">Home</button>
     </div>
   </section>
+  ${nextGameHtml()}
   ${showCompare ? `<section class="board stack">
     <span class="eyebrow">Compare with result codes</span>
     <p class="small muted" style="margin:0">Your result code holds your game code and your 20 picks. Send it to a friend who played the same code, or paste theirs below.</p>
@@ -857,7 +942,8 @@ function render() {
 }
 function refreshPartnerBits() {
   if (S.screen === "reveal") { const el = $("#skip"); if (el) el.textContent = skipLabel(); checkSkip(); return; }
-  if (S.screen === "home" || S.screen === "recent" || S.screen === "results" || S.screen === "full") return;
+  if (S.screen === "results") { refreshNext(); return; }
+  if (S.screen === "home" || S.screen === "recent" || S.screen === "full") return;
   if (S.screen === "waiting") { render(); checkAllDone(); return; }
   if (S.screen === "ready") { render(); return; }
   const el = $("#partners");
@@ -891,6 +977,7 @@ function bind() {
   on("nowait", finishWithoutWaiting);
   on("skip", onSkip);
   on("again", () => startGame(MULTI(S.mode) ? "party" : "solo", newCode(), "host"));
+  bindNext();
   const cf = $("#cmpform");
   if (cf) cf.onsubmit = e => {
     e.preventDefault();
@@ -928,12 +1015,19 @@ function start(saved) {
     BANK = bank;
     let session = null;
     try { session = JSON.parse(sessionStorage.getItem(QUIZ.sessionKey) || "null"); } catch (e) {}
-    let join = null;
-    try { join = normCode(new URLSearchParams(location.search).get("join") || ""); } catch (e) {}
+    let join = null, hostCode = null, h = "";
+    try {
+      const sp = new URLSearchParams(location.search);
+      join = normCode(sp.get("join") || ""); hostCode = normCode(sp.get("host") || ""); h = sp.get("h") || "";
+    } catch (e) {}
+    if (hostCode && validCode(hostCode) && hostCode[0] === QUIZ.letter && S.nick) {
+      try { history.replaceState(null, "", location.pathname); } catch (e) {}
+      feedConnect(); startGame("party", hostCode, "host"); return;
+    }
     if (join && validCode(join) && !otherQuizFor(join)) {
       try { history.replaceState(null, "", location.pathname); } catch (e) {}
       feedConnect();
-      if (S.nick) { startGame("party", join, "guest"); return; }
+      if (S.nick) { startGame("party", join, "guest"); expectHost(h); render(); return; }
       render();
       const jc = $("#joincode"); if (jc) jc.value = join;
       const n = $("#nick"); n && n.focus();
