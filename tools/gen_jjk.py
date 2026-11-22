@@ -149,7 +149,7 @@ for who in [n for n in famous_users if len(by_user[n]) >= 1]:
     for nm in by_user[who][:4]:
         add("tech_of", f"techof:{who}:{nm}", f"Which of these techniques does {who} use?", nm, rng.sample(others, 3), ks=["tech:" + nm, "techby:" + who])
 for nm, (main, users) in tech.items():
-    if main not in famous_users[:40]:
+    if main not in famous_users[:25]:   # the main cast only
         continue
     arc = first_seen[nm]["arcs"][0]
     add("tech_arc", f"techarc:{nm}", f'In which arc is {main}\'s "{nm}" first used on screen?', arc, rng.sample([a for a in ARCS if a != arc], 3),
@@ -200,7 +200,7 @@ for e in EPS:
     for c in e["chars"]:
         if c["note"] == "" and c["name"] not in debut_ep:
             debut_ep[c["name"]] = e
-for n in KNOWN:
+for n in KNOWN[:50]:
     e = debut_ep.get(n)
     if not e or len(e["arcs"]) != 1:
         continue
@@ -433,6 +433,27 @@ FACTS = [
     F("music", "Who performs the Season 3 ending 'Yoake no Uta'?", "jo0ji", ["Eve", "King Gnu", "Tatsuya Kitani"]),
     F("music", "Which band performs the openings of both the Shibuya Incident and Season 3?", "King Gnu", ["Eve", "Who-ya Extended", "Hitsujibungaku"]),
 ]
+# ------------------------------------------------------------------ the big moments of each season
+EVENTS = {
+    S1: ["Yuji swallows one of Sukuna's fingers", "Yuji, Megumi and Nobara face a special grade curse in a detention centre",
+         "Gojo uses Unlimited Void on Jogo", "Mahito kills Junpei Yoshino", "Yuji and Nanami fight Mahito in the sewers",
+         "The Kyoto Sister School Goodwill Event", "Hanami attacks the Goodwill Event", "Yuji lands his first Black Flash",
+         "Yuji and Nobara fight Eso and Kechizu", "Mahito's group steals Sukuna's fingers from Jujutsu High"],
+    S2: ["Gojo and Geto escort Riko Amanai", "Toji Fushiguro kills Riko Amanai", "Gojo awakens Reverse Cursed Technique",
+         "Geto kills a village of non-sorcerers and leaves Jujutsu High", "Gojo is sealed in the Prison Realm", "Nanami dies",
+         "Sukuna fights Mahoraga", "Sukuna kills Jogo", "Granny Ogami's séance brings Toji back", "Kenjaku absorbs Mahito",
+         "Choso fights Yuji"],
+    S3: ["Yuta is ordered to execute Yuji", "Maki wipes out the Zen'in clan", "Mai Zenin dies", "Tengen explains the Culling Game",
+         "Yuji and Megumi go to recruit Kinji Hakari", "Yuji fights Hiromi Higuruma", "Megumi fights Reggie Star", "Yuta enters the Sendai Colony"],
+    S0: ["Yuta transfers to Tokyo Jujutsu High", "Geto's Night Parade of a Hundred Demons", "Gojo kills Suguru Geto", "Rika is fully unleashed against Geto"],
+}
+for season, evs in EVENTS.items():
+    others = [e for s2, v in EVENTS.items() if s2 != season for e in v]
+    where = "the film Jujutsu Kaisen 0" if season == S0 else season
+    for ev in evs:
+        add("event", f"event:{ev}", f'When does this happen in the anime: "{ev}"?', season, [x for x in SEASONS4 if x != season], ks=["event:" + ev])
+        add("event", f"eventin:{ev}", f"Which of these happens in {where}?", ev, rng.sample(others, 3), ks=["event:" + ev])
+
 for c, q, a, o, x in FACTS:
     add(c, "fact:" + q, q, a, o, x)
 

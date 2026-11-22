@@ -427,8 +427,8 @@ h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-displ
             "groups": {"ep_title": "Episodes", "ep_arc": "Episodes", "ep_season": "Episodes", "fight_arc": "Fights", "fight_in": "Fights",
                        "tech_user": "Techniques", "tech_of": "Techniques", "tech_arc": "Techniques", "domain": "Techniques", "techh": "Techniques",
                        "va_jp": "Voice actors", "va_en": "Voice actors", "debut": "Characters", "debut_arc": "Characters", "birthday": "Characters", "charh": "Characters",
-                       "story": "Story", "world": "Jujutsu world", "anime": "The anime", "music": "The anime"},
-            "caps": {"Episodes": 3, "Fights": 2, "Techniques": 5, "Characters": 4, "Story": 3, "Jujutsu world": 2, "The anime": 2, "Voice actors": 1},
+                       "story": "Story", "event": "Big moments", "world": "Jujutsu world", "anime": "The anime", "music": "The anime"},
+            "caps": {"Episodes": 3, "Fights": 2, "Techniques": 5, "Characters": 4, "Story": 3, "Big moments": 2, "Jujutsu world": 2, "The anime": 2, "Voice actors": 1},
             "verdicts": [[19, "Special grade!"], [16, "Grade 1 sorcerer."], [12, "Grade 2. Not bad at all."], [8, "Grade 4. Keep training."], [0, "Exorcised. Try again!"]],
         },
         "theme": """
