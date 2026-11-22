@@ -138,7 +138,7 @@ CARS = []
 for b, m, y, v, u, f in POWER:
     ps = v if u == "PS" else v * 1.01387
     other = f"{comma(v / 1.01387)} hp" if u == "PS" else f"{comma(ps)} PS"
-    CARS.append({"id": f"{b}|{m}|{y}", "brand": b, "short": f"{m} ({y})", "long": f"{b} {m} ({y})",
+    CARS.append({"id": f"{b}|{m}|{y}", "brand": b, "year": y, "short": f"{m} ({y})", "long": f"{b} {m} ({y})",
                  "ps": ps, "fuzz": f, "disp": f"{comma(v) if v >= 10 else v} {u} ({other})"})
 assert len({c["id"] for c in CARS}) == len(CARS)
 PLURAL = {"Audi": "Audis", "BMW": "BMWs", "Mercedes-Benz": "Mercedes-Benz models", "Volkswagen": "Volkswagens", "Ford": "Fords",
@@ -163,6 +163,9 @@ def power_q(cars, brand=None):
     win = clear_winner(cars, lambda c: c["ps"], lambda c: c["fuzz"], most, gap=1.03, min_diff=15)
     if not win:
         return False
+    years = [c["year"] for c in cars]
+    if (most and win["year"] >= max(years)) or (not most and win["year"] <= min(years)):
+        return False
     label = (lambda c: c["short"]) if brand else (lambda c: c["long"])
     who = f"Which of these {PLURAL[brand]}" if brand else "Which of these cars"
     q = f"{who} has the {'most' if most else 'least'} stock horsepower?"
@@ -175,12 +178,12 @@ by_brand = collections.defaultdict(list)
 for c in CARS:
     by_brand[c["brand"]].append(c)
 tries = 0
-while len(Q["power"]) < 215 and tries < 200000:
+while len(Q["power"]) < 60 and tries < 400000:
     tries += 1
     b = rng.choice(list(PLURAL))
     power_q(rng.sample(by_brand[b], 4), b)
 tries = 0
-while len(Q["power"]) < 295 and tries < 200000:
+while len(Q["power"]) < 90 and tries < 400000:
     tries += 1
     cs = rng.sample(CARS, 4)
     if len({c["brand"] for c in cs}) < 4 or max(c["ps"] for c in cs) / min(c["ps"] for c in cs) > 2.6:
@@ -206,7 +209,7 @@ FOUNDED = [("Peugeot", 1810, 80, "1810 (as a family firm; cars from 1889)"), ("O
            ("Tesla", 2003, 0, "2003"), ("Rimac", 2009, 0, "2009"), ("Genesis", 2015, 0, "2015"), ("Cupra", 2018, 0, "2018")]
 FD = {b: (y, f, s) for b, y, f, s in FOUNDED}
 tries = 0
-while len(Q["founded"]) < 72 and tries < 100000:
+while len(Q["founded"]) < 100 and tries < 200000:
     tries += 1
     bs = rng.sample(list(FD), 4)
     first = rng.random() > 0.25
@@ -219,6 +222,16 @@ while len(Q["founded"]) < 72 and tries < 100000:
     q = "Which of these car makers was founded first?" if first else "Which of these car makers was founded most recently?"
     x = " · ".join(f"{x}: {FD[x][2]}" for x in sorted(bs, key=lambda x: FD[x][0])) + "."
     add("founded", "founded:" + "|".join(sorted(bs)) + str(first), q, a, [x for x in bs if x != a], x, ks=["brand:" + x for x in bs])
+
+DEC = [b for b, (y, f, _) in FD.items() if f == 0 and 1890 <= y <= 2019]
+rng.shuffle(DEC)
+for b in DEC[:32]:
+    d = FD[b][0] // 10 * 10
+    near = sorted({d - 20, d - 10, d + 10, d + 20} - {d}, key=lambda x: (abs(x - d), rng.random()))
+    near = [x for x in near if 1880 <= x <= 2020][:3]
+    if len(near) < 3:
+        continue
+    add("decade", "decade:" + b, f"In which decade was {b} founded?", f"{d}s", [f"{x}s" for x in near], f"{b} was founded in {FD[b][0]}.", ks=["brand:" + b])
 
 # ------------------------------------------------------------------ prices when new (UK, rough launch prices)
 PRICES = [("Bugatti Tourbillon (2024)", 3.2e6, .1), ("Aston Martin Valkyrie (2021)", 2.5e6, .15), ("Mercedes-AMG One (2022)", 2.3e6, .1),
@@ -396,7 +409,7 @@ for b, s in MODELS.items():
 names = collections.Counter(m for _, m, _ in model_items)
 assert all(v == 1 for v in names.values()), [n for n, v in names.items() if v > 1]
 rng.shuffle(model_items)
-for b, m, current in model_items[:175]:
+for b, m, current in model_items:
     tier = BRANDS[b][1]
     pool = [x for x in TIER[tier] if x != b]
     if len(pool) < 3:
@@ -405,10 +418,28 @@ for b, m, current in model_items[:175]:
     q = f"Which brand {'makes' if current else 'made'} the {label}?"
     add("model", "model:" + m, q, b, rng.sample(pool, 3), ks=["model:" + m])
 
+def article(b):
+    return ("an " if b[0] in "AEIOU" else "a ") + b
+
+
+by_maker = collections.defaultdict(list)
+for b, m, current in model_items:
+    by_maker[b].append(m)
+odd_brands = [b for b, ms in by_maker.items() if len(ms) >= 4]
+tries = 0
+while len(Q["notby"]) < 70 and tries < 20000:
+    tries += 1
+    b = rng.choice(odd_brands)
+    ms = rng.sample(by_maker[b], 3)
+    other = rng.choice([x for x in TIER[BRANDS[b][1]] if x != b])
+    odd = rng.choice(by_maker[other])
+    add("notby", "notby:" + b + ":" + "|".join(sorted(ms + [odd])), f"Which of these is not {article(b)}?", odd, ms,
+        f"The {odd} is {article(other)}.", ks=["model:" + m for m in ms + [odd]])
+
 COUNTRIES = ["The USA", "Japan", "Germany", "France", "Italy", "The UK", "Sweden", "South Korea", "Spain", "The Czech Republic", "China", "India"]
 cbrands = [b for b, v in BRANDS.items() if v[0]]
 rng.shuffle(cbrands)
-for b in cbrands[:52]:
+for b in cbrands:
     c = COUNTRY_NAME.get(BRANDS[b][0], BRANDS[b][0])
     near = {"Croatia": ["Italy", "Germany", "Sweden"], "Romania": ["France", "The Czech Republic", "Spain"], "Russia": ["The Czech Republic", "Germany", "China"],
             "Malaysia": ["Japan", "South Korea", "China"], "Australia": ["The UK", "The USA", "Japan"]}.get(c)
@@ -688,9 +719,9 @@ for c, q, a, o, x in FACTS:
 total = sum(len(v) for v in Q.values())
 print({k: len(v) for k, v in Q.items()}, total)
 bank = [q for v in Q.values() for q in v]
-if total > 1000:   # trim the biggest pool (horsepower)
+if total > 1000:   # trim the biggest pool (which brand makes which model)
     extra = total - 1000
-    drop = set(id(q) for q in Q["power"][-extra:])
+    drop = set(id(q) for q in Q["model"][-extra:])
     bank = [q for q in bank if id(q) not in drop]
 assert len(bank) == 1000, len(bank)
 for q in bank:

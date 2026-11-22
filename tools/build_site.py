@@ -261,8 +261,8 @@ h1, h2, h3 { font-weight: 700; }
             "foot": "Horsepower and top speeds are the makers' own figures, and prices are rough UK prices when new. A question only compares cars when one is clearly ahead, because figures vary a little between model years and countries. Fan-made quiz, not affiliated with any car maker.",
             "seed": "obscure-trivia-cars-v1:", "topic": "obscure-trivia/cars/v1/", "recentKey": "ot-recent-cars-v1", "sessionKey": "ot-game-cars",
             "bank": "questions.json", "hub": "../",
-            "groups": {"power": "Power", "model": "Makers", "country": "Makers", "owner": "Makers", "founded": "History", "hist": "History", "price": "Prices", "auction": "Prices", "pricefact": "Prices", "speed": "Speed", "speedfact": "Speed", "cyl": "Tech", "ev": "Tech", "tech": "Tech", "logo": "Badges", "name": "Badges", "screen": "Film & TV", "drive": "On the road", "road": "On the road"},
-            "caps": {"Power": 4, "Makers": 4, "History": 3, "Prices": 2, "Speed": 2, "Tech": 2, "Badges": 2, "Film & TV": 1, "On the road": 1},
+            "groups": {"power": "Power", "model": "Makers", "country": "Makers", "owner": "Makers", "notby": "Makers", "decade": "History", "founded": "History", "hist": "History", "price": "Prices", "auction": "Prices", "pricefact": "Prices", "speed": "Speed", "speedfact": "Speed", "cyl": "Tech", "ev": "Tech", "tech": "Tech", "logo": "Badges", "name": "Badges", "screen": "Film & TV", "drive": "On the road", "road": "On the road"},
+            "caps": {"Power": 2, "Makers": 5, "History": 3, "Prices": 2, "Speed": 2, "Tech": 3, "Badges": 2, "Film & TV": 1, "On the road": 1},
             "verdicts": [[19, "Pole position."], [16, "Podium finish."], [12, "Points finish."], [8, "Still on the grid. Keep practising."], [0, "Stalled on the line. Try again!"]],
         },
         "theme": """
