@@ -247,15 +247,16 @@ h1, h2, h3 { font-weight: 700; }
                   "A free football quiz, 20 questions per game: the Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and the rules. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
-        "id": "bigger", "dir": "which-is-bigger", "bank_src": "bigger_questions.json", "section": "games",
-        "title": "Which Is Bigger? – Higher or Lower Game – Obscure Trivia",
-        "desc": "Which Is Bigger? A free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.",
+        "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
+        "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
+        "title": "This or That – Higher or Lower Game – Obscure Trivia",
+        "desc": "This or That is a free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.",
         "fonts": "family=Lilita+One&family=Rubik:wght@400;500;600;700",
         "theme_color": "#fff3dc",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E",
         "extra": [],
         "config": {
-            "id": "bigger", "letter": "B", "short": "Which Is Bigger?", "icon": "",
+            "id": "bigger", "letter": "T", "short": "This or That", "icon": "",
             "eyebrow": "Head-to-head numbers game", "headline": "Two things go head to head. Which one is bigger?",
             "topics": "heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food",
             "foot": "Country populations come from the World Bank (2025), country areas from the world-countries dataset and Premier League seasons from openfootball. Everything else uses well-known published figures, and two things are only paired when the gap between them is clearly bigger than any disagreement between sources.",
@@ -319,7 +320,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .feed-btn { background: #ffffff; color: var(--ink); }
 .coin { width: 32px; height: 32px; flex: none; display: block; background: url("BARS") center / 100% 100%; }
 """.replace("BARS", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E"),
-        "tile": {"cls": "wb", "title": "Which Is Bigger?", "art": '<span class="vs-badge" aria-hidden="true">VS</span>',
+        "tile": {"cls": "wb", "title": "This or That", "art": '<span class="vs-badge" aria-hidden="true">VS</span>',
                  "blurb": "Two things go head to head. Taller, heavier, faster, older: can you pick the bigger one?"},
         "intro": ("Head-to-head numbers game", "Two things go head to head. Which one is bigger?",
                   "A free head-to-head numbers game, 20 questions per game: heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food. Play on your own, or start a party of up to 6 players with a 5-letter code."),
@@ -377,7 +378,7 @@ def stamp(path):
     return hashlib.sha1(open(path, "rb").read()).hexdigest()[:10]
 V_CSS, V_JS = stamp(os.path.join(OUT, "assets", "quiz.css")), stamp(os.path.join(OUT, "assets", "quiz.js"))
 for qz in QUIZZES:
-    qz["config"]["others"] = {o["config"]["letter"]: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz}
+    qz["config"]["others"] = {l: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz for l in [o["config"]["letter"]] + o.get("aliases", [])}
 for qz in QUIZZES:
     d = os.path.join(OUT, qz["dir"])
     os.makedirs(d, exist_ok=True)
@@ -416,11 +417,30 @@ for qz in QUIZZES:
 </html>
 """
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
+    for old in qz.get("old_dirs", []):
+        od = os.path.join(OUT, old)
+        os.makedirs(od, exist_ok=True)
+        name = qz["title"].split(" – ")[0]
+        open(os.path.join(od, "index.html"), "w", encoding="utf-8").write(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{E(name)} – Obscure Trivia</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{url}">
+<meta http-equiv="refresh" content="0; url=../{qz['dir']}/">
+<script>location.replace("../{qz['dir']}/" + location.search + location.hash);</script>
+<style>body{{margin:0;padding:40px 16px;font:16px/1.5 system-ui,sans-serif;background:{qz['theme_color']};color:#1b1b2f;text-align:center}}</style>
+</head>
+<body><p>This game is now called <a href="../{qz['dir']}/">{E(name)}</a>.</p></body>
+</html>
+""")
 
 # ------------------------------------------------------------------ hub
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -567,7 +587,7 @@ hub += """<div class="wrap">
 </div>
 <script>
 (() => {
-  const routes = """ + json.dumps({q["config"]["letter"]: q["dir"] + "/" for q in QUIZZES}) + """;
+  const routes = """ + json.dumps({l: q["dir"] + "/" for q in QUIZZES for l in [q["config"]["letter"]] + q.get("aliases", [])}) + """;
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();

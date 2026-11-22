@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Obscure Trivia – Hearthstone, Minecraft, General Knowledge &amp; Football Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players.">
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
 <meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, General Knowledge &amp; Football Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players.">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -172,9 +172,9 @@ a { color: inherit; }
   <section class="sect" aria-labelledby="h-games">
     <div class="sect-head"><h2 id="h-games">Other games</h2><p>Something a bit different, with the same party codes, timer and top scores.</p></div>
     <div class="shelf games">
-      <a class="quiz wb" href="which-is-bigger/">
+      <a class="quiz wb" href="this-or-that/">
         <span class="vs-badge" aria-hidden="true">VS</span>
-        <h3>Which Is Bigger?</h3>
+        <h3>This or That</h3>
         <p>Two things go head to head. Taller, heavier, faster, older: can you pick the bigger one?</p>
         <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
       </a>
@@ -194,7 +194,7 @@ a { color: inherit; }
 </div>
 <script>
 (() => {
-  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "B": "which-is-bigger/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "T": "this-or-that/", "B": "this-or-that/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -202,7 +202,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football) or B (Which Is Bigger)."; return; }
+    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football) or T (This or That)."; return; }
     location.href = r + "?join=" + c;
   });
 })();

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>This or That – Higher or Lower Game – Obscure Trivia</title>
+<meta name="description" content="This or That is a free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/this-or-that/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="This or That – Higher or Lower Game – Obscure Trivia">
+<meta property="og:description" content="This or That is a free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/this-or-that/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/this-or-that/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fff3dc">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "This or That", "url": "https://scboom.github.io/obscure-trivia/this-or-that/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "This or That is a free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/obscure-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/obscure-trivia/"}, {"@type": "ListItem", "position": 2, "name": "This or That", "item": "https://scboom.github.io/obscure-trivia/this-or-that/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css?v=c6ddedf274">
+<style>
+:root {
+  --bg: #fff3dc;
+  --bg-art: radial-gradient(circle, rgba(27, 27, 47, 0.09) 1.2px, transparent 1.7px) 0 0 / 18px 18px;
+  --panel: #fffdf7; --panel-fill: #fffdf7; --panel-2: #fff0cc;
+  --panel-shadow: 6px 6px 0 #1b1b2f;
+  --line: #1b1b2f; --line-hover: #1b1b2f; --ink: #1b1b2f; --muted: #57546b; --faint: #75728a; --placeholder: #9895aa;
+  --accent: #ffcd29; --accent-ink: #1b1b2f; --accent-text: #c2410c; --accent-hover: #ffd94f; --accent-edge: #1b1b2f; --accent-shadow: 3px 3px 0 #1b1b2f;
+  --chip-bg: #fff0cc; --chip-line: #1b1b2f; --chip-ink: #1b1b2f;
+  --pal: #2563eb; --pal-ink: #ffffff; --pal-bg: rgba(37, 99, 235, 0.1); --pal-line: #2563eb;
+  --good: #15803d; --good-ink: #ffffff; --good-bg: #d7f5de; --bad: #dc2626; --bad-ink: #ffffff; --bad-bg: #fde3e3;
+  --inset: #ffffff; --opt: #ffffff; --tile: #fff8e8;
+  --card-bg: #ffffff; --card-ink: #1b1b2f; --card-line: #1b1b2f; --card-inner: #fff0cc; --card-strong: #000000;
+  --f-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif; --f-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  --side-a: #ff6b57; --side-a-bg: #ffe2dc; --side-b: #3d7bff; --side-b-bg: #dfe9ff;
+  color-scheme: light;
+}
+/* a warm side and a cool side, like a versus screen */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle, rgba(27, 27, 47, 0.1) 1.2px, transparent 1.7px) 0 0 / 18px 18px,
+    linear-gradient(115deg, #ffdcd2 0 50%, #d9e6ff 50% 100%); }
+.c2 { --pc: #7c3aed; --pc-ink: #ffffff; } .c3 { --pc: #db2777; --pc-ink: #ffffff; }
+.c4 { --pc: #c2410c; --pc-ink: #ffffff; } .c5 { --pc: #047857; --pc-ink: #ffffff; }
+.board { border-width: 2.5px; }
+.btn { border-width: 2.5px; border-color: var(--line); background: #ffffff; box-shadow: 3px 3px 0 var(--line); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--line); }
+.btn.skip { box-shadow: none; }
+.input { border-width: 2.5px; }
+.chip { border-width: 1.5px; font-weight: 600; }
+.pip { background: #eadcb8; }
+.timer { background: #eadcb8; }
+.divider::before, .divider::after { background: #d9c79c; }
+.opt { border-width: 2.5px; box-shadow: 4px 4px 0 var(--line); transition: transform .1s ease, box-shadow .1s ease, background .12s ease; }
+.opt:hover:not([disabled]) { background: var(--opt); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--line); }
+.opt .key { border: 2px solid var(--line); background: #ffffff; color: var(--ink); }
+.opt.card.side-a { background: var(--side-a-bg); }
+.opt.card.side-b { background: var(--side-b-bg); }
+.opt.card.side-a:hover:not([disabled]) { background: var(--side-a-bg); }
+.opt.card.side-b:hover:not([disabled]) { background: var(--side-b-bg); }
+.opt.card.side-a .key { background: var(--side-a); color: #ffffff; }
+.opt.card.side-b .key { background: var(--side-b); color: #ffffff; }
+.opt.card.right { background: var(--good-bg); border-color: var(--good); box-shadow: 4px 4px 0 var(--good); }
+.opt.card.wrong { background: var(--bad-bg); border-color: var(--bad); box-shadow: 4px 4px 0 var(--bad); }
+.opt.card.faded { opacity: 0.6; }
+.opt.card .val { color: var(--ink); }
+.opt.card.right .val { color: var(--good); }
+.opts.duel .vs { background: var(--ink); color: var(--accent); width: 54px; height: 54px; font-size: 1.2rem; transform: rotate(-8deg);
+  box-shadow: 3px 3px 0 var(--accent-text); }
+.why { background: #ffffff; border: 2px dashed var(--line); }
+.feed-btn, .feed-panel { border-width: 2px; border-color: var(--line); }
+.feed-btn { background: #ffffff; color: var(--ink); }
+.coin { width: 32px; height: 32px; flex: none; display: block; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E") center / 100% 100%; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true"></span><h1>This or That</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Head-to-head numbers game</span>
+    <h2>Two things go head to head. Which one is bigger?</h2>
+    <p>A free head-to-head numbers game, 20 questions per game: heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food. Play on your own, or start a party of up to 6 players with a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "bigger", "letter": "T", "short": "This or That", "icon": "", "eyebrow": "Head-to-head numbers game", "headline": "Two things go head to head. Which one is bigger?", "topics": "heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food", "foot": "Country populations come from the World Bank (2025), country areas from the world-countries dataset and Premier League seasons from openfootball. Everything else uses well-known published figures, and two things are only paired when the gap between them is clearly bigger than any disagreement between sources.", "seed": "obscure-trivia-bigger-v1:", "topic": "obscure-trivia/bigger/v1/", "recentKey": "ot-recent-bigger-v1", "sessionKey": "ot-game-bigger", "bank": "questions.json", "hub": "../", "groups": {"height": "Height", "area": "Area", "population": "Population", "length": "Length", "weight": "Weight", "speed": "Speed", "lifespan": "Lifespan", "dates": "Dates", "numbers": "Numbers", "diameter": "Space", "spin": "Space", "gravity": "Space", "heat": "Heat", "protons": "Science", "density": "Science", "melting": "Science", "stadium": "Sport", "ball": "Sport", "plseasons": "Sport", "calories": "Food", "chilli": "Food", "caffeine": "Food", "distance": "Distance"}, "caps": {"Height": 2, "Area": 2, "Population": 2, "Length": 2, "Weight": 2, "Speed": 2, "Lifespan": 1, "Dates": 3, "Numbers": 3, "Space": 2, "Heat": 2, "Science": 2, "Sport": 2, "Food": 2, "Distance": 1}, "verdicts": [[19, "Human measuring tape."], [16, "Brilliant sense of scale."], [12, "Bigger brain than most."], [8, "Size isn't everything."], [0, "Was it the other one?"]], "others": {"H": "../hearthstone/", "M": "../minecraft/", "W": "../general-knowledge/", "F": "../football/"}};</script>
+<script src="../assets/quiz.js?v=5bbf7d2a20"></script>
+</body>
+</html>

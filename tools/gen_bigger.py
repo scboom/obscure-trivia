@@ -1,4 +1,4 @@
-"""Build the 'Which Is Bigger?' bank: 1,000 head-to-head questions.
+"""Build the 'This or That' bank (first called Which Is Bigger?): 1,000 head-to-head questions.
 
 Every item has a value and an uncertainty ("fuzz", as a fraction, or in years for dates).
 Two items are only paired when the gap between them is clearly bigger than both
