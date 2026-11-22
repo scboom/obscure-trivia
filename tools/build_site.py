@@ -64,9 +64,10 @@ QUIZZES = [
         "id": "minecraft", "dir": "minecraft", "bank_src": "mc_questions.json",
         "title": "Minecraft Bedrock Quiz – Obscure Trivia",
         "desc": "A free Minecraft: Bedrock Edition quiz: 20 random questions per game on crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes. Play solo or in party mode with up to 6 players.",
-        "fonts": "family=Pixelify+Sans:wght@400;600;700&family=Noto+Sans:wght@400;600;700",
+        "fonts": "family=Noto+Sans:wght@400;600;700",
         "theme_color": "#1b1c1e",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23866043'/%3E%3Crect width='8' height='3' fill='%235f9f35'/%3E%3Crect y='3' width='2' height='1' fill='%235f9f35'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%235f9f35'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23694b33'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%23694b33'/%3E%3C/svg%3E",
+        "extra": [("fonts/Monocraft.woff2", "Monocraft.woff2"), ("fonts/Monocraft-OFL.txt", "Monocraft-OFL.txt")],
         "config": {
             "id": "minecraft", "letter": "M", "short": "Minecraft", "icon": "",
             "eyebrow": "Minecraft: Bedrock Edition quiz", "headline": "Think you know every block, mob and recipe?",
@@ -96,11 +97,14 @@ QUIZZES = [
   --good: #6cc349; --good-ink: #0d2a05; --good-bg: rgba(108,195,73,0.16); --bad: #ef5a45; --bad-ink: #2b0702; --bad-bg: rgba(239,90,69,0.16);
   --inset: #1e1e1f; --opt: #3a3b3c; --tile: #262728;
   --card-bg: #c6c6c6; --card-ink: #3a3a3a; --card-line: #000000; --card-inner: #8b8b8b; --card-strong: #1a1a1a;
-  --f-display: "Pixelify Sans", ui-monospace, "Courier New", monospace; --f-body: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-display: "Monocraft", ui-monospace, "Courier New", monospace; --f-body: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --r: 0px; --r-panel: 0px; --r-pill: 0px; --r-key: 0px;
   color-scheme: dark;
 }
+@font-face { font-family: "Monocraft"; src: url("Monocraft.woff2") format("woff2"); font-display: swap; }
 body { image-rendering: pixelated; }
+.qtext { font-size: clamp(1.1rem, 3.9vw, 1.4rem); line-height: 1.35; }
+.opt .lbl.big { font-size: 1.05rem; }
 .board { border-width: 2px; }
 .btn { border-width: 2px; border-color: #0f0f10; box-shadow: inset 0 -4px 0 rgba(0,0,0,0.3), inset 0 3px 0 rgba(255,255,255,0.12); }
 .btn:active { transform: translateY(2px); box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3); }
@@ -177,6 +181,70 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; }
                  "blurb": "Space, animals, the human body, countries and flags, history, science and culture."},
         "intro": ("General knowledge quiz", "How much do you know about our world?",
                   "A free general knowledge quiz, 20 questions per game: space, animals, the human body, countries and flags, geography, history, science and culture. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
+        "id": "football", "dir": "football", "bank_src": "football_questions.json",
+        "title": "Football Quiz – Obscure Trivia",
+        "desc": "A free football quiz: 20 random questions per game on the Premier League, the World Cup, the Champions League, players, stadiums, nicknames and rules. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700",
+        "theme_color": "#0d2a17",
+        "favicon": "BALL",
+        "extra": [],
+        "config": {
+            "id": "football", "letter": "F", "short": "Football", "icon": "",
+            "eyebrow": "Football quiz", "headline": "Think you know your football?",
+            "topics": "the Premier League, the World Cup, the Champions League and the Euros, legendary players, stadiums, nicknames, derbies and the rules",
+            "foot": "Premier League and World Cup results from the openfootball project (public domain). Fan-made quiz, not affiliated with the Premier League, FIFA or UEFA.",
+            "seed": "obscure-trivia-football-v1:", "topic": "obscure-trivia/football/v1/", "recentKey": "ot-recent-football-v1", "sessionKey": "ot-game-football",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"plchamp": "Premier League", "plsecond": "Premier League", "plthird": "Premier League", "plfourth": "Premier League", "plpoints": "Premier League",
+                       "plbottom": "Premier League", "pllowest": "Premier League", "pldown": "Premier League", "plup": "Premier League", "plhigher": "Premier League",
+                       "plstreak": "Premier League", "plseasons": "Premier League", "plfirst": "Premier League", "plfounder": "Premier League", "plever": "Premier League",
+                       "pltitles": "Premier League", "plrecord": "Premier League",
+                       "wcwin": "World Cup", "wcfinal": "World Cup", "wchost": "World Cup", "wccount": "World Cup", "wclast": "World Cup", "wcpens": "World Cup", "wc": "World Cup",
+                       "ucl": "Europe", "euro": "Europe", "player": "Players", "stadium": "Grounds", "city": "Grounds", "nickname": "Clubs", "derby": "Clubs",
+                       "rules": "Rules", "fa": "English football"},
+            "caps": {"Premier League": 7, "World Cup": 3, "Players": 3, "Europe": 2, "Grounds": 2, "Clubs": 2, "Rules": 2, "English football": 2},
+            "verdicts": [[19, "Ballon d'Or material."], [16, "World class."], [12, "Premier League quality."], [8, "Championship level. Keep training!"], [0, "Sunday league. Back to training!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0b2414;
+  --bg-art: none;
+  --panel: rgba(8, 24, 14, 0.86); --panel-fill: linear-gradient(180deg, rgba(10, 30, 18, 0.9), rgba(6, 20, 12, 0.92)); --panel-2: rgba(30, 70, 42, 0.85);
+  --panel-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.22); --line-hover: rgba(255, 255, 255, 0.6); --ink: #ffffff; --muted: #bfd6c6; --faint: #95b39f; --placeholder: #7f9d89;
+  --accent: #ffd84a; --accent-ink: #1d1600; --accent-text: #ffe066; --accent-hover: #ffe27a; --accent-edge: #fff0a8; --accent-shadow: 0 3px 0 #b8911a;
+  --chip-bg: rgba(255, 255, 255, 0.08); --chip-line: rgba(255, 255, 255, 0.3); --chip-ink: #ffffff;
+  --pal: #5ab4ff; --pal-ink: #03203a; --pal-bg: rgba(90, 180, 255, 0.12); --pal-line: rgba(90, 180, 255, 0.4);
+  --good: #6ee07a; --good-ink: #062b0b; --good-bg: rgba(110, 224, 122, 0.15); --bad: #ff6b6b; --bad-ink: #3a0606; --bad-bg: rgba(255, 107, 107, 0.16);
+  --inset: rgba(0, 0, 0, 0.35); --opt: rgba(16, 44, 26, 0.85); --tile: rgba(12, 34, 20, 0.88);
+  --card-bg: #f4f7f2; --card-ink: #0f2416; --card-line: #c9d9cc; --card-inner: #e5eee6; --card-strong: #061409;
+  --f-display: "Oswald", "Arial Narrow", Impact, sans-serif; --f-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --r: 8px; --r-panel: 12px; --r-pill: 999px; --r-key: 6px;
+  color-scheme: dark;
+}
+/* a floodlit pitch: mowing stripes, chalk centre circle, dark edges */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 230, 0.16), transparent 55%),
+    radial-gradient(circle at 50% 46%, transparent 0 118px, rgba(255, 255, 255, 0.16) 119px 122px, transparent 123px),
+    linear-gradient(180deg, transparent calc(46% - 1.5px), rgba(255, 255, 255, 0.16) calc(46% - 1.5px) calc(46% + 1.5px), transparent calc(46% + 1.5px)),
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.55) 100%),
+    repeating-linear-gradient(180deg, #1d6a35 0 70px, #22783c 70px 140px); }
+h1, h2, h3, .qtext, .code-big, .bigmsg, .verdict { text-transform: uppercase; letter-spacing: 0.02em; }
+h1, h2, h3 { font-weight: 700; }
+.qtext { font-weight: 600; text-transform: none; letter-spacing: 0; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 600; font-size: 1.1rem; }
+.coin {
+  width: 30px; height: 30px; border-radius: 50%; flex: none; display: block;
+  background: url("BALL") center / 100% 100%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+""".replace("BALL", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23fff' stroke='%23111' stroke-width='3'/%3E%3Cpath d='M32 20l10 7-4 12H26l-4-12z' fill='%23111'/%3E%3Cpath d='M32 20V8M42 27l11-4M38 39l7 10M26 39l-7 10M22 27l-11-4' stroke='%23111' stroke-width='3'/%3E%3C/svg%3E"),
+        "tile": {"cls": "fb", "title": "Football", "art": "",
+                 "blurb": "The Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and rules."},
+        "intro": ("Football quiz", "Think you know your football?",
+                  "A free football quiz, 20 questions per game: the Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and the rules. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
 ]
 
@@ -272,7 +340,7 @@ for qz in QUIZZES:
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
 
 # ------------------------------------------------------------------ hub
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition and general knowledge, solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -297,7 +365,7 @@ a { color: inherit; }
 .hero h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; text-wrap: balance; max-width: 16ch; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
 .eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 @media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
 /* globe tile: a lit Earth in space, clean sans titles */
@@ -309,6 +377,18 @@ a { color: inherit; }
 .gk p { color: #cfe0f5; font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
 .gk .pill { border-radius: 999px; background: rgba(125,211,252,0.16); border: 1px solid rgba(125,211,252,0.45); color: #c4ecff; }
 .gk .play { color: #8edbff; }
+/* pitch tile: mowing stripes, a chalk centre circle and condensed sports type */
+.fb { border-radius: 14px; color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(4,18,9,0.85) 82%),
+    radial-gradient(circle at 70% 38%, transparent 0 46px, rgba(255,255,255,0.55) 47px 49px, transparent 50px),
+    linear-gradient(90deg, transparent calc(70% - 1px), rgba(255,255,255,0.55) calc(70% - 1px) calc(70% + 1px), transparent calc(70% + 1px)),
+    repeating-linear-gradient(90deg, #1d6a35 0 34px, #22783c 34px 68px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 3px rgba(255,255,255,0.55); }
+.fb:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 3px #ffd84a; }
+.fb h3 { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.5rem); text-transform: uppercase; letter-spacing: 0.02em; }
+.fb p { color: #dcebdf; font-family: "Barlow", system-ui, sans-serif; }
+.fb .pill { border-radius: 999px; background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.45); color: #fff; }
+.fb .play { color: #ffd84a; }
 .quiz { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 260px; padding: 22px; text-decoration: none; overflow: hidden; min-width: 0;
   transition: transform .15s ease, box-shadow .15s ease; }
 .quiz:hover { transform: translateY(-3px); }
@@ -317,6 +397,7 @@ a { color: inherit; }
 .quiz .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .quiz .pill { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; }
 .quiz .play { margin-left: auto; font-weight: 800; }
+@font-face { font-family: "Monocraft"; src: url("minecraft/Monocraft.woff2") format("woff2"); font-display: swap; }
 /* tavern tile: oak planks, a gold coin and a serif title */
 .hs { border-radius: 16px; color: var(--hs-ink);
   background: linear-gradient(180deg, rgba(20,12,7,0.15) 0%, rgba(20,12,7,0.85) 78%), url(__WOOD__) center / cover;
@@ -334,10 +415,10 @@ a { color: inherit; }
   background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.78) 82%), url(__GRASS__) 0 0 / 56px 56px;
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
-.mc h3 { font-family: "Pixelify Sans", ui-monospace, monospace; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
+.mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
 .mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
-.mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Pixelify Sans", ui-monospace, monospace; font-size: 1.1rem; }
+.mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Monocraft", ui-monospace, monospace; font-size: 1.1rem; }
 .joinbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .joinbox h3 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
 .joinbox p { margin: 0; color: var(--muted); font-size: 0.95rem; }
@@ -350,8 +431,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft & General Knowledge Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Pixelify+Sans:wght@700&family=Outfit:wght@800&family=Atkinson+Hyperlegible",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge & Football Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -377,7 +458,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang or Microsoft.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA or UEFA.</p>
 </div>
 <script>
 (() => {

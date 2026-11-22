@@ -73,7 +73,7 @@ let pals = new Map(), leftIds = new Set(), transport = null, gen = 0;
 
 function myState() {
   const done = !!S.finishedAt;
-  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0, j: S.joinedAt || 0 };
+  return { code: S.code, name: (S.nick || "Player").slice(0, 20), ans: encodeAnswers(S.answers), done, t: done ? elapsedSec() : 0, j: S.joinedAt || 0, sk: S.skipVote ? 1 : 0 };
 }
 const MULTI = m => m === "coop" || m === "party";
 const PARTY_MAX = 6;
@@ -130,7 +130,7 @@ function setPal(id, st) {
   if (!st || typeof st !== "object" || st.code !== S.code) return;
   const t = Number.isFinite(st.t) && st.t > 0 && st.t < 86400 ? Math.round(st.t) : 0;
   const j = Number.isFinite(st.j) && st.j > 0 ? st.j : 0;
-  pals.set(id, { id, name: String(st.name || "Player").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, j, left: leftIds.has(id) });
+  pals.set(id, { id, name: String(st.name || "Player").slice(0, 20), answers: decodeAnswers(st.ans), done: !!st.done, t, j, sk: st.sk === 1, left: leftIds.has(id) });
   refreshPartnerBits();
   checkCapacity();
 }
@@ -281,6 +281,7 @@ function saveRecent() {
   list.unshift(e);
   store(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX)));
   saveSession();
+  postScore();
 }
 function openRecent(i) {
   const e = loadRecent()[i];
@@ -324,13 +325,118 @@ function recentView() {
   </section>`;
 }
 
+
+// ------------------------------------------------------------ recent top scores
+// Each finished game posts its top score to the relay; every visitor sees the 3 most recent.
+const FEED_BASE = QUIZ.topic + "feed/";
+const FEED = { entries: new Map(), clients: [], state: "idle", queue: [], open: false };
+function feedValid(e) {
+  if (!e || typeof e !== "object" || e.v !== 1) return null;
+  const s = Number(e.s), p = Number(e.p), at = Number(e.at), t = Number(e.t);
+  if (!Number.isInteger(s) || s < 0 || s > LEN || !Number.isInteger(p) || p < 1 || p > PARTY_MAX) return null;
+  if (!Number.isFinite(at) || at > Date.now() + 864e5 || at < Date.now() - 30 * 864e5) return null;
+  return { n: String(e.n || "Someone").slice(0, 20), s, p, at, t: Number.isFinite(t) ? Math.max(0, Math.min(LIMIT_MS / 1000, Math.round(t))) : 0, m: e.m === "party" ? "party" : "solo" };
+}
+function feedTop() { return [...FEED.entries.values()].sort((a, b) => b.at - a.at).slice(0, 3); }
+function feedConnect() {
+  if (FEED.state !== "idle") return;
+  FEED.state = "connecting";
+  loadMqtt().then(mqtt => {
+    const cfg = window.TT_MQTT || {};
+    const v5 = cfg.protocolVersion !== 4;
+    FEED.v5 = v5;
+    FEED.clients = (cfg.brokers || BROKERS).map(url => {
+      const c = mqtt.connect(url, { protocolVersion: v5 ? 5 : 4, clientId: "ttf_" + Math.random().toString(36).slice(2, 12),
+        clean: true, connectTimeout: 10000, reconnectPeriod: 10000, keepalive: 60 });
+      c.on("connect", () => {
+        FEED.state = "on";
+        c.subscribe(FEED_BASE + "+", { qos: 1 }, () => setTimeout(feedPrune, 2500));
+        FEED.queue.splice(0).forEach(([id, msg]) => feedPublish(id, msg));
+        renderFeed();
+      });
+      c.on("message", (topic, buf) => {
+        const id = topic.slice(FEED_BASE.length);
+        if (!/^[a-z0-9]{10}$/.test(id) || buf.length > 600) return;
+        if (!buf.length) { FEED.entries.delete(id); renderFeed(); return; }
+        let e = null; try { e = feedValid(JSON.parse(buf.toString())); } catch (x) { return; }
+        if (e) { FEED.entries.set(id, e); renderFeed(); }
+      });
+      c.on("error", () => {});
+      return c;
+    });
+    setTimeout(() => { if (FEED.state !== "on") { FEED.state = "off"; renderFeed(); } }, 15000);
+  }).catch(() => { FEED.state = "off"; renderFeed(); });
+}
+function feedPublish(id, msg) {
+  const live = FEED.clients.filter(c => c.connected);
+  if (!live.length) { FEED.queue.push([id, msg]); return; }
+  const opts = { qos: 1, retain: true, ...(FEED.v5 ? { properties: { messageExpiryInterval: 7 * 86400 } } : {}) };
+  live.forEach(c => c.publish(FEED_BASE + id, msg, opts));
+}
+function feedPrune() {   // keep the relay tidy: only the 12 newest entries stay
+  [...FEED.entries.entries()].sort((a, b) => b[1].at - a[1].at).slice(12).forEach(([id]) => {
+    FEED.entries.delete(id);
+    FEED.clients.forEach(c => { if (c.connected) c.publish(FEED_BASE + id, "", { qos: 1, retain: true }); });
+  });
+}
+function postScore() {
+  if (S.posted || S.past || !S.finishedAt) return;
+  const pals = S.final || [];
+  if (MULTI(S.mode) && pals.length && !iAmHost()) { S.posted = true; return; }   // one post per party, from the host
+  const all = [{ n: S.nick || (MULTI(S.mode) ? "Player" : "Someone"), s: myScore(), t: elapsedSec() }]
+    .concat(pals.map(p => ({ n: p.name, s: scoreOf(p.answers), t: p.t || 0 })));
+  all.sort((a, b) => b.s - a.s || (a.t || 1e9) - (b.t || 1e9));
+  const top = all[0];
+  const id = Array.from(crypto.getRandomValues(new Uint32Array(2)), x => x.toString(36).padStart(7, "0").slice(-5)).join("");
+  const e = { v: 1, n: top.n.slice(0, 20), s: top.s, t: top.t, m: MULTI(S.mode) ? "party" : "solo", p: Math.min(PARTY_MAX, all.length), at: Date.now() };
+  S.posted = true;
+  FEED.entries.set(id, feedValid(e));
+  feedPublish(id, JSON.stringify(e));
+  renderFeed();
+}
+function ago(ms) {
+  const m = Math.max(0, Math.round((Date.now() - ms) / 60000));
+  return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 1440 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago";
+}
+const TROPHY = `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v3H8v-3h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3V3zm0 4H6v1a2 2 0 0 0 1 1.7V7zm10 0v2.7A2 2 0 0 0 18 8V7h-1z"/></svg>`;
+function feedTab() {
+  if (S.screen !== "home" && S.screen !== "results") return "";
+  const list = feedTop();
+  const body = list.length ? `<ol class="feed-list">${list.map(e => `<li><b>${esc(e.n)}</b> scored <b class="feed-score">${e.s}/${LEN}</b>
+      <span class="muted">${e.m === "party" ? `party of ${e.p}` : "solo"} · ${ago(e.at)}</span></li>`).join("")}</ol>`
+    : `<p class="small muted" style="margin:0">${FEED.state === "off" ? "Couldn't load scores right now." : FEED.state === "on" ? "No scores yet. Finish a quiz to be the first!" : "Loading…"}</p>`;
+  return `<aside class="feed${FEED.open ? " open" : ""}" id="feed">
+    ${FEED.open ? `<div class="feed-panel" id="feed-panel"><div class="feed-head"><span class="eyebrow">Recent top scores</span><button class="feed-x" id="feed-close" aria-label="Close">×</button></div>${body}</div>` : ""}
+    <button class="feed-btn" id="feed-btn" aria-expanded="${FEED.open}" aria-controls="feed-panel">${TROPHY}<span>Top scores</span></button>
+  </aside>`;
+}
+function renderFeed() {
+  const el = $("#feed");
+  if (el) { el.outerHTML = feedTab(); bindFeed(); }
+}
+function bindFeed() {
+  const b = $("#feed-btn"); if (b) b.onclick = () => { FEED.open = !FEED.open; renderFeed(); };
+  const x = $("#feed-close"); if (x) x.onclick = () => { FEED.open = false; renderFeed(); };
+}
+
 // ------------------------------------------------------------ actions
 function fresh(extra) {
   return Object.assign({ screen: "home", mode: "solo", role: "host", code: "", nick: S.nick, qs: [], answers: [], cur: 0, compare: null,
     startedAt: 0, finishedAt: 0, final: null, step: 0, saved: false, past: false, meName: "",
-    pid: "", joinedAt: 0, meta: null, metaSent: false, synced: false, fullReason: "" }, extra || {});
+    pid: "", joinedAt: 0, meta: null, metaSent: false, synced: false, fullReason: "", timedOut: false, skipVote: false, posted: false }, extra || {});
 }
-function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.round((S.finishedAt - S.startedAt) / 1000)) : 0; }
+function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.min(LIMIT_MS / 1000, Math.round((S.finishedAt - S.startedAt) / 1000))) : 0; }
+
+// ------------------------------------------------------------ 10-minute limit
+const LIMIT_MS = (window.TT_LIMIT_S || 600) * 1000;
+function timeLeft() { return S.startedAt ? Math.max(0, S.startedAt + LIMIT_MS - Date.now()) : LIMIT_MS; }
+function tick() {
+  if (S.screen !== "quiz" || !S.startedAt) return;
+  const left = timeLeft(), el = $("#clock");
+  if (el) { el.textContent = fmtTime(Math.ceil(left / 1000)); el.classList.toggle("low", left < 60000); }
+  if (left <= 0) { S.timedOut = true; finishQuiz(); }
+}
+setInterval(tick, 250);
 function needName() {
   if (S.nick) return false;
   const el = $("#nickerr"); if (el) el.textContent = "Type your name first so the other players know who you are.";
@@ -361,7 +467,11 @@ function answer(k) {
 function next() {
   if (S.answers[S.cur] === null) return;
   if (S.cur < LEN - 1) { S.cur++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
-  S.finishedAt = Date.now();
+  finishQuiz();
+}
+function finishQuiz() {
+  if (S.screen !== "quiz") return;
+  S.finishedAt = Math.min(Date.now(), S.startedAt ? S.startedAt + LIMIT_MS : Date.now());
   if (MULTI(S.mode) && roomState !== "off") { S.screen = "waiting"; pushPresence(); render(); checkAllDone(); }
   else { S.screen = "results"; pushPresence(); render(); saveRecent(); }
   window.scrollTo({ top: 0 });
@@ -393,6 +503,28 @@ function scheduleStep() {
   }, STEP_MS(S.step));
 }
 function stopReveal() { clearTimeout(revealTimer); revealTimer = 0; }
+// in a party everyone still in the game has to vote before the reveal is skipped
+function skipTally() {
+  const ids = (S.final || []).map(p => p.id).filter(id => { const p = pals.get(id); return !(p && p.left); });
+  const votes = (S.skipVote ? 1 : 0) + ids.filter(id => (pals.get(id) || {}).sk).length;
+  return { votes, needed: 1 + ids.length };
+}
+function skipLabel() {
+  if (!MULTI(S.mode) || !(S.final && S.final.length) || roomState !== "on") return "Skip to scores";
+  const { votes, needed } = skipTally();
+  return S.skipVote ? `Waiting for everyone to vote (${votes}/${needed})` : `Vote to skip (${votes}/${needed})`;
+}
+function checkSkip() {
+  if (S.screen !== "reveal" || !S.skipVote) return;
+  const { votes, needed } = skipTally();
+  if (votes >= needed) endReveal();
+}
+function onSkip() {
+  if (!MULTI(S.mode) || !(S.final && S.final.length) || roomState !== "on") { endReveal(); return; }
+  S.skipVote = true; pushPresence();
+  const el = $("#skip"); if (el) { el.textContent = skipLabel(); el.disabled = true; }
+  checkSkip();
+}
 function endReveal() { stopReveal(); S.screen = "results"; render(); window.scrollTo({ top: 0 }); saveRecent(); }
 
 function home() { stopReveal(); leaveRoom(); S = fresh(); clearSession(); render(); }
@@ -412,7 +544,8 @@ function header() {
   const showScore = S.screen === "quiz" || S.screen === "results";
   return `<header class="top">
     <button class="brand" id="go-home" aria-label="${esc(QUIZ.short)} quiz home"><span class="coin" aria-hidden="true">${QUIZ.icon}</span><h1>${esc(QUIZ.short)}</h1></button>
-    ${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
+    ${S.screen === "quiz" ? `<div class="score"><span class="clock${timeLeft() < 60000 ? " low" : ""}" id="clock" role="timer" aria-label="Time left">${fmtTime(Math.ceil(timeLeft() / 1000))}</span><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
+      : showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
       : S.screen === "home" ? `<div class="row top-links"><a class="btn copy" href="${QUIZ.hub}">All quizzes</a><button class="btn copy" id="recent-btn">Recent quizzes</button></div>` : ""}
   </header>`;
 }
@@ -587,7 +720,7 @@ function waitingView() {
   return `${header()}
   <section class="board stack center waiting">
     <span class="eyebrow">Game ${esc(S.code)}</span>
-    <h2 class="bigmsg">You're done!</h2>
+    <h2 class="bigmsg">${S.timedOut ? "Time's up!" : "You're done!"}</h2>
     <p class="muted" style="margin:0 auto;max-width:44ch">${nobody ? "Nobody else is in this quiz. You can see your results now."
       : playing.length ? `Waiting for ${names} to finish. The answers are revealed as soon as everyone's done.`
       : leftEarly ? "Someone left before finishing." : "Getting the reveal ready…"}</p>
@@ -600,7 +733,7 @@ function revealView() {
   const players = [{ label: S.meName || S.nick || "You", cls: "you", answers: S.answers }].concat((S.final || []).map(p => ({ label: p.name, cls: "pal " + (p.c || "c1"), answers: p.answers })));
   const ms = STEP_MS(S.step);
   const timer = `<div class="timer" aria-hidden="true"><span style="animation-duration:${ms}ms"></span></div>`;
-  const skip = `<button class="btn skip" id="skip">Skip to scores</button>`;
+  const skip = `<button class="btn skip" id="skip" ${S.skipVote ? "disabled" : ""}>${esc(skipLabel())}</button>`;
   if (S.step === 0) {
     return `${header()}<section class="board stack center reveal">
       <span class="eyebrow">Party ${esc(S.code)} · ${players.length} players</span>
@@ -665,6 +798,7 @@ function resultsView() {
   <section class="board stack">
     <span class="eyebrow">${S.past ? "Past game" : "Results"} · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
     <h2 style="font-size:1.9rem">${verdict}</h2>
+    ${S.timedOut ? `<p class="small muted" style="margin:0">Time ran out. Unanswered questions count as wrong.</p>` : ""}
     ${pals.length ? `<ol class="ranking">${tiles.join("")}</ol><p class="small muted" style="margin:0">Same score? The faster time ranks higher.</p>` : `<div class="tally">${tiles.join("")}</div>`}
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
     <div class="row">
@@ -692,12 +826,14 @@ function render() {
   const app = $("#app");
   if (!BANK) return;
   const v = { home: homeView, recent: recentView, ready: readyView, quiz: quizView, waiting: waitingView, reveal: revealView, full: fullView }[S.screen] || resultsView;
-  app.innerHTML = v();
+  app.innerHTML = v() + feedTab();
   bind();
+  bindFeed();
   saveSession();
 }
 function refreshPartnerBits() {
-  if (S.screen === "home" || S.screen === "recent" || S.screen === "reveal" || S.screen === "results" || S.screen === "full") return;
+  if (S.screen === "reveal") { const el = $("#skip"); if (el) el.textContent = skipLabel(); checkSkip(); return; }
+  if (S.screen === "home" || S.screen === "recent" || S.screen === "results" || S.screen === "full") return;
   if (S.screen === "waiting") { render(); checkAllDone(); return; }
   if (S.screen === "ready") { render(); return; }
   const el = $("#partners");
@@ -729,7 +865,7 @@ function bind() {
   document.querySelectorAll("[data-opt]:not([disabled])").forEach(b => b.onclick = () => answer(+b.dataset.opt));
   on("next", next);
   on("nowait", finishWithoutWaiting);
-  on("skip", endReveal);
+  on("skip", onSkip);
   on("again", () => startGame(MULTI(S.mode) ? "party" : "solo", newCode(), "host"));
   const cf = $("#cmpform");
   if (cf) cf.onsubmit = e => {
@@ -772,6 +908,7 @@ function start(saved) {
     try { join = normCode(new URLSearchParams(location.search).get("join") || ""); } catch (e) {}
     if (join && validCode(join) && !otherQuizFor(join)) {
       try { history.replaceState(null, "", location.pathname); } catch (e) {}
+      feedConnect();
       if (S.nick) { startGame("party", join, "guest"); return; }
       render();
       const jc = $("#joincode"); if (jc) jc.value = join;
@@ -780,6 +917,7 @@ function start(saved) {
       return;
     }
     if (!restore(saved && saved.S) && !restore(session)) render();
+    feedConnect();
   }).catch(() => {
     $("#app").innerHTML = `<div class="loading">The question bank didn't load. Reload the page to try again.</div>`;
   });
