@@ -1,0 +1,65 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:transparent"><canvas id="c"></canvas>
+<script src="three.min.js"></script>
+<script>
+// The sheep exactly as the game builds it: Mojang's Bedrock geometry (geometry.sheep.v1.8 = skin layer + wool layer) and texture.
+window.renderSheep = async (texUrl, geo, opts) => {
+  const { W, H, yaw, pitch } = opts;
+  const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), alpha: true, antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(W, H); renderer.setClearColor(0x000000, 0);
+  const scene = new THREE.Scene();
+  const tex = await new THREE.TextureLoader().loadAsync(texUrl);
+  tex.magFilter = THREE.NearestFilter; tex.minFilter = THREE.NearestFilter; tex.generateMipmaps = false;
+  const TW = 64, TH = 64;
+  const mat = new THREE.MeshBasicMaterial({ map: tex, vertexColors: true, alphaTest: 0.5, side: THREE.FrontSide });
+  // Minecraft-style face shading: top brightest, front/back a bit darker, sides darker still
+  const SHADE = { px: 0.78, nx: 0.78, py: 1.0, ny: 0.5, pz: 0.88, nz: 0.88 };
+  function cube(c) {
+    const [w, h, d] = c.size, inf = c.inflate || 0, [u, v] = c.uv;
+    const g = new THREE.BoxGeometry(w + 2 * inf, h + 2 * inf, d + 2 * inf);
+    // box UV rectangles in texture pixels: [left, top, width, height], three.js face order px, nx, py, ny, pz, nz
+    const R = { px: [u, v + d, d, h], nx: [u + d + w, v + d, d, h], py: [u + d, v, w, d], ny: [u + d + w, v, w, d],
+                pz: [u + 2 * d + w, v + d, w, h], nz: [u + d, v + d, w, h] };
+    const names = ['px', 'nx', 'py', 'ny', 'pz', 'nz'];
+    const uvs = g.attributes.uv, col = [];
+    for (let f = 0; f < 6; f++) {
+      const [l, t, rw, rh] = R[names[f]], flip = names[f] === 'py';
+      for (let k = 0; k < 4; k++) {
+        const i = f * 4 + k; let a = uvs.getX(i), b = uvs.getY(i);
+        if (flip) { a = 1 - a; b = 1 - b; }
+        uvs.setXY(i, (l + a * rw) / TW, 1 - (t + (1 - b) * rh) / TH);
+        const s = SHADE[names[f]]; col.push(s, s, s);
+      }
+    }
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    const m = new THREE.Mesh(g, mat);
+    m.position.set(c.origin[0] + w / 2, c.origin[1] + h / 2, c.origin[2] + d / 2);
+    return m;
+  }
+  function bone(b) {
+    const grp = new THREE.Group();
+    (b.cubes || []).forEach(c => grp.add(cube(c)));
+    if (b.bind_pose_rotation) {   // the body is modelled standing up and turned to lie flat about its pivot
+      const piv = new THREE.Group(), inner = new THREE.Group();
+      piv.position.set(...b.pivot); inner.position.set(-b.pivot[0], -b.pivot[1], -b.pivot[2]); inner.add(grp);
+      piv.rotation.x = -b.bind_pose_rotation[0] * Math.PI / 180; piv.add(inner); return piv;
+    }
+    return grp;
+  }
+  const base = geo['geometry.sheep.sheared.v1.8'], wool = geo['geometry.sheep.v1.8:geometry.sheep.sheared.v1.8'];
+  const root = new THREE.Group();
+  // the wool geometry inherits from the sheared one: a wool bone keeps its parent bone's pivot and rotation
+  const byName = Object.fromEntries(base.bones.map(b => [b.name, b]));
+  const woolBones = wool.bones.map(b => Object.assign({}, byName[b.name] || {}, b));
+  [...base.bones, ...woolBones].forEach(b => root.add(bone(b)));
+  scene.add(root);
+  const box = new THREE.Box3().setFromObject(root), ctr = box.getCenter(new THREE.Vector3());
+  root.position.sub(ctr);
+  const s = 18, cam = new THREE.OrthographicCamera(-s * W / H, s * W / H, s, -s, -200, 200);
+  const dist = 80, yr = yaw * Math.PI / 180, pr = pitch * Math.PI / 180;
+  cam.position.set(Math.cos(pr) * Math.cos(yr) * dist, Math.sin(pr) * dist, -Math.cos(pr) * Math.sin(yr) * dist);
+  cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam);
+  const bb = box.getSize(new THREE.Vector3());
+  return { size: [bb.x, bb.y, bb.z] };
+};
+</script>

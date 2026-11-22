@@ -3,7 +3,7 @@ const { chromium } = require('playwright');
 const [,, texPath, outDir] = process.argv;
 const T = JSON.parse(fs.readFileSync(texPath, 'utf8'));
 const MONO = 'data:font/woff2;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'fonts', 'Monocraft.woff2')).toString('base64');
-const SHEEP = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/minecraft/sheep.svg').toString('base64');
+const SHEEP = 'data:image/png;base64,' + fs.readFileSync(outDir + '/minecraft/sheep.png').toString('base64');
 const EARTH = 'data:image/jpeg;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'world', 'earth-social.jpg')).toString('base64');
 const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&display=swap">';
 const base = '@font-face{font-family:Monocraft;src:url(' + MONO + ')}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{box-sizing:border-box;padding:70px 80px;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;font-family:Inter,system-ui,sans-serif}';
@@ -42,7 +42,7 @@ const pages = {
     h1{font:italic 700 132px/1 'Chakra Petch',sans-serif;margin:0;text-transform:uppercase;letter-spacing:.01em}p{font:600 36px 'Titillium Web',sans-serif;margin:0;color:#d4d7dd}
     .by{font:800 26px 'Bricolage Grotesque';color:#ff5a4d;letter-spacing:.02em}</style>
     <h1>Car Quiz</h1><p>Horsepower · top speeds · badges · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
-  'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(14,34,8,.6)),url(${SHEEP}) right 80px top 40px/auto 44% no-repeat,repeating-conic-gradient(rgba(255,255,255,.05) 0 25%,rgba(0,0,0,0) 0 50%) 0 0/52px 52px,linear-gradient(180deg,#70b540,#5b9d32 60%,#4a8627);image-rendering:pixelated;color:#fff}
+  'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(14,34,8,.6)),url(${SHEEP}) right 80px top 40px/auto 44% no-repeat,repeating-conic-gradient(rgba(255,255,255,.05) 0 25%,rgba(0,0,0,0) 0 50%) 0 0/52px 52px,linear-gradient(180deg,#70b540,#5b9d32 60%,#4a8627);color:#fff}
     h1{font:400 110px/1 Monocraft,monospace;margin:0;text-shadow:6px 6px 0 #1f1f1f}p{font-size:34px;margin:0;text-shadow:2px 2px 0 #000}
     .by{font:800 26px 'Bricolage Grotesque';color:#7ad155;letter-spacing:.02em;text-shadow:2px 2px 0 #000}</style>
     <h1>Minecraft Quiz</h1><p>Bedrock Edition · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,

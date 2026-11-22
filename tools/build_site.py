@@ -67,7 +67,7 @@ QUIZZES = [
         "fonts": "family=Noto+Sans:wght@400;600;700",
         "theme_color": "#1b1c1e",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23866043'/%3E%3Crect width='8' height='3' fill='%235f9f35'/%3E%3Crect y='3' width='2' height='1' fill='%235f9f35'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%235f9f35'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23694b33'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%23694b33'/%3E%3C/svg%3E",
-        "extra": [("fonts/Monocraft.woff2", "Monocraft.woff2"), ("fonts/Monocraft-OFL.txt", "Monocraft-OFL.txt")],
+        "extra": [("fonts/Monocraft.woff2", "Monocraft.woff2"), ("fonts/Monocraft-OFL.txt", "Monocraft-OFL.txt"), ("mc-sheep.png", "sheep.png")],
         "config": {
             "id": "minecraft", "letter": "M", "short": "Minecraft", "icon": "",
             "eyebrow": "Minecraft: Bedrock Edition quiz", "headline": "Think you know every block, mob and recipe?",
@@ -499,39 +499,8 @@ for qz in QUIZZES:
 """)
 
 # ------------------------------------------------------------------ hub
-def mc_sheep():
-    """A big, simple pixel sheep (side view, facing right) for the Minecraft tile."""
-    W, H = 22, 18
-    px = {}
-    def put(x, y, c): px[(x, y)] = c
-    def box(x0, x1, y0, y1, c):
-        for y in range(y0, y1 + 1):
-            for x in range(x0, x1 + 1):
-                put(x, y, c)
-    WOOL, SHADE, DEEP, SKIN, SKIN2 = "#f5f5f5", "#e0e0e0", "#c9c9c9", "#e8c7b2", "#c9a38c"
-    box(1, 15, 2, 11, WOOL)                                   # body
-    box(1, 15, 10, 11, SHADE); box(1, 1, 3, 11, SHADE)
-    for x, y in [(4, 4), (8, 3), (11, 5), (6, 7), (13, 8), (3, 9), (9, 9), (12, 3), (5, 5), (10, 7)]:
-        put(x, y, SHADE)
-    for x, y in [(2, 10), (7, 11), (12, 10), (14, 11)]:
-        put(x, y, DEEP)
-    for lx in (2, 5, 10, 13):                                 # legs: wool at the top, skin below
-        box(lx, lx + 1, 12, 12, SHADE)
-        box(lx, lx + 1, 13, 16, SKIN)
-        box(lx, lx, 13, 16, SKIN2)
-    box(14, 20, 0, 1, WOOL); box(14, 16, 2, 7, WOOL); box(14, 14, 1, 7, SHADE)   # head wool
-    box(17, 20, 2, 7, SKIN); box(17, 17, 2, 7, SKIN2); box(17, 20, 7, 7, SKIN2)  # face
-    put(18, 3, "#ffffff"); put(19, 3, "#1b1b1b")             # eye
-    put(20, 5, "#d98b8b")                                    # nose
-    groups = {}
-    for (x, y), c in px.items():
-        groups.setdefault(c, []).append((x, y))
-    paths = "".join(f'<path fill="{c}" d="{"".join(f"M{x} {y}h1v1h-1z" for x, y in sorted(v))}"/>' for c, v in groups.items())
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" shape-rendering="crispEdges">'
-            f'<rect x="0" y="17" width="17" height="1" fill="#000" fill-opacity=".22"/>{paths}</svg>\n')
+# the Minecraft tile shows the real sheep, rendered from Mojang's own model and texture (bedrock-samples)
 
-
-open(os.path.join(OUT, "minecraft", "sheep.svg"), "w").write(mc_sheep())
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
 hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
@@ -608,9 +577,9 @@ a { color: inherit; }
   background: radial-gradient(circle at 35% 30%, #fff6d2 0 12%, #f0be5c 40%, #a8721f 100%); color: #2a1b08; font-family: "Bree Serif", Georgia, serif; font-size: 1.9rem;
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255, 240, 200, 0.35), 0 0 0 5px rgba(232, 180, 80, 0.16), 0 0 34px rgba(255, 180, 80, 0.55); }
 /* block tile: pixel grass-and-dirt, square corners, a pixel title */
-.mc { border-radius: 0; color: var(--mc-ink); image-rendering: pixelated;
+.mc { border-radius: 0; color: var(--mc-ink);
   background: linear-gradient(180deg, rgba(0,0,0,0) 52%, rgba(14,34,8,0.6) 100%),
-    url(minecraft/sheep.svg) right 30px top 18px / auto 50% no-repeat,
+    url(minecraft/sheep.png) right 30px top 18px / auto 50% no-repeat,
     repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
     linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
