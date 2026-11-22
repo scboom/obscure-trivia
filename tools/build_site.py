@@ -358,6 +358,58 @@ h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; letter-spacing: -0.
                   "A free music quiz, 20 questions per game: the world's biggest songs and records, chart hits from the 1960s to now, albums, artists and bands, Eurovision, film songs and music facts. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "fortnite", "dir": "fortnite", "bank_src": "fortnite_questions.json", "extra": [("fn-peely.png", "peely.png"), ("fn-peely-head.png", "peely-head.png")],
+        "title": "Fortnite Quiz – Obscure Trivia",
+        "desc": "A free Fortnite quiz: 20 random questions per game on outfits and when they arrived, every chapter and season, the map and its locations, live events, items and the game's history. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Anton&family=Nunito:wght@600;700;800",
+        "theme_color": "#2a6cf0",
+        "favicon": "peely-head.png",
+        "config": {
+            "id": "fortnite", "letter": "N", "short": "Fortnite", "icon": "", "namePh": "e.g. Jonesy",
+            "eyebrow": "Fortnite quiz", "headline": "Think you know the island? Drop in and prove it.",
+            "topics": "outfits and the seasons they arrived in, every chapter and season, the map and its named locations, live events, items and the game's history",
+            "foot": "Outfit and emote seasons come from the Fortnite-API cosmetics database. Seasons, named locations and live events come from the Fortnite Wiki, and map questions count the main Battle Royale island only. Fan-made quiz, not affiliated with Epic Games.",
+            "seed": "obscure-trivia-fortnite-v1:", "topic": "obscure-trivia/fortnite/v1/", "recentKey": "ot-recent-fortnite-v1", "sessionKey": "ot-game-fortnite",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"outseason": "Outfits", "outfirst": "Outfits", "outseries": "Outfits", "emote": "Outfits", "seasonname": "Seasons", "seasontheme": "Seasons", "seasonstart": "Seasons", "season": "Seasons", "locchapter": "Map", "locreplaced": "Map", "locadded": "Map", "loccount": "Map", "locwhich": "Map", "map": "Map", "event": "Live events", "item": "Items", "fact": "Fortnite facts"},
+            "caps": {"Outfits": 5, "Seasons": 4, "Map": 5, "Live events": 2, "Items": 2, "Fortnite facts": 3},
+            "verdicts": [[19, "Victory Royale!"], [16, "Top 3. So close!"], [12, "Top 10 finish."], [8, "Caught in the storm."], [0, "Back to the lobby. Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #1d4fc4;
+  --bg-art: linear-gradient(180deg, #3e8cff 0%, #2a6cf0 45%, #3b2bb8 100%);
+  --panel: #13235e; --panel-fill: linear-gradient(180deg, rgba(20, 38, 104, 0.94), rgba(14, 26, 76, 0.95)); --panel-2: #22367f;
+  --panel-shadow: 0 14px 34px rgba(8, 10, 50, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --line: rgba(255, 255, 255, 0.18); --line-hover: rgba(255, 226, 58, 0.75); --ink: #ffffff; --muted: #c3cdf2; --faint: #9aa8dc; --placeholder: #8796cf;
+  --accent: #ffe23a; --accent-ink: #1d1600; --accent-text: #ffe766; --accent-hover: #fff06a; --accent-edge: #fff3a3; --accent-shadow: 0 4px 0 #b39400;
+  --chip-bg: rgba(255, 255, 255, 0.1); --chip-line: rgba(255, 255, 255, 0.28); --chip-ink: #ffffff;
+  --pal: #ff8ae2; --pal-ink: #2b0022; --pal-bg: rgba(255, 138, 226, 0.14); --pal-line: rgba(255, 138, 226, 0.5);
+  --good: #5ef08d; --good-ink: #022b10; --good-bg: rgba(94, 240, 141, 0.15); --bad: #ff6b6b; --bad-ink: #3a0606; --bad-bg: rgba(255, 107, 107, 0.16);
+  --inset: #0b1648; --opt: rgba(22, 40, 108, 0.92); --tile: rgba(16, 30, 86, 0.92);
+  --card-bg: #ffffff; --card-ink: #13235e; --card-line: #c5d0f5; --card-inner: #e8edfd; --card-strong: #000000;
+  --f-display: "Anton", "Impact", "Arial Narrow", sans-serif; --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 10px; --r-panel: 14px; --r-pill: 999px; --r-key: 6px;
+  color-scheme: dark;
+}
+/* blue sky, with the purple storm closing in around the edges */
+body { background-attachment: fixed; }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at 50% 42%, transparent 52%, rgba(136, 52, 240, 0.35) 66%, rgba(98, 26, 200, 0.8) 84%, rgba(70, 14, 160, 0.95) 100%); }
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; }
+.hero h2 { font-size: clamp(2.2rem, 8vw, 3.2rem); line-height: 1.02; text-shadow: 0 3px 0 rgba(10, 16, 70, 0.6); }
+.qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 800; font-size: 1.08rem; }
+.btn.gold { font-size: 1.1rem; }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("peely-head.png") center 20% / 115% auto, #ffe23a;
+  box-shadow: 0 0 0 2px #ffe23a, 0 3px 8px rgba(0, 0, 0, 0.35); }
+""",
+        "tile": {"cls": "fn", "title": "Fortnite", "art": "",
+                 "blurb": "Outfits and when they arrived, every season, the map and its locations, live events and items."},
+        "intro": ("Fortnite quiz", "Think you know the island? Drop in and prove it.",
+                  "A free Fortnite quiz, 20 questions per game: outfits and the seasons they arrived in, every chapter and season, the map and its named locations, live events, items and the game's history. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -437,6 +489,9 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
                   "A free head-to-head numbers game, 20 questions per game: heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
 ]
+# the order tiles appear in on the home page: games first, then everything else
+HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "world", "football", "cars", "music", "bigger"]
+QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 body { margin: 0; }
@@ -555,7 +610,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and Fortnite, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -670,6 +725,20 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
+/* fortnite tile: blue sky, the purple storm at the edges and Peely */
+.fn { border-radius: 16px; color: #fff;
+  background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
+    radial-gradient(circle at 70% 38%, transparent 40%, rgba(136, 52, 240, 0.4) 62%, rgba(80, 20, 180, 0.9) 100%),
+    linear-gradient(180deg, rgba(10, 20, 80, 0) 35%, rgba(10, 20, 80, 0.7) 100%),
+    linear-gradient(180deg, #4b95ff 0%, #2a6cf0 55%, #3b2bb8 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(255, 226, 58, 0.55); }
+.fn:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 3px #ffe23a; }
+.fn h3 { font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: clamp(2.1rem, 5.6vw, 2.7rem); text-transform: uppercase; letter-spacing: 0.02em;
+  text-shadow: 0 3px 0 rgba(10, 16, 70, 0.65); }
+.fn p { color: #e6ecff; font-family: "Nunito", system-ui, sans-serif; font-weight: 600; max-width: 30ch; }
+.fn .pill { border-radius: 999px; background: rgba(10, 20, 80, 0.45); border: 1px solid rgba(255, 226, 58, 0.6); color: #fff; }
+.fn .play { color: #ffe23a; font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 0.03em; }
+@media (max-width: 620px) { .fn { min-height: 360px; background-size: auto 46%, auto, auto, auto; } }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -703,8 +772,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -734,7 +803,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {

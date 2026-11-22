@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car &amp; Music Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<title>Obscure Trivia – Hearthstone, Minecraft, Fortnite, General Knowledge, Football, Car &amp; Music Quizzes</title>
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and Fortnite, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
-<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football, Car &amp; Music Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars and music, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, Fortnite, General Knowledge, Football, Car &amp; Music Quizzes">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and Fortnite, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/obscure-trivia/"}</script>
 <style>
 /* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
@@ -134,6 +134,20 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
+/* fortnite tile: blue sky, the purple storm at the edges and Peely */
+.fn { border-radius: 16px; color: #fff;
+  background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
+    radial-gradient(circle at 70% 38%, transparent 40%, rgba(136, 52, 240, 0.4) 62%, rgba(80, 20, 180, 0.9) 100%),
+    linear-gradient(180deg, rgba(10, 20, 80, 0) 35%, rgba(10, 20, 80, 0.7) 100%),
+    linear-gradient(180deg, #4b95ff 0%, #2a6cf0 55%, #3b2bb8 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(255, 226, 58, 0.55); }
+.fn:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 3px #ffe23a; }
+.fn h3 { font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: clamp(2.1rem, 5.6vw, 2.7rem); text-transform: uppercase; letter-spacing: 0.02em;
+  text-shadow: 0 3px 0 rgba(10, 16, 70, 0.65); }
+.fn p { color: #e6ecff; font-family: "Nunito", system-ui, sans-serif; font-weight: 600; max-width: 30ch; }
+.fn .pill { border-radius: 999px; background: rgba(10, 20, 80, 0.45); border: 1px solid rgba(255, 226, 58, 0.6); color: #fff; }
+.fn .play { color: #ffe23a; font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 0.03em; }
+@media (max-width: 620px) { .fn { min-height: 360px; background-size: auto 46%, auto, auto, auto; } }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -191,6 +205,12 @@ a { color: inherit; }
         <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
         <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
       </a>
+      <a class="quiz fn" href="fortnite/">
+        
+        <h3>Fortnite</h3>
+        <p>Outfits and when they arrived, every season, the map and its locations, live events and items.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
       <a class="quiz gk" href="general-knowledge/">
         
         <h3>General Knowledge</h3>
@@ -238,11 +258,11 @@ a { color: inherit; }
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {
-  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "S": "music/", "T": "this-or-that/", "B": "this-or-that/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "N": "fortnite/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "S": "music/", "T": "this-or-that/", "B": "this-or-that/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -250,7 +270,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football), C (Cars), S (Music) or T (This or That)."; return; }
+    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), N (Fortnite), W (General Knowledge), F (Football), C (Cars), S (Music) or T (This or That)."; return; }
     location.href = r + "?join=" + c;
   });
 })();
