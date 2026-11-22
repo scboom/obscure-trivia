@@ -262,7 +262,7 @@ h1, h2, h3 { font-weight: 700; }
             "seed": "obscure-trivia-cars-v1:", "topic": "obscure-trivia/cars/v1/", "recentKey": "ot-recent-cars-v1", "sessionKey": "ot-game-cars",
             "bank": "questions.json", "hub": "../",
             "groups": {"power": "Power", "model": "Makers", "country": "Makers", "owner": "Makers", "notby": "Makers", "decade": "History", "founded": "History", "hist": "History", "price": "Prices", "auction": "Prices", "pricefact": "Prices", "speed": "Speed", "speedfact": "Speed", "cyl": "Tech", "ev": "Tech", "tech": "Tech", "logo": "Badges", "name": "Badges", "screen": "Film & TV", "drive": "On the road", "road": "On the road"},
-            "caps": {"Power": 2, "Makers": 5, "History": 3, "Prices": 2, "Speed": 2, "Tech": 3, "Badges": 2, "Film & TV": 1, "On the road": 1},
+            "caps": {"Power": 2, "Makers": 3, "History": 5, "Prices": 2, "Speed": 2, "Tech": 2, "Badges": 2, "Film & TV": 2, "On the road": 1},
             "verdicts": [[19, "Pole position."], [16, "Podium finish."], [12, "Points finish."], [8, "Still on the grid. Keep practising."], [0, "Stalled on the line. Try again!"]],
         },
         "theme": """
@@ -499,40 +499,39 @@ for qz in QUIZZES:
 """)
 
 # ------------------------------------------------------------------ hub
-def mc_scene():
-    """A clean pixel landscape for the Minecraft tile: sky, sun, clouds, an oak tree, a grass edge and dirt."""
-    import random as _r
-    rnd = _r.Random(7)
-    W, H, G = 98, 64, 15          # size in pixels; grass starts at row G
-    px = {}                        # colour -> list of 1x1 pixels
-    def dot(x, y, c): px.setdefault(c, []).append((x, y))
-    for x in range(W):                                   # bumpy top of the grass
-        if rnd.random() < 0.45: dot(x, G - 1, "#74b843")
-        if rnd.random() < 0.30: dot(x, G + 3, "#5d9b30")  # grass hanging over the dirt
-        if rnd.random() < 0.12: dot(x, G + 4, "#5d9b30")
-    for y in range(G + 4, H):                            # dirt specks
-        for x in range(W):
-            r = rnd.random()
-            if r < 0.06: dot(x, y, "#774d30")
-            elif r < 0.11: dot(x, y, "#9c6c49")
-    for x, y in [(64, 4), (67, 2), (71, 5), (74, 8), (66, 7), (69, 6), (72, 2), (63, 7)]:
-        dot(x, y, "#2f6e20")                             # shade in the leaves
-    paths = "".join(f'<path fill="{c}" d="{"".join(f"M{x} {y}h1v1h-1z" for x, y in pts)}"/>' for c, pts in px.items())
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid slice">
-<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e9cff"/><stop offset="1" stop-color="#b6d4ff"/></linearGradient></defs>
-<rect width="{W}" height="{H}" fill="url(#sky)"/>
-<rect x="83" y="2" width="7" height="7" fill="#fff4a8"/><rect x="84" y="3" width="5" height="5" fill="#ffd84a"/>
-<path fill="#ffffff" fill-opacity=".92" d="M11 3h10v2h3v2H8V5h3zM39 6h8v2h3v2H36V8h3z"/>
-<rect x="68" y="9" width="2" height="6" fill="#6b4a26"/>
-<path fill="#3f8b2c" d="M64 1h10v2h2v6H62V3h2z"/>
-<rect x="0" y="{G}" width="{W}" height="3" fill="#63a536"/>
-<rect x="0" y="{G + 3}" width="{W}" height="{H - G - 3}" fill="#8b5d3a"/>
-{paths}
-</svg>
-"""
+def mc_sheep():
+    """A big, simple pixel sheep (side view, facing right) for the Minecraft tile."""
+    W, H = 22, 18
+    px = {}
+    def put(x, y, c): px[(x, y)] = c
+    def box(x0, x1, y0, y1, c):
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                put(x, y, c)
+    WOOL, SHADE, DEEP, SKIN, SKIN2 = "#f5f5f5", "#e0e0e0", "#c9c9c9", "#e8c7b2", "#c9a38c"
+    box(1, 15, 2, 11, WOOL)                                   # body
+    box(1, 15, 10, 11, SHADE); box(1, 1, 3, 11, SHADE)
+    for x, y in [(4, 4), (8, 3), (11, 5), (6, 7), (13, 8), (3, 9), (9, 9), (12, 3), (5, 5), (10, 7)]:
+        put(x, y, SHADE)
+    for x, y in [(2, 10), (7, 11), (12, 10), (14, 11)]:
+        put(x, y, DEEP)
+    for lx in (2, 5, 10, 13):                                 # legs: wool at the top, skin below
+        box(lx, lx + 1, 12, 12, SHADE)
+        box(lx, lx + 1, 13, 16, SKIN)
+        box(lx, lx, 13, 16, SKIN2)
+    box(14, 20, 0, 1, WOOL); box(14, 16, 2, 7, WOOL); box(14, 14, 1, 7, SHADE)   # head wool
+    box(17, 20, 2, 7, SKIN); box(17, 17, 2, 7, SKIN2); box(17, 20, 7, 7, SKIN2)  # face
+    put(18, 3, "#ffffff"); put(19, 3, "#1b1b1b")             # eye
+    put(20, 5, "#d98b8b")                                    # nose
+    groups = {}
+    for (x, y), c in px.items():
+        groups.setdefault(c, []).append((x, y))
+    paths = "".join(f'<path fill="{c}" d="{"".join(f"M{x} {y}h1v1h-1z" for x, y in sorted(v))}"/>' for c, v in groups.items())
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" shape-rendering="crispEdges">'
+            f'<rect x="0" y="17" width="17" height="1" fill="#000" fill-opacity=".22"/>{paths}</svg>\n')
 
 
-open(os.path.join(OUT, "minecraft", "tile.svg"), "w").write(mc_scene())
+open(os.path.join(OUT, "minecraft", "sheep.svg"), "w").write(mc_sheep())
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
 hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
@@ -610,8 +609,12 @@ a { color: inherit; }
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255, 240, 200, 0.35), 0 0 0 5px rgba(232, 180, 80, 0.16), 0 0 34px rgba(255, 180, 80, 0.55); }
 /* block tile: pixel grass-and-dirt, square corners, a pixel title */
 .mc { border-radius: 0; color: var(--mc-ink); image-rendering: pixelated;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20,12,6,0.5) 50%, rgba(20,12,6,0.8) 100%), url(minecraft/tile.svg) top center / 100% auto no-repeat #8b5d3a;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 52%, rgba(14,34,8,0.6) 100%),
+    url(minecraft/sheep.svg) right 30px top 18px / auto 50% no-repeat,
+    repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
+    linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+@media (max-width: 620px) { .mc { min-height: 340px; background-size: auto, auto 40%, 26px 26px, auto; } }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
 .mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }

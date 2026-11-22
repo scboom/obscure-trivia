@@ -199,46 +199,60 @@ while len(Q["power"]) < 90 and tries < 400000:
 
 # ------------------------------------------------------------------ founding years
 # (brand, year, fuzz in years, how to show it). Fuzz covers brands that began as something else.
-FOUNDED = [("Peugeot", 1810, 80, "1810 (as a family firm; cars from 1889)"), ("Opel", 1862, 37, "1862 (cars from 1899)"),
-           ("Škoda", 1895, 0, "1895 (as Laurin & Klement)"), ("Renault", 1899, 0, "1899"), ("Fiat", 1899, 0, "1899"), ("Dodge", 1900, 14, "1900 (cars from 1914)"),
-           ("Cadillac", 1902, 0, "1902"), ("Ford", 1903, 0, "1903"), ("Buick", 1903, 0, "1903"), ("Rolls-Royce", 1906, 2, "1906"), ("Lancia", 1906, 0, "1906"),
-           ("Audi", 1909, 1, "1909"), ("Bugatti", 1909, 0, "1909"), ("Suzuki", 1909, 46, "1909 (cars from 1955)"), ("Alfa Romeo", 1910, 0, "1910"),
-           ("Morgan", 1910, 0, "1910"), ("Chevrolet", 1911, 0, "1911"), ("Aston Martin", 1913, 0, "1913"), ("Maserati", 1914, 0, "1914"),
-           ("BMW", 1916, 1, "1916"), ("Lincoln", 1917, 0, "1917"), ("Citroën", 1919, 0, "1919"), ("Bentley", 1919, 0, "1919"),
-           ("Mazda", 1920, 11, "1920 (cars from 1931)"), ("Jaguar", 1922, 23, "1922 (as Swallow Sidecar)"), ("MG", 1924, 0, "1924"),
-           ("Chrysler", 1925, 0, "1925"), ("Mercedes-Benz", 1926, 43, "1926 (Benz & Cie began in 1883)"), ("Volvo", 1927, 0, "1927"),
-           ("Porsche", 1931, 0, "1931"), ("Nissan", 1933, 0, "1933"), ("Toyota", 1937, 0, "1937"), ("Volkswagen", 1937, 0, "1937"),
-           ("Ferrari", 1939, 8, "1939 (first Ferrari car 1947)"), ("Jeep", 1941, 2, "1941"), ("Kia", 1944, 30, "1944 (cars from 1974)"),
-           ("Tata Motors", 1945, 0, "1945"), ("Honda", 1948, 0, "1948"), ("Land Rover", 1948, 0, "1948"), ("Abarth", 1949, 0, "1949"),
-           ("Seat", 1950, 0, "1950"), ("Lotus", 1952, 4, "1952"), ("Subaru", 1953, 1, "1953"), ("Alpine", 1955, 0, "1955"), ("Mini", 1959, 0, "1959"),
-           ("Lamborghini", 1963, 0, "1963"), ("McLaren", 1963, 22, "1963 (as a racing team)"), ("Dacia", 1966, 0, "1966"), ("Hyundai", 1967, 0, "1967"),
-           ("DeLorean", 1975, 0, "1975"), ("Lexus", 1989, 0, "1989"), ("Pagani", 1992, 0, "1992"), ("Koenigsegg", 1994, 0, "1994"),
-           ("Tesla", 2003, 0, "2003"), ("Rimac", 2009, 0, "2009"), ("Genesis", 2015, 0, "2015"), ("Cupra", 2018, 0, "2018")]
-FD = {b: (y, f, s) for b, y, f, s in FOUNDED}
+# (brand, earliest, latest, how to show it). Many makers began as something else, so each has a range
+# of years it could fairly be said to start in. A question is only asked when the answer is the same
+# whichever end of every range you pick.
+FOUNDED = [("Peugeot", 1810, 1889, "1810 as a family firm (first car 1889)"), ("Vauxhall", 1857, 1903, "1857 as an engineering firm (first car 1903)"),
+           ("Opel", 1862, 1899, "1862 making sewing machines (first car 1899)"), ("\u0160koda", 1895, 1895, "1895 (as Laurin & Klement)"),
+           ("Renault", 1899, 1899, "1899"), ("Fiat", 1899, 1899, "1899"), ("Dodge", 1900, 1914, "1900 (first car 1914)"), ("Cadillac", 1902, 1902, "1902"),
+           ("Ford", 1903, 1903, "1903"), ("Buick", 1903, 1903, "1903"), ("Rolls-Royce", 1904, 1906, "1906 (Rolls and Royce met in 1904)"),
+           ("Lancia", 1906, 1906, "1906"), ("Audi", 1909, 1910, "1909"), ("Bugatti", 1909, 1909, "1909"), ("Suzuki", 1909, 1955, "1909 making looms (first car 1955)"),
+           ("Alfa Romeo", 1910, 1910, "1910"), ("Morgan", 1910, 1910, "1910"), ("Chevrolet", 1911, 1911, "1911"), ("Aston Martin", 1913, 1913, "1913"),
+           ("Maserati", 1914, 1914, "1914"), ("BMW", 1916, 1917, "1916"), ("Lincoln", 1917, 1917, "1917"), ("Citro\u00ebn", 1919, 1919, "1919"),
+           ("Bentley", 1919, 1919, "1919"), ("Mazda", 1920, 1931, "1920 making cork (first car 1931)"), ("Jaguar", 1922, 1945, "1922 as Swallow Sidecar (named Jaguar in 1945)"),
+           ("MG", 1924, 1924, "1924"), ("Chrysler", 1925, 1925, "1925"), ("Mercedes-Benz", 1883, 1926, "1926 as Mercedes-Benz (Benz & Cie began in 1883)"),
+           ("Volvo", 1927, 1927, "1927"), ("Porsche", 1931, 1931, "1931"), ("Nissan", 1933, 1933, "1933"), ("Toyota", 1937, 1937, "1937"),
+           ("Volkswagen", 1937, 1937, "1937"), ("Ferrari", 1939, 1947, "1939 (first Ferrari car 1947)"), ("Kia", 1944, 1974, "1944 making bicycle parts (first car 1974)"),
+           ("Tata Motors", 1945, 1945, "1945"), ("Honda", 1948, 1948, "1948"), ("Land Rover", 1948, 1948, "1948"), ("Lotus", 1948, 1952, "1952 (first car 1948)"),
+           ("Abarth", 1949, 1949, "1949"), ("Seat", 1950, 1950, "1950"), ("Subaru", 1953, 1954, "1953"), ("Alpine", 1955, 1955, "1955"), ("Mini", 1959, 1959, "1959"),
+           ("Lamborghini", 1963, 1963, "1963"), ("McLaren", 1963, 1985, "1963 as a racing team"), ("Dacia", 1966, 1966, "1966"), ("Hyundai", 1967, 1967, "1967"),
+           ("DeLorean", 1975, 1975, "1975"), ("Lexus", 1989, 1989, "1989"), ("Pagani", 1992, 1992, "1992"), ("Koenigsegg", 1994, 1994, "1994"),
+           ("Polestar", 1996, 2017, "1996 as a racing team (own cars from 2017)"), ("Tesla", 2003, 2003, "2003"), ("Rimac", 2009, 2009, "2009"),
+           ("Genesis", 2015, 2015, "2015"), ("Cupra", 2018, 2018, "2018")]
+FD = {b: (lo, hi, sh) for b, lo, hi, sh in FOUNDED}
+FAMOUS = ["Ford", "Audi", "BMW", "Volkswagen", "Mercedes-Benz", "Toyota", "Honda", "Nissan", "Ferrari", "Lamborghini", "Porsche", "Rolls-Royce",
+          "Bentley", "Aston Martin", "Jaguar", "Land Rover", "Mini", "Tesla", "Chevrolet", "Fiat", "Renault", "Peugeot", "Vauxhall", "Volvo",
+          "Hyundai", "Kia", "Mazda", "Subaru", "\u0160koda", "McLaren", "Bugatti", "Maserati", "Alfa Romeo", "Lotus", "Citro\u00ebn", "Cadillac"]
+assert all(b in FD for b in FAMOUS)
 tries = 0
-while len(Q["founded"]) < 100 and tries < 200000:
+while len(Q["founded"]) < 191 and tries < 400000:
     tries += 1
-    bs = rng.sample(list(FD), 4)
-    first = rng.random() > 0.25
-    s = sorted(bs, key=lambda b: FD[b][0], reverse=not first)
-    a, b = s[0], s[1]
-    if abs(FD[a][0] - FD[b][0]) <= FD[a][1] + FD[b][1] + 3:
-        continue
-    if max(FD[x][0] for x in bs) - min(FD[x][0] for x in bs) > 90:
+    bs = rng.sample(FAMOUS if rng.random() < 0.7 else list(FD), 4)   # mostly the big names everyone knows
+    first = rng.random() > 0.22
+    if first:
+        a = min(bs, key=lambda b: FD[b][0])
+        ok = all(FD[a][1] + 2 < FD[x][0] for x in bs if x != a)
+    else:
+        a = max(bs, key=lambda b: FD[b][1])
+        ok = all(FD[a][0] - 2 > FD[x][1] for x in bs if x != a)
+    if not ok or max(FD[x][1] for x in bs) - min(FD[x][0] for x in bs) > 80:
         continue
     q = "Which of these car makers was founded first?" if first else "Which of these car makers was founded most recently?"
-    x = " · ".join(f"{x}: {FD[x][2]}" for x in sorted(bs, key=lambda x: FD[x][0])) + "."
+    x = " \u00b7 ".join(f"{x}: {FD[x][2]}" for x in sorted(bs, key=lambda x: FD[x][0])) + "."
     add("founded", "founded:" + "|".join(sorted(bs)) + str(first), q, a, [x for x in bs if x != a], x, ks=["brand:" + x for x in bs])
 
-DEC = [b for b, (y, f, _) in FD.items() if f == 0 and 1890 <= y <= 2019]
+DEC = [b for b, (lo, hi, _) in FD.items() if hi - lo <= 1 and 1890 <= lo <= 2019]
 rng.shuffle(DEC)
-for b in DEC[:32]:
-    d = FD[b][0] // 10 * 10
+for b in DEC[:42]:
+    y = FD[b][0]
+    d = y // 10 * 10
+    if y % 10 == 9 or y % 10 == 0:      # right on a decade boundary: skip, it's a coin toss for most people
+        continue
     near = sorted({d - 20, d - 10, d + 10, d + 20} - {d}, key=lambda x: (abs(x - d), rng.random()))
     near = [x for x in near if 1880 <= x <= 2020][:3]
     if len(near) < 3:
         continue
-    add("decade", "decade:" + b, f"In which decade was {b} founded?", f"{d}s", [f"{x}s" for x in near], f"{b} was founded in {FD[b][0]}.", ks=["brand:" + b])
+    add("decade", "decade:" + b, f"In which decade was {b} founded?", f"{d}s", [f"{x}s" for x in near], f"{b} was founded in {y}.", ks=["brand:" + b])
 
 # ------------------------------------------------------------------ prices when new (UK, rough launch prices)
 PRICES = [("Bugatti Tourbillon (2024)", 3.2e6, .1), ("Aston Martin Valkyrie (2021)", 2.5e6, .15), ("Mercedes-AMG One (2022)", 2.3e6, .1),
@@ -416,7 +430,7 @@ for b, s in MODELS.items():
 names = collections.Counter(m for _, m, _ in model_items)
 assert all(v == 1 for v in names.values()), [n for n, v in names.items() if v > 1]
 rng.shuffle(model_items)
-for b, m, current in model_items:
+for b, m, current in model_items[:100]:
     tier = BRANDS[b][1]
     pool = [x for x in TIER[tier] if x != b]
     if len(pool) < 3:
@@ -434,7 +448,7 @@ for b, m, current in model_items:
     by_maker[b].append(m)
 odd_brands = [b for b, ms in by_maker.items() if len(ms) >= 4]
 tries = 0
-while len(Q["notby"]) < 70 and tries < 20000:
+while len(Q["notby"]) < 50 and tries < 20000:
     tries += 1
     b = rng.choice(odd_brands)
     ms = rng.sample(by_maker[b], 3)
@@ -446,7 +460,7 @@ while len(Q["notby"]) < 70 and tries < 20000:
 COUNTRIES = ["The USA", "Japan", "Germany", "France", "Italy", "The UK", "Sweden", "South Korea", "Spain", "The Czech Republic", "China", "India"]
 cbrands = [b for b, v in BRANDS.items() if v[0]]
 rng.shuffle(cbrands)
-for b in cbrands:
+for b in cbrands[:45]:
     c = COUNTRY_NAME.get(BRANDS[b][0], BRANDS[b][0])
     near = {"Croatia": ["Italy", "Germany", "Sweden"], "Romania": ["France", "The Czech Republic", "Spain"], "Russia": ["The Czech Republic", "Germany", "China"],
             "Malaysia": ["Japan", "South Korea", "China"], "Australia": ["The UK", "The USA", "Japan"]}.get(c)
@@ -718,6 +732,64 @@ FACTS = [
     F("road", "On a UK motorway, what colour are the reflective studs between the lanes?", "White", ["Red", "Amber", "Green"]),
     F("road", "Who invented 'cat's eyes' road studs?", "Percy Shaw", ["Isambard Kingdom Brunel", "John Logie Baird", "James Dyson"]),
     F("road", "What does an 'L' plate on a car mean?", "A learner driver", ["A large vehicle", "A left-hand-drive car", "A lorry"]),
+    # where car makers came from, and where they are now
+    F("hist", "Which car maker started out making tractors?", "Lamborghini", ["Ferrari", "Maserati", "Pagani"]),
+    F("hist", "Which car maker started out making sewing machines?", "Opel", ["Peugeot", "Renault", "Fiat"]),
+    F("hist", "Which car maker began as a company making cork?", "Mazda", ["Honda", "Subaru", "Nissan"]),
+    F("hist", "Which car maker built aeroplanes before it built cars?", "Saab", ["Volvo", "Kia", "Seat"]),
+    F("hist", "Which car maker was making pepper mills long before it made cars?", "Peugeot", ["Renault", "Citro\u00ebn", "Opel"]),
+    F("hist", "Which Formula 1 team's founder also gave his name to a supercar maker?", "McLaren", ["Williams", "Red Bull", "Jordan"], "Bruce McLaren founded the team in 1963."),
+    F("hist", "Where did Charles Rolls and Henry Royce first meet, in 1904?", "The Midland Hotel, Manchester", ["The Savoy, London", "Brooklands race track", "Goodwood House"]),
+    F("hist", "Charles Rolls, co-founder of Rolls-Royce, was the first Briton to die in what?", "A plane crash", ["A car race", "A boat race", "A train crash"], "He died at an air show in 1910."),
+    F("hist", "In which year did Ferrari build its first car under its own name?", "1947", ["1929", "1957", "1967"]),
+    F("hist", "Who was Ferrari's Dino range of cars named after?", "Enzo Ferrari's son", ["Enzo Ferrari's father", "A racing driver", "A Ferrari mechanic"]),
+    F("hist", "Bugatti's founder, Ettore Bugatti, was born in which country?", "Italy", ["France", "Germany", "Switzerland"], "He was born in Milan and built his cars in Molsheim."),
+    F("hist", "How many Bugatti Veyrons were built?", "450", ["45", "1,500", "4,500"]),
+    F("hist", "How many McLaren F1s were built in total?", "106", ["16", "506", "1,006"]),
+    F("hist", "How many LaFerrari coup\u00e9s were built?", "499", ["99", "1,499", "4,999"]),
+    F("hist", "Where did the driver sit in the McLaren F1?", "In the middle", ["On the right, like a UK car", "Lying down", "Behind the passengers"]),
+    F("hist", "What is the McLaren F1's engine bay lined with, to reflect the heat?", "Gold foil", ["Silver foil", "Copper sheet", "Aluminium foil"]),
+    F("hist", "What is the DeLorean DMC-12's body made of?", "Unpainted stainless steel", ["Aluminium", "Carbon fibre", "Painted fibreglass"]),
+    F("hist", "The Citro\u00ebn 2CV was designed to carry what across a ploughed field without breaking them?", "A basket of eggs", ["Glass bottles", "Light bulbs", "A wedding cake"]),
+    F("hist", "Which car is nicknamed 'Godzilla'?", "Nissan GT-R", ["Toyota Supra", "Honda NSX", "Mitsubishi Lancer Evolution"]),
+    F("hist", "Which car was nicknamed the 'Tin Snail'?", "Citro\u00ebn 2CV", ["Fiat 500", "Mini", "Volkswagen Beetle"]),
+    F("hist", "Mercedes-Benz racing cars are famously nicknamed what?", "The Silver Arrows", ["The Black Stars", "The Grey Ghosts", "The White Knights"]),
+    F("hist", "Traditionally, what colour were Italian racing cars?", "Red", ["Blue", "Green", "Silver"]),
+    F("hist", "Which country's traditional racing colour is green?", "Britain", ["Italy", "France", "Germany"]),
+    F("hist", "Which country's traditional racing colour is blue?", "France", ["Italy", "Germany", "Britain"]),
+    F("hist", "Which country's racing cars were traditionally silver?", "Germany", ["Italy", "France", "Britain"]),
+    F("hist", "What is the most popular car colour in the world?", "White", ["Black", "Silver", "Red"]),
+    F("hist", "Which was the world's best-selling car in 2023?", "Tesla Model Y", ["Toyota Corolla", "Toyota RAV4", "Ford F-150"]),
+    F("hist", "Roughly how many cars are there in the world?", "About 1.5 billion", ["About 50 million", "About 150 million", "About 15 billion"]),
+    F("hist", "Who invented the windscreen wiper, in 1903?", "Mary Anderson", ["Henry Ford", "Karl Benz", "Thomas Edison"]),
+    F("hist", "The first car radios were made by a company whose name later became famous for phones. Which?", "Motorola", ["Nokia", "Ericsson", "Samsung"], "The name comes from 'motor' and 'Victrola'."),
+    F("hist", "Which Formula 1 team has won the most constructors' championships?", "Ferrari", ["McLaren", "Williams", "Mercedes"]),
+    F("hist", "Which two drivers share the record for the most Formula 1 world titles?", "Lewis Hamilton and Michael Schumacher", ["Ayrton Senna and Alain Prost", "Juan Manuel Fangio and Niki Lauda", "Sebastian Vettel and Fernando Alonso"], "They have seven each."),
+    F("hist", "Lamborghini's Urus is named after what?", "An ancient wild ox", ["A Spanish bullring", "A desert wind", "A volcano"]),
+    F("hist", "In which town is Lamborghini's factory?", "Sant'Agata Bolognese", ["Maranello", "Turin", "Milan"]),
+    F("hist", "In which town is Ferrari's factory?", "Maranello", ["Sant'Agata Bolognese", "Turin", "Milan"]),
+    F("hist", "Where are Rolls-Royce cars built?", "Goodwood, England", ["Crewe, England", "Derby, England", "Munich, Germany"]),
+    F("hist", "Where are Bentley cars built?", "Crewe, England", ["Goodwood, England", "Coventry, England", "Wolfsburg, Germany"]),
+    F("hist", "Where is McLaren based?", "Woking", ["Silverstone", "Milton Keynes", "Brackley"]),
+    F("hist", "Where is Aston Martin based?", "Gaydon, Warwickshire", ["Woking, Surrey", "Coventry", "Crewe, Cheshire"]),
+    F("hist", "Where is the UK's biggest car factory, run by Nissan?", "Sunderland", ["Oxford", "Swindon", "Derby"]),
+    F("hist", "Which city is Volkswagen's home?", "Wolfsburg", ["Munich", "Stuttgart", "Ingolstadt"]),
+    F("hist", "Which city is BMW's home?", "Munich", ["Wolfsburg", "Stuttgart", "Ingolstadt"]),
+    F("hist", "Which city is Audi's home?", "Ingolstadt", ["Munich", "Stuttgart", "Wolfsburg"]),
+    F("hist", "Which city is Mercedes-Benz's home?", "Stuttgart", ["Munich", "Wolfsburg", "Ingolstadt"]),
+    F("hist", "Which city is Fiat's home?", "Turin", ["Milan", "Rome", "Modena"]),
+    F("hist", "Toyota's home town is called what?", "Toyota City", ["Tokyo", "Osaka", "Kyoto"], "The town was renamed after the company in 1959."),
+    F("hist", "Volvo Cars is based in which city?", "Gothenburg", ["Stockholm", "Malm\u00f6", "Oslo"]),
+    F("hist", "Which car maker's headquarters is a tower shaped like four engine cylinders?", "BMW", ["Mercedes-Benz", "Porsche", "Volkswagen"]),
+    F("tech", "What are doors that swing straight up, like on a Lamborghini Aventador, called?", "Scissor doors", ["Gullwing doors", "Coach doors", "Sliding doors"]),
+    F("tech", "What are doors hinged in the roof, like on a DeLorean or a Mercedes 300 SL, called?", "Gullwing doors", ["Scissor doors", "Coach doors", "Pocket doors"]),
+    F("tech", "What are the back doors on a Tesla Model X called?", "Falcon-wing doors", ["Gullwing doors", "Butterfly doors", "Scissor doors"]),
+    F("tech", "Rolls-Royce back doors are hinged at the back and open the 'wrong' way. What are they called?", "Coach doors", ["Scissor doors", "Gullwing doors", "Barn doors"]),
+    F("tech", "What was unusual about the Reliant Robin?", "It had three wheels", ["It had no roof", "It ran on steam", "It had no doors"]),
+    F("tech", "What makes the power in a hydrogen car like the Toyota Mirai?", "A fuel cell that turns hydrogen into electricity", ["Burning hydrogen in a V8", "Batteries only", "Solar panels"]),
+    F("screen", "Who presented Top Gear with Jeremy Clarkson and Richard Hammond from 2003 to 2015?", "James May", ["Chris Evans", "Matt LeBlanc", "Paddy McGuinness"]),
+    F("screen", "In Cars, what kind of vehicle is Mater?", "A tow truck", ["A racing car", "A fire engine", "A school bus"]),
+    F("screen", "What is the name of the talking car in Knight Rider?", "KITT", ["HAL", "Herbie", "Christine"]),
 ]
 for c, q, a, o, x in FACTS:
     add(c, "fact:" + q, q, a, o, x)

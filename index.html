@@ -94,8 +94,12 @@ a { color: inherit; }
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255, 240, 200, 0.35), 0 0 0 5px rgba(232, 180, 80, 0.16), 0 0 34px rgba(255, 180, 80, 0.55); }
 /* block tile: pixel grass-and-dirt, square corners, a pixel title */
 .mc { border-radius: 0; color: var(--mc-ink); image-rendering: pixelated;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20,12,6,0.5) 50%, rgba(20,12,6,0.8) 100%), url(minecraft/tile.svg) top center / 100% auto no-repeat #8b5d3a;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 52%, rgba(14,34,8,0.6) 100%),
+    url(minecraft/sheep.svg) right 30px top 18px / auto 50% no-repeat,
+    repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
+    linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+@media (max-width: 620px) { .mc { min-height: 340px; background-size: auto, auto 40%, 26px 26px, auto; } }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
 .mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
