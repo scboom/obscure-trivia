@@ -247,6 +247,65 @@ h1, h2, h3 { font-weight: 700; }
                   "A free football quiz, 20 questions per game: the Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and the rules. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "cars", "dir": "cars", "bank_src": "cars_questions.json",
+        "title": "Car Quiz – Obscure Trivia",
+        "desc": "A free car quiz: 20 random questions per game on horsepower, top speeds, prices, car makers, badges, engines and famous film cars. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Chakra+Petch:ital,wght@0,600;0,700;1,700&family=Titillium+Web:wght@400;600;700",
+        "theme_color": "#0d0e10",
+        "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%2316171b' stroke='%23e10600' stroke-width='3'/%3E%3Cpath d='M14 42a20 20 0 1 1 36 0' fill='none' stroke='%23f3f4f6' stroke-width='5' stroke-dasharray='2 5.3'/%3E%3Cpath d='M32 36L45 21' stroke='%23e10600' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='36' r='4.5' fill='%23f3f4f6'/%3E%3C/svg%3E",
+        "extra": [],
+        "config": {
+            "id": "cars", "letter": "C", "short": "Cars", "icon": "",
+            "eyebrow": "Car quiz", "headline": "From hatchbacks to hypercars: how well do you know cars?",
+            "topics": "horsepower, top speeds, prices, car makers and who owns them, founding dates, engines, badges, famous film cars and the rules of the road",
+            "foot": "Horsepower and top speeds are the makers' own figures, and prices are rough UK prices when new. A question only compares cars when one is clearly ahead, because figures vary a little between model years and countries. Fan-made quiz, not affiliated with any car maker.",
+            "seed": "obscure-trivia-cars-v1:", "topic": "obscure-trivia/cars/v1/", "recentKey": "ot-recent-cars-v1", "sessionKey": "ot-game-cars",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"power": "Power", "model": "Makers", "country": "Makers", "owner": "Makers", "founded": "History", "hist": "History", "price": "Prices", "auction": "Prices", "pricefact": "Prices", "speed": "Speed", "speedfact": "Speed", "cyl": "Tech", "ev": "Tech", "tech": "Tech", "logo": "Badges", "name": "Badges", "screen": "Film & TV", "drive": "On the road", "road": "On the road"},
+            "caps": {"Power": 4, "Makers": 4, "History": 3, "Prices": 2, "Speed": 2, "Tech": 2, "Badges": 2, "Film & TV": 1, "On the road": 1},
+            "verdicts": [[19, "Pole position."], [16, "Podium finish."], [12, "Points finish."], [8, "Still on the grid. Keep practising."], [0, "Stalled on the line. Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0d0e10;
+  --bg-art: linear-gradient(45deg, #121316 25%, transparent 25%, transparent 75%, #121316 75%) 0 0 / 10px 10px,
+    linear-gradient(45deg, #121316 25%, transparent 25%, transparent 75%, #121316 75%) 5px 5px / 10px 10px,
+    linear-gradient(#18191d, #141518);
+  --panel: #17181c; --panel-fill: linear-gradient(180deg, rgba(30, 31, 36, 0.97), rgba(20, 21, 25, 0.97)); --panel-2: #24262c;
+  --panel-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --line: #33353c; --line-hover: #6b6f7a; --ink: #f3f4f6; --muted: #a6abb6; --faint: #81868f; --placeholder: #6f747d;
+  --accent: #e10600; --accent-ink: #ffffff; --accent-text: #ff5a4d; --accent-hover: #f5170f; --accent-edge: #ff6a5c; --accent-shadow: 0 3px 0 #7a0300;
+  --chip-bg: rgba(255, 255, 255, 0.06); --chip-line: rgba(255, 255, 255, 0.2); --chip-ink: #e5e7eb;
+  --pal: #38bdf8; --pal-ink: #03202e; --pal-bg: rgba(56, 189, 248, 0.12); --pal-line: rgba(56, 189, 248, 0.4);
+  --good: #34d399; --good-ink: #022c1d; --good-bg: rgba(52, 211, 153, 0.13); --bad: #f87171; --bad-ink: #300808; --bad-bg: rgba(248, 113, 113, 0.14);
+  --inset: #0b0c0e; --opt: #1b1c21; --tile: #15161a;
+  --card-bg: #f3f4f6; --card-ink: #111214; --card-line: #c9ccd2; --card-inner: #e4e6ea; --card-strong: #000000;
+  --f-display: "Chakra Petch", "Arial Narrow", system-ui, sans-serif; --f-body: "Titillium Web", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 6px; --r-panel: 10px; --r-pill: 999px; --r-key: 4px;
+  color-scheme: dark;
+}
+/* carbon fibre under a red glow, like brake lights at the top of the screen */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% -15%, rgba(225, 6, 0, 0.32), transparent 55%), radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.6) 100%); }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; font-style: italic; letter-spacing: 0.01em; }
+.hero h2 { text-transform: uppercase; }
+.qtext { font-weight: 700; }
+.opt .lbl.big { font-family: var(--f-display); font-weight: 600; font-size: 1.12rem; }
+.opt .key { font-family: var(--f-display); }
+.opt:hover:not([disabled]) { border-color: var(--accent); }
+/* a red and white stripe on each panel */
+.board { position: relative; }
+.board::before { content: ""; position: absolute; top: -1px; left: 22px; width: 64px; height: 4px; border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, var(--accent) 0 58%, transparent 58% 70%, #f3f4f6 70% 100%); }
+.btn.gold { font-family: var(--f-display); font-style: italic; letter-spacing: 0.02em; }
+.coin { width: 32px; height: 32px; flex: none; display: block; background: url("GAUGE") center / 100% 100%; }
+""".replace("GAUGE", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%2316171b' stroke='%23e10600' stroke-width='3'/%3E%3Cpath d='M14 42a20 20 0 1 1 36 0' fill='none' stroke='%23f3f4f6' stroke-width='5' stroke-dasharray='2 5.3'/%3E%3Cpath d='M32 36L45 21' stroke='%23e10600' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='36' r='4.5' fill='%23f3f4f6'/%3E%3C/svg%3E"),
+        "tile": {"cls": "cr", "title": "Cars", "art": "",
+                 "blurb": "Horsepower, top speeds, prices, badges, car makers and their history, and famous film cars."},
+        "intro": ("Car quiz", "From hatchbacks to hypercars: how well do you know cars?",
+                  "A free car quiz, 20 questions per game: horsepower, top speeds, prices, car makers and their owners, founding dates, engines, badges, famous film cars and the rules of the road. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -440,7 +499,7 @@ for qz in QUIZZES:
 # ------------------------------------------------------------------ hub
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -519,6 +578,20 @@ a { color: inherit; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
 .mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
 .mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Monocraft", ui-monospace, monospace; font-size: 1.1rem; }
+/* car tile: carbon fibre, a red and white racing stripe and slanted motorsport type */
+.cr { border-radius: 12px; color: #fff;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0) 22%, rgba(10, 10, 12, 0.92) 80%),
+    radial-gradient(ellipse at 25% 0%, rgba(225, 6, 0, 0.35), transparent 60%),
+    linear-gradient(100deg, transparent 0 64%, #e10600 64% 71%, transparent 71% 73.5%, #f3f4f6 73.5% 76%, transparent 76%),
+    linear-gradient(45deg, #111215 25%, transparent 25%, transparent 75%, #111215 75%) 0 0 / 12px 12px,
+    linear-gradient(45deg, #111215 25%, transparent 25%, transparent 75%, #111215 75%) 6px 6px / 12px 12px,
+    linear-gradient(#202227, #18191d);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.14); }
+.cr:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #e10600; }
+.cr h3 { font-family: "Chakra Petch", "Arial Narrow", sans-serif; font-weight: 700; font-style: italic; font-size: clamp(2rem, 5.4vw, 2.6rem); text-transform: uppercase; letter-spacing: 0.02em; }
+.cr p { color: #d4d7dd; font-family: "Titillium Web", system-ui, sans-serif; }
+.cr .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 90, 77, 0.6); color: #fff; }
+.cr .play { color: #ff5a4d; }
 /* two sections: the quizzes, then other games */
 .sect { display: flex; flex-direction: column; gap: 14px; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
@@ -552,8 +625,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge & Football Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Football & Car Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -583,7 +656,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA or UEFA.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, the Premier League, FIFA, UEFA or any car maker.</p>
 </div>
 <script>
 (() => {

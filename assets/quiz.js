@@ -815,7 +815,7 @@ function resultsView() {
       ${line(S.meName || S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal " + (p.c || "c1"), p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span>${q.v ? `<span class="v muted small">${esc(q.v[q.a] || "")}</span>` : ""}</div>` : ""}
-      ${q.v && q.x ? `<div class="ans small muted">${rich(q.x)}</div>` : ""}</div>`;
+      ${q.x ? `<div class="ans small muted">${rich(q.x)}</div>` : ""}</div>`;
   }).join("");
   const showCompare = !(S.final && S.final.length) && !S.past;
   return `${header()}
