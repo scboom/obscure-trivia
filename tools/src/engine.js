@@ -449,10 +449,20 @@ function elapsedSec() { return S.startedAt && S.finishedAt ? Math.max(1, Math.mi
 // ------------------------------------------------------------ 10-minute limit
 const LIMIT_MS = (window.TT_LIMIT_S || 600) * 1000;
 function timeLeft() { return S.startedAt ? Math.max(0, S.startedAt + LIMIT_MS - Date.now()) : LIMIT_MS; }
+// the countdown: big digits at the top middle of the screen, a bar that drains, amber under 2 minutes, red under 1
+function clockHtml() {
+  const left = timeLeft();
+  return `<div class="clockbox${clockState(left)}" id="clockbox" role="timer" aria-label="Time left">
+    <span class="clock-label">Time left</span><span class="clock" id="clock">${fmtTime(Math.ceil(left / 1000))}</span>
+    <span class="clock-bar" aria-hidden="true"><span id="clockfill" style="transform:scaleX(${(left / LIMIT_MS).toFixed(4)})"></span></span></div>`;
+}
+function clockState(left) { return left < 60000 ? " low" : left < 120000 ? " warn" : ""; }
 function tick() {
   if (S.screen !== "quiz" || !S.startedAt) return;
-  const left = timeLeft(), el = $("#clock");
-  if (el) { el.textContent = fmtTime(Math.ceil(left / 1000)); el.classList.toggle("low", left < 60000); }
+  const left = timeLeft(), el = $("#clock"), box = $("#clockbox"), fill = $("#clockfill");
+  if (el) el.textContent = fmtTime(Math.ceil(left / 1000));
+  if (box) box.className = "clockbox" + clockState(left);
+  if (fill) fill.style.transform = `scaleX(${(left / LIMIT_MS).toFixed(4)})`;
   if (left <= 0) { S.timedOut = true; finishQuiz(); }
 }
 setInterval(tick, 250);
@@ -625,9 +635,9 @@ function clearSession() { try { sessionStorage.removeItem(QUIZ.sessionKey); } ca
 // ------------------------------------------------------------ rendering
 function header() {
   const showScore = S.screen === "quiz" || S.screen === "results";
-  return `<header class="top">
+  return `<header class="top${S.screen === "quiz" ? " quiz-top" : ""}">
     <button class="brand" id="go-home" aria-label="${esc(QUIZ.short)} quiz home"><span class="coin" aria-hidden="true">${QUIZ.icon}</span><h1>${esc(QUIZ.short)}</h1></button>
-    ${S.screen === "quiz" ? `<div class="score"><span class="clock${timeLeft() < 60000 ? " low" : ""}" id="clock" role="timer" aria-label="Time left">${fmtTime(Math.ceil(timeLeft() / 1000))}</span><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
+    ${S.screen === "quiz" ? `${clockHtml()}<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
       : showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
       : S.screen === "home" ? `<div class="row top-links"><a class="btn copy" href="${QUIZ.hub}">All quizzes</a><button class="btn copy" id="recent-btn">Recent quizzes</button></div>` : ""}
   </header>`;
