@@ -359,19 +359,19 @@ h1, h2, h3, .bigmsg, .verdict, .code-big { font-weight: 700; letter-spacing: -0.
     },
     {
         "id": "fortnite", "dir": "fortnite", "bank_src": "fortnite_questions.json", "extra": [("fn-peely.png", "peely.png"), ("fn-peely-head.png", "peely-head.png")],
-        "title": "Fortnite Quiz – Obscure Trivia",
-        "desc": "A free Fortnite quiz: 20 random questions per game on outfits and when they arrived, every chapter and season, the map and its locations, live events, items and the game's history. Play solo or in party mode with up to 6 players.",
+        "title": "OG Fortnite Quiz (Chapters 1 & 2) – Obscure Trivia",
+        "desc": "A free OG Fortnite quiz on Chapters 1 and 2: 20 random questions per game on outfits and when they arrived, every season from Season 1 to Chapter 2 Season 8, the Chapter 1 and 2 maps and their named locations, live events, items and the game's history. Play solo or in party mode with up to 6 players.",
         "fonts": "family=Anton&family=Nunito:wght@600;700;800",
         "theme_color": "#2a6cf0",
         "favicon": "peely-head.png",
         "config": {
-            "id": "fortnite", "letter": "N", "short": "Fortnite", "icon": "", "namePh": "e.g. Jonesy",
-            "eyebrow": "Fortnite quiz", "headline": "Think you know the island? Drop in and prove it.",
-            "topics": "outfits and the seasons they arrived in, every chapter and season, the map and its named locations, live events, items and the game's history",
-            "foot": "Outfit and emote seasons come from the Fortnite-API cosmetics database. Seasons, named locations and live events come from the Fortnite Wiki, and map questions count the main Battle Royale island only. Fan-made quiz, not affiliated with Epic Games.",
-            "seed": "obscure-trivia-fortnite-v1:", "topic": "obscure-trivia/fortnite/v1/", "recentKey": "ot-recent-fortnite-v1", "sessionKey": "ot-game-fortnite",
+            "id": "fortnite", "letter": "N", "short": "OG Fortnite", "icon": "", "namePh": "e.g. Jonesy",
+            "eyebrow": "OG Fortnite quiz · Chapters 1 & 2", "headline": "Think you know the OG island? Drop in and prove it.",
+            "topics": "OG Fortnite only, from Chapter 1 Season 1 to Chapter 2 Season 8: outfits and the seasons they arrived in, every season, the Chapter 1 and 2 maps and their named locations, live events, items and the game's history",
+            "foot": "OG Fortnite only: Chapters 1 and 2, nothing from Chapter 3 onwards. Outfit and emote seasons come from the Fortnite-API cosmetics database. Seasons, named locations and live events come from the Fortnite Wiki, and map questions count the main Battle Royale island only. Fan-made quiz, not affiliated with Epic Games.",
+            "seed": "obscure-trivia-fortnite-og-v2:", "topic": "obscure-trivia/fortnite/v2/", "recentKey": "ot-recent-fortnite-v2", "sessionKey": "ot-game-fortnite-v2",
             "bank": "questions.json", "hub": "../",
-            "groups": {"outseason": "Outfits", "outfirst": "Outfits", "outseries": "Outfits", "emote": "Outfits", "seasonname": "Seasons", "seasontheme": "Seasons", "seasonstart": "Seasons", "season": "Seasons", "locchapter": "Map", "locreplaced": "Map", "locadded": "Map", "loccount": "Map", "locwhich": "Map", "map": "Map", "event": "Live events", "item": "Items", "fact": "Fortnite facts"},
+            "groups": {"outseason": "Outfits", "outfirst": "Outfits", "outseries": "Outfits", "emote": "Outfits", "outbp": "Outfits", "seasonname": "Seasons", "seasontheme": "Seasons", "seasonstart": "Seasons", "season": "Seasons", "locreplaced": "Map", "locadded": "Map", "loclast": "Map", "loccount": "Map", "locwhich": "Map", "locboth": "Map", "map": "Map", "event": "Live events", "item": "Items", "fact": "Fortnite facts"},
             "caps": {"Outfits": 5, "Seasons": 4, "Map": 5, "Live events": 2, "Items": 2, "Fortnite facts": 3},
             "verdicts": [[19, "Victory Royale!"], [16, "Top 3. So close!"], [12, "Top 10 finish."], [8, "Caught in the storm."], [0, "Back to the lobby. Try again!"]],
         },
@@ -401,13 +401,14 @@ h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-displ
 .qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
 .opt .lbl.big { font-family: var(--f-body); font-weight: 800; font-size: 1.08rem; }
 .btn.gold { font-size: 1.1rem; }
+@media (max-width: 430px) { .brand { gap: 8px; } .brand h1 { font-size: 1.12rem; letter-spacing: 0; } }
 .coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("peely-head.png") center 20% / 115% auto, #ffe23a;
   box-shadow: 0 0 0 2px #ffe23a, 0 3px 8px rgba(0, 0, 0, 0.35); }
 """,
-        "tile": {"cls": "fn", "title": "Fortnite", "art": "",
-                 "blurb": "Outfits and when they arrived, every season, the map and its locations, live events and items."},
-        "intro": ("Fortnite quiz", "Think you know the island? Drop in and prove it.",
-                  "A free Fortnite quiz, 20 questions per game: outfits and the seasons they arrived in, every chapter and season, the map and its named locations, live events, items and the game's history. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+        "tile": {"cls": "fn", "title": "OG Fortnite", "art": "",
+                 "blurb": "Chapters 1 and 2 only: outfits and when they arrived, every season, the old maps, live events and items."},
+        "intro": ("OG Fortnite quiz", "Think you know the OG island? Drop in and prove it.",
+                  "A free OG Fortnite quiz on Chapters 1 and 2, 20 questions per game: outfits and the seasons they arrived in, every season from Season 1 to Chapter 2 Season 8, the Chapter 1 and 2 maps and their named locations, live events, items and the game's history. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
@@ -610,7 +611,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and Fortnite, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and OG Fortnite (Chapters 1 and 2), plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """

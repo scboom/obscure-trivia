@@ -25,7 +25,7 @@ const pages = {
     .fn{border-radius:12px;background:linear-gradient(180deg,#4b95ff,#2a6cf0 55%,#3b2bb8);color:#fff;font-family:Anton;font-weight:400;text-transform:uppercase;letter-spacing:.02em;box-shadow:inset 0 0 0 2px rgba(255,226,58,.7)}
     .tiles{flex-wrap:wrap;max-width:1040px}</style>
     <div class="mark">?</div><h1>Obscure Trivia</h1><p>Trivia for the details only real players know.</p>
-    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t fn">Fortnite</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t mu">Music</div><div class="t wb">This or That</div></div>`,
+    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t fn">OG Fortnite</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t mu">Music</div><div class="t wb">This or That</div></div>`,
   'hearthstone': `<style>${base}body{background:radial-gradient(circle at 84% 26%,rgba(255,196,96,.5) 0,rgba(255,150,50,.18) 22%,transparent 46%),radial-gradient(ellipse at 8% 115%,rgba(255,120,40,.25),transparent 55%),repeating-linear-gradient(180deg,transparent 0 102px,rgba(0,0,0,.22) 102px 106px),linear-gradient(180deg,#4b2e19,#301d10 55%,#1b100a);color:#f6e7cf;box-shadow:inset 0 0 0 3px rgba(232,180,80,.45)}
     .coin{background:url(${EMBLEM}) center/100% 100% !important;filter:drop-shadow(0 0 40px rgba(255,170,70,.55));position:absolute;top:60px;right:100px;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25),0 0 0 10px rgba(232,180,80,.16),0 0 80px rgba(255,180,80,.6);width:250px;height:250px;font-size:84px!important;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3c4 0 12%,#e8b450 38%,#a8721f 100%);color:#2a1b08;font:400 64px 'Bree Serif'}
     h1{font:400 92px/1.02 'Bree Serif',serif;margin:0}p{font-size:34px;color:#e3cfb2;margin:0}.by{font:800 26px 'Bricolage Grotesque';color:#e8b450;letter-spacing:.02em}</style>
@@ -52,9 +52,9 @@ const pages = {
     .by{font:800 26px 'Bricolage Grotesque';color:#ff8ac6;letter-spacing:.02em}</style>
     <h1>Music Quiz</h1><p>Hits from the 60s to now · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
   'fortnite': `<style>${base}body{background:url(${PEELY}) right 130px top 40px/auto 86% no-repeat,radial-gradient(circle at 72% 40%,transparent 38%,rgba(136,52,240,.4) 60%,rgba(80,20,180,.9) 100%),linear-gradient(180deg,rgba(10,20,80,0) 35%,rgba(10,20,80,.7) 100%),linear-gradient(180deg,#4b95ff 0%,#2a6cf0 55%,#3b2bb8 100%);color:#fff;box-shadow:inset 0 0 0 4px rgba(255,226,58,.6)}
-    h1{font:400 132px/1 Anton,Impact,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 6px 0 rgba(10,20,80,.45)}p{font:700 34px Nunito,sans-serif;margin:0;color:#e6ecff;max-width:24ch}
+    h1{font:400 120px/.98 Anton,Impact,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 6px 0 rgba(10,20,80,.45);max-width:680px}p{font:700 34px Nunito,sans-serif;margin:0;color:#e6ecff;max-width:24ch}
     .by{font:800 26px 'Bricolage Grotesque';color:#ffe23a;letter-spacing:.02em}</style>
-    <h1>Fortnite Quiz</h1><p>Outfits, seasons, the map and live events · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+    <h1>OG Fortnite Quiz</h1><p>Chapters 1 &amp; 2 only · outfits, seasons, the old maps · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
   'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(14,34,8,.6)),url(${SHEEP}) right 80px top 40px/auto 44% no-repeat,repeating-conic-gradient(rgba(255,255,255,.05) 0 25%,rgba(0,0,0,0) 0 50%) 0 0/52px 52px,linear-gradient(180deg,#70b540,#5b9d32 60%,#4a8627);color:#fff}
     h1{font:400 110px/1 Monocraft,monospace;margin:0;text-shadow:6px 6px 0 #1f1f1f}p{font-size:34px;margin:0;text-shadow:2px 2px 0 #000}
     .by{font:800 26px 'Bricolage Grotesque';color:#7ad155;letter-spacing:.02em;text-shadow:2px 2px 0 #000}</style>
