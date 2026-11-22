@@ -56,7 +56,7 @@ const pages = {
   'fortnite': `<style>${base}body{background:url(${PEELY}) right 130px top 40px/auto 86% no-repeat,radial-gradient(circle at 72% 40%,transparent 38%,rgba(136,52,240,.4) 60%,rgba(80,20,180,.9) 100%),linear-gradient(180deg,rgba(10,20,80,0) 35%,rgba(10,20,80,.7) 100%),linear-gradient(180deg,#4b95ff 0%,#2a6cf0 55%,#3b2bb8 100%);color:#fff;box-shadow:inset 0 0 0 4px rgba(255,226,58,.6)}
     h1{font:400 120px/.98 Anton,Impact,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 6px 0 rgba(10,20,80,.45);max-width:680px}p{font:700 34px Nunito,sans-serif;margin:0;color:#e6ecff;max-width:24ch}
     .by{font:800 26px 'Bricolage Grotesque';color:#ffe23a;letter-spacing:.02em}</style>
-    <h1>OG Fortnite Quiz</h1><p>Chapters 1 &amp; 2 only · outfits, seasons, the old maps · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+    <h1>OG Fortnite Quiz</h1><p>Chapter 1 only · Season 1 to Season X · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
   'jujutsu-kaisen': `<style>${base}body{background:url(${ORB}) right 90px center/auto 74% no-repeat,radial-gradient(circle at 80% 50%,rgba(122,60,255,.5),transparent 45%),radial-gradient(ellipse at 0% 110%,rgba(255,42,68,.25),transparent 55%),linear-gradient(180deg,#17122e,#0b0a14 70%);color:#f4f0ff;box-shadow:inset 0 0 0 3px rgba(185,140,255,.45)}
     h1{font:400 92px/1.05 'Dela Gothic One',sans-serif;margin:0;max-width:640px;text-shadow:0 0 30px rgba(157,107,255,.5)}p{font:500 34px 'Zen Kaku Gothic New',sans-serif;margin:0;color:#cfc6ee;max-width:22ch}
     .by{font:800 26px 'Bricolage Grotesque';color:#c8a8ff;letter-spacing:.02em}</style>
