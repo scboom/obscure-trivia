@@ -134,6 +134,19 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
+/* jujutsu kaisen tile: night-black with Hollow Purple glowing in the corner */
+.jk { border-radius: 14px; color: #f4f0ff;
+  background: url(jujutsu-kaisen/orb.svg) right 26px top 16px / auto 64% no-repeat,
+    radial-gradient(circle at 80% 30%, rgba(122, 60, 255, 0.45), transparent 48%),
+    radial-gradient(ellipse at 0% 110%, rgba(255, 42, 68, 0.22), transparent 55%),
+    linear-gradient(180deg, #17122e 0%, #0d0b19 70%, #08070f 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(185, 140, 255, 0.4); }
+.jk:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 0 2px rgba(200, 168, 255, 0.85); }
+.jk h3 { font-family: "Dela Gothic One", "Arial Black", sans-serif; font-weight: 400; font-size: clamp(1.75rem, 4.8vw, 2.2rem); letter-spacing: 0.01em; text-shadow: 0 0 18px rgba(157, 107, 255, 0.45); max-width: 60%; line-height: 1.1; }
+.jk p { color: #cfc6ee; font-family: "Zen Kaku Gothic New", system-ui, sans-serif; font-weight: 500; max-width: 31ch; }
+.jk .pill { border-radius: 999px; background: rgba(157, 107, 255, 0.14); border: 1px solid rgba(185, 140, 255, 0.5); color: #eadfff; }
+.jk .play { color: #c8a8ff; }
+@media (max-width: 620px) { .jk { min-height: 350px; background-size: auto 44%, auto, auto, auto; } .jk h3 { max-width: none; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -190,7 +203,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/jujutsu-kaisen/">Jujutsu Kaisen</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>

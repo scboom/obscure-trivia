@@ -411,6 +411,59 @@ h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-displ
                   "A free OG Fortnite quiz on Chapters 1 and 2, 20 questions per game: outfits and the seasons they arrived in, every season from Season 1 to Chapter 2 Season 8, the Chapter 1 and 2 maps and their named locations, live events, items and the game's history. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "jjk", "dir": "jujutsu-kaisen", "bank_src": "jjk_questions.json", "extra": [("jjk-orb.svg", "orb.svg")],
+        "title": "Jujutsu Kaisen Quiz – Obscure Trivia",
+        "desc": "A free Jujutsu Kaisen anime quiz: 20 random questions per game on Seasons 1 to 3 and Jujutsu Kaisen 0, with techniques and Domain Expansions, fights, characters and voice actors, episodes, the story and the music. No manga spoilers. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@500;700",
+        "theme_color": "#0b0a14",
+        "favicon": "orb.svg",
+        "config": {
+            "id": "jjk", "letter": "J", "short": "Jujutsu Kaisen", "icon": "", "namePh": "e.g. Yuji",
+            "eyebrow": "Jujutsu Kaisen quiz · the anime", "headline": "Think you're the strongest? Prove it.",
+            "topics": "Seasons 1 to 3 (The Culling Game Part 1) and Jujutsu Kaisen 0: techniques and Domain Expansions, fights, characters and their voice actors, episodes, the story, the jujutsu world and the music",
+            "foot": "Anime only: Seasons 1 to 3 (The Culling Game Part 1, 59 episodes) and Jujutsu Kaisen 0, so nothing from manga chapters the anime hasn't reached. Episodes, techniques used on screen, fights and voice actors come from the Jujutsu Kaisen Wiki. Fan-made quiz, not affiliated with Gege Akutami, Shueisha or MAPPA.",
+            "seed": "obscure-trivia-jjk-v1:", "topic": "obscure-trivia/jjk/v1/", "recentKey": "ot-recent-jjk-v1", "sessionKey": "ot-game-jjk",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"ep_title": "Episodes", "ep_arc": "Episodes", "ep_season": "Episodes", "fight_arc": "Fights", "fight_in": "Fights",
+                       "tech_user": "Techniques", "tech_of": "Techniques", "tech_arc": "Techniques", "domain": "Techniques", "techh": "Techniques",
+                       "va_jp": "Voice actors", "va_en": "Voice actors", "debut": "Characters", "debut_arc": "Characters", "birthday": "Characters", "charh": "Characters",
+                       "story": "Story", "world": "Jujutsu world", "anime": "The anime", "music": "The anime"},
+            "caps": {"Episodes": 3, "Fights": 2, "Techniques": 5, "Characters": 4, "Story": 3, "Jujutsu world": 2, "The anime": 2, "Voice actors": 1},
+            "verdicts": [[19, "Special grade!"], [16, "Grade 1 sorcerer."], [12, "Grade 2. Not bad at all."], [8, "Grade 4. Keep training."], [0, "Exorcised. Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0b0a14;
+  --bg-art: radial-gradient(ellipse 70% 55% at 85% -5%, rgba(122, 60, 255, 0.35), transparent 60%), radial-gradient(ellipse 60% 50% at 0% 105%, rgba(255, 42, 68, 0.16), transparent 60%), linear-gradient(180deg, #120f22 0%, #0b0a14 60%, #08070f 100%);
+  --panel: #16132a; --panel-fill: linear-gradient(180deg, rgba(26, 21, 50, 0.95), rgba(18, 15, 36, 0.96)); --panel-2: #221d40;
+  --panel-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --line: rgba(190, 160, 255, 0.18); --line-hover: rgba(185, 140, 255, 0.7); --ink: #f4f0ff; --muted: #b8b0d6; --faint: #8f87b3; --placeholder: #7d76a3;
+  --accent: #9d6bff; --accent-ink: #ffffff; --accent-text: #c8a8ff; --accent-hover: #ae83ff; --accent-edge: #d9c4ff; --accent-shadow: 0 4px 0 #4b20a8;
+  --chip-bg: rgba(157, 107, 255, 0.12); --chip-line: rgba(185, 140, 255, 0.35); --chip-ink: #e9dfff;
+  --pal: #ff5a6e; --pal-ink: #2a0007; --pal-bg: rgba(255, 90, 110, 0.14); --pal-line: rgba(255, 90, 110, 0.5);
+  --good: #5ee3a1; --good-ink: #022b17; --good-bg: rgba(94, 227, 161, 0.14); --bad: #ff5a6e; --bad-ink: #3a0610; --bad-bg: rgba(255, 90, 110, 0.15);
+  --inset: #0c0a18; --opt: rgba(24, 20, 46, 0.94); --tile: rgba(20, 17, 40, 0.94);
+  --card-bg: #ffffff; --card-ink: #16132a; --card-line: #d6ccef; --card-inner: #efeafb; --card-strong: #000000;
+  --f-display: "Dela Gothic One", "Arial Black", sans-serif; --f-body: "Zen Kaku Gothic New", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 8px; --r-panel: 12px; --r-pill: 999px; --r-key: 5px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.01em; }
+.hero h2 { font-size: clamp(2rem, 7.2vw, 2.9rem); line-height: 1.08; text-shadow: 0 0 24px rgba(157, 107, 255, 0.35); }
+.qtext { font-family: var(--f-body); font-weight: 700; font-size: clamp(1.12rem, 4vw, 1.36rem); line-height: 1.35; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; }
+.btn.gold { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.02em; }
+@media (max-width: 430px) { .brand h1 { font-size: 1.12rem; } }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("orb.svg") center / 128% auto, #120f22;
+  box-shadow: 0 0 0 2px rgba(185, 140, 255, 0.6), 0 0 14px rgba(157, 107, 255, 0.55); }
+""",
+        "tile": {"cls": "jk", "title": "Jujutsu Kaisen", "art": "",
+                 "blurb": "The anime, Seasons 1 to 3 and JJK 0: techniques, Domain Expansions, fights, characters and the story."},
+        "intro": ("Jujutsu Kaisen quiz", "Think you're the strongest? Prove it.",
+                  "A free Jujutsu Kaisen anime quiz, 20 questions per game: Seasons 1 to 3 (The Culling Game Part 1) and Jujutsu Kaisen 0, with techniques and Domain Expansions, fights, characters and their voice actors, episodes, the story, the jujutsu world and the music. No manga spoilers. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -491,7 +544,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     },
 ]
 # the order tiles appear in on the home page: games first, then everything else
-HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "world", "football", "cars", "music", "bigger"]
+HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "jjk", "world", "football", "cars", "music", "bigger"]
 QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -611,7 +664,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music and OG Fortnite (Chapters 1 and 2), plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapters 1 and 2) and the Jujutsu Kaisen anime, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -726,6 +779,19 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
+/* jujutsu kaisen tile: night-black with Hollow Purple glowing in the corner */
+.jk { border-radius: 14px; color: #f4f0ff;
+  background: url(jujutsu-kaisen/orb.svg) right 26px top 16px / auto 64% no-repeat,
+    radial-gradient(circle at 80% 30%, rgba(122, 60, 255, 0.45), transparent 48%),
+    radial-gradient(ellipse at 0% 110%, rgba(255, 42, 68, 0.22), transparent 55%),
+    linear-gradient(180deg, #17122e 0%, #0d0b19 70%, #08070f 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(185, 140, 255, 0.4); }
+.jk:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 0 2px rgba(200, 168, 255, 0.85); }
+.jk h3 { font-family: "Dela Gothic One", "Arial Black", sans-serif; font-weight: 400; font-size: clamp(1.75rem, 4.8vw, 2.2rem); letter-spacing: 0.01em; text-shadow: 0 0 18px rgba(157, 107, 255, 0.45); max-width: 60%; line-height: 1.1; }
+.jk p { color: #cfc6ee; font-family: "Zen Kaku Gothic New", system-ui, sans-serif; font-weight: 500; max-width: 31ch; }
+.jk .pill { border-radius: 999px; background: rgba(157, 107, 255, 0.14); border: 1px solid rgba(185, 140, 255, 0.5); color: #eadfff; }
+.jk .play { color: #c8a8ff; }
+@media (max-width: 620px) { .jk { min-height: 350px; background-size: auto 44%, auto, auto, auto; } .jk h3 { max-width: none; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -773,8 +839,8 @@ a { color: inherit; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Jujutsu Kaisen, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@500",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -804,7 +870,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
-  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
+  <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, Gege Akutami, Shueisha, MAPPA, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
 (() => {
