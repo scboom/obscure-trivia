@@ -539,9 +539,9 @@ function skipTally() {
   return { votes, needed: 1 + ids.length };
 }
 function skipLabel() {
-  if (!MULTI(S.mode) || !(S.final && S.final.length) || roomState !== "on") return "Skip to scores";
+  if (!MULTI(S.mode) || !(S.final && S.final.length) || roomState !== "on") return "Skip to results";
   const { votes, needed } = skipTally();
-  return S.skipVote ? `Waiting for everyone to vote (${votes}/${needed})` : `Vote to skip (${votes}/${needed})`;
+  return `Skip to results ${votes}/${needed}`;   // greyed out once you've voted
 }
 function checkSkip() {
   if (S.screen !== "reveal" || !S.skipVote) return;
