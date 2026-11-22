@@ -250,7 +250,7 @@ h1, h2, h3 { font-weight: 700; }
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
-        "desc": "This or That is a free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.",
+        "desc": "This or That is a free head-to-head numbers game: two things go up against each other and you pick the right one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.",
         "fonts": "family=Lilita+One&family=Rubik:wght@400;500;600;700",
         "theme_color": "#fff3dc",
         "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E",
@@ -321,7 +321,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .coin { width: 32px; height: 32px; flex: none; display: block; background: url("BARS") center / 100% 100%; }
 """.replace("BARS", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E"),
         "tile": {"cls": "wb", "title": "This or That", "art": '<span class="vs-badge" aria-hidden="true">VS</span>',
-                 "blurb": "Two things go head to head. Taller, heavier, faster, older: can you pick the bigger one?"},
+                 "blurb": "Two things go head to head. Taller, heavier, faster, older: can you pick the right one?"},
         "intro": ("Head-to-head numbers game", "Two things go head to head. Which one is bigger?",
                   "A free head-to-head numbers game, 20 questions per game: heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },

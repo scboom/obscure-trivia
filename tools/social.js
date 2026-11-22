@@ -35,7 +35,7 @@ const pages = {
     .vs{position:absolute;bottom:80px;right:110px;width:170px;height:170px;border-radius:50%;background:#1b1b2f;color:#ffcd29;display:grid;place-items:center;font:400 76px 'Lilita One';transform:rotate(-8deg);box-shadow:10px 10px 0 #c2410c}
     h1{font:400 128px/1 'Lilita One',sans-serif;margin:0}p{font:500 34px Rubik,sans-serif;margin:0;max-width:20ch}
     .by{font:800 26px 'Bricolage Grotesque';color:#1b1b2f;letter-spacing:.02em}</style>
-    <div class="vs">VS</div><h1>This or That</h1><p>Two things go head to head. Pick the bigger one.</p><div class="by">OBSCURE TRIVIA</div>`,
+    <div class="vs">VS</div><h1>This or That</h1><p>Two things go head to head. Pick the right one.</p><div class="by">OBSCURE TRIVIA</div>`,
   'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,.15) 20%,rgba(0,0,0,.82)),url(${T.grass_side}) 0 0/90px 90px;image-rendering:pixelated;color:#fff}
     h1{font:400 110px/1 Monocraft,monospace;margin:0;text-shadow:6px 6px 0 #1f1f1f}p{font-size:34px;margin:0;text-shadow:2px 2px 0 #000}
     .by{font:800 26px 'Bricolage Grotesque';color:#7ad155;letter-spacing:.02em;text-shadow:2px 2px 0 #000}</style>
