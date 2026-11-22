@@ -10,15 +10,15 @@ E = html.escape
 
 QUIZZES = [
     {
-        "id": "hearthstone", "dir": "hearthstone", "bank_src": "hs_questions.json",
+        "id": "hearthstone", "dir": "hearthstone", "bank_src": "hs_questions.json", "extra": [("hs-emblem.svg", "emblem.svg")],
         "title": "Hearthstone Battlegrounds Quiz – Obscure Trivia",
         "desc": "A free Hearthstone Battlegrounds quiz: 20 random questions per game on minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quests, trinkets and anomalies. Play solo or in party mode with up to 6 players.",
         "fonts": "family=Bree+Serif&family=Figtree:wght@400;500;600;700",
         "theme_color": "#1d1512",
-        "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8b450' stroke='%23a8721f' stroke-width='4'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia,serif' fill='%232a1b08'%3E%3F%3C/text%3E%3C/svg%3E",
+        "favicon": "emblem.svg",
         "config": {
-            "id": "hearthstone", "letter": "H", "short": "Battlegrounds", "icon": "?",
-            "eyebrow": "Hearthstone Battlegrounds quiz", "headline": "How well do you really know Bob's Tavern?",
+            "id": "hearthstone", "letter": "H", "short": "Battlegrounds", "icon": "",
+            "namePh": "e.g. Pogo Fan", "eyebrow": "Hearthstone Battlegrounds quiz", "headline": "How well do you really know Bob's Tavern?",
             "topics": "minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies",
             "foot": "Card data from the Hearthstone client files, build of 3 November 2026. Fan-made quiz, not affiliated with Blizzard.",
             "seed": "tavern-trivia-v1:", "topic": "tavern-trivia/v1/", "recentKey": "tt-recent-v1", "sessionKey": "tt-game",
@@ -49,13 +49,11 @@ QUIZZES = [
   color-scheme: dark;
 }
 .coin {
-  width: 30px; height: 30px; border-radius: 50%; flex: none;
-  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, var(--accent) 38%, #a8721f 100%);
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.4);
-  display: grid; place-items: center; color: var(--accent-ink); font-family: var(--f-display); font-size: 0.9rem;
+  width: 32px; height: 32px; border-radius: 50%; flex: none; display: block;
+  background: url("emblem.svg") center / 100% 100%; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
 }
 """,
-        "tile": {"cls": "hs", "title": "Hearthstone Battlegrounds", "art": '<span class="coin" aria-hidden="true">?</span>',
+        "tile": {"cls": "hs", "title": "Hearthstone Battlegrounds", "art": "",
                  "blurb": "Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies."},
         "intro": ("Hearthstone Battlegrounds quiz", "How well do you really know Bob's Tavern?",
                   "A free Hearthstone Battlegrounds quiz, 20 questions per game: minion tiers and stats, hero armor in Solo and Duos, Hero Powers, Buddies, quest rewards, trinkets, Tavern spells and anomalies. Play on your own, or start a party of up to 6 players with a 5-letter code."),
@@ -563,13 +561,14 @@ a { color: inherit; }
 @font-face { font-family: "Monocraft"; src: url("minecraft/Monocraft.woff2") format("woff2"); font-display: swap; }
 /* tavern tile: oak planks, a gold coin and a serif title */
 .hs { border-radius: 16px; color: var(--hs-ink);
-  background: radial-gradient(circle at 86% 22%, rgba(255, 196, 96, 0.5) 0, rgba(255, 150, 50, 0.18) 20%, transparent 46%),
+  background: url(hearthstone/emblem.svg) right 26px top 16px / auto 54% no-repeat,
+    radial-gradient(circle at 84% 30%, rgba(255, 170, 70, 0.55) 0, rgba(255, 150, 50, 0.18) 22%, transparent 46%),
     radial-gradient(ellipse at 10% 110%, rgba(255, 120, 40, 0.22), transparent 55%),
     repeating-linear-gradient(180deg, transparent 0 51px, rgba(0, 0, 0, 0.22) 51px 53px, rgba(255, 210, 150, 0.04) 53px 54px),
     linear-gradient(180deg, #4b2e19 0%, #301d10 55%, #1b100a 100%);
   box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.5), inset 0 0 0 5px rgba(20, 12, 7, 0.35); }
 .hs:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 2px var(--hs-gold); }
-.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
+.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); max-width: 62%; }
 .hs p { color: #e3cfb2; }
 .hs .pill { border-radius: 999px; background: rgba(232,180,80,0.16); border: 1px solid rgba(232,180,80,0.45); color: #f6d58f; }
 .hs .play { color: var(--hs-gold); }
@@ -583,6 +582,7 @@ a { color: inherit; }
     repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
     linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+@media (max-width: 620px) { .hs { min-height: 340px; background-size: auto 40%, auto, auto, auto, auto; } }
 @media (max-width: 620px) { .mc { min-height: 340px; background-size: auto, auto 40%, 26px 26px, auto; } }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
 .mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
@@ -642,7 +642,7 @@ hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge, Footba
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
   <section class="hero">
-    <span class="eyebrow">Free game quizzes</span>
+    <span class="eyebrow">Free trivia quizzes</span>
     <h2>Trivia for the details only real players know.</h2>
     <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or start a party of up to 6 players with a 5-letter code and see who wins.</p>
   </section>
@@ -688,6 +688,23 @@ hub += """<div class="wrap">
 </html>
 """
 open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(hub)
+
+nf = head("Page not found – Obscure Trivia", "This page doesn't exist. Pick a quiz from Obscure Trivia instead.", SITE, "family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;700",
+          "#121117", hub_fav, extra_head=f"""<meta name="robots" content="noindex"><style>{hub_css}
+.nf {{ min-height: 70vh; display: flex; flex-direction: column; justify-content: center; gap: 16px; }}
+.nf ul {{ list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }}
+.nf a.btn {{ text-decoration: none; display: inline-block; }}</style>""")
+nf += """<div class="wrap nf">
+  <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
+  <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
+    <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
+  <ul>""" + "".join(f'<li><a class="btn" href="{SITE}{q["dir"]}/">{E(q["tile"]["title"])}</a></li>' for q in QUIZZES) + f"""</ul>
+  <p><a href="{SITE}">Go to the home page</a></p>
+</div>
+</body>
+</html>
+"""
+open(os.path.join(OUT, "404.html"), "w", encoding="utf-8").write(nf)
 
 today = datetime.date.today().isoformat()
 urls = [SITE] + [SITE + q["dir"] + "/" for q in QUIZZES]

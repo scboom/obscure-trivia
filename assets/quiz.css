@@ -288,6 +288,13 @@ button { cursor: pointer; }
 .quizpick { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
 .quizpick .btn { justify-content: flex-start; text-align: left; }
 
+/* the keyboard tip is no use on a phone or tablet */
+@media (hover: none) and (pointer: coarse) { .tip { display: none; } }
+.clockbox.compact { flex-direction: row; gap: 8px; min-width: 0; padding: 4px 12px; }
+.clockbox.compact .clock-label { display: none; }
+.clockbox.compact .clock { font-size: 1.15rem; }
+.clockbox.compact .clock-bar { width: 44px; height: 4px; }
+
 :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 body { margin: 0; }
 img { max-width: 100%; }

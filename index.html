@@ -79,13 +79,14 @@ a { color: inherit; }
 @font-face { font-family: "Monocraft"; src: url("minecraft/Monocraft.woff2") format("woff2"); font-display: swap; }
 /* tavern tile: oak planks, a gold coin and a serif title */
 .hs { border-radius: 16px; color: var(--hs-ink);
-  background: radial-gradient(circle at 86% 22%, rgba(255, 196, 96, 0.5) 0, rgba(255, 150, 50, 0.18) 20%, transparent 46%),
+  background: url(hearthstone/emblem.svg) right 26px top 16px / auto 54% no-repeat,
+    radial-gradient(circle at 84% 30%, rgba(255, 170, 70, 0.55) 0, rgba(255, 150, 50, 0.18) 22%, transparent 46%),
     radial-gradient(ellipse at 10% 110%, rgba(255, 120, 40, 0.22), transparent 55%),
     repeating-linear-gradient(180deg, transparent 0 51px, rgba(0, 0, 0, 0.22) 51px 53px, rgba(255, 210, 150, 0.04) 53px 54px),
     linear-gradient(180deg, #4b2e19 0%, #301d10 55%, #1b100a 100%);
   box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.5), inset 0 0 0 5px rgba(20, 12, 7, 0.35); }
 .hs:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 2px var(--hs-gold); }
-.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
+.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); max-width: 62%; }
 .hs p { color: #e3cfb2; }
 .hs .pill { border-radius: 999px; background: rgba(232,180,80,0.16); border: 1px solid rgba(232,180,80,0.45); color: #f6d58f; }
 .hs .play { color: var(--hs-gold); }
@@ -99,6 +100,7 @@ a { color: inherit; }
     repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
     linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+@media (max-width: 620px) { .hs { min-height: 340px; background-size: auto 40%, auto, auto, auto, auto; } }
 @media (max-width: 620px) { .mc { min-height: 340px; background-size: auto, auto 40%, 26px 26px, auto; } }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
 .mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
@@ -157,7 +159,7 @@ a { color: inherit; }
 <div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
   <section class="hero">
-    <span class="eyebrow">Free game quizzes</span>
+    <span class="eyebrow">Free trivia quizzes</span>
     <h2>Trivia for the details only real players know.</h2>
     <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or start a party of up to 6 players with a 5-letter code and see who wins.</p>
   </section>
@@ -165,7 +167,7 @@ a { color: inherit; }
     <div class="sect-head"><h2 id="h-quizzes">Quizzes</h2><p>Pick a topic and answer 20 questions.</p></div>
     <div class="shelf quizzes">
       <a class="quiz hs" href="hearthstone/">
-        <span class="coin" aria-hidden="true">?</span>
+        
         <h3>Hearthstone Battlegrounds</h3>
         <p>Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies.</p>
         <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>

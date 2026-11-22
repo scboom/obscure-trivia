@@ -3,6 +3,7 @@ const { chromium } = require('playwright');
 const [,, texPath, outDir] = process.argv;
 const T = JSON.parse(fs.readFileSync(texPath, 'utf8'));
 const MONO = 'data:font/woff2;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'fonts', 'Monocraft.woff2')).toString('base64');
+const EMBLEM = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/hearthstone/emblem.svg').toString('base64');
 const SHEEP = 'data:image/png;base64,' + fs.readFileSync(outDir + '/minecraft/sheep.png').toString('base64');
 const EARTH = 'data:image/jpeg;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'world', 'earth-social.jpg')).toString('base64');
 const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&display=swap">';
@@ -12,7 +13,7 @@ const pages = {
     .mark{width:84px;height:84px;border-radius:20px;background:#f2efe6;color:#121117;display:grid;place-items:center;font:800 56px 'Bricolage Grotesque';transform:rotate(-6deg)}
     h1{font:800 104px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;margin:0}p{font-size:34px;color:#a7a3b5;margin:0}
     .tiles{display:flex;gap:18px}.t{height:70px;padding:0 26px;display:flex;align-items:center;font-size:28px;font-weight:700}
-    .hs{border-radius:14px;background:radial-gradient(circle at 85% 20%,rgba(255,196,96,.45),transparent 50%),linear-gradient(180deg,#4b2e19,#2a190e);color:#f6e7cf;font-family:'Bree Serif';font-weight:400;box-shadow:inset 0 0 0 1px rgba(232,180,80,.5)}
+    .hs{border-radius:14px;background:url(${EMBLEM}) right 10px center/auto 76% no-repeat,radial-gradient(circle at 85% 20%,rgba(255,196,96,.45),transparent 50%),linear-gradient(180deg,#4b2e19,#2a190e);padding-right:70px!important;color:#f6e7cf;font-family:'Bree Serif';font-weight:400;box-shadow:inset 0 0 0 1px rgba(232,180,80,.5)}
     .fb{border-radius:10px;background:repeating-linear-gradient(90deg,#1d6a35 0 20px,#22783c 20px 40px);color:#fff;font-family:Oswald,sans-serif;text-transform:uppercase}
     .gk{border-radius:999px;background:linear-gradient(90deg,#123f8a,#2f7fd0);color:#fff;font-family:Outfit,sans-serif;font-weight:800}
     .mc{background:linear-gradient(180deg,#70b540,#4a8627);image-rendering:pixelated;color:#fff;font-family:Monocraft;text-shadow:2px 2px 0 #1f1f1f;box-shadow:inset 0 0 0 3px #0f0f10}
@@ -22,9 +23,9 @@ const pages = {
     <div class="mark">?</div><h1>Obscure Trivia</h1><p>Trivia for the details only real players know.</p>
     <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t wb">This or That</div></div>`,
   'hearthstone': `<style>${base}body{background:radial-gradient(circle at 84% 26%,rgba(255,196,96,.5) 0,rgba(255,150,50,.18) 22%,transparent 46%),radial-gradient(ellipse at 8% 115%,rgba(255,120,40,.25),transparent 55%),repeating-linear-gradient(180deg,transparent 0 102px,rgba(0,0,0,.22) 102px 106px),linear-gradient(180deg,#4b2e19,#301d10 55%,#1b100a);color:#f6e7cf;box-shadow:inset 0 0 0 3px rgba(232,180,80,.45)}
-    .coin{position:absolute;top:80px;right:120px;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25),0 0 0 10px rgba(232,180,80,.16),0 0 80px rgba(255,180,80,.6);width:150px;height:150px;font-size:84px!important;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3c4 0 12%,#e8b450 38%,#a8721f 100%);color:#2a1b08;font:400 64px 'Bree Serif'}
+    .coin{background:url(${EMBLEM}) center/100% 100% !important;filter:drop-shadow(0 0 40px rgba(255,170,70,.55));position:absolute;top:60px;right:100px;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25),0 0 0 10px rgba(232,180,80,.16),0 0 80px rgba(255,180,80,.6);width:250px;height:250px;font-size:84px!important;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3c4 0 12%,#e8b450 38%,#a8721f 100%);color:#2a1b08;font:400 64px 'Bree Serif'}
     h1{font:400 92px/1.02 'Bree Serif',serif;margin:0}p{font-size:34px;color:#e3cfb2;margin:0}.by{font:800 26px 'Bricolage Grotesque';color:#e8b450;letter-spacing:.02em}</style>
-    <div class="coin">?</div><h1>Hearthstone Battlegrounds Quiz</h1><p>20 questions · solo or party mode</p><div class="by">OBSCURE TRIVIA</div>`,
+    <div class="coin"></div><h1>Hearthstone Battlegrounds Quiz</h1><p>20 questions · solo or party mode</p><div class="by">OBSCURE TRIVIA</div>`,
   'general-knowledge': `<style>${base}body{background:linear-gradient(90deg,rgba(5,10,24,.85) 0%,rgba(5,10,24,.35) 55%,rgba(5,10,24,0) 75%),url(${EARTH}) center/cover;color:#f2f7ff;justify-content:center}
     h1{font:800 96px/1 Outfit,sans-serif;margin:0;letter-spacing:-.02em;max-width:9ch}p{font-size:34px;margin:0;color:#cfe0f5}
     .by{font:800 26px 'Bricolage Grotesque';color:#8edbff;letter-spacing:.02em}</style>

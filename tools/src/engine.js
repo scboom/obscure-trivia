@@ -456,7 +456,9 @@ function clockHtml() {
     <span class="clock-label">Time left</span><span class="clock" id="clock">${fmtTime(Math.ceil(left / 1000))}</span>
     <span class="clock-bar" aria-hidden="true"><span id="clockfill" style="transform:scaleX(${(left / LIMIT_MS).toFixed(4)})"></span></span></div>`;
 }
-function clockState(left) { return left < 60000 ? " low" : left < 120000 ? " warn" : ""; }
+function clockState(left) { return (left < 60000 ? " low" : left < 120000 ? " warn" : "") + (window.scrollY > 30 ? " compact" : ""); }
+// scrolled down: the timer shrinks to a slim pill so it covers less of the question
+window.addEventListener("scroll", () => { const b = $("#clockbox"); if (b) b.className = "clockbox" + clockState(timeLeft()); }, { passive: true });
 function tick() {
   if (S.screen !== "quiz" || !S.startedAt) return;
   const left = timeLeft(), el = $("#clock"), box = $("#clockbox"), fill = $("#clockfill");
@@ -477,7 +479,7 @@ function startGame(mode, code, role) {
   if (MULTI(S.mode)) leaveRoom();
   S = fresh({ screen: mode === "solo" ? "quiz" : "ready", mode, role: role || "host", code, qs: buildQuiz(code), answers: Array(LEN).fill(null),
     startedAt: mode === "solo" ? Date.now() : 0, pid: MULTI(mode) ? playerId(code) : "", joinedAt: Date.now() });
-  render();
+  render(); window.scrollTo({ top: 0 });
   if (MULTI(mode)) joinRoom(); else leaveRoom();
 }
 function startParty() {
@@ -654,7 +656,7 @@ function homeView() {
   </section>
   <div class="field" style="max-width:320px">
     <label for="nick">Your name (shown to other players)</label>
-    <input class="input" id="nick" maxlength="20" placeholder="e.g. Pogo Fan" value="${esc(S.nick)}" autocomplete="nickname">
+    <input class="input" id="nick" maxlength="20" placeholder="${esc(QUIZ.namePh || "e.g. Sam")}" value="${esc(S.nick)}" autocomplete="nickname">
     <p class="err" id="nickerr" role="alert"></p>
   </div>
   <div class="modes">
@@ -821,7 +823,7 @@ function quizView() {
     ${done ? `${whyHtml(item)}<div class="feedback">
         <span class="verdict ${mine === item.correct ? "ok" : "no"}">${mine === item.correct ? "Correct!" : "Not quite."}</span>
         <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "Finish"}</button>
-      </div>` : `<p class="small muted" style="margin:0">Tip: press ${item.opts.length === 2 ? "1 or 2" : "1 to 4"} to answer, Enter for the next question.</p>`}
+      </div>` : `<p class="small muted tip" style="margin:0">Tip: press ${item.opts.length === 2 ? "1 or 2" : "1 to 4"} to answer, Enter for the next question.</p>`}
   </section>
   ${partnerStrip()}`;
 }

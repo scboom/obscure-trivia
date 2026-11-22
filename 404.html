@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Page not found – Obscure Trivia</title>
+<meta name="description" content="This page doesn&#x27;t exist. Pick a quiz from Obscure Trivia instead.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Page not found – Obscure Trivia">
+<meta property="og:description" content="This page doesn&#x27;t exist. Pick a quiz from Obscure Trivia instead.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#121117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;700&display=swap">
+
+<meta name="robots" content="noindex"><style>
+/* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
+:root {
+  --bg: #121117; --panel: #1c1b23; --line: #2e2c39; --ink: #f2efe6; --muted: #a7a3b5; --faint: #7a7689;
+  --hs-ink: #f6e7cf; --hs-gold: #e8b450; --mc-ink: #ffffff; --mc-green: #7ad155; --focus: #f2efe6;
+  --f-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif; --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(ellipse at 20% -10%, #2a2636 0%, transparent 55%), var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 48px; }
+.wrap { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.top { display: flex; align-items: center; gap: 12px; }
+.mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; transform: rotate(-6deg); }
+.brand { font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0; }
+.hero { display: flex; flex-direction: column; gap: 12px; }
+.hero h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; text-wrap: balance; max-width: 16ch; }
+.hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
+.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
+/* globe tile: a lit Earth in space, clean sans titles */
+.gk { border-radius: 22px; color: #f2f7ff;
+  background: linear-gradient(180deg, rgba(5,10,24,0) 25%, rgba(5,10,24,0.82) 80%), url(general-knowledge/earth-tile.jpg) 62% 40% / cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), 0 0 0 2px #7dd3fc, inset 0 0 0 1px rgba(150,190,255,0.3); }
+.gk h3 { font-family: "Outfit", system-ui, sans-serif; font-weight: 800; font-size: clamp(1.7rem, 4.4vw, 2.2rem); letter-spacing: -0.015em; }
+.gk p { color: #cfe0f5; font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+.gk .pill { border-radius: 999px; background: rgba(125,211,252,0.16); border: 1px solid rgba(125,211,252,0.45); color: #c4ecff; }
+.gk .play { color: #8edbff; }
+/* pitch tile: mowing stripes, a chalk centre circle and condensed sports type */
+.fb { border-radius: 14px; color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(4,18,9,0.85) 82%),
+    radial-gradient(circle at 70% 38%, transparent 0 46px, rgba(255,255,255,0.55) 47px 49px, transparent 50px),
+    linear-gradient(90deg, transparent calc(70% - 1px), rgba(255,255,255,0.55) calc(70% - 1px) calc(70% + 1px), transparent calc(70% + 1px)),
+    repeating-linear-gradient(90deg, #1d6a35 0 34px, #22783c 34px 68px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 3px rgba(255,255,255,0.55); }
+.fb:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 3px #ffd84a; }
+.fb h3 { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.5rem); text-transform: uppercase; letter-spacing: 0.02em; }
+.fb p { color: #dcebdf; font-family: "Barlow", system-ui, sans-serif; }
+.fb .pill { border-radius: 999px; background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.45); color: #fff; }
+.fb .play { color: #ffd84a; }
+.quiz { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 260px; padding: 22px; text-decoration: none; overflow: hidden; min-width: 0;
+  transition: transform .15s ease, box-shadow .15s ease; }
+.quiz:hover { transform: translateY(-3px); }
+.quiz h3 { margin: 0; line-height: 1.05; text-wrap: balance; }
+.quiz p { margin: 0; font-size: 0.95rem; max-width: 36ch; }
+.quiz .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.quiz .pill { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; }
+.quiz .play { margin-left: auto; font-weight: 800; }
+@font-face { font-family: "Monocraft"; src: url("minecraft/Monocraft.woff2") format("woff2"); font-display: swap; }
+/* tavern tile: oak planks, a gold coin and a serif title */
+.hs { border-radius: 16px; color: var(--hs-ink);
+  background: url(hearthstone/emblem.svg) right 26px top 16px / auto 54% no-repeat,
+    radial-gradient(circle at 84% 30%, rgba(255, 170, 70, 0.55) 0, rgba(255, 150, 50, 0.18) 22%, transparent 46%),
+    radial-gradient(ellipse at 10% 110%, rgba(255, 120, 40, 0.22), transparent 55%),
+    repeating-linear-gradient(180deg, transparent 0 51px, rgba(0, 0, 0, 0.22) 51px 53px, rgba(255, 210, 150, 0.04) 53px 54px),
+    linear-gradient(180deg, #4b2e19 0%, #301d10 55%, #1b100a 100%);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.5), inset 0 0 0 5px rgba(20, 12, 7, 0.35); }
+.hs:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 2px var(--hs-gold); }
+.hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); max-width: 62%; }
+.hs p { color: #e3cfb2; }
+.hs .pill { border-radius: 999px; background: rgba(232,180,80,0.16); border: 1px solid rgba(232,180,80,0.45); color: #f6d58f; }
+.hs .play { color: var(--hs-gold); }
+.hs .coin { position: absolute; top: 22px; right: 26px; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #fff6d2 0 12%, #f0be5c 40%, #a8721f 100%); color: #2a1b08; font-family: "Bree Serif", Georgia, serif; font-size: 1.9rem;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255, 240, 200, 0.35), 0 0 0 5px rgba(232, 180, 80, 0.16), 0 0 34px rgba(255, 180, 80, 0.55); }
+/* block tile: pixel grass-and-dirt, square corners, a pixel title */
+.mc { border-radius: 0; color: var(--mc-ink);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 52%, rgba(14,34,8,0.6) 100%),
+    url(minecraft/sheep.png) right 30px top 18px / auto 50% no-repeat,
+    repeating-conic-gradient(rgba(255,255,255,0.05) 0 25%, rgba(0,0,0,0) 0 50%) 0 0 / 26px 26px,
+    linear-gradient(180deg, #70b540 0%, #5b9d32 60%, #4a8627 100%);
+  box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
+@media (max-width: 620px) { .hs { min-height: 340px; background-size: auto 40%, auto, auto, auto, auto; } }
+@media (max-width: 620px) { .mc { min-height: 340px; background-size: auto, auto 40%, 26px 26px, auto; } }
+.mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
+.mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }
+.mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
+.mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
+.mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Monocraft", ui-monospace, monospace; font-size: 1.1rem; }
+/* car tile: carbon fibre, a red and white racing stripe and slanted motorsport type */
+.cr { border-radius: 12px; color: #fff;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0) 22%, rgba(10, 10, 12, 0.92) 80%),
+    radial-gradient(ellipse at 25% 0%, rgba(225, 6, 0, 0.35), transparent 60%),
+    linear-gradient(100deg, transparent 0 64%, #e10600 64% 71%, transparent 71% 73.5%, #f3f4f6 73.5% 76%, transparent 76%),
+    linear-gradient(45deg, #111215 25%, transparent 25%, transparent 75%, #111215 75%) 0 0 / 12px 12px,
+    linear-gradient(45deg, #111215 25%, transparent 25%, transparent 75%, #111215 75%) 6px 6px / 12px 12px,
+    linear-gradient(#202227, #18191d);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.14); }
+.cr:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #e10600; }
+.cr h3 { font-family: "Chakra Petch", "Arial Narrow", sans-serif; font-weight: 700; font-style: italic; font-size: clamp(2rem, 5.4vw, 2.6rem); text-transform: uppercase; letter-spacing: 0.02em; }
+.cr p { color: #d4d7dd; font-family: "Titillium Web", system-ui, sans-serif; }
+.cr .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 90, 77, 0.6); color: #fff; }
+.cr .play { color: #ff5a4d; }
+/* two sections: the quizzes, then other games */
+.sect { display: flex; flex-direction: column; gap: 14px; }
+.sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.sect-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.015em; }
+.sect-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.shelf.games .quiz:last-child:nth-child(odd) { grid-column: auto; }
+@media (max-width: 620px) { .shelf.games .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+/* versus tile: a warm side, a cool side, a VS badge and chunky rounded type */
+.wb { border-radius: 18px; color: #1b1b2f; border: 3px solid #1b1b2f;
+  background: linear-gradient(180deg, rgba(255,246,226,0) 28%, rgba(255,246,226,0.97) 64%),
+    radial-gradient(circle, rgba(27,27,47,0.14) 1.2px, transparent 1.7px) 0 0 / 16px 16px,
+    linear-gradient(115deg, #ff8a78 0 50%, #6d9bff 50% 100%);
+  box-shadow: 6px 6px 0 #000; }
+.wb:hover { box-shadow: 9px 9px 0 #000; }
+.wb h3 { font-family: "Lilita One", "Arial Rounded MT Bold", sans-serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.wb p { color: #44415a; font-family: "Rubik", system-ui, sans-serif; }
+.wb .pill { border-radius: 999px; background: #fff; border: 2px solid #1b1b2f; color: #1b1b2f; }
+.wb .play { color: #c2410c; }
+.wb .vs-badge { position: absolute; top: 26px; left: 50%; width: 64px; height: 64px; margin-left: -32px; border-radius: 50%; display: grid; place-items: center;
+  background: #1b1b2f; color: #ffcd29; font-family: "Lilita One", sans-serif; font-size: 1.45rem; transform: rotate(-8deg); box-shadow: 4px 4px 0 #c2410c; }
+:focus-visible.wb { outline-offset: 5px; }
+.joinbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.joinbox h3 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
+.joinbox p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.input { flex: 1 1 160px; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; color: var(--ink); font: inherit;
+  text-transform: uppercase; letter-spacing: 0.3em; text-align: center; font-weight: 700; }
+.input::placeholder { color: var(--faint); }
+.btn { border-radius: 10px; border: 0; padding: 12px 20px; font: inherit; font-weight: 800; background: var(--ink); color: var(--bg); cursor: pointer; }
+.err { color: #f08a7c; font-size: 0.9rem; min-height: 1.3em; margin: 0; }
+.foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.nf { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.nf ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.nf a.btn { text-decoration: none; display: inline-block; }</style>
+</head>
+<body>
+<div class="wrap nf">
+  <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
+  <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
+    <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
+</div>
+</body>
+</html>
