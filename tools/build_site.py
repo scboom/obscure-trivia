@@ -246,6 +246,84 @@ h1, h2, h3 { font-weight: 700; }
         "intro": ("Football quiz", "Think you know your football?",
                   "A free football quiz, 20 questions per game: the Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and the rules. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
+    {
+        "id": "bigger", "dir": "which-is-bigger", "bank_src": "bigger_questions.json", "section": "games",
+        "title": "Which Is Bigger? – Higher or Lower Game – Obscure Trivia",
+        "desc": "Which Is Bigger? A free head-to-head numbers game: two things go up against each other and you pick the bigger one. 20 questions per game on heights, areas, populations, speeds, weights, dates, space, science, sport and food. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Lilita+One&family=Rubik:wght@400;500;600;700",
+        "theme_color": "#fff3dc",
+        "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E",
+        "extra": [],
+        "config": {
+            "id": "bigger", "letter": "B", "short": "Which Is Bigger?", "icon": "",
+            "eyebrow": "Head-to-head numbers game", "headline": "Two things go head to head. Which one is bigger?",
+            "topics": "heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food",
+            "foot": "Country populations come from the World Bank (2025), country areas from the world-countries dataset and Premier League seasons from openfootball. Everything else uses well-known published figures, and two things are only paired when the gap between them is clearly bigger than any disagreement between sources.",
+            "seed": "obscure-trivia-bigger-v1:", "topic": "obscure-trivia/bigger/v1/", "recentKey": "ot-recent-bigger-v1", "sessionKey": "ot-game-bigger",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"height": "Height", "area": "Area", "population": "Population", "length": "Length", "weight": "Weight", "speed": "Speed", "lifespan": "Lifespan", "dates": "Dates", "numbers": "Numbers", "diameter": "Space", "spin": "Space", "gravity": "Space", "heat": "Heat", "protons": "Science", "density": "Science", "melting": "Science", "stadium": "Sport", "ball": "Sport", "plseasons": "Sport", "calories": "Food", "chilli": "Food", "caffeine": "Food", "distance": "Distance"},
+            "caps": {"Height": 2, "Area": 2, "Population": 2, "Length": 2, "Weight": 2, "Speed": 2, "Lifespan": 1, "Dates": 3, "Numbers": 3, "Space": 2, "Heat": 2, "Science": 2, "Sport": 2, "Food": 2, "Distance": 1},
+            "verdicts": [[19, "Human measuring tape."], [16, "Brilliant sense of scale."], [12, "Bigger brain than most."], [8, "Size isn't everything."], [0, "Was it the other one?"]],
+        },
+        "theme": """
+:root {
+  --bg: #fff3dc;
+  --bg-art: radial-gradient(circle, rgba(27, 27, 47, 0.09) 1.2px, transparent 1.7px) 0 0 / 18px 18px;
+  --panel: #fffdf7; --panel-fill: #fffdf7; --panel-2: #fff0cc;
+  --panel-shadow: 6px 6px 0 #1b1b2f;
+  --line: #1b1b2f; --line-hover: #1b1b2f; --ink: #1b1b2f; --muted: #57546b; --faint: #75728a; --placeholder: #9895aa;
+  --accent: #ffcd29; --accent-ink: #1b1b2f; --accent-text: #c2410c; --accent-hover: #ffd94f; --accent-edge: #1b1b2f; --accent-shadow: 3px 3px 0 #1b1b2f;
+  --chip-bg: #fff0cc; --chip-line: #1b1b2f; --chip-ink: #1b1b2f;
+  --pal: #2563eb; --pal-ink: #ffffff; --pal-bg: rgba(37, 99, 235, 0.1); --pal-line: #2563eb;
+  --good: #15803d; --good-ink: #ffffff; --good-bg: #d7f5de; --bad: #dc2626; --bad-ink: #ffffff; --bad-bg: #fde3e3;
+  --inset: #ffffff; --opt: #ffffff; --tile: #fff8e8;
+  --card-bg: #ffffff; --card-ink: #1b1b2f; --card-line: #1b1b2f; --card-inner: #fff0cc; --card-strong: #000000;
+  --f-display: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif; --f-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  --side-a: #ff6b57; --side-a-bg: #ffe2dc; --side-b: #3d7bff; --side-b-bg: #dfe9ff;
+  color-scheme: light;
+}
+/* a warm side and a cool side, like a versus screen */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle, rgba(27, 27, 47, 0.1) 1.2px, transparent 1.7px) 0 0 / 18px 18px,
+    linear-gradient(115deg, #ffdcd2 0 50%, #d9e6ff 50% 100%); }
+.c2 { --pc: #7c3aed; --pc-ink: #ffffff; } .c3 { --pc: #db2777; --pc-ink: #ffffff; }
+.c4 { --pc: #c2410c; --pc-ink: #ffffff; } .c5 { --pc: #047857; --pc-ink: #ffffff; }
+.board { border-width: 2.5px; }
+.btn { border-width: 2.5px; border-color: var(--line); background: #ffffff; box-shadow: 3px 3px 0 var(--line); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--line); }
+.btn.skip { box-shadow: none; }
+.input { border-width: 2.5px; }
+.chip { border-width: 1.5px; font-weight: 600; }
+.pip { background: #eadcb8; }
+.timer { background: #eadcb8; }
+.divider::before, .divider::after { background: #d9c79c; }
+.opt { border-width: 2.5px; box-shadow: 4px 4px 0 var(--line); transition: transform .1s ease, box-shadow .1s ease, background .12s ease; }
+.opt:hover:not([disabled]) { background: var(--opt); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--line); }
+.opt .key { border: 2px solid var(--line); background: #ffffff; color: var(--ink); }
+.opt.card.side-a { background: var(--side-a-bg); }
+.opt.card.side-b { background: var(--side-b-bg); }
+.opt.card.side-a:hover:not([disabled]) { background: var(--side-a-bg); }
+.opt.card.side-b:hover:not([disabled]) { background: var(--side-b-bg); }
+.opt.card.side-a .key { background: var(--side-a); color: #ffffff; }
+.opt.card.side-b .key { background: var(--side-b); color: #ffffff; }
+.opt.card.right { background: var(--good-bg); border-color: var(--good); box-shadow: 4px 4px 0 var(--good); }
+.opt.card.wrong { background: var(--bad-bg); border-color: var(--bad); box-shadow: 4px 4px 0 var(--bad); }
+.opt.card.faded { opacity: 0.6; }
+.opt.card .val { color: var(--ink); }
+.opt.card.right .val { color: var(--good); }
+.opts.duel .vs { background: var(--ink); color: var(--accent); width: 54px; height: 54px; font-size: 1.2rem; transform: rotate(-8deg);
+  box-shadow: 3px 3px 0 var(--accent-text); }
+.why { background: #ffffff; border: 2px dashed var(--line); }
+.feed-btn, .feed-panel { border-width: 2px; border-color: var(--line); }
+.feed-btn { background: #ffffff; color: var(--ink); }
+.coin { width: 32px; height: 32px; flex: none; display: block; background: url("BARS") center / 100% 100%; }
+""".replace("BARS", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%231b1b2f'/%3E%3Crect x='13' y='30' width='15' height='22' rx='3' fill='%23ff6b57'/%3E%3Crect x='36' y='12' width='15' height='40' rx='3' fill='%233d7bff'/%3E%3C/svg%3E"),
+        "tile": {"cls": "wb", "title": "Which Is Bigger?", "art": '<span class="vs-badge" aria-hidden="true">VS</span>',
+                 "blurb": "Two things go head to head. Taller, heavier, faster, older: can you pick the bigger one?"},
+        "intro": ("Head-to-head numbers game", "Two things go head to head. Which one is bigger?",
+                  "A free head-to-head numbers game, 20 questions per game: heights, areas, populations, lengths, weights, speeds, dates, space, science, sport and food. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
 ]
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -340,7 +418,9 @@ for qz in QUIZZES:
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
 
 # ------------------------------------------------------------------ hub
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, solo or in party mode with up to 6 players."
+SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
+            ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -419,6 +499,27 @@ a { color: inherit; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
 .mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
 .mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Monocraft", ui-monospace, monospace; font-size: 1.1rem; }
+/* two sections: the quizzes, then other games */
+.sect { display: flex; flex-direction: column; gap: 14px; }
+.sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.sect-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.015em; }
+.sect-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.shelf.games .quiz:last-child:nth-child(odd) { grid-column: auto; }
+@media (max-width: 620px) { .shelf.games .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+/* versus tile: a warm side, a cool side, a VS badge and chunky rounded type */
+.wb { border-radius: 18px; color: #1b1b2f; border: 3px solid #1b1b2f;
+  background: linear-gradient(180deg, rgba(255,246,226,0) 28%, rgba(255,246,226,0.97) 64%),
+    radial-gradient(circle, rgba(27,27,47,0.14) 1.2px, transparent 1.7px) 0 0 / 16px 16px,
+    linear-gradient(115deg, #ff8a78 0 50%, #6d9bff 50% 100%);
+  box-shadow: 6px 6px 0 #000; }
+.wb:hover { box-shadow: 9px 9px 0 #000; }
+.wb h3 { font-family: "Lilita One", "Arial Rounded MT Bold", sans-serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.wb p { color: #44415a; font-family: "Rubik", system-ui, sans-serif; }
+.wb .pill { border-radius: 999px; background: #fff; border: 2px solid #1b1b2f; color: #1b1b2f; }
+.wb .play { color: #c2410c; }
+.wb .vs-badge { position: absolute; top: 26px; left: 50%; width: 64px; height: 64px; margin-left: -32px; border-radius: 50%; display: grid; place-items: center;
+  background: #1b1b2f; color: #ffcd29; font-family: "Lilita One", sans-serif; font-size: 1.45rem; transform: rotate(-8deg); box-shadow: 4px 4px 0 #c2410c; }
+:focus-visible.wb { outline-offset: 5px; }
 .joinbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .joinbox h3 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
 .joinbox p { margin: 0; color: var(--muted); font-size: 0.95rem; }
@@ -432,7 +533,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
 hub = head("Obscure Trivia – Hearthstone, Minecraft, General Knowledge & Football Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow",
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
@@ -441,14 +542,18 @@ hub += """<div class="wrap">
     <h2>Trivia for the details only real players know.</h2>
     <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or start a party of up to 6 players with a 5-letter code and see who wins.</p>
   </section>
-  <section class="shelf" aria-label="Quizzes">
-""" + "".join(f"""    <a class="quiz {q['tile']['cls']}" href="{q['dir']}/">
-      {q['tile']['art']}
-      <h3>{E(q['tile']['title'])}</h3>
-      <p>{E(q['tile']['blurb'])}</p>
-      <div class="meta"><span class="pill">{QUESTIONS_PER_GAME} questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
-    </a>
-""" for q in QUIZZES) + """  </section>
+""" + "".join(f"""  <section class="sect" aria-labelledby="h-{sid}">
+    <div class="sect-head"><h2 id="h-{sid}">{E(stitle)}</h2><p>{E(sblurb)}</p></div>
+    <div class="shelf {sid}">
+""" + "".join(f"""      <a class="quiz {q['tile']['cls']}" href="{q['dir']}/">
+        {q['tile']['art']}
+        <h3>{E(q['tile']['title'])}</h3>
+        <p>{E(q['tile']['blurb'])}</p>
+        <div class="meta"><span class="pill">{QUESTIONS_PER_GAME} questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+""" for q in QUIZZES if q.get("section", "quizzes") == sid) + """    </div>
+  </section>
+""" for sid, stitle, sblurb in SECTIONS) + """
   <section class="joinbox">
     <h3>Got a code from a friend?</h3>
     <p>Type it in and you'll go straight to the right quiz.</p>
@@ -470,7 +575,7 @@ hub += """<div class="wrap">
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = """ + json.dumps("That code doesn't match a quiz. " + " and ".join(q["tile"]["title"] + " codes start with " + q["config"]["letter"] for q in QUIZZES) + ".") + """; return; }
+    if (!r) { err.textContent = """ + json.dumps("That code doesn't match a game. Codes start with " + ", ".join(q["config"]["letter"] + " (" + q["tile"]["title"].rstrip("?") + ")" for q in QUIZZES[:-1]) + " or " + QUIZZES[-1]["config"]["letter"] + " (" + QUIZZES[-1]["tile"]["title"].rstrip("?") + ").") + """; return; }
     location.href = r + "?join=" + c;
   });
 })();

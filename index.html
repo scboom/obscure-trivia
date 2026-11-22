@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Obscure Trivia – Hearthstone, Minecraft, General Knowledge &amp; Football Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, solo or in party mode with up to 6 players.">
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
 <meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, General Knowledge &amp; Football Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, solo or in party mode with up to 6 players.">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge and football, plus the Which Is Bigger? head-to-head game. Play solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/obscure-trivia/"}</script>
 <style>
 /* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
@@ -98,6 +98,27 @@ a { color: inherit; }
 .mc p { color: #e6e6e6; text-shadow: 1px 1px 0 #000; }
 .mc .pill { background: #313233; border: 2px solid #0f0f10; color: #fff; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3); }
 .mc .play { color: var(--mc-green); text-shadow: 2px 2px 0 #000; font-family: "Monocraft", ui-monospace, monospace; font-size: 1.1rem; }
+/* two sections: the quizzes, then other games */
+.sect { display: flex; flex-direction: column; gap: 14px; }
+.sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.sect-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.015em; }
+.sect-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.shelf.games .quiz:last-child:nth-child(odd) { grid-column: auto; }
+@media (max-width: 620px) { .shelf.games .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+/* versus tile: a warm side, a cool side, a VS badge and chunky rounded type */
+.wb { border-radius: 18px; color: #1b1b2f; border: 3px solid #1b1b2f;
+  background: linear-gradient(180deg, rgba(255,246,226,0) 28%, rgba(255,246,226,0.97) 64%),
+    radial-gradient(circle, rgba(27,27,47,0.14) 1.2px, transparent 1.7px) 0 0 / 16px 16px,
+    linear-gradient(115deg, #ff8a78 0 50%, #6d9bff 50% 100%);
+  box-shadow: 6px 6px 0 #000; }
+.wb:hover { box-shadow: 9px 9px 0 #000; }
+.wb h3 { font-family: "Lilita One", "Arial Rounded MT Bold", sans-serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.wb p { color: #44415a; font-family: "Rubik", system-ui, sans-serif; }
+.wb .pill { border-radius: 999px; background: #fff; border: 2px solid #1b1b2f; color: #1b1b2f; }
+.wb .play { color: #c2410c; }
+.wb .vs-badge { position: absolute; top: 26px; left: 50%; width: 64px; height: 64px; margin-left: -32px; border-radius: 50%; display: grid; place-items: center;
+  background: #1b1b2f; color: #ffcd29; font-family: "Lilita One", sans-serif; font-size: 1.45rem; transform: rotate(-8deg); box-shadow: 4px 4px 0 #c2410c; }
+:focus-visible.wb { outline-offset: 5px; }
 .joinbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .joinbox h3 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
 .joinbox p { margin: 0; color: var(--muted); font-size: 0.95rem; }
@@ -119,32 +140,47 @@ a { color: inherit; }
     <h2>Trivia for the details only real players know.</h2>
     <p>Each quiz pulls 20 random questions from a bank of 1,000. Play on your own, or start a party of up to 6 players with a 5-letter code and see who wins.</p>
   </section>
-  <section class="shelf" aria-label="Quizzes">
-    <a class="quiz hs" href="hearthstone/">
-      <span class="coin" aria-hidden="true">?</span>
-      <h3>Hearthstone Battlegrounds</h3>
-      <p>Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies.</p>
-      <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
-    </a>
-    <a class="quiz mc" href="minecraft/">
-      
-      <h3>Minecraft</h3>
-      <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
-      <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
-    </a>
-    <a class="quiz gk" href="general-knowledge/">
-      
-      <h3>General Knowledge</h3>
-      <p>Space, animals, the human body, countries and flags, history, science and culture.</p>
-      <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
-    </a>
-    <a class="quiz fb" href="football/">
-      
-      <h3>Football</h3>
-      <p>The Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and rules.</p>
-      <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
-    </a>
+  <section class="sect" aria-labelledby="h-quizzes">
+    <div class="sect-head"><h2 id="h-quizzes">Quizzes</h2><p>Pick a topic and answer 20 questions.</p></div>
+    <div class="shelf quizzes">
+      <a class="quiz hs" href="hearthstone/">
+        <span class="coin" aria-hidden="true">?</span>
+        <h3>Hearthstone Battlegrounds</h3>
+        <p>Minion tiers and stats, hero armor in Solo and Duos, Hero Powers, quests, trinkets and anomalies.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+      <a class="quiz mc" href="minecraft/">
+        
+        <h3>Minecraft</h3>
+        <p>Bedrock Edition: crafting recipes, blocks, tools, mobs, enchanting, brewing and biomes.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+      <a class="quiz gk" href="general-knowledge/">
+        
+        <h3>General Knowledge</h3>
+        <p>Space, animals, the human body, countries and flags, history, science and culture.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+      <a class="quiz fb" href="football/">
+        
+        <h3>Football</h3>
+        <p>The Premier League, the World Cup, the Champions League, legendary players, stadiums, nicknames and rules.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+    </div>
   </section>
+  <section class="sect" aria-labelledby="h-games">
+    <div class="sect-head"><h2 id="h-games">Other games</h2><p>Something a bit different, with the same party codes, timer and top scores.</p></div>
+    <div class="shelf games">
+      <a class="quiz wb" href="which-is-bigger/">
+        <span class="vs-badge" aria-hidden="true">VS</span>
+        <h3>Which Is Bigger?</h3>
+        <p>Two things go head to head. Taller, heavier, faster, older: can you pick the bigger one?</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
+    </div>
+  </section>
+
   <section class="joinbox">
     <h3>Got a code from a friend?</h3>
     <p>Type it in and you'll go straight to the right quiz.</p>
@@ -158,7 +194,7 @@ a { color: inherit; }
 </div>
 <script>
 (() => {
-  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "W": "general-knowledge/", "F": "football/", "B": "which-is-bigger/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -166,7 +202,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a quiz. Hearthstone Battlegrounds codes start with H and Minecraft codes start with M and General Knowledge codes start with W and Football codes start with F."; return; }
+    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), W (General Knowledge), F (Football) or B (Which Is Bigger)."; return; }
     location.href = r + "?join=" + c;
   });
 })();

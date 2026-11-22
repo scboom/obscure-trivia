@@ -44,9 +44,9 @@ function buildQuiz(code) {
   const order = shuffle([...BANK.keys()], rand);
   const picked = [], keys = new Set(), groups = {};
   for (const i of order) {
-    const q = BANK[i], g = GROUP[q.c] || "Minion";
-    if (keys.has(q.k) || (groups[g] || 0) >= CAP[g]) continue;
-    keys.add(q.k); groups[g] = (groups[g] || 0) + 1; picked.push(i);
+    const q = BANK[i], g = GROUP[q.c] || "Minion", ks = q.ks || [q.k];
+    if (ks.some(k => keys.has(k)) || (groups[g] || 0) >= CAP[g]) continue;
+    ks.forEach(k => keys.add(k)); groups[g] = (groups[g] || 0) + 1; picked.push(i);
     if (picked.length === LEN) break;
   }
   return picked.map(i => {
@@ -668,9 +668,31 @@ function fullView() {
     <div class="row" style="justify-content:center"><button class="btn gold" id="go-home2">Back to home</button></div>
   </section>`;
 }
+// head-to-head questions: two cards, each with a hidden value that shows once answered
+const isDuel = item => !!qOf(item).v;
+const optsClass = item => "opts" + (isDuel(item) ? " duel" : "");
+const valOf = (item, k) => { const q = qOf(item); return q.v ? q.v[item.opts[k]] || "" : ""; };
+const whyHtml = item => qOf(item).x ? `<p class="why">${rich(qOf(item).x)}</p>` : "";
+function duelHtml(item, picks, reveal) {
+  const q = qOf(item);
+  const cards = item.opts.map((o, k) => {
+    const chosen = picks.filter(p => p.a === k);
+    let cls = k ? "side-b" : "side-a";
+    if (reveal) cls += k === item.correct ? " right" : chosen.length ? " wrong" : " faded";
+    const marks = chosen.map(p => `<span class="tag ${p.cls}">${esc(p.label)}</span>`).join("");
+    const sub = q.d && q.d[o] ? `<span class="sub">${esc(q.d[o])}</span>` : "";
+    const val = reveal ? `<span class="val">${esc(q.v[o] || "")}</span>` : `<span class="val hide" aria-hidden="true">?</span>`;
+    return `<button class="opt card ${cls}" data-opt="${k}" ${reveal ? "disabled" : ""}>
+      <span class="key">${LET[k]}</span>${reveal && k === item.correct ? `<span class="win" aria-label="Right answer">✓</span>` : ""}
+      <span class="lbl">${rich(o)}</span>${sub}${val}
+      ${marks ? `<span class="marks">${marks}</span>` : ""}</button>`;
+  });
+  return cards[0] + `<span class="vs" aria-hidden="true">VS</span>` + cards[1];
+}
 function optionsHtml(item, picks, reveal) {
   // picks: [{label, cls, a}] for each player; reveal: show correct answer
   const q = qOf(item), bigLabels = !q.r;
+  if (q.v) return duelHtml(item, picks, reveal);
   return item.opts.map((o, k) => {
     const chosen = picks.filter(p => p.a === k);
     let cls = "";
@@ -702,11 +724,11 @@ function quizView() {
   <div class="pips" aria-label="Progress: question ${S.cur + 1} of ${LEN}">${pips}</div>
   <section class="board stack">
     ${qHead(item, S.cur)}
-    <div class="opts" role="group" aria-label="Answers">${optionsHtml(item, done ? [{ label: "You", cls: "you", a: mine }] : [], done)}</div>
-    ${done ? `<div class="feedback">
+    <div class="${optsClass(item)}" role="group" aria-label="Answers">${optionsHtml(item, done ? [{ label: "You", cls: "you", a: mine }] : [], done)}</div>
+    ${done ? `${whyHtml(item)}<div class="feedback">
         <span class="verdict ${mine === item.correct ? "ok" : "no"}">${mine === item.correct ? "Correct!" : "Not quite."}</span>
         <button class="btn gold" id="next">${S.cur < LEN - 1 ? "Next question" : "Finish"}</button>
-      </div>` : `<p class="small muted" style="margin:0">Tip: press 1 to 4 to answer, Enter for the next question.</p>`}
+      </div>` : `<p class="small muted" style="margin:0">Tip: press ${item.opts.length === 2 ? "1 or 2" : "1 to 4"} to answer, Enter for the next question.</p>`}
   </section>
   ${partnerStrip()}`;
 }
@@ -753,7 +775,8 @@ function revealView() {
   <div class="pips" aria-label="Reveal: question ${k + 1} of ${LEN}">${S.qs.map((_, i) => `<span class="pip ${i < k ? "done" : i === k ? "now" : ""}"></span>`).join("")}</div>
   <section class="board stack reveal">
     ${qHead(item, k)}
-    <div class="opts">${optionsHtml(item, picks, true)}</div>
+    <div class="${optsClass(item)}">${optionsHtml(item, picks, true)}</div>
+    ${whyHtml(item)}
     <div class="who-lines">${lines}</div>
     ${timer}
     <div class="row" style="justify-content:flex-end">${skip}</div>
@@ -787,11 +810,12 @@ function resultsView() {
     const q = qOf(it);
     const [qline, ...rest] = q.q.split("\n");
     const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
-      : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span></div>`;
+      : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span>${q.v ? `<span class="v muted small">${esc(valOf(it, a))}</span>` : ""}</div>`;
     return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}${q.i ? ` <img class="rvimg" src="${esc(q.i)}" alt="" loading="lazy">` : ""}</div>
       ${line(S.meName || S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal " + (p.c || "c1"), p.answers[k])).join("")}
-      ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span></div>` : ""}</div>`;
+      ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span>${q.v ? `<span class="v muted small">${esc(q.v[q.a] || "")}</span>` : ""}</div>` : ""}
+      ${q.v && q.x ? `<div class="ans small muted">${rich(q.x)}</div>` : ""}</div>`;
   }).join("");
   const showCompare = !(S.final && S.final.length) && !S.past;
   return `${header()}
