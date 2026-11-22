@@ -499,6 +499,40 @@ for qz in QUIZZES:
 """)
 
 # ------------------------------------------------------------------ hub
+def mc_scene():
+    """A clean pixel landscape for the Minecraft tile: sky, sun, clouds, an oak tree, a grass edge and dirt."""
+    import random as _r
+    rnd = _r.Random(7)
+    W, H, G = 98, 64, 15          # size in pixels; grass starts at row G
+    px = {}                        # colour -> list of 1x1 pixels
+    def dot(x, y, c): px.setdefault(c, []).append((x, y))
+    for x in range(W):                                   # bumpy top of the grass
+        if rnd.random() < 0.45: dot(x, G - 1, "#74b843")
+        if rnd.random() < 0.30: dot(x, G + 3, "#5d9b30")  # grass hanging over the dirt
+        if rnd.random() < 0.12: dot(x, G + 4, "#5d9b30")
+    for y in range(G + 4, H):                            # dirt specks
+        for x in range(W):
+            r = rnd.random()
+            if r < 0.06: dot(x, y, "#774d30")
+            elif r < 0.11: dot(x, y, "#9c6c49")
+    for x, y in [(64, 4), (67, 2), (71, 5), (74, 8), (66, 7), (69, 6), (72, 2), (63, 7)]:
+        dot(x, y, "#2f6e20")                             # shade in the leaves
+    paths = "".join(f'<path fill="{c}" d="{"".join(f"M{x} {y}h1v1h-1z" for x, y in pts)}"/>' for c, pts in px.items())
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e9cff"/><stop offset="1" stop-color="#b6d4ff"/></linearGradient></defs>
+<rect width="{W}" height="{H}" fill="url(#sky)"/>
+<rect x="83" y="2" width="7" height="7" fill="#fff4a8"/><rect x="84" y="3" width="5" height="5" fill="#ffd84a"/>
+<path fill="#ffffff" fill-opacity=".92" d="M11 3h10v2h3v2H8V5h3zM39 6h8v2h3v2H36V8h3z"/>
+<rect x="68" y="9" width="2" height="6" fill="#6b4a26"/>
+<path fill="#3f8b2c" d="M64 1h10v2h2v6H62V3h2z"/>
+<rect x="0" y="{G}" width="{W}" height="3" fill="#63a536"/>
+<rect x="0" y="{G + 3}" width="{W}" height="{H - G - 3}" fill="#8b5d3a"/>
+{paths}
+</svg>
+"""
+
+
+open(os.path.join(OUT, "minecraft", "tile.svg"), "w").write(mc_scene())
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
 hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football and cars, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
@@ -561,19 +595,22 @@ a { color: inherit; }
 @font-face { font-family: "Monocraft"; src: url("minecraft/Monocraft.woff2") format("woff2"); font-display: swap; }
 /* tavern tile: oak planks, a gold coin and a serif title */
 .hs { border-radius: 16px; color: var(--hs-ink);
-  background: linear-gradient(180deg, rgba(20,12,7,0.15) 0%, rgba(20,12,7,0.85) 78%), url(__WOOD__) center / cover;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.35); }
+  background: radial-gradient(circle at 86% 22%, rgba(255, 196, 96, 0.5) 0, rgba(255, 150, 50, 0.18) 20%, transparent 46%),
+    radial-gradient(ellipse at 10% 110%, rgba(255, 120, 40, 0.22), transparent 55%),
+    repeating-linear-gradient(180deg, transparent 0 51px, rgba(0, 0, 0, 0.22) 51px 53px, rgba(255, 210, 150, 0.04) 53px 54px),
+    linear-gradient(180deg, #4b2e19 0%, #301d10 55%, #1b100a 100%);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,180,80,0.5), inset 0 0 0 5px rgba(20, 12, 7, 0.35); }
 .hs:hover { box-shadow: 0 16px 36px rgba(0,0,0,0.55), inset 0 0 0 2px var(--hs-gold); }
 .hs h3 { font-family: "Bree Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
 .hs p { color: #e3cfb2; }
 .hs .pill { border-radius: 999px; background: rgba(232,180,80,0.16); border: 1px solid rgba(232,180,80,0.45); color: #f6d58f; }
 .hs .play { color: var(--hs-gold); }
-.hs .coin { position: absolute; top: 20px; right: 20px; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
-  background: radial-gradient(circle at 35% 30%, #fff3c4 0 12%, #e8b450 38%, #a8721f 100%); color: #2a1b08; font-family: "Bree Serif", Georgia, serif; font-size: 1.6rem;
-  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), 0 4px 10px rgba(0,0,0,0.5); }
+.hs .coin { position: absolute; top: 22px; right: 26px; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #fff6d2 0 12%, #f0be5c 40%, #a8721f 100%); color: #2a1b08; font-family: "Bree Serif", Georgia, serif; font-size: 1.9rem;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255, 240, 200, 0.35), 0 0 0 5px rgba(232, 180, 80, 0.16), 0 0 34px rgba(255, 180, 80, 0.55); }
 /* block tile: pixel grass-and-dirt, square corners, a pixel title */
 .mc { border-radius: 0; color: var(--mc-ink); image-rendering: pixelated;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.78) 82%), url(__GRASS__) 0 0 / 56px 56px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20,12,6,0.5) 50%, rgba(20,12,6,0.8) 100%), url(minecraft/tile.svg) top center / 100% auto no-repeat #8b5d3a;
   box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px rgba(255,255,255,0.18), 0 10px 0 rgba(0,0,0,0.35); }
 .mc:hover { box-shadow: inset 0 0 0 3px #0f0f10, inset 0 0 0 5px var(--mc-green), 0 12px 0 rgba(0,0,0,0.35); }
 .mc h3 { font-family: "Monocraft", ui-monospace, monospace; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); text-shadow: 3px 3px 0 #1f1f1f; }

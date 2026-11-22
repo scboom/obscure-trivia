@@ -163,17 +163,24 @@ def power_q(cars, brand=None):
     win = clear_winner(cars, lambda c: c["ps"], lambda c: c["fuzz"], most, gap=1.03, min_diff=15)
     if not win:
         return False
+    # the newest car being the most powerful (or the oldest the least) is allowed about 1 time in 4,
+    # the same as a random guess, so the years don't point to the answer either way
     years = [c["year"] for c in cars]
-    if (most and win["year"] >= max(years)) or (not most and win["year"] <= min(years)):
+    obvious = (most and win["year"] >= max(years)) or (not most and win["year"] <= min(years))
+    if obvious and OBVIOUS[0] >= 0.25 * (len(Q["power"]) + 1):
         return False
     label = (lambda c: c["short"]) if brand else (lambda c: c["long"])
     who = f"Which of these {PLURAL[brand]}" if brand else "Which of these cars"
     q = f"{who} has the {'most' if most else 'least'} stock horsepower?"
     x = "Maker's figures: " + " · ".join(f"{label(c)} {c['disp']}" for c in sorted(cars, key=lambda c: -c["ps"])) + "."
     key = "power:" + "|".join(sorted(c["id"] for c in cars)) + (":most" if most else ":least")
-    return add("power", key, q, label(win), [label(c) for c in cars if c is not win], x, ks=[c["id"] for c in cars])
+    ok = add("power", key, q, label(win), [label(c) for c in cars if c is not win], x, ks=[c["id"] for c in cars])
+    if ok and obvious:
+        OBVIOUS[0] += 1
+    return ok
 
 
+OBVIOUS = [0]
 by_brand = collections.defaultdict(list)
 for c in CARS:
     by_brand[c["brand"]].append(c)
