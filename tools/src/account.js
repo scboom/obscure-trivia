@@ -1,6 +1,7 @@
 // Obscure Trivia coins and accounts: one coin count for the whole site.
-// Not signed in: coins live in this browser. Signed in: they live in the account on the server, so they're never lost,
-// and every change is queued here first (with an id, so a retry can't count twice) and sent as soon as the server answers.
+// Not signed in: coins live in this browser (and anyone can edit those, so they can't be bet in blackjack).
+// Signed in: they live in the account on the server, which is the only thing that can change them. A right quiz answer is
+// queued here as a claim for that one question of that one game, and sent as soon as the server answers.
 (() => {
   const CONFIG = /*ACCOUNTS*/{ url: "", key: "" }/*END*/;
   const LOCAL = "ot-coins", ACCT = "ot-acct", QUEUE = "ot-acct-queue";
@@ -16,10 +17,9 @@
   const emit = () => listeners.forEach(f => { try { f(); } catch (e) {} });
 
   const local = () => Math.max(0, parseInt(ls.get(LOCAL), 10) || 0);
-  const queue = () => { const q = json(QUEUE, []); return Array.isArray(q) ? q.filter(x => x && typeof x.id === "string" && Number.isFinite(x.d)) : []; };
+  const queue = () => { const q = json(QUEUE, []); return Array.isArray(q) ? q.filter(x => x && typeof x.code === "string" && Number.isInteger(x.q)) : []; };
   const saveAcct = () => ls.set(ACCT, acct ? JSON.stringify(acct) : null);
-  function get() { return acct ? Math.max(0, (acct.coins || 0) + queue().reduce((n, x) => n + x.d, 0)) : local(); }
-  const opId = () => { const r = new Uint32Array(3); crypto.getRandomValues(r); return Array.from(r, x => x.toString(36)).join(""); };
+  function get() { return acct ? Math.max(0, (acct.coins || 0) + queue().length) : local(); }
 
   // ------------------------------------------------------------ the server (Supabase: only the functions in accounts.sql can be called)
   class Fail extends Error { constructor(code, msg) { super(msg || code); this.code = code; } }
@@ -30,7 +30,12 @@
     wrong: "That username and password don't match.",
     locked: "Too many wrong passwords. Wait 15 minutes, then try again.",
     session: "You've been signed out. Sign in again to use your account.",
-    offline: "Couldn't reach the server. Check your internet connection and try again."
+    offline: "Couldn't reach the server. Check your internet connection and try again.",
+    slow: "Slow down a little: coins are being claimed faster than anyone can answer.",
+    bj_bet: "You don't have enough coins for that bet.",
+    bj_coins: "You don't have enough coins for that.",
+    bj_busy: "Finish the hand you're playing first.",
+    bj_state: "That move isn't allowed right now."
   };
   async function rpc(fn, args) {
     if (!enabled) throw new Fail("offline", "Accounts aren't switched on yet.");
@@ -48,7 +53,7 @@
   }
   // the account's token stopped working: keep any coins that hadn't been sent yet, in this browser
   function dropSession() {
-    const left = queue().reduce((n, x) => n + x.d, 0);
+    const left = queue().length;
     acct = null; saveAcct(); ls.set(QUEUE, null);
     if (left > 0) ls.set(LOCAL, String(local() + left));
     emit();
@@ -61,47 +66,65 @@
     flushing = (async () => {
       try {
         for (let op = queue()[0]; op && acct; op = queue()[0]) {
-          const res = await rpc("ot_coins", { p_token: acct.token, p_delta: op.d, p_op: op.id });
-          acct.coins = res.coins; saveAcct();
-          ls.set(QUEUE, JSON.stringify(queue().filter(x => x.id !== op.id)));
-          emit();
+          const drop = () => ls.set(QUEUE, JSON.stringify(queue().filter(x => !(x.code === op.code && x.q === op.q))));
+          try {
+            const res = await rpc("ot_earn", { p_token: acct.token, p_code: op.code, p_q: op.q });
+            acct.coins = res.coins; saveAcct(); drop(); emit();
+          } catch (e) {
+            if (e.code !== "error") throw e;
+            drop(); emit();                    // a claim the server won't take (a bad one) is dropped, not retried forever
+          }
         }
       } catch (e) {
         if (e.code === "session") dropSession();
-        else { clearTimeout(retry); retry = setTimeout(() => { retry = 0; flush(); }, 15000); }   // offline: try again in a bit
+        else { clearTimeout(retry); retry = setTimeout(() => { retry = 0; flush(); }, e.code === "slow" ? 5000 : 15000); }   // offline or too fast: try again in a bit
       }
     })().finally(() => { flushing = null; if (acct && queue().length && !retry) flush(); });
     return flushing;
   }
+  // this browser's own coins (not signed in); an account's coins can't be changed from here
   function add(d) {
     d = Math.trunc(Number(d) || 0);
-    if (!d) return get();
-    if (acct) { ls.set(QUEUE, JSON.stringify(queue().concat({ id: opId(), d }))); emit(); flush(); }
-    else { ls.set(LOCAL, String(Math.max(0, local() + d))); emit(); }
+    if (!d || acct) return get();
+    ls.set(LOCAL, String(Math.max(0, local() + d))); emit();
     return get();
+  }
+  // 1 coin for a right answer to question q of game `code`
+  function earn(code, q) {
+    if (!acct) return add(1);
+    if (!queue().some(x => x.code === code && x.q === q)) ls.set(QUEUE, JSON.stringify(queue().concat({ code, q })));
+    emit(); flush();
+    return get();
+  }
+  // a call that acts for the signed-in account (blackjack); the coins it reports are the account's real balance
+  async function call(fn, args) {
+    if (!acct) throw new Fail("session", MESSAGES.session);
+    try {
+      const res = await rpc(fn, Object.assign({ p_token: acct.token }, args || {}));
+      if (res && Number.isFinite(res.coins)) { acct.coins = res.coins; saveAcct(); emit(); }
+      return res;
+    } catch (e) { if (e.code === "session") dropSession(); throw e; }
   }
   async function refresh() {
     if (!acct) return;
     try { const res = await rpc("ot_me", { p_token: acct.token }); acct.coins = res.coins; acct.user = res.username; saveAcct(); emit(); flush(); }
     catch (e) { if (e.code === "session") dropSession(); }
   }
-  // signing in or up moves this browser's coins into the account, so nothing is left behind
+  // making an account brings this browser's coins along (up to 500: browser coins can be edited, so no more than that)
   function start(res) {
     acct = { token: res.token, user: res.username, coins: res.coins };
     saveAcct(); ls.set(QUEUE, null); emit();
   }
   async function signUp(username, password) {
-    const moved = local();
+    const here = local(), moved = Math.min(here, 500);
     const res = await rpc("ot_signup", { p_username: String(username).trim(), p_password: String(password), p_coins: moved });
-    ls.set(LOCAL, "0"); start(res);
-    return { moved };
+    ls.set(LOCAL, String(here - moved)); start(res);
+    return { moved: res.coins };
   }
   async function signIn(username, password) {
     const res = await rpc("ot_login", { p_username: String(username).trim(), p_password: String(password) });
-    const moved = local();
     start(res);
-    if (moved > 0) { ls.set(LOCAL, "0"); add(moved); await flush(); }
-    return { moved };
+    return { moved: 0 };
   }
   async function signOut() {
     if (!acct) return;
@@ -120,7 +143,7 @@
   if (acct) refresh();
 
   window.OTCoins = {
-    enabled, get, add, refresh, signUp, signIn, signOut,
+    enabled, get, add, earn, call, refresh, signUp, signIn, signOut, local,
     user: () => (acct ? acct.user : null),
     pending: () => (acct ? queue().length : 0),
     on: f => listeners.add(f), off: f => listeners.delete(f)

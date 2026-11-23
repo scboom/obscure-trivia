@@ -264,10 +264,11 @@ a { color: inherit; }
       <p class="err" id="form-err" role="alert"></p>
     </form>
     <p class="hint">There's no email address, so a forgotten password can't be reset. Write it down somewhere safe.</p>
+    <p class="hint">Your account's coins can only be won: 1 for every right quiz answer, and in blackjack. Nothing else can change them, which keeps them fair for everyone.</p>
   </section>
   <p class="foot"><a href="../">← All quizzes</a></p>
 </div>
-<script src="../assets/account.js?v=2df1a62d9d"></script>
+<script src="../assets/account.js?v=e4c5904b9b"></script>
 <script>
 (() => {
   const C = window.OTCoins, $ = id => document.getElementById(id);
@@ -281,10 +282,9 @@ a { color: inherit; }
       $("acct-user").textContent = u; $("acct-coins").textContent = C.get().toLocaleString();
       const n = C.pending(); $("acct-pending").textContent = n ? `${n} coin change${n === 1 ? " is" : "s are"} waiting to reach your account.` : "";
     } else {
-      const here = C.get();
-      $("move-note").hidden = !here;
-      $("move-note").textContent = mode === "new" ? `The ${here.toLocaleString()} coin${here === 1 ? "" : "s"} in this browser will move into your new account.`
-        : `The ${here.toLocaleString()} coin${here === 1 ? "" : "s"} in this browser will be added to your account.`;
+      const here = C.get(), moving = Math.min(here, 500);
+      $("move-note").hidden = !here || mode !== "new";
+      $("move-note").textContent = `The ${moving.toLocaleString()} coin${moving === 1 ? "" : "s"} in this browser will move into your new account` + (here > 500 ? " (up to 500 can move)." : ".");
     }
   }
   function setMode(m) {
@@ -309,7 +309,7 @@ a { color: inherit; }
       const r = mode === "new" ? await C.signUp(u, p) : await C.signIn(u, p);
       $("p").value = "";
       $("acct-moved").hidden = !r.moved;
-      $("acct-moved").textContent = r.moved ? `${r.moved.toLocaleString()} coin${r.moved === 1 ? "" : "s"} from this browser ${mode === "new" ? "moved into" : "added to"} your account.` : "";
+      $("acct-moved").textContent = r.moved ? `${r.moved.toLocaleString()} coin${r.moved === 1 ? "" : "s"} from this browser moved into your account.` : "";
     } catch (err) { $("form-err").textContent = err.message; }
     busy = false; $("submit").disabled = false; $("submit").textContent = was;
     show();

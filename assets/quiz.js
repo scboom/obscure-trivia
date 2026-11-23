@@ -78,7 +78,7 @@ function payCoin(code, k) {
   delete m[code]; m[code] = (had | bit) >>> 0;                 // newest games last; only the latest 300 are remembered
   Object.keys(m).slice(0, -300).forEach(c => delete m[c]);
   store(PAID_KEY, JSON.stringify(m));
-  window.OTCoins.add(1);
+  window.OTCoins.earn(code, k);
   return true;
 }
 function walletHtml() {
