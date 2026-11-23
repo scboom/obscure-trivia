@@ -62,12 +62,13 @@ function encodeAnswers(arr) { return S.qs.map((_, k) => (arr[k] === null || arr[
 function decodeAnswers(str) { return [...String(str || "")].slice(0, LEN).map(ch => { const n = LET.indexOf(ch); return n < 0 ? null : n; }); }
 function scoreOf(arr) { return arr.reduce((n, a, k) => n + (S.qs[k] && a === S.qs[k].correct ? 1 : 0), 0); }
 
-// ------------------------------------------------------------ coins: 1 for every right answer, in any quiz or game, saved in this browser
-// Every quiz on the site shares the same count. Each question of each game pays once, even after a reload or rejoin.
+// ------------------------------------------------------------ coins: 1 for every right answer, in any quiz or game
+// The count itself lives in assets/account.js (this browser, or the player's account). Each question of each game pays once,
+// even after a reload or rejoin.
 const COIN_KEY = "ot-coins", PAID_KEY = "ot-coins-paid";
 const COIN_SVG = `<svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg>`;
 let walletOpen = false, walletBump = false;
-function coinCount() { const n = parseInt(store(COIN_KEY), 10); return Number.isFinite(n) && n > 0 ? n : 0; }
+const coinCount = () => window.OTCoins.get();
 function paidMap() { try { const m = JSON.parse(store(PAID_KEY) || "{}"); return m && typeof m === "object" && !Array.isArray(m) ? m : {}; } catch (e) { return {}; } }
 function coinsFor(code) { let x = (paidMap()[code] || 0) >>> 0, n = 0; while (x) { n += x & 1; x >>>= 1; } return n; }
 function payCoin(code, k) {
@@ -77,7 +78,7 @@ function payCoin(code, k) {
   delete m[code]; m[code] = (had | bit) >>> 0;                 // newest games last; only the latest 300 are remembered
   Object.keys(m).slice(0, -300).forEach(c => delete m[c]);
   store(PAID_KEY, JSON.stringify(m));
-  store(COIN_KEY, String(coinCount() + 1));
+  window.OTCoins.add(1);
   return true;
 }
 function walletHtml() {
@@ -85,13 +86,19 @@ function walletHtml() {
   walletBump = false;
   return `<div class="wallet-wrap" id="wallet-wrap">
     <button class="wallet${bump ? " bump" : ""}" id="wallet" aria-expanded="${walletOpen}" aria-label="${n.toLocaleString()} coin${n === 1 ? "" : "s"}. What are coins?">${COIN_SVG}<span class="wallet-n">${n.toLocaleString()}</span>${bump ? `<span class="plus1" aria-hidden="true">+1</span>` : ""}</button>
-    ${walletOpen ? `<div class="wallet-pop" role="note"><b>${n.toLocaleString()} coin${n === 1 ? "" : "s"}</b><span>You get 1 coin for every right answer, in every quiz and game on Obscure Trivia. Your coins are saved in this browser.</span></div>` : ""}
+    ${walletOpen ? `<div class="wallet-pop" role="note"><b>${n.toLocaleString()} coin${n === 1 ? "" : "s"}</b><span>You get 1 coin for every right answer, in every quiz and game on Obscure Trivia.</span>${accountLine()}</div>` : ""}
   </div>`;
+}
+function accountLine() {
+  const C = window.OTCoins, user = C.user(), link = `${QUIZ.hub}account/`;
+  if (user) return `<span>Saved in your account, <b>${esc(user)}</b>. <a href="${link}">Account</a></span>`;
+  if (!C.enabled) return `<span>Your coins are saved in this browser.</span>`;
+  return `<span>Saved in this browser only.</span><a class="btn gold wallet-cta" href="${link}">Make an account to keep them safe</a>`;
 }
 function refreshWallet() { const el = $("#wallet-wrap"); if (el) { el.outerHTML = walletHtml(); bindWallet(); } }
 function bindWallet() { const b = $("#wallet"); if (b) b.onclick = e => { e.stopPropagation(); walletOpen = !walletOpen; refreshWallet(); }; }
 document.addEventListener("click", e => { if (walletOpen && !e.target.closest("#wallet-wrap")) { walletOpen = false; refreshWallet(); } });
-window.addEventListener("storage", e => { if (e.key === COIN_KEY) refreshWallet(); });   // coins won in another tab
+window.OTCoins.on(() => refreshWallet());   // coins changed here, in another tab, or by the account server
 
 // ------------------------------------------------------------ party emotes: 3 random ones per player, different every game
 const EMOTES = ["😂", "😭", "🫣", "😳", "😮‍💨", "😡", "🥱", "🤢"];

@@ -2,8 +2,11 @@
 // The password is never stored in the page or in this repository: it comes from the LOCKED_PASSWORD environment variable.
 // The page only holds a salt, an IV and the AES-256-GCM ciphertext; the browser derives the key with PBKDF2 (SHA-256).
 //
-//   LOCKED_PASSWORD=… node locked.js seal SRC_DIR OUT.html   encrypt SRC_DIR/lab.html, lab.css and lab.js into the page
-//   LOCKED_PASSWORD=… node locked.js open IN.html OUT_DIR    decrypt the page back into lab.html, lab.css and lab.js to edit them
+// There is no "remember me": the password is needed every time the page is opened, and nothing is saved after unlocking.
+//
+//   LOCKED_PASSWORD=… node locked.js seal SRC_DIR OUT.html   encrypt the files listed in SRC_DIR/lab.json into the page
+//   LOCKED_PASSWORD=… node locked.js open IN.html OUT_DIR    decrypt the page back into those files to edit them
+//   NEW_SALT=1 makes a new salt (and so a new key) instead of keeping the old one
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -31,16 +34,23 @@ if (cmd === 'open') {
   try { bundle = JSON.parse(Buffer.concat([d.update(raw.subarray(0, raw.length - 16)), d.final()]).toString('utf8')); }
   catch (e) { console.error('wrong password'); process.exit(1); }
   fs.mkdirSync(b, { recursive: true });
-  for (const [k, f] of [['html', 'lab.html'], ['css', 'lab.css'], ['js', 'lab.js']]) fs.writeFileSync(path.join(b, f), bundle[k]);
+  const files = bundle.files || { 'lab.html': bundle.html, 'lab.css': bundle.css, 'lab.js': bundle.js };
+  for (const [f, text] of Object.entries(files)) fs.writeFileSync(path.join(b, path.basename(f)), text);
   console.log('opened', a, '->', b);
   process.exit(0);
 }
 
-// seal: keep the old salt so a browser that chose "keep this device unlocked" stays unlocked after an update
+// seal: the salt stays the same between updates unless NEW_SALT is set
 const old = readSeal(b);
-const salt = old && old.iter === ITER ? Buffer.from(old.salt, 'base64') : crypto.randomBytes(16);
+const salt = old && old.iter === ITER && !process.env.NEW_SALT ? Buffer.from(old.salt, 'base64') : crypto.randomBytes(16);
 const iv = crypto.randomBytes(12);
-const bundle = { v: 1, html: fs.readFileSync(path.join(a, 'lab.html'), 'utf8'), css: fs.readFileSync(path.join(a, 'lab.css'), 'utf8'), js: fs.readFileSync(path.join(a, 'lab.js'), 'utf8') };
+const manifest = JSON.parse(fs.readFileSync(path.join(a, 'lab.json'), 'utf8'));
+const read = f => fs.readFileSync(path.join(a, f), 'utf8');
+const files = { 'lab.json': read('lab.json') };
+for (const f of [manifest.html, ...manifest.css, ...manifest.js]) files[f] = read(f);
+const bundle = { v: 2, files, html: read(manifest.html), css: manifest.css.map(read).join('\n'), js: manifest.js.map(read).join('\n;\n') };
+const accountJs = path.join(path.dirname(b), '..', 'assets', 'account.js');
+const stamp = fs.existsSync(accountJs) ? crypto.createHash('md5').update(fs.readFileSync(accountJs)).digest('hex').slice(0, 8) : '1';
 const c = crypto.createCipheriv('aes-256-gcm', keyFor(salt, ITER), iv);
 const data = Buffer.concat([c.update(JSON.stringify(bundle), 'utf8'), c.final(), c.getAuthTag()]);
 const seal = JSON.stringify({ v: 1, alg: 'PBKDF2-SHA256/AES-256-GCM', iter: ITER, salt: salt.toString('base64'), iv: iv.toString('base64'), data: data.toString('base64') });
@@ -104,7 +114,6 @@ a { color: inherit; }
       <input type="text" name="username" value="Obscure Trivia locked area" autocomplete="username" hidden>
       <div class="pw"><input class="input" id="pw" type="password" autocomplete="current-password" aria-label="Password" placeholder="Password" required>
         <button class="btn" type="button" id="peek" aria-pressed="false">Show</button></div>
-      <label class="check"><input type="checkbox" id="keep"> Keep this device unlocked</label>
       <button class="btn gold" type="submit" id="go">Unlock</button>
       <p class="err" id="err" role="alert"></p>
     </form>
@@ -113,18 +122,17 @@ a { color: inherit; }
   <main class="lab" id="lab" hidden></main>
 </div>
 <script id="sealed" type="application/json">${seal}</script>
+<script src="../assets/account.js?v=${stamp}"></script>
 <script>
 (() => {
   const SEAL = JSON.parse(document.getElementById("sealed").textContent);
-  const KEY = "ot-lab-key";
   const $ = id => document.getElementById(id);
   const bytes = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-  const b64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
-  const forget = () => { try { localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); } catch (e) {} };
-  const remember = (raw, keep) => { const v = JSON.stringify({ salt: SEAL.salt, k: raw }); try { (keep ? localStorage : sessionStorage).setItem(KEY, v); } catch (e) {} };
+  // nothing is ever remembered: clear what an older version of this page may have saved
+  try { localStorage.removeItem("ot-lab-key"); sessionStorage.removeItem("ot-lab-key"); } catch (e) {}
   async function derive(pw) {
     const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
-    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: bytes(SEAL.salt), iterations: SEAL.iter, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
+    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: bytes(SEAL.salt), iterations: SEAL.iter, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
   }
   async function unseal(key) {
     const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: bytes(SEAL.iv) }, key, bytes(SEAL.data));
@@ -135,7 +143,7 @@ a { color: inherit; }
     $("lab").innerHTML = bundle.html; $("gate").hidden = true; $("lab").hidden = false; $("relock").hidden = false;
     new Function(bundle.js)();
   }
-  $("relock").onclick = () => { forget(); location.reload(); };
+  $("relock").onclick = () => location.reload();
   $("peek").onclick = () => { const p = $("pw"), on = p.type === "password"; p.type = on ? "text" : "password"; $("peek").textContent = on ? "Hide" : "Show"; $("peek").setAttribute("aria-pressed", String(on)); };
   if (!(window.crypto && crypto.subtle)) { $("err").textContent = "This browser can't open the locked area. Try an up-to-date Chrome, Safari, Firefox or Edge."; $("go").disabled = true; return; }
   $("form").onsubmit = async e => {
@@ -143,24 +151,18 @@ a { color: inherit; }
     const pw = $("pw").value.trim();
     if (!pw) return;
     $("go").disabled = true; $("go").textContent = "Unlocking…"; $("err").textContent = "";
-    try {
-      const key = await derive(pw), bundle = await unseal(key);
-      remember(b64(await crypto.subtle.exportKey("raw", key)), $("keep").checked);
-      show(bundle);
-    } catch (err) {
-      $("err").textContent = "That password isn't right. Check it and try again.";
-      $("pw").select();
-    }
+    let bundle = null;
+    try { bundle = await unseal(await derive(pw)); }
+    catch (err) { $("err").textContent = "That password isn't right. Check it and try again."; $("pw").select(); }
     $("go").disabled = false; $("go").textContent = "Unlock";
+    if (!bundle) return;
+    $("pw").value = "";
+    try { show(bundle); } catch (err) { $("lab").insertAdjacentHTML("afterbegin", '<p class="err">Part of the locked area failed to start: ' + String(err.message).replace(/[<&]/g, "") + '</p>'); }
   };
-  // opened before in this tab (or on this device): no need to type it again
-  (async () => {
-    let saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem(KEY) || localStorage.getItem(KEY) || "null"); } catch (e) {}
-    if (!saved || saved.salt !== SEAL.salt || typeof saved.k !== "string") { if (saved) forget(); $("pw").focus(); return; }
-    try { show(await unseal(await crypto.subtle.importKey("raw", bytes(saved.k), "AES-GCM", false, ["decrypt"]))); }
-    catch (e) { forget(); $("pw").focus(); }
-  })();
+  // coming back with the Back button shows the lock again, never the open page
+  window.addEventListener("pagehide", () => { $("lab").innerHTML = ""; });
+  window.addEventListener("pageshow", e => { if (e.persisted) location.reload(); });
+  $("pw").focus();
 })();
 </script>
 </body>

@@ -592,10 +592,19 @@ shutil.copy(os.path.join(SRC, "quiz.css"), os.path.join(OUT, "assets", "quiz.css
 with open(os.path.join(OUT, "assets", "quiz.css"), "a", encoding="utf-8") as f:
     f.write("\n" + BASE_CSS)
 shutil.copy(os.path.join(SRC, "engine.js"), os.path.join(OUT, "assets", "quiz.js"))
+# accounts: the Supabase project's address and public key (safe to publish). Empty until the project exists.
+ACCOUNTS = {"url": os.environ.get("ACCOUNTS_URL", ""), "key": os.environ.get("ACCOUNTS_KEY", "")}
+if not ACCOUNTS["url"] and os.path.exists(os.path.join(SRC, "accounts.json")):
+    ACCOUNTS = json.load(open(os.path.join(SRC, "accounts.json")))
+acc_js = open(os.path.join(SRC, "account.js"), encoding="utf-8").read()
+a, b = acc_js.index("/*ACCOUNTS*/"), acc_js.index("/*END*/")
+acc_js = acc_js[:a] + "/*ACCOUNTS*/" + json.dumps({"url": ACCOUNTS.get("url", ""), "key": ACCOUNTS.get("key", "")}) + acc_js[b:]
+open(os.path.join(OUT, "assets", "account.js"), "w", encoding="utf-8").write(acc_js)
 
 def stamp(path):
     return hashlib.sha1(open(path, "rb").read()).hexdigest()[:10]
 V_CSS, V_JS = stamp(os.path.join(OUT, "assets", "quiz.css")), stamp(os.path.join(OUT, "assets", "quiz.js"))
+V_ACC = stamp(os.path.join(OUT, "assets", "account.js"))
 for qz in QUIZZES:
     qz["config"]["others"] = {l: "../" + o["dir"] + "/" for o in QUIZZES if o is not qz for l in [o["config"]["letter"]] + o.get("aliases", [])}
     # every quiz a host can move their party to (this one included)
@@ -633,6 +642,7 @@ for qz in QUIZZES:
   <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
 </div>
 <script>window.QUIZ = {json.dumps(cfg)};</script>
+<script src="../assets/account.js?v={V_ACC}"></script>
 <script src="../assets/quiz.js?v={V_JS}"></script>
 </body>
 </html>
@@ -693,6 +703,15 @@ a { color: inherit; }
   font-size: 0.88rem; line-height: 1.4; }
 .wallet-pop[hidden] { display: none; }
 .wallet-pop b { color: var(--ink); font-size: 0.95rem; }
+.wallet-pop a { color: #f7c02b; font-weight: 700; }
+.acct-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink);
+  text-decoration: none; font-weight: 700; font-size: 0.92rem; white-space: nowrap; }
+.acct-link span { max-width: 12ch; overflow: hidden; text-overflow: ellipsis; }
+.acct-link[hidden] { display: none; }
+.acct-link.in svg { color: #7ad155; }
+.acct-link:hover { border-color: var(--muted); }
+.top .brand { white-space: nowrap; }
+@media (max-width: 460px) { .acct-link { padding: 0; width: 36px; height: 36px; justify-content: center; } .acct-link span { display: none; } }
 .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; transform: rotate(-6deg); }
 .brand { font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0; }
 .hero { display: flex; flex-direction: column; gap: 12px; }
@@ -857,7 +876,8 @@ hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, G
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>
     <div class="wallet-wrap" id="wallet-wrap"><button class="wallet" id="wallet" aria-expanded="false" aria-controls="wallet-pop" aria-label="Your coins. What are coins?"><svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg><span class="wallet-n" id="wallet-n">0</span></button>
-      <div class="wallet-pop" id="wallet-pop" role="note" hidden><b id="wallet-t">0 coins</b><span>You get 1 coin for every right answer, in every quiz and game here. Your coins are saved in this browser.</span></div></div></header>
+      <div class="wallet-pop" id="wallet-pop" role="note" hidden><b id="wallet-t">0 coins</b><span>You get 1 coin for every right answer, in every quiz and game here.</span><span id="wallet-acct"></span></div></div>
+    <a class="acct-link" id="acct-link" href="account/" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg><span id="acct-name">Sign in</span></a></header>
   <section class="hero">
     <span class="eyebrow">Free trivia quizzes</span>
     <h2>Trivia for the details only real players know.</h2>
@@ -887,14 +907,19 @@ hub += """<div class="wrap">
   <p class="foot"><a class="locked-link" href="locked/"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg>Locked area</a></p>
   <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, Supercell, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
+<script src="assets/account.js?v=""" + V_ACC + """"></script>
 <script>
 (() => {
   // coins: the same count the quiz pages keep, 1 for every right answer
   const wn = document.getElementById("wallet-n"), wt = document.getElementById("wallet-t"), wb = document.getElementById("wallet"), wp = document.getElementById("wallet-pop");
-  const showCoins = () => { let n = 0; try { n = Math.max(0, parseInt(localStorage.getItem("ot-coins"), 10) || 0); } catch (e) {}
-    wn.textContent = n.toLocaleString(); wt.textContent = n.toLocaleString() + (n === 1 ? " coin" : " coins"); wb.setAttribute("aria-label", wt.textContent + ". What are coins?"); };
+  const C = window.OTCoins, wa = document.getElementById("wallet-acct"), al = document.getElementById("acct-link");
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const showCoins = () => { const n = C.get(), u = C.user();
+    wn.textContent = n.toLocaleString(); wt.textContent = n.toLocaleString() + (n === 1 ? " coin" : " coins"); wb.setAttribute("aria-label", wt.textContent + ". What are coins?");
+    wa.innerHTML = u ? `Saved in your account, <b>${esc(u)}</b>. <a href="account/">Account</a>` : C.enabled ? `Saved in this browser only. <a href="account/">Make an account</a> to keep them safe.` : "Your coins are saved in this browser.";
+    al.hidden = !C.enabled; document.getElementById("acct-name").textContent = u || "Sign in"; al.setAttribute("aria-label", u ? "Your account, " + u : "Sign in"); al.classList.toggle("in", !!u); };
   showCoins();
-  window.addEventListener("storage", e => { if (e.key === "ot-coins") showCoins(); });
+  C.on(showCoins);
   window.addEventListener("pageshow", showCoins);
   wb.addEventListener("click", e => { e.stopPropagation(); wp.hidden = !wp.hidden; wb.setAttribute("aria-expanded", String(!wp.hidden)); });
   document.addEventListener("click", e => { if (!wp.hidden && !e.target.closest("#wallet-wrap")) { wp.hidden = true; wb.setAttribute("aria-expanded", "false"); } });
@@ -932,6 +957,120 @@ nf += """<div class="wrap nf">
 </html>
 """
 open(os.path.join(OUT, "404.html"), "w", encoding="utf-8").write(nf)
+
+COIN_SVG = '<svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg>'
+acc_page = head("Your account – Obscure Trivia", "Make an Obscure Trivia account with a username and password, so your coins are never lost.", SITE + "account/",
+                "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700", "#121117", hub_fav,
+                extra_head=f"""<meta name="robots" content="noindex"><style>{hub_css}
+.acct {{ max-width: 520px; }}
+.card {{ background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 14px; }}
+.card p {{ margin: 0; }}
+.tabs {{ display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; }}
+.tabs button {{ border: 0; border-radius: 9px; padding: 10px; font: inherit; font-weight: 700; background: none; color: var(--muted); cursor: pointer; }}
+.tabs button[aria-selected="true"] {{ background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }}
+.field {{ display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 0.92rem; }}
+.field .input, .pw .input {{ flex: 1 1 auto; font-weight: 400; }}
+.field > .input {{ flex: none; }}
+.pw {{ display: flex; gap: 8px; }}
+.btn.ghost {{ background: var(--panel); color: var(--ink); border: 1px solid var(--line); }}
+.btn:disabled {{ opacity: 0.6; cursor: default; }}
+.hint {{ color: var(--muted); font-size: 0.86rem; }}
+.note {{ color: #f7c02b; font-size: 0.92rem; font-weight: 600; }}
+.big {{ display: flex; align-items: center; gap: 12px; font-family: var(--f-display); font-weight: 800; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums; }}
+.big .coin-ico {{ width: 44px; height: 44px; }}
+.coin-ico {{ display: block; flex: none; }}
+.ok {{ color: #7ad155; font-weight: 700; }}
+.err {{ color: #f08a7c; font-size: 0.92rem; min-height: 1.3em; }}
+[hidden] {{ display: none !important; }}</style>""")
+acc_page += """<div class="wrap acct">
+  <header class="top"><a class="mark" href="../" aria-hidden="true" tabindex="-1" style="text-decoration:none">?</a><a class="brand" href="../" style="text-decoration:none">Obscure Trivia</a></header>
+  <section class="hero"><span class="eyebrow">Your account</span><h2 id="acct-h">Keep your coins safe</h2>
+    <p id="acct-p">Make an account with just a username and a password. Your coins are saved in it, so you never lose them, and you can sign in on any device.</p></section>
+  <section class="card" id="acct-off" hidden><p>Accounts aren't switched on yet. Until they are, your coins are saved in this browser.</p></section>
+  <section class="card" id="acct-in" hidden>
+    <span class="eyebrow">Signed in as <b id="acct-user" style="color:var(--ink)"></b></span>
+    <div class="big">""" + COIN_SVG + """<span id="acct-coins">0</span></div>
+    <p class="hint">Your coins are saved in your account. Sign in with the same username and password on another phone or computer to use them there.</p>
+    <p class="ok" id="acct-moved" hidden></p>
+    <p class="hint" id="acct-pending"></p>
+    <div class="row"><a class="btn" href="../" style="text-decoration:none">Play a quiz</a><button class="btn ghost" id="signout">Sign out</button></div>
+    <p class="err" id="out-err" role="alert"></p>
+  </section>
+  <section class="card" id="acct-out" hidden>
+    <div class="tabs" role="tablist"><button role="tab" id="tab-new" aria-selected="true">Create account</button><button role="tab" id="tab-in" aria-selected="false">Sign in</button></div>
+    <form id="acct-form" autocomplete="on" style="display:flex;flex-direction:column;gap:14px">
+      <label class="field">Username<input class="input" id="u" name="username" autocomplete="username" maxlength="20" autocapitalize="off" spellcheck="false" required></label>
+      <label class="field">Password<span class="pw"><input class="input" id="p" name="password" type="password" autocomplete="new-password" maxlength="72" required>
+        <button class="btn ghost" type="button" id="peek" aria-pressed="false">Show</button></span></label>
+      <p class="hint" id="hint">Usernames are 3 to 20 letters, numbers or underscores. Passwords need at least 8 characters.</p>
+      <p class="note" id="move-note" hidden></p>
+      <button class="btn" type="submit" id="submit">Create account</button>
+      <p class="err" id="form-err" role="alert"></p>
+    </form>
+    <p class="hint">There's no email address, so a forgotten password can't be reset. Write it down somewhere safe.</p>
+  </section>
+  <p class="foot"><a href="../">← All quizzes</a></p>
+</div>
+<script src="../assets/account.js?v=""" + V_ACC + """"></script>
+<script>
+(() => {
+  const C = window.OTCoins, $ = id => document.getElementById(id);
+  let mode = "new", busy = false;
+  function show() {
+    const u = C.user();
+    $("acct-off").hidden = C.enabled; $("acct-in").hidden = !C.enabled || !u; $("acct-out").hidden = !C.enabled || !!u;
+    $("acct-h").textContent = u ? "Your account" : "Keep your coins safe";
+    $("acct-p").hidden = !!u;
+    if (u) {
+      $("acct-user").textContent = u; $("acct-coins").textContent = C.get().toLocaleString();
+      const n = C.pending(); $("acct-pending").textContent = n ? `${n} coin change${n === 1 ? " is" : "s are"} waiting to reach your account.` : "";
+    } else {
+      const here = C.get();
+      $("move-note").hidden = !here;
+      $("move-note").textContent = mode === "new" ? `The ${here.toLocaleString()} coin${here === 1 ? "" : "s"} in this browser will move into your new account.`
+        : `The ${here.toLocaleString()} coin${here === 1 ? "" : "s"} in this browser will be added to your account.`;
+    }
+  }
+  function setMode(m) {
+    mode = m;
+    $("tab-new").setAttribute("aria-selected", String(m === "new")); $("tab-in").setAttribute("aria-selected", String(m === "in"));
+    $("submit").textContent = m === "new" ? "Create account" : "Sign in";
+    $("p").autocomplete = m === "new" ? "new-password" : "current-password";
+    $("hint").hidden = m !== "new"; $("form-err").textContent = ""; show();
+  }
+  $("tab-new").onclick = () => setMode("new");
+  $("tab-in").onclick = () => setMode("in");
+  $("peek").onclick = () => { const p = $("p"), on = p.type === "password"; p.type = on ? "text" : "password"; $("peek").textContent = on ? "Hide" : "Show"; $("peek").setAttribute("aria-pressed", String(on)); };
+  $("acct-form").onsubmit = async e => {
+    e.preventDefault();
+    if (busy) return;
+    const u = $("u").value.trim(), p = $("p").value;
+    if (mode === "new" && !/^[A-Za-z0-9_]{3,20}$/.test(u)) { $("form-err").textContent = "Usernames are 3 to 20 letters, numbers or underscores."; return; }
+    if (mode === "new" && (p.length < 8 || p.length > 72)) { $("form-err").textContent = "Passwords need 8 to 72 characters."; return; }
+    busy = true; $("submit").disabled = true; $("form-err").textContent = "";
+    const was = $("submit").textContent; $("submit").textContent = mode === "new" ? "Creating…" : "Signing in…";
+    try {
+      const r = mode === "new" ? await C.signUp(u, p) : await C.signIn(u, p);
+      $("p").value = "";
+      $("acct-moved").hidden = !r.moved;
+      $("acct-moved").textContent = r.moved ? `${r.moved.toLocaleString()} coin${r.moved === 1 ? "" : "s"} from this browser ${mode === "new" ? "moved into" : "added to"} your account.` : "";
+    } catch (err) { $("form-err").textContent = err.message; }
+    busy = false; $("submit").disabled = false; $("submit").textContent = was;
+    show();
+  };
+  $("signout").onclick = async () => {
+    $("out-err").textContent = "";
+    try { await C.signOut(); $("acct-moved").hidden = true; setMode("in"); } catch (err) { $("out-err").textContent = err.message; }
+  };
+  C.on(show);
+  setMode("new");
+})();
+</script>
+</body>
+</html>
+"""
+os.makedirs(os.path.join(OUT, "account"), exist_ok=True)
+open(os.path.join(OUT, "account", "index.html"), "w", encoding="utf-8").write(acc_page)
 
 today = datetime.date.today().isoformat()
 urls = [SITE] + [SITE + q["dir"] + "/" for q in QUIZZES]

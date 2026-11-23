@@ -316,6 +316,8 @@ button { cursor: pointer; }
   border-radius: var(--r); border: 1px solid var(--line); background: var(--panel-fill); background-color: var(--panel); color: var(--muted);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45); display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; line-height: 1.4; text-align: left; }
 .wallet-pop b { color: var(--ink); font-size: 0.95rem; }
+.wallet-pop a:not(.btn) { color: var(--accent-text); font-weight: 700; }
+.wallet-pop .wallet-cta { margin-top: 6px; justify-content: center; text-align: center; text-decoration: none; font-size: 0.9rem; padding: 9px 12px; }
 .earned { display: flex; align-items: center; gap: 8px; margin: 0; font-weight: 800; color: var(--accent-text); }
 .earned .coin-ico { width: 24px; height: 24px; }
 /* in a quiz on a phone the coins sit under the score, clear of the timer */
