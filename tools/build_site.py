@@ -847,6 +847,8 @@ a { color: inherit; }
 .btn { border-radius: 10px; border: 0; padding: 12px 20px; font: inherit; font-weight: 800; background: var(--ink); color: var(--bg); cursor: pointer; }
 .err { color: #f08a7c; font-size: 0.9rem; min-height: 1.3em; margin: 0; }
 .foot { color: var(--faint); font-size: 0.82rem; text-align: center; margin: 0; }
+.locked-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); }
+.locked-link:hover { color: var(--ink); border-color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
 hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
@@ -882,6 +884,7 @@ hub += """<div class="wrap">
     </form>
     <p class="err" id="err" role="alert"></p>
   </section>
+  <p class="foot"><a class="locked-link" href="locked/"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg>Locked area</a></p>
   <p class="foot">More quizzes on the way. Fan-made, not affiliated with Blizzard, Mojang, Microsoft, Epic Games, Supercell, the Premier League, FIFA, UEFA, any car maker or any record label.</p>
 </div>
 <script>
