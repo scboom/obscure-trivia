@@ -297,3 +297,47 @@ button { cursor: pointer; }
 .clockbox.compact .clock-label { display: none; }
 .clockbox.compact .clock { font-size: 1.15rem; }
 .clockbox.compact .clock-bar { width: 44px; height: 4px; }
+
+/* coins: a small purse in the header on every screen; +1 floats up for each right answer */
+.hud { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.wallet-wrap { position: relative; }
+.wallet { position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 6px; border-radius: var(--r-pill);
+  border: 1px solid var(--chip-line); background: var(--chip-bg); color: var(--chip-ink, var(--ink)); font-weight: 800; font-size: 0.95rem; line-height: 1.2;
+  font-variant-numeric: tabular-nums; }
+.wallet:hover, .wallet[aria-expanded="true"] { border-color: var(--line-hover); }
+.coin-ico { width: 22px; height: 22px; flex: none; display: block; }
+.wallet.bump .coin-ico { animation: coinflip .7s ease; }
+.wallet.bump .wallet-n { animation: pop .45s cubic-bezier(.2,1.4,.4,1); }
+.plus1 { position: absolute; right: 4px; top: -6px; font-size: 0.85rem; font-weight: 800; color: var(--good); pointer-events: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35); animation: plusrise 1.2s ease-out forwards; }
+@keyframes plusrise { 0% { opacity: 0; transform: translateY(8px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px); } }
+@keyframes coinflip { 50% { transform: rotateY(180deg) scale(1.25); } }
+.wallet-pop { position: absolute; z-index: 30; right: 0; top: calc(100% + 8px); width: min(260px, calc(100vw - 32px)); padding: 10px 12px;
+  border-radius: var(--r); border: 1px solid var(--line); background: var(--panel-fill); background-color: var(--panel); color: var(--muted);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45); display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; line-height: 1.4; text-align: left; }
+.wallet-pop b { color: var(--ink); font-size: 0.95rem; }
+.earned { display: flex; align-items: center; gap: 8px; margin: 0; font-weight: 800; color: var(--accent-text); }
+.earned .coin-ico { width: 24px; height: 24px; }
+/* in a quiz on a phone the coins sit under the score, clear of the timer */
+@media (max-width: 560px) { .top.quiz-top .hud { flex-direction: column; align-items: flex-end; gap: 4px; }
+  .top.quiz-top .wallet { padding: 3px 10px 3px 5px; font-size: 0.85rem; } .top.quiz-top .coin-ico { width: 18px; height: 18px; } }
+
+/* party emotes: three buttons in the bottom corner; anyone's emote pops up above them for a couple of seconds */
+.emotebar { position: fixed; z-index: 22; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  display: flex; gap: 6px; padding: 5px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--panel-fill); background-color: var(--panel);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4); }
+.emote-btn { width: 46px; height: 46px; padding: 0; border-radius: 50%; border: 1px solid var(--chip-line); background: var(--chip-bg); display: grid; place-items: center;
+  font-size: 1.55rem; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; transition: transform .12s ease, opacity .2s; }
+.emote-btn:hover { transform: scale(1.1); border-color: var(--line-hover); }
+.emote-btn:active { transform: scale(0.9); }
+.emotebar.cool .emote-btn { opacity: 0.4; pointer-events: none; }
+body.has-emotes { padding-bottom: 96px; }
+.emotefx { position: fixed; z-index: 23; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(max(12px, env(safe-area-inset-bottom, 0px)) + 70px);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px; pointer-events: none; max-width: calc(100vw - 24px); }
+.emote-pop { display: flex; align-items: center; gap: 8px; padding: 5px 14px 5px 7px; border-radius: var(--r-pill); border: 1px solid var(--line);
+  background: var(--panel-fill); background-color: var(--panel); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); animation: emotein 2.7s ease forwards; }
+.emote-e { font-size: 2.1rem; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.emote-who { font-weight: 800; font-size: 0.92rem; max-width: 14ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@keyframes emotein { 0% { opacity: 0; transform: translateY(16px) scale(0.6); } 10% { opacity: 1; transform: translateY(0) scale(1.08); }
+  18% { transform: scale(1); } 80% { opacity: 1; transform: translateY(-4px); } 100% { opacity: 0; transform: translateY(-16px); } }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

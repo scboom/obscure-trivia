@@ -682,6 +682,17 @@ body { margin: 0; background: radial-gradient(ellipse at 20% -10%, #2a2636 0%, t
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .top { display: flex; align-items: center; gap: 12px; }
+/* coins: the same purse the quiz pages show */
+.wallet-wrap { position: relative; margin-left: auto; }
+.wallet { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px 5px 6px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel);
+  color: var(--ink); font: inherit; font-weight: 800; font-size: 0.98rem; line-height: 1.2; font-variant-numeric: tabular-nums; cursor: pointer; }
+.wallet:hover, .wallet[aria-expanded="true"] { border-color: #f7c02b; }
+.coin-ico { width: 22px; height: 22px; flex: none; display: block; }
+.wallet-pop { position: absolute; z-index: 30; right: 0; top: calc(100% + 8px); width: min(260px, calc(100vw - 32px)); padding: 10px 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--muted); box-shadow: 0 14px 32px rgba(0,0,0,0.5); display: flex; flex-direction: column; gap: 4px;
+  font-size: 0.88rem; line-height: 1.4; }
+.wallet-pop[hidden] { display: none; }
+.wallet-pop b { color: var(--ink); font-size: 0.95rem; }
 .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; transform: rotate(-6deg); }
 .brand { font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; margin: 0; }
 .hero { display: flex; flex-direction: column; gap: 12px; }
@@ -842,7 +853,9 @@ hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, G
            "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
-  <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1></header>
+  <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>
+    <div class="wallet-wrap" id="wallet-wrap"><button class="wallet" id="wallet" aria-expanded="false" aria-controls="wallet-pop" aria-label="Your coins. What are coins?"><svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg><span class="wallet-n" id="wallet-n">0</span></button>
+      <div class="wallet-pop" id="wallet-pop" role="note" hidden><b id="wallet-t">0 coins</b><span>You get 1 coin for every right answer, in every quiz and game here. Your coins are saved in this browser.</span></div></div></header>
   <section class="hero">
     <span class="eyebrow">Free trivia quizzes</span>
     <h2>Trivia for the details only real players know.</h2>
@@ -873,6 +886,15 @@ hub += """<div class="wrap">
 </div>
 <script>
 (() => {
+  // coins: the same count the quiz pages keep, 1 for every right answer
+  const wn = document.getElementById("wallet-n"), wt = document.getElementById("wallet-t"), wb = document.getElementById("wallet"), wp = document.getElementById("wallet-pop");
+  const showCoins = () => { let n = 0; try { n = Math.max(0, parseInt(localStorage.getItem("ot-coins"), 10) || 0); } catch (e) {}
+    wn.textContent = n.toLocaleString(); wt.textContent = n.toLocaleString() + (n === 1 ? " coin" : " coins"); wb.setAttribute("aria-label", wt.textContent + ". What are coins?"); };
+  showCoins();
+  window.addEventListener("storage", e => { if (e.key === "ot-coins") showCoins(); });
+  window.addEventListener("pageshow", showCoins);
+  wb.addEventListener("click", e => { e.stopPropagation(); wp.hidden = !wp.hidden; wb.setAttribute("aria-expanded", String(!wp.hidden)); });
+  document.addEventListener("click", e => { if (!wp.hidden && !e.target.closest("#wallet-wrap")) { wp.hidden = true; wb.setAttribute("aria-expanded", "false"); } });
   const routes = """ + json.dumps({l: q["dir"] + "/" for q in QUIZZES for l in [q["config"]["letter"]] + q.get("aliases", [])}) + """;
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {

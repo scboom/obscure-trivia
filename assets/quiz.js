@@ -62,6 +62,88 @@ function encodeAnswers(arr) { return S.qs.map((_, k) => (arr[k] === null || arr[
 function decodeAnswers(str) { return [...String(str || "")].slice(0, LEN).map(ch => { const n = LET.indexOf(ch); return n < 0 ? null : n; }); }
 function scoreOf(arr) { return arr.reduce((n, a, k) => n + (S.qs[k] && a === S.qs[k].correct ? 1 : 0), 0); }
 
+// ------------------------------------------------------------ coins: 1 for every right answer, in any quiz or game, saved in this browser
+// Every quiz on the site shares the same count. Each question of each game pays once, even after a reload or rejoin.
+const COIN_KEY = "ot-coins", PAID_KEY = "ot-coins-paid";
+const COIN_SVG = `<svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg>`;
+let walletOpen = false, walletBump = false;
+function coinCount() { const n = parseInt(store(COIN_KEY), 10); return Number.isFinite(n) && n > 0 ? n : 0; }
+function paidMap() { try { const m = JSON.parse(store(PAID_KEY) || "{}"); return m && typeof m === "object" && !Array.isArray(m) ? m : {}; } catch (e) { return {}; } }
+function coinsFor(code) { let x = (paidMap()[code] || 0) >>> 0, n = 0; while (x) { n += x & 1; x >>>= 1; } return n; }
+function payCoin(code, k) {
+  if (!code || k < 0 || k >= LEN) return false;
+  const m = paidMap(), had = (m[code] || 0) >>> 0, bit = (1 << k) >>> 0;
+  if (had & bit) return false;
+  delete m[code]; m[code] = (had | bit) >>> 0;                 // newest games last; only the latest 300 are remembered
+  Object.keys(m).slice(0, -300).forEach(c => delete m[c]);
+  store(PAID_KEY, JSON.stringify(m));
+  store(COIN_KEY, String(coinCount() + 1));
+  return true;
+}
+function walletHtml() {
+  const n = coinCount(), bump = walletBump;
+  walletBump = false;
+  return `<div class="wallet-wrap" id="wallet-wrap">
+    <button class="wallet${bump ? " bump" : ""}" id="wallet" aria-expanded="${walletOpen}" aria-label="${n.toLocaleString()} coin${n === 1 ? "" : "s"}. What are coins?">${COIN_SVG}<span class="wallet-n">${n.toLocaleString()}</span>${bump ? `<span class="plus1" aria-hidden="true">+1</span>` : ""}</button>
+    ${walletOpen ? `<div class="wallet-pop" role="note"><b>${n.toLocaleString()} coin${n === 1 ? "" : "s"}</b><span>You get 1 coin for every right answer, in every quiz and game on Obscure Trivia. Your coins are saved in this browser.</span></div>` : ""}
+  </div>`;
+}
+function refreshWallet() { const el = $("#wallet-wrap"); if (el) { el.outerHTML = walletHtml(); bindWallet(); } }
+function bindWallet() { const b = $("#wallet"); if (b) b.onclick = e => { e.stopPropagation(); walletOpen = !walletOpen; refreshWallet(); }; }
+document.addEventListener("click", e => { if (walletOpen && !e.target.closest("#wallet-wrap")) { walletOpen = false; refreshWallet(); } });
+window.addEventListener("storage", e => { if (e.key === COIN_KEY) refreshWallet(); });   // coins won in another tab
+
+// ------------------------------------------------------------ party emotes: 3 random ones per player, different every game
+const EMOTES = ["😂", "😭", "🫣", "😳", "😮‍💨", "😡", "🥱", "🤢"];
+const EMOTE_GAP = 2000;
+let emoteKey = "", emoteLast = 0;
+const emoteSeen = new Set(), emoteFrom = new Map();
+function myEmotes() { return S.code && S.pid ? shuffle(EMOTES.slice(), mulberry32(xmur3("emotes:" + S.code + ":" + S.pid)())).slice(0, 3) : []; }
+function emotesOn() { return MULTI(S.mode) && roomState === "on" && !!transport && !S.past && /^(ready|quiz|waiting|reveal|results)$/.test(S.screen); }
+function syncEmotes() {
+  const on = emotesOn();
+  document.body.classList.toggle("has-emotes", on);
+  let bar = document.getElementById("emotebar");
+  if (!on) { if (bar) bar.remove(); emoteKey = ""; return; }
+  const key = S.code + ":" + S.pid;
+  if (bar && emoteKey === key) return;
+  if (bar) bar.remove();
+  emoteKey = key;
+  bar = document.createElement("div");
+  bar.id = "emotebar"; bar.className = "emotebar" + (Date.now() - emoteLast < EMOTE_GAP ? " cool" : "");
+  bar.setAttribute("role", "group"); bar.setAttribute("aria-label", "Emotes");
+  bar.innerHTML = myEmotes().map(e => `<button class="emote-btn" data-emote="${e}" aria-label="Send ${e}">${e}</button>`).join("");
+  bar.querySelectorAll("[data-emote]").forEach(b => b.onclick = () => sendEmote(b.dataset.emote));
+  document.body.appendChild(bar);
+}
+function sendEmote(e) {
+  if (!EMOTES.includes(e) || !myEmotes().includes(e) || !emotesOn() || Date.now() - emoteLast < EMOTE_GAP) return;
+  emoteLast = Date.now();
+  transport.emote(e);
+  showEmote(e, S.nick || "You", "you-t");
+  const bar = document.getElementById("emotebar");
+  if (bar) { bar.classList.add("cool"); setTimeout(() => bar.classList.remove("cool"), EMOTE_GAP); }
+}
+function onEmote(id, text) {
+  let m = null; try { m = JSON.parse(text); } catch (e) { return; }
+  if (!m || !EMOTES.includes(m.e) || typeof m.n !== "string" || m.n.length > 16 || emoteSeen.has(id + m.n)) return;
+  emoteSeen.add(id + m.n); if (emoteSeen.size > 300) emoteSeen.clear();      // each relay delivers it once: show it once
+  const p = pals.get(id);
+  if (!p || !emotesOn() || Date.now() - (emoteFrom.get(id) || 0) < 1000) return;
+  emoteFrom.set(id, Date.now());
+  showEmote(m.e, p.name, "pal-name " + colorOf(id));
+}
+function showEmote(e, name, cls) {
+  let fx = document.getElementById("emotefx");
+  if (!fx) { fx = document.createElement("div"); fx.id = "emotefx"; fx.className = "emotefx"; fx.setAttribute("aria-live", "polite"); document.body.appendChild(fx); }
+  const b = document.createElement("div");
+  b.className = "emote-pop";
+  b.innerHTML = `<span class="emote-e" aria-hidden="true">${e}</span><span class="emote-who ${cls}" aria-hidden="true">${esc(name)}</span><span class="sr">${esc(name)}: ${e}</span>`;
+  fx.appendChild(b);
+  while (fx.children.length > 5) fx.firstChild.remove();
+  setTimeout(() => b.remove(), 2700);
+}
+
 // ------------------------------------------------------------ live party
 // Two ways to reach a friend: the claude.ai room (when the page runs there), otherwise a
 // free public MQTT relay. Each player shares { code, name, ans, done }. On the relay every
@@ -147,7 +229,7 @@ function partnerList() {
   if (S.compare && !live.some(p => p.name === S.compare.name)) live.push(S.compare);
   return live;
 }
-function setLive(state) { if (roomState !== state) { roomState = state; refreshPartnerBits(); } }
+function setLive(state) { if (roomState !== state) { roomState = state; refreshPartnerBits(); syncEmotes(); } }
 function withTimeout(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]); }
 
 function loadMqtt() {
@@ -221,6 +303,8 @@ async function viaMqtt(code, my) {
         setPal("m:" + id, st);
       } else if (parts.length === 2 && parts[1] === "on") {
         text === "1" ? markBack("m:" + id) : markLeft("m:" + id);
+      } else if (parts.length === 2 && parts[1] === "emote" && buf.length < 200) {
+        onEmote("m:" + id, text);
       }
     });
     c.on("error", () => {});
@@ -230,6 +314,7 @@ async function viaMqtt(code, my) {
   return {
     send() { const s = JSON.stringify(myState()); clients.forEach(c => { if (c.connected) c.publish(stateTopic, s, pubOpts); }); },
     meta(m) { const s = JSON.stringify(m); clients.forEach(c => { if (c.connected) c.publish(base + "meta", s, pubOpts); }); },
+    emote(e) { const s = JSON.stringify({ e, n: Math.random().toString(36).slice(2, 10) }); clients.forEach(c => { if (c.connected) c.publish(base + pid + "/emote", s, { qos: 0, retain: false }); }); },
     // the host moving the party on to a new game; resolves once a relay has it (or after 1.5 s)
     next(m) {
       const s = JSON.stringify(m), opts = { qos: 1, retain: true, ...(v5 ? { properties: { messageExpiryInterval: 3600 } } : {}) };
@@ -504,7 +589,9 @@ function startParty() {
 }
 function answer(k) {
   if (S.answers[S.cur] !== null) return;
-  S.answers[S.cur] = k; pushPresence(); render();
+  S.answers[S.cur] = k;
+  if (k === S.qs[S.cur].correct && payCoin(S.code, S.cur)) walletBump = true;
+  pushPresence(); render();
   const nb = $("#next"); nb && nb.focus({ preventScroll: true });
 }
 function next() {
@@ -651,9 +738,9 @@ function header() {
   const showScore = S.screen === "quiz" || S.screen === "results";
   return `<header class="top${S.screen === "quiz" ? " quiz-top" : ""}">
     <button class="brand" id="go-home" aria-label="${esc(QUIZ.short)} quiz home"><span class="coin" aria-hidden="true">${QUIZ.icon}</span><h1>${esc(QUIZ.short)}</h1></button>
-    ${S.screen === "quiz" ? `${clockHtml()}<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
-      : showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>`
-      : S.screen === "home" ? `<div class="row top-links"><a class="btn copy" href="${QUIZ.hub}">All quizzes</a><button class="btn copy" id="recent-btn">Recent quizzes</button></div>` : ""}
+    ${S.screen === "quiz" ? clockHtml() : ""}
+    <div class="hud">${walletHtml()}${showScore ? `<div class="score" aria-label="Score"><span class="coin" aria-hidden="true"></span><span>${myScore()} / ${LEN}</span></div>` : ""}</div>
+    ${S.screen === "home" ? `<div class="row top-links"><a class="btn copy" href="${QUIZ.hub}">All quizzes</a><button class="btn copy" id="recent-btn">Recent quizzes</button></div>` : ""}
   </header>`;
 }
 function homeView() {
@@ -930,6 +1017,7 @@ function resultsView() {
     <span class="eyebrow">${S.past ? "Past game" : "Results"} · code <span class="codechip">${esc(S.code)}</span> · ${fmtTime(elapsedSec())}</span>
     <h2 style="font-size:1.9rem">${verdict}</h2>
     ${S.timedOut ? `<p class="small muted" style="margin:0">Time ran out. Unanswered questions count as wrong.</p>` : ""}
+    ${S.past ? "" : `<p class="earned">${COIN_SVG}<span>+${coinsFor(S.code)} coin${coinsFor(S.code) === 1 ? "" : "s"} from this game</span></p>`}
     ${pals.length ? `<ol class="ranking">${tiles.join("")}</ol><p class="small muted" style="margin:0">Same score? The faster time ranks higher.</p>` : `<div class="tally">${tiles.join("")}</div>`}
     <div class="facts">${Object.entries(byGroup).map(([g, [a, b]]) => `<span class="chip">${esc(g)} ${a}/${b}</span>`).join("")}</div>
     <div class="row">
@@ -962,6 +1050,8 @@ function render() {
   app.innerHTML = v() + feedTab();
   bind();
   bindFeed();
+  bindWallet();
+  syncEmotes();
   saveSession();
 }
 function refreshPartnerBits() {
