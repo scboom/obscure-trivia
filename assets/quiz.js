@@ -345,6 +345,57 @@ async function viaMqtt(code, my) {
     }
   };
 }
+// before joining a typed code: is there an open lobby with that code, and is its host still there?
+// "ok" (join), "none" (no such game, or its host left), "started" (too late to join) or "offline" (couldn't ask)
+async function probeGame(code) {
+  let mqtt;
+  try { mqtt = await withTimeout(loadMqtt(), 12000); } catch (e) { return "offline"; }
+  const cfg = window.TT_MQTT || {}, v5 = cfg.protocolVersion !== 4, base = QUIZ.topic + code + "/";
+  return new Promise(resolve => {
+    let meta = null, done = false, connected = false, settled = 0;
+    const on = {};
+    const urls = cfg.brokers || BROKERS;
+    const verdict = () => !meta ? "none" : meta.started ? "started" : on[meta.host] === "1" ? "ok" : "none";
+    const clients = urls.map(url => mqtt.connect(url, { protocolVersion: v5 ? 5 : 4, clientId: "tt_probe_" + Math.random().toString(36).slice(2, 10),
+      clean: true, connectTimeout: 8000, reconnectPeriod: 0 }));
+    const finish = v => { if (done) return; done = true; clearTimeout(limit); clients.forEach(c => { try { c.end(true); } catch (e) {} }); resolve(v); };
+    const limit = setTimeout(() => finish(connected ? verdict() : "offline"), 8000);
+    clients.forEach(c => {
+      // retained messages arrive right after subscribing: give each relay a moment to deliver them
+      c.on("connect", () => { connected = true; c.subscribe(base + "#", { qos: 1 }, () => setTimeout(() => { settled++; const v = verdict(); if (v !== "none" || settled >= urls.length) finish(v); }, 1500)); });
+      c.on("message", (topic, buf) => {
+        if (!topic.startsWith(base) || buf.length > 2000) return;
+        const parts = topic.slice(base.length).split("/");
+        if (parts[0] === "meta" && parts.length === 1 && buf.length) { try { const m = JSON.parse(buf.toString()); if (m && typeof m === "object") meta = m; } catch (e) {} }
+        else if (parts.length === 2 && parts[1] === "on") on[parts[0]] = buf.toString();
+        if (verdict() === "ok") finish("ok");
+      });
+      c.on("error", () => {});
+    });
+  });
+}
+const JOIN_ERR = {
+  none: "Incorrect code. There's no game with that code right now.",
+  started: "That game has already started, so nobody else can join it.",
+  offline: "Couldn't reach the party server. Check your internet connection and try again."
+};
+let joining = false;
+// a code someone typed: only join a game that's really there
+async function joinTyped(c) {
+  if (joining) return;
+  joining = true;
+  const btn = $("#joinform button"), err = $("#joinerr");
+  if (btn) { btn.disabled = true; btn.textContent = "Checking…"; }
+  if (err) err.textContent = "";
+  const r = await probeGame(c);
+  joining = false;
+  if (S.screen !== "home") return;                       // they went somewhere else meanwhile
+  if (r === "ok") { startGame("party", c, "guest"); return; }
+  const b2 = $("#joinform button"), e2 = $("#joinerr"), jc = $("#joincode");
+  if (b2) { b2.disabled = false; b2.textContent = "Join"; }
+  if (jc && !jc.value) jc.value = c;
+  if (e2) e2.textContent = JOIN_ERR[r] || JOIN_ERR.none;
+}
 async function connectLive() {
   if (!MULTI(S.mode) || !S.code) return;
   const my = ++gen, code = S.code;
@@ -1089,7 +1140,7 @@ function bind() {
     if (!validCode(c)) { $("#joinerr").textContent = `Codes are 5 letters or numbers, like ${QUIZ.letter}7QX2. Check it and try again.`; return; }
     const other = otherQuizFor(c);
     if (other) { location.href = other + "?join=" + c; return; }
-    startGame("party", c, "guest");
+    joinTyped(c);
   };
   on("begin", startParty);
   on("retry", joinRoom);
@@ -1148,7 +1199,9 @@ function start(saved) {
     if (join && validCode(join) && !otherQuizFor(join)) {
       try { history.replaceState(null, "", location.pathname); } catch (e) {}
       feedConnect();
-      if (S.nick) { startGame("party", join, "guest"); expectHost(h); render(); return; }
+      // following the host to the next game (h = the host): straight in. A typed code (from the home page): check it first.
+      if (S.nick && h) { startGame("party", join, "guest"); expectHost(h); render(); return; }
+      if (S.nick) { render(); const jc = $("#joincode"); if (jc) jc.value = join; joinTyped(join); return; }
       render();
       const jc = $("#joincode"); if (jc) jc.value = join;
       const n = $("#nick"); n && n.focus();
