@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clash Royale Quiz – Obscure Trivia</title>
+<meta name="description" content="A free Clash Royale quiz: 20 random questions per game on every card&#x27;s Elixir cost, rarity and arena, card descriptions, stats, Evolutions, Heroes, Champions, arenas and game mechanics. Play solo or in party mode with up to 6 players.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/clash-royale/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Clash Royale Quiz – Obscure Trivia">
+<meta property="og:description" content="A free Clash Royale quiz: 20 random questions per game on every card&#x27;s Elixir cost, rarity and arena, card descriptions, stats, Evolutions, Heroes, Champions, arenas and game mechanics. Play solo or in party mode with up to 6 players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/clash-royale/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/clash-royale/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#123488">
+<link rel="icon" href="crown.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Baloo+2:wght@500;600;700;800&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Clash Royale Quiz", "url": "https://scboom.github.io/obscure-trivia/clash-royale/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "A free Clash Royale quiz: 20 random questions per game on every card's Elixir cost, rarity and arena, card descriptions, stats, Evolutions, Heroes, Champions, arenas and game mechanics. Play solo or in party mode with up to 6 players.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/obscure-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/obscure-trivia/"}, {"@type": "ListItem", "position": 2, "name": "Clash Royale Quiz", "item": "https://scboom.github.io/obscure-trivia/clash-royale/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css?v=a7a8205ea2">
+<style>
+:root {
+  --bg: #123488;
+  --bg-art: radial-gradient(ellipse at 50% -8%, rgba(255, 201, 40, 0.28), transparent 46%),
+    radial-gradient(ellipse at 0% 100%, rgba(230, 74, 216, 0.2), transparent 45%), radial-gradient(ellipse at 100% 100%, rgba(255, 77, 94, 0.16), transparent 45%),
+    linear-gradient(180deg, #1e4cb8 0%, #123488 45%, #0b1f5c 100%);
+  --panel: #10296e; --panel-fill: linear-gradient(180deg, rgba(22, 54, 140, 0.95), rgba(13, 34, 96, 0.96)); --panel-2: #1c3f99;
+  --panel-shadow: 0 14px 34px rgba(4, 10, 40, 0.5), inset 0 0 0 2px rgba(255, 201, 40, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --line: rgba(255, 255, 255, 0.18); --line-hover: rgba(255, 201, 40, 0.8); --ink: #ffffff; --muted: #c8d5fa; --faint: #9db0e6; --placeholder: #8aa0dc;
+  --accent: #ffc928; --accent-ink: #2b1a00; --accent-text: #ffd552; --accent-hover: #ffd94f; --accent-edge: #ffe48a; --accent-shadow: 0 4px 0 #b37b00;
+  --chip-bg: rgba(255, 255, 255, 0.1); --chip-line: rgba(255, 255, 255, 0.28); --chip-ink: #ffffff;
+  --pal: #f06be6; --pal-ink: #2e0029; --pal-bg: rgba(240, 107, 230, 0.15); --pal-line: rgba(240, 107, 230, 0.5);
+  --good: #47e08c; --good-ink: #02290f; --good-bg: rgba(71, 224, 140, 0.15); --bad: #ff5a68; --bad-ink: #3a0610; --bad-bg: rgba(255, 90, 104, 0.16);
+  --inset: #0a1c52; --opt: rgba(20, 48, 128, 0.94); --tile: rgba(16, 40, 108, 0.94);
+  --card-bg: #ffffff; --card-ink: #10296e; --card-line: #c7d4f7; --card-inner: #e9eefc; --card-strong: #000000;
+  --f-display: "Titan One", "Baloo 2", system-ui, sans-serif; --f-body: "Baloo 2", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 12px; --r-panel: 16px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.01em; }
+.hero h2 { font-size: clamp(2rem, 7.2vw, 2.9rem); line-height: 1.08; text-shadow: 0 3px 0 rgba(6, 16, 60, 0.6); }
+.qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.28; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; font-size: 1.08rem; }
+.btn.gold { font-size: 1.1rem; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35); }
+@media (max-width: 430px) { .brand { gap: 8px; } .brand h1 { font-size: 1.12rem; } }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 10px; background: url("crown.svg") center 55% / 84% auto no-repeat, linear-gradient(180deg, #2a5fd6, #163d99);
+  box-shadow: 0 0 0 2px #ffc928, 0 3px 8px rgba(0, 0, 0, 0.35); }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true"></span><h1>Clash Royale</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Clash Royale quiz</span>
+    <h2>Think you know every card? Go for three crowns.</h2>
+    <p>A free Clash Royale quiz, 20 questions per game: every card&#x27;s Elixir cost, rarity and unlock arena, in-game card descriptions, stats, Evolutions, Heroes and Champions, Trophy Road arenas, card history and game mechanics. Play on your own, or start a party of up to 6 players with a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "royale", "letter": "R", "short": "Clash Royale", "icon": "", "namePh": "e.g. King", "eyebrow": "Clash Royale quiz", "headline": "Think you know every card? Go for three crowns.", "topics": "every card's Elixir cost, rarity and unlock arena, in-game card descriptions, stats, Evolutions, Heroes and Champions, Trophy Road arenas, card history and game mechanics", "foot": "Card facts come from the Clash Royale Wiki (card pages, stat tables, the Arenas, Card Evolution and Heroes pages), up to date as of November 2026. Stats are checked against each card's change history, and stats at the same card level are shown at level 11. Game facts are written by hand. Fan-made quiz, not affiliated with Supercell.", "seed": "obscure-trivia-royale-v1:", "topic": "obscure-trivia/royale/v1/", "recentKey": "ot-recent-royale-v1", "sessionKey": "ot-game-royale", "bank": "questions.json", "hub": "../", "groups": {"cost": "Elixir", "costmost": "Elixir", "costleast": "Elixir", "costone": "Elixir", "rarity": "Rarity", "champpick": "Rarity", "rarpick": "Rarity", "arena": "Arenas", "arenanum": "Arenas", "arenatro": "Arenas", "arenanext": "Arenas", "arenafact": "Arenas", "camp": "Arenas", "quote": "Card descriptions", "speed": "Stats", "target": "Stats", "count": "Stats", "range": "Stats", "hitspeed": "Stats", "hp": "Stats", "dmg": "Stats", "air": "Stats", "spellground": "Stats", "radius": "Stats", "life": "Stats", "deploy": "Stats", "type": "Stats", "spelltime": "Stats", "spellhit": "Stats", "mech": "Mechanics", "spawn": "Mechanics", "spawncount": "Mechanics", "jump": "Mechanics", "evoquote": "Evolutions", "evocycles": "Evolutions", "evohas": "Evolutions", "evoyear": "Evolutions", "evofirst": "Evolutions", "evodesc": "Evolutions", "evofact": "Evolutions", "heroab": "Heroes & Champions", "herodesc": "Heroes & Champions", "herohas": "Heroes & Champions", "heroquote": "Heroes & Champions", "herocost": "Heroes & Champions", "champab": "Heroes & Champions", "champdesc": "Heroes & Champions", "champcost": "Heroes & Champions", "herofact": "Heroes & Champions", "year": "History", "launch": "History", "first": "History", "newest": "History", "fact": "Game facts", "tower": "Game facts"}, "caps": {"Elixir": 3, "Rarity": 2, "Arenas": 3, "Card descriptions": 3, "Stats": 4, "Mechanics": 2, "Evolutions": 2, "Heroes & Champions": 2, "History": 2, "Game facts": 2}, "verdicts": [[19, "Three-crown win!"], [16, "Two crowns. So close!"], [12, "One crown. Not bad!"], [8, "It's a draw..."], [0, "Defeat. Back to the Training Camp!"]], "others": {"H": "../hearthstone/", "M": "../minecraft/", "N": "../fortnite/", "W": "../general-knowledge/", "F": "../football/", "C": "../cars/", "S": "../music/", "T": "../this-or-that/", "B": "../this-or-that/"}, "catalog": [{"letter": "H", "name": "Hearthstone Battlegrounds", "url": "../hearthstone/"}, {"letter": "M", "name": "Minecraft", "url": "../minecraft/"}, {"letter": "N", "name": "OG Fortnite", "url": "../fortnite/"}, {"letter": "R", "name": "Clash Royale", "url": "./"}, {"letter": "W", "name": "General Knowledge", "url": "../general-knowledge/"}, {"letter": "F", "name": "Football", "url": "../football/"}, {"letter": "C", "name": "Cars", "url": "../cars/"}, {"letter": "S", "name": "Music", "url": "../music/"}, {"letter": "T", "name": "This or That", "url": "../this-or-that/"}]};</script>
+<script src="../assets/quiz.js?v=3f027cc495"></script>
+</body>
+</html>

@@ -134,19 +134,19 @@ a { color: inherit; }
 .mu .pill { border-radius: 999px; background: rgba(255, 79, 163, 0.14); border: 1px solid rgba(255, 122, 192, 0.55); color: #ffd2e9; }
 .mu .play { color: #ff8ac6; }
 @media (max-width: 620px) { .mu { min-height: 340px; background-size: auto 40%, auto, auto, auto; } }
-/* random games tile: a game controller on arcade purple with four button-coloured glows */
-.rgm { border-radius: 18px; color: #fff;
-  background: url(random-games/pad.svg) right 20px top 18px / auto 38% no-repeat,
-    radial-gradient(circle at 92% 8%, rgba(255, 205, 41, 0.35), transparent 30%), radial-gradient(circle at 60% 0%, rgba(63, 169, 255, 0.3), transparent 32%),
-    radial-gradient(circle at 100% 100%, rgba(255, 79, 94, 0.3), transparent 36%), radial-gradient(circle at 0% 100%, rgba(51, 209, 122, 0.25), transparent 36%),
-    linear-gradient(180deg, #2a2266 0%, #1b1640 100%);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(255, 205, 41, 0.45); }
-.rgm:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 3px #ffcd29; }
-.rgm h3 { font-family: "Fredoka", "Rubik", sans-serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0; }
-.rgm p { color: #dcd8f7; font-family: "Rubik", system-ui, sans-serif; font-weight: 500; max-width: 31ch; }
-.rgm .pill { border-radius: 999px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 205, 41, 0.55); color: #fff; }
-.rgm .play { color: #ffcd29; font-family: "Fredoka", sans-serif; font-weight: 700; }
-@media (max-width: 620px) { .rgm { min-height: 330px; background-size: auto 34%, auto, auto, auto, auto, auto; } }
+/* clash royale tile: royal blue with a gold border, a crown and a drop of Elixir */
+.roy { border-radius: 18px; color: #fff;
+  background: url(clash-royale/crown.svg) right 22px top 18px / auto 40% no-repeat,
+    radial-gradient(circle at 86% 14%, rgba(255, 201, 40, 0.4), transparent 34%), radial-gradient(circle at 0% 100%, rgba(230, 74, 216, 0.28), transparent 40%),
+    linear-gradient(180deg, #2a5fd6 0%, #163d99 55%, #0e2a74 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 3px rgba(255, 201, 40, 0.75), inset 0 0 0 6px rgba(10, 28, 82, 0.6); }
+.roy:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 4px #ffc928, inset 0 0 0 7px rgba(10, 28, 82, 0.6); }
+.roy h3 { font-family: "Titan One", "Baloo 2", sans-serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0.01em;
+  text-shadow: 0 3px 0 rgba(6, 16, 60, 0.7); }
+.roy p { color: #dce5ff; font-family: "Baloo 2", system-ui, sans-serif; font-weight: 600; max-width: 31ch; }
+.roy .pill { border-radius: 999px; background: rgba(6, 16, 60, 0.4); border: 1px solid rgba(255, 201, 40, 0.6); color: #fff; }
+.roy .play { color: #ffc928; font-family: "Titan One", sans-serif; font-weight: 400; }
+@media (max-width: 620px) { .roy { min-height: 330px; background-size: auto 34%, auto, auto, auto; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -203,7 +203,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/random-games/">Random Games</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>

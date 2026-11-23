@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe680"/>
+      <stop offset="0.55" stop-color="#ffc21a"/>
+      <stop offset="1" stop-color="#d98a00"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset="1" stop-color="#b86f00"/>
+    </linearGradient>
+    <linearGradient id="elixir" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7ae6"/>
+      <stop offset="0.6" stop-color="#d43bd8"/>
+      <stop offset="1" stop-color="#8a1fb0"/>
+    </linearGradient>
+  </defs>
+  <!-- crown -->
+  <path d="M22 132 L14 46 L58 84 L92 26 L126 84 L170 46 L162 132 Z" fill="#7a4300" transform="translate(3 6)"/>
+  <path d="M22 132 L14 46 L58 84 L92 26 L126 84 L170 46 L162 132 Z" fill="url(#gold)" stroke="#8a4f00" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M30 120 L26 66 L58 96 L92 44 L126 96 L158 66 L154 120 Z" fill="#fff" opacity="0.18"/>
+  <circle cx="14" cy="44" r="10" fill="url(#gold)" stroke="#8a4f00" stroke-width="4"/>
+  <circle cx="92" cy="22" r="11" fill="url(#gold)" stroke="#8a4f00" stroke-width="4"/>
+  <circle cx="170" cy="44" r="10" fill="url(#gold)" stroke="#8a4f00" stroke-width="4"/>
+  <rect x="16" y="122" width="152" height="28" rx="8" fill="url(#band)" stroke="#8a4f00" stroke-width="4"/>
+  <circle cx="52" cy="136" r="7" fill="#3f8cff" stroke="#123a8a" stroke-width="3"/>
+  <circle cx="92" cy="136" r="8" fill="#ff3d5a" stroke="#8a0f22" stroke-width="3"/>
+  <circle cx="132" cy="136" r="7" fill="#3f8cff" stroke="#123a8a" stroke-width="3"/>
+  <!-- elixir drop -->
+  <path d="M180 74 C180 74 150 112 150 134 C150 152 164 166 180 166 C196 166 210 152 210 134 C210 112 180 74 180 74 Z" fill="#5a0f78" transform="translate(2 4)"/>
+  <path d="M180 74 C180 74 150 112 150 134 C150 152 164 166 180 166 C196 166 210 152 210 134 C210 112 180 74 180 74 Z" fill="url(#elixir)" stroke="#5a0f78" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M166 130 C166 118 174 106 178 100" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <circle cx="166" cy="142" r="4" fill="#fff" opacity="0.7"/>
+</svg>
