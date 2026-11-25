@@ -463,6 +463,76 @@ h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-displ
                   "A free Clash Royale quiz, 20 questions per game: every card's Elixir cost, rarity and unlock arena, in-game card descriptions, stats, Evolutions, Heroes and Champions, Trophy Road arenas, card history and game mechanics. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "dbd", "dir": "dead-by-daylight", "bank_src": "dbd_questions.json", "extra": [("dbd-hook.svg", "hook.svg")],
+        "title": "Dead by Daylight Quiz – Obscure Trivia",
+        "desc": "A free Dead by Daylight quiz: 20 random questions per game on every Killer and Survivor, their perks, powers and lore, realms and maps, Chapters, add-ons and how the Trials work. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Eater&family=Spectral:ital,wght@0,400;0,600;0,700;1,400",
+        "theme_color": "#0e0b0d",
+        "favicon": "hook.svg",
+        "config": {
+            "id": "dbd", "letter": "D", "short": "Dead by Daylight", "icon": "", "namePh": "e.g. Dwight",
+            "eyebrow": "Dead by Daylight quiz", "headline": "The Entity is watching. Do you know the Fog?",
+            "topics": "every Killer and Survivor, their perks, powers and real names, a little lore, realms and maps, Chapters, add-ons, offerings and how the Trials work",
+            "foot": "Facts come from the Dead by Daylight Wiki (deadbydaylight.wiki.gg): its data tables, the Perks page and every Killer and Survivor page, up to date as of the Terrifier Chapter (24 November 2026). Lore and game-fact questions are written from those pages. Fan-made quiz, not affiliated with Behaviour Interactive.",
+            "seed": "obscure-trivia-dbd-v1:", "topic": "obscure-trivia/dbd/v1/", "recentKey": "ot-recent-dbd-v1", "sessionKey": "ot-game-dbd",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"ksurname": "Killers", "ktitle": "Killers", "ssurname": "Survivors", "krealname": "Killers", "kname": "Killers", "kpower": "Killers", "kpowerof": "Killers", "kweapon": "Killers", "kspeed": "Killers", "kslow": "Killers", "kradius": "Killers", "kdiff": "Killers", "korigin": "Killers", "kchapter": "Killers", "kyear": "Killers", "kfrom": "Killers", "korder": "Killers", "kcount": "Killers", "srole": "Survivors", "srolename": "Survivors", "sorigin": "Survivors", "schapter": "Survivors", "syear": "Survivors", "sfrom": "Survivors", "sorder": "Survivors", "swith": "Survivors", "powner": "Perks", "pdesc": "Perks", "pquote": "Perks", "ppick": "Perks", "pnotmine": "Perks", "pgeneral": "Perks", "pformer": "Perks", "lore": "Lore", "mrealm": "Realms & Maps", "mlandmark": "Realms & Maps", "mchapter": "Realms & Maps", "rloc": "Realms & Maps", "rmaps": "Realms & Maps", "chkiller": "Chapters", "chsurv": "Chapters", "chyear": "Chapters", "chorder": "Chapters", "chfact": "Chapters", "akiller": "Add-ons & Offerings", "aitem": "Add-ons & Offerings", "orealm": "Add-ons & Offerings", "fact": "Game facts"},
+            "caps": {"Killers": 5, "Survivors": 4, "Perks": 5, "Lore": 3, "Realms & Maps": 2, "Chapters": 2, "Add-ons & Offerings": 2, "Game facts": 2},
+            "verdicts": [[19, "You escaped. The Entity is displeased."], [16, "Out through the hatch!"], [12, "Hooked twice, but you made it out."], [8, "Sacrificed to the Entity..."], [0, "Mori'd at the first hook. Back to the campfire!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0e0b0d;
+  --bg-art: radial-gradient(ellipse 90% 55% at 50% -12%, rgba(178, 18, 28, 0.34), transparent 60%),
+    linear-gradient(180deg, #1a1114 0%, #0f0c0e 46%, #0b0a0c 100%);
+  --panel: #1a1215; --panel-fill: linear-gradient(180deg, rgba(32, 22, 26, 0.95), rgba(19, 14, 16, 0.96)); --panel-2: #271b1f;
+  --panel-shadow: 0 14px 34px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(200, 22, 30, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --line: rgba(236, 230, 221, 0.15); --line-hover: rgba(222, 36, 44, 0.8); --ink: #ece6dd; --muted: #bcb1a7; --faint: #91857b; --placeholder: #7d7169;
+  --accent: #c8161e; --accent-ink: #fff5f0; --accent-text: #ff6166; --accent-hover: #de2129; --accent-edge: #ff8084; --accent-shadow: 0 4px 0 #620a0e, 0 0 22px rgba(200, 22, 30, 0.32);
+  --chip-bg: rgba(255, 255, 255, 0.06); --chip-line: rgba(255, 255, 255, 0.2); --chip-ink: #ece6dd;
+  --pal: #9fd8d0; --pal-ink: #03211d; --pal-bg: rgba(159, 216, 208, 0.12); --pal-line: rgba(159, 216, 208, 0.45);
+  --good: #63d690; --good-ink: #03240f; --good-bg: rgba(99, 214, 144, 0.13); --bad: #ff5b61; --bad-ink: #2e0306; --bad-bg: rgba(255, 91, 97, 0.14);
+  --inset: #0a0809; --opt: rgba(30, 21, 24, 0.94); --tile: rgba(25, 18, 21, 0.94);
+  --card-bg: #ece6dd; --card-ink: #1a1215; --card-line: #cfc4b8; --card-inner: #e2d9cd; --card-strong: #000000;
+  --f-display: "Eater", "Creepster", Georgia, serif; --f-body: "Spectral", Georgia, "Times New Roman", serif;
+  --r: 10px; --r-panel: 14px; --r-pill: 999px; --r-key: 6px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+/* the Fog: two slow banks of mist along the bottom, and the Entity's red glow above */
+body::before, body::after { content: ""; position: fixed; left: -10%; right: -10%; bottom: -6%; height: 62%; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 38% 55% at 20% 100%, rgba(190, 196, 204, 0.16), transparent 70%),
+    radial-gradient(ellipse 34% 48% at 62% 100%, rgba(190, 196, 204, 0.12), transparent 70%),
+    radial-gradient(ellipse 30% 42% at 92% 100%, rgba(190, 196, 204, 0.14), transparent 70%); }
+body::after { height: 44%; opacity: 0.8;
+  background: radial-gradient(ellipse 30% 50% at 38% 100%, rgba(170, 178, 188, 0.13), transparent 70%),
+    radial-gradient(ellipse 36% 46% at 80% 100%, rgba(170, 178, 188, 0.1), transparent 70%),
+    radial-gradient(ellipse 26% 40% at 4% 100%, rgba(170, 178, 188, 0.12), transparent 70%); }
+@media (prefers-reduced-motion: no-preference) {
+  body::before { animation: fog-a 38s ease-in-out infinite alternate; }
+  body::after { animation: fog-b 52s ease-in-out infinite alternate; }
+}
+@keyframes fog-a { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
+@keyframes fog-b { from { transform: translateX(5%); } to { transform: translateX(-5%); } }
+.brand h1, .hero h2, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.03em; }
+.hero h2 { font-size: clamp(2.1rem, 7.6vw, 3.1rem); line-height: 1.08; color: #f1ebe2; text-shadow: 0 0 22px rgba(200, 22, 30, 0.45), 0 3px 0 rgba(0, 0, 0, 0.6); }
+.verdict { color: #f1ebe2; text-shadow: 0 0 18px rgba(200, 22, 30, 0.5); }
+h2, h3 { font-family: var(--f-body); font-weight: 700; letter-spacing: 0.01em; }
+.qtext { font-family: var(--f-body); font-weight: 700; font-size: clamp(1.15rem, 4vw, 1.42rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; font-size: 1.08rem; }
+.btn.gold { font-family: var(--f-body); font-weight: 700; font-size: 1.08rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.why { font-style: normal; font-family: var(--f-body); font-size: 0.98rem; }
+@media (max-width: 430px) { .brand { gap: 8px; } .brand h1 { font-size: 1.05rem; letter-spacing: 0.01em; } }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%;
+  background: url("hook.svg") 46% 50% / 84% auto no-repeat, radial-gradient(circle at 50% 35%, #3a1418, #120a0c);
+  box-shadow: 0 0 0 2px #b3141b, 0 0 14px rgba(200, 22, 30, 0.45); }
+""",
+        "tile": {"cls": "dbd", "title": "Dead by Daylight", "art": "",
+                 "blurb": "Killers, Survivors, perks, powers, a little lore, realms and maps. The Entity is watching."},
+        "intro": ("Dead by Daylight quiz", "The Entity is watching. Do you know the Fog?",
+                  "A free Dead by Daylight quiz, 20 questions per game: every Killer and Survivor, their perks, powers and real names, a little lore, realms and maps, Chapters, add-ons, offerings and how the Trials work. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -543,7 +613,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     },
 ]
 # the order tiles appear in on the home page: games first, then everything else
-HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "royale", "world", "football", "cars", "music", "bigger"]
+HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "royale", "dbd", "world", "football", "cars", "music", "bigger"]
 QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -673,7 +743,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1) and Clash Royale, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -821,6 +891,21 @@ a { color: inherit; }
 .roy .pill { border-radius: 999px; background: rgba(6, 16, 60, 0.4); border: 1px solid rgba(255, 201, 40, 0.6); color: #fff; }
 .roy .play { color: #ffc928; font-family: "Titan One", sans-serif; font-weight: 400; }
 @media (max-width: 620px) { .roy { min-height: 330px; background-size: auto 34%, auto, auto, auto; } }
+/* dead by daylight tile: night, the Fog rolling in, the Entity's red glow and a meat hook */
+.dbd { border-radius: 12px; color: #ece6dd;
+  background: url(dead-by-daylight/hook.svg) right 18px top 12px / auto 52% no-repeat,
+    radial-gradient(ellipse 60% 40% at 18% 108%, rgba(200, 205, 212, 0.26), transparent 70%),
+    radial-gradient(ellipse 55% 36% at 78% 106%, rgba(200, 205, 212, 0.2), transparent 70%),
+    radial-gradient(circle at 84% 22%, rgba(200, 22, 30, 0.5), transparent 42%),
+    linear-gradient(180deg, #24151a 0%, #140e11 55%, #0c0a0b 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(222, 36, 44, 0.55), inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #de242c, inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd h3 { font-family: "Eater", Georgia, serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0.03em; max-width: 9ch; line-height: 1.12;
+  text-shadow: 0 0 18px rgba(200, 22, 30, 0.6), 0 3px 0 rgba(0, 0, 0, 0.7); }
+.dbd p { color: #cfc5bb; font-family: "Spectral", Georgia, serif; font-weight: 600; max-width: 31ch; }
+.dbd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(222, 36, 44, 0.6); color: #ece6dd; }
+.dbd .play { color: #ff6166; font-family: "Spectral", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+@media (max-width: 620px) { .dbd { min-height: 330px; background-size: auto 38%, auto, auto, auto, auto; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -870,8 +955,8 @@ a { color: inherit; }
 .locked-link:hover { color: var(--ink); border-color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>

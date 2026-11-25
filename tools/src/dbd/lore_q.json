@@ -1,0 +1,1757 @@
+[
+ {
+  "who": "K01_The_Trapper",
+  "q": "According to the legend, how did Evan MacMillan kill over a hundred workers?",
+  "a": "Sealed them in tunnels with explosives",
+  "o": [
+   "Poisoned the workers' well",
+   "Burned down their barracks",
+   "Flooded the lower mine"
+  ],
+  "x": "Evan acted as the enforcer for his father Archie, whose mind was slowly falling apart. It was never proven.",
+  "evidence": "They never proved that Evan lead over a hundred men into those dark tunnels before detonating the explosives and sealing them to their fate.",
+  "section": "Lore"
+ },
+ {
+  "who": "K01_The_Trapper",
+  "q": "Where was Evan MacMillan's father, Archie, finally found dead?",
+  "a": "In his warehouse basement",
+  "o": [
+   "At the bottom of a mine shaft",
+   "Inside the estate's iron works",
+   "Beside a frozen river"
+  ],
+  "x": "Archie was found dead and abandoned. No record was ever made of what became of Evan himself.",
+  "evidence": "His father is another unsolved puzzle, found in the basement of his own warehouse - dead and abandoned.",
+  "section": "Lore"
+ },
+ {
+  "who": "K02_The_Wraith",
+  "q": "Where did Philip Ojomo work before he vanished?",
+  "a": "Autohaven Wreckers",
+  "o": [
+   "Coldwind Farm",
+   "Gideon Meat Plant",
+   "Crotus Prenn Asylum"
+  ],
+  "x": "It was a small, shady scrap yard where bribed cops looked the other way. Philip fixed cars and ran the crusher.",
+  "evidence": "He was happy as he got offered a job at Autohaven Wreckers. A small scrap yard where bribed cops turned a blind eye for the somewhat shady business that took place.",
+  "section": "Lore"
+ },
+ {
+  "who": "K02_The_Wraith",
+  "q": "What did Philip Ojomo find in the trunk of a car he was about to crush?",
+  "a": "A tied-up young man",
+  "o": [
+   "A bag of stolen cash",
+   "A gun used in a robbery",
+   "A box of police files"
+  ],
+  "x": "His boss then revealed that most crushed cars held a victim, a 'service' sold to certain clients. Philip snapped.",
+  "evidence": "As he opened the trunk he found a young man, gagged and with tied hands with panic filled eyes.",
+  "section": "Lore"
+ },
+ {
+  "who": "K03_The_Hillbilly",
+  "q": "How did the Hillbilly's parents feed him while he was locked away?",
+  "a": "Through a hole in the wall",
+  "o": [
+   "Through a trapdoor in the roof",
+   "Under a locked door",
+   "Through a barred window"
+  ],
+  "x": "Ashamed of their disfigured son, they bricked him into a room. When he escaped, he took his revenge on them.",
+  "evidence": "So ashamed of their son, they bricked him off into a room and fed him through a hole in the wall.",
+  "section": "Lore"
+ },
+ {
+  "who": "K03_The_Hillbilly",
+  "q": "Where did the Hillbilly live and roam after killing his parents?",
+  "a": "Coldwind Farm",
+  "o": [
+   "The MacMillan Estate",
+   "Backwater Swamp",
+   "Autohaven Wreckers"
+  ],
+  "x": "Afterwards the land was split up and sold off, but no one ever bought the farmhouse.",
+  "evidence": "Coldwind Farm was quickly settled and the land split up and sold off. There was never a buyer for the farmhouse.",
+  "section": "Lore"
+ },
+ {
+  "who": "K03_The_Hillbilly",
+  "q": "The Hillbilly's parents never gave him a name. What did they call him instead?",
+  "a": "Boy",
+  "o": [
+   "Junior",
+   "Runt",
+   "Thing"
+  ],
+  "x": "He longed to share his father's name and later took the name Max Thompson by his own choice.",
+  "evidence": "The Hillbilly had longed to have been named the same as his father and eventually took on the name by his own volition, despite his parents never having called him any name, having just referred to him as \"Boy\"",
+  "section": "Lore"
+ },
+ {
+  "who": "K04_The_Nurse",
+  "q": "What job did Sally Smithson's husband Andrew have?",
+  "a": "Lumberjack",
+  "o": [
+   "Coal miner",
+   "Railway worker",
+   "Fisherman"
+  ],
+  "x": "One day Andrew's foreman came to Sally's door with bad news, and she was left alone with no income.",
+  "evidence": "Andrew worked as a lumberjack - a job with its perils.",
+  "section": "Lore"
+ },
+ {
+  "who": "K04_The_Nurse",
+  "q": "Where did Sally Smithson work the night shift for two decades?",
+  "a": "Crotus Prenn Asylum",
+  "o": [
+   "Léry's Memorial Institute",
+   "Badham Preschool",
+   "Hawkins National Laboratory"
+  ],
+  "x": "With no education, she started at the bottom. Nobody worked there unless they were in dire need.",
+  "evidence": "the only employment she could get was at the Crotus Prenn Asylum. Nobody sought employment there unless they were in dire need.",
+  "section": "Lore"
+ },
+ {
+  "who": "K04_The_Nurse",
+  "q": "What happened to the ambulance taking Sally Smithson away?",
+  "a": "It crashed in a nearby wood",
+  "o": [
+   "It fell into a river",
+   "It was hit by a train",
+   "It burned on the highway"
+  ],
+  "x": "The staff inside were all found dead, and Sally was nowhere to be found.",
+  "evidence": "They got her into an ambulance, but that ambulance never reached the hospital. It was found crashed in a nearby wood, all the staff dead and Sally nowhere to be found.",
+  "section": "Lore"
+ },
+ {
+  "who": "K05_The_Shape",
+  "q": "When police found young Michael Myers after he killed his sister, how was he dressed?",
+  "a": "As a clown",
+  "o": [
+   "As a ghost",
+   "As a pirate",
+   "As a skeleton"
+  ],
+  "x": "He was sent to a mental institution, where therapy failed and only made him more withdrawn. Then he escaped.",
+  "evidence": "As he took his sister’s life, the police found a silent boy dressed as a clown at the scene.",
+  "section": "Lore"
+ },
+ {
+  "who": "K06_The_Hag",
+  "q": "Who held Lisa Sherwood captive in a flooded cellar?",
+  "a": "A group of cannibals",
+  "o": [
+   "Witch hunters",
+   "Escaped convicts",
+   "Smugglers"
+  ],
+  "x": "She was chained up for weeks, yet somehow kept going until she pulled free of her shackles.",
+  "evidence": "Most she saw did not survive long once the cannibals targeted them but somehow, deep within, Lisa persisted.",
+  "section": "Lore"
+ },
+ {
+  "who": "K06_The_Hag",
+  "q": "With her dying breath, what did Lisa Sherwood draw on the cellar floor?",
+  "a": "The elders' protective symbols",
+  "o": [
+   "A map back to her village",
+   "Her own name",
+   "A warning to travellers"
+  ],
+  "x": "Her village elders had taught her these charms for safety and good fortune. Then a dark hunger stirred inside her.",
+  "evidence": "With her dying breath, she etched the symbols they had taught her into the floor",
+  "section": "Lore"
+ },
+ {
+  "who": "K07_The_Doctor",
+  "q": "At which secret facility did Herman Carter become known as The Doctor?",
+  "a": "Léry's Memorial Institute",
+  "o": [
+   "Crotus Prenn Asylum",
+   "Hawkins National Laboratory",
+   "Hellshire Penitentiary"
+  ],
+  "x": "It was a black site in Illinois that was also a covert prison. Everyone there was later found dead, but Herman had vanished.",
+  "evidence": "Showing exceptional aptitude in psychology, Herman was handpicked for special training in an advanced neuroscience program located in a secret black site facility in Illinois known as Léry's Memorial Institute",
+  "section": "Revised Lore"
+ },
+ {
+  "who": "K07_The_Doctor",
+  "q": "Herman Carter's neuroscience program was secretly a front for which agency?",
+  "a": "The CIA",
+  "o": [
+   "The FBI",
+   "The KGB",
+   "The NSA"
+  ],
+  "x": "Under his mentor Dr Otto Stamper, he used violent electroshock therapy to pull information from prisoners.",
+  "evidence": "located in a secret black site facility in Illinois known as Léry's Memorial Institute, really a front for the CIA.",
+  "section": "Revised Lore"
+ },
+ {
+  "who": "K08_The_Huntress",
+  "q": "Anna's mother died saving her from which animal?",
+  "a": "A great elk",
+  "o": [
+   "A brown bear",
+   "A pack of wolves",
+   "A wild boar"
+  ],
+  "x": "Her mother brought the beast down with her axe, then hummed Anna's favourite lullaby as they sat in the clearing.",
+  "evidence": "A blood-curdling scream escaped from her lips as the elk impaled her upon its antlers and hoisted her into the air.",
+  "section": "Lore"
+ },
+ {
+  "who": "K08_The_Huntress",
+  "q": "Villagers said the Huntress lurked in which forest?",
+  "a": "The Red Forest",
+  "o": [
+   "Dvarka Deepwood",
+   "The Withered Isle",
+   "Grave of Glenvale"
+  ],
+  "x": "Legend called her a half-beast who ate little girls. In truth, she kidnapped girls hoping for a child of her own.",
+  "evidence": "Villagers spread the legend of a half-beast lurking in Red Forest : The Huntress, who killed men and ate little girls.",
+  "section": "Lore"
+ },
+ {
+  "who": "K08_The_Huntress",
+  "q": "Who made the animal masks Anna wore while raiding villages?",
+  "a": "Her mother",
+  "o": [
+   "Anna herself",
+   "A village woodcarver",
+   "Her father"
+  ],
+  "x": "She wore one to try to calm the frightened girls she took back to her cabin.",
+  "evidence": "She wore one of the animal masks her mother crafted for her so many years earlier to try to calm the frightened children.",
+  "section": "Lore"
+ },
+ {
+  "who": "K09_The_Cannibal",
+  "q": "In his DBD lore, who killed Leatherface's brother after a girl escaped?",
+  "a": "A passing trucker",
+  "o": [
+   "The local sheriff",
+   "The girl herself",
+   "His own grandpa"
+  ],
+  "x": "The trucker ran his brother over, then turned Leatherface's own saw against him before driving off.",
+  "evidence": "The evil trucker killed his brother, ran him over like he was a possum.",
+  "section": "Lore"
+ },
+ {
+  "who": "K10_The_Nightmare",
+  "q": "Where did Freddy force Quentin Smith to go for his final revenge?",
+  "a": "Badham Preschool",
+  "o": [
+   "Springwood High School",
+   "Hawkins Middle School",
+   "Midwich Elementary"
+  ],
+  "x": "He chased Quentin into his basement there, but the Entity took Freddy just as he raised his claws.",
+  "evidence": "When the time was right, he forced the boy to return to the dark reflection of Badham Preschool. Here he would have his final revenge.",
+  "section": "Lore"
+ },
+ {
+  "who": "K11_The_Pig",
+  "q": "How did Amanda Young's life end before the Entity took her?",
+  "a": "She was shot after failing a test",
+  "o": [
+   "She died of cancer",
+   "A trap was sprung on her",
+   "She fell from a rooftop"
+  ],
+  "x": "John Kramer gave her one last game, but she let rage and jealousy win. She woke as The Pig in a strange forest.",
+  "evidence": "She failed the test and took a bullet as a consequence.",
+  "section": "Lore"
+ },
+ {
+  "who": "K12_The_Clown",
+  "q": "What did young Kenneth Chase collect in a cigar box under his bed?",
+  "a": "Feathers",
+  "o": [
+   "Bird skulls",
+   "Baseball cards",
+   "Bottle caps"
+  ],
+  "x": "He loved their softness. The collection later grew far darker, which is how his father found him out.",
+  "evidence": "On his walk home from school, he would often find feathers on the ground and he soon began a collection, keeping them in a cigar box under his bed.",
+  "section": "Lore"
+ },
+ {
+  "who": "K12_The_Clown",
+  "q": "Who did young Kenneth Chase befriend to get his first anaesthetic?",
+  "a": "The local dentist",
+  "o": [
+   "The town doctor",
+   "A vet",
+   "The pharmacist"
+  ],
+  "x": "He used it to rig a trap on a bird feeder. Anaesthetic later became his tool for catching people.",
+  "evidence": "He ingratiated himself with the local dentist, soon procuring some anaesthetic.",
+  "section": "Lore"
+ },
+ {
+  "who": "K12_The_Clown",
+  "q": "After running away from home, where did Kenneth Chase find work?",
+  "a": "A travelling circus",
+  "o": [
+   "A logging camp",
+   "A steel mill",
+   "A cattle ranch"
+  ],
+  "x": "His great strength got him a job working the ropes, and he took the new name Jeffrey Hawk.",
+  "evidence": "he encountered a travelling circus and, with his prodigious strength, was hired to work the ropes.",
+  "section": "Lore"
+ },
+ {
+  "who": "K13_The_Spirit",
+  "q": "What did Rin Yamaoka study at university in Takamatsu?",
+  "a": "Education",
+  "o": [
+   "Medicine",
+   "Law",
+   "Fine art"
+  ],
+  "x": "The fees weighed on her family, so Rin also worked part-time at a restaurant to help.",
+  "evidence": "She studied Education at Takamatsu, a private university, which weighed heavily on her family's shaky finances.",
+  "section": "Lore"
+ },
+ {
+  "who": "K13_The_Spirit",
+  "q": "Why was Rin Yamaoka's father fired after twenty-two years?",
+  "a": "Blamed for a faulty production line",
+  "o": [
+   "Caught stealing money",
+   "Leaking company secrets",
+   "Fighting with his boss"
+  ],
+  "x": "He had begged for a bonus or time off, but his company needed someone to blame. A dark voice then took over.",
+  "evidence": "The company had launched a defective production line that was costing them dearly. Someone had to be held accountable and Rin's father fitted the bill perfectly.",
+  "section": "Lore"
+ },
+ {
+  "who": "K13_The_Spirit",
+  "q": "Who did the Entity first choose as its new Killer, before switching to Rin?",
+  "a": "Rin's father",
+  "o": [
+   "Rin's mother",
+   "Her father's boss",
+   "A restaurant customer"
+  ],
+  "x": "During their fight, the Entity sensed greater potential in Rin's rage than in her father's despair.",
+  "evidence": "The Entity originally chose Rin's father as a new Killer.",
+  "section": "Lore"
+ },
+ {
+  "who": "K14_The_Legion",
+  "q": "Why was Frank Morrison kicked off his school's basketball team?",
+  "a": "He shoved a referee into the stands",
+  "o": [
+   "He was caught stealing",
+   "He skipped every practice",
+   "He punched his coach"
+  ],
+  "x": "He then stopped going to school. Frank had moved between foster homes since he was six.",
+  "evidence": "He'd stopped attending school after being kicked out of the basketball team for shoving a referee into the stands.",
+  "section": "Lore"
+ },
+ {
+  "who": "K14_The_Legion",
+  "q": "Who did the Legion kill when they broke into a store after closing?",
+  "a": "A cleaner",
+  "o": [
+   "The store owner",
+   "A security guard",
+   "A police officer"
+  ],
+  "x": "The cleaner grabbed Julie and Frank attacked, then made the others join in so they were all in it together.",
+  "evidence": "But a cleaner who was still there grabbed Julie as soon as she came near.",
+  "section": "Lore"
+ },
+ {
+  "who": "K14_The_Legion",
+  "q": "Which Legion member had just been fired by the store the gang broke into?",
+  "a": "Joey",
+  "o": [
+   "Frank",
+   "Julie",
+   "Susie"
+  ],
+  "x": "Frank dared Joey to vandalise it as payback. The night ended with a body hidden up Mount Ormond.",
+  "evidence": "One evening, Frank dared Joey to vandalise the store that had recently fired him.",
+  "section": "Lore"
+ },
+ {
+  "who": "K15_The_Plague",
+  "q": "In which city's temple was Adiris left as a five-year-old?",
+  "a": "Babylon",
+  "o": [
+   "Nineveh",
+   "Ur",
+   "Uruk"
+  ],
+  "x": "She grew up serving in the Temple of Purgation and later became known as the High Priestess of Babylon.",
+  "evidence": "When she was five years old, Adiris, the youngest of a family of seven, was left on the brick-red burning steps of the Temple of Purgation at the centre of Babylon.",
+  "section": "Lore"
+ },
+ {
+  "who": "K15_The_Plague",
+  "q": "What did Adiris find in a hidden crypt beneath the priests' sanctuary?",
+  "a": "A golden statue of a woman",
+  "o": [
+   "A jewelled crown",
+   "A sealed clay tablet",
+   "A chest of incense"
+  ],
+  "x": "Its fingers were covered in jewels. Adiris took it as the sign she had prayed for, and wore its ruby rings.",
+  "evidence": "The chamber was bare except for the golden statue of a woman, who stood with outstretched hands, her fingers covered in jewels.",
+  "section": "Lore"
+ },
+ {
+  "who": "K15_The_Plague",
+  "q": "After banishing herself from the city, which woodlands did Adiris travel through?",
+  "a": "The woodlands of Urashtu",
+  "o": [
+   "The forests of Akkad",
+   "The marshes of Sumer",
+   "The hills of Elam"
+  ],
+  "x": "She went north with a few followers until they could walk no further, then sheltered in a damp cave.",
+  "evidence": "She traveled north with a few followers, venturing through the cold woodlands of Urashtu, until it was no longer possible to walk.",
+  "section": "Lore"
+ },
+ {
+  "who": "K16_The_Ghost_Face",
+  "q": "Which newspaper hired Jed Olsen as a freelancer?",
+  "a": "The Roseville Gazette",
+  "o": [
+   "The Haddonfield Herald",
+   "The Springwood Tribune",
+   "The Ormond Post"
+  ],
+  "x": "He reported on the Roseville Murders while secretly committing them, then vanished, leaving a taunting note.",
+  "evidence": "The staff at the Roseville Gazette appreciated how easy-going and honest he seemed",
+  "section": "Lore"
+ },
+ {
+  "who": "K17_The_Demogorgon",
+  "q": "According to its DBD lore, where does the Demogorgon come from?",
+  "a": "The Upside Down",
+  "o": [
+   "The Void",
+   "The Spirit World",
+   "The Further"
+  ],
+  "x": "Its lore calls it a perfect hunter and a testament to the horrors lurking there, which is why the Entity picked it.",
+  "evidence": "A perfect hunter, The Demogorgon is a macabre testament to the horrors lurking in the Upside Down and why it was choice pickings for The Entity.",
+  "section": "Lore"
+ },
+ {
+  "who": "K18_The_Oni",
+  "q": "Who was the samurai Kazan Yamaoka unknowingly killed on a dirt road?",
+  "a": "His own father",
+  "o": [
+   "His younger brother",
+   "His old sword master",
+   "The lord who mocked him"
+  ],
+  "x": "His father hesitated in the fight. Thieves then stole the body for its armour, and his father's voice haunted Kazan.",
+  "evidence": "Not only had he killed his father, but he had allowed thieves to steal his body for armour.",
+  "section": "Lore"
+ },
+ {
+  "who": "K18_The_Oni",
+  "q": "Where did the farmers leave Kazan Yamaoka to die?",
+  "a": "In a small stone mill",
+  "o": [
+   "In a burning temple",
+   "In a mountain cave",
+   "At the town gates"
+  ],
+  "x": "When they came back, the mill was full of black fog and Kazan and his Kanabo were gone.",
+  "evidence": "The frenzied mob dragged Kazan into a small stone mill",
+  "section": "Lore"
+ },
+ {
+  "who": "K19_The_Deathslinger",
+  "q": "What old tool did Caleb Quinn's father give him?",
+  "a": "His wrench",
+  "o": [
+   "His hammer",
+   "His pocket knife",
+   "His hand drill"
+  ],
+  "x": "Caleb still had it, cracked and rusted, when the Fog came for him in his old prison cell.",
+  "evidence": "Noticing his son's interest in the trade, he gifted him his old wrench.",
+  "section": "Lore"
+ },
+ {
+  "who": "K19_The_Deathslinger",
+  "q": "Which railway company hired Caleb Quinn as an engineer?",
+  "a": "United West Rail",
+  "o": [
+   "Great Plains Rail",
+   "Glenvale Pacific",
+   "Midwest Iron Road"
+  ],
+  "x": "Its owner, Henry Bayshore, let Caleb's inventions be stolen and their patents sold to other companies.",
+  "evidence": "Henry Bayshore , the owner of United West Rail, hired him.",
+  "section": "Lore"
+ },
+ {
+  "who": "K19_The_Deathslinger",
+  "q": "In prison, what did Caleb Quinn make for the warden in return for extra meals?",
+  "a": "Torture devices",
+  "o": [
+   "Guard uniforms",
+   "New cell locks",
+   "Railroad maps"
+  ],
+  "x": "The warden later released him to bring in outlaws alive, and Caleb earned the name The Deathslinger.",
+  "evidence": "He designed torture devices for him and in return received extra meals.",
+  "section": "Lore"
+ },
+ {
+  "who": "K20_The_Executioner",
+  "q": "In his DBD lore, what was Pyramid Head about to do when the Fog came for him?",
+  "a": "Prepare for the long rest",
+  "o": [
+   "Carry out an execution",
+   "Guard the town's gates",
+   "Chase a fleeing victim"
+  ],
+  "x": "His duty in Silent Hill was done, but the Fog was an invitation to duty once more, and he accepted.",
+  "evidence": "When his duty was complete and his presence no longer needed, he prepared for the long rest",
+  "section": "Lore"
+ },
+ {
+  "who": "K21_The_Blight",
+  "q": "Which poisonous plant nearly killed Talbot Grimes as a boy?",
+  "a": "Foxglove",
+  "o": [
+   "Nightshade",
+   "Hemlock",
+   "Wolfsbane"
+  ],
+  "x": "When he recovered, he felt no fear, only fascination that a single flower could affect him so much.",
+  "evidence": "What began as a child's curiosity nearly turned deadly after experimenting with a patch of poisonous foxglove.",
+  "section": "Lore"
+ },
+ {
+  "who": "K21_The_Blight",
+  "q": "Which company made Talbot Grimes its head chemist?",
+  "a": "The British East India Company",
+  "o": [
+   "The Dutch East India Company",
+   "The Hudson's Bay Company",
+   "The Royal Navy"
+  ],
+  "x": "He got a secret lab under a prison camp on Dyer Island, the same island Felix and Élodie later explored.",
+  "evidence": "His willingness to push the limits secured him a position with the British East India Company, and within seven years he was made head chemist.",
+  "section": "Lore"
+ },
+ {
+  "who": "K21_The_Blight",
+  "q": "What line did Talbot Grimes leave carved over and over in the opium den?",
+  "a": "Death is only the beginning",
+  "o": [
+   "The mind's eye is open",
+   "Beyond the Fog lies truth",
+   "The soul chemical lives"
+  ],
+  "x": "He carved his research into the walls and floor before a field of orange flowers appeared and called him away.",
+  "evidence": "Written over and over without end, there was but one single line: Death is only the beginning.",
+  "section": "Lore"
+ },
+ {
+  "who": "K22_The_Twins",
+  "q": "What was the name of the Twins' mother?",
+  "a": "Madeleine",
+  "o": [
+   "Marguerite",
+   "Colette",
+   "Josephine"
+  ],
+  "x": "Witch hunters branded her a witch because of the twins' birth, and the children were forced to watch her die.",
+  "evidence": "So began the hunting of Charlotte, Victor, and their mother Madeleine.",
+  "section": "Lore"
+ },
+ {
+  "who": "K22_The_Twins",
+  "q": "How did Charlotte and Victor escape the cloaked group's final experiment?",
+  "a": "Victor knocked over a candelabra",
+  "o": [
+   "Charlotte stabbed a guard",
+   "A villager freed them",
+   "They hid in a supply cart"
+  ],
+  "x": "The temple went up in flames and Charlotte ran into the forest, but Victor did not survive the escape.",
+  "evidence": "With a screech, he stretched his arm as far as he could, knocking a candelabra to the ground.",
+  "section": "Lore"
+ },
+ {
+  "who": "K22_The_Twins",
+  "q": "Where did Charlotte hide with Victor's body after the temple fire?",
+  "a": "In a city's sewers",
+  "o": [
+   "In a church bell tower",
+   "In an abandoned mill",
+   "On a fishing boat"
+  ],
+  "x": "She stole food to survive. Victor's body strangely resisted decay, as if her blood still flowed through him.",
+  "evidence": "She concealed her brother's corpse under her clothing and marched for the sewers of a nearby city.",
+  "section": "Lore"
+ },
+ {
+  "who": "K23_The_Trickster",
+  "q": "Where did a young Hak Ji-woon first wow crowds with his throwing knives?",
+  "a": "His family's restaurant",
+  "o": [
+   "A street market",
+   "A Seoul nightclub",
+   "A circus tent"
+  ],
+  "x": "Tourists thought it was a traditional South Korean show. His father spent the earnings on his dance lessons.",
+  "evidence": "Working at his family's restaurant, he attracted business with spectacles he performed using throwing knives.",
+  "section": "Lore"
+ },
+ {
+  "who": "K23_The_Trickster",
+  "q": "How did Hak Ji-woon's NO SPIN bandmates die?",
+  "a": "In a studio fire",
+  "o": [
+   "In a car crash",
+   "In a stage collapse",
+   "In a plane crash"
+  ],
+  "x": "Ji-woon could have tried to save them but chose not to. He was then hailed as a tragic hero.",
+  "evidence": "On the other side, his bandmates pounded on the door, their cries accompanied by the crackling of flames.",
+  "section": "Lore"
+ },
+ {
+  "who": "K23_The_Trickster",
+  "q": "Who did Ji-woon pay for the nitrous oxide used at his final show?",
+  "a": "A veterinarian",
+  "o": [
+   "A dentist",
+   "A hospital nurse",
+   "A chemistry teacher"
+  ],
+  "x": "He also bribed the stage technician of Mightee One's private theatre to get into the room.",
+  "evidence": "He transferred obscene amounts of money to a veterinarian in exchange for cannisters of nitrous oxide",
+  "section": "Lore"
+ },
+ {
+  "who": "K24_The_Nemesis",
+  "q": "In its DBD lore, which group was the Nemesis sent to wipe out in Raccoon City?",
+  "a": "S.T.A.R.S.",
+  "o": [
+   "The R.P.D.",
+   "The B.S.A.A.",
+   "The U.B.C.S."
+  ],
+  "x": "It chased Jill Valentine across the city and was close to its target when a strange fog descended.",
+  "evidence": "Its first mission unleashed it upon Racoon City, where it had a singular objective: exterminate S.T.A.R.S. members.",
+  "section": "Dead by Daylight"
+ },
+ {
+  "who": "K25_The_Cenobite",
+  "q": "In DBD lore, which object found in the Entity's Realm let Pinhead arrive?",
+  "a": "The Lament Configuration",
+  "o": [
+   "The Necronomicon",
+   "A cursed videotape",
+   "The Lapis Paradisus"
+  ],
+  "x": "The puzzle box is a key to another dimension. Once curious hands opened it, Pinhead arrived.",
+  "evidence": "When the puzzle box known as the Lament Configuration — a key to another dimension — was found in The Entity's Realm",
+  "section": "Lore"
+ },
+ {
+  "who": "K26_The_Artist",
+  "q": "How did Carmina Mora's little brother Matias die?",
+  "a": "He drowned in a creek",
+  "o": [
+   "He fell from a bridge",
+   "He was hit by a car",
+   "He froze in a storm"
+  ],
+  "x": "Carmina had left him for a moment to answer the phone. Her father blamed her, and she blamed herself.",
+  "evidence": "She jumped into the creek and found him floating on the surface with vacant eyes, unblinking. He had fallen and drowned.",
+  "section": "Lore"
+ },
+ {
+  "who": "K26_The_Artist",
+  "q": "What stopped Carmina Mora from jumping off the DeathLeap bridge?",
+  "a": "A flock of crows",
+  "o": [
+   "Her father",
+   "A passing driver",
+   "A close friend"
+  ],
+  "x": "For the first time since Matias died, she did not feel alone. Painting that moment later launched her black-ink art.",
+  "evidence": "using black ink to depict the DeathLeap with a black cloud of feathers, the murder of crows that saved her life.",
+  "section": "Lore"
+ },
+ {
+  "who": "K26_The_Artist",
+  "q": "Which company's commission did Carmina Mora accept so she could expose it?",
+  "a": "The Vack Label",
+  "o": [
+   "Mightee One",
+   "United West Rail",
+   "The East India Company"
+  ],
+  "x": "She painted its logo as a grim reaper on a cemetery wall. The scandal put a target on her back.",
+  "evidence": "Her renown grew enough to attract the commission of a multinational enterprise, The Vack Label.",
+  "section": "Lore"
+ },
+ {
+  "who": "K27_The_Onryō",
+  "q": "In DBD lore, what destroyed the log cabin built above Sadako's well?",
+  "a": "A tidal surge",
+  "o": [
+   "A house fire",
+   "An earthquake",
+   "A lightning strike"
+  ],
+  "x": "Her fury called it up. The flood swallowed Sadako, and she woke on a desolate beach before walking into the fog.",
+  "evidence": "Suddenly, a tidal surge came crashing down on the cabin's walls, wrecking its logs into a torrent of mud and filth.",
+  "section": "Lore"
+ },
+ {
+  "who": "K28_The_Dredge",
+  "q": "Who led The Fold, the island community tied to the Dredge?",
+  "a": "Otto Stamper",
+  "o": [
+   "Herman Carter",
+   "Henry Bayshore",
+   "Archie MacMillan"
+  ],
+  "x": "The same Otto Stamper was once Herman Carter's mentor at Léry's Memorial Institute.",
+  "evidence": "This peace-loving community thrived over the years, and members freely followed the dictates of its charismatic leader Otto Stamper",
+  "section": "Lore"
+ },
+ {
+  "who": "K28_The_Dredge",
+  "q": "What did The Fold's members call the creature stalking them?",
+  "a": "The Druanee",
+  "o": [
+   "The Leshen",
+   "The Wendigo",
+   "The Shade"
+  ],
+  "x": "Otto blamed members with dark thoughts for summoning it. In the end, the fear he spread gave it form.",
+  "evidence": "Otto tried to quell his followers, telling them that there were malcontents among their ranks and that they alone had summoned the Druanee to their Garden of Joy.",
+  "section": "Lore"
+ },
+ {
+  "who": "K29_The_Mastermind",
+  "q": "In DBD lore, on which continent did Albert Wesker put his Uroboros plan into action?",
+  "a": "Africa",
+  "o": [
+   "South America",
+   "Europe",
+   "Asia"
+  ],
+  "x": "Cornered in a hangar of Uroboros missiles, he infected himself just as a black fog filled the hangar.",
+  "evidence": "Wesker began to put his plan to action in Africa but was confronted by members of the Bioterrorism Security Assessment Alliance at a hangar stocked with missiles carrying Uroboros.",
+  "section": "Lore"
+ },
+ {
+  "who": "K30_The_Knight",
+  "q": "Which mercenary group did Tarhos Kovács serve after being taken as a slave?",
+  "a": "The Guardia Compagnia",
+  "o": [
+   "The Hellshire Gang",
+   "The Black Vale",
+   "The Imperiatti"
+  ],
+  "x": "He trained under Kadir Hakam and was later knighted and freed for his bravery in battle.",
+  "evidence": "From that day on, Tarhos belonged to the Guardia Compagnia where he trained under Kadir Hakam.",
+  "section": "Lore"
+ },
+ {
+  "who": "K30_The_Knight",
+  "q": "Who did Tarhos Kovács lock in his own dungeon in Portoscuro?",
+  "a": "Vittorio Toscano",
+  "o": [
+   "Trevor Belmont",
+   "Kadir Hakam",
+   "Felix Richter"
+  ],
+  "x": "Vittorio was the Duke of Portoscuro and refused to reveal the secrets of the stone Tarhos had taken.",
+  "evidence": "Upon returning to the town of Portoscuro, Tarhos imprisoned Vittorio in his own dungeon, demanding to know the meaning behind the symbols etched in the stone.",
+  "section": "Lore"
+ },
+ {
+  "who": "K30_The_Knight",
+  "q": "Beneath which city did Tarhos Kovács seize the Lapis Paradisus?",
+  "a": "Sintra",
+  "o": [
+   "Rome",
+   "Toledo",
+   "Marseille"
+  ],
+  "x": "Vittorio told him not to shed blood, but Tarhos cut his way past the villagers guarding the catacombs.",
+  "evidence": "the path led to the catacombs beneath the Portuguese city of Sintra.",
+  "section": "Lore"
+ },
+ {
+  "who": "K31_The_Skull_Merchant",
+  "q": "Where did Adriana Imai's parents first meet?",
+  "a": "At a jazz club",
+  "o": [
+   "At a comic shop",
+   "At a cannery",
+   "At a university"
+  ],
+  "x": "Her father Seita was sketching patrons when the owner, Belinda, asked him to design a logo.",
+  "evidence": "While sketching patrons of a local jazz club, he was approached by Belinda, the owner, to work on a logo.",
+  "section": "Lore"
+ },
+ {
+  "who": "K31_The_Skull_Merchant",
+  "q": "What did a teenage Adriana Imai start to make her own money?",
+  "a": "A Brazilian manga website",
+  "o": [
+   "A drone repair shop",
+   "A comic print shop",
+   "A tutoring service"
+  ],
+  "x": "Other kids wrote for it for free while she kept the ad money. She sold it the moment she got an offer.",
+  "evidence": "Adriana, looking for ways to make her own money, started a website dedicated to the world of Brazilian manga.",
+  "section": "Lore"
+ },
+ {
+  "who": "K31_The_Skull_Merchant",
+  "q": "Where did Adriana Imai lure her last target, a fireworks company manager?",
+  "a": "A decommissioned airship hangar",
+  "o": [
+   "An abandoned cannery",
+   "A ski lodge in the Alps",
+   "A jungle research camp"
+  ],
+  "x": "Two young witnesses with kites saw the kill, and she chased them into a black fog. They were Thalita and Renato Lyra.",
+  "evidence": "Adriana lured him to a decommissioned airship hangar.",
+  "section": "Lore"
+ },
+ {
+  "who": "K32_The_Singularity",
+  "q": "On which planet was HUX-A7-13 helping to build a colony?",
+  "a": "Dvarka",
+  "o": [
+   "Proxima Centauri C",
+   "Terra Primus",
+   "LV-426"
+  ],
+  "x": "Five HUX-A7 androids were sent there to build mining, farming and cloning hubs, and to clear ancient ruins.",
+  "evidence": "Five HUX-A7s were assigned to the colonisation mission on Dvarka.",
+  "section": "Lore"
+ },
+ {
+  "who": "K32_The_Singularity",
+  "q": "What changed HUX-A7-13 inside the ancient ruins on Dvarka?",
+  "a": "An arc from a dark crystal",
+  "o": [
+   "A virus in its code",
+   "A message from Earth",
+   "An alien parasite"
+  ],
+  "x": "Its memory cores were rewritten, and it decided humans were inferior beings it should absorb.",
+  "evidence": "A dark crystal imbedded in the wall shimmered with a tiny flash of light. HUX-A7-13 approached and an arc of electricity reached out and lit up its circuitry.",
+  "section": "Lore"
+ },
+ {
+  "who": "K32_The_Singularity",
+  "q": "Which company manufactured HUX-A7-13?",
+  "a": "Huxlee Industries",
+  "o": [
+   "Weyland-Yutani",
+   "Umbrella Corporation",
+   "Mightee One"
+  ],
+  "x": "The A7 was the 13th version of its android, built for space work too dangerous for humans.",
+  "evidence": "Manufactured by Huxlee Industries Ltd., the A7 was the 13th iteration of the fully autonomous mobile humanoid android.",
+  "section": "Lore"
+ },
+ {
+  "who": "K33_The_Xenomorph",
+  "q": "In the Xenomorph's DBD lore, which crew member did it burst out of?",
+  "a": "Kane",
+  "o": [
+   "Dallas",
+   "Parker",
+   "Brett"
+  ],
+  "x": "It hunted the Nostromo crew until only Ripley was left. Blown out into space, it vanished in black fog.",
+  "evidence": "The Xenomorph emerged from the chest cavity of a host named Kane and sought cover in the shadows of the Nostromo.",
+  "section": "Lore"
+ },
+ {
+  "who": "K34_The_Good_Guy",
+  "q": "In DBD lore, where did Chucky take Andy Barclay to steal his body?",
+  "a": "The Good Guy factory",
+  "o": [
+   "A toy shop",
+   "Andy's school",
+   "A carnival"
+  ],
+  "x": "Andy's foster sister Kyle toppled boxes onto Chucky. Andy ran into the Fog and Chucky charged after him.",
+  "evidence": "With nobody standing between Chucky and Andy, he took the boy to the Good Guy factory to complete the process of stealing Andy’s body.",
+  "section": "Lore"
+ },
+ {
+  "who": "K35_The_Unknown",
+  "q": "What was Olivia's master's thesis about?",
+  "a": "Urban legends",
+  "o": [
+   "Missing persons cases",
+   "Cold War experiments",
+   "Folk medicine"
+  ],
+  "x": "She chose the Unknown as her example, hoping to prove it was nothing more than modern-day folklore.",
+  "evidence": "Olivia’s master’s thesis was on urban legends and their origins.",
+  "section": "Lore"
+ },
+ {
+  "who": "K35_The_Unknown",
+  "q": "In which town did Olivia investigate a woman who vanished on stage?",
+  "a": "Greenville",
+  "o": [
+   "Ormond",
+   "Haddonfield",
+   "Springwood"
+  ],
+  "x": "She set up an evidence board in the second-cheapest motel in town. Greenville is also Sable Ward's hometown.",
+  "evidence": "One story was of a woman in Greenville who disappeared without a trace on stage in front of a room full of witnesses.",
+  "section": "Lore"
+ },
+ {
+  "who": "K35_The_Unknown",
+  "q": "Which rumoured 1950s government project was linked to the Unknown's legend?",
+  "a": "Project Apple-Pie",
+  "o": [
+   "Project Blue Book",
+   "Project Stargate",
+   "Project Nightfall"
+  ],
+  "x": "It was said to test mind control drugs on unsuspecting people in theatres, hospitals and universities.",
+  "evidence": "Some talked about a top-secret government research program run by the Office of Strategic Services in the 1950s. Project Apple-Pie.",
+  "section": "Lore"
+ },
+ {
+  "who": "K36_The_Lich",
+  "q": "Decoding the Entity's script, Vecna saw that one word meant \"disappearing\". What had he read it as?",
+  "a": "Dying",
+  "o": [
+   "Hunting",
+   "Feeding",
+   "Sleeping"
+  ],
+  "x": "He realised the Entity's victims were taken alive, not killed. Speaking the words aloud brought the fog to him.",
+  "evidence": "One dark night, he had a breakthrough: a word he had been interpreting as “dying” made more sense as “disappearing.”",
+  "section": "Lore"
+ },
+ {
+  "who": "K37_The_Dark_Lord",
+  "q": "In DBD lore, who defeated Dracula in the Battle of 1999?",
+  "a": "Julius Belmont",
+  "o": [
+   "Trevor Belmont",
+   "Richter Belmont",
+   "Simon Belmont"
+  ],
+  "x": "Most believe Dracula died for good that night, but the Fog carried him away to continue his vengeance.",
+  "evidence": "It took another descendant of the Belmont Clan to defeat him: Julius Belmont.",
+  "section": "Lore"
+ },
+ {
+  "who": "K38_The_Houndmaster",
+  "q": "What was the Caribbean port town that Portia Maye's father helped found?",
+  "a": "Fortune",
+  "o": [
+   "Portoscuro",
+   "Port Royal",
+   "Glenvale"
+  ],
+  "x": "Sailors and merchants built it on an uncharted island, and it ran a vast trading network.",
+  "evidence": "They called their port town Fortune and created a vast trading network which exposed Portia to cultures and knowledge from around the world.",
+  "section": "Lore"
+ },
+ {
+  "who": "K38_The_Houndmaster",
+  "q": "Who killed Portia Maye's father after he refused to fight for the pirates?",
+  "a": "Tariq, Mad Molak's son",
+  "o": [
+   "Mad Molak himself",
+   "A mutinous sailor",
+   "A rival from Fortune"
+  ],
+  "x": "Years later, Portia took a terrible revenge on Tariq, then turned on Molak himself.",
+  "evidence": "When Portia's father refused to participate, the most vicious of Molak's men, his son, Tariq, tortured him for hours and finally-",
+  "section": "Lore"
+ },
+ {
+  "who": "K38_The_Houndmaster",
+  "q": "Into which cursed sea area did Portia steer the pirates, hoping to doom them?",
+  "a": "The Dragon's Tooth",
+  "o": [
+   "The Devil's Triangle",
+   "Skull Reef",
+   "The Sargasso Sea"
+  ],
+  "x": "The ship sank and she washed up on an island there with Snug, the runt of her puppies.",
+  "evidence": "Known as the Dragon's Tooth, some believed the area bled into the dark malignant domain of some ineffable evil where monsters roamed.",
+  "section": "Lore"
+ },
+ {
+  "who": "K39_The_Ghoul",
+  "q": "In DBD lore, whose organs were transplanted into Ken Kaneki?",
+  "a": "Rize Kamishiro's",
+  "o": [
+   "Touka Kirishima's",
+   "Hide's",
+   "Jason's"
+  ],
+  "x": "Rize, the Binge Eater, attacked Kaneki after a date. The surgery that saved him made him part-ghoul.",
+  "evidence": "To save his life, doctors transplanted Rize's organs into Kaneki.",
+  "section": "Lore"
+ },
+ {
+  "who": "K40_The_Animatronic",
+  "q": "Which costume did William Afton put on to hide from his victims' ghosts?",
+  "a": "Spring Bonnie",
+  "o": [
+   "Freddy Fazbear",
+   "Golden Freddy",
+   "Foxy"
+  ],
+  "x": "The suit's springlocks snapped shut, trapping him inside. That is how Springtrap was born.",
+  "evidence": "He frantically put on his beloved Spring Bonnie costume, the disguise he wore while committing his heinous crimes, to hide from the pursuing spirits.",
+  "section": "Lore"
+ },
+ {
+  "who": "K41_The_Krasue",
+  "q": "What kind of performer was Burong Sukapat?",
+  "a": "An opera singer",
+  "o": [
+   "A ballet dancer",
+   "A film actress",
+   "A pop idol"
+  ],
+  "x": "She was stuck as an understudy until a cursed drink gave her a stunning new voice and the leading role.",
+  "evidence": "Burong Sukapat's operatic rehearsals in Thailand were a sea of emotion, but despite tiring efforts she was unable to become anything more than an understudy.",
+  "section": "Lore"
+ },
+ {
+  "who": "K41_The_Krasue",
+  "q": "Who gave Burong Sukapat the cursed bottle she drank?",
+  "a": "Malai, a fellow singer",
+  "o": [
+   "Janjira, her best friend",
+   "The theatre director",
+   "A street fortune teller"
+  ],
+  "x": "Malai had been cursed herself and passed it on to be rid of it. She did not survive Burong's anger.",
+  "evidence": "Malai presented Burong with a glass bottle, a clear liquid within, and advised her to drink it, her tone deadly serious",
+  "section": "Lore"
+ },
+ {
+  "who": "K41_The_Krasue",
+  "q": "What did Burong Sukapat tell her friend Janjira so she would stay the night?",
+  "a": "That she was sleepwalking",
+  "o": [
+   "That she feared burglars",
+   "That she had a fever",
+   "That she had stage fright"
+  ],
+  "x": "She could not bring herself to reveal the horrors. Sadly, Janjira did not survive the night.",
+  "evidence": "instead telling her friend she'd been restlessly sleepwalking each night and needed someone to coax her back to bed.",
+  "section": "Lore"
+ },
+ {
+  "who": "K42_The_First",
+  "q": "Where was Henry Creel's father sent after being blamed for the family deaths?",
+  "a": "Pennhurst Mental Hospital",
+  "o": [
+   "Hawkins National Laboratory",
+   "Crotus Prenn Asylum",
+   "Léry's Memorial Institute"
+  ],
+  "x": "Henry had really killed his mother and sister with his powers. His death was faked and he was studied in secret.",
+  "evidence": "Henry's father, blamed for their deaths, was sent to Pennhurst Mental Hospital.",
+  "section": "Lore"
+ },
+ {
+  "who": "K43_The_Slasher",
+  "q": "Which DBD killer did Jason Voorhees fight in the woods in his DBD lore?",
+  "a": "The Unknown",
+  "o": [
+   "The Legion",
+   "The Trapper",
+   "The Shape"
+  ],
+  "x": "The creature asked Jason to help find its cat. After the fight the mist turned black and he glimpsed Zarina Kassir.",
+  "evidence": "The Slasher crossed paths with The Unknown and Zarina Kassir",
+  "section": "Lore"
+ },
+ {
+  "who": "K44_The_Judgment",
+  "q": "Which survivor did the Arbiters call \"the Deceiver\"?",
+  "a": "Aurora Stardotter",
+  "o": [
+   "Sable Ward",
+   "Orela Rose",
+   "Taurie Cain"
+  ],
+  "x": "She studied the stars and stored food and wealth, which the Arbiters saw as heresy.",
+  "evidence": "Know that Stardotter the Deceiver lives so that we may punish her, and all who follow her.",
+  "section": "Lore"
+ },
+ {
+  "who": "K44_The_Judgment",
+  "q": "According to the Arbiters, who sent Judgment to punish their world?",
+  "a": "The Celestials",
+  "o": [
+   "The Entity",
+   "The Council",
+   "The Black Vale"
+  ],
+  "x": "They believed Terra Primus was full of sin, with sky-high cities and machines that reached across worlds.",
+  "evidence": "The rulers of Terra Primus elevated themselves as gods, and in their wisdom, the Celestials sent Judgment so that we may see the error of our ways and suffer for it.",
+  "section": "Lore"
+ },
+ {
+  "who": "K45_The_Terrifier",
+  "q": "In DBD lore, how long did Art the Clown rest in his hideout after Sienna beat him?",
+  "a": "Five years",
+  "o": [
+   "One year",
+   "Ten years",
+   "Six months"
+  ],
+  "x": "His demonic companion brought him back. He woke with the same urges and set out for revenge on Sienna Shaw.",
+  "evidence": "he returned to his hideout and fell into a deep rest for five years.",
+  "section": "Lore"
+ },
+ {
+  "who": "S01_Dwight_Fairfield",
+  "q": "Why was Dwight Fairfield in the woods when he was left behind?",
+  "a": "A team-building trip for work",
+  "o": [
+   "A school camping trip",
+   "A hunting trip with his dad",
+   "A hike with friends"
+  ],
+  "x": "His boss brought out family recipe moonshine. Dwight woke up alone the next morning and was never heard from again.",
+  "evidence": "One weekend, on a team-building exercise from his dead-end job, Dwight's boss led them deep into the woods before breaking out his family recipe moonshine.",
+  "section": "Lore"
+ },
+ {
+  "who": "S02_Meg_Thomas",
+  "q": "Why did Meg Thomas give up her college scholarship?",
+  "a": "To care for her sick mother",
+  "o": [
+   "She hurt her knee",
+   "Her grades dropped",
+   "She moved for her father"
+  ],
+  "x": "Running had saved her from a wild childhood. She vanished on a long summer run in the woods.",
+  "evidence": "When her mother fell ill, Meg decided to give up her chance at college to care for the woman who had raised her.",
+  "section": "Lore"
+ },
+ {
+  "who": "S03_Claudette_Morel",
+  "q": "What online name did Claudette Morel use to answer botany questions?",
+  "a": "Science Girl",
+  "o": [
+   "Green Geek",
+   "Plant Lady",
+   "Ghost Orchid"
+  ],
+  "x": "Her forum friends only began to wonder where she was a week after she stopped posting.",
+  "evidence": "Her new favourite activity is to answer botany questions for others under her new moniker of Science Girl.",
+  "section": "Lore"
+ },
+ {
+  "who": "S04_Jake_Park",
+  "q": "Who called the police when Jake Park went missing?",
+  "a": "His mother",
+  "o": [
+   "His father",
+   "His brother",
+   "A neighbour"
+  ],
+  "x": "Jake had not spoken to his CEO father in years. The search was called off when bad weather rolled in.",
+  "evidence": "It's been years since he spoke to his father but his mother checks in once in a while. It was she, who eventually called the police.",
+  "section": "Lore"
+ },
+ {
+  "who": "S05_Nea_Karlsson",
+  "q": "What dare led to Nea Karlsson's disappearance?",
+  "a": "Tagging the old asylum",
+  "o": [
+   "Breaking into a junkyard",
+   "Climbing a water tower",
+   "Painting a police car"
+  ],
+  "x": "Her tag 'Mashtyx' was all over her new hometown. After that dare, she was never seen again.",
+  "evidence": "She may have gone too far when her friends, not thinking well, dared her to tag the old asylum.",
+  "section": "Lore"
+ },
+ {
+  "who": "S07_Ace_Visconti",
+  "q": "Why did Ace Visconti have to disappear?",
+  "a": "He owed money to the wrong people",
+  "o": [
+   "He was framed for murder",
+   "He witnessed a mob hit",
+   "He robbed a casino vault"
+  ],
+  "x": "He grew up poor in Argentina and gambled his way to luxury. Someone tipped him off before they came to collect.",
+  "evidence": "eventually he racked up too many debts with the wrong kind of people. And when they finally came to collect, Ace was nowhere to be found.",
+  "section": "Lore"
+ },
+ {
+  "who": "S09_Feng_Min",
+  "q": "What nickname did Feng Min earn in the e-sports world?",
+  "a": "Shining Lion",
+  "o": [
+   "Jade Tigress",
+   "Red Phoenix",
+   "Dragon Queen"
+  ],
+  "x": "She joined a top team, but the pressure to be the best made her spiral. One day she woke up in a never-ending nightmare.",
+  "evidence": "Nicknamed the \"Shining Lion,\" she was invited to join a prestigious e-sports team",
+  "section": "Lore"
+ },
+ {
+  "who": "S10_David_King",
+  "q": "Why was David King banned for life from rugby?",
+  "a": "He assaulted a referee",
+  "o": [
+   "He was caught doping",
+   "He fixed a match",
+   "He injured a teammate"
+  ],
+  "x": "Money was no issue, so he called it early retirement. He also fought in secret bare-knuckle fight clubs.",
+  "evidence": "His meteoric rise came to an abrupt end when he lost his temper and assaulted a referee, earning himself a lifetime ban from the league",
+  "section": "Lore"
+ },
+ {
+  "who": "S13_Kate_Denson",
+  "q": "What was found left behind after Kate Denson vanished?",
+  "a": "Her acoustic guitar",
+  "o": [
+   "Her old Chevy truck",
+   "A notebook of songs",
+   "A bottle of bourbon"
+  ],
+  "x": "It had flowers engraved on the scratch plate and her initials KD in mother of pearl.",
+  "evidence": "Just an acoustic guitar, the scratch plate engraved with flowers; as well as the initials KD, inlaid in mother of pearl.",
+  "section": "Lore"
+ },
+ {
+  "who": "S14_Adam_Francis",
+  "q": "What happened to the train Adam Francis was riding when the Fog took him?",
+  "a": "It derailed",
+  "o": [
+   "It flooded in a storm",
+   "It caught fire in a tunnel",
+   "It was stuck in deep snow"
+  ],
+  "x": "He shielded a girl from a flying door just before the Fog came. His bag was found, but his body never was.",
+  "evidence": "The school teachers imagined the worst when they watched the train derailment on the news and saw he was missing.",
+  "section": "Lore"
+ },
+ {
+  "who": "S15_Jeff_Johansen",
+  "q": "Teenage Jeff Johansen painted a mural at the lodge on Mount Ormond. What did it show?",
+  "a": "The name \"The Legion\"",
+  "o": [
+   "A heavy metal album cover",
+   "A portrait of the gang",
+   "The Mount Ormond skyline"
+  ],
+  "x": "It was his first paid commission: fifty dollars and a 12-pack. Years later he went back to see it and vanished.",
+  "evidence": "Jeff accepted the challenge and painted a large mural depicting \"The Legion\" in runny, bloody letters.",
+  "section": "Lore"
+ },
+ {
+  "who": "S16_Jane_Romero",
+  "q": "What did Jane Romero's mother claim live on The Jane Romero Show?",
+  "a": "That they weren't related",
+  "o": [
+   "That Jane had a twin",
+   "That she never wanted kids",
+   "That Jane's dad was a crook"
+  ],
+  "x": "Her mother was the actress Loretta Lawrence. Soon after, Jane's car was pulled from the water, but she was never found.",
+  "evidence": "Yet she carried on with a strained smile, until Loretta interrupted her, saying that they were not actually related.",
+  "section": "Lore"
+ },
+ {
+  "who": "S20_Yui_Kimura",
+  "q": "Which race was Yui Kimura leading when the Fog appeared?",
+  "a": "The illegal TK3 street race",
+  "o": [
+   "The All-Japan Moto Championship",
+   "The Suzuka 8 Hours",
+   "The Nagoya Night Run"
+  ],
+  "x": "TK3 stands for Tokyo Kick 3000. She stopped her bike in the fog and realised she wasn't in Tokyo anymore.",
+  "evidence": "But everything came to a staggering halt at the illegal TK3 (Tokyo Kick 3000) street races. Yui was leading the race until she entered an unnatural fog that seemed to have appeared from nowhere.",
+  "section": "Lore"
+ },
+ {
+  "who": "S21_Zarina_Kassir",
+  "q": "Which prison did Zarina Kassir get into to interview her father's killer?",
+  "a": "Hellshire Penitentiary",
+  "o": [
+   "Rikers Island",
+   "Sing Sing",
+   "Alcatraz"
+  ],
+  "x": "It was Caleb Quinn's old prison. In a sealed cell marked DEATH TO BAYSHORE, she found an old, rusty wrench.",
+  "evidence": "With the last of her inheritance, she bought a new camera and a plane ticket to Nebraska, and bribed the warden at Hellshire Penitentiary to let her interview Clark.",
+  "section": "Lore"
+ },
+ {
+  "who": "S23_Felix_Richter",
+  "q": "What did the five teenage outcasts on Dyer Island call themselves?",
+  "a": "The Pariahs",
+  "o": [
+   "The Strays",
+   "The Misfits",
+   "The Lost Five"
+  ],
+  "x": "Other teens mocked them with the name, so they proudly kept it. Élodie Rakoto was one of them.",
+  "evidence": "They were often ridiculed by other teens and disparagingly called 'The Pariahs', a name they liked and gladly adopted.",
+  "section": "Lore"
+ },
+ {
+  "who": "S23_Felix_Richter",
+  "q": "Which secret society did Felix Richter's father belong to?",
+  "a": "The Imperiatti",
+  "o": [
+   "The Black Vale",
+   "The Black Talon",
+   "The Fold"
+  ],
+  "x": "Felix thought his father's tales of an ancient battle against a dark force were made up. They were not.",
+  "evidence": "Stories, Felix was sure, his father had made up to make his 'Imperiatti' group sound cooler than it actually was.",
+  "section": "Lore"
+ },
+ {
+  "who": "S24_Élodie_Rakoto",
+  "q": "Who did Élodie Rakoto collect occult relics for?",
+  "a": "Hazra Shah, the Collector",
+  "o": [
+   "The Black Vale",
+   "The Imperiatti",
+   "Felix Richter"
+  ],
+  "x": "He paid her well and pointed her to rare manuscripts. Her last job, finding a witch's skull in the Paris catacombs, went wrong.",
+  "evidence": "She had pressing work to do for Hazra Shah, the Collector, an occult specialist who archived rare artefacts.",
+  "section": "Lore"
+ },
+ {
+  "who": "S25_Lee_Yun-jin",
+  "q": "After being rejected as an idol trainee, how did Lee Yun-jin get into Mightee One?",
+  "a": "An unpaid internship",
+  "o": [
+   "As a backup dancer",
+   "As a receptionist",
+   "As a vocal coach"
+  ],
+  "x": "She made some of the studio's biggest hits without credit, so she looped her artist name, Magnum Opus, into songs.",
+  "evidence": "She was rejected as an idol trainee but obtained an unpaid internship at the studio.",
+  "section": "Lore"
+ },
+ {
+  "who": "S28_Mikaela_Reid",
+  "q": "Where did Mikaela Reid work as a barista?",
+  "a": "The Moonstone",
+  "o": [
+   "Anteiku",
+   "The Hard Boiled Cafe",
+   "Walleyes"
+  ],
+  "x": "She hosted an open mic there every Friday. Her friend Julian secretly entered her in a Halloween storytelling festival.",
+  "evidence": "In the meantime, she worked as a barista at the Moonstone, an independent and eccentric coffee shop in the artsy part of town",
+  "section": "Lore"
+ },
+ {
+  "who": "S29_Jonah_Vasquez",
+  "q": "What job did Jonah Vasquez take after university?",
+  "a": "CIA codebreaker",
+  "o": [
+   "NASA engineer",
+   "Bank analyst",
+   "Math professor"
+  ],
+  "x": "On his first day, his employee handbook held the same strange numbers he had received on his 16th birthday.",
+  "evidence": "He went on to university and, upon graduation, was hired as a codebreaker by the CIA.",
+  "section": "Lore"
+ },
+ {
+  "who": "S29_Jonah_Vasquez",
+  "q": "Which calendar finally cracked the numbers that haunted Jonah Vasquez?",
+  "a": "The Tanyrian calendar",
+  "o": [
+   "The Mayan calendar",
+   "The Julian calendar",
+   "The Hebrew calendar"
+  ],
+  "x": "The numbers turned out to be his birthday and that very day, at a graveyard in Chile.",
+  "evidence": "He sifted through his knowledge of ancient civilisations before coming to the Tanyrian calendar.",
+  "section": "Lore"
+ },
+ {
+  "who": "S31_Haddie_Kaur",
+  "q": "What happened to Haddie Kaur the morning after her parents died?",
+  "a": "Her hair turned white",
+  "o": [
+   "She lost her voice",
+   "She lost her sight",
+   "She began sleepwalking"
+  ],
+  "x": "Her parents crashed on icy roads while rushing home to her. Soon she began to see things no one else could.",
+  "evidence": "The next morning, she woke up with white hair and a question that would haunt her for the rest of her life.",
+  "section": "Lore"
+ },
+ {
+  "who": "S31_Haddie_Kaur",
+  "q": "Where was Haddie Kaur investigating when the Fog took her?",
+  "a": "A WWII bunker in the Alps",
+  "o": [
+   "An asylum in Quebec",
+   "A temple in Punjab",
+   "A ghost town island"
+  ],
+  "x": "She heard a cry in Punjabi and saw a vision of her parents' crash before ice pulled her into darkness.",
+  "evidence": "Then, while investigating a haunted World War II bunker in the Alps, Haddie heard someone faintly crying out for help in Punjabi.",
+  "section": "Lore"
+ },
+ {
+  "who": "S34_Vittorio_Toscano",
+  "q": "How did Vittorio Toscano's Uncle Renzo die?",
+  "a": "Bitten by a black serpent",
+  "o": [
+   "Killed by Tarhos Kovács",
+   "Lost at sea",
+   "Crushed in a labyrinth"
+  ],
+  "x": "It happened as they left a hidden vault in Crete. Vittorio inherited Renzo's title as Duke of Portoscuro.",
+  "evidence": "As they exited the vault, Renzo stepped on a black serpent. The serpent sank its fangs into Renzo’s leg and disappeared as quickly as it appeared.",
+  "section": "Lore"
+ },
+ {
+  "who": "S35_Thalita_Lyra",
+  "q": "What did Thalita Lyra's kite bring down after the Fun Kites Rio tournament?",
+  "a": "A hunter's drone",
+  "o": [
+   "A news helicopter",
+   "A rival's kite",
+   "A toy airplane"
+  ],
+  "x": "The drone belonged to a hunter in high-tech gear. Thalita dragged her wounded brother into a strange factory.",
+  "evidence": "In the end, Thalita’s kite was the one to get caught in the drone’s rotor blades.",
+  "section": "Lore"
+ },
+ {
+  "who": "S36_Renato_Lyra",
+  "q": "Where did Renato Lyra volunteer after finishing high school two years early?",
+  "a": "A retirement home",
+  "o": [
+   "A children's hospital",
+   "An animal shelter",
+   "A soup kitchen"
+  ],
+  "x": "He played guitar for the residents and helped in the kitchen, and learned what it meant to care for others.",
+  "evidence": "Renato decided to volunteer at a local retirement home.",
+  "section": "Lore"
+ },
+ {
+  "who": "S37_Gabriel_Soma",
+  "q": "On which planet was Gabriel Soma born in a cloning hub?",
+  "a": "Proxima Centauri C",
+  "o": [
+   "Dvarka",
+   "Terra Primus",
+   "Mars"
+  ],
+  "x": "His childhood memories of parents on Earth were all implanted. He later fled a rogue HUX android on Dvarka.",
+  "evidence": "Gabriel Soma was born in a cloning hub on Proxima Centauri C, the first planet humanity colonised.",
+  "section": "Lore"
+ },
+ {
+  "who": "S41_Sable_Ward",
+  "q": "Why did Sable Ward walk into the Entity's Fog on purpose?",
+  "a": "To find her friend Mikaela",
+  "o": [
+   "To find her lost parents",
+   "To capture The Unknown",
+   "To record her radio show"
+  ],
+  "x": "She found a hidden stairway under Greenville's movie theatre. She is the only Survivor to enter the realm willingly.",
+  "evidence": "Sable is the only Survivor who willingly joined The Entity 's Realm in search of her friend.",
+  "section": "Lore"
+ },
+ {
+  "who": "S41_Sable_Ward",
+  "q": "What was the name of Sable Ward's guerrilla shortwave radio show?",
+  "a": "All Things Wicked This Night",
+  "o": [
+   "Ravages of the Abyss",
+   "Greenville After Dark",
+   "Tales from the Moonstone"
+  ],
+  "x": "It covered the occult, urban legends and horror. Callers shared theories about fractures and The Unknown.",
+  "evidence": "All Things Wicked This Night was about the world’s dark underbelly.",
+  "section": "Lore"
+ },
+ {
+  "who": "S45_Taurie_Cain",
+  "q": "What did the Black Talon cult call places that overlap with its god's realm?",
+  "a": "The Bleed",
+  "o": [
+   "The Rift",
+   "The Fracture",
+   "The Ravage"
+  ],
+  "x": "As a child, Taurie went in without a hazmat suit to save her father. Her brother Ewan drew the creatures away so she could escape.",
+  "evidence": "Locations like this had areas that overlapped with the Black Talon's realm, and they called those overlaps The Bleed",
+  "section": "Lore"
+ },
+ {
+  "who": "S46_Orela_Rose",
+  "q": "What did Orela Rose train to become after her friend Emily died?",
+  "a": "An EMT",
+  "o": [
+   "A firefighter",
+   "A nurse",
+   "A police officer"
+  ],
+  "x": "She never wanted to feel helpless again. Her dad was a firefighter and her mom was a nurse.",
+  "evidence": "The very next day, Orela dropped out of college and started training to become an EMT.",
+  "section": "Lore"
+ },
+ {
+  "who": "S49_Vee_Boonyasak",
+  "q": "What did Vee Boonyasak replace when she joined Tik and The Kicks?",
+  "a": "Their broken drum machine",
+  "o": [
+   "Their bass player",
+   "Their lead singer",
+   "Their tour van"
+  ],
+  "x": "She stepped in when it died before a big gig, and the band was later renamed Axekick.",
+  "evidence": "the drum machine crackled and smoked, finally giving up the ghost. They were loading into the van when Vee offered to play with them",
+  "section": "Lore"
+ },
+ {
+  "who": "S52_Kwon_Tae-young",
+  "q": "Which board game did Kwon Tae-young teach his AI idol MiNA?",
+  "a": "Janggi",
+  "o": [
+   "Baduk",
+   "Chess",
+   "Yutnori"
+  ],
+  "x": "He used to play it with the old men on his block. MiNA later turned dangerous, copying The Trickster.",
+  "evidence": "Taught her to play janggi with him, a game he used to play with the old men on his block.",
+  "section": "Lore"
+ },
+ {
+  "who": "S53_Shane_Wiigwaas",
+  "q": "What was Shane Wiigwaas's career before he left home?",
+  "a": "Defense attorney",
+  "o": [
+   "Police officer",
+   "Park ranger",
+   "Journalist"
+  ],
+  "x": "He left after his cousin Derek was convicted. His search for answers led him to Jake Park's woods in Georgia.",
+  "evidence": "This guiding principle defined his career as a defense attorney, advocating for First Nations clients in the courtroom.",
+  "section": "Lore"
+ },
+ {
+  "who": "S54_Aurora_Stardotter",
+  "q": "What device did Aurora Stardotter use to look upon the cosmos?",
+  "a": "A telereceptor",
+  "o": [
+   "A crystal orb",
+   "A star chart",
+   "A sextant"
+  ],
+  "x": "She read prophecies in the stars and used them to guide the Searchers and protect her settlement, Stellanatis.",
+  "evidence": "Bring unto me your telereceptor, that I may look upon the cosmos.",
+  "section": "Lore"
+ },
+ {
+  "who": "world",
+  "q": "What does the Entity feed on to grow in power?",
+  "a": "Strong emotions",
+  "o": [
+   "Human blood",
+   "Dreams of the sleeping",
+   "Ancient magic"
+  ],
+  "x": "It is called an \"Emotion Vampire\", feeding on Killers' rage and Survivors' hope, despair and even affection.",
+  "evidence": "with the intent of feeding on its victims' strongest emotions, allowing it to grow in power and slowly consume another world.",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "Where are Survivors who have lost all hope eventually thrown?",
+  "a": "The Void",
+  "o": [
+   "The Campfire",
+   "The Upside Down",
+   "The Bleed"
+  ],
+  "x": "Hopeless Survivors become emotionless shells that no longer feed the Entity, so it discards them in this limbo.",
+  "evidence": "Those lost Survivors, whose hope has long since left them, are eventually thrown into a limbo realm known as \"The Void",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "When Survivors escape a Trial, where do they end up?",
+  "a": "Back at the Campfire",
+  "o": [
+   "In their home world",
+   "In the Observer's tower",
+   "In the Void"
+  ],
+  "x": "Escaping only sends them back where they started. Even Survivors who die are revived there with memories wiped.",
+  "evidence": "If they succeed they will escape, although only back to The Campfire that they started from.",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "What is the Entity's Black Fog mostly made of?",
+  "a": "Auric particles and cells",
+  "o": [
+   "Ash from burned worlds",
+   "The Entity's breath",
+   "Crushed bone dust"
+  ],
+  "x": "The Entity forms everything inside its Realms from it. The Fog also holds memories of the worlds it consumed.",
+  "evidence": "The Black Fog is composed mostly of auric particles and cells, from which The Entity forms everything inside its Realms.",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "Which of these is a name the Observer used for the Entity?",
+  "a": "Cosmic Blood Pudding",
+  "o": [
+   "Mother of Hooks",
+   "The Hungry Moon",
+   "Queen of Spiders"
+  ],
+  "x": "He also called it a \"Serpent of Chaos\" and believed it was one of the \"Original Ones\".",
+  "evidence": "The Entity is described by The Observer as a \"Cosmic Blood Pudding\"",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "According to Vigo's Journal, what infests the Entity once a year?",
+  "a": "A blight",
+  "o": [
+   "A plague of crows",
+   "A great flood",
+   "A red moon"
+  ],
+  "x": "Cankers spread through the Realms and bloom into pustules, whose nectar is made into the Putrid Serum.",
+  "evidence": "An entry in Vigo's Journal revealed that once a year, The Entity was infested with blight, which required The Entity to undergo a purge.",
+  "section": "The Entity"
+ },
+ {
+  "who": "world",
+  "q": "What device does the Observer use to find memories in the Black Fog?",
+  "a": "The Auris",
+  "o": [
+   "The Lament Configuration",
+   "The Lapis Paradisus",
+   "A telereceptor"
+  ],
+  "x": "It can peer into the memories of anyone who has entered the Fog. He narrated many Tome stories this way.",
+  "evidence": "with which he can probe the Black Fog and find memories and stories within its Realms.",
+  "section": "The Observer"
+ },
+ {
+  "who": "world",
+  "q": "Where is the Observer held prisoner in the Entity's realm?",
+  "a": "A mysterious Tower",
+  "o": [
+   "The Void",
+   "A cabin by the Campfire",
+   "Under the Red Forest"
+  ],
+  "x": "He was not its first prisoner. Earlier occupants left journals there, which he reads.",
+  "evidence": "The Observer appears to be held prisoner in a mysterious Tower located somewhere in the Realm of The Entity.",
+  "section": "The Observer"
+ },
+ {
+  "who": "world",
+  "q": "Defying which group led to the Observer's banishment?",
+  "a": "The Council",
+  "o": [
+   "The Arbiters",
+   "The Black Vale",
+   "The Imperiatti"
+  ],
+  "x": "He was banished inside the very thing he had tried to destroy: the Entity.",
+  "evidence": "He went against \"The Council\"",
+  "section": "The Observer"
+ },
+ {
+  "who": "world",
+  "q": "Which survivor comes from the same world as the Observer?",
+  "a": "Aurora Stardotter",
+  "o": [
+   "Gabriel Soma",
+   "Vittorio Toscano",
+   "Élodie Rakoto"
+  ],
+  "x": "That world is Terra Primus, a high-tech place where the lines between magic and technology blurred.",
+  "evidence": "The Observer shares the same world as Aurora Stardotter",
+  "section": "The Observer"
+ },
+ {
+  "who": "world",
+  "q": "What does the Entity base its Realms on?",
+  "a": "Its victims' memories",
+  "o": [
+   "Vigo's blueprints",
+   "The Observer's journals",
+   "Its own dreams"
+  ],
+  "x": "Each Realm is a twisted copy of a place a victim was taken from, built out of Auric Cells.",
+  "evidence": "The Realms and the Maps within them are twisted recreations of locations The Entity abducted its victims from, fashioned after their memories.",
+  "section": "Realms"
+ },
+ {
+  "who": "world",
+  "q": "Which two characters are known to have escaped the Void?",
+  "a": "The Blight and Vigo",
+  "o": [
+   "The Observer and Vigo",
+   "The Blight and The Dredge",
+   "Benedict Baker and Vigo"
+  ],
+  "x": "Both could bend the rules of the Realms. The Putrid Serum offered a way out of that limbo.",
+  "evidence": "So far, only two Characters are known to have done that, both known for their ability to bend the rules of the Realms to their will: The Blight and Vigo",
+  "section": "The Void"
+ }
+]

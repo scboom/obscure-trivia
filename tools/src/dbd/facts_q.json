@@ -1,0 +1,1237 @@
+[
+ {
+  "topic": "mechanics",
+  "q": "In a standard 1v4 Trial, how many Generators spawn on the map?",
+  "a": "7",
+  "o": [
+   "5",
+   "6",
+   "8"
+  ],
+  "x": "There are more possible spawn spots than Generators, so where they appear changes from Trial to Trial.",
+  "page": "Generators",
+  "evidence": "A regular ranked Trial spawns a total of 7 Generators in predetermined locations throughout the environment."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How many Generators must Survivors repair to power the Exit Gates in a standard Trial?",
+  "a": "5",
+  "o": [
+   "3",
+   "4",
+   "6"
+  ],
+  "x": "In Custom Games with fewer Survivors, the target drops by one per missing Survivor, down to just 2 for a solo Survivor.",
+  "page": "Generators",
+  "evidence": "Survivors must repair a total of 5 Generators in order to power the Exit Gates ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long does one Survivor take to repair a Generator with no perks or items?",
+  "a": "90 seconds",
+  "o": [
+   "60 seconds",
+   "75 seconds",
+   "120 seconds"
+  ],
+  "x": "Teaming up helps, but each extra Survivor adds a 15% efficiency penalty, so even four players still need about 41 seconds.",
+  "page": "Generators",
+  "evidence": "1 Survivor 0 % 100 % = 1 c/s 1 c/s (1 x 1 c/s) 90 seconds"
+ },
+ {
+  "topic": "mechanics",
+  "q": "What does a Great Skill Check give you while repairing a Generator?",
+  "a": "+1% progress and 300 Bloodpoints",
+  "o": [
+   "+3% progress and 150 Bloodpoints",
+   "+5% progress and 100 Bloodpoints",
+   "+10% progress and 500 Bloodpoints"
+  ],
+  "x": "A Good Skill Check, in the see-through part of the zone, gives only 50 Bloodpoints and no bonus progress.",
+  "page": "Skill Checks",
+  "evidence": "Grants 300 Bloodpoints and a +1 % Progression bonus for Repair actions."
+ },
+ {
+  "topic": "mechanics",
+  "q": "What happens when you fail a Skill Check while repairing a Generator?",
+  "a": "It explodes and loses 10% progress",
+  "o": [
+   "It loses all of its progress",
+   "It is blocked for 30 seconds",
+   "You become Exposed"
+  ],
+  "x": "The bang alerts the Killer with a Loud Noise Notification, and the Generator can't gain progress for 3 seconds.",
+  "page": "Generators",
+  "evidence": "If they fail at a Skill Check , the Repair progress instead receives a Progression penalty of -10 % and the Generator explodes, triggering a Loud Noise Notification for the Killer."
+ },
+ {
+  "topic": "mechanics",
+  "q": "By default, how much progress does a Generator instantly lose when the Killer kicks it?",
+  "a": "5%",
+  "o": [
+   "2.5%",
+   "10%",
+   "20%"
+  ],
+  "x": "The kick takes 1.8 seconds, and the Generator then keeps slowly regressing until a Survivor works on it again.",
+  "page": "Generators",
+  "evidence": "By default, kicking a Generator takes 1.8 seconds and causes it to lose an immediate -5 % of its total Progression."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How many Regression Events can one Generator suffer before the Entity stops the Killer damaging it?",
+  "a": "8",
+  "o": [
+   "3",
+   "5",
+   "12"
+  ],
+  "x": "From the fourth Regression Event onwards, growing spikes appear around the Generator to warn the Killer the limit is near.",
+  "page": "Generators",
+  "evidence": "Each Generator has a limit of 8 times that it can experience a Regression Event."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long does each of the first two Hook Stages last by default?",
+  "a": "70 seconds",
+  "o": [
+   "30 seconds",
+   "60 seconds",
+   "90 seconds"
+  ],
+  "x": "Stage one is the Summoning Phase and stage two is the Struggle Phase. Reaching the third stage means instant sacrifice.",
+  "page": "Hooks",
+  "evidence": "Summoning Phase 70 seconds ; 100 to 51 %"
+ },
+ {
+  "topic": "mechanics",
+  "q": "What is the default chance of a self-unhook attempt succeeding on the first Hook Stage?",
+  "a": "4%",
+  "o": [
+   "1%",
+   "10%",
+   "25%"
+  ],
+  "x": "Each failed try costs 20 seconds. Since Patch 9.0.0, tries only work in special cases, such as when just 2 Survivors remain.",
+  "page": "Hooks",
+  "evidence": "If available, attempt a Self-Unhook , which has a default Success Chance of 4 % per attempt."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long must a carried Survivor wiggle in total to break free from the Killer?",
+  "a": "16 seconds",
+  "o": [
+   "8 seconds",
+   "12 seconds",
+   "24 seconds"
+  ],
+  "x": "Wiggle time adds up over the carry. It exists so Killers can't haul a Survivor to the Basement from anywhere on the map.",
+  "page": "Hooks",
+  "evidence": "If the carried Survivors manages to wiggle for a total of 16 seconds (accumulative) before the Killer can reach a Hook , the latter will lose their grip on the Survivor, setting them free."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Which protections does a Survivor get for 10 seconds after being unhooked?",
+  "a": "Haste, Endurance and Elusive",
+  "o": [
+   "Undetectable and Bloodlust",
+   "Blessed and Exhausted",
+   "Oblivious and Broken"
+  ],
+  "x": "These Unhook Protections end early if the Survivor performs a Conspicuous Action, like repairing under the Killer's nose.",
+  "page": "Hooks",
+  "evidence": "The Unhook Protections encompass the following effects for 10 seconds : 10 % Haste Status Effect Endurance Status Effect Elusive Status Effect"
+ },
+ {
+  "topic": "mechanics",
+  "q": "What does a hooked Survivor get once the anti-camp Resolve Bar is full?",
+  "a": "A guaranteed self-unhook",
+  "o": [
+   "An extra minute on the Hook",
+   "The Killer's Aura for 30 seconds",
+   "Immunity to the next hook"
+  ],
+  "x": "The bar fills while the Killer lingers within 16 metres of the Hook. The whole system switches off once the Exit Gates are powered.",
+  "page": "Resolve",
+  "evidence": "Once the Resolve Bar is filled, the Hooked Survivor is granted a guaranteed Self-Unhook attempt."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long does it take a Survivor to open an Exit Gate?",
+  "a": "20 seconds",
+  "o": [
+   "10 seconds",
+   "15 seconds",
+   "30 seconds"
+  ],
+  "x": "Three red lights on the switch light up at 25, 50 and 75%, so everyone can tell how close the Gate is to opening.",
+  "page": "Exit Gates",
+  "evidence": "It takes Survivors 20 seconds to open an Exit Gate ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long is the Endgame Collapse timer when it starts?",
+  "a": "2 minutes",
+  "o": [
+   "1 minute",
+   "3 minutes",
+   "5 minutes"
+  ],
+  "x": "It ticks at half speed while Survivors are downed or hooked, so the Collapse can last up to 4 minutes.",
+  "page": "Endgame Collapse",
+  "evidence": "A timer of 2 minutes will appear at the top of the screen, slowly ticking down."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Besides an Exit Gate being opened, what starts the Endgame Collapse?",
+  "a": "The Killer closing the Hatch",
+  "o": [
+   "The last Totem being cleansed",
+   "The Obsession being sacrificed",
+   "The final Generator being repaired"
+  ],
+  "x": "The Endgame Collapse and the Killer's ability to close the Hatch both arrived in Patch 2.7.0.",
+  "page": "Endgame Collapse",
+  "evidence": "The Hatch was closed by the Killer."
+ },
+ {
+  "topic": "mechanics",
+  "q": "When does the Hatch open by itself?",
+  "a": "When only one Survivor is left",
+  "o": [
+   "When 3 Generators are done",
+   "When the Exit Gates are powered",
+   "After 10 minutes"
+  ],
+  "x": "It was originally known as the 'Black Lock'. If the Killer closes it, a Key can open it again.",
+  "page": "Hatch",
+  "evidence": "The Hatch only becomes visible, and automatically opens, when there is only a single Survivor left alive in the Trial."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How many Totems spawn in every Trial?",
+  "a": "5",
+  "o": [
+   "3",
+   "4",
+   "7"
+  ],
+  "x": "They all start as Dull Totems unless the Killer brings Hex Perks, which turn some of them into Hex Totems.",
+  "page": "Totems",
+  "evidence": "All Trials spawn with 5 Totems in random locations, usually hidden against environmental objects and in nooks and crannies."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long does cleansing a Totem take by default?",
+  "a": "14 seconds",
+  "o": [
+   "8 seconds",
+   "10 seconds",
+   "20 seconds"
+  ],
+  "x": "Unlike a Generator, a Totem keeps no partial progress: get interrupted and you start over.",
+  "page": "Totems",
+  "evidence": "Survivors can walk up to either type of Totem and perform the Cleansing interaction, which by default takes 14 seconds to complete."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How can you tell a Hex Totem apart from a Dull Totem?",
+  "a": "Its candles are lit",
+  "o": [
+   "It glows with a blue shimmer",
+   "It is twice as tall",
+   "Crows circle above it"
+  ],
+  "x": "A blue shimmer means a Boon Totem instead. Destroying a Hex Totem sets off a thunderclap the whole map can hear.",
+  "page": "Totems",
+  "evidence": "Hex Totems are a special kind of Totem, identifiable by the lit candles underneath them."
+ },
+ {
+  "topic": "mechanics",
+  "q": "What is the Killer's interaction with a Boon Totem called?",
+  "a": "Snuffing",
+  "o": [
+   "Cleansing",
+   "Blessing",
+   "Rekindling"
+  ],
+  "x": "It takes just 1 second and turns the Boon back into a Dull Totem. Survivors can't cleanse a Boon Totem at all.",
+  "page": "Totems",
+  "evidence": "A Killer can walk up to any Boon Totem and snuff it out, which takes 1 second to complete."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How many Chests spawn in a Trial by default?",
+  "a": "3",
+  "o": [
+   "2",
+   "4",
+   "5"
+  ],
+  "x": "One of them always spawns down in the Basement. Offerings and Perks can push the count anywhere from 1 to 13.",
+  "page": "Chests",
+  "evidence": "By default, 3 Chests will spawn each Trial."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Which two Item types are the most common finds in Chests?",
+  "a": "Med-Kits and Toolboxes",
+  "o": [
+   "Flashlights and Maps",
+   "Keys and Maps",
+   "Flashlights and Keys"
+  ],
+  "x": "Each turns up about 37% of the time, while Maps are the rarest find at around 2%.",
+  "page": "Chests",
+  "evidence": "Med-Kits 37 % 23 % Toolboxes 37 % 37 %"
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long is the Killer stunned when a Survivor drops a Pallet on them?",
+  "a": "2 seconds",
+  "o": [
+   "1 second",
+   "4 seconds",
+   "5 seconds"
+  ],
+  "x": "A Pallet stun also earns the Survivor a hefty amount of Bloodpoints in the Boldness category.",
+  "page": "Pallets",
+  "evidence": "If a Killer is inside the area of a Pallet and a Survivor pulls it down, they will be pushed back and get stunned for 2 seconds , obstructing their vision as their camera tilts."
+ },
+ {
+  "topic": "mechanics",
+  "q": "After how many vaults in one chase does the Entity block a Window for that Survivor?",
+  "a": "3",
+  "o": [
+   "2",
+   "4",
+   "5"
+  ],
+  "x": "The block lasts 30 seconds and only affects that Survivor. It was added to stop endless 'infinite' loops.",
+  "page": "Windows",
+  "evidence": "If a Survivor vaults the same Window multiple times in the same Chase sequence, The Entity will block it after the third vault and leave it blocked to that particular Survivor for the next 30 seconds ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Which Status Effect does a Locker give a hiding Survivor, stopping them from reading Auras?",
+  "a": "Blindness",
+  "o": [
+   "Oblivious",
+   "Exhausted",
+   "Incapacitated"
+  ],
+  "x": "The upside: a Locker also hides the Survivor's own Aura from the Killer and from other Survivors.",
+  "page": "Lockers",
+  "evidence": "since the Locker afflicts them with the Blindness Status Effect when inside."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Which special Health State sits between Injured and Dying?",
+  "a": "Deep Wound",
+  "o": [
+   "Broken",
+   "Mangled",
+   "Haemorrhage"
+  ],
+  "x": "A Deep Wounded Survivor must Mend before a bleed-out timer runs out, or they fall into the Dying State.",
+  "page": "Health States",
+  "evidence": "There is also a special fourth state situated in-between the Injured State and the Dying State : Deep Wound"
+ },
+ {
+  "topic": "mechanics",
+  "q": "What is the longest a Survivor can stay in the Dying State before bleeding out?",
+  "a": "240 seconds",
+  "o": [
+   "60 seconds",
+   "120 seconds",
+   "180 seconds"
+  ],
+  "x": "Since Patch 9.2.0, downed Survivors recover on their own while staying still, up to 95%.",
+  "page": "Health States",
+  "evidence": "limiting the amount of time they can remain in the Dying State before death to a cumulative maximum duration of 240 seconds ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "How many Charges does it take to heal a Survivor by one Health State?",
+  "a": "16",
+  "o": [
+   "8",
+   "12",
+   "24"
+  ],
+  "x": "It was 12 Charges until Patch 2.3.0. Two Survivors healing a third together double the healing speed.",
+  "page": "Health States",
+  "evidence": "It takes 16 Charges to heal a Survivors for the equivalent of 1 Health State ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "What does the Exposed Status Effect do to a Survivor?",
+  "a": "One basic hit downs them",
+  "o": [
+   "It reveals their Aura",
+   "It stops them from healing",
+   "It makes them scream"
+  ],
+  "x": "Despite the name, Exposed has never revealed a Survivor's Aura. That is a common myth among new players.",
+  "page": "Status HUD",
+  "evidence": "Survivors suffering from Exposed will suffer double-damage when hit by a Basic Attack , which immediately puts them into the Dying State ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "What can a Survivor with the Broken Status Effect not do?",
+  "a": "Heal past the Injured State",
+  "o": [
+   "Sprint",
+   "Vault Windows",
+   "Repair Generators"
+  ],
+  "x": "Broken is a Survivor-only debuff. You can still be picked up from the Dying State, just not healed back to Healthy.",
+  "page": "Status HUD",
+  "evidence": "Survivors suffering from Broken are unable to be healed or heal themselves past the Injured State ."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Which Status Effect stops a Survivor from hearing the Killer's Terror Radius?",
+  "a": "Oblivious",
+  "o": [
+   "Blindness",
+   "Incapacitated",
+   "Exposed"
+  ],
+  "x": "Oblivious Survivors also miss the Heartbeat warning, though they can still hear the Chase Music once a chase starts.",
+  "page": "Status HUD",
+  "evidence": "Survivors suffering from Oblivious are unable to perceive the Killer's Terror Radius and also do not hear the Heartbeat warning of the Killer's proximity."
+ },
+ {
+  "topic": "mechanics",
+  "q": "Besides the Terror Radius, what does the Undetectable Status Effect hide?",
+  "a": "The Killer's Red Stain",
+  "o": [
+   "Survivors' Scratch Marks",
+   "Pools of Blood",
+   "Generator Auras"
+  ],
+  "x": "It also blocks the Killer's own Aura from being revealed to Survivors.",
+  "page": "Status HUD",
+  "evidence": "Killers benefitting from Undetectable are granted several Stealth mechanics: Suppresses the Terror Radius Suppresses the Red Stain"
+ },
+ {
+  "topic": "mechanics",
+  "q": "How long must a chase last before the Killer gains Bloodlust Tier I?",
+  "a": "15 seconds",
+  "o": [
+   "5 seconds",
+   "10 seconds",
+   "30 seconds"
+  ],
+  "x": "Each tier adds 0.2 m/s, up to Tier III at 35 seconds. Hitting a Survivor or breaking a Pallet wipes it out.",
+  "page": "Status HUD/Bloodlust",
+  "evidence": "I 15 seconds +0.2 m/s 4.6 m/s or 115 %"
+ },
+ {
+  "topic": "mechanics",
+  "q": "What was the classic Terror Radius size for Killers who walk at 4.6 m/s?",
+  "a": "32 metres",
+  "o": [
+   "16 metres",
+   "24 metres",
+   "40 metres"
+  ],
+  "x": "Slower 4.4 m/s Killers got 24 metres. Nowadays stealth, mobility and ranged attacks also shape a Killer's Terror Radius.",
+  "page": "Terror Radius",
+  "evidence": "32 metres for 115-Killers (Walking speed of 4.6 m/s )"
+ },
+ {
+  "topic": "mechanics",
+  "q": "Who can see the Red Stain that glows in front of a Killer?",
+  "a": "Only the Survivors",
+  "o": [
+   "Only the Killer",
+   "Everyone in the Trial",
+   "Nobody, it is just lighting"
+  ],
+  "x": "The Killer can't see their own Stain, so crafty Killers walk backwards or sideways around corners to hide where they face.",
+  "page": "Red Stain",
+  "evidence": "Survivors are constantly able to see The Red Stain on the floor in front of the Killer, unless it is hidden by the use of cloaking-Perks or Powers."
+ },
+ {
+  "topic": "mechanics",
+  "q": "In a normal 4-Survivor Trial, what is each Survivor's default chance of becoming the Obsession?",
+  "a": "25%",
+  "o": [
+   "10%",
+   "20%",
+   "50%"
+  ],
+  "x": "The Obsession mechanic arrived with the Halloween Chapter, echoing how Michael Myers is obsessed with Laurie.",
+  "page": "Obsession",
+  "evidence": "In regular ranked Trials with 4 Survivors, this creates a default chance of 25 % (1 in 4)"
+ },
+ {
+  "topic": "mechanics",
+  "q": "Since Patch 8.3.0, which Survivor can every Killer Mori without an Offering?",
+  "a": "The last Survivor standing",
+  "o": [
+   "The Obsession",
+   "Any Survivor on death hook",
+   "The first Survivor downed"
+  ],
+  "x": "This base-kit Finisher Mori took over the job of the Cypress Memento Mori Offering, which was then retired.",
+  "page": "Killing",
+  "evidence": "With the implementation of the Finisher Mori in Patch 8.3.0 , the ability to kill the Last Survivor Standing has become base-kit for all Killers."
+ },
+ {
+  "topic": "mechanics",
+  "q": "What does the Latin phrase 'Memento Mori' mean?",
+  "a": "Remember death",
+  "o": [
+   "Embrace the night",
+   "Fear the dark",
+   "Death is final"
+  ],
+  "x": "Killing a Survivor by hand is called a Mori, after the Memento Mori Offerings that first allowed it.",
+  "page": "Killing",
+  "evidence": "\"Memento Mori\" is a Latin idiom, which translates to \"Remember Death/Remember Mortality\" ."
+ },
+ {
+  "topic": "currency",
+  "q": "What is the highest Level a character can reach in the Bloodweb before prestiging?",
+  "a": "50",
+  "o": [
+   "30",
+   "40",
+   "99"
+  ],
+  "x": "Each finished Bloodweb adds one Level. After you clear the Level 50 web, a single Prestige node appears.",
+  "page": "Levels & Prestige",
+  "evidence": "Levels are represented with a number ranging from 1 to 50 ."
+ },
+ {
+  "topic": "currency",
+  "q": "What is the highest Prestige level a character can reach?",
+  "a": "100",
+  "o": [
+   "3",
+   "50",
+   "99"
+  ],
+  "x": "Before the Patch 6.1.0 rework, you could only prestige a character 3 times.",
+  "page": "Levels & Prestige",
+  "evidence": "Prestige is represented with various crests and ranges from 0 to 100 ."
+ },
+ {
+  "topic": "currency",
+  "q": "What does reaching Prestige 1 on a character unlock?",
+  "a": "Their Unique Perks for everyone",
+  "o": [
+   "A blood-stained outfit piece",
+   "A Prestige Badge",
+   "A fifth Perk Slot"
+  ],
+  "x": "Prestige 2 and 3 upgrade those Perks to Tiers II and III, and blood-stained cosmetics start at Prestige 4.",
+  "page": "Levels & Prestige",
+  "evidence": "Unlocks that Character's Unique Perks at Tier I for immediate use on all Characters, automatically adding them to their inventories."
+ },
+ {
+  "topic": "currency",
+  "q": "At which Levels does a new character unlock Perk Slots 2, 3 and 4?",
+  "a": "5, 10 and 15",
+  "o": [
+   "10, 20 and 30",
+   "15, 20 and 25",
+   "20, 30 and 40"
+  ],
+  "x": "Every character starts with just 1 Perk Slot and can equip up to 4 Perks once all slots are open.",
+  "page": "Perks",
+  "evidence": "Additional Perk Slots are successively unlocked at Levels 5, 10, and 15 of the Bloodweb ."
+ },
+ {
+  "topic": "currency",
+  "q": "At which Bloodweb Level does the Entity wake up and start eating nodes?",
+  "a": "Level 10",
+  "o": [
+   "Level 5",
+   "Level 20",
+   "Level 30"
+  ],
+  "x": "It likes to grab the rarest nodes first, so buy the things you really want early.",
+  "page": "Bloodweb",
+  "evidence": "Players can purchase Nodes undisturbed until they progress a Character's Bloodweb to Level 10 , at which point The Entity awakens and starts to interfere."
+ },
+ {
+  "topic": "currency",
+  "q": "What is the most Bloodpoints you can earn in one scoring category in a single Trial?",
+  "a": "10,000",
+  "o": [
+   "5,000",
+   "8,000",
+   "20,000"
+  ],
+  "x": "With four categories that makes 40,000 per Trial before Offerings. The category cap was 8,000 until Patch 6.1.0.",
+  "page": "Bloodpoints",
+  "evidence": "During the Trial, Players may only accumulate a maximum of 10,000 Bloodpoints in each of the four Scoring Categories, for a maximum of 40,000 Bloodpoints ."
+ },
+ {
+  "topic": "currency",
+  "q": "What is the current cap on Bloodpoints you can hold from Trials?",
+  "a": "5,000,000",
+  "o": [
+   "1,000,000",
+   "2,000,000",
+   "10,000,000"
+  ],
+  "x": "Patch 8.6.0 raised it from 2 million, after the higher cap was tested during the Blood Moon 2025 event.",
+  "page": "Bloodpoints",
+  "evidence": "Bloodpoints are capped at 5,000,000 Bloodpoints for all Bloodpoints gained from Trials and those awarded from collecting completed Tome Challenges."
+ },
+ {
+  "topic": "currency",
+  "q": "Survivor Bloodpoint Offerings are named after flowers. What are the Killer ones named after?",
+  "a": "Birds",
+  "o": [
+   "Insects",
+   "Snakes",
+   "Wolves"
+  ],
+  "x": "Each name fits its category: the Shrike, a bird that impales its prey, stands for the Sacrifice category.",
+  "page": "Offerings",
+  "evidence": "The original Offerings for Bonus Bloodpoints in a specific Category are all named after flowering plants (Survivor Offerings) and birds (Killer Offerings)"
+ },
+ {
+  "topic": "currency",
+  "q": "When does the Shrine of Secrets refresh each week?",
+  "a": "Tuesday at 15:00 UTC",
+  "o": [
+   "Monday at 00:00 UTC",
+   "Wednesday at 00:00 UTC",
+   "Friday at 15:00 UTC"
+  ],
+  "x": "It moved from Wednesday at midnight UTC to Tuesday in Patch 6.7.0. During Anniversaries it rotates daily instead.",
+  "page": "Shrine of Secrets",
+  "evidence": "The Shrine of Secrets resets every Tuesday at 15:00 UTC (GMT+0) ."
+ },
+ {
+  "topic": "currency",
+  "q": "How many Perks does the Shrine of Secrets offer at a time?",
+  "a": "4",
+  "o": [
+   "2",
+   "3",
+   "6"
+  ],
+  "x": "It is always 2 Survivor and 2 Killer Perks, and a Perk can't come back for at least the next 3 Shrines.",
+  "page": "Shrine of Secrets",
+  "evidence": "The Shrine features a selection of 4 Unique Perks (always 2 for Survivors and 2 for Killers)."
+ },
+ {
+  "topic": "currency",
+  "q": "What do you get for buying a Shrine Perk you already own at Tier III?",
+  "a": "100,000 Bloodpoints",
+  "o": [
+   "2,000 Iridescent Shards",
+   "50 Auric Cells",
+   "A Perk Charm"
+  ],
+  "x": "The wiki advises against it: the playtime needed to earn back 2,000 Shards would bring in far more Bloodpoints.",
+  "page": "Shrine of Secrets",
+  "evidence": "It should be noted that purchasing a Perk that is already unlocked at Tier III grants 100,000 Bloodpoints instead."
+ },
+ {
+  "topic": "currency",
+  "q": "Which was the first new currency added to DBD after Bloodpoints?",
+  "a": "Iridescent Shards",
+  "o": [
+   "Auric Cells",
+   "Rift Fragments",
+   "Putrid Serum"
+  ],
+  "x": "Shards arrived in Patch 1.2.0 together with the Shrine of Secrets. Auric Cells followed in Patch 2.0.0.",
+  "page": "Iridescent Shards",
+  "evidence": "Iridescent Shards were the first new currency added to the Game."
+ },
+ {
+  "topic": "currency",
+  "q": "How many Iridescent Shards does a newer original (non-licensed) character cost?",
+  "a": "9,000",
+  "o": [
+   "2,250",
+   "6,000",
+   "12,000"
+  ],
+  "x": "Older original characters are discounted to 4,500 or 2,250 Shards. In Auric Cells, newer characters cost 500.",
+  "page": "Iridescent Shards",
+  "evidence": "Original Characters (meaning 'non-licensed') can be bought for 9,000 Iridescent Shards ."
+ },
+ {
+  "topic": "currency",
+  "q": "How many Auric Cells does the Rift Pass premium track cost?",
+  "a": "1,000",
+  "o": [
+   "500",
+   "1,500",
+   "2,000"
+  ],
+  "x": "Finishing the pass pays all 1,000 back, thanks to 25 to 50 Auric Cell rewards spread along the track.",
+  "page": "Rift Pass",
+  "evidence": "its Rewards will not be granted unless Players have purchased the Battle-Pass, which costs 1,000 Auric Cells ."
+ },
+ {
+  "topic": "currency",
+  "q": "Since Patch 8.7.0, how many Rift Fragments does each Rift Pass tier need?",
+  "a": "100",
+  "o": [
+   "10",
+   "50",
+   "250"
+  ],
+  "x": "The old Rift needed only 10 per tier, but XP now gives 5 Fragments per 500 XP instead of 1.",
+  "page": "Rift Pass",
+  "evidence": "Each Rift Pass Tier requires 100 Rift Fragments"
+ },
+ {
+  "topic": "currency",
+  "q": "What replaced Daily Rituals and Tome Challenges in Patch 8.7.0?",
+  "a": "Quests",
+  "o": [
+   "Bounties",
+   "Contracts",
+   "Missions"
+  ],
+  "x": "Players now get 4 Daily Quests, which refresh every day at 17:00 UTC.",
+  "page": "Quests",
+  "evidence": "They were first introduced in Patch 8.7.0 and replaced the Daily Rituals"
+ },
+ {
+  "topic": "currency",
+  "q": "What happens to unspent event Trinkets after the event ends?",
+  "a": "They turn into Bloodpoints",
+  "o": [
+   "They carry over to next year",
+   "They turn into Auric Cells",
+   "They are simply deleted"
+  ],
+  "x": "The first kind were Dark Trinkets, introduced for the Haunted by Daylight 2023 Halloween event.",
+  "page": "Trinkets",
+  "evidence": "Any left-over Trinkets not spent on Cosmetics are automatically converted into Bloodpoints ."
+ },
+ {
+  "topic": "currency",
+  "q": "Since September 2021, what does DBD use to decide who you are matched with?",
+  "a": "A hidden MMR rating",
+  "o": [
+   "Your current Grade",
+   "Your Prestige level",
+   "Your Player Level"
+  ],
+  "x": "Grades no longer affect matchmaking at all. They just track your monthly season and pay out Bloodpoints.",
+  "page": "Grades",
+  "evidence": "Since 8 September 2021, Dead by Daylight uses a hidden scoring system for its matchmaking, known as the Skill-Based Matchmaking Rating (SBMM) or more commonly as just Matchmaking Rating (MMR)."
+ },
+ {
+  "topic": "currency",
+  "q": "Which Survivor Emblem grades how much you pushed the main objective?",
+  "a": "Lightbringer",
+  "o": [
+   "Benevolent",
+   "Evader",
+   "Gatekeeper"
+  ],
+  "x": "The four Survivor Emblems are Lightbringer, Unbroken, Benevolent and Evader. Gatekeeper is a Killer Emblem.",
+  "page": "Emblems",
+  "evidence": "The Lightbringer Emblem grades how much the Player participated in progressing the main objective as a Survivor."
+ },
+ {
+  "topic": "modes",
+  "q": "In the 2v8 mode, how many Generators spawn on the map?",
+  "a": "13",
+  "o": [
+   "9",
+   "10",
+   "16"
+  ],
+  "x": "Survivors must repair 8 of them, but each one needs only 70 Charges instead of the usual 90.",
+  "page": "2v8",
+  "evidence": "Each 2v8 Map features a total of 13 Generators , of which Survivors have to repair 8 in order to power the Exit Gates ."
+ },
+ {
+  "topic": "modes",
+  "q": "What replaces Hooks in the 2v8 mode?",
+  "a": "Cages of Corruption",
+  "o": [
+   "Cages of Atonement",
+   "Bear Traps",
+   "Sacrificial Pyres"
+  ],
+  "x": "Caged Survivors are sacrificed after 120 seconds in total, and freeing them makes no Loud Noise Notification.",
+  "page": "2v8",
+  "evidence": "Instead of hooking Survivors, a mechanic similar to The Executioner's Cages of Atonement is used; the Cages of Corruption , which causes Survivors to have Cage States , rather than Hook Stages ."
+ },
+ {
+  "topic": "modes",
+  "q": "When did the 2v8 mode first become playable?",
+  "a": "July 2024",
+  "o": [
+   "October 2023",
+   "February 2024",
+   "November 2024"
+  ],
+  "x": "The first run lasted from 25 July to 15 August 2024, and the mode has come back every few months since.",
+  "page": "Game Modes",
+  "evidence": "The first iteration of this Game Mode was available between 25 July and 15 August 2024."
+ },
+ {
+  "topic": "modes",
+  "q": "In 2v8, what do players pick instead of regular Perks, Items and Add-ons?",
+  "a": "Classes with Skills",
+  "o": [
+   "Random Tier III Perks",
+   "Shared team Perks",
+   "Only General Perks"
+  ],
+  "x": "Survivor Classes include Escapist, Guide, Medic, Scout and Torchbearer, and each Killer has its own Innate Skill.",
+  "page": "2v8",
+  "evidence": "Both Survivors and Killers can choose from a variety of Classes , which feature the new Skills ."
+ },
+ {
+  "topic": "modes",
+  "q": "What could Killer players do for the first time thanks to 2v8?",
+  "a": "Queue up with a Killer friend",
+  "o": [
+   "Talk to Survivors in voice chat",
+   "Swap sides mid-Trial",
+   "Pick the map freely"
+  ],
+  "x": "The queue can't be mixed, so friends must play on the same side in a 2v8 Trial.",
+  "page": "2v8",
+  "evidence": "2v8 premiered the ability for a Killer Player to queue up with a friend to play a Trial together, taking on the role of the second Killer for the Trial."
+ },
+ {
+  "topic": "modes",
+  "q": "Which Status Effect exists only in the 2v8 mode?",
+  "a": "Revealed",
+  "o": [
+   "Glyph",
+   "Elusive",
+   "Haemorrhage"
+  ],
+  "x": "It shows a Survivor's Aura to both Killers, for example for 5 seconds whenever a Generator is completed.",
+  "page": "Status HUD",
+  "evidence": "Survivors suffering from Revealed have their Aura revealed to both Killers in the 2v8 Game Mode, to which this Status Effect is exclusive."
+ },
+ {
+  "topic": "modes",
+  "q": "What does the Lights Out Modifier do to Trials?",
+  "a": "Makes the maps far darker",
+  "o": [
+   "Gives everyone random Perks",
+   "Doubles the player count",
+   "Removes all Pallets"
+  ],
+  "x": "It leans into stealth and horror. Its first run was 7 to 14 February 2024, when Modifier events were brand new.",
+  "page": "Lights Out",
+  "evidence": "Lights Out modifies the Gameplay Loop by drastically reducing the visibility and brightness on its selected Maps and focusing on stealth- and horror-elements."
+ },
+ {
+  "topic": "modes",
+  "q": "What is special about your Perks in the Chaos Shuffle Modifier?",
+  "a": "They are picked at random",
+  "o": [
+   "They are all disabled",
+   "They are swapped with the Killer's",
+   "They are locked at Tier I"
+  ],
+  "x": "All four Perk Slots are open and every Perk is Tier III, even ones you have not unlocked yet.",
+  "page": "Chaos Shuffle",
+  "evidence": "causing all five Players to enter the Trial with a fully randomised set of Perks ."
+ },
+ {
+  "topic": "modes",
+  "q": "What was the Custom Game mode originally called?",
+  "a": "Kill Your Friends",
+  "o": [
+   "Survive With Friends",
+   "Quick Play",
+   "Play With Friends"
+  ],
+  "x": "Custom Games are unranked and give no Bloodpoints or XP. Since Patch 6.4.0 you can fill empty Survivor slots with Bots.",
+  "page": "Custom Game",
+  "evidence": "Custom Game , originally known as Kill Your Friends and abbreviated as \"KYF\" , is one of 3 permanently available Game Modes featured in Dead by Daylight ."
+ },
+ {
+  "topic": "modes",
+  "q": "Haunted by Daylight 2026 removed which mechanic the event had used since 2023?",
+  "a": "The Void",
+  "o": [
+   "The Dream World",
+   "The Upside Down",
+   "The Otherworld"
+  ],
+  "x": "Its leftovers now appear as Void Portals around the map, where players gather Void Energy for special abilities.",
+  "page": "Haunted by Daylight 2026",
+  "evidence": "This iteration of Haunted by Daylight sees the removal of The Void mechanic that has been present since Haunted by Daylight 2023 ."
+ },
+ {
+  "topic": "modes",
+  "q": "What has DBD's winter event been called since 2021?",
+  "a": "Bone Chill",
+  "o": [
+   "Winter Solstice",
+   "Season of Giving",
+   "Blood Moon"
+  ],
+  "x": "The first winter events, in 2017 and 2018, were called Winter Solstice. Winter events often bring Ugly Sweaters for Survivors.",
+  "page": "Winter Events",
+  "evidence": "Bone Chill 2021 (Winter Event)"
+ },
+ {
+  "topic": "modes",
+  "q": "Which event was the Anniversary main event from 2022 to 2025?",
+  "a": "Twisted Masquerade",
+  "o": [
+   "The Black Banquet",
+   "Blood Moon",
+   "Bone Chill"
+  ],
+  "x": "Its special Twisted Skills, like dropping a fragile Party Pallet, debuted in the 2023 edition.",
+  "page": "Anniversaries",
+  "evidence": "Ninth Year Anniversary (Anniversary Event) Before the Masquerade 2025 (Pre-Event) Twisted Masquerade 2025 (Main Event)"
+ },
+ {
+  "topic": "modes",
+  "q": "What does a Blood Hunt event do?",
+  "a": "Doubles Bloodpoint gains",
+  "o": [
+   "Doubles XP gains",
+   "Halves Shrine prices",
+   "Adds a second Killer"
+  ],
+  "x": "Blood Hunts are usually weekend events lasting about four days, starting at 15:00 UTC.",
+  "page": "Blood Hunt",
+  "evidence": "The Event boosts all Bloodpoint gains post-trial by a factor of 2 ."
+ },
+ {
+  "topic": "modes",
+  "q": "Which Survivor do you control in the Survivor tutorial?",
+  "a": "Dwight Fairfield",
+  "o": [
+   "Meg Thomas",
+   "Claudette Morel",
+   "Jake Park"
+  ],
+  "x": "After you step into The Trapper's Bear Trap, Meg Thomas comes along to help you out.",
+  "page": "In-Game Tutorial",
+  "evidence": "You spawn into the Trial as Dwight Fairfield and are faced with a series of basic tasks to familiarise yourself with the basic movement of Survivors:"
+ },
+ {
+  "topic": "modes",
+  "q": "What is the name of DBD's Spring event, first held in 2024?",
+  "a": "Blood Moon",
+  "o": [
+   "Moonrise",
+   "Howling Grounds",
+   "Moonlight Burrow"
+  ],
+  "x": "Spring Events took over from the Lunar New Year events, which used to fill that part of the calendar.",
+  "page": "Spring Events",
+  "evidence": "Blood Moon 2024 ( Spring Event 18.03.2024 - 31.03.2024 (13 days) )"
+ },
+ {
+  "topic": "history",
+  "q": "On what date did Dead by Daylight first release on PC?",
+  "a": "14 June 2016",
+  "o": [
+   "31 October 2015",
+   "20 June 2017",
+   "13 September 2016"
+  ],
+  "x": "It launched on Steam, and the yearly Anniversary events still celebrate that June date.",
+  "page": "Dead by Daylight",
+  "evidence": "available on multiple platforms after its initial release to PC through Steam on 14 June 2016."
+ },
+ {
+  "topic": "history",
+  "q": "Which studio develops Dead by Daylight?",
+  "a": "Behaviour Interactive",
+  "o": [
+   "Starbreeze Studios",
+   "Supermassive Games",
+   "Zen Studios"
+  ],
+  "x": "Behaviour is an independent game studio based in Montreal, Quebec, Canada.",
+  "page": "Dead by Daylight",
+  "evidence": "developed by the Canadian Indie Video Game Developer Behaviour Interactive"
+ },
+ {
+  "topic": "history",
+  "q": "Behaviour Interactive was founded in 1992 under what name?",
+  "a": "Megatoon Entertainment Group",
+  "o": [
+   "Artificial Mind & Movement",
+   "Multimedia Interactive",
+   "Malofilm Communications"
+  ],
+  "x": "From 2000 to 2010 the studio was called Artificial Mind & Movement (A2M) before going back to Behaviour.",
+  "page": "Behaviour Interactive",
+  "evidence": "Behaviour Interactive was founded in 1992 in Quebec City by Rémi Racine as Megatoon Entertainment Group."
+ },
+ {
+  "topic": "history",
+  "q": "Which company published Dead by Daylight on PC from 2016 to 2018?",
+  "a": "Starbreeze",
+  "o": [
+   "505 Games",
+   "Deep Silver",
+   "NetEase Games"
+  ],
+  "x": "Behaviour Interactive has published the game itself since 2018.",
+  "page": "Dead by Daylight",
+  "evidence": "Starbreeze (2016-2018) Behaviour Interactive (since 2018)"
+ },
+ {
+  "topic": "history",
+  "q": "Which company published the Nintendo Switch version of DBD?",
+  "a": "505 Games",
+  "o": [
+   "Starbreeze",
+   "Deep Silver",
+   "Nintendo"
+  ],
+  "x": "The Switch version arrived on 24 September 2019.",
+  "page": "Dead by Daylight",
+  "evidence": "Nintendo Switch 24 September 2019 505 Games"
+ },
+ {
+  "topic": "history",
+  "q": "In which year did DBD come to PlayStation 4 and Xbox One?",
+  "a": "2017",
+  "o": [
+   "2016",
+   "2018",
+   "2019"
+  ],
+  "x": "The console launch came about a year after the PC release, in June 2017.",
+  "page": "Dead by Daylight",
+  "evidence": "PlayStation 4 / Xbox One 20/22/23 June 2017"
+ },
+ {
+  "topic": "history",
+  "q": "Which cloud gaming version of DBD stopped being available in January 2023?",
+  "a": "Google Stadia",
+  "o": [
+   "GeForce Now",
+   "Xbox Cloud Gaming",
+   "Amazon Luna"
+  ],
+  "x": "Stadia players got a brief cross-progression window to move their progress before the service closed for good.",
+  "page": "Dead by Daylight",
+  "evidence": "Stadia 1 October 2020 Behaviour Interactive No longer available as of 18 January 2023."
+ },
+ {
+  "topic": "history",
+  "q": "What did DBD gain across all platforms on 22 July 2024?",
+  "a": "Full cross-progression",
+  "o": [
+   "Split-screen co-op",
+   "Official mod support",
+   "An offline story mode"
+  ],
+  "x": "Before that, it mostly worked only between the PC versions and, briefly, Stadia. Switch still has a few minor limits.",
+  "page": "Dead by Daylight",
+  "evidence": "As of 22 July 2024, Dead by Daylight features full Cross-Progression across all platforms, albeit with some minor restrictions remaining on the Nintendo Switch ."
+ },
+ {
+  "topic": "history",
+  "q": "Which game engine does Dead by Daylight run on today?",
+  "a": "Unreal Engine 5",
+  "o": [
+   "Unreal Engine 4",
+   "Unity",
+   "Source 2"
+  ],
+  "x": "It launched on Unreal Engine 4 and moved to Unreal Engine 5 with Patch 7.7.0.",
+  "page": "Dead by Daylight",
+  "evidence": "With Patch 7.7.0 , the Engine was updated to Unreal Engine 5 :"
+ },
+ {
+  "topic": "history",
+  "q": "Since Patch 7.6.0, DBD's internal update code names follow which theme?",
+  "a": "Food",
+  "o": [
+   "Countries",
+   "Astronomy",
+   "Cities"
+  ],
+  "x": "Country names came first, starting with 'England', then astronomy terms. The food era began with 'ApplePie'.",
+  "page": "Dead by Daylight",
+  "evidence": "Currently, starting with Patch 7.6.0 , the Developers are using food-related terms, starting with ApplePie ."
+ },
+ {
+  "topic": "history",
+  "q": "By May 2020, how many people had played DBD since launch, according to Behaviour?",
+  "a": "More than 20 million",
+  "o": [
+   "About 5 million",
+   "About 10 million",
+   "More than 50 million"
+  ],
+  "x": "Around the same time, the game passed one million daily users across all platforms.",
+  "page": "Fourth Year Anniversary Stream",
+  "evidence": "In the last four years since its launch, more than 20 million people have now played Dead by Daylight ."
+ },
+ {
+  "topic": "history",
+  "q": "By 2020, sales of the Charity Case cosmetic DLC had raised over how much for charity?",
+  "a": "$1 million",
+  "o": [
+   "$100,000",
+   "$500,000",
+   "$5 million"
+  ],
+  "x": "All profits from the 28-item, creator-themed DLC went to the Brain and Behaviour Research Fund.",
+  "page": "Fourth Year Anniversary Stream",
+  "evidence": "Within the last few months, the money raised from Charity Case sales has broken one million dollars."
+ },
+ {
+  "topic": "history",
+  "q": "Which DBD Killer appeared in Assassin's Creed Shadows through a crossover?",
+  "a": "The Oni",
+  "o": [
+   "The Trapper",
+   "The Huntress",
+   "The Spirit"
+  ],
+  "x": "Other crossovers put The Trapper into For Honor and DBD-themed cards into Balatro.",
+  "page": "Dead by Daylight/Crossovers",
+  "evidence": "The Oni from Dead by Daylight appears in Assassin's Creed Shadows during a crossover event."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which studio developed The Casting of Frank Stone?",
+  "a": "Supermassive Games",
+  "o": [
+   "Psyop",
+   "Zen Studios",
+   "Level 99 Games"
+  ],
+  "x": "Supermassive is known for Until Dawn. The game was announced at The Game Awards 2023 and released in September 2024.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "It is a spin-off game developed by Supermassive Games (the developers behind the 2015 horror game Until Dawn ) and released on September 4th, 2024."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which studio developed Hooked on You: A Dead by Daylight Dating Sim?",
+  "a": "Psyop",
+  "o": [
+   "Supermassive Games",
+   "Zen Studios",
+   "Midwinter"
+  ],
+  "x": "Behaviour published it in August 2022, after a 2021 community survey showed fans wanted a dating sim.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "It was developed by Psyop and published by Behaviour Interactive after a 2021 survey amongst the Community revealed an interest in a dating simulator spin-off and ultimately released on 3 August 2022."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which of these Killers can you date in Hooked on You?",
+  "a": "The Spirit",
+  "o": [
+   "The Nurse",
+   "The Hag",
+   "The Clown"
+  ],
+  "x": "The four dates are The Trapper, The Wraith, The Huntress and The Spirit, with Dwight and Claudette as your guides.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "Hooked on You allows Players to date the following Characters: The Trapper The Wraith The Huntress The Spirit"
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which company created Dead by Daylight: The Board Game?",
+  "a": "Level 99 Games",
+  "o": [
+   "Titan Comics",
+   "Zen Studios",
+   "Psyop"
+  ],
+  "x": "Released in April 2023, it recreates the game loop with cards, tokens and figurines.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "The Board Game is a boardgame adaptation that was created by Level 99 Games and released on 7 April 2023."
+ },
+ {
+  "topic": "spinoff",
+  "q": "What kind of game is the 2024 spin-off What the Fog?",
+  "a": "A co-op roguelike",
+  "o": [
+   "A dating sim",
+   "A pinball table",
+   "A story-driven horror game"
+  ],
+  "x": "It stars Dwight and Claudette in The Void, and it was announced and released on the same day: 14 May 2024.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "The game is a co-op roguelike featuring Dwight Fairfield and Claudette Morel and is set in The Void ."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which publisher puts out the official Dead by Daylight comic series?",
+  "a": "Titan Comics",
+  "o": [
+   "Dark Horse Comics",
+   "IDW Publishing",
+   "Image Comics"
+  ],
+  "x": "Issue #1 came out on 14 June 2023, the game's 7th Anniversary, and each comic includes a code for a cosmetic.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "Dead by Daylight is a comic series published by Titan Comics with the first issue released on 14 June 2023, the day of Dead by Daylight's 7th Anniversary."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which production companies are making the Dead by Daylight movie with Behaviour?",
+  "a": "Atomic Monster and Blumhouse",
+  "o": [
+   "A24 and Neon",
+   "Legendary and Warner Bros.",
+   "Lionsgate and Twisted Pictures"
+  ],
+  "x": "The film was announced in March 2023. In 2026 the same companies were reported to be looking for writers for an animated series.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "bringing the Realm of The Entity to the big screen by Behaviour Interactive partnering with Atomic Monster and Blumhouse, originally announced to be in development as of March 2023."
+ },
+ {
+  "topic": "spinoff",
+  "q": "Which cancelled DBD spin-off was being made by Midwinter, the studio behind Scavengers?",
+  "a": "Project T",
+  "o": [
+   "Project W",
+   "What the Fog",
+   "Meet Your Maker"
+  ],
+  "x": "It was planned as a multiplayer PvE game for up to four players, themed around greed and the lust for power.",
+  "page": "Dead by Daylight/Spin-offs",
+  "evidence": "Project T A yet-to-be-named spin-off was being developed by Midwinter"
+ },
+ {
+  "topic": "spinoff",
+  "q": "In Dead by Daylight Mobile, what took the place of the Bloodweb?",
+  "a": "The Bloodmarket",
+  "o": [
+   "The Archives",
+   "The Rift",
+   "The Shrine of Secrets"
+  ],
+  "x": "All Mobile characters shared one Bloodmarket, which restocked itself every 24 hours.",
+  "page": "Bloodmarket",
+  "evidence": "The Bloodmarket in Dead by Daylight Mobile is the equivalent to the Bloodweb featured in the Core version of Dead by Daylight , but works very differently to it."
+ },
+ {
+  "topic": "spinoff",
+  "q": "When was Dead by Daylight Mobile first released?",
+  "a": "April 2020",
+  "o": [
+   "June 2017",
+   "October 2019",
+   "March 2023"
+  ],
+  "x": "That first version was pulled in December 2022 and replaced by an improved version on 15 March 2023.",
+  "page": "Dead by Daylight",
+  "evidence": "Mobile (v1) Android / iOS 16/17 April 2020"
+ }
+]

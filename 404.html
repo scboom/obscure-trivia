@@ -167,6 +167,21 @@ a { color: inherit; }
 .roy .pill { border-radius: 999px; background: rgba(6, 16, 60, 0.4); border: 1px solid rgba(255, 201, 40, 0.6); color: #fff; }
 .roy .play { color: #ffc928; font-family: "Titan One", sans-serif; font-weight: 400; }
 @media (max-width: 620px) { .roy { min-height: 330px; background-size: auto 34%, auto, auto, auto; } }
+/* dead by daylight tile: night, the Fog rolling in, the Entity's red glow and a meat hook */
+.dbd { border-radius: 12px; color: #ece6dd;
+  background: url(dead-by-daylight/hook.svg) right 18px top 12px / auto 52% no-repeat,
+    radial-gradient(ellipse 60% 40% at 18% 108%, rgba(200, 205, 212, 0.26), transparent 70%),
+    radial-gradient(ellipse 55% 36% at 78% 106%, rgba(200, 205, 212, 0.2), transparent 70%),
+    radial-gradient(circle at 84% 22%, rgba(200, 22, 30, 0.5), transparent 42%),
+    linear-gradient(180deg, #24151a 0%, #140e11 55%, #0c0a0b 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(222, 36, 44, 0.55), inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #de242c, inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd h3 { font-family: "Eater", Georgia, serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0.03em; max-width: 9ch; line-height: 1.12;
+  text-shadow: 0 0 18px rgba(200, 22, 30, 0.6), 0 3px 0 rgba(0, 0, 0, 0.7); }
+.dbd p { color: #cfc5bb; font-family: "Spectral", Georgia, serif; font-weight: 600; max-width: 31ch; }
+.dbd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(222, 36, 44, 0.6); color: #ece6dd; }
+.dbd .play { color: #ff6166; font-family: "Spectral", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+@media (max-width: 620px) { .dbd { min-height: 330px; background-size: auto 38%, auto, auto, auto, auto; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -225,7 +240,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/dead-by-daylight/">Dead by Daylight</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>

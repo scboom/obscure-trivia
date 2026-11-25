@@ -1,0 +1,954 @@
+{
+ "_doc": "Hand-written look-alike spellings. surname: [character key (K/S + id), the real surname as the wiki's data table spells it, three near-miss spellings]. title: [Killer id, the name fans know them by, three made-up titles that would make sense]. Checked by gen_dbd.py against the data table and the character pages.",
+ "surname": [
+  [
+   "S6",
+   "Laurie",
+   "Strode",
+   [
+    "Stroke",
+    "Stride",
+    "Streed"
+   ]
+  ],
+  [
+   "S1",
+   "Dwight",
+   "Fairfield",
+   [
+    "Fairfeld",
+    "Fairchild",
+    "Fairfax"
+   ]
+  ],
+  [
+   "S2",
+   "Meg",
+   "Thomas",
+   [
+    "Thompson",
+    "Tomas",
+    "Thomson"
+   ]
+  ],
+  [
+   "S3",
+   "Claudette",
+   "Morel",
+   [
+    "Morell",
+    "Moreau",
+    "Morrel"
+   ]
+  ],
+  [
+   "S5",
+   "Nea",
+   "Karlsson",
+   [
+    "Carlsson",
+    "Karlson",
+    "Karlsen"
+   ]
+  ],
+  [
+   "S7",
+   "Ace",
+   "Visconti",
+   [
+    "Visconte",
+    "Viscanti",
+    "Vesconti"
+   ]
+  ],
+  [
+   "S8",
+   "Bill",
+   "Overbeck",
+   [
+    "Overback",
+    "Overbeek",
+    "Oberbeck"
+   ]
+  ],
+  [
+   "S13",
+   "Kate",
+   "Denson",
+   [
+    "Dennison",
+    "Denton",
+    "Danson"
+   ]
+  ],
+  [
+   "S14",
+   "Adam",
+   "Francis",
+   [
+    "Frances",
+    "Franklin",
+    "Francois"
+   ]
+  ],
+  [
+   "S15",
+   "Jeff",
+   "Johansen",
+   [
+    "Johanson",
+    "Johannsen",
+    "Johnsen"
+   ]
+  ],
+  [
+   "S16",
+   "Jane",
+   "Romero",
+   [
+    "Romeo",
+    "Romera",
+    "Romano"
+   ]
+  ],
+  [
+   "S18",
+   "Nancy",
+   "Wheeler",
+   [
+    "Wheelan",
+    "Wheeling",
+    "Weller"
+   ]
+  ],
+  [
+   "S19",
+   "Steve",
+   "Harrington",
+   [
+    "Herrington",
+    "Harringdon",
+    "Harrison"
+   ]
+  ],
+  [
+   "S20",
+   "Yui",
+   "Kimura",
+   [
+    "Kimora",
+    "Kimuro",
+    "Kamura"
+   ]
+  ],
+  [
+   "S21",
+   "Zarina",
+   "Kassir",
+   [
+    "Kasir",
+    "Kassar",
+    "Qassim"
+   ]
+  ],
+  [
+   "S22",
+   "Cheryl",
+   "Mason",
+   [
+    "Masen",
+    "Mayson",
+    "Madison"
+   ]
+  ],
+  [
+   "S23",
+   "Felix",
+   "Richter",
+   [
+    "Richtor",
+    "Righter",
+    "Reichter"
+   ]
+  ],
+  [
+   "S24",
+   "Élodie",
+   "Rakoto",
+   [
+    "Rakato",
+    "Rakotu",
+    "Ratoko"
+   ]
+  ],
+  [
+   "S26",
+   "Jill",
+   "Valentine",
+   [
+    "Valentino",
+    "Vallentine",
+    "Valentin"
+   ]
+  ],
+  [
+   "S28",
+   "Mikaela",
+   "Reid",
+   [
+    "Reed",
+    "Read",
+    "Ried"
+   ]
+  ],
+  [
+   "S29",
+   "Jonah",
+   "Vasquez",
+   [
+    "Vazquez",
+    "Velasquez",
+    "Vasques"
+   ]
+  ],
+  [
+   "S30",
+   "Yoichi",
+   "Asakawa",
+   [
+    "Asakura",
+    "Asagawa",
+    "Akasawa"
+   ]
+  ],
+  [
+   "S31",
+   "Haddie",
+   "Kaur",
+   [
+    "Kour",
+    "Kaul",
+    "Kapoor"
+   ]
+  ],
+  [
+   "S33",
+   "Rebecca",
+   "Chambers",
+   [
+    "Chalmers",
+    "Chamber",
+    "Chandler"
+   ]
+  ],
+  [
+   "S34",
+   "Vittorio",
+   "Toscano",
+   [
+    "Toscani",
+    "Tuscano",
+    "Toscana"
+   ]
+  ],
+  [
+   "S35",
+   "Thalita",
+   "Lyra",
+   [
+    "Lira",
+    "Lyre",
+    "Lyria"
+   ]
+  ],
+  [
+   "S37",
+   "Gabriel",
+   "Soma",
+   [
+    "Sona",
+    "Sorna",
+    "Somma"
+   ]
+  ],
+  [
+   "S39",
+   "Ellen",
+   "Ripley",
+   [
+    "Ripely",
+    "Rippley",
+    "Riplee"
+   ]
+  ],
+  [
+   "S41",
+   "Sable",
+   "Ward",
+   [
+    "Wade",
+    "Warde",
+    "Wardell"
+   ]
+  ],
+  [
+   "S43",
+   "Lara",
+   "Croft",
+   [
+    "Craft",
+    "Crofts",
+    "Croff"
+   ]
+  ],
+  [
+   "S44",
+   "Trevor",
+   "Belmont",
+   [
+    "Belmonte",
+    "Bellamont",
+    "Belmond"
+   ]
+  ],
+  [
+   "S45",
+   "Taurie",
+   "Cain",
+   [
+    "Kane",
+    "Caine",
+    "Cane"
+   ]
+  ],
+  [
+   "S46",
+   "Orela",
+   "Rose",
+   [
+    "Ross",
+    "Rosa",
+    "Roe"
+   ]
+  ],
+  [
+   "S47",
+   "Rick",
+   "Grimes",
+   [
+    "Graves",
+    "Grimm",
+    "Grimley"
+   ]
+  ],
+  [
+   "S49",
+   "Vee",
+   "Boonyasak",
+   [
+    "Boonyasuk",
+    "Bunyasak",
+    "Boonsayak"
+   ]
+  ],
+  [
+   "S50",
+   "Dustin",
+   "Henderson",
+   [
+    "Hendrickson",
+    "Henderston",
+    "Anderson"
+   ]
+  ],
+  [
+   "S53",
+   "Shane",
+   "Wiigwaas",
+   [
+    "Wiigwas",
+    "Wigwaas",
+    "Wiigwass"
+   ]
+  ],
+  [
+   "S54",
+   "Aurora",
+   "Stardotter",
+   [
+    "Stardaughter",
+    "Starbotter",
+    "Stardottir"
+   ]
+  ],
+  [
+   "S55",
+   "Sienna",
+   "Shaw",
+   [
+    "Shore",
+    "Shah",
+    "Shawe"
+   ]
+  ],
+  [
+   "K1",
+   "Evan",
+   "MacMillan",
+   [
+    "McMillan",
+    "MacMullan",
+    "MacMillian"
+   ]
+  ],
+  [
+   "K2",
+   "Philip",
+   "Ojomo",
+   [
+    "Ojomu",
+    "Ajomo",
+    "Ojoma"
+   ]
+  ],
+  [
+   "K3",
+   "Max",
+   "Thompson",
+   [
+    "Thomson",
+    "Thompsen",
+    "Tompson"
+   ]
+  ],
+  [
+   "K4",
+   "Sally",
+   "Smithson",
+   [
+    "Smithers",
+    "Smitherson",
+    "Smythson"
+   ]
+  ],
+  [
+   "K6",
+   "Lisa",
+   "Sherwood",
+   [
+    "Sherwin",
+    "Sherward",
+    "Shearwood"
+   ]
+  ],
+  [
+   "K7",
+   "Herman",
+   "Carter",
+   [
+    "Cartier",
+    "Carver",
+    "Carten"
+   ]
+  ],
+  [
+   "K9",
+   "Bubba",
+   "Sawyer",
+   [
+    "Sayer",
+    "Sawyers",
+    "Sowyer"
+   ]
+  ],
+  [
+   "K10",
+   "Freddy",
+   "Krueger",
+   [
+    "Kruger",
+    "Krugger",
+    "Kreuger"
+   ]
+  ],
+  [
+   "K5",
+   "Michael",
+   "Myers",
+   [
+    "Meyers",
+    "Miers",
+    "Mayers"
+   ]
+  ],
+  [
+   "K12",
+   "Kenneth",
+   "Chase",
+   [
+    "Chace",
+    "Chaise",
+    "Chester"
+   ]
+  ],
+  [
+   "K13",
+   "Rin",
+   "Yamaoka",
+   [
+    "Yamaoko",
+    "Yamaka",
+    "Yamadoka"
+   ]
+  ],
+  [
+   "K19",
+   "Caleb",
+   "Quinn",
+   [
+    "Quinlan",
+    "Quill",
+    "Quint"
+   ]
+  ],
+  [
+   "K21",
+   "Talbot",
+   "Grimes",
+   [
+    "Graves",
+    "Grimm",
+    "Grimshaw"
+   ]
+  ],
+  [
+   "K22",
+   "Charlotte",
+   "Deshayes",
+   [
+    "Deshays",
+    "Dushayes",
+    "Deshaies"
+   ]
+  ],
+  [
+   "K25",
+   "Elliot",
+   "Spencer",
+   [
+    "Spenser",
+    "Spender",
+    "Spencers"
+   ]
+  ],
+  [
+   "K26",
+   "Carmina",
+   "Mora",
+   [
+    "Morra",
+    "Moro",
+    "Morales"
+   ]
+  ],
+  [
+   "K27",
+   "Sadako",
+   "Yamamura",
+   [
+    "Yamamoto",
+    "Yamamaru",
+    "Yamamuri"
+   ]
+  ],
+  [
+   "K30",
+   "Tarhos",
+   "Kovács",
+   [
+    "Kovach",
+    "Kovacz",
+    "Kováts"
+   ]
+  ],
+  [
+   "K31",
+   "Adriana",
+   "Imai",
+   [
+    "Imani",
+    "Iwai",
+    "Imada"
+   ]
+  ],
+  [
+   "K29",
+   "Albert",
+   "Wesker",
+   [
+    "Wexler",
+    "Whesker",
+    "Wecker"
+   ]
+  ],
+  [
+   "K38",
+   "Portia",
+   "Maye",
+   [
+    "May",
+    "Mayes",
+    "Mae"
+   ]
+  ],
+  [
+   "K39",
+   "Ken",
+   "Kaneki",
+   [
+    "Kaneko",
+    "Kanaki",
+    "Kaneda"
+   ]
+  ],
+  [
+   "K40",
+   "William",
+   "Afton",
+   [
+    "Aston",
+    "Alton",
+    "Afftin"
+   ]
+  ],
+  [
+   "K41",
+   "Burong",
+   "Sukapat",
+   [
+    "Sukapan",
+    "Sukaphat",
+    "Sakupat"
+   ]
+  ],
+  [
+   "K42",
+   "Henry",
+   "Creel",
+   [
+    "Creed",
+    "Crell",
+    "Greel"
+   ]
+  ],
+  [
+   "K43",
+   "Jason",
+   "Voorhees",
+   [
+    "Vorhees",
+    "Voorhies",
+    "Voorhess"
+   ]
+  ]
+ ],
+ "title": [
+  [
+   34,
+   "Chucky",
+   [
+    "The Doll",
+    "The Playmate",
+    "The Puppet"
+   ]
+  ],
+  [
+   5,
+   "Michael Myers",
+   [
+    "The Stalker",
+    "The Masked Man",
+    "The Silent One"
+   ]
+  ],
+  [
+   10,
+   "Freddy Krueger",
+   [
+    "The Dreamer",
+    "The Burned Man",
+    "The Sleepwalker"
+   ]
+  ],
+  [
+   9,
+   "Leatherface",
+   [
+    "The Butcher",
+    "The Skinner",
+    "The Mask Maker"
+   ]
+  ],
+  [
+   11,
+   "Amanda Young",
+   [
+    "The Apprentice",
+    "The Puzzle",
+    "The Masked Pig"
+   ]
+  ],
+  [
+   20,
+   "Pyramid Head",
+   [
+    "The Punisher",
+    "The Judge",
+    "The Red Pyramid"
+   ]
+  ],
+  [
+   25,
+   "Pinhead",
+   [
+    "The Torturer",
+    "The Puzzle Box",
+    "The Lament"
+   ]
+  ],
+  [
+   27,
+   "Sadako",
+   [
+    "The Yurei",
+    "The Well Girl",
+    "The Cursed Tape"
+   ]
+  ],
+  [
+   29,
+   "Albert Wesker",
+   [
+    "The Tyrant",
+    "The Virologist",
+    "The Commander"
+   ]
+  ],
+  [
+   36,
+   "Vecna",
+   [
+    "The Archmage",
+    "The Necromancer",
+    "The Undying"
+   ]
+  ],
+  [
+   37,
+   "Dracula",
+   [
+    "The Count",
+    "The Vampire",
+    "The Impaler"
+   ]
+  ],
+  [
+   39,
+   "Ken Kaneki",
+   [
+    "The Centipede",
+    "The Devourer",
+    "The Half-Ghoul"
+   ]
+  ],
+  [
+   40,
+   "Springtrap",
+   [
+    "The Mascot",
+    "The Night Guard",
+    "The Puppeteer"
+   ]
+  ],
+  [
+   42,
+   "Henry Creel",
+   [
+    "The Watcher",
+    "The Experiment",
+    "The Psychic"
+   ]
+  ],
+  [
+   43,
+   "Jason Voorhees",
+   [
+    "The Drowned",
+    "The Hockey Mask",
+    "The Camp Killer"
+   ]
+  ],
+  [
+   45,
+   "Art the Clown",
+   [
+    "The Jester",
+    "The Mime",
+    "The Harlequin"
+   ]
+  ],
+  [
+   13,
+   "Rin Yamaoka",
+   [
+    "The Phantom",
+    "The Revenant",
+    "The Vengeful"
+   ]
+  ],
+  [
+   8,
+   "Anna",
+   [
+    "The Woodswoman",
+    "The Axe Maiden",
+    "The Lullaby"
+   ]
+  ],
+  [
+   21,
+   "Talbot Grimes",
+   [
+    "The Alchemist",
+    "The Corruptor",
+    "The Chemist"
+   ]
+  ],
+  [
+   7,
+   "Herman Carter",
+   [
+    "The Surgeon",
+    "The Psychiatrist",
+    "The Electrician"
+   ]
+  ],
+  [
+   2,
+   "Philip Ojomo",
+   [
+    "The Phantom",
+    "The Shade",
+    "The Banshee"
+   ]
+  ],
+  [
+   3,
+   "Max Thompson Jr.",
+   [
+    "The Farmer",
+    "The Brute",
+    "The Chainsaw"
+   ]
+  ],
+  [
+   4,
+   "Sally Smithson",
+   [
+    "The Matron",
+    "The Orderly",
+    "The Asylum"
+   ]
+  ],
+  [
+   6,
+   "Lisa Sherwood",
+   [
+    "The Witch",
+    "The Crone",
+    "The Marsh Witch"
+   ]
+  ],
+  [
+   15,
+   "Adiris",
+   [
+    "The Priestess",
+    "The Sickness",
+    "The Pestilence"
+   ]
+  ],
+  [
+   18,
+   "Kazan Yamaoka",
+   [
+    "The Samurai",
+    "The Demon",
+    "The Warlord"
+   ]
+  ],
+  [
+   19,
+   "Caleb Quinn",
+   [
+    "The Gunslinger",
+    "The Outlaw",
+    "The Bounty Hunter"
+   ]
+  ],
+  [
+   23,
+   "Hak Ji-woon",
+   [
+    "The Idol",
+    "The Performer",
+    "The Knife Thrower"
+   ]
+  ],
+  [
+   26,
+   "Carmina Mora",
+   [
+    "The Painter",
+    "The Crow Mother",
+    "The Muralist"
+   ]
+  ],
+  [
+   30,
+   "Tarhos Kovács",
+   [
+    "The Warlord",
+    "The Crusader",
+    "The Paladin"
+   ]
+  ],
+  [
+   31,
+   "Adriana Imai",
+   [
+    "The Drone Master",
+    "The Spy",
+    "The Engineer"
+   ]
+  ],
+  [
+   38,
+   "Portia Maye",
+   [
+    "The Pirate",
+    "The Dog Handler",
+    "The Buccaneer"
+   ]
+  ],
+  [
+   41,
+   "Burong Sukapat",
+   [
+    "The Floating Head",
+    "The Bride",
+    "The Spectre"
+   ]
+  ]
+ ]
+}

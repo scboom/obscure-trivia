@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8e3dc"/><stop offset="0.55" stop-color="#9c958e"/><stop offset="1" stop-color="#5b5550"/>
+    </linearGradient>
+    <linearGradient id="blood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff3b3b"/><stop offset="1" stop-color="#8e0b0b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="35" cy="8.5" r="4.6" fill="none" stroke="url(#steel)" stroke-width="3.2"/>
+  <path d="M35 13.5 V36 C35 50.5 15 53 13.2 40.5" fill="none" stroke="url(#steel)" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M10.4 41.6 L14.3 26.5 L17 40.2 Z" fill="url(#steel)"/>
+  <path d="M24.6 49.8 C24.6 49.8 21.4 54.4 21.4 56.6 A3.2 3.2 0 0 0 27.8 56.6 C27.8 54.4 24.6 49.8 24.6 49.8 Z" fill="url(#blood)"/>
+  <path d="M31.4 44.6 C31.4 44.6 29.6 47.2 29.6 48.5 A1.8 1.8 0 0 0 33.2 48.5 C33.2 47.2 31.4 44.6 31.4 44.6 Z" fill="url(#blood)"/>
+</svg>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, General Knowledge, Football, Car &amp; Music Quizzes</title>
-<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1) and Clash Royale, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<title>Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Football, Car &amp; Music Quizzes</title>
+<meta name="description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <link rel="canonical" href="https://scboom.github.io/obscure-trivia/">
 <meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
 <meta property="og:site_name" content="Obscure Trivia">
-<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, General Knowledge, Football, Car &amp; Music Quizzes">
-<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1) and Clash Royale, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
+<meta property="og:title" content="Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Football, Car &amp; Music Quizzes">
+<meta property="og:description" content="Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scboom.github.io/obscure-trivia/">
 <meta property="og:image" content="https://scboom.github.io/obscure-trivia/social.png">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": "https://scboom.github.io/obscure-trivia/"}</script>
 <style>
 /* Layout: a single column; brand bar, a short headline, the quiz shelf (one textured tile per quiz), and a join-by-code box. */
@@ -167,6 +167,21 @@ a { color: inherit; }
 .roy .pill { border-radius: 999px; background: rgba(6, 16, 60, 0.4); border: 1px solid rgba(255, 201, 40, 0.6); color: #fff; }
 .roy .play { color: #ffc928; font-family: "Titan One", sans-serif; font-weight: 400; }
 @media (max-width: 620px) { .roy { min-height: 330px; background-size: auto 34%, auto, auto, auto; } }
+/* dead by daylight tile: night, the Fog rolling in, the Entity's red glow and a meat hook */
+.dbd { border-radius: 12px; color: #ece6dd;
+  background: url(dead-by-daylight/hook.svg) right 18px top 12px / auto 52% no-repeat,
+    radial-gradient(ellipse 60% 40% at 18% 108%, rgba(200, 205, 212, 0.26), transparent 70%),
+    radial-gradient(ellipse 55% 36% at 78% 106%, rgba(200, 205, 212, 0.2), transparent 70%),
+    radial-gradient(circle at 84% 22%, rgba(200, 22, 30, 0.5), transparent 42%),
+    linear-gradient(180deg, #24151a 0%, #140e11 55%, #0c0a0b 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(222, 36, 44, 0.55), inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #de242c, inset 0 0 40px rgba(0, 0, 0, 0.6); }
+.dbd h3 { font-family: "Eater", Georgia, serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0.03em; max-width: 9ch; line-height: 1.12;
+  text-shadow: 0 0 18px rgba(200, 22, 30, 0.6), 0 3px 0 rgba(0, 0, 0, 0.7); }
+.dbd p { color: #cfc5bb; font-family: "Spectral", Georgia, serif; font-weight: 600; max-width: 31ch; }
+.dbd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(222, 36, 44, 0.6); color: #ece6dd; }
+.dbd .play { color: #ff6166; font-family: "Spectral", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+@media (max-width: 620px) { .dbd { min-height: 330px; background-size: auto 38%, auto, auto, auto, auto; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -255,6 +270,12 @@ a { color: inherit; }
         <p>Every card&#x27;s Elixir, rarity and arena, plus Evolutions, Heroes, Champions, stats and mechanics.</p>
         <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
       </a>
+      <a class="quiz dbd" href="dead-by-daylight/">
+        
+        <h3>Dead by Daylight</h3>
+        <p>Killers, Survivors, perks, powers, a little lore, realms and maps. The Entity is watching.</p>
+        <div class="meta"><span class="pill">20 questions</span><span class="pill">Solo &amp; party</span><span class="play">Play →</span></div>
+      </a>
       <a class="quiz gk" href="general-knowledge/">
         
         <h3>General Knowledge</h3>
@@ -321,7 +342,7 @@ a { color: inherit; }
   window.addEventListener("pageshow", showCoins);
   wb.addEventListener("click", e => { e.stopPropagation(); wp.hidden = !wp.hidden; wb.setAttribute("aria-expanded", String(!wp.hidden)); });
   document.addEventListener("click", e => { if (!wp.hidden && !e.target.closest("#wallet-wrap")) { wp.hidden = true; wb.setAttribute("aria-expanded", "false"); } });
-  const routes = {"H": "hearthstone/", "M": "minecraft/", "N": "fortnite/", "R": "clash-royale/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "S": "music/", "T": "this-or-that/", "B": "this-or-that/"};
+  const routes = {"H": "hearthstone/", "M": "minecraft/", "N": "fortnite/", "R": "clash-royale/", "D": "dead-by-daylight/", "W": "general-knowledge/", "F": "football/", "C": "cars/", "S": "music/", "T": "this-or-that/", "B": "this-or-that/"};
   const ALPH = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   document.getElementById("join").addEventListener("submit", e => {
     e.preventDefault();
@@ -329,7 +350,7 @@ a { color: inherit; }
     const err = document.getElementById("err");
     if (c.length !== 5 || ![...c].every(ch => ALPH.includes(ch))) { err.textContent = "Codes are 5 letters or numbers, like M7QX2."; return; }
     const r = routes[c[0]];
-    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), N (OG Fortnite), R (Clash Royale), W (General Knowledge), F (Football), C (Cars), S (Music) or T (This or That)."; return; }
+    if (!r) { err.textContent = "That code doesn't match a game. Codes start with H (Hearthstone Battlegrounds), M (Minecraft), N (OG Fortnite), R (Clash Royale), D (Dead by Daylight), W (General Knowledge), F (Football), C (Cars), S (Music) or T (This or That)."; return; }
     location.href = r + "?join=" + c;
   });
 })();
