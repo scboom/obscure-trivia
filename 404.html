@@ -182,6 +182,65 @@ a { color: inherit; }
 .dbd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(222, 36, 44, 0.6); color: #ece6dd; }
 .dbd .play { color: #ff6166; font-family: "Spectral", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 @media (max-width: 620px) { .dbd { min-height: 330px; background-size: auto 38%, auto, auto, auto, auto; } }
+/* animals tile: jungle green, sunlight through the leaves and an orange paw print */
+.an { border-radius: 20px; color: #f4f1e6;
+  background: url(animals/paw.svg) right 26px top 18px / auto 44% no-repeat,
+    radial-gradient(ellipse 60% 70% at 0% 0%, rgba(140, 210, 100, 0.35), transparent 60%), radial-gradient(circle at 85% 20%, rgba(255, 190, 70, 0.32), transparent 45%),
+    linear-gradient(180deg, #1d5139 0%, #143a29 55%, #0e2a1e 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 178, 56, 0.4); }
+.an:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #ffb238; }
+.an h3 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(2rem, 5.4vw, 2.6rem); }
+.an p { color: #d5e3d0; font-family: "Lexend", system-ui, sans-serif; max-width: 32ch; }
+.an .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 178, 56, 0.55); color: #fff3dc; }
+.an .play { color: #ffc861; font-family: "Fredoka", sans-serif; font-weight: 700; }
+@media (max-width: 620px) { .an { min-height: 320px; background-size: auto 34%, auto, auto, auto; } }
+/* odd one out tile: deep indigo, three teal circles and one coral triangle */
+.odd { border-radius: 18px; color: #f3f1ff;
+  background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(255, 107, 91, 0.3), transparent 60%), radial-gradient(ellipse 60% 60% at 0% 100%, rgba(55, 214, 195, 0.25), transparent 60%),
+    linear-gradient(180deg, #24204a 0%, #1a1738 60%, #131129 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(55, 214, 195, 0.4); }
+.odd:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #37d6c3; }
+.odd h3 { font-family: "Bungee", sans-serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
+.odd p { color: #d6d2f5; font-family: "Plus Jakarta Sans", system-ui, sans-serif; max-width: 30ch; }
+.odd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(55, 214, 195, 0.5); color: #e6fffb; }
+.odd .play { color: #ff8c7f; font-family: "Bungee", sans-serif; font-weight: 400; }
+.odd-grid { position: absolute; top: 22px; right: 26px; display: grid; grid-template-columns: 44px 44px; gap: 10px; }
+.odd-grid i { width: 44px; height: 44px; border-radius: 50%; background: #37d6c3; box-shadow: 0 0 18px rgba(55, 214, 195, 0.35); }
+.odd-grid b { width: 0; height: 0; margin: 2px auto 0; border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 42px solid #ff6b5b;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 91, 0.45)); }
+@media (prefers-reduced-motion: no-preference) { .odd:hover .odd-grid b { animation: odd-wiggle .5s ease-in-out 2; } }
+@keyframes odd-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+@media (max-width: 620px) { .odd { min-height: 300px; } .odd-grid { grid-template-columns: 36px 36px; gap: 8px; } .odd-grid i { width: 36px; height: 36px; }
+  .odd-grid b { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 34px; } }
+/* emoji puzzle tile: sunny yellow, candy pink and a big row of emojis */
+.emj { border-radius: 22px; color: #2b1e00;
+  background: radial-gradient(ellipse 60% 60% at 0% 0%, rgba(255, 140, 190, 0.55), transparent 60%), radial-gradient(ellipse 60% 60% at 100% 100%, rgba(120, 200, 255, 0.5), transparent 60%),
+    linear-gradient(160deg, #ffe680 0%, #fff1c2 100%);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 3px #ffffff; }
+.emj:hover { box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25), 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 0 0 3px #ff5f9e; }
+.emj h3 { font-family: "Sniglet", sans-serif; font-weight: 800; font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.emj p { color: #5a4718; font-family: "Nunito", system-ui, sans-serif; font-weight: 700; max-width: 30ch; }
+.emj .pill { border-radius: 999px; background: #ffffff; border: 2px solid rgba(43, 30, 0, 0.15); color: #2b1e00; }
+.emj .play { color: #d6246c; font-family: "Sniglet", sans-serif; font-weight: 800; }
+.emj-row { position: absolute; top: 18px; right: 22px; font-size: 2.6rem; letter-spacing: 0.05em; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.12)); }
+@media (prefers-reduced-motion: no-preference) { .emj:hover .emj-row { animation: emj-bounce .6s ease; } }
+@keyframes emj-bounce { 30% { transform: translateY(-8px) rotate(-4deg); } 60% { transform: translateY(2px) rotate(2deg); } }
+@media (max-width: 620px) { .emj { min-height: 300px; } .emj-row { font-size: 2.2rem; } }
+/* timeline tile: museum parchment, a rust-red timeline with four pins */
+.tl { border-radius: 12px; color: #2e2414;
+  background: repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.05) 0 1px, transparent 1px 26px), linear-gradient(180deg, #f8f0dc, #efe1c2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 1px #d9c7a2, inset 0 0 0 6px rgba(255, 255, 255, 0.4); }
+.tl:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #b5452b; }
+.tl h3 { font-family: "Abril Fatface", Georgia, serif; font-weight: 400; font-size: clamp(2rem, 5.4vw, 2.6rem); }
+.tl p { color: #5d4a2f; font-family: "Libre Franklin", system-ui, sans-serif; font-weight: 500; max-width: 30ch; }
+.tl .pill { border-radius: 999px; background: #fffaf0; border: 1px solid #c9b48a; color: #2e2414; }
+.tl .play { color: #9c3820; font-family: "Libre Franklin", sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.tl-line { position: absolute; top: 34px; right: 26px; width: 170px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #b5452b, #e2a33a); display: flex;
+  justify-content: space-between; align-items: center; }
+.tl-line i { width: 16px; height: 16px; border-radius: 50%; background: #fffaf0; border: 3px solid #b5452b; }
+.tl-line i:nth-child(2), .tl-line i:nth-child(4) { transform: translateY(-14px); }
+@media (max-width: 620px) { .tl { min-height: 300px; } .tl-line { width: 130px; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -240,7 +299,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/dead-by-daylight/">Dead by Daylight</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/dead-by-daylight/">Dead by Daylight</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/animals/">Animals</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/odd-one-out/">Odd One Out</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/emoji-puzzle/">Emoji Puzzle</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/timeline/">Timeline</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>

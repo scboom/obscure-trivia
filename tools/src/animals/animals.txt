@@ -1,0 +1,149 @@
+# name | English Wikipedia title | class | diet | flies | lives (land / water / both)
+# diet: herbivore, carnivore, omnivore, or unclear (left out of diet questions); "flies" means it can really fly.
+# class is checked against Wikidata's taxonomy by animals_check.py.
+Lion|Lion|mammal|carnivore|no|land
+Tiger|Tiger|mammal|carnivore|no|land
+Leopard|Leopard|mammal|carnivore|no|land
+Cheetah|Cheetah|mammal|carnivore|no|land
+Jaguar|Jaguar|mammal|carnivore|no|land
+Snow leopard|Snow leopard|mammal|carnivore|no|land
+Lynx|Eurasian lynx|mammal|carnivore|no|land
+Wolf|Wolf|mammal|carnivore|no|land
+Red fox|Red fox|mammal|omnivore|no|land
+Brown bear|Brown bear|mammal|omnivore|no|land
+Polar bear|Polar bear|mammal|carnivore|no|both
+Giant panda|Giant panda|mammal|unclear|no|land
+Red panda|Red panda|mammal|unclear|no|land
+Raccoon|Raccoon|mammal|omnivore|no|land
+Badger|European badger|mammal|omnivore|no|land
+Otter|Eurasian otter|mammal|carnivore|no|both
+Sea otter|Sea otter|mammal|carnivore|no|water
+Skunk|Striped skunk|mammal|omnivore|no|land
+Meerkat|Meerkat|mammal|unclear|no|land
+Hyena|Spotted hyena|mammal|carnivore|no|land
+African elephant|African bush elephant|mammal|herbivore|no|land
+Giraffe|Giraffe|mammal|herbivore|no|land
+Zebra|Plains zebra|mammal|herbivore|no|land
+Horse|Horse|mammal|herbivore|no|land
+Donkey|Donkey|mammal|herbivore|no|land
+Cow|Cattle|mammal|herbivore|no|land
+Pig|Domestic pig|mammal|omnivore|no|land
+Sheep|Sheep|mammal|herbivore|no|land
+Goat|Goat|mammal|herbivore|no|land
+Camel|Dromedary|mammal|herbivore|no|land
+Llama|Llama|mammal|herbivore|no|land
+Moose|Moose|mammal|herbivore|no|land
+Reindeer|Reindeer|mammal|herbivore|no|land
+Bison|American bison|mammal|herbivore|no|land
+Hippopotamus|Hippopotamus|mammal|herbivore|no|both
+Rhinoceros|White rhinoceros|mammal|herbivore|no|land
+Kangaroo|Red kangaroo|mammal|herbivore|no|land
+Koala|Koala|mammal|herbivore|no|land
+Wombat|Common wombat|mammal|herbivore|no|land
+Platypus|Platypus|mammal|carnivore|no|both
+Echidna|Short-beaked echidna|mammal|carnivore|no|land
+Tasmanian devil|Tasmanian devil|mammal|carnivore|no|land
+Gorilla|Western gorilla|mammal|herbivore|no|land
+Chimpanzee|Chimpanzee|mammal|omnivore|no|land
+Orangutan|Bornean orangutan|mammal|unclear|no|land
+Ring-tailed lemur|Ring-tailed lemur|mammal|unclear|no|land
+Sloth|Brown-throated sloth|mammal|herbivore|no|land
+Giant anteater|Giant anteater|mammal|carnivore|no|land
+Armadillo|Nine-banded armadillo|mammal|unclear|no|land
+Hedgehog|European hedgehog|mammal|unclear|no|land
+Porcupine|North American porcupine|mammal|herbivore|no|land
+Rabbit|European rabbit|mammal|herbivore|no|land
+Squirrel|Red squirrel|mammal|unclear|no|land
+Beaver|North American beaver|mammal|herbivore|no|both
+Capybara|Capybara|mammal|herbivore|no|both
+Hamster|Golden hamster|mammal|unclear|no|land
+Aardvark|Aardvark|mammal|carnivore|no|land
+Pangolin|Chinese pangolin|mammal|carnivore|no|land
+Vampire bat|Common vampire bat|mammal|carnivore|yes|land
+Fruit bat|Indian flying fox|mammal|herbivore|yes|land
+Blue whale|Blue whale|mammal|carnivore|no|water
+Humpback whale|Humpback whale|mammal|carnivore|no|water
+Orca|Orca|mammal|carnivore|no|water
+Dolphin|Common bottlenose dolphin|mammal|carnivore|no|water
+Narwhal|Narwhal|mammal|carnivore|no|water
+Walrus|Walrus|mammal|carnivore|no|both
+Harbour seal|Harbor seal|mammal|carnivore|no|both
+Manatee|West Indian manatee|mammal|herbivore|no|water
+Emperor penguin|Emperor penguin|bird|carnivore|no|both
+Ostrich|Common ostrich|bird|unclear|no|land
+Emu|Emu|bird|unclear|no|land
+Kiwi|North Island brown kiwi|bird|unclear|no|land
+Bald eagle|Bald eagle|bird|carnivore|yes|land
+Barn owl|Western barn owl|bird|carnivore|yes|land
+Scarlet macaw|Scarlet macaw|bird|herbivore|yes|land
+Flamingo|American flamingo|bird|unclear|yes|both
+Peacock|Indian peafowl|bird|omnivore|yes|land
+Mute swan|Mute swan|bird|herbivore|yes|both
+Mallard|Mallard|bird|omnivore|yes|both
+Chicken|Chicken|bird|omnivore|yes|land
+Turkey|Wild turkey|bird|omnivore|yes|land
+Pigeon|Rock dove|bird|herbivore|yes|land
+Crow|Carrion crow|bird|omnivore|yes|land
+Robin|European robin|bird|unclear|yes|land
+Hummingbird|Ruby-throated hummingbird|bird|unclear|yes|land
+Toucan|Toco toucan|bird|unclear|yes|land
+Pelican|Brown pelican|bird|carnivore|yes|both
+Puffin|Atlantic puffin|bird|carnivore|yes|both
+Albatross|Wandering albatross|bird|carnivore|yes|both
+Vulture|Griffon vulture|bird|carnivore|yes|land
+Peregrine falcon|Peregrine falcon|bird|carnivore|yes|land
+Kingfisher|Common kingfisher|bird|carnivore|yes|both
+Saltwater crocodile|Saltwater crocodile|reptile|carnivore|no|both
+Alligator|American alligator|reptile|carnivore|no|both
+Komodo dragon|Komodo dragon|reptile|carnivore|no|land
+Green iguana|Green iguana|reptile|herbivore|no|land
+Chameleon|Veiled chameleon|reptile|unclear|no|land
+Gecko|Tokay gecko|reptile|carnivore|no|land
+Galápagos tortoise|Galápagos tortoise|reptile|herbivore|no|land
+Green sea turtle|Green sea turtle|reptile|unclear|no|water
+King cobra|King cobra|reptile|carnivore|no|land
+Reticulated python|Reticulated python|reptile|carnivore|no|land
+Rattlesnake|Western diamondback rattlesnake|reptile|carnivore|no|land
+Green anaconda|Green anaconda|reptile|carnivore|no|both
+Tuatara|Tuatara|reptile|carnivore|no|land
+Common frog|Common frog|amphibian|unclear|no|both
+Cane toad|Cane toad|amphibian|carnivore|no|both
+Fire salamander|Fire salamander|amphibian|carnivore|no|land
+Great crested newt|Great crested newt|amphibian|carnivore|no|both
+Axolotl|Axolotl|amphibian|carnivore|no|water
+Great white shark|Great white shark|fish|carnivore|no|water
+Whale shark|Whale shark|fish|carnivore|no|water
+Atlantic salmon|Atlantic salmon|fish|carnivore|no|water
+Goldfish|Goldfish|fish|omnivore|no|water
+Clownfish|Ocellaris clownfish|fish|omnivore|no|water
+Tuna|Atlantic bluefin tuna|fish|carnivore|no|water
+Seahorse|Lined seahorse|fish|carnivore|no|water
+Swordfish|Swordfish|fish|carnivore|no|water
+Piranha|Red-bellied piranha|fish|unclear|no|water
+European eel|European eel|fish|carnivore|no|water
+Stingray|Southern stingray|fish|carnivore|no|water
+Pufferfish|Guineafowl puffer|fish|carnivore|no|water
+Sailfish|Indo-Pacific sailfish|fish|carnivore|no|water
+Honey bee|Western honey bee|insect|herbivore|yes|land
+Monarch butterfly|Monarch butterfly|insect|herbivore|yes|land
+Ladybird|Seven-spot ladybird|insect|carnivore|yes|land
+Housefly|Housefly|insect|unclear|yes|land
+Mosquito|Aedes aegypti|insect|unclear|yes|land
+Dragonfly|Emperor dragonfly|insect|carnivore|yes|both
+Desert locust|Desert locust|insect|herbivore|yes|land
+Cockroach|German cockroach|insect|unclear|yes|land
+Wasp|Vespula vulgaris|insect|unclear|yes|land
+Stag beetle|Lucanus cervus|insect|unclear|yes|land
+Leafcutter ant|Atta cephalotes|insect|unclear|no|land
+Tarantula|Mexican red-knee tarantula|arachnid|carnivore|no|land
+Black widow|Latrodectus mactans|arachnid|carnivore|no|land
+Scorpion|Deathstalker|arachnid|carnivore|no|land
+Tick|Ixodes ricinus|arachnid|carnivore|no|land
+Crab|Edible crab|crustacean|unclear|no|water
+Lobster|American lobster|crustacean|unclear|no|water
+Krill|Antarctic krill|crustacean|unclear|no|water
+Woodlouse|Common rough woodlouse|crustacean|unclear|no|land
+Common octopus|Common octopus|mollusc|carnivore|no|water
+Giant squid|Giant squid|mollusc|carnivore|no|water
+Garden snail|Garden snail|mollusc|herbivore|no|land
+Giant clam|Giant clam|mollusc|unclear|no|water

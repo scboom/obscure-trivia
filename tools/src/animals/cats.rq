@@ -1,0 +1,6 @@
+SELECT ?b ?bLabel ?title ?cLabel ?n WHERE {
+  ?b wdt:P31 wd:Q43577; wdt:P495 ?c; wikibase:sitelinks ?n .
+  FILTER(?n >= 15)
+  ?art schema:about ?b; schema:isPartOf <https://en.wikipedia.org/>; schema:name ?title .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

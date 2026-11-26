@@ -1,0 +1,9 @@
+SELECT ?t ?title ?cls ?status ?statusLabel ?n WHERE {
+  VALUES ?cls { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q10908 wd:Q127282 wd:Q25371 wd:Q1390 wd:Q1358 wd:Q1203 wd:Q25326 wd:Q1357 wd:Q25364 }
+  ?t wdt:P105 wd:Q7432; wikibase:sitelinks ?n .
+  FILTER(?n >= 70)
+  ?t wdt:P171+ ?cls .
+  ?art schema:about ?t; schema:isPartOf <https://en.wikipedia.org/>; schema:name ?title .
+  OPTIONAL { ?t wdt:P141 ?status . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

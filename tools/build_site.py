@@ -533,6 +533,219 @@ h2, h3 { font-family: var(--f-body); font-weight: 700; letter-spacing: 0.01em; }
                   "A free Dead by Daylight quiz, 20 questions per game: every Killer and Survivor, their perks, powers and real names, a little lore, realms and maps, Chapters, add-ons, offerings and how the Trials work. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
+        "id": "animals", "dir": "animals", "bank_src": "animals_questions.json", "extra": [("an-paw.svg", "paw.svg")],
+        "title": "Animals Quiz – Obscure Trivia",
+        "desc": "A free animals quiz: 20 random questions per game on baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Fredoka:wght@500;600;700&family=Lexend:wght@400;500;600;700",
+        "theme_color": "#0f2a1f",
+        "favicon": "paw.svg",
+        "config": {
+            "id": "animals", "letter": "A", "short": "Animals", "icon": "", "namePh": "e.g. Koala",
+            "eyebrow": "Animals quiz", "headline": "From joeys to giant squid: how wild is your animal knowledge?",
+            "topics": "baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals",
+            "foot": "Facts come from English Wikipedia: the List of animal names, the List of national animals and each animal's own article (class and conservation status from its taxonomy box), with dog and cat breeds from Wikidata. Records, bodies, behaviour, habitat and diet questions are written from Wikipedia articles, each checked against the article's text.",
+            "seed": "obscure-trivia-animals-v1:", "topic": "obscure-trivia/animals/v1/", "recentKey": "ot-recent-animals-v1", "sessionKey": "ot-game-animals",
+            "bank": "questions.json", "hub": "../",
+            "groups": {"young": "Baby animals", "younghard": "Baby animals", "group": "Animal groups", "male": "Males & females", "female": "Males & females", "adj": "Animal words", "adjrev": "Animal words", "cls": "Classification", "clspick": "Classification", "clsnot": "Classification", "legs": "Classification", "iucn": "Endangered", "iucnpick": "Endangered", "dog": "Dogs & cats", "dogpick": "Dogs & cats", "cat": "Dogs & cats", "nat": "National animals", "natrev": "National animals", "records": "Records", "bodies": "Bodies", "behaviour": "Behaviour", "habitats": "Habitats", "diet": "Diet", "dietpick": "Diet"},
+            "caps": {"Baby animals": 2, "Animal groups": 2, "Males & females": 1, "Animal words": 1, "Classification": 3, "Endangered": 1, "Dogs & cats": 2, "National animals": 2, "Records": 2, "Bodies": 2, "Behaviour": 2, "Habitats": 1, "Diet": 2},
+            "verdicts": [[19, "Top of the food chain!"], [16, "King of the jungle!"], [12, "Wise old owl."], [8, "Still a cub. Keep learning!"], [0, "Lost in the jungle. Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #0f2a1f;
+  --bg-art: radial-gradient(ellipse 70% 50% at 0% 0%, rgba(120, 200, 90, 0.22), transparent 60%), radial-gradient(ellipse 60% 50% at 100% 10%, rgba(255, 190, 70, 0.16), transparent 60%),
+    linear-gradient(180deg, #17432f 0%, #0f2a1f 55%, #0b2018 100%);
+  --panel: #133524; --panel-fill: linear-gradient(180deg, rgba(24, 66, 45, 0.95), rgba(16, 46, 32, 0.96)); --panel-2: #1c4a33;
+  --panel-shadow: 0 14px 34px rgba(2, 14, 8, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --line: rgba(240, 236, 220, 0.16); --line-hover: rgba(255, 178, 56, 0.8); --ink: #f4f1e6; --muted: #c4d4c0; --faint: #97ad94; --placeholder: #86a083;
+  --accent: #ffb238; --accent-ink: #2b1600; --accent-text: #ffc861; --accent-hover: #ffc252; --accent-edge: #ffd98f; --accent-shadow: 0 4px 0 #b06d10;
+  --chip-bg: rgba(255, 255, 255, 0.08); --chip-line: rgba(255, 255, 255, 0.22); --chip-ink: #f4f1e6;
+  --pal: #7fd4ff; --pal-ink: #00222e; --pal-bg: rgba(127, 212, 255, 0.13); --pal-line: rgba(127, 212, 255, 0.45);
+  --good: #8be07a; --good-ink: #0c2a05; --good-bg: rgba(139, 224, 122, 0.15); --bad: #ff7a6b; --bad-ink: #3a0904; --bad-bg: rgba(255, 122, 107, 0.15);
+  --inset: #0a1e15; --opt: rgba(20, 56, 38, 0.94); --tile: rgba(17, 48, 33, 0.94);
+  --card-bg: #f4f1e6; --card-ink: #133524; --card-line: #cfd9c6; --card-inner: #e6eedf; --card-strong: #000000;
+  --f-display: "Fredoka", "Nunito", system-ui, sans-serif; --f-body: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 9px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+/* a trail of faint paw prints across the page */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url("PAW_BG") 0 0 / 120px 120px; }
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 700; letter-spacing: 0; }
+.hero h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.08; }
+.qtext { font-family: var(--f-body); font-weight: 600; font-size: clamp(1.12rem, 4vw, 1.38rem); line-height: 1.32; }
+.opt .lbl.big { font-family: var(--f-display); font-weight: 600; font-size: 1.12rem; }
+.btn.gold { font-size: 1.1rem; }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("paw.svg") center / 70% auto no-repeat, #1c4a33;
+  box-shadow: 0 0 0 2px #ffb238, 0 3px 8px rgba(0, 0, 0, 0.35); }
+""".replace("PAW_BG", "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 64 64'%3E%3Cg fill='%23ffffff' fill-opacity='0.045' transform='rotate(-20 32 32) translate(16 16) scale(0.5)'%3E%3Cellipse cx='32' cy='43' rx='14.5' ry='12.5'/%3E%3Cellipse cx='14.5' cy='28' rx='6' ry='7.6'/%3E%3Cellipse cx='25.5' cy='16.5' rx='6' ry='8'/%3E%3Cellipse cx='38.5' cy='16.5' rx='6' ry='8'/%3E%3Cellipse cx='49.5' cy='28' rx='6' ry='7.6'/%3E%3C/g%3E%3C/svg%3E"),
+        "tile": {"cls": "an", "title": "Animals", "art": "",
+                 "blurb": "Baby animal names, groups, record breakers, amazing bodies, habitats, breeds and national animals."},
+        "intro": ("Animals quiz", "From joeys to giant squid: how wild is your animal knowledge?",
+                  "A free animals quiz, 20 questions per game: baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
+        "id": "odd", "dir": "odd-one-out", "bank_src": "odd_questions.json", "section": "games", "extra": [("odd-icon.svg", "icon.svg")],
+        "title": "Odd One Out – Spot What Doesn't Belong – Obscure Trivia",
+        "desc": "Odd One Out is a free puzzle game: four things, three of them share something, and you pick the one that doesn't belong. 20 rounds per game on animals, geography, numbers, science, food, music, sport, films, games and more. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Bungee&family=Plus+Jakarta+Sans:wght@400;500;600;700;800",
+        "theme_color": "#15132b",
+        "favicon": "icon.svg",
+        "config": {
+            "id": "odd", "letter": "X", "short": "Odd One Out", "icon": "", "namePh": "e.g. Sam",
+            "eyebrow": "Puzzle game", "headline": "Three of them belong together. Which one doesn't?",
+            "topics": "animals, geography, numbers, science, space, food, music, sport, films, myths, brands, cars and games",
+            "foot": "Every round is built from a table of things and their features, and only kept if no other feature would single out a different one of the four. Countries come from Wikidata, animals from Wikipedia, and games from the same checked data as this site's game quizzes; the rest is checked against Wikipedia.",
+            "seed": "obscure-trivia-odd-v1:", "topic": "obscure-trivia/odd/v1/", "recentKey": "ot-recent-odd-v1", "sessionKey": "ot-game-odd",
+            "bank": "questions.json", "hub": "../",
+            "groups": {},
+            "caps": {},
+            "verdicts": [[19, "Eagle eye! Nothing gets past you."], [16, "Sharp spotter!"], [12, "You've got a good eye."], [8, "Some odd choices there..."], [0, "Were you the odd one out?"]],
+        },
+        "theme": """
+:root {
+  --bg: #15132b;
+  --bg-art: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255, 107, 91, 0.2), transparent 60%), radial-gradient(ellipse 70% 60% at 0% 100%, rgba(55, 214, 195, 0.16), transparent 60%),
+    linear-gradient(180deg, #1d1a3a 0%, #15132b 60%, #100e22 100%);
+  --panel: #1f1c3f; --panel-fill: linear-gradient(180deg, rgba(36, 32, 72, 0.95), rgba(26, 23, 54, 0.96)); --panel-2: #2a2652;
+  --panel-shadow: 0 14px 34px rgba(5, 4, 20, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --line: rgba(243, 241, 255, 0.15); --line-hover: rgba(55, 214, 195, 0.8); --ink: #f3f1ff; --muted: #c4c0e6; --faint: #9a95c4; --placeholder: #8984b5;
+  --accent: #ff6b5b; --accent-ink: #2a0500; --accent-text: #ff8c7f; --accent-hover: #ff8172; --accent-edge: #ffb3aa; --accent-shadow: 0 4px 0 #a8382b;
+  --chip-bg: rgba(255, 255, 255, 0.08); --chip-line: rgba(255, 255, 255, 0.22); --chip-ink: #f3f1ff;
+  --pal: #37d6c3; --pal-ink: #00241f; --pal-bg: rgba(55, 214, 195, 0.13); --pal-line: rgba(55, 214, 195, 0.5);
+  --good: #5fe39a; --good-ink: #022812; --good-bg: rgba(95, 227, 154, 0.14); --bad: #ff6b7a; --bad-ink: #33040b; --bad-bg: rgba(255, 107, 122, 0.15);
+  --inset: #100e24; --opt: rgba(34, 30, 68, 0.95); --tile: rgba(28, 25, 58, 0.95);
+  --card-bg: #f3f1ff; --card-ink: #1f1c3f; --card-line: #cfcbea; --card-inner: #e6e3fa; --card-strong: #000000;
+  --f-display: "Bungee", "Arial Black", system-ui, sans-serif; --f-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.01em; }
+.hero h2 { font-size: clamp(1.8rem, 6.4vw, 2.6rem); line-height: 1.12; }
+.qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
+.btn.gold { font-family: var(--f-display); font-weight: 400; font-size: 1.05rem; letter-spacing: 0.02em; }
+/* the four things sit in a 2 by 2 grid, like cards on a table */
+.opts:not(.duel) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.opts:not(.duel) .opt { position: relative; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 108px; padding: 30px 10px 16px; }
+.opts:not(.duel) .opt .key { position: absolute; top: 9px; left: 9px; }
+.opts:not(.duel) .opt .lbl { flex: none; padding: 0; text-wrap: balance; font-family: var(--f-body); font-weight: 800; font-size: clamp(1rem, 3.6vw, 1.15rem); line-height: 1.25; }
+.opts:not(.duel) .opt .marks { position: absolute; top: 9px; right: 9px; }
+.opts:not(.duel) .opt:nth-child(4n+1) { border-color: rgba(55, 214, 195, 0.35); } .opts:not(.duel) .opt:nth-child(4n+2) { border-color: rgba(255, 199, 89, 0.35); }
+.opts:not(.duel) .opt:nth-child(4n+3) { border-color: rgba(160, 140, 255, 0.4); } .opts:not(.duel) .opt:nth-child(4n+4) { border-color: rgba(255, 107, 91, 0.4); }
+.opts:not(.duel) .opt.right { border-color: var(--good); } .opts:not(.duel) .opt.wrong { border-color: var(--bad); }
+.coin { width: 34px; height: 34px; flex: none; display: block; background: url("icon.svg") center / 100% 100% no-repeat; }
+""",
+        "tile": {"cls": "odd", "title": "Odd One Out", "art": '<span class="odd-grid" aria-hidden="true"><i></i><i></i><i></i><b></b></span>',
+                 "blurb": "Four things, three belong together. Spot the one that doesn't, from animals to Clash Royale cards."},
+        "intro": ("Puzzle game", "Three of them belong together. Which one doesn't?",
+                  "Odd One Out is a free puzzle game, 20 rounds per game: four things, three share something, and you pick the one that doesn't belong. Animals, geography, numbers, science, food, music, sport, films, games and more. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
+        "id": "emoji", "dir": "emoji-puzzle", "bank_src": "emoji_questions.json", "section": "games", "extra": [("emoji-icon.svg", "icon.svg")],
+        "title": "Emoji Puzzle – Guess It From the Emojis – Obscure Trivia",
+        "desc": "Emoji Puzzle is a free guessing game: work out the film, TV show, video game, song, place, saying or character from a row of emojis. 20 puzzles per game. Play solo or in party mode with up to 6 players.",
+        "fonts": "family=Sniglet:wght@400;800&family=Nunito:wght@500;700;800;900",
+        "theme_color": "#ffe27a",
+        "favicon": "icon.svg",
+        "config": {
+            "id": "emoji", "letter": "E", "short": "Emoji Puzzle", "icon": "", "namePh": "e.g. Sam",
+            "eyebrow": "Guessing game", "headline": "🍿🎬❓ Can you read the emojis?",
+            "topics": "films, animated films, TV shows, video games, songs, books, places, food, sport, sayings, characters and brands",
+            "foot": "Every clue uses emojis from Emoji 13.0 (2020) or earlier, with no flags, so they show on older phones and computers too. How an emoji looks depends on your device.",
+            "seed": "obscure-trivia-emoji-v1:", "topic": "obscure-trivia/emoji/v1/", "recentKey": "ot-recent-emoji-v1", "sessionKey": "ot-game-emoji",
+            "bank": "questions.json", "hub": "../",
+            "groups": {}, "caps": {},
+            "verdicts": [[19, "🏆 Emoji master!"], [16, "🔥 On fire!"], [12, "😎 Pretty cool."], [8, "🤔 Hmm, tricky ones."], [0, "🙈 Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #fff1c2;
+  --bg-art: radial-gradient(ellipse 70% 50% at 0% 0%, rgba(255, 140, 190, 0.35), transparent 60%), radial-gradient(ellipse 70% 50% at 100% 0%, rgba(120, 200, 255, 0.35), transparent 60%),
+    linear-gradient(180deg, #ffe680 0%, #fff1c2 45%, #fff7dc 100%);
+  --panel: #ffffff; --panel-fill: #ffffff; --panel-2: #fff6d8;
+  --panel-shadow: 0 8px 0 rgba(43, 30, 0, 0.1), 0 14px 30px rgba(120, 80, 0, 0.12);
+  --line: rgba(43, 30, 0, 0.16); --line-hover: #ff5f9e; --ink: #2b1e00; --muted: #6e5a2c; --faint: #8f7a4a; --placeholder: #a69264;
+  --accent: #ff5f9e; --accent-ink: #ffffff; --accent-text: #d6246c; --accent-hover: #ff74ab; --accent-edge: #ffa3c8; --accent-shadow: 0 4px 0 #c22e69;
+  --chip-bg: #fff6d8; --chip-line: rgba(43, 30, 0, 0.2); --chip-ink: #2b1e00;
+  --pal: #2f7fff; --pal-ink: #ffffff; --pal-bg: rgba(47, 127, 255, 0.1); --pal-line: rgba(47, 127, 255, 0.5);
+  --good: #13a85a; --good-ink: #ffffff; --good-bg: #dcf7e8; --bad: #e5384f; --bad-ink: #ffffff; --bad-bg: #fde3e6;
+  --inset: #fff9e8; --opt: #ffffff; --tile: #fffaf0;
+  --card-bg: #ffffff; --card-ink: #2b1e00; --card-line: rgba(43, 30, 0, 0.15); --card-inner: #fff3cc; --card-strong: #000000;
+  --f-display: "Sniglet", "Nunito", system-ui, sans-serif; --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 16px; --r-panel: 22px; --r-pill: 999px; --r-key: 10px;
+  color-scheme: light;
+}
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 800; letter-spacing: 0; }
+.hero h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.1; }
+.qtext { font-family: var(--f-body); font-weight: 900; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 800; font-size: 1.08rem; }
+.btn.gold { font-size: 1.15rem; }
+/* the clue: one big row of emojis */
+.cardtext { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: clamp(2.3rem, 11vw, 3.4rem); line-height: 1.25;
+  text-align: center; letter-spacing: 0.06em; padding: 18px 10px; border-radius: 20px; background: #ffffff; box-shadow: inset 0 0 0 3px #ffe27a, 0 6px 0 rgba(43, 30, 0, 0.08); }
+@media (prefers-reduced-motion: no-preference) { .cardtext { animation: emoji-pop .45s cubic-bezier(.2, 1.6, .4, 1) both; } }
+@keyframes emoji-pop { from { transform: scale(.7); opacity: 0; } to { transform: none; opacity: 1; } }
+.coin { width: 34px; height: 34px; flex: none; display: block; background: url("icon.svg") center / 100% 100% no-repeat; }
+""",
+        "tile": {"cls": "emj", "title": "Emoji Puzzle", "art": '<span class="emj-row" aria-hidden="true">🦁👑🌅</span>',
+                 "blurb": "Guess the film, game, song, place or saying from a row of emojis."},
+        "intro": ("Guessing game", "🍿🎬❓ Can you read the emojis?",
+                  "Emoji Puzzle is a free guessing game, 20 puzzles per game: work out the film, TV show, video game, song, book, place, food, saying or character from a row of emojis. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
+        "id": "timeline", "dir": "timeline", "bank_src": "timeline_questions.json", "section": "games", "extra": [("tl-icon.svg", "icon.svg")],
+        "title": "Timeline – What Came First? – Obscure Trivia",
+        "desc": "Timeline is a free history game: which came first, which came last, put four events in order, and what year things happened. History, inventions, space, science, tech, films, music, sport and games. 20 rounds per game, solo or in party mode with up to 6 players.",
+        "fonts": "family=Abril+Fatface&family=Libre+Franklin:wght@400;500;600;700;800",
+        "theme_color": "#f3e9d2",
+        "favicon": "icon.svg",
+        "config": {
+            "id": "timeline", "letter": "Y", "short": "Timeline", "icon": "", "namePh": "e.g. Sam",
+            "eyebrow": "History game", "headline": "Which came first? Put history in order.",
+            "topics": "history, inventions, space, science and medicine, internet and tech, films, music, sport, video games and landmarks",
+            "foot": "Every date comes from English Wikipedia and is checked against the article's own words, apart from the Clash Royale, Dead by Daylight and football dates, which come from the same checked data as this site's quizzes. Events are only compared when their dates are clearly apart.",
+            "seed": "obscure-trivia-timeline-v1:", "topic": "obscure-trivia/timeline/v1/", "recentKey": "ot-recent-timeline-v1", "sessionKey": "ot-game-timeline",
+            "bank": "questions.json", "hub": "../",
+            "groups": {}, "caps": {},
+            "verdicts": [[19, "A walking history book!"], [16, "Time lord!"], [12, "Pretty good timing."], [8, "A bit out of order..."], [0, "Lost in time. Try again!"]],
+        },
+        "theme": """
+:root {
+  --bg: #f3e9d2;
+  --bg-art: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 255, 255, 0.6), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.035) 0 1px, transparent 1px 28px), linear-gradient(180deg, #f6eedb 0%, #f0e3c7 100%);
+  --panel: #fffaf0; --panel-fill: #fffaf0; --panel-2: #f6ecd6;
+  --panel-shadow: 0 1px 0 #d9c7a2, 0 12px 26px rgba(90, 60, 20, 0.14);
+  --line: rgba(78, 52, 24, 0.22); --line-hover: #b5452b; --ink: #2e2414; --muted: #6d5a3d; --faint: #8c7856; --placeholder: #a39070;
+  --accent: #b5452b; --accent-ink: #fff8ec; --accent-text: #9c3820; --accent-hover: #c65536; --accent-edge: #e08d70; --accent-shadow: 0 4px 0 #7a2c19;
+  --chip-bg: #f6ecd6; --chip-line: rgba(78, 52, 24, 0.25); --chip-ink: #2e2414;
+  --pal: #2f6f8f; --pal-ink: #ffffff; --pal-bg: rgba(47, 111, 143, 0.1); --pal-line: rgba(47, 111, 143, 0.5);
+  --good: #2e7d46; --good-ink: #ffffff; --good-bg: #dff1e3; --bad: #b8323b; --bad-ink: #ffffff; --bad-bg: #f8e0e0;
+  --inset: #fbf4e4; --opt: #fffaf0; --tile: #fffaf0;
+  --card-bg: #fffdf6; --card-ink: #2e2414; --card-line: #d9c7a2; --card-inner: #f6ecd6; --card-strong: #000000;
+  --f-display: "Abril Fatface", Georgia, serif; --f-body: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 10px; --r-panel: 14px; --r-pill: 999px; --r-key: 6px;
+  color-scheme: light;
+}
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.01em; }
+.hero h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.08; }
+.qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.12rem, 4vw, 1.36rem); line-height: 1.3; }
+.opt .lbl.big { font-family: var(--f-body); font-weight: 700; font-size: 1.06rem; }
+.btn.gold { font-family: var(--f-body); font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+/* the events to put in order, pinned along a timeline */
+.evlist { position: relative; padding-left: 14px; }
+.evlist::before { content: ""; position: absolute; left: 4px; top: 8px; bottom: 8px; width: 3px; border-radius: 2px; background: linear-gradient(#b5452b, #e2a33a); }
+.evlist li { box-shadow: 0 2px 0 #e4d4b2; }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("icon.svg") center / 74% auto no-repeat, #fffaf0;
+  box-shadow: 0 0 0 2px #b5452b; }
+""",
+        "tile": {"cls": "tl", "title": "Timeline", "art": '<span class="tl-line" aria-hidden="true"><i></i><i></i><i></i><i></i></span>',
+                 "blurb": "Which came first? Put events in order, from the pyramids to the first iPhone."},
+        "intro": ("History game", "Which came first? Put history in order.",
+                  "Timeline is a free history game, 20 rounds per game: which came first, which came last, put four events in order, and what year things happened, across history, inventions, space, science, tech, films, music, sport and games. Play on your own, or start a party of up to 6 players with a 5-letter code."),
+    },
+    {
         "id": "bigger", "dir": "this-or-that", "bank_src": "bigger_questions.json", "section": "games",
         "aliases": ["B"], "old_dirs": ["which-is-bigger"],   # it was called Which Is Bigger? at first
         "title": "This or That – Higher or Lower Game – Obscure Trivia",
@@ -613,7 +826,14 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     },
 ]
 # the order tiles appear in on the home page: games first, then everything else
-HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "royale", "dbd", "world", "football", "cars", "music", "bigger"]
+# games whose topics come from their question banks: <id>_groups.json maps each question's c to its topic
+for _q in QUIZZES:
+    _gf = os.path.join(SRC, _q["id"] + "_groups.json")
+    if _q["id"] in ("odd", "emoji", "timeline") and os.path.exists(_gf):
+        _groups = json.load(open(_gf))
+        _q["config"]["groups"] = _groups
+        _q["config"]["caps"] = {g: 3 for g in sorted(set(_groups.values()))}
+HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "royale", "dbd", "world", "animals", "football", "cars", "music", "bigger", "odd", "emoji", "timeline"]
 QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -743,7 +963,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus the This or That head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, animals, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus This or That, Odd One Out, Emoji Puzzle and Timeline head-to-head game. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -906,6 +1126,65 @@ a { color: inherit; }
 .dbd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(222, 36, 44, 0.6); color: #ece6dd; }
 .dbd .play { color: #ff6166; font-family: "Spectral", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 @media (max-width: 620px) { .dbd { min-height: 330px; background-size: auto 38%, auto, auto, auto, auto; } }
+/* animals tile: jungle green, sunlight through the leaves and an orange paw print */
+.an { border-radius: 20px; color: #f4f1e6;
+  background: url(animals/paw.svg) right 26px top 18px / auto 44% no-repeat,
+    radial-gradient(ellipse 60% 70% at 0% 0%, rgba(140, 210, 100, 0.35), transparent 60%), radial-gradient(circle at 85% 20%, rgba(255, 190, 70, 0.32), transparent 45%),
+    linear-gradient(180deg, #1d5139 0%, #143a29 55%, #0e2a1e 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 178, 56, 0.4); }
+.an:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #ffb238; }
+.an h3 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(2rem, 5.4vw, 2.6rem); }
+.an p { color: #d5e3d0; font-family: "Lexend", system-ui, sans-serif; max-width: 32ch; }
+.an .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 178, 56, 0.55); color: #fff3dc; }
+.an .play { color: #ffc861; font-family: "Fredoka", sans-serif; font-weight: 700; }
+@media (max-width: 620px) { .an { min-height: 320px; background-size: auto 34%, auto, auto, auto; } }
+/* odd one out tile: deep indigo, three teal circles and one coral triangle */
+.odd { border-radius: 18px; color: #f3f1ff;
+  background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(255, 107, 91, 0.3), transparent 60%), radial-gradient(ellipse 60% 60% at 0% 100%, rgba(55, 214, 195, 0.25), transparent 60%),
+    linear-gradient(180deg, #24204a 0%, #1a1738 60%, #131129 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(55, 214, 195, 0.4); }
+.odd:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 2px #37d6c3; }
+.odd h3 { font-family: "Bungee", sans-serif; font-weight: 400; font-size: clamp(1.7rem, 4.6vw, 2.2rem); }
+.odd p { color: #d6d2f5; font-family: "Plus Jakarta Sans", system-ui, sans-serif; max-width: 30ch; }
+.odd .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(55, 214, 195, 0.5); color: #e6fffb; }
+.odd .play { color: #ff8c7f; font-family: "Bungee", sans-serif; font-weight: 400; }
+.odd-grid { position: absolute; top: 22px; right: 26px; display: grid; grid-template-columns: 44px 44px; gap: 10px; }
+.odd-grid i { width: 44px; height: 44px; border-radius: 50%; background: #37d6c3; box-shadow: 0 0 18px rgba(55, 214, 195, 0.35); }
+.odd-grid b { width: 0; height: 0; margin: 2px auto 0; border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 42px solid #ff6b5b;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 91, 0.45)); }
+@media (prefers-reduced-motion: no-preference) { .odd:hover .odd-grid b { animation: odd-wiggle .5s ease-in-out 2; } }
+@keyframes odd-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+@media (max-width: 620px) { .odd { min-height: 300px; } .odd-grid { grid-template-columns: 36px 36px; gap: 8px; } .odd-grid i { width: 36px; height: 36px; }
+  .odd-grid b { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 34px; } }
+/* emoji puzzle tile: sunny yellow, candy pink and a big row of emojis */
+.emj { border-radius: 22px; color: #2b1e00;
+  background: radial-gradient(ellipse 60% 60% at 0% 0%, rgba(255, 140, 190, 0.55), transparent 60%), radial-gradient(ellipse 60% 60% at 100% 100%, rgba(120, 200, 255, 0.5), transparent 60%),
+    linear-gradient(160deg, #ffe680 0%, #fff1c2 100%);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 3px #ffffff; }
+.emj:hover { box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25), 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 0 0 3px #ff5f9e; }
+.emj h3 { font-family: "Sniglet", sans-serif; font-weight: 800; font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.emj p { color: #5a4718; font-family: "Nunito", system-ui, sans-serif; font-weight: 700; max-width: 30ch; }
+.emj .pill { border-radius: 999px; background: #ffffff; border: 2px solid rgba(43, 30, 0, 0.15); color: #2b1e00; }
+.emj .play { color: #d6246c; font-family: "Sniglet", sans-serif; font-weight: 800; }
+.emj-row { position: absolute; top: 18px; right: 22px; font-size: 2.6rem; letter-spacing: 0.05em; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.12)); }
+@media (prefers-reduced-motion: no-preference) { .emj:hover .emj-row { animation: emj-bounce .6s ease; } }
+@keyframes emj-bounce { 30% { transform: translateY(-8px) rotate(-4deg); } 60% { transform: translateY(2px) rotate(2deg); } }
+@media (max-width: 620px) { .emj { min-height: 300px; } .emj-row { font-size: 2.2rem; } }
+/* timeline tile: museum parchment, a rust-red timeline with four pins */
+.tl { border-radius: 12px; color: #2e2414;
+  background: repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.05) 0 1px, transparent 1px 26px), linear-gradient(180deg, #f8f0dc, #efe1c2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 1px #d9c7a2, inset 0 0 0 6px rgba(255, 255, 255, 0.4); }
+.tl:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #b5452b; }
+.tl h3 { font-family: "Abril Fatface", Georgia, serif; font-weight: 400; font-size: clamp(2rem, 5.4vw, 2.6rem); }
+.tl p { color: #5d4a2f; font-family: "Libre Franklin", system-ui, sans-serif; font-weight: 500; max-width: 30ch; }
+.tl .pill { border-radius: 999px; background: #fffaf0; border: 1px solid #c9b48a; color: #2e2414; }
+.tl .play { color: #9c3820; font-family: "Libre Franklin", sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.tl-line { position: absolute; top: 34px; right: 26px; width: 170px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #b5452b, #e2a33a); display: flex;
+  justify-content: space-between; align-items: center; }
+.tl-line i { width: 16px; height: 16px; border-radius: 50%; background: #fffaf0; border: 3px solid #b5452b; }
+.tl-line i:nth-child(2), .tl-line i:nth-child(4) { transform: translateY(-14px); }
+@media (max-width: 620px) { .tl { min-height: 300px; } .tl-line { width: 130px; } }
 /* fortnite tile: blue sky, the purple storm at the edges and Peely */
 .fn { border-radius: 16px; color: #fff;
   background: url(fortnite/peely.png) right 34px top 14px / auto 62% no-repeat,
@@ -955,8 +1234,8 @@ a { color: inherit; }
 .locked-link:hover { color: var(--ink); border-color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700",
+hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Animals, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700&family=Fredoka:wght@700&family=Lexend:wght@400&family=Bungee&family=Plus+Jakarta+Sans:wght@400;500&family=Sniglet:wght@800&family=Nunito:wght@700&family=Abril+Fatface&family=Libre+Franklin:wght@500;800",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>

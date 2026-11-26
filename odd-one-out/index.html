@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Odd One Out – Spot What Doesn&#x27;t Belong – Obscure Trivia</title>
+<meta name="description" content="Odd One Out is a free puzzle game: four things, three of them share something, and you pick the one that doesn&#x27;t belong. 20 rounds per game on animals, geography, numbers, science, food, music, sport, films, games and more. Play solo or in party mode with up to 6 players.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/odd-one-out/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Odd One Out – Spot What Doesn&#x27;t Belong – Obscure Trivia">
+<meta property="og:description" content="Odd One Out is a free puzzle game: four things, three of them share something, and you pick the one that doesn&#x27;t belong. 20 rounds per game on animals, geography, numbers, science, food, music, sport, films, games and more. Play solo or in party mode with up to 6 players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/odd-one-out/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/odd-one-out/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15132b">
+<link rel="icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Odd One Out", "url": "https://scboom.github.io/obscure-trivia/odd-one-out/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "Odd One Out is a free puzzle game: four things, three of them share something, and you pick the one that doesn't belong. 20 rounds per game on animals, geography, numbers, science, food, music, sport, films, games and more. Play solo or in party mode with up to 6 players.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/obscure-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/obscure-trivia/"}, {"@type": "ListItem", "position": 2, "name": "Odd One Out", "item": "https://scboom.github.io/obscure-trivia/odd-one-out/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css?v=7acad4ddd7">
+<style>
+:root {
+  --bg: #15132b;
+  --bg-art: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255, 107, 91, 0.2), transparent 60%), radial-gradient(ellipse 70% 60% at 0% 100%, rgba(55, 214, 195, 0.16), transparent 60%),
+    linear-gradient(180deg, #1d1a3a 0%, #15132b 60%, #100e22 100%);
+  --panel: #1f1c3f; --panel-fill: linear-gradient(180deg, rgba(36, 32, 72, 0.95), rgba(26, 23, 54, 0.96)); --panel-2: #2a2652;
+  --panel-shadow: 0 14px 34px rgba(5, 4, 20, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --line: rgba(243, 241, 255, 0.15); --line-hover: rgba(55, 214, 195, 0.8); --ink: #f3f1ff; --muted: #c4c0e6; --faint: #9a95c4; --placeholder: #8984b5;
+  --accent: #ff6b5b; --accent-ink: #2a0500; --accent-text: #ff8c7f; --accent-hover: #ff8172; --accent-edge: #ffb3aa; --accent-shadow: 0 4px 0 #a8382b;
+  --chip-bg: rgba(255, 255, 255, 0.08); --chip-line: rgba(255, 255, 255, 0.22); --chip-ink: #f3f1ff;
+  --pal: #37d6c3; --pal-ink: #00241f; --pal-bg: rgba(55, 214, 195, 0.13); --pal-line: rgba(55, 214, 195, 0.5);
+  --good: #5fe39a; --good-ink: #022812; --good-bg: rgba(95, 227, 154, 0.14); --bad: #ff6b7a; --bad-ink: #33040b; --bad-bg: rgba(255, 107, 122, 0.15);
+  --inset: #100e24; --opt: rgba(34, 30, 68, 0.95); --tile: rgba(28, 25, 58, 0.95);
+  --card-bg: #f3f1ff; --card-ink: #1f1c3f; --card-line: #cfcbea; --card-inner: #e6e3fa; --card-strong: #000000;
+  --f-display: "Bungee", "Arial Black", system-ui, sans-serif; --f-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 8px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+h1, h2, h3, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.01em; }
+.hero h2 { font-size: clamp(1.8rem, 6.4vw, 2.6rem); line-height: 1.12; }
+.qtext { font-family: var(--f-body); font-weight: 800; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
+.btn.gold { font-family: var(--f-display); font-weight: 400; font-size: 1.05rem; letter-spacing: 0.02em; }
+/* the four things sit in a 2 by 2 grid, like cards on a table */
+.opts:not(.duel) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.opts:not(.duel) .opt { position: relative; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 108px; padding: 30px 10px 16px; }
+.opts:not(.duel) .opt .key { position: absolute; top: 9px; left: 9px; }
+.opts:not(.duel) .opt .lbl { flex: none; padding: 0; text-wrap: balance; font-family: var(--f-body); font-weight: 800; font-size: clamp(1rem, 3.6vw, 1.15rem); line-height: 1.25; }
+.opts:not(.duel) .opt .marks { position: absolute; top: 9px; right: 9px; }
+.opts:not(.duel) .opt:nth-child(4n+1) { border-color: rgba(55, 214, 195, 0.35); } .opts:not(.duel) .opt:nth-child(4n+2) { border-color: rgba(255, 199, 89, 0.35); }
+.opts:not(.duel) .opt:nth-child(4n+3) { border-color: rgba(160, 140, 255, 0.4); } .opts:not(.duel) .opt:nth-child(4n+4) { border-color: rgba(255, 107, 91, 0.4); }
+.opts:not(.duel) .opt.right { border-color: var(--good); } .opts:not(.duel) .opt.wrong { border-color: var(--bad); }
+.coin { width: 34px; height: 34px; flex: none; display: block; background: url("icon.svg") center / 100% 100% no-repeat; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true"></span><h1>Odd One Out</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Puzzle game</span>
+    <h2>Three of them belong together. Which one doesn&#x27;t?</h2>
+    <p>Odd One Out is a free puzzle game, 20 rounds per game: four things, three share something, and you pick the one that doesn&#x27;t belong. Animals, geography, numbers, science, food, music, sport, films, games and more. Play on your own, or start a party of up to 6 players with a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "odd", "letter": "X", "short": "Odd One Out", "icon": "", "namePh": "e.g. Sam", "eyebrow": "Puzzle game", "headline": "Three of them belong together. Which one doesn't?", "topics": "animals, geography, numbers, science, space, food, music, sport, films, myths, brands, cars and games", "foot": "Every round is built from a table of things and their features, and only kept if no other feature would single out a different one of the four. Countries come from Wikidata, animals from Wikipedia, and games from the same checked data as this site's game quizzes; the rest is checked against Wikipedia.", "seed": "obscure-trivia-odd-v1:", "topic": "obscure-trivia/odd/v1/", "recentKey": "ot-recent-odd-v1", "sessionKey": "ot-game-odd", "bank": "questions.json", "hub": "../", "groups": {"animals": "Animals", "geography": "Geography", "fooddrink": "Food & drink", "filmtv": "Film & TV", "games": "Games", "sport": "Sport", "music": "Music", "science": "Science", "mythslegends": "Myths & legends", "numbers": "Numbers", "cars": "Cars", "space": "Space", "humanbody": "Human body", "brandstech": "Brands & tech", "transport": "Transport", "everydaythin": "Everyday things", "wordslanguag": "Words & language", "artculture": "Art & culture", "history": "History"}, "caps": {"Animals": 3, "Art & culture": 3, "Brands & tech": 3, "Cars": 3, "Everyday things": 3, "Film & TV": 3, "Food & drink": 3, "Games": 3, "Geography": 3, "History": 3, "Human body": 3, "Music": 3, "Myths & legends": 3, "Numbers": 3, "Science": 3, "Space": 3, "Sport": 3, "Transport": 3, "Words & language": 3}, "verdicts": [[19, "Eagle eye! Nothing gets past you."], [16, "Sharp spotter!"], [12, "You've got a good eye."], [8, "Some odd choices there..."], [0, "Were you the odd one out?"]], "others": {"H": "../hearthstone/", "M": "../minecraft/", "N": "../fortnite/", "R": "../clash-royale/", "D": "../dead-by-daylight/", "W": "../general-knowledge/", "A": "../animals/", "F": "../football/", "C": "../cars/", "S": "../music/", "T": "../this-or-that/", "B": "../this-or-that/", "E": "../emoji-puzzle/", "Y": "../timeline/"}, "catalog": [{"letter": "H", "name": "Hearthstone Battlegrounds", "url": "../hearthstone/"}, {"letter": "M", "name": "Minecraft", "url": "../minecraft/"}, {"letter": "N", "name": "OG Fortnite", "url": "../fortnite/"}, {"letter": "R", "name": "Clash Royale", "url": "../clash-royale/"}, {"letter": "D", "name": "Dead by Daylight", "url": "../dead-by-daylight/"}, {"letter": "W", "name": "General Knowledge", "url": "../general-knowledge/"}, {"letter": "A", "name": "Animals", "url": "../animals/"}, {"letter": "F", "name": "Football", "url": "../football/"}, {"letter": "C", "name": "Cars", "url": "../cars/"}, {"letter": "S", "name": "Music", "url": "../music/"}, {"letter": "T", "name": "This or That", "url": "../this-or-that/"}, {"letter": "X", "name": "Odd One Out", "url": "./"}, {"letter": "E", "name": "Emoji Puzzle", "url": "../emoji-puzzle/"}, {"letter": "Y", "name": "Timeline", "url": "../timeline/"}]};</script>
+<script src="../assets/account.js?v=e4c5904b9b"></script>
+<script src="../assets/quiz.js?v=496bc2c8e5"></script>
+</body>
+</html>

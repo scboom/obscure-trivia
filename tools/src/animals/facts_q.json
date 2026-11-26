@@ -1,0 +1,4790 @@
+[
+ {
+  "topic": "records",
+  "animal": "Peregrine falcon",
+  "q": "Which animal is the fastest member of the whole animal kingdom, thanks to its hunting dive?",
+  "a": "Peregrine falcon",
+  "o": [
+   "Bald eagle",
+   "Common swift",
+   "Barn owl"
+  ],
+  "x": "When it dives on prey, a peregrine can top 300 km/h (190 mph). It is fastest going down, not in level flight.",
+  "page": "Fastest animals",
+  "evidence": "The peregrine falcon is the fastest bird, and the fastest member of the animal kingdom, with a diving speed of over 300 km/h (190 mph)."
+ },
+ {
+  "topic": "records",
+  "animal": "Cheetah",
+  "q": "Which animal is the fastest on land?",
+  "a": "Cheetah",
+  "o": [
+   "Pronghorn",
+   "Lion",
+   "Springbok"
+  ],
+  "x": "The cheetah's top speed reliably measured is about 104 km/h (65 mph), but it can only keep it up for short sprints.",
+  "page": "Fastest animals",
+  "evidence": "The fastest land animal is the cheetah, capable of running at speeds of up to 93–104 km/h (58–65 mph)."
+ },
+ {
+  "topic": "records",
+  "animal": "Cheetah",
+  "q": "How long does it take a cheetah to speed up from 0 to 97 km/h (60 mph)?",
+  "a": "Less than 3 seconds",
+  "o": [
+   "About 8 seconds",
+   "About 15 seconds",
+   "About 30 seconds"
+  ],
+  "x": "That is faster than many sports cars. When sprinting, a cheetah spends more time in the air than on the ground.",
+  "page": "Fastest animals",
+  "evidence": "the cheetah can accelerate from 0 to 97 km/h (60 mph) in less than three seconds, \"faster than a Ferrari\""
+ },
+ {
+  "topic": "records",
+  "animal": "Common ostrich",
+  "q": "Which animal is the fastest runner on two legs?",
+  "a": "Ostrich",
+  "o": [
+   "Emu",
+   "Human",
+   "Roadrunner"
+  ],
+  "x": "The ostrich is also the fastest bird on land. Its highest reliably measured speed is about 61 km/h (38 mph).",
+  "page": "Fastest animals",
+  "evidence": "The ostrich is the fastest bird on land, as well as the fastest running animal on two legs."
+ },
+ {
+  "topic": "records",
+  "animal": "Pronghorn",
+  "q": "Which animal is the fastest runner over long distances?",
+  "a": "Pronghorn",
+  "o": [
+   "Cheetah",
+   "Lion",
+   "Giraffe"
+  ],
+  "x": "The North American pronghorn can run at 56 km/h (35 mph) for 6 km (3.7 mi). Cheetahs tire after a short sprint.",
+  "page": "Fastest animals",
+  "evidence": "The pronghorn (American antelope) is the fastest animal over long distances; it can run at 56 km/h (35 mph) for 6 km (3.7 mi)"
+ },
+ {
+  "topic": "records",
+  "animal": "Mexican free-tailed bat",
+  "q": "Which is the fastest mammal of all, reaching about 160 km/h in level flight?",
+  "a": "Mexican free-tailed bat",
+  "o": [
+   "Flying squirrel",
+   "Vampire bat",
+   "Sugar glider"
+  ],
+  "x": "This little bat lives in huge colonies and is one of the fastest flying animals in level flight.",
+  "page": "Fastest animals",
+  "evidence": "Mexican free-tailed bat 160 km/h (99 mph) Flight It is the fastest mammal in the world and one of the fastest flying animals on level flight."
+ },
+ {
+  "topic": "records",
+  "animal": "Paratarsotomus macropalpis",
+  "q": "Measured in body lengths per second, what is the fastest known animal on Earth?",
+  "a": "A tiny mite",
+  "o": [
+   "A flea",
+   "A housefly",
+   "A garden ant"
+  ],
+  "x": "This Californian mite runs 322 body lengths per second. A human doing that would hit about 2,092 km/h (1,300 mph).",
+  "page": "Fastest animals",
+  "evidence": "On this basis the 'fastest' organism on earth, relative to its body length, is the Southern Californian mite, Paratarsotomus macropalpis, which has a speed of 322 body lengths per second."
+ },
+ {
+  "topic": "records",
+  "animal": "White-throated needletail",
+  "q": "Which bird is the fastest in normal flapping flight (not diving)?",
+  "a": "White-throated needletail",
+  "o": [
+   "Peregrine falcon",
+   "Wandering albatross",
+   "Rock dove"
+  ],
+  "x": "This swift reaches about 169 km/h (105 mph). The peregrine is fastest only when it dives.",
+  "page": "Fastest animals",
+  "evidence": "White-throated needletail swift 169 km/h (105 mph) Flight The fastest flying bird in flapping flight."
+ },
+ {
+  "topic": "records",
+  "animal": "Anna's hummingbird",
+  "q": "Which bird holds the vertebrate record for speed in body lengths per second, at 276?",
+  "a": "Anna's hummingbird",
+  "o": [
+   "Peregrine falcon",
+   "Golden eagle",
+   "Common swift"
+  ],
+  "x": "By comparison, a diving peregrine falcon manages about 186 body lengths per second.",
+  "page": "Fastest animals",
+  "evidence": "Anna's hummingbird 98.27 km/h (61.06 mph) Flight The stated speed equals 276 body lengths per second, the highest known length-specific velocity attained by any vertebrate."
+ },
+ {
+  "topic": "records",
+  "animal": "Perentie",
+  "q": "Which Australian lizard is generally considered the fastest recorded reptile?",
+  "a": "Perentie",
+  "o": [
+   "Thorny devil",
+   "Frilled lizard",
+   "Blue-tongued skink"
+  ],
+  "x": "The perentie, a big monitor lizard, has been clocked at about 40 km/h (25 mph).",
+  "page": "Fastest animals",
+  "evidence": "Perentie 40.23 km/h (25.00 mph) Land Generally considered the fastest recorded reptile."
+ },
+ {
+  "topic": "records",
+  "animal": "Greyhound",
+  "q": "Which dogs are the fastest of all dogs?",
+  "a": "Greyhounds",
+  "o": [
+   "Dalmatians",
+   "Siberian Huskies",
+   "Border Collies"
+  ],
+  "x": "Greyhounds can reach 60 to 70 km/h (37 to 43 mph). They were bred for chasing game and for racing.",
+  "page": "Fastest animals",
+  "evidence": "Greyhounds are the fastest dogs, and have primarily been bred for coursing game and racing ."
+ },
+ {
+  "topic": "records",
+  "animal": "Frigatebird",
+  "q": "Which seabird has the largest wing area compared to its body weight of any bird?",
+  "a": "Frigatebird",
+  "o": [
+   "Puffin",
+   "Penguin",
+   "Cormorant"
+  ],
+  "x": "Its huge wings for its light body help the frigatebird reach about 153 km/h (95 mph).",
+  "page": "Fastest animals",
+  "evidence": "The frigatebird's high speed is helped by its having the largest wing-area-to-body-weight ratio of any bird."
+ },
+ {
+  "topic": "records",
+  "animal": "Blue whale",
+  "q": "What is the largest animal known to have ever lived?",
+  "a": "Blue whale",
+  "o": [
+   "Sperm whale",
+   "Whale shark",
+   "Tyrannosaurus rex"
+  ],
+  "x": "Blue whales can weigh up to about 190 to 200 tonnes and reach about 30 m (98 to 100 ft) long.",
+  "page": "Blue whale",
+  "evidence": "Reaching a maximum confirmed length of 29.9–30.5 m (98–100 ft) and weighing up to 190–200 t (190–200 long tons; 210–220 short tons), it is the largest animal known to have ever existed."
+ },
+ {
+  "topic": "records",
+  "animal": "African bush elephant",
+  "q": "What is the largest living land animal?",
+  "a": "African bush elephant",
+  "o": [
+   "Hippopotamus",
+   "White rhinoceros",
+   "Giraffe"
+  ],
+  "x": "Males weigh about 6 tonnes (13,000 lb) on average and live in open habitats across sub-Saharan Africa.",
+  "page": "Largest organisms",
+  "evidence": "The African bush elephant (Loxodonta africana) is the largest living land animal."
+ },
+ {
+  "topic": "records",
+  "animal": "Blue whale",
+  "q": "About how much did the heart of a stranded blue whale weigh, the largest heart known?",
+  "a": "About 180 kg (400 lb)",
+  "o": [
+   "About 15 kg (33 lb)",
+   "About 50 kg (110 lb)",
+   "About 2,000 kg (4,400 lb)"
+  ],
+  "x": "That is the heaviest heart known in any animal. Its heart can slow to just 2 beats per minute on deep dives.",
+  "page": "Blue whale",
+  "evidence": "The weight of the heart of a stranded North Atlantic blue whale was 180 kg (400 lb), the largest known in any animal."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Blue whale",
+  "q": "How slow can a blue whale's heart beat when it dives deep?",
+  "a": "2 beats per minute",
+  "o": [
+   "20 beats per minute",
+   "60 beats per minute",
+   "120 beats per minute"
+  ],
+  "x": "When the whale comes back to the surface, its heart rate can rise to about 37 beats per minute.",
+  "page": "Blue whale",
+  "evidence": "A blue whale's heart rate can drop to 2 beats per minute (bpm) at deep depths, but upon surfacing, can rise to 37 bpm, which is close to its peak heart rate."
+ },
+ {
+  "topic": "diet",
+  "animal": "Blue whale",
+  "q": "What does the blue whale eat almost exclusively?",
+  "a": "Krill",
+  "o": [
+   "Squid",
+   "Seals",
+   "Seaweed"
+  ],
+  "x": "An average blue whale must eat about 1,120 kg (2,469 lb) of krill a day, which it gulps in huge lunges.",
+  "page": "Blue whale",
+  "evidence": "Blue whales are filter feeders; their diet consists almost exclusively of krill."
+ },
+ {
+  "topic": "records",
+  "animal": "Bee hummingbird",
+  "q": "What is the smallest bird in the world?",
+  "a": "Bee hummingbird",
+  "o": [
+   "Goldcrest",
+   "Wren",
+   "Blue tit"
+  ],
+  "x": "It weighs about 1.95 g (0.069 oz) and is about 5.5 cm (2.2 in) long, the smallest warm-blooded vertebrate.",
+  "page": "Smallest organisms",
+  "evidence": "the bee hummingbird (Mellisuga helenae) is the smallest known dinosaur as well as the smallest bird species, and the smallest warm-blooded vertebrate."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Bee hummingbird",
+  "q": "The bee hummingbird, the world's smallest bird, is native to which island?",
+  "a": "Cuba",
+  "o": [
+   "Madagascar",
+   "Borneo",
+   "Iceland"
+  ],
+  "x": "Locals call it the zunzuncito. It beats its wings 80 to 200 times per second.",
+  "page": "Bee hummingbird",
+  "evidence": "The bee hummingbird, zunzuncito or Helena hummingbird (Mellisuga helenae) is a species of hummingbird, native to the island of Cuba in the Caribbean."
+ },
+ {
+  "topic": "records",
+  "animal": "Bee hummingbird",
+  "q": "The bee hummingbird lays the tiniest eggs. Each is about the size of what?",
+  "a": "A coffee bean",
+  "o": [
+   "A golf ball",
+   "A grape",
+   "A chicken's egg"
+  ],
+  "x": "The female lays only two eggs at a time. She is the smallest known bird.",
+  "page": "Bee hummingbird",
+  "evidence": "The female lays only two eggs at a time, each about the size of a coffee bean."
+ },
+ {
+  "topic": "records",
+  "animal": "Etruscan shrew",
+  "q": "Which is the smallest mammal by mass?",
+  "a": "Etruscan shrew",
+  "o": [
+   "Pygmy marmoset",
+   "Harvest mouse",
+   "Least weasel"
+  ],
+  "x": "It weighs only about 1.8 g (0.063 oz) on average.",
+  "page": "Smallest organisms",
+  "evidence": "The Etruscan shrew (Suncus etruscus), is the smallest mammal by mass, weighing about 1.8 g (0.063 oz) on average."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Kitti's hog-nosed bat",
+  "q": "The bumblebee bat, the smallest mammal by length, lives in which countries?",
+  "a": "Thailand and Myanmar",
+  "o": [
+   "Brazil and Peru",
+   "Kenya and Tanzania",
+   "Spain and Portugal"
+  ],
+  "x": "It is only 29 to 33 mm (1.1 to 1.3 in) long and weighs about 2 g (0.071 oz).",
+  "page": "Smallest organisms",
+  "evidence": "The Kitti's hog-nosed bat (Craseonycteris thonglongyai), also known as the bumblebee bat, from Thailand and Myanmar is the smallest bat and the smallest mammal by body length"
+ },
+ {
+  "topic": "records",
+  "animal": "Madame Berthe's mouse lemur",
+  "q": "The smallest primate in the world is a kind of what?",
+  "a": "Mouse lemur",
+  "o": [
+   "Marmoset",
+   "Tarsier",
+   "Capuchin"
+  ],
+  "x": "Madame Berthe's mouse lemur lives in Madagascar and is about 9.2 cm (3.6 in) long on average.",
+  "page": "Smallest organisms",
+  "evidence": "The smallest primate is Madame Berthe's mouse lemur (Microcebus berthae), found in Madagascar, with an average body length of 9.2 cm (3.6 in)."
+ },
+ {
+  "topic": "records",
+  "animal": "Least weasel",
+  "q": "Which animal is the smallest member of the order Carnivora?",
+  "a": "Least weasel",
+  "o": [
+   "Fennec fox",
+   "Meerkat",
+   "Red panda"
+  ],
+  "x": "The least weasel can weigh as little as 29.5 g (1.04 oz), and females are lighter than males.",
+  "page": "Smallest organisms",
+  "evidence": "The smallest member of the order Carnivora is the least weasel (Mustela nivalis), with an average body length of 114–260 mm (4.5–10.2 in)."
+ },
+ {
+  "topic": "records",
+  "animal": "Vaquita",
+  "q": "What is the smallest of all the whales, dolphins and porpoises?",
+  "a": "Vaquita",
+  "o": [
+   "Beluga",
+   "Narwhal",
+   "Orca"
+  ],
+  "x": "The vaquita is a porpoise only about 1.4 m (4.6 ft) long. It is also one of the most endangered.",
+  "page": "Smallest organisms",
+  "evidence": "The smallest cetacean, which is also (as of 2006) the most endangered, is the vaquita, a species of porpoise."
+ },
+ {
+  "topic": "records",
+  "animal": "Little penguin",
+  "q": "What is the smallest species of penguin?",
+  "a": "Little blue penguin",
+  "o": [
+   "Galápagos penguin",
+   "Adélie penguin",
+   "Rockhopper penguin"
+  ],
+  "x": "It stands only about 30 to 33 cm (12 to 13 in) tall and weighs about 1.2 to 1.3 kg (2.6 to 2.9 lb).",
+  "page": "Smallest organisms",
+  "evidence": "The smallest penguin species is the little blue penguin (Eudyptula minor), which stands around 30–33 cm (12–13 in) tall and weighs 1.2–1.3 kg (2.6–2.9 lb)."
+ },
+ {
+  "topic": "records",
+  "animal": "Black-thighed falconet",
+  "q": "The smallest bird of prey, the black-thighed falconet, is roughly the size of what?",
+  "a": "A sparrow",
+  "o": [
+   "A crow",
+   "A goose",
+   "A seagull"
+  ],
+  "x": "Its wingspan is only about 27 to 32 cm (11 to 13 in).",
+  "page": "Smallest organisms",
+  "evidence": "The smallest bird of prey is the black-thighed falconet (Microhierax fringillarius), with a wingspan of 27–32 centimetres (11–13 in), roughly the size of a sparrow."
+ },
+ {
+  "topic": "records",
+  "animal": "Brachycephalus pulex",
+  "q": "The smallest known vertebrate, only about 6.5 mm long, is what kind of animal?",
+  "a": "A frog",
+  "o": [
+   "A fish",
+   "A lizard",
+   "A snake"
+  ],
+  "x": "Brachycephalus pulex, a Brazilian flea toad, is also the smallest amphibian known.",
+  "page": "Smallest organisms",
+  "evidence": "The smallest vertebrate (and smallest amphibian) known is Brachycephalus pulex, a Brazilian flea toad, with a minimum adult snout–vent length of 6.45 millimetres (0.254 in)."
+ },
+ {
+  "topic": "records",
+  "animal": "Brookesia nana",
+  "q": "Brookesia nana, possibly the smallest reptile, is what kind of lizard?",
+  "a": "Chameleon",
+  "o": [
+   "Gecko",
+   "Iguana",
+   "Monitor lizard"
+  ],
+  "x": "This tiny chameleon has a body only about 13.5 mm (0.53 in) long, without its tail.",
+  "page": "Smallest organisms",
+  "evidence": "The miniature chameleon Brookesia nana, with a snout-vent length of 13.5 mm (0.53 in), may represent the smallest known lizard and smallest reptile."
+ },
+ {
+  "topic": "records",
+  "animal": "Speckled padloper tortoise",
+  "q": "The world's smallest turtle, the speckled padloper tortoise, comes from which country?",
+  "a": "South Africa",
+  "o": [
+   "Brazil",
+   "Australia",
+   "Mexico"
+  ],
+  "x": "Males are only about 6 to 8 cm (2.4 to 3.1 in) long. Females reach almost 10 cm (3.9 in).",
+  "page": "Smallest organisms",
+  "evidence": "The smallest turtle is the speckled padloper tortoise (Homopus signatus) from South Africa."
+ },
+ {
+  "topic": "records",
+  "animal": "Greenland shark",
+  "q": "Which animal is the longest-lived vertebrate known?",
+  "a": "Greenland shark",
+  "o": [
+   "Bowhead whale",
+   "Galápagos tortoise",
+   "Great white shark"
+  ],
+  "x": "One Greenland shark 5 m (16.5 ft) long was found to be between 272 and 512 years old.",
+  "page": "List of longest-living organisms",
+  "evidence": "That makes the Greenland shark the longest-lived vertebrate."
+ },
+ {
+  "topic": "records",
+  "animal": "Bowhead whale",
+  "q": "Which whales are thought to live at least 211 years, making them the oldest mammals?",
+  "a": "Bowhead whales",
+  "o": [
+   "Blue whales",
+   "Humpback whales",
+   "Orcas"
+  ],
+  "x": "Bowhead whales live only in Arctic and subarctic waters and use their huge skulls to break through sea ice.",
+  "page": "List of longest-living organisms",
+  "evidence": "Some confirmed sources estimate bowhead whales to have lived at least 211 years of age, making them the oldest mammals."
+ },
+ {
+  "topic": "records",
+  "animal": "Glass sponge",
+  "q": "Which animals may be the longest-lived on Earth, estimated at over 10,000 years old?",
+  "a": "Glass sponges",
+  "o": [
+   "Giant tortoises",
+   "Greenland sharks",
+   "Lobsters"
+  ],
+  "x": "These sponges live in the East China Sea and Southern Ocean. The estimate may be too high, but they are likely the longest-lived animals.",
+  "page": "List of longest-living organisms",
+  "evidence": "Glass sponges found in the East China Sea and Southern Ocean have been estimated to be more than 10,000 years old."
+ },
+ {
+  "topic": "records",
+  "animal": "Laysan albatross",
+  "q": "Wisdom, the oldest known wild bird, laid an egg at age 74. What kind of bird is she?",
+  "a": "Laysan albatross",
+  "o": [
+   "Bald eagle",
+   "Emperor penguin",
+   "Barn owl"
+  ],
+  "x": "Wisdom lives on Midway Atoll in the Pacific Ocean and laid that egg in December 2024.",
+  "page": "List of longest-living organisms",
+  "evidence": "A female Laysan albatross named Wisdom successfully laid an egg at Midway Atoll in December 2024, at the age of 74. As of 2025, she is the oldest known wild bird in the world."
+ },
+ {
+  "topic": "records",
+  "animal": "Sulphur-crested cockatoo",
+  "q": "Cocky Bennett, the oldest known bird, lived to 120. What kind of bird was he?",
+  "a": "Cockatoo",
+  "o": [
+   "Raven",
+   "Swan",
+   "Owl"
+  ],
+  "x": "This Australian sulphur-crested cockatoo lived from 1796 to 1916 and could say phrases like \"one feather more and I'll fly\".",
+  "page": "List of longest-living organisms",
+  "evidence": "The oldest known bird in the world was an Australian sulphur-crested cockatoo called Cocky Bennett, who lived to 120."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Tuatara",
+  "q": "The tuatara, a lizard-like reptile that can live over 100 years, is native to which country?",
+  "a": "New Zealand",
+  "o": [
+   "Australia",
+   "Madagascar",
+   "Indonesia"
+  ],
+  "x": "A tuatara named Henry became a father for the first time at about 111 years old.",
+  "page": "List of longest-living organisms",
+  "evidence": "The tuatara, a lizard-like reptile native to New Zealand, can live well over 100 years."
+ },
+ {
+  "topic": "records",
+  "animal": "Splendor beetle",
+  "q": "A splendor beetle once came out of a staircase in England after how long as a larva?",
+  "a": "At least 47 years",
+  "o": [
+   "About 2 years",
+   "About 6 months",
+   "About 10 years"
+  ],
+  "x": "The beetle emerged from the staircase in Essex, UK, on 27 May 1983.",
+  "page": "List of longest-living organisms",
+  "evidence": "On May 27, 1983, a splendor beetle emerged from a staircase in Essex, UK, after at least 47 years as a larva."
+ },
+ {
+  "topic": "records",
+  "animal": "Common ostrich",
+  "q": "Which living bird is both the tallest and the heaviest?",
+  "a": "Common ostrich",
+  "o": [
+   "Emu",
+   "Southern cassowary",
+   "Emperor penguin"
+  ],
+  "x": "Male ostriches stand up to about 2.75 m (9 ft) tall and weigh 100 to 130 kg (220 to 290 lb).",
+  "page": "Common ostrich",
+  "evidence": "The common ostrich is the tallest and heaviest living bird."
+ },
+ {
+  "topic": "records",
+  "animal": "Common ostrich",
+  "q": "Which land animal with a backbone has the biggest eyes?",
+  "a": "Ostrich",
+  "o": [
+   "Giraffe",
+   "African elephant",
+   "Horse"
+  ],
+  "x": "An ostrich eye is about 50 mm (2 in) across, helping it spot predators from far away.",
+  "page": "Common ostrich",
+  "evidence": "their eyes are the largest of any land vertebrate, 50 mm (2.0 in) in diameter, helping them to see predators at a great distance."
+ },
+ {
+  "topic": "records",
+  "animal": "Common ostrich",
+  "q": "About how much does an ostrich egg weigh?",
+  "a": "About 1.4 kg (3.1 lb)",
+  "o": [
+   "About 100 g (3.5 oz)",
+   "About 400 g (14 oz)",
+   "About 6 kg (13 lb)"
+  ],
+  "x": "That is over 20 times the weight of a chicken's egg, yet small compared to the mother's body.",
+  "page": "Common ostrich",
+  "evidence": "on average they are 15 cm (5.9 in) long, 13 cm (5.1 in) wide, and weigh 1.4 kg (3.1 lb), over 20 times the weight of a chicken's egg"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Common ostrich",
+  "q": "How many toes does an ostrich have on each foot?",
+  "a": "Two",
+  "o": [
+   "Three",
+   "Four",
+   "Five"
+  ],
+  "x": "Most birds have four toes. Having fewer toes seems to help the ostrich run fast.",
+  "page": "Common ostrich",
+  "evidence": "The bird is didactyl, having just two toes on each foot (most birds have four), with the nail on the larger, inner toe resembling a hoof."
+ },
+ {
+  "topic": "records",
+  "animal": "Colossal squid",
+  "q": "Which animal has the largest eyes ever documented?",
+  "a": "Colossal squid",
+  "o": [
+   "Blue whale",
+   "Giant Pacific octopus",
+   "Ostrich"
+  ],
+  "x": "Its eyes are about 27 to 30 cm (11 to 12 in) across, roughly the size of a dinner plate.",
+  "page": "Colossal squid",
+  "evidence": "The colossal squid has the largest eyes of any documented animal, with an estimated diameter of 27–30 cm (11–12 in) to 40 cm (16 in) for the largest collected specimen."
+ },
+ {
+  "topic": "records",
+  "animal": "Colossal squid",
+  "q": "What is the heaviest living invertebrate (animal without a backbone)?",
+  "a": "Colossal squid",
+  "o": [
+   "Japanese spider crab",
+   "Giant Pacific octopus",
+   "Lion's mane jellyfish"
+  ],
+  "x": "It can weigh at least 495 kg (1,091 lb). It lives in the cold Southern Ocean around Antarctica.",
+  "page": "Colossal squid",
+  "evidence": "Unlike most squid species, the colossal squid exhibits abyssal gigantism, as it is the heaviest living invertebrate species, reaching weights up to 495 kg (1,091 lb)."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Colossal squid",
+  "q": "What makes the colossal squid's arms and tentacles different from those of its close relatives?",
+  "a": "They have hooks",
+  "o": [
+   "They glow green",
+   "They have no suckers",
+   "They have tiny eyes"
+  ],
+  "x": "Many sperm whales have scars on their backs thought to be made by these hooks.",
+  "page": "Colossal squid",
+  "evidence": "the colossal squid is the only squid in its family whose arms and tentacles are equipped with hooks, either swiveling or three-pointed."
+ },
+ {
+  "topic": "records",
+  "animal": "Arctic tern",
+  "q": "Which bird makes the longest migration known in the whole animal kingdom?",
+  "a": "Arctic tern",
+  "o": [
+   "Barn swallow",
+   "Canada goose",
+   "White stork"
+  ],
+  "x": "Birds nesting in Iceland and Greenland fly about 70,900 km (38,300 nmi) on their yearly round trip.",
+  "page": "Arctic tern",
+  "evidence": "These are by far the longest migrations known in the animal kingdom."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Arctic tern",
+  "q": "Why does the Arctic tern see more daylight than any other creature?",
+  "a": "It follows summer from pole to pole",
+  "o": [
+   "It never sleeps",
+   "It lives on the equator",
+   "It flies above the clouds"
+  ],
+  "x": "It breeds in the Arctic, then flies to the Antarctic coast for the southern summer, so it sees two summers a year.",
+  "page": "Arctic tern",
+  "evidence": "The long journey ensures that this bird sees two summers per year and more daylight than any other creature on the planet."
+ },
+ {
+  "topic": "records",
+  "animal": "Greenland shark",
+  "q": "At about what age is a Greenland shark grown up enough to have babies?",
+  "a": "About 150 years",
+  "o": [
+   "About 5 years",
+   "About 20 years",
+   "About 60 years"
+  ],
+  "x": "Its pups are born alive after a pregnancy thought to last 8 to 18 years.",
+  "page": "Greenland shark",
+  "evidence": "They reach sexual maturity around 150 years of age and their pups are born alive after an estimated gestation period of 8 to 18 years."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Greenland shark",
+  "q": "What often clings to a Greenland shark's eyes, sometimes making it nearly blind?",
+  "a": "A tiny crustacean",
+  "o": [
+   "A sea anemone",
+   "A remora fish",
+   "A starfish"
+  ],
+  "x": "The copepod Ommatokoita elongata attaches to the eyes. The shark relies more on smell and its lateral line.",
+  "page": "Greenland shark",
+  "evidence": "The shark is often infested by the copepod Ommatokoita elongata, a crustacean that attaches itself to the shark's eyes."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Ocean sunfish",
+  "q": "Where does the ocean sunfish get its English name?",
+  "a": "It sunbathes at the surface",
+  "o": [
+   "It is bright yellow",
+   "It glows in the dark",
+   "It only swims at noon"
+  ],
+  "x": "While it basks on its side, seabirds pick parasites off its skin. Adults actually spend lots of time hunting deep down.",
+  "page": "Ocean sunfish",
+  "evidence": "Its common English name, sunfish, refers to the animal's habit of sunbathing at the surface of the sea."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Ocean sunfish",
+  "q": "What is strange about the shape of the ocean sunfish?",
+  "a": "It looks like a head with no tail",
+  "o": [
+   "It has two heads",
+   "It has no fins",
+   "It is shaped like a ribbon"
+  ],
+  "x": "Its tail fin is replaced by a rounded flap called a clavus. In Polish its name means \"head alone\".",
+  "page": "Ocean sunfish",
+  "evidence": "It resembles a fish head without a tail, and its main body is flattened laterally."
+ },
+ {
+  "topic": "records",
+  "animal": "Sperm whale",
+  "q": "Which animal makes the loudest sounds of any animal, up to 236 decibels?",
+  "a": "Sperm whale",
+  "o": [
+   "Howler monkey",
+   "African elephant",
+   "Lion"
+  ],
+  "x": "Sperm whales use these powerful clicks for echolocation to find squid in the dark deep sea.",
+  "page": "Sperm whale",
+  "evidence": "The sperm whale uses echolocation and vocalization with source level as loud as 236 decibels (re 1 μPa m) underwater, the loudest of any animal."
+ },
+ {
+  "topic": "records",
+  "animal": "Sperm whale",
+  "q": "Which animal has the largest brain on Earth?",
+  "a": "Sperm whale",
+  "o": [
+   "Blue whale",
+   "African elephant",
+   "Orca"
+  ],
+  "x": "A sperm whale's brain weighs about 7 kg (15.6 lb) on average, more than five times heavier than a human brain.",
+  "page": "Sperm whale",
+  "evidence": "The sperm whale's brain is the largest in the world, five times heavier than a human brain."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Sperm whale",
+  "q": "Where are a sperm whale's working teeth?",
+  "a": "Only in its lower jaw",
+  "o": [
+   "Only in its upper jaw",
+   "It has no teeth",
+   "On its tongue"
+  ],
+  "x": "The cone-shaped teeth can weigh up to 1 kg (2.2 lb) each and fit into sockets in the upper jaw.",
+  "page": "Sperm whale",
+  "evidence": "The sperm whale has 18 to 26 teeth on each side of its lower jaw which fit into sockets in the upper jaw."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Sperm whale",
+  "q": "How do sperm whales sleep for short periods?",
+  "a": "Floating upright in the water",
+  "o": [
+   "Lying on the sea floor",
+   "Resting on a beach",
+   "Curled up in caves"
+  ],
+  "x": "Pods may sleep with their heads just below or at the surface, or head down. Deep sleep is often between 6 p.m. and midnight.",
+  "page": "Sperm whale",
+  "evidence": "For some time researchers have been aware that pods of sperm whales may sleep for short periods, assuming a vertical position with their heads just below or at the surface, or head down."
+ },
+ {
+  "topic": "diet",
+  "animal": "Sperm whale",
+  "q": "What is the main food of the sperm whale?",
+  "a": "Squid",
+  "o": [
+   "Krill",
+   "Seals",
+   "Seaweed"
+  ],
+  "x": "It eats medium-sized squid most, but also hunts giant squid, colossal squid, octopuses and fish.",
+  "page": "Sperm whale",
+  "evidence": "They feed on several species, notably the giant squid, but also the colossal squid, octopuses, and fish such as demersal rays and sharks, but their diet is mainly medium-sized squid."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Pistol shrimp",
+  "q": "When a pistol shrimp snaps its claw, the collapsing bubble gives off what?",
+  "a": "A flash of light",
+  "o": [
+   "A cloud of ink",
+   "A puff of sand",
+   "An electric shock"
+  ],
+  "x": "The snap is so powerful it can stun fish and even break small glass jars.",
+  "page": "Alpheidae",
+  "evidence": "As it collapses, the cavitation bubble emits a short flash of light with a broad spectrum."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Pistol shrimp",
+  "q": "Some pistol shrimps share their burrow with which fish, which keeps watch for danger?",
+  "a": "Gobies",
+  "o": [
+   "Clownfish",
+   "Seahorses",
+   "Pufferfish"
+  ],
+  "x": "The shrimp builds and tends the burrow. The goby has better eyesight and warns the shrimp with a flick of its tail.",
+  "page": "Alpheidae",
+  "evidence": "Some snapping shrimp species share burrows with goby fish in a mutualistic symbiotic relationship: the burrow is built and tended by the pistol shrimp, and the goby provides protection by watching out for danger."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Tardigrade",
+  "q": "How many legs does a tardigrade (water bear) have?",
+  "a": "Eight",
+  "o": [
+   "Four",
+   "Six",
+   "Twelve"
+  ],
+  "x": "The name water bear comes from the way they walk, a bit like a bear.",
+  "page": "Tardigrade",
+  "evidence": "Tardigrades (/ˈtɑːrdɪɡreɪdz/ ⓘ), also known as water bears or moss piglets, are a phylum of eight-legged segmented micro-animals."
+ },
+ {
+  "topic": "records",
+  "animal": "Tardigrade",
+  "q": "Which tiny animals have survived being exposed to outer space?",
+  "a": "Tardigrades",
+  "o": [
+   "Fleas",
+   "Ladybirds",
+   "Earthworms"
+  ],
+  "x": "In 2007 dried-out tardigrades were sent into orbit on the FOTON-M3 mission and exposed to the vacuum of space.",
+  "page": "Tardigrade",
+  "evidence": "They have survived exposure to outer space."
+ },
+ {
+  "topic": "records",
+  "animal": "Giraffe",
+  "q": "What is the tallest living land animal?",
+  "a": "Giraffe",
+  "o": [
+   "African elephant",
+   "Ostrich",
+   "Moose"
+  ],
+  "x": "Fully grown giraffes stand 4.3 to 5.7 m (14 to 19 ft) tall. They are also the largest ruminants.",
+  "page": "Giraffe",
+  "evidence": "They are the tallest living terrestrial animals and the largest ruminants on Earth."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Giraffe",
+  "q": "About how long is a giraffe's tongue?",
+  "a": "About 45 cm (18 in)",
+  "o": [
+   "About 8 cm (3 in)",
+   "About 20 cm (8 in)",
+   "About 1.5 m (5 ft)"
+  ],
+  "x": "Giraffes use their long tongues to grab leaves from high branches.",
+  "page": "Giraffe",
+  "evidence": "A giraffe's tongue is about 45 cm (18 in) long."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Giraffe",
+  "q": "Why is a giraffe's neck so long?",
+  "a": "Its neck bones are extra long",
+  "o": [
+   "It has extra neck bones",
+   "It has a stretchy spine",
+   "Its skull is very long"
+  ],
+  "x": "Each neck vertebra is over 28 cm (11 in) long. Most of the stretching happens after the calf is born.",
+  "page": "Giraffe",
+  "evidence": "The long neck results from a disproportionate lengthening of the cervical vertebrae, not from the addition of more vertebrae."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Giraffe",
+  "q": "A giraffe's heart must pump blood up to its brain at about what blood pressure, compared with a human?",
+  "a": "About double",
+  "o": [
+   "About the same",
+   "About half",
+   "About ten times"
+  ],
+  "x": "Its heart weighs about 11 kg (25 lb) and its wall can be as thick as 7.5 cm (3 in).",
+  "page": "Giraffe",
+  "evidence": "Its 11 kg (25 lb) and 60 cm (2 ft) heart must generate approximately double the blood pressure required for a human to maintain blood flow to the brain."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Giraffe",
+  "q": "In captivity, about how many hours a day do giraffes sleep?",
+  "a": "About 4.6 hours",
+  "o": [
+   "About 10 hours",
+   "About 14 hours",
+   "About 20 hours"
+  ],
+  "x": "They sleep mostly at night, usually lying down, sometimes resting the head on the hip.",
+  "page": "Giraffe",
+  "evidence": "Studies in captivity found that giraffes sleep intermittently around 4.6 hours per day, mostly at night."
+ },
+ {
+  "topic": "diet",
+  "animal": "Giraffe",
+  "q": "Giraffes mainly eat the leaves of which kind of tree?",
+  "a": "Acacia",
+  "o": [
+   "Eucalyptus",
+   "Bamboo",
+   "Pine"
+  ],
+  "x": "Giraffes browse at heights other ground animals cannot reach. They eat leaves, fruits and flowers.",
+  "page": "Giraffe",
+  "evidence": "Their food source is leaves, fruits, and flowers of woody plants, primarily acacia species, which they browse at heights most other ground-based herbivores cannot reach."
+ },
+ {
+  "topic": "records",
+  "animal": "African bush elephant",
+  "q": "About how long is an African bush elephant pregnancy, the longest of any mammal?",
+  "a": "About 22 months",
+  "o": [
+   "About 6 months",
+   "About 9 months",
+   "About 13 months"
+  ],
+  "x": "Elephant herds are made up of cows and their young.",
+  "page": "African bush elephant",
+  "evidence": "The menstrual cycle of cows lasts three to four months, and gestation around 22 months, the longest of any mammal."
+ },
+ {
+  "topic": "bodies",
+  "animal": "African bush elephant",
+  "q": "What do an African bush elephant's huge ears mainly help it do?",
+  "a": "Cool down",
+  "o": [
+   "Store water",
+   "Swim faster",
+   "Catch insects"
+  ],
+  "x": "Flapping the ears creates air currents and lets heat escape from big blood vessels inside them. Ears can be 2 m long.",
+  "page": "African bush elephant",
+  "evidence": "Its large ears help to reduce body heat; flapping them creates air currents and exposes large blood vessels on the inner sides to increase heat loss during hot weather."
+ },
+ {
+  "topic": "bodies",
+  "animal": "African bush elephant",
+  "q": "How many finger-like tips are at the end of an African bush elephant's trunk?",
+  "a": "Two",
+  "o": [
+   "One",
+   "Three",
+   "Four"
+  ],
+  "x": "These tips let the elephant pick up small objects. Its tusks curve outward and point forward.",
+  "page": "African bush elephant",
+  "evidence": "Its long trunk or proboscis ends with two finger-like tips."
+ },
+ {
+  "topic": "records",
+  "animal": "Saltwater crocodile",
+  "q": "What is the largest living reptile?",
+  "a": "Saltwater crocodile",
+  "o": [
+   "Komodo dragon",
+   "Green anaconda",
+   "Leatherback sea turtle"
+  ],
+  "x": "The very largest may reach 6 to 7 m (20 to 23 ft) long and weigh 900 to 1,500 kg (2,000 to 3,300 lb).",
+  "page": "Saltwater crocodile",
+  "evidence": "The saltwater crocodile is the largest living reptile."
+ },
+ {
+  "topic": "records",
+  "animal": "Reticulated python",
+  "q": "Which is the longest snake in the world?",
+  "a": "Reticulated python",
+  "o": [
+   "King cobra",
+   "Black mamba",
+   "Boa constrictor"
+  ],
+  "x": "It is native to South and Southeast Asia and is the only snake that regularly grows over 6 m (20 ft).",
+  "page": "Reticulated python",
+  "evidence": "The mainland subspecies is the world's longest snake, and the third heaviest after the green anaconda and Burmese python."
+ },
+ {
+  "topic": "records",
+  "animal": "Green anaconda",
+  "q": "Which is the heaviest snake in the world?",
+  "a": "Green anaconda",
+  "o": [
+   "Reticulated python",
+   "King cobra",
+   "Boa constrictor"
+  ],
+  "x": "Typical adults weigh 30 to 80 kg (66 to 176 lb). It is the largest snake native to the Americas.",
+  "page": "Green anaconda",
+  "evidence": "The green anaconda is the world's heaviest and one of the world's longest snakes"
+ },
+ {
+  "topic": "records",
+  "animal": "Whale shark",
+  "q": "What is the largest living fish?",
+  "a": "Whale shark",
+  "o": [
+   "Great white shark",
+   "Ocean sunfish",
+   "Manta ray"
+  ],
+  "x": "The largest reliably recorded whale shark was 18.8 m (61.7 ft) long.",
+  "page": "Whale shark",
+  "evidence": "The whale shark (Rhincodon typus) is a slow-moving, filter-feeding carpet shark and the largest known extant fish species."
+ },
+ {
+  "topic": "diet",
+  "animal": "Whale shark",
+  "q": "What does the gigantic whale shark mainly eat?",
+  "a": "Plankton and small fish",
+  "o": [
+   "Seals and sea lions",
+   "Dolphins",
+   "Sea turtles"
+  ],
+  "x": "It filters food with 20 filter pads. Its mouth can be over 1.5 m (5 ft) wide, with hundreds of rows of tiny teeth.",
+  "page": "Whale shark",
+  "evidence": "The whale shark is an active filter feeder, primarily consuming plankton, krill, fish eggs, and small schooling fish such as sardines and anchovies."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Goliath frog",
+  "q": "The goliath frog, the largest living frog, lives in which countries?",
+  "a": "Cameroon and Equatorial Guinea",
+  "o": [
+   "Brazil and Peru",
+   "India and Nepal",
+   "Australia and New Guinea"
+  ],
+  "x": "It lives mostly near waterfalls. With legs stretched out, the biggest ones can be over 80 cm (31 in) long.",
+  "page": "Goliath frog",
+  "evidence": "The goliath frog is mainly found near waterfalls in Equatorial Guinea and Cameroon."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Goliath frog",
+  "q": "What is unusual about the goliath frog compared with most frogs?",
+  "a": "It makes no mating calls",
+  "o": [
+   "It cannot swim",
+   "It has no back legs",
+   "It lays eggs on land only"
+  ],
+  "x": "It lacks a vocal sac, so it stays silent. Goliath frogs build nests in or near rivers.",
+  "page": "Goliath frog",
+  "evidence": "Because the goliath frog lacks a vocal sac, it does not produce mating calls, a behavior generally present in frogs and toads."
+ },
+ {
+  "topic": "records",
+  "animal": "Wandering albatross",
+  "q": "Which bird has the longest wingspan of any living bird?",
+  "a": "Wandering albatross",
+  "o": [
+   "Andean condor",
+   "Bald eagle",
+   "Great white pelican"
+  ],
+  "x": "Its wings can span up to 3.7 m (12 ft), letting it glide for hours without flapping.",
+  "page": "Wandering albatross",
+  "evidence": "The snowy albatross has the longest wingspan of any living bird, reaching up to 3.7 m (12 ft)"
+ },
+ {
+  "topic": "records",
+  "animal": "Rüppell's vulture",
+  "q": "Which bird is considered the highest flying, once recorded at 11,300 m (37,000 ft)?",
+  "a": "Rüppell's vulture",
+  "o": [
+   "Andean condor",
+   "Golden eagle",
+   "Common swift"
+  ],
+  "x": "Special blood protein lets it absorb oxygen in thin air. That record flight ended when it hit a plane over Ivory Coast.",
+  "page": "Rüppell's vulture",
+  "evidence": "It is considered to be the highest-flying bird, with confirmed evidence of a flight at an altitude of 11,300 m (37,000 ft)"
+ },
+ {
+  "topic": "records",
+  "animal": "Bar-tailed godwit",
+  "q": "Which bird makes the longest known non-stop flight, from Alaska to New Zealand?",
+  "a": "Bar-tailed godwit",
+  "o": [
+   "Arctic tern",
+   "Canada goose",
+   "Barn swallow"
+  ],
+  "x": "It is also the longest journey any animal makes without stopping to feed.",
+  "page": "Bar-tailed godwit",
+  "evidence": "The migration of the subspecies Limosa lapponica baueri across the Pacific Ocean from Alaska to New Zealand is the longest known non-stop flight of any bird"
+ },
+ {
+  "topic": "records",
+  "animal": "Cuvier's beaked whale",
+  "q": "Which mammal holds the record for the deepest dive, nearly 3,000 m (9,800 ft)?",
+  "a": "Cuvier's beaked whale",
+  "o": [
+   "Sperm whale",
+   "Blue whale",
+   "Bottlenose dolphin"
+  ],
+  "x": "It also holds the record for the longest dive by a mammal, 222 minutes.",
+  "page": "Cuvier's beaked whale",
+  "evidence": "Recorded dives have reached depths of 2,992 m (9,816 ft) and durations of 222 minutes."
+ },
+ {
+  "topic": "records",
+  "animal": "Common swift",
+  "q": "How long can a young common swift keep flying without ever landing?",
+  "a": "Up to 10 months",
+  "o": [
+   "Up to 3 days",
+   "Up to 2 weeks",
+   "Up to 6 weeks"
+  ],
+  "x": "Swifts never land on the ground by choice. Their tiny legs are mainly for clinging to walls.",
+  "page": "Common swift",
+  "evidence": "They never settle voluntarily on the ground where they would be vulnerable to accidents and predation, and non-breeding individuals may spend up to ten months in continuous flight."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Bowhead whale",
+  "q": "What does the bowhead whale use its huge triangular skull for?",
+  "a": "Breaking through Arctic ice",
+  "o": [
+   "Fighting off orcas",
+   "Digging for clams",
+   "Storing fat"
+  ],
+  "x": "It is the only baleen whale that lives only in Arctic waters, and it may live more than 200 years.",
+  "page": "Bowhead whale",
+  "evidence": "It is the only baleen whale endemic to the Arctic and subarctic waters, and is named after its characteristic massive triangular skull, which it uses to break through Arctic ice."
+ },
+ {
+  "topic": "records",
+  "animal": "Ocean quahog",
+  "q": "One ocean quahog was found to have lived 507 years. What kind of animal is it?",
+  "a": "A clam",
+  "o": [
+   "A tortoise",
+   "A lobster",
+   "A coral"
+  ],
+  "x": "It is the longest-lived single animal whose age was accurately known.",
+  "page": "Ocean quahog",
+  "evidence": "An individual specimen was reported to have lived 507 years, making it the longest-lived non-clonal metazoan whose age was accurately known."
+ },
+ {
+  "topic": "records",
+  "animal": "Jonathan (tortoise)",
+  "q": "Jonathan, the oldest known living land animal, is a tortoise living on which island?",
+  "a": "Saint Helena",
+  "o": [
+   "Galápagos",
+   "Madagascar",
+   "Hawaii"
+  ],
+  "x": "Jonathan hatched around 1832 and was brought to Saint Helena from the Seychelles in 1882.",
+  "page": "Jonathan (tortoise)",
+  "evidence": "Jonathan lives on the grounds of the Plantation House on Saint Helena, a British Overseas Territory in the South Atlantic Ocean."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Mantis shrimp",
+  "q": "Humans have 4 types of light-sensing cells in their eyes. How many types does a mantis shrimp have?",
+  "a": "12 to 16",
+  "o": [
+   "1",
+   "3",
+   "6"
+  ],
+  "x": "Mantis shrimp can even see ultraviolet and polarised light. Each eye moves on its own stalk.",
+  "page": "Mantis shrimp",
+  "evidence": "Compared with the four types of photoreceptor cell that humans possess in their eyes, the eyes of a mantis shrimp have between 12 and 16 types of photoreceptor cells."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Mantis shrimp",
+  "q": "When a mantis shrimp strikes, its prey gets hit twice. What causes the second hit?",
+  "a": "A collapsing bubble",
+  "o": [
+   "Its second claw",
+   "Its tail",
+   "A jet of ink"
+  ],
+  "x": "The claw strikes so fast it makes a vapour bubble, and the shock wave alone can stun or kill prey.",
+  "page": "Mantis shrimp",
+  "evidence": "which means that the prey is hit twice by a single strike; first by the claw and then by the collapsing cavitation bubbles that immediately follow."
+ },
+ {
+  "topic": "records",
+  "animal": "Eumillipes persephone",
+  "q": "The animal with the most legs on Earth, with up to 1,306, is a kind of what?",
+  "a": "Millipede",
+  "o": [
+   "Centipede",
+   "Caterpillar",
+   "Sea star"
+  ],
+  "x": "It was found 60 m underground in drill holes in Western Australia. It was the first millipede found with over 1,000 legs.",
+  "page": "Eumillipes persephone",
+  "evidence": "This millipede can have as many as 1,306 legs, which makes this species the animal with the most legs on Earth and the first millipede discovered to have 1,000 legs or more."
+ },
+ {
+  "topic": "records",
+  "animal": "Japanese spider crab",
+  "q": "Which animal has the largest leg span of any arthropod, about 3.75 m (12.3 ft)?",
+  "a": "Japanese spider crab",
+  "o": [
+   "Coconut crab",
+   "Giant huntsman spider",
+   "American lobster"
+  ],
+  "x": "Its Japanese name, taka-ashi-gani, means \"tall-legged crab\".",
+  "page": "Japanese spider crab",
+  "evidence": "At around 3.75 metres (12.3 ft), it has the largest leg-span of any arthropod."
+ },
+ {
+  "topic": "records",
+  "animal": "Komodo dragon",
+  "q": "What is the largest living lizard?",
+  "a": "Komodo dragon",
+  "o": [
+   "Green iguana",
+   "Gila monster",
+   "Frilled lizard"
+  ],
+  "x": "Males can grow to 3 m (10 ft) long and weigh up to 150 kg (330 lb).",
+  "page": "Komodo dragon",
+  "evidence": "It is the largest extant species of lizard, with the males growing to a maximum length of 3 m (10 ft) and weighing up to 150 kg (330 lb)."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Komodo dragon",
+  "q": "Wild Komodo dragons live only on a few islands in which country?",
+  "a": "Indonesia",
+  "o": [
+   "Philippines",
+   "Australia",
+   "Madagascar"
+  ],
+  "x": "They live on Komodo, Rinca, Flores, Gili Dasami and Gili Motang. Fossils show they once lived in Australia too.",
+  "page": "Komodo dragon",
+  "evidence": "is endemic to the Indonesian islands of Komodo, Rinca, Flores, Gili Dasami, and Gili Motang."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Komodo dragon",
+  "q": "What does a Komodo dragon mainly use to smell and taste the air?",
+  "a": "Its forked tongue",
+  "o": [
+   "Its nostrils",
+   "Its feet",
+   "Its tail"
+  ],
+  "x": "Like snakes, it flicks its long yellow tongue and uses a special organ in its mouth called the Jacobson's organ.",
+  "page": "Komodo dragon",
+  "evidence": "the Komodo dragon primarily relies on its tongue to detect, taste, and smell stimuli, with the vomeronasal sense using the Jacobson's organ, rather than using the nostrils."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Komodo dragon",
+  "q": "Where do young Komodo dragons live to stay safe from predators, including adult dragons?",
+  "a": "In trees",
+  "o": [
+   "In the sea",
+   "In caves",
+   "In rivers"
+  ],
+  "x": "Young dragons climb well with their strong claws and eat insects, birds, eggs and small reptiles.",
+  "page": "Komodo dragon",
+  "evidence": "Young Komodo dragons are vulnerable and dwell in trees to avoid predators, including cannibalistic adults"
+ },
+ {
+  "topic": "records",
+  "animal": "Leatherback sea turtle",
+  "q": "What is the largest of all living turtles?",
+  "a": "Leatherback sea turtle",
+  "o": [
+   "Galápagos tortoise",
+   "Green sea turtle",
+   "Alligator snapping turtle"
+  ],
+  "x": "It can reach 2.7 m (8 ft 10 in) long and 500 kg (1,100 lb). It can dive as deep as 1,280 m (4,200 ft).",
+  "page": "Leatherback sea turtle",
+  "evidence": "The largest of all living turtles and the heaviest non-crocodilian reptile, it reaches lengths of up to 2.7 metres (8 ft 10 in) and weights of 500 kilograms (1,100 lb)."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Leatherback sea turtle",
+  "q": "What makes the leatherback different from all other modern sea turtles?",
+  "a": "It has no bony shell",
+  "o": [
+   "It has no flippers",
+   "It lives in rivers",
+   "It has a spiky shell"
+  ],
+  "x": "Its back is covered by oily flesh and flexible, leather-like skin, which gives it its name.",
+  "page": "Leatherback sea turtle",
+  "evidence": "It can easily be differentiated from other modern sea turtles by its lack of a bony shell; instead, its carapace is covered by oily flesh and flexible, leather-like skin, for which it is named."
+ },
+ {
+  "topic": "diet",
+  "animal": "Leatherback sea turtle",
+  "q": "What do adult leatherback sea turtles eat almost entirely?",
+  "a": "Jellyfish",
+  "o": [
+   "Seagrass",
+   "Crabs",
+   "Squid"
+  ],
+  "x": "Leatherbacks follow jellyfish up and down through the water, so they help keep jellyfish numbers in check.",
+  "page": "Leatherback sea turtle",
+  "evidence": "Adult D. coriacea turtles subsist almost entirely on jellyfish."
+ },
+ {
+  "topic": "records",
+  "animal": "Capybara",
+  "q": "What is the largest living rodent?",
+  "a": "Capybara",
+  "o": [
+   "Beaver",
+   "Porcupine",
+   "Groundhog"
+  ],
+  "x": "The capybara is a semiaquatic herbivore that lives near rivers, lakes and swamps.",
+  "page": "Capybara",
+  "evidence": "The capybara (/kæpɪˈbɑːrə/ ⓘ kap-ih-BAR-uh) or greater capybara (Hydrochoerus hydrochaeris) is the largest living rodent, native to all countries in South America except Chile."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Capybara",
+  "q": "Capybaras live wild in every South American country except one. Which?",
+  "a": "Chile",
+  "o": [
+   "Brazil",
+   "Argentina",
+   "Colombia"
+  ],
+  "x": "Capybaras are semiaquatic and live near rivers, lakes, ponds, swamps and reservoirs.",
+  "page": "Capybara",
+  "evidence": "Capybaras are found in all countries in South America except Chile."
+ },
+ {
+  "topic": "records",
+  "animal": "Emperor penguin",
+  "q": "Which is the tallest and heaviest of all living penguins?",
+  "a": "Emperor penguin",
+  "o": [
+   "King penguin",
+   "Gentoo penguin",
+   "Adélie penguin"
+  ],
+  "x": "Adults are about 1 m (39 in) long and weigh 22 to 45 kg (49 to 99 lb). They live only in Antarctica.",
+  "page": "Emperor penguin",
+  "evidence": "The emperor penguin (Aptenodytes forsteri) is the tallest and heaviest of all living penguin species and is endemic to Antarctica."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Emperor penguin",
+  "q": "Who keeps the emperor penguin's egg warm through the Antarctic winter?",
+  "a": "The father, on his feet",
+  "o": [
+   "The mother, in a nest",
+   "Both, in a burrow",
+   "Nobody, it is buried"
+  ],
+  "x": "He balances the egg on his feet under a fold of skin for 65 to 75 days and eats nothing, losing about 12 kg (26 lb).",
+  "page": "Emperor penguin",
+  "evidence": "There he balances it on the tops of his feet, engulfing it with loose skin and feathers for around 65–75 days until hatching."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Emperor penguin",
+  "q": "How do male emperor penguins survive winter winds of up to 200 km/h?",
+  "a": "They huddle and take turns in the middle",
+  "o": [
+   "They dig snow caves",
+   "They swim under the ice",
+   "They fly to warmer places"
+  ],
+  "x": "A huddle can hold from ten to several hundred birds, each leaning on a neighbour.",
+  "page": "Emperor penguin",
+  "evidence": "To survive the cold and savage winds of up to 200 km/h (120 mph), the males huddle together, taking turns in the middle of the huddle."
+ },
+ {
+  "topic": "records",
+  "animal": "Turritopsis dohrnii",
+  "q": "Why is Turritopsis dohrnii called the immortal jellyfish?",
+  "a": "It can turn back into a young polyp",
+  "o": [
+   "It cannot be stung",
+   "It never stops growing",
+   "It can live on land"
+  ],
+  "x": "After becoming an adult, it can go back to an early polyp stage attached to the sea floor and start its life again.",
+  "page": "Turritopsis dohrnii",
+  "evidence": "It is one of the few known cases of an animal capable of completely reverting to a sexually immature, sedentary polyps colonial stage after having reached sexual maturity as a solitary individual."
+ },
+ {
+  "topic": "records",
+  "animal": "Lion's mane jellyfish",
+  "q": "The tentacles of a large lion's mane jellyfish can trail how far?",
+  "a": "30 m (100 ft) or more",
+  "o": [
+   "About 1 m (3 ft)",
+   "About 3 m (10 ft)",
+   "About 8 m (26 ft)"
+  ],
+  "x": "It is one of the largest known jellyfish. Its trailing tentacles look a bit like a lion's mane.",
+  "page": "Lion's mane jellyfish",
+  "evidence": "The tentacles of larger specimens may trail as long as 30 m (100 ft) or more"
+ },
+ {
+  "topic": "diet",
+  "animal": "Mayfly",
+  "q": "What do adult mayflies eat?",
+  "a": "Nothing at all",
+  "o": [
+   "Flower nectar",
+   "Other insects",
+   "Leaves"
+  ],
+  "x": "Adults only live to breed. Their mouthparts do not work and their gut is filled with air. Young mayflies can live years in water.",
+  "page": "Mayfly",
+  "evidence": "The primary function of the adult is reproduction; adults do not feed and have only vestigial mouthparts, while their digestive systems are filled with air."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Mayfly",
+  "q": "Mayflies are the only insects that do what?",
+  "a": "Moult again after getting wings",
+  "o": [
+   "Live underwater as adults",
+   "Fly backwards",
+   "Glow at night"
+  ],
+  "x": "The winged subimago moults once more into the full adult, sometimes after only a few minutes.",
+  "page": "Mayfly",
+  "evidence": "the subimago moults to the full adult form, making mayflies the only insects where a winged form undergoes a further moult."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Box jellyfish",
+  "q": "How many eyes does a box jellyfish have in total?",
+  "a": "24",
+  "o": [
+   "None",
+   "2",
+   "8"
+  ],
+  "x": "Some of its eyes have retinas, corneas and lenses, unusual for a jellyfish. It is also a fast, strong swimmer.",
+  "page": "Box jellyfish",
+  "evidence": "In total, the box jellyfish have six eyes on each of their four rhopalia, creating a total of 24 eyes."
+ },
+ {
+  "topic": "records",
+  "animal": "Inland taipan",
+  "q": "Which snake is widely regarded as the most venomous in the world?",
+  "a": "Inland taipan",
+  "o": [
+   "King cobra",
+   "Black mamba",
+   "Diamondback rattlesnake"
+  ],
+  "x": "It lives in semi-arid central eastern Australia. One bite may hold enough venom to kill over 100 adult humans.",
+  "page": "Inland taipan",
+  "evidence": "Based on the median lethal dose (LD50) of its venom in laboratory mice, the inland taipan is widely regarded as the most venomous snake in the world"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Inland taipan",
+  "q": "How does the inland taipan's head change colour with the seasons?",
+  "a": "Black in winter, brown in summer",
+  "o": [
+   "White in winter, green in summer",
+   "Red all year round",
+   "It never changes"
+  ],
+  "x": "A darker head may help it soak up heat while poking just its head out of a burrow.",
+  "page": "Inland taipan",
+  "evidence": "The rounded snout, head and neck are usually noticeably darker than the body – glossy black in winter and dark brown in summer."
+ },
+ {
+  "topic": "records",
+  "animal": "Golden poison frog",
+  "q": "Which small animal is considered the most poisonous animal on the planet?",
+  "a": "Golden poison frog",
+  "o": [
+   "Cane toad",
+   "Fire salamander",
+   "Monarch butterfly"
+  ],
+  "x": "One wild frog carries about 1 mg of poison, enough to kill 10 to 20 humans. It lives in the rainforests of Colombia.",
+  "page": "Golden poison frog",
+  "evidence": "Despite its small size, this frog is considered to be the most poisonous extant animal species on the planet."
+ },
+ {
+  "topic": "diet",
+  "animal": "Golden poison frog",
+  "q": "Why are golden poison frogs raised in captivity not poisonous?",
+  "a": "Their poison comes from wild food",
+  "o": [
+   "Zoo water washes it off",
+   "They are a different colour",
+   "Only old frogs are poisonous"
+  ],
+  "x": "In the wild they eat small ants and other insects that let them make their poison.",
+  "page": "Golden poison frog",
+  "evidence": "frogs kept in captivity fed on commercially available feeder insects will eventually lose their toxicity, and frogs bred in captivity are considered non-toxic."
+ },
+ {
+  "topic": "records",
+  "animal": "Pygmy marmoset",
+  "q": "What is the world's smallest monkey?",
+  "a": "Pygmy marmoset",
+  "o": [
+   "Squirrel monkey",
+   "Capuchin",
+   "Spider monkey"
+  ],
+  "x": "It weighs just over 100 g (3.5 oz) and lives in the western Amazon rainforest. It can turn its head 180°.",
+  "page": "Pygmy marmoset",
+  "evidence": "The pygmy marmoset is the world's smallest monkey."
+ },
+ {
+  "topic": "diet",
+  "animal": "Pygmy marmoset",
+  "q": "What is the main food of the pygmy marmoset?",
+  "a": "Tree gum and sap",
+  "o": [
+   "Bananas",
+   "Bird eggs",
+   "Grass"
+  ],
+  "x": "It uses special front teeth to gouge holes in trees and make the sap flow.",
+  "page": "Pygmy marmoset",
+  "evidence": "The dental morphology is adapted to feeding on gum, with specialised incisors that are used to gouge trees and stimulate sap flow."
+ },
+ {
+  "topic": "records",
+  "animal": "Coconut crab",
+  "q": "What is the largest living land arthropod?",
+  "a": "Coconut crab",
+  "o": [
+   "Goliath birdeater",
+   "Goliath beetle",
+   "Giant African millipede"
+  ],
+  "x": "It can weigh up to 4.1 kg (9 lb). It is a giant hermit crab that lives on islands in the Indian and Pacific Oceans.",
+  "page": "Coconut crab",
+  "evidence": "It is the largest living terrestrial arthropod, with a weight up to 4.1 kg (9.0 lb)."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Coconut crab",
+  "q": "What happens if an adult coconut crab stays underwater too long?",
+  "a": "It drowns",
+  "o": [
+   "It grows gills",
+   "It changes colour",
+   "It falls asleep"
+  ],
+  "x": "Adults breathe with special lungs instead of gills. Young ones carry snail shells like other hermit crabs.",
+  "page": "Coconut crab",
+  "evidence": "After the juvenile stage, they will drown if immersed in water for too long."
+ },
+ {
+  "topic": "records",
+  "animal": "Goliath birdeater",
+  "q": "Which is the largest spider in the world by mass?",
+  "a": "Goliath birdeater",
+  "o": [
+   "Black widow",
+   "Wolf spider",
+   "Garden spider"
+  ],
+  "x": "It can weigh up to 175 g (6.2 oz). Despite its name, it rarely eats birds.",
+  "page": "Goliath birdeater",
+  "evidence": "Found in northern South America, it is the largest spider in the world by mass (175 g (6.2 oz)) and body length (up to 13 cm (5.1 in)), and second to the giant huntsman spider by leg span."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Giant huntsman spider",
+  "q": "The giant huntsman spider, the largest spider by leg span, is found in which country?",
+  "a": "Laos",
+  "o": [
+   "Brazil",
+   "Australia",
+   "Kenya"
+  ],
+  "x": "Its legs can span up to 30 cm (1 ft) and twist forward like a crab's.",
+  "page": "Giant huntsman spider",
+  "evidence": "The giant huntsman spider (Heteropoda maxima) is a species of the huntsman spider family Sparassidae found in Laos."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Atlas moth",
+  "q": "In Cantonese, the Atlas moth is called the \"snake's head moth\". Why?",
+  "a": "Its wing tips look like snake heads",
+  "o": [
+   "It eats baby snakes",
+   "It hisses like a snake",
+   "Its caterpillar bites"
+  ],
+  "x": "Its wingspan is often 25 to 30 cm (10 to 12 in), making it one of the largest moths.",
+  "page": "Atlas moth",
+  "evidence": "The Cantonese name translates to \"snake's head moth\", referring to the prominent extension of the forewing that resembles the head of a snake."
+ },
+ {
+  "topic": "records",
+  "animal": "Queen Alexandra's birdwing",
+  "q": "What is the largest butterfly in the world?",
+  "a": "Queen Alexandra's birdwing",
+  "o": [
+   "Monarch butterfly",
+   "Blue morpho",
+   "Painted lady"
+  ],
+  "x": "Females can have wings over 25 cm (10 in) across. It lives only in forests of Papua New Guinea.",
+  "page": "Queen Alexandra's birdwing",
+  "evidence": "Ornithoptera alexandrae, the Queen Alexandra's birdwing, is the largest species of butterfly in the world"
+ },
+ {
+  "topic": "records",
+  "animal": "Fairyfly",
+  "q": "The world's smallest known insects, called fairyflies, are really tiny what?",
+  "a": "Wasps",
+  "o": [
+   "Flies",
+   "Beetles",
+   "Moths"
+  ],
+  "x": "The smallest known insect is a fairyfly only 0.139 mm long, smaller than some single-celled creatures.",
+  "page": "Mymaridae",
+  "evidence": "The Mymaridae, commonly known as fairyflies or fairy bees, are a family of chalcid wasps found in temperate, subtropical, and tropical regions throughout the world."
+ },
+ {
+  "topic": "records",
+  "animal": "Mariana snailfish",
+  "q": "Which fish has been caught nearly 8,000 m deep, maybe a record for a fish caught on the seafloor?",
+  "a": "Mariana snailfish",
+  "o": [
+   "Anglerfish",
+   "Coelacanth",
+   "Gulper eel"
+  ],
+  "x": "This pale, tadpole-like fish lives in the Mariana Trench and eats tiny crustaceans.",
+  "page": "Mariana snailfish",
+  "evidence": "It is known from a depth range of 6,198–8,076 m (20,335–26,496 ft), including a capture at 7,966 m (26,135 ft), which is possibly the record for a fish caught on the seafloor."
+ },
+ {
+  "topic": "records",
+  "animal": "Southern elephant seal",
+  "q": "Which animal is the largest member of the order Carnivora?",
+  "a": "Southern elephant seal",
+  "o": [
+   "Polar bear",
+   "Walrus",
+   "Siberian tiger"
+  ],
+  "x": "Adult bulls can weigh 3,000 to 3,700 kg (6,600 to 8,200 lb), more than twice a male walrus.",
+  "page": "Southern elephant seal",
+  "evidence": "It is the largest member of the clade Pinnipedia and the order Carnivora, as well as the largest extant marine mammal that is not a cetacean."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Southern elephant seal",
+  "q": "What does a male elephant seal use its trunk-like nose for?",
+  "a": "Making very loud roars",
+  "o": [
+   "Sucking up water",
+   "Digging for food",
+   "Grabbing fish"
+  ],
+  "x": "The big nose, called a proboscis, plus their huge size, gives elephant seals their name.",
+  "page": "Southern elephant seal",
+  "evidence": "It gets its name from its massive size and the large proboscis of the adult male, which is used to produce very loud roars, especially during the breeding season."
+ },
+ {
+  "topic": "records",
+  "animal": "Polar bear",
+  "q": "What is the largest land carnivore?",
+  "a": "Polar bear",
+  "o": [
+   "Siberian tiger",
+   "Lion",
+   "Spotted hyena"
+  ],
+  "x": "Adult males weigh 300 to 800 kg (660 to 1,760 lb). It is also the largest kind of bear.",
+  "page": "Polar bear",
+  "evidence": "The polar bear is the largest extant species of bear and land carnivore by body mass, with adult males weighing 300–800 kg (660–1,760 lb)."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Polar bear",
+  "q": "What colour is a polar bear's skin under its fur?",
+  "a": "Black",
+  "o": [
+   "White",
+   "Pink",
+   "Yellow"
+  ],
+  "x": "Its fur is white or yellowish, and it has a thick layer of fat under the skin.",
+  "page": "Polar bear",
+  "evidence": "The polar bear is white or yellowish-furred with black skin and a thick layer of fat."
+ },
+ {
+  "topic": "diet",
+  "animal": "Polar bear",
+  "q": "What is the polar bear's main prey?",
+  "a": "Seals",
+  "o": [
+   "Penguins",
+   "Reindeer",
+   "Salmon"
+  ],
+  "x": "It mostly eats the seals' energy-rich blubber and often waits at breathing holes in the ice. Penguins live at the other pole.",
+  "page": "Polar bear",
+  "evidence": "They are mostly carnivorous and specialized for preying on seals, particularly ringed seals."
+ },
+ {
+  "topic": "records",
+  "animal": "Gorilla",
+  "q": "What is the largest living primate?",
+  "a": "Gorilla",
+  "o": [
+   "Orangutan",
+   "Chimpanzee",
+   "Mandrill"
+  ],
+  "x": "Gorillas can weigh up to 227 kg (500 lb) and have arm spans up to 2.6 m (8 ft 6 in).",
+  "page": "Gorilla",
+  "evidence": "Gorillas are the largest living primates, reaching heights between 1.25 and 1.8 m (4 ft 1 in and 5 ft 11 in), weights between 68 and 227 kg (150 and 500 lb), and arm spans up to 2.6 m (8 ft 6 in), depending on species and sex."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Gorilla",
+  "q": "What do gorillas build each night to sleep in?",
+  "a": "A nest of leaves",
+  "o": [
+   "A burrow",
+   "A mud hut",
+   "Nothing at all"
+  ],
+  "x": "Most nests are on the ground, but smaller gorillas often prefer tree nests.",
+  "page": "Gorilla",
+  "evidence": "For sleep during the night, gorillas, like other great apes, build a shelter called a nest."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Tiger",
+  "q": "How do tigers usually live?",
+  "a": "Mostly alone",
+  "o": [
+   "In prides",
+   "In packs",
+   "In big herds"
+  ],
+  "x": "A tiger defends its home range from others of the same sex. Cubs stay with their mother for about two years.",
+  "page": "Tiger",
+  "evidence": "It lives a mostly solitary life and defends its home range from individuals of the same sex."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Tiger",
+  "q": "What mark does a tiger have on the back of each ear?",
+  "a": "A white spot ringed with black",
+  "o": [
+   "A black stripe down the middle",
+   "An orange star shape",
+   "A ring of yellow fur"
+  ],
+  "x": "Tigers have round ears and round pupils, and black, mostly vertical stripes.",
+  "page": "Tiger",
+  "evidence": "On the back of the ears, it has a prominent white spot, which is surrounded by black."
+ },
+ {
+  "topic": "records",
+  "animal": "Frilled shark",
+  "q": "How long can a frilled shark's pregnancy last?",
+  "a": "Up to 3.5 years",
+  "o": [
+   "About 2 months",
+   "About 9 months",
+   "About 1 year"
+  ],
+  "x": "It is called a living fossil because of its eel-like body. Its jaws hold 300 needle-like teeth.",
+  "page": "Frilled shark",
+  "evidence": "the gestation period of the frilled shark can be up to 3.5 years long, to produce a litter of 2–15 shark pups."
+ },
+ {
+  "topic": "records",
+  "animal": "Electric eel",
+  "q": "Electric eels can deliver shocks of up to about how many volts?",
+  "a": "860 volts",
+  "o": [
+   "9 volts",
+   "50 volts",
+   "220 volts"
+  ],
+  "x": "They use the shocks to stun prey. They are nocturnal and must breathe air.",
+  "page": "Electric eel",
+  "evidence": "They are known for their ability to stun their prey by generating electricity, delivering shocks at up to 860 volts."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Electric eel",
+  "q": "What kind of fish is an electric eel, despite its name?",
+  "a": "A knifefish",
+  "o": [
+   "A true eel",
+   "A catfish",
+   "A shark"
+  ],
+  "x": "Electric eels belong to the South American knifefishes, most of which only make weak electric fields.",
+  "page": "Electric eel",
+  "evidence": "Despite their name, electric eels are not closely related to the true eels (Anguilliformes) but are members of the electroreceptive knifefish order Gymnotiformes."
+ },
+ {
+  "topic": "records",
+  "animal": "Froghopper",
+  "q": "Some fleas can jump 50 times their body length. Which insects are even better jumpers?",
+  "a": "Froghoppers",
+  "o": [
+   "Grasshoppers",
+   "Crickets",
+   "Click beetles"
+  ],
+  "x": "Fleas have no wings, but their back legs are built for leaping.",
+  "page": "Flea",
+  "evidence": "Some species can leap 50 times their body length, a feat second only to jumps made by another group of insects, the superfamily of froghoppers."
+ },
+ {
+  "topic": "diet",
+  "animal": "Flea",
+  "q": "What do adult fleas feed on?",
+  "a": "Blood",
+  "o": [
+   "Hair",
+   "Skin oil",
+   "Plant sap"
+  ],
+  "x": "Their mouthparts pierce skin and suck blood. Fleas are tiny, only 1.5 to 3.3 mm long.",
+  "page": "Flea",
+  "evidence": "Fleas live by ingesting the blood of their hosts."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Dragonfly",
+  "q": "About how many tiny lenses (ommatidia) make up each of an adult dragonfly's eyes?",
+  "a": "Nearly 24,000",
+  "o": [
+   "About 50",
+   "About 800",
+   "About 2 million"
+  ],
+  "x": "The two big compound eyes cover most of a dragonfly's head, perfect for catching prey in midair.",
+  "page": "Dragonfly",
+  "evidence": "An adult dragonfly's compound eyes have nearly 24,000 ommatidia each."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Dragonfly",
+  "q": "Where do young dragonflies (nymphs) live?",
+  "a": "In water",
+  "o": [
+   "Underground",
+   "Inside tree bark",
+   "Inside flowers"
+  ],
+  "x": "The water stage can last up to five years in some species, but most adults live five weeks or less.",
+  "page": "Dragonfly",
+  "evidence": "Dragonflies are predatory insects, both in their aquatic nymphal stage (also known as \"naiads\") and as adults."
+ },
+ {
+  "topic": "records",
+  "animal": "Andean condor",
+  "q": "Which bird is generally considered the largest bird of prey in the world?",
+  "a": "Andean condor",
+  "o": [
+   "Bald eagle",
+   "Golden eagle",
+   "Osprey"
+  ],
+  "x": "It has a wingspan up to 3.3 m (10 ft 10 in) and can live over 70 years.",
+  "page": "Andean condor",
+  "evidence": "With a maximum wingspan of 3.3 m (10 ft 10 in) and weight of 15 kg (33 lb), the Andean condor is one of the largest flying birds in the world, and is generally considered to be the largest bird of prey in the world."
+ },
+ {
+  "topic": "diet",
+  "animal": "Andean condor",
+  "q": "What does the Andean condor mainly feed on?",
+  "a": "Dead animals",
+  "o": [
+   "Live fish",
+   "Fruit",
+   "Insects"
+  ],
+  "x": "It is a scavenger and likes open areas where it can spot carrion from the air.",
+  "page": "Andean condor",
+  "evidence": "The condor is primarily a scavenger, feeding on carrion."
+ },
+ {
+  "topic": "diet",
+  "animal": "Harpy eagle",
+  "q": "Along with monkeys, which animals are main prey of the harpy eagle?",
+  "a": "Sloths",
+  "o": [
+   "Jaguars",
+   "Tapirs",
+   "Manatees"
+  ],
+  "x": "Harpy eagles hunt in the rainforest canopy and have the largest talons of any living eagle.",
+  "page": "Harpy eagle",
+  "evidence": "Along with sloths, monkeys, such as the tufted capuchin (Cebus appella), are one of the main prey of the harpy eagle"
+ },
+ {
+  "topic": "habitats",
+  "animal": "Hummingbird",
+  "q": "In the wild, hummingbirds live only in which part of the world?",
+  "a": "The Americas",
+  "o": [
+   "Africa",
+   "Southern Asia",
+   "Australia"
+  ],
+  "x": "They range from south central Alaska to Tierra del Fuego, including the Caribbean.",
+  "page": "Hummingbird",
+  "evidence": "Hummingbirds are restricted to the Americas from south-central Alaska to Tierra del Fuego, including the Caribbean."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Hummingbird",
+  "q": "What do hummingbirds do at night to save energy?",
+  "a": "Go into torpor, like hibernation",
+  "o": [
+   "Huddle in big flocks",
+   "Keep feeding all night",
+   "Sleep underground"
+  ],
+  "x": "In torpor they can slow their metabolism to one fifteenth of its normal rate.",
+  "page": "Hummingbird",
+  "evidence": "To conserve energy when food is scarce and at night when not foraging, they can enter torpor, a state similar to hibernation, and slow their metabolic rate to 1⁄15 of its normal rate."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Hummingbird",
+  "q": "How do hummingbirds move along a branch?",
+  "a": "They shuffle sideways",
+  "o": [
+   "They hop like sparrows",
+   "They walk like pigeons",
+   "They run like chickens"
+  ],
+  "x": "Their legs are short, and in flight their feet tuck under the body.",
+  "page": "Hummingbird",
+  "evidence": "Hummingbirds do not walk on the ground or hop like most birds, but rather shuffle laterally and use their feet to grip while perching"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Narwhal",
+  "q": "What is a male narwhal's long spiral tusk?",
+  "a": "A tooth",
+  "o": [
+   "A horn",
+   "A nose bone",
+   "A fin spine"
+  ],
+  "x": "The tusk is a left canine tooth that grows 1.5 to 3 m (4.9 to 9.8 ft) long.",
+  "page": "Narwhal",
+  "evidence": "Males of this species have a spiralled tusk, which is a protruding left canine, that is 1.5–3.0 m (4.9–9.8 ft) long"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Hippopotamus",
+  "q": "What is the reddish \"blood sweat\" on a hippo's skin?",
+  "a": "A natural sunscreen",
+  "o": [
+   "Real blood",
+   "Ordinary sweat",
+   "Red mud"
+  ],
+  "x": "The secretion starts colourless and turns red-orange within minutes. It also stops germs from growing.",
+  "page": "Hippopotamus",
+  "evidence": "Their skin secretes a natural, red-coloured sunscreen substance that is sometimes referred to as \"blood sweat\" but is neither blood nor sweat."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Hippopotamus",
+  "q": "How do hippos usually move around in water?",
+  "a": "Walking or bouncing on the bottom",
+  "o": [
+   "Swimming fast like seals",
+   "Floating on their backs",
+   "Paddling with their tails"
+  ],
+  "x": "Their dense bones let them sink. An adult must come up to breathe at least every six minutes.",
+  "page": "Hippopotamus",
+  "evidence": "They move in the water by walking or bouncing off the bottom, rarely entering deep water."
+ },
+ {
+  "topic": "diet",
+  "animal": "Hippopotamus",
+  "q": "When hippos leave the water at dusk, what do they go to eat?",
+  "a": "Grass",
+  "o": [
+   "Fish",
+   "Fruit",
+   "Small antelopes"
+  ],
+  "x": "Hippos stay cool in water or mud during the day. They are the third-largest land mammals.",
+  "page": "Hippopotamus",
+  "evidence": "During the day, hippos remain cool by staying in water or mud, emerging at dusk to graze on grasses."
+ },
+ {
+  "topic": "records",
+  "animal": "Giant Pacific octopus",
+  "q": "Which is the largest octopus species?",
+  "a": "Giant Pacific octopus",
+  "o": [
+   "Common octopus",
+   "Blue-ringed octopus",
+   "Dumbo octopus"
+  ],
+  "x": "Adults usually weigh about 15 kg (33 lb) with an arm span up to 4.3 m (14 ft).",
+  "page": "Giant Pacific octopus",
+  "evidence": "It is the largest octopus species."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Beaver",
+  "q": "What makes a beaver's front teeth orange?",
+  "a": "Iron in the enamel",
+  "o": [
+   "Tree sap stains",
+   "Eating berries",
+   "Old age"
+  ],
+  "x": "The thick, iron-rich enamel makes the chisel-like teeth strong for chewing down trees.",
+  "page": "Beaver",
+  "evidence": "The incisors are covered in a thick enamel that is colored orange or reddish-brown by iron compounds."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Beaver",
+  "q": "Why does a beaver slap the water with its tail?",
+  "a": "To warn others of danger",
+  "o": [
+   "To stun fish nearby",
+   "To dig a new channel",
+   "To dry off its fur"
+  ],
+  "x": "Others then escape into the lodge or deeper water. An adult's slap works better than a young beaver's.",
+  "page": "Beaver",
+  "evidence": "Tail slaps, which involve a beaver hitting the water surface with its tail, serve as alarm signals warning other beavers of a potential threat."
+ },
+ {
+  "topic": "diet",
+  "animal": "Beaver",
+  "q": "What do beavers eat?",
+  "a": "Bark and plants",
+  "o": [
+   "Fish",
+   "Frogs and insects",
+   "Mice"
+  ],
+  "x": "Beavers are herbivores. They eat tree bark, water plants, grasses and sedges.",
+  "page": "Beaver",
+  "evidence": "They are herbivorous, consuming tree bark, aquatic plants, grasses and sedges."
+ },
+ {
+  "topic": "records",
+  "animal": "Bald eagle",
+  "q": "Which bird builds the largest tree nests ever recorded, up to 1 tonne in weight?",
+  "a": "Bald eagle",
+  "o": [
+   "White stork",
+   "Barn owl",
+   "Flamingo"
+  ],
+  "x": "Its nests can be up to 4 m (13 ft) deep and 2.5 m (8.2 ft) wide.",
+  "page": "Bald eagle",
+  "evidence": "It builds the largest nest of any North American bird and the largest tree nests ever recorded for any animal species, up to 4 m (13 ft) deep, 2.5 m (8.2 ft) wide, and 1 metric ton (1.1 short tons) in weight."
+ },
+ {
+  "topic": "diet",
+  "animal": "Bald eagle",
+  "q": "What does the bald eagle mainly eat?",
+  "a": "Fish",
+  "o": [
+   "Rabbits",
+   "Snakes",
+   "Seeds"
+  ],
+  "x": "It swoops down and snatches fish from the water with its talons.",
+  "page": "Bald eagle",
+  "evidence": "The bald eagle is an opportunistic feeder that subsists mainly on fish, upon which it swoops down and snatches from the water with its talons."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Sociable weaver",
+  "q": "What is special about the nests of the sociable weaver?",
+  "a": "They are huge shared nests",
+  "o": [
+   "They are dug underground",
+   "They float on water",
+   "They are made of mud"
+  ],
+  "x": "These community nests are perhaps the most spectacular structures built by any bird. It lives in southern Africa.",
+  "page": "Sociable weaver",
+  "evidence": "The species builds large, compound, community nests, a rarity among birds."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Monarch butterfly",
+  "q": "Each autumn, eastern North American monarch butterflies migrate south to where?",
+  "a": "Florida and Mexico",
+  "o": [
+   "Canada and Alaska",
+   "Brazil and Peru",
+   "Spain and Morocco"
+  ],
+  "x": "They fly thousands of miles south. The return trip north in spring takes several generations.",
+  "page": "Monarch butterfly",
+  "evidence": "The eastern North American monarch population is notable for its annual southward late-summer/autumn instinctive migration from the northern and central United States and southern Canada to Florida and Mexico."
+ },
+ {
+  "topic": "diet",
+  "animal": "Monarch butterfly",
+  "q": "What do monarch caterpillars feed on?",
+  "a": "Milkweed",
+  "o": [
+   "Oak leaves",
+   "Grass",
+   "Cabbage"
+  ],
+  "x": "Eating milkweed helps protect monarchs from predators.",
+  "page": "Monarch butterfly",
+  "evidence": "The larva or caterpillar eats its egg case and begins to feed on milkweed in a circular motion, often leaving a characteristic, arc-shaped hole in the leaf."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Periodical cicada",
+  "q": "Periodical cicadas spend about 99.5% of their lives where?",
+  "a": "Underground",
+  "o": [
+   "In treetops",
+   "Underwater",
+   "Inside cocoons"
+  ],
+  "x": "The nymphs come out together in their 13th or 17th year, in huge numbers.",
+  "page": "Periodical cicada",
+  "evidence": "Magicicada species spend around 99.5% of their lives underground in an immature state called a nymph."
+ },
+ {
+  "topic": "diet",
+  "animal": "Periodical cicada",
+  "q": "What do periodical cicada nymphs feed on while underground?",
+  "a": "Fluid from tree roots",
+  "o": [
+   "Earthworms",
+   "Other insects",
+   "Soil fungi"
+  ],
+  "x": "They suck the xylem sap from roots of broadleaf trees in the eastern United States.",
+  "page": "Periodical cicada",
+  "evidence": "While underground, the nymphs feed on xylem fluids from the roots of broadleaf forest trees in the eastern United States."
+ },
+ {
+  "topic": "records",
+  "animal": "Kiwi",
+  "q": "A kiwi egg can weigh up to about what share of the mother's body weight?",
+  "a": "About 20%",
+  "o": [
+   "About 2%",
+   "About 5%",
+   "About 60%"
+  ],
+  "x": "That is one of the largest eggs for body size of any bird. An ostrich egg is only 1 to 4% of the mother's size.",
+  "page": "Kiwi (bird)",
+  "evidence": "Kiwi eggs are one of the largest in proportion to body size (up to 20% of the female's weight) of any order of bird in the world."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Kiwi",
+  "q": "Where are a kiwi's nostrils?",
+  "a": "At the tip of its beak",
+  "o": [
+   "At the base of its beak",
+   "On its forehead",
+   "Under its wings"
+  ],
+  "x": "Kiwi sniff out prey in the ground with their long beaks, often before they can see it.",
+  "page": "Kiwi (bird)",
+  "evidence": "using their nostrils at the end of their long beak to detect prey before they see it"
+ },
+ {
+  "topic": "records",
+  "animal": "Dwarf lanternshark",
+  "q": "About how long is the dwarf lanternshark, the smallest shark in the world?",
+  "a": "About 20 cm (8 in)",
+  "o": [
+   "About 3 cm (1 in)",
+   "About 70 cm (28 in)",
+   "About 1.5 m (5 ft)"
+  ],
+  "x": "Like its relatives, it can make light with special organs called photophores.",
+  "page": "Dwarf lanternshark",
+  "evidence": "is the smallest shark in the world, reaching a maximum known length of 20 cm (8 in)."
+ },
+ {
+  "topic": "records",
+  "animal": "Mexican free-tailed bat",
+  "q": "About how many bats live in Bracken Cave, Texas, the largest known bat colony?",
+  "a": "Nearly 20 million",
+  "o": [
+   "About 5,000",
+   "About 80,000",
+   "About 1 million"
+  ],
+  "x": "These Mexican free-tailed bats fly out to feed on insects at heights of up to 3,000 m (9,800 ft).",
+  "page": "Brazilian free-tailed bat",
+  "evidence": "The largest known colony is found at Bracken Cave, north of San Antonio, Texas, with nearly 20 million bats"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Octopus",
+  "q": "How many hearts does an octopus have?",
+  "a": "Three",
+  "o": [
+   "One",
+   "Two",
+   "Eight"
+  ],
+  "x": "One main heart pumps blood around the body, and two smaller hearts pump it through the gills.",
+  "page": "Octopus",
+  "evidence": "They have three hearts; a systemic or main heart that circulates blood around the body and two branchial or gill hearts that pump it through the two gills."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Octopus",
+  "q": "Octopus blood carries oxygen using a protein rich in which metal?",
+  "a": "Copper",
+  "o": [
+   "Iron",
+   "Zinc",
+   "Silver"
+  ],
+  "x": "This copper protein, haemocyanin, is different from the iron-based haemoglobin in human blood.",
+  "page": "Octopus",
+  "evidence": "Octopus blood contains the copper-rich protein haemocyanin to transport oxygen."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Octopus",
+  "q": "Where are about two thirds of an octopus's neurons?",
+  "a": "In its arms",
+  "o": [
+   "In its brain",
+   "In its eyes",
+   "In its skin"
+  ],
+  "x": "This lets each arm act with some independence. An octopus has over 500 million neurons, about as many as a dog.",
+  "page": "Octopus",
+  "evidence": "Two-thirds of the neurons are in the nerve cords of its arms."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Octopus",
+  "q": "How can an octopus taste things?",
+  "a": "With its suckers",
+  "o": [
+   "With its beak",
+   "With its eyes",
+   "With its ink sac"
+  ],
+  "x": "Its suction cups have chemical sensors, so it can taste whatever it touches.",
+  "page": "Octopus",
+  "evidence": "Their suction cups are equipped with chemoreceptors so they can taste what they touch."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Mimic octopus",
+  "q": "The mimic octopus can pretend to be which dangerous animals?",
+  "a": "Lionfish and sea snakes",
+  "o": [
+   "Sharks and orcas",
+   "Crabs and lobsters",
+   "Turtles and seals"
+  ],
+  "x": "It combines its flexible body with colour changes to copy animals predators avoid, such as lionfish, sea snakes and eels.",
+  "page": "Octopus",
+  "evidence": "Some octopuses, such as the mimic octopus, can combine their flexible bodies with their colour-changing ability to mimic other, more dangerous animals, such as lionfish, sea snakes, and eels."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Veined octopus",
+  "q": "What does the veined octopus collect to build itself a shelter?",
+  "a": "Coconut shells",
+  "o": [
+   "Seaweed",
+   "Sea urchins",
+   "Fish bones"
+  ],
+  "x": "It even \"stilt walks\" while carrying stacked shells. This is an example of tool use.",
+  "page": "Octopus",
+  "evidence": "The veined octopus collects discarded coconut shells, then uses them to build a shelter, an example of tool use."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Cattle",
+  "q": "How many compartments does a cow's stomach have?",
+  "a": "Four",
+  "o": [
+   "One",
+   "Two",
+   "Seven"
+  ],
+  "x": "They are the rumen, reticulum, omasum and abomasum. The rumen is the biggest.",
+  "page": "Cattle",
+  "evidence": "Cattle have one large stomach with four compartments; the rumen, reticulum, omasum, and abomasum."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Cattle",
+  "q": "About how wide is a cow's field of view?",
+  "a": "About 330 degrees",
+  "o": [
+   "About 90 degrees",
+   "About 120 degrees",
+   "About 180 degrees"
+  ],
+  "x": "Cattle get almost half their information by sight. Their eyes on the sides of the head let them see nearly all around.",
+  "page": "Cattle",
+  "evidence": "This gives them a field of view of 330°, but limits binocular vision (and therefore stereopsis) to some 30° to 50°, compared to 140° in humans."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Cattle",
+  "q": "When cows first eat, what do they do with their food?",
+  "a": "Swallow it without chewing",
+  "o": [
+   "Chew it 100 times",
+   "Store it in their cheeks",
+   "Bury it for later"
+  ],
+  "x": "Later they bring it back up a mouthful at a time and chew it as cud before swallowing again.",
+  "page": "Cattle",
+  "evidence": "While feeding, cows swallow their food without chewing; it goes into the rumen for storage."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Shark",
+  "q": "What is a shark's skeleton made of?",
+  "a": "Cartilage",
+  "o": [
+   "Bone",
+   "Chitin",
+   "Keratin"
+  ],
+  "x": "Cartilage is flexible and tough, but only about half as dense as bone.",
+  "page": "Shark",
+  "evidence": "Sharks and other cartilaginous fish (skates and rays) have skeletons made of cartilage and connective tissue."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Shark",
+  "q": "Some sharks lose how many teeth during their lifetime?",
+  "a": "30,000 or more",
+  "o": [
+   "About 30",
+   "About 300",
+   "About 3,000"
+  ],
+  "x": "New rows of teeth move forward like a conveyor belt to replace lost ones.",
+  "page": "Shark",
+  "evidence": "Multiple rows of replacement teeth grow in a groove on the inside of the jaw and steadily move forward like a conveyor belt; some sharks lose 30,000 or more teeth in their lifetime."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Shark",
+  "q": "Unlike bony fish, sharks do not have which body part?",
+  "a": "A swim bladder",
+  "o": [
+   "Gills",
+   "A liver",
+   "A heart"
+  ],
+  "x": "Sand tiger sharks store air in their stomachs and use it a bit like a swim bladder.",
+  "page": "Shark",
+  "evidence": "Unlike bony fish, sharks do not have gas-filled swim bladders for buoyancy."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Shark",
+  "q": "Sharks can find prey hidden in sand by sensing what?",
+  "a": "Electric fields",
+  "o": [
+   "Body heat",
+   "Ultraviolet light",
+   "Shadows"
+  ],
+  "x": "Special organs called ampullae of Lorenzini pick up the tiny electric fields all living things produce.",
+  "page": "Shark",
+  "evidence": "Sharks find prey hidden in sand by detecting the electric fields they produce."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Snake",
+  "q": "Why is a snake's tongue forked?",
+  "a": "To tell which way a smell comes from",
+  "o": [
+   "To catch flies in the air",
+   "To grip slippery prey",
+   "To taste only water"
+  ],
+  "x": "The tongue gathers particles and carries them to the Jacobson's organ in the mouth.",
+  "page": "Snake",
+  "evidence": "The forked structure of the tongue provides directional information of smell which helps locate prey or predators."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Snake",
+  "q": "Why can't snakes blink?",
+  "a": "Their eyelids are clear fixed scales",
+  "o": [
+   "They have no eyes",
+   "Their eyes are too big",
+   "They blink with their tongue"
+  ],
+  "x": "These clear scales are called spectacles or brille, and they stay closed all the time.",
+  "page": "Snake",
+  "evidence": "The eyelids of a snake are transparent \"spectacle\" scales, also known as brille, which remain permanently closed."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Snake",
+  "q": "Which of these islands has no native snakes?",
+  "a": "Ireland",
+  "o": [
+   "Great Britain",
+   "Japan",
+   "Madagascar"
+  ],
+  "x": "Snakes live on every continent except Antarctica, but not in Ireland, Iceland, Greenland or New Zealand.",
+  "page": "Snake",
+  "evidence": "exceptions include Ireland, Iceland, Greenland and the islands of New Zealand, as well as many small islands of the Atlantic and Central Pacific oceans."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Owl",
+  "q": "Owls can turn their heads up to about how far?",
+  "a": "270 degrees",
+  "o": [
+   "90 degrees",
+   "180 degrees",
+   "A full 360 degrees"
+  ],
+  "x": "Owls have 14 neck vertebrae, twice as many as humans, and special blood vessels so the brain keeps its blood supply.",
+  "page": "Owl",
+  "evidence": "Owls can rotate their heads and necks as much as 270°."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Owl",
+  "q": "What does the flat disc of feathers on an owl's face do?",
+  "a": "Focuses sound onto its ears",
+  "o": [
+   "Keeps its eyes warm",
+   "Scares away predators",
+   "Shades its eyes"
+  ],
+  "x": "In many owls the ears are placed unevenly, which helps them pinpoint exactly where a sound comes from.",
+  "page": "Owl",
+  "evidence": "The feathers making up this disc can be adjusted to sharply focus sounds from varying distances onto the owls' asymmetrically placed ear cavities."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Starfish",
+  "q": "Where are a starfish's eyes?",
+  "a": "At the tips of its arms",
+  "o": [
+   "In the middle of its back",
+   "Next to its mouth",
+   "It has no eyes"
+  ],
+  "x": "Each eyespot is made of 80 to 200 simple light-sensing ocelli.",
+  "page": "Starfish",
+  "evidence": "There are eyespots at the ends of the arms, each one made of 80–200 simple ocelli composed of pigmented epithelial cells."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Starfish",
+  "q": "Most starfish have five arms. How many arms can the Antarctic starfish Labidiaster annulatus have?",
+  "a": "More than fifty",
+  "o": [
+   "Exactly four",
+   "Six",
+   "Eight"
+  ],
+  "x": "Some starfish have six or seven arms and others 10 to 15. Most can regrow lost arms.",
+  "page": "Starfish",
+  "evidence": "In Antarctic Labidiaster annulatus, the number of arms can exceed fifty."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Oilbird",
+  "q": "Besides bats and toothed whales, which animals can echolocate?",
+  "a": "Oilbirds and cave swiftlets",
+  "o": [
+   "Owls and nightjars",
+   "Parrots and crows",
+   "Penguins and puffins"
+  ],
+  "x": "These two groups of birds live in caves. Shrews also use a simple form of echolocation.",
+  "page": "Animal echolocation",
+  "evidence": "A few bird species in two cave-dwelling bird groups echolocate, namely cave swiftlets and the oilbird."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Spotted bat",
+  "q": "The spotted bat hunts moths with a call of 12.7 kHz. Why such a low pitch?",
+  "a": "Moths cannot hear it",
+  "o": [
+   "It travels underwater",
+   "It scares other bats",
+   "It is the only sound it can make"
+  ],
+  "x": "Many moths can hear bats, so a call below their hearing range lets this bat sneak up on them.",
+  "page": "Animal echolocation",
+  "evidence": "Euderma maculatum, a bat species that feeds on moths, uses a particularly low frequency of 12.7 kHz that cannot be heard by moths."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Platypus",
+  "q": "How does a platypus find prey underwater with its eyes, ears and nostrils shut?",
+  "a": "It senses electric fields",
+  "o": [
+   "It uses echolocation",
+   "It smells with its tail",
+   "It senses body heat"
+  ],
+  "x": "It will even react to an artificial shrimp if a small electric current runs through it.",
+  "page": "Platypus",
+  "evidence": "Like other monotremes, the platypus has a sense of electrolocation, which it uses to detect prey in water while its eyes, ears and nostrils are closed."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Platypus",
+  "q": "Where does a male platypus carry its venom?",
+  "a": "In spurs on its back feet",
+  "o": [
+   "In glands in its bill",
+   "In a sting on its tail",
+   "In its sharp teeth"
+  ],
+  "x": "It is one of the few venomous mammals, and the venom is extremely painful.",
+  "page": "Platypus",
+  "evidence": "It is one of the few species of venomous mammals, as the male platypus has a spur on each hind foot that delivers an extremely painful venom."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Platypus",
+  "q": "What does a platypus do under ultraviolet light?",
+  "a": "Glows cyan and green",
+  "o": [
+   "Turns bright red",
+   "Goes completely black",
+   "Nothing happens"
+  ],
+  "x": "This biofluorescence may help camouflage it from predators that can see UV light.",
+  "page": "Platypus",
+  "evidence": "It is also biofluorescent and glows cyan and green when under ultraviolet light"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Platypus",
+  "q": "Which body part does the platypus lack?",
+  "a": "A working stomach",
+  "o": [
+   "A working heart",
+   "Working lungs",
+   "Working kidneys"
+  ],
+  "x": "It is missing the genes needed to make stomach digestive enzymes. Adults also have no teeth, just grinding pads.",
+  "page": "Platypus",
+  "evidence": "The platypus lacks a functional stomach, due to the lack of genes necessary for creating and secreting pepsin proteases."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Platypus",
+  "q": "Where does the platypus live in the wild?",
+  "a": "Eastern Australia",
+  "o": [
+   "New Zealand",
+   "South America",
+   "Madagascar"
+  ],
+  "x": "It lives in eastern Australia, including Tasmania, and digs burrows into riverbanks.",
+  "page": "Platypus",
+  "evidence": "is a semiaquatic, egg-laying mammal endemic to eastern Australia, including Tasmania."
+ },
+ {
+  "topic": "diet",
+  "animal": "Platypus",
+  "q": "What does a platypus eat?",
+  "a": "Larvae, worms and shrimp",
+  "o": [
+   "Water plants",
+   "Fruit and seeds",
+   "Algae"
+  ],
+  "x": "The platypus is a carnivore. It probes along the bottom of streams for insect larvae, worms, crayfish and tadpoles.",
+  "page": "Platypus",
+  "evidence": "The platypus is a carnivore and forages by probing along the bottom. It feeds on insect larvae, annelid worms, shrimp, crayfish, bivalves, tadpoles and fish eggs."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Chameleon",
+  "q": "Besides camouflage, why do chameleons most often change colour?",
+  "a": "To signal and control temperature",
+  "o": [
+   "To attract insects to eat",
+   "Whenever they get wet",
+   "To help digest their food"
+  ],
+  "x": "A darker colour absorbs heat, while a lighter one reflects it. Colour also shows mood to other chameleons.",
+  "page": "Chameleon",
+  "evidence": "Colour change in chameleons has functions in camouflage, but most commonly in social signalling and reactions to temperature and other conditions."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Chameleon",
+  "q": "How does a chameleon change its skin colour?",
+  "a": "By moving tiny crystals in its skin",
+  "o": [
+   "By changing its blood colour",
+   "By shedding its skin",
+   "By eating coloured food"
+  ],
+  "x": "Changing the spacing of guanine crystals alters which colours of light the skin reflects.",
+  "page": "Chameleon",
+  "evidence": "The skin colour shifts as the chameleon is able to actively \"excite\" these crystals, changing the spacing between them, and this then affects which wavelengths of light are reflected and which are absorbed."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Chameleon",
+  "q": "What is special about a chameleon's eyes?",
+  "a": "They can move independently",
+  "o": [
+   "They glow at night",
+   "They have no pupils",
+   "They sit on long stalks"
+  ],
+  "x": "Its brain handles two separate images at once. When hunting, both eyes focus forward together.",
+  "page": "Chameleon",
+  "evidence": "Chameleons' eyes are independently mobile, and because of this the chameleon's brain is constantly analyzing two separate, individual images of its environment."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Chameleon",
+  "q": "About half of all chameleon species live only on which island?",
+  "a": "Madagascar",
+  "o": [
+   "Borneo",
+   "Sri Lanka",
+   "Cuba"
+  ],
+  "x": "Most chameleons live in Africa. Just one species lives in southern Europe.",
+  "page": "Chameleon",
+  "evidence": "with the vast majority occurring in Africa (about half of the species are restricted to Madagascar), but with a single species in southern Europe"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Axolotl",
+  "q": "Why are axolotls so useful to scientists?",
+  "a": "They can regrow lost body parts",
+  "o": [
+   "They can live without water",
+   "They can see in the dark",
+   "They never get old"
+  ],
+  "x": "They can regrow limbs, gills and even parts of their eyes and brains.",
+  "page": "Axolotl",
+  "evidence": "specimens used extensively in scientific research because of their unusual ability to regenerate body parts, including limbs, gills and parts of their eyes and brains."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Axolotl",
+  "q": "What is unusual about grown-up axolotls compared with most salamanders?",
+  "a": "They keep their feathery gills",
+  "o": [
+   "They lose all their legs",
+   "They start living in trees",
+   "They grow a hard shell"
+  ],
+  "x": "This is called neoteny. Axolotls become adults without changing form and stay in water all their lives.",
+  "page": "Axolotl",
+  "evidence": "Unlike most salamander species, axolotls retain their external gills when they mature into adulthood."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Axolotl",
+  "q": "Wild axolotls come from lakes in the area of which city?",
+  "a": "Mexico City",
+  "o": [
+   "Lima",
+   "Buenos Aires",
+   "Miami"
+  ],
+  "x": "They lived in lakes such as Xochimilco and Chalco. Most of their old habitat is now covered by the city.",
+  "page": "Axolotl",
+  "evidence": "The desiccation of these lakes, initiated by the Aztecs and accelerated during the 20th century, has led to the destruction of much of the axolotl's natural habitat, an area now largely occupied by Mexico City."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Bottlenose dolphin",
+  "q": "What is a bottlenose dolphin's \"signature whistle\"?",
+  "a": "A whistle unique to each dolphin",
+  "o": [
+   "An alarm call for sharks",
+   "A song only males sing",
+   "A sound for finding fish"
+  ],
+  "x": "A dolphin develops its whistle in its first year and keeps it for life. Dolphins call each other by copying these whistles.",
+  "page": "Dolphin",
+  "evidence": "Bottlenose dolphins have been found to have signature whistles, a whistle that is unique to a specific individual."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Dolphin",
+  "q": "How do dolphins usually sleep?",
+  "a": "With one half of the brain at a time",
+  "o": [
+   "Lying on the sea floor",
+   "Floating upside down",
+   "Inside underwater caves"
+  ],
+  "x": "Keeping half the brain awake lets them keep breathing and watch out for predators.",
+  "page": "Dolphin",
+  "evidence": "Generally, dolphins sleep with only one brain hemisphere in slow-wave sleep at a time, thus maintaining enough consciousness to breathe and to watch for possible predators and other threats."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Indo-Pacific bottlenose dolphin",
+  "q": "Some dolphins in Australia cover their snouts with what while searching the sea floor for food?",
+  "a": "Sea sponges",
+  "o": [
+   "Seaweed",
+   "Empty shells",
+   "Pieces of coral"
+  ],
+  "x": "The sponge protects the snout. Mothers teach this tool use to their young.",
+  "page": "Dolphin",
+  "evidence": "They cover their snouts with sponges to protect them while foraging."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Western honey bee",
+  "q": "What does a honey bee's waggle dance tell other bees?",
+  "a": "The direction and distance to food",
+  "o": [
+   "That the queen is sick",
+   "That it is time to sleep",
+   "That rain is coming"
+  ],
+  "x": "Bees also use it to point the way to water and new nest sites. Karl von Frisch won a Nobel Prize for decoding it.",
+  "page": "Waggle dance",
+  "evidence": "By performing this dance, successful foragers can share information about the direction and distance to patches of flowers yielding nectar and pollen, to water sources, or to new nest-site locations with other members of the colony."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Western honey bee",
+  "q": "In the waggle dance, what does waggling straight up the honeycomb mean?",
+  "a": "Fly towards the Sun",
+  "o": [
+   "Fly away from the Sun",
+   "The food is underground",
+   "Danger is near"
+  ],
+  "x": "The angle of the dance shows the direction, and the length of the waggle part shows the distance.",
+  "page": "Waggle dance",
+  "evidence": "if it moves vertically the direction to the source is directly towards the Sun."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Leafcutter ant",
+  "q": "What do leafcutter ants do with the leaves they carry home?",
+  "a": "Use them to grow fungus",
+  "o": [
+   "Eat them straight away",
+   "Build roofs with them",
+   "Feed them to aphids"
+  ],
+  "x": "They farm the fungus for food. A worker can carry up to 50 times its own body weight.",
+  "page": "Leafcutter ant",
+  "evidence": "Leafcutter ants are several species of fungus-growing ants that share the behaviour of cutting leaves which they carry back to their nests to farm fungus."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Common cuckoo",
+  "q": "Where does the common cuckoo lay its eggs?",
+  "a": "In other birds' nests",
+  "o": [
+   "In holes it digs in trees",
+   "In nests floating on water",
+   "In burrows in the sand"
+  ],
+  "x": "It is a brood parasite. Hosts include dunnocks, meadow pipits and reed warblers, and its eggs often look like theirs.",
+  "page": "Common cuckoo",
+  "evidence": "It is a brood parasite, which means it lays eggs in the nests of other bird species, particularly of dunnocks, meadow pipits, and reed warblers."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Common cuckoo",
+  "q": "What does a newly hatched cuckoo chick do to the other eggs in its nest?",
+  "a": "Pushes them out",
+  "o": [
+   "Keeps them warm",
+   "Hides them",
+   "Eats them"
+  ],
+  "x": "The cuckoo chick often hatches first, so it can get rid of the unhatched eggs and get all the food.",
+  "page": "Common cuckoo",
+  "evidence": "Hatched cuckoo chicks push host eggs out of the nest."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Common cuckoo",
+  "q": "An adult cuckoo looks like which bird of prey, giving the female time to lay her eggs?",
+  "a": "Sparrowhawk",
+  "o": [
+   "Barn owl",
+   "Golden eagle",
+   "Osprey"
+  ],
+  "x": "Small birds are wary of sparrowhawks, so they hesitate to attack the cuckoo near their nests.",
+  "page": "Common cuckoo",
+  "evidence": "The adult too is a mimic, in its case of the sparrowhawk; since that species is a predator, the mimicry gives the female time to lay her eggs without being attacked."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Fat-tailed dwarf lemur",
+  "q": "Which primate was the first found to hibernate, sleeping in tree holes for seven months a year?",
+  "a": "Fat-tailed dwarf lemur",
+  "o": [
+   "Japanese macaque",
+   "Mountain gorilla",
+   "Chimpanzee"
+  ],
+  "x": "Before this discovery in Madagascar, no primate or tropical mammal was known to hibernate.",
+  "page": "Hibernation",
+  "evidence": "no primate or tropical mammal was known to hibernate until the discovery of hibernation in the fat-tailed dwarf lemur of Madagascar, which hibernates in tree holes for seven months of the year."
+ },
+ {
+  "topic": "records",
+  "animal": "Arctic ground squirrel",
+  "q": "Which hibernating animal can let its belly temperature fall below freezing, to minus 2.9 °C?",
+  "a": "Arctic ground squirrel",
+  "o": [
+   "Brown bear",
+   "European hedgehog",
+   "Little brown bat"
+  ],
+  "x": "It can keep a sub-zero belly temperature for more than three weeks, while its head stays at 0 °C or above.",
+  "page": "Hibernation",
+  "evidence": "Hibernating Arctic ground squirrels may exhibit abdominal temperatures as low as −2.9 °C (26.8 °F), maintaining sub-zero abdominal temperatures for more than three weeks at a time"
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Lion",
+  "q": "In a lion pride, who usually does the hunting?",
+  "a": "Groups of females",
+  "o": [
+   "The strongest male",
+   "The cubs",
+   "Males on their own"
+  ],
+  "x": "A pride is made of related females and cubs, with one or a few adult males.",
+  "page": "Lion",
+  "evidence": "Groups of female lions usually hunt together."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Lion",
+  "q": "Outside Africa, which country still has wild lions?",
+  "a": "India",
+  "o": [
+   "China",
+   "Iran",
+   "Turkey"
+  ],
+  "x": "The Asiatic lion survives only in and around Gir National Park in Gujarat, western India.",
+  "page": "Lion",
+  "evidence": "The Asiatic lion now survives only in and around Gir National Park in Gujarat, western India."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Wolf",
+  "q": "Which of these is a reason wolves howl?",
+  "a": "To gather the pack before a hunt",
+  "o": [
+   "To scare prey out of hiding",
+   "To cool down",
+   "To help digest food"
+  ],
+  "x": "Wolves also howl to sound an alarm, find each other in storms and talk across long distances.",
+  "page": "Wolf",
+  "evidence": "Wolves howl to assemble the pack usually before and after hunts, to pass on an alarm particularly at a den site, to locate each other during a storm, while crossing unfamiliar territory, and to communicate across great distances."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Meerkat",
+  "q": "A meerkat burrow system usually has about how many entrances?",
+  "a": "Around 15",
+  "o": [
+   "Just 1",
+   "Around 3",
+   "Over 300"
+  ],
+  "x": "The burrows are about 5 m (16 ft) across with two or three levels of tunnels, staying comfy in hot and cold weather.",
+  "page": "Meerkat",
+  "evidence": "The burrow systems, typically 5 m (16 ft) in diameter with around 15 openings, are large underground networks consisting of two to three levels of tunnels."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Meerkat",
+  "q": "In the wild, meerkats live in which part of the world?",
+  "a": "Southern Africa",
+  "o": [
+   "Australia",
+   "South America",
+   "Southeast Asia"
+  ],
+  "x": "The meerkat is a small mongoose. It lives in stony areas and big burrows in the plains, such as the Kalahari.",
+  "page": "Meerkat",
+  "evidence": "The meerkat (Suricata suricatta) or suricate is a small mongoose found in southern Africa."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "New Caledonian crow",
+  "q": "How does the New Caledonian crow get grubs out of holes in wood?",
+  "a": "It pokes them with a twig",
+  "o": [
+   "It floods the hole",
+   "It drums to scare them out",
+   "It pecks through the trunk"
+  ],
+  "x": "The grub bites the twig and gets pulled out. These crows can even make hooks.",
+  "page": "New Caledonian crow",
+  "evidence": "The New Caledonian crow sometimes captures grubs in nooks or crevices by poking a twig at the grub to agitate it into biting the twig, which the crow then withdraws with the grub still attached."
+ },
+ {
+  "topic": "records",
+  "animal": "Sea otter",
+  "q": "Which animal has the densest fur in the animal kingdom?",
+  "a": "Sea otter",
+  "o": [
+   "Polar bear",
+   "Musk ox",
+   "Arctic fox"
+  ],
+  "x": "It has up to 150,000 hairs per square centimetre. Unlike most sea mammals, it has no blubber, so its fur keeps it warm.",
+  "page": "Sea otter",
+  "evidence": "With up to 150,000 strands of hair per square centimetre (970,000/in2), its fur is the densest of any animal."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Sea otter",
+  "q": "What does a sea otter use rocks for?",
+  "a": "To open shellfish",
+  "o": [
+   "To build dens",
+   "To anchor itself",
+   "To scratch its fur"
+  ],
+  "x": "It is one of the few mammals that uses tools. It may pound prey against a rock on its chest.",
+  "page": "Sea otter",
+  "evidence": "Its use of rocks to dislodge prey and to open shells makes it one of the few mammal species to use tools."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Sea otter",
+  "q": "Where does a sea otter keep food it collects, and sometimes a favourite rock?",
+  "a": "In a skin pouch under its foreleg",
+  "o": [
+   "In its cheeks",
+   "In a pocket on its tail",
+   "Under a rock on the sea floor"
+  ],
+  "x": "It prefers the left pouch. The pouch lets it bring food up to the surface to eat.",
+  "page": "Sea otter",
+  "evidence": "In this pouch (preferentially the left one), the animal stores collected food to bring to the surface, and sometimes a rock that is used to break open shellfish and clams."
+ },
+ {
+  "topic": "diet",
+  "animal": "Sea otter",
+  "q": "Sea otters protect kelp forests by eating lots of which animal?",
+  "a": "Sea urchins",
+  "o": [
+   "Sharks",
+   "Jellyfish",
+   "Sea turtles"
+  ],
+  "x": "Without sea otters, sea urchins can badly damage kelp forests, which is why the otter is called a keystone species.",
+  "page": "Sea otter",
+  "evidence": "In most of its range, it is a keystone species, controlling sea urchin populations which would otherwise inflict extensive damage to kelp forest ecosystems."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Chimpanzee",
+  "q": "Chimpanzees use modified sticks and grass to get which of these foods?",
+  "a": "Termites and ants",
+  "o": [
+   "Crabs in streams",
+   "Lizards under rocks",
+   "Bats in caves"
+  ],
+  "x": "Nearly all chimp groups use tools, also for honey, nuts and water.",
+  "page": "Chimpanzee",
+  "evidence": "Nearly all chimpanzee populations have been recorded using tools, modifying sticks, rocks, grass and leaves and using them for hunting and acquiring honey, termites, ants, nuts and water."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Bowerbird",
+  "q": "What does a male bowerbird build to attract a mate?",
+  "a": "A decorated structure",
+  "o": [
+   "A floating nest",
+   "A mud tower",
+   "An underground den"
+  ],
+  "x": "He decorates his bower with sticks and brightly coloured objects. Females are drab and choose the best display.",
+  "page": "Bowerbird",
+  "evidence": "They are renowned for their unique courtship behaviour, where males build a structure and decorate it with sticks and brightly coloured objects in an attempt to attract a mate."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Bowerbird",
+  "q": "Bowerbirds live in the wild in which region?",
+  "a": "Australia and New Guinea",
+  "o": [
+   "Central Africa",
+   "South America",
+   "Southern Europe"
+  ],
+  "x": "Ten species live only in New Guinea, eight only in Australia, and two in both.",
+  "page": "Bowerbird",
+  "evidence": "The bowerbirds have an Australo-Papuan distribution, with ten species endemic to New Guinea, eight endemic to Australia, and two found in both."
+ },
+ {
+  "topic": "diet",
+  "animal": "Termite",
+  "q": "What do termites mainly eat?",
+  "a": "Wood and dead plants",
+  "o": [
+   "Other insects",
+   "Flower nectar",
+   "Blood"
+  ],
+  "x": "Termites are important recyclers of dead plant matter, helped by tiny microbes in their guts.",
+  "page": "Termite",
+  "evidence": "Termites are a group of eusocial insects which consume a variety of decaying plant material, generally in the form of wood, leaf litter, and soil humus."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Termite",
+  "q": "Unlike most ant colonies, how do most termite colonies begin?",
+  "a": "With a king and queen pair",
+  "o": [
+   "With a single queen",
+   "With a group of workers",
+   "With a swarm of soldiers"
+  ],
+  "x": "The king and queen stay together as a pair for life.",
+  "page": "Termite",
+  "evidence": "Unlike ants, most colonies begin from sexually mature individuals known as the \"king\" and \"queen\" that together form a lifelong monogamous pair."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Army ant",
+  "q": "Unlike most ants, what do army ants not build?",
+  "a": "Permanent nests",
+  "o": [
+   "Scent trails",
+   "Colonies",
+   "Food stores"
+  ],
+  "x": "An army ant colony moves almost all the time. Its workers are usually blind.",
+  "page": "Army ant",
+  "evidence": "unlike most ant species, army ants do not construct permanent nests; an army ant colony moves almost incessantly over the time it exists."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Salmon",
+  "q": "Where do most salmon go to lay their eggs?",
+  "a": "The stream where they hatched",
+  "o": [
+   "The deepest part of the sea",
+   "Any nearby lake",
+   "Coral reefs"
+  ],
+  "x": "Salmon hatch in fresh water, grow up in the sea, then return home to breed. Tracking studies show this is mostly true.",
+  "page": "Salmon",
+  "evidence": "The adult salmon then return primarily to their natal streams to spawn."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "European eel",
+  "q": "European eels from rivers across Europe travel to which sea to spawn?",
+  "a": "Sargasso Sea",
+  "o": [
+   "Mediterranean Sea",
+   "Black Sea",
+   "North Sea"
+  ],
+  "x": "After spawning there, the young drift north through the Atlantic. Wild eel mating has never been seen.",
+  "page": "European eel",
+  "evidence": "After spawning in the Sargasso Sea, they disperse northwards throughout the Atlantic Ocean, its coasts, and the rivers that empty into it."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Blue wildebeest",
+  "q": "What is the timing of the blue wildebeest's long migration linked to?",
+  "a": "Rain and fresh grass",
+  "o": [
+   "Escaping snow",
+   "The full moon",
+   "Following lions"
+  ],
+  "x": "Nutritious grass helps mothers make milk and calves grow. They can run at up to 80 km/h (50 mph).",
+  "page": "Blue wildebeest",
+  "evidence": "Three African populations of blue wildebeest take part in a long-distance migration, timed to coincide with the annual pattern of rainfall and grass growth"
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Humpback whale",
+  "q": "Which humpback whales sing the famous long, complex songs?",
+  "a": "The males",
+  "o": [
+   "The females",
+   "Only the calves",
+   "Only the oldest whales"
+  ],
+  "x": "A song typically lasts from 4 to 33 minutes.",
+  "page": "Humpback whale",
+  "evidence": "Males produce a complex song that typically lasts from 4 to 33 minutes."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Humpback whale",
+  "q": "How do humpback whales often trap krill and small fish?",
+  "a": "With nets of bubbles",
+  "o": [
+   "By stunning them with clicks",
+   "By hiding in seaweed",
+   "By spitting jets of water"
+  ],
+  "x": "A group swims in a shrinking circle blowing bubbles, trapping prey in a bubble cylinder. It counts as tool use.",
+  "page": "Humpback whale",
+  "evidence": "Humpbacks typically hunt their prey with bubble nets, which is considered to be a form of tool use."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Humpback whale",
+  "q": "Each of a humpback whale's flippers is about how long compared with its body?",
+  "a": "About one third",
+  "o": [
+   "About one fiftieth",
+   "About one tenth",
+   "Twice as long"
+  ],
+  "x": "Its genus name, Megaptera, means \"giant wing\", after these huge flippers.",
+  "page": "Humpback whale",
+  "evidence": "The species has a bulky body with a thin rostrum and proportionally long flippers, each around one-third of its body length."
+ },
+ {
+  "topic": "records",
+  "animal": "Orca",
+  "q": "The orca, or killer whale, is the largest member of which family?",
+  "a": "Oceanic dolphins",
+  "o": [
+   "Baleen whales",
+   "Sharks",
+   "Seals"
+  ],
+  "x": "Orcas live in close family groups called pods, and each group has its own hunting tricks and calls.",
+  "page": "Orca",
+  "evidence": "The orca (Orcinus orca), or killer whale, is a toothed whale and the largest member of the oceanic dolphin family."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Orca",
+  "q": "Why did orcas get the name \"killer whales\"?",
+  "a": "Sailors saw them hunt larger whales",
+  "o": [
+   "They often attack ships",
+   "They hunt only killer sharks",
+   "Their call sounds scary"
+  ],
+  "x": "Orcas hunt many prey, including fish, sharks, rays, seals, dolphins and whales.",
+  "page": "Orca",
+  "evidence": "Orcas are often referred to as \"killer whales\" because ancient sailors saw them hunt larger whales."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Firefly",
+  "q": "Why do most fireflies flash their lights at twilight?",
+  "a": "To attract mates",
+  "o": [
+   "To see in the dark",
+   "To keep warm",
+   "To find water"
+  ],
+  "x": "Fireflies are actually beetles. The glow probably started as a warning that the larvae taste bad.",
+  "page": "Firefly",
+  "evidence": "They are soft-bodied beetles commonly called fireflies, lightning bugs, or glowworms for their conspicuous emission of light, mainly during twilight, to attract mates."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Photuris firefly",
+  "q": "Why do female Photuris fireflies copy the flash patterns of another firefly kind?",
+  "a": "To lure males and eat them",
+  "o": [
+   "To make friends",
+   "To scare off bats",
+   "To find a nest"
+  ],
+  "x": "These \"femme fatale\" fireflies trap males of the Photinus genus as prey.",
+  "page": "Firefly",
+  "evidence": "adult female fireflies of the genus Photuris mimic the flash pattern of the Photinus beetle to trap their males as prey."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Archerfish",
+  "q": "How does the archerfish catch insects sitting above the water?",
+  "a": "It spits jets of water at them",
+  "o": [
+   "It shoots poison darts",
+   "It lures them with light",
+   "It waits for them to drown"
+  ],
+  "x": "An adult almost always hits on the first shot and can knock down prey up to 3 m (10 ft) above the surface.",
+  "page": "Archerfish",
+  "evidence": "are a family of percomorph tropical fish known for their unique predation technique of \"shooting down\" land-based insects and other small prey with jets of water spit from their specialized mouths."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Cleaner wrasse",
+  "q": "What does the cleaner wrasse do for bigger fish at its \"cleaning stations\"?",
+  "a": "Eats parasites off them",
+  "o": [
+   "Guards their eggs",
+   "Builds them nests",
+   "Leads them to food"
+  ],
+  "x": "Cleaners even swim into the open mouths and gills of predatory fish to do their job.",
+  "page": "Cleaner wrasse",
+  "evidence": "\"Client\" fish congregate at wrasse \"cleaning stations\" and wait for the cleaner fish to remove gnathiid parasites, the cleaners even swimming into their open mouths and gill cavities to do so."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Clownfish",
+  "q": "Clownfish rely on which animals for shelter and protection?",
+  "a": "Sea anemones",
+  "o": [
+   "Sea turtles",
+   "Giant clams",
+   "Octopuses"
+  ],
+  "x": "In return, clownfish protect the anemone from fish that eat anemones, and clean and fan it.",
+  "page": "Amphiprioninae",
+  "evidence": "Clownfish developed a symbiotic and mutually beneficial relationship with sea anemones, on which they rely for shelter and protection from predators."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Clownfish",
+  "q": "In a clownfish group, what happens when the breeding female disappears?",
+  "a": "The breeding male becomes female",
+  "o": [
+   "The group splits up",
+   "They find a new anemone",
+   "The smallest fish leaves"
+  ],
+  "x": "The others then move up the size ranking, and the largest non-breeder becomes the new breeding male.",
+  "page": "Amphiprioninae",
+  "evidence": "When the female disappears, the breeding male changes sex and takes her place while the others move up the hierarchy."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Remora",
+  "q": "A remora's sucker disc, which grips onto sharks, is a changed form of which body part?",
+  "a": "Its first dorsal fin",
+  "o": [
+   "Its mouth",
+   "Its tail fin",
+   "Its gills"
+  ],
+  "x": "Sliding backwards makes the suction stronger, and swimming forward releases it. Remoras sometimes stick to divers.",
+  "page": "Remora",
+  "evidence": "Their distinctive first dorsal fins take the form of a modified oval, sucker-like organ with slat-like structures that open and close to create suction and take a firm hold against the skin of larger marine animals."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Hermit crab",
+  "q": "Why do hermit crabs live inside empty snail shells?",
+  "a": "To protect their soft abdomen",
+  "o": [
+   "To store food",
+   "To attract mates",
+   "To keep their eggs dry"
+  ],
+  "x": "Their abdomen is soft, so without a borrowed shell they would be defenceless.",
+  "page": "Hermit crab",
+  "evidence": "Hermit crabs are anomuran decapod crustaceans of the superfamily Paguroidea that have adapted to occupy empty scavenged gastropod shells to protect their fragile abdomens."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Superb lyrebird",
+  "q": "About how much of a male superb lyrebird's song is copied from other animals?",
+  "a": "About 70 to 80%",
+  "o": [
+   "About 5%",
+   "About 20%",
+   "None of it"
+  ],
+  "x": "It mostly copies other birds, sometimes marsupials. It lives in forests of southeastern Australia.",
+  "page": "Superb lyrebird",
+  "evidence": "The superb lyrebird is renowned for its elaborate vocal mimicry, with an estimated 70–80% of the male's vocalisations consisting of imitations of other species, mostly other birds but occasionally marsupials."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Arctic fox",
+  "q": "What helps keep an Arctic fox's feet warm on snow and ice?",
+  "a": "Fur on the soles of its feet",
+  "o": [
+   "Extra blood flow to its feet",
+   "Thick hooves",
+   "Webbed toes"
+  ],
+  "x": "It also has reduced blood flow to its legs and keeps its paw temperature separate from its core.",
+  "page": "Arctic fox",
+  "evidence": "Foxes also have fur on the soles of their feet and reduced blood flow to their legs to help keep them warm."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Arctic fox",
+  "q": "How does an Arctic fox's coat change through the year?",
+  "a": "Darker in summer, lighter in winter",
+  "o": [
+   "White all year round",
+   "Lighter in summer, darker in winter",
+   "It never moults"
+  ],
+  "x": "It sheds twice a year. The thick winter coat helps hide it against snow and keeps it warm.",
+  "page": "Arctic fox",
+  "evidence": "Arctic foxes shed twice a year, switching between their summer coat, which is darker, and their winter coat, which is lighter."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Dung beetle",
+  "q": "Dung beetles are the only insects known to find their way using what?",
+  "a": "The Milky Way",
+  "o": [
+   "Earth's magnetic field",
+   "Smells on the wind",
+   "Sounds of the sea"
+  ],
+  "x": "They can still navigate when only the Milky Way or clusters of bright stars are visible.",
+  "page": "Dung beetle",
+  "evidence": "Dung beetles can also navigate when only the Milky Way or clusters of bright stars are visible, making them the only insects known to orient themselves by the Milky Way."
+ },
+ {
+  "topic": "records",
+  "animal": "Dung beetle",
+  "q": "A male dung beetle of the species Onthophagus taurus can pull about how many times its own weight?",
+  "a": "1,141 times",
+  "o": [
+   "10 times",
+   "50 times",
+   "200 times"
+  ],
+  "x": "That is like an average person pulling six double-decker buses full of people.",
+  "page": "Dung beetle",
+  "evidence": "male Onthophagus taurus can pull 1,141 times their own body weight, the equivalent of an average person pulling six double-decker buses full of people."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Green sea turtle",
+  "q": "Why is the green sea turtle called \"green\"?",
+  "a": "Its body fat is green",
+  "o": [
+   "Its shell is bright green",
+   "It lives in green seaweed",
+   "Its eggs are green"
+  ],
+  "x": "The green fat comes from its diet of seagrass. Its shell is actually olive to black.",
+  "page": "Green sea turtle",
+  "evidence": "The common name refers to the usually green fat found beneath its carapace, due to its diet strictly being seagrass, not to the color of its carapace, which is olive to black."
+ },
+ {
+  "topic": "diet",
+  "animal": "Green sea turtle",
+  "q": "What do adult green sea turtles mostly eat?",
+  "a": "Seagrass",
+  "o": [
+   "Jellyfish",
+   "Crabs",
+   "Fish"
+  ],
+  "x": "It is the only sea turtle that is herbivorous when fully grown.",
+  "page": "Green sea turtle",
+  "evidence": "The green sea turtle is the only aquatic turtle species which is herbivorous when fully grown."
+ },
+ {
+  "topic": "diet",
+  "animal": "Marine iguana",
+  "q": "What does the marine iguana go into the sea to eat?",
+  "a": "Algae",
+  "o": [
+   "Fish",
+   "Crabs",
+   "Sea urchins"
+  ],
+  "x": "It is the only modern lizard that forages in the sea. Big males dive for food, while others feed at low tide.",
+  "page": "Marine iguana",
+  "evidence": "Unique among modern lizards, it is a marine reptile that has the ability to forage in the sea for algae, which make up almost all of its diet."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Marine iguana",
+  "q": "The marine iguana, the only lizard that forages in the sea, lives only where?",
+  "a": "The Galápagos Islands",
+  "o": [
+   "Hawaii",
+   "Madagascar",
+   "The Canary Islands"
+  ],
+  "x": "The Galápagos Islands belong to Ecuador. Marine iguanas live in colonies on rocky shores.",
+  "page": "Marine iguana",
+  "evidence": "is a species of iguana found only on the Galápagos Islands (Ecuador)."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Marine iguana",
+  "q": "During El Niño years when food is scarce, some marine iguanas can do what?",
+  "a": "Shrink up to 20% in length",
+  "o": [
+   "Turn bright green",
+   "Grow extra teeth",
+   "Live on land plants only"
+  ],
+  "x": "They grow back when food returns. Scientists think their bones may actually shorten.",
+  "page": "Marine iguana",
+  "evidence": "During an El Niño cycle in which food diminished for two years, some were found to decrease their length by as much as 20%."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Common basilisk",
+  "q": "Why is the common basilisk nicknamed the \"Jesus Christ lizard\"?",
+  "a": "It can run on water",
+  "o": [
+   "It glows in the dark",
+   "It lives for 100 years",
+   "It never eats"
+  ],
+  "x": "It runs upright on its hind legs. It can also stay underwater for up to half an hour.",
+  "page": "Common basilisk",
+  "evidence": "It is also known as the Jesus Christ lizard, Jesus lizard, South American Jesus lizard, or lagarto de Jesus Cristo for its ability to run on the surface of water."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Flying fish",
+  "q": "Why do flying fish leap out of the water and glide?",
+  "a": "To escape predators",
+  "o": [
+   "To catch flying insects",
+   "To dry their fins",
+   "To lay eggs on land"
+  ],
+  "x": "Their wing-like fins let them glide far. Underwater hunters include tuna, swordfish and marlin.",
+  "page": "Flying fish",
+  "evidence": "The main reason for this behavior is thought to be to escape from underwater predators, which include swordfish, mackerel, tuna, and marlin, among others"
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Wood frog",
+  "q": "How does the wood frog survive freezing winters?",
+  "a": "It lets its body freeze",
+  "o": [
+   "It flies south",
+   "It swims under the ice all winter",
+   "It digs below the frost line"
+  ],
+  "x": "Sugar and urea in its tissues work like antifreeze to limit the ice. It is the only North American frog north of the Arctic Circle.",
+  "page": "Wood frog",
+  "evidence": "Similar to other northern frogs that enter dormancy close to the surface in soil and/or leaf litter, wood frogs can tolerate the freezing of their blood and other tissues."
+ },
+ {
+  "topic": "diet",
+  "animal": "Common vampire bat",
+  "q": "What does the common vampire bat feed on?",
+  "a": "Blood",
+  "o": [
+   "Fruit",
+   "Insects",
+   "Nectar"
+  ],
+  "x": "It favours horses and cattle. Its saliva has a substance that stops blood clotting, named Draculin.",
+  "page": "Common vampire bat",
+  "evidence": "The common vampire bat practices hematophagy, mainly feeding on the blood of livestock."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Common vampire bat",
+  "q": "What helps a vampire bat find blood vessels near the skin?",
+  "a": "Heat sensors in its nose",
+  "o": [
+   "Echolocation clicks",
+   "Sharp ears",
+   "Taste buds on its feet"
+  ],
+  "x": "It usually picks the rump, flank or neck, then laps up blood with a grooved tongue.",
+  "page": "Common vampire bat",
+  "evidence": "heat sensors in the nose help it to detect blood vessels near the surface of the skin."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Common vampire bat",
+  "q": "How do vampire bats often help roost mates who are hungry?",
+  "a": "By sharing regurgitated food",
+  "o": [
+   "By bringing them fruit",
+   "By leading them to cattle",
+   "By catching insects for them"
+  ],
+  "x": "Sharing depends on being related, being friends and past help. Bats that groom each other also share food.",
+  "page": "Common vampire bat",
+  "evidence": "Regurgitated food sharing in common vampire bats has been studied in both the lab and field, and is predicted by kinship, association, and reciprocal help."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Spotted hyena",
+  "q": "Who is in charge in a spotted hyena clan?",
+  "a": "The females",
+  "o": [
+   "The biggest male",
+   "The oldest male",
+   "Nobody"
+  ],
+  "x": "Spotted hyena society is matriarchal. Females are larger than males and dominate them.",
+  "page": "Spotted hyena",
+  "evidence": "Spotted hyena society is matriarchal; females are larger than males and dominate them."
+ },
+ {
+  "topic": "diet",
+  "animal": "Spotted hyena",
+  "q": "How does the spotted hyena mainly get its food?",
+  "a": "It mainly hunts",
+  "o": [
+   "It only scavenges",
+   "It mainly eats fruit",
+   "It only eats insects"
+  ],
+  "x": "It also scavenges and can digest skin and bone. It hunts alone, in small parties or in large groups.",
+  "page": "Spotted hyena",
+  "evidence": "it is primarily a hunter but may also scavenge, with the capacity to eat and digest skin, bone and other animal waste."
+ },
+ {
+  "topic": "diet",
+  "animal": "Giant panda",
+  "q": "What makes up almost the whole diet of the giant panda?",
+  "a": "Bamboo",
+  "o": [
+   "Fish",
+   "Eucalyptus leaves",
+   "Berries"
+  ],
+  "x": "Although it belongs to the order Carnivora, the panda is mostly herbivorous.",
+  "page": "Giant panda",
+  "evidence": "It can digest starch and is mostly herbivorous with a diet consisting almost entirely of bamboo and bamboo shoots."
+ },
+ {
+  "topic": "diet",
+  "animal": "Giant panda",
+  "q": "About how much bamboo does an average giant panda eat each day?",
+  "a": "9 to 14 kg (20 to 31 lb)",
+  "o": [
+   "About 0.5 kg (1 lb)",
+   "About 2 kg (4 lb)",
+   "About 60 kg (130 lb)"
+  ],
+  "x": "Bamboo has little energy, so pandas must eat a lot of it.",
+  "page": "Giant panda",
+  "evidence": "The average giant panda eats 9 to 14 kg (20 to 31 lb) of bamboo shoots per day to compensate for the limited energy content of its diet."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Giant panda",
+  "q": "In which country do wild giant pandas live?",
+  "a": "China",
+  "o": [
+   "Japan",
+   "India",
+   "Thailand"
+  ],
+  "x": "They live in six mountain regions, mainly in Sichuan, and also Shaanxi and Gansu.",
+  "page": "Giant panda",
+  "evidence": "It is found in small, fragmented populations in six mountainous regions in the country, mainly in Sichuan, and also in neighbouring Shaanxi and Gansu."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Giant panda",
+  "q": "What helps a giant panda hold bamboo while it eats?",
+  "a": "A thumb-like part of its paw",
+  "o": [
+   "Its long, sticky tongue",
+   "Claws that lock shut",
+   "Its strong, flexible lips"
+  ],
+  "x": "An average panda eats 9 to 14 kg of bamboo a day, so a good grip matters.",
+  "page": "Giant panda",
+  "evidence": "A thumb is visible on its forepaw, which helps in holding bamboo in place for feeding."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Bombardier beetle",
+  "q": "How does the bombardier beetle defend itself when disturbed?",
+  "a": "It sprays a hot chemical",
+  "o": [
+   "It rolls into a ball",
+   "It glows brightly",
+   "It sheds its legs"
+  ],
+  "x": "A chemical reaction heats the spray to near boiling and shoots it out with a popping sound.",
+  "page": "Bombardier beetle",
+  "evidence": "when disturbed, they eject a hot, noxious chemical spray from their pygidial glands with a popping sound."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Frilled lizard",
+  "q": "Where does the frilled lizard spend over 90% of each day?",
+  "a": "Up in trees",
+  "o": [
+   "Underground",
+   "In water",
+   "Under rocks"
+  ],
+  "x": "It comes down mostly to feed, meet others or move to a new tree. It lives in northern Australia and southern New Guinea.",
+  "page": "Frill-necked lizard",
+  "evidence": "The frilled lizard is a diurnal (daytime) and arboreal species, spending over 90% each day up in the trees."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Indian peafowl",
+  "q": "A peacock's famous long \"train\" is made of which feathers?",
+  "a": "Long feathers above the tail",
+  "o": [
+   "Its true tail feathers",
+   "Its wing feathers",
+   "Its neck feathers"
+  ],
+  "x": "These covert feathers have colourful eyespots and are raised into a fan for courtship. He can still fly.",
+  "page": "Indian peafowl",
+  "evidence": "The train is made up of elongated upper-tail covert feathers with colourful eyespots."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Adélie penguin",
+  "q": "What do Adélie penguins build their nests from?",
+  "a": "Stones",
+  "o": [
+   "Seaweed",
+   "Snow",
+   "Feathers"
+  ],
+  "x": "Adélie penguins live all around the coast of Antarctica and eat mainly krill and fish.",
+  "page": "Adélie penguin",
+  "evidence": "Adélies build rough nests of stones."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Orangutan",
+  "q": "Wild orangutans are now found only on which two islands?",
+  "a": "Borneo and Sumatra",
+  "o": [
+   "Java and Bali",
+   "New Guinea and Fiji",
+   "Sri Lanka and Madagascar"
+  ],
+  "x": "Long ago they lived across Southeast Asia and South China.",
+  "page": "Orangutan",
+  "evidence": "They are now found only in parts of Borneo and Sumatra, but during the Pleistocene they ranged throughout Southeast Asia and South China."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Orangutan",
+  "q": "Which is the most solitary of the great apes?",
+  "a": "Orangutan",
+  "o": [
+   "Chimpanzee",
+   "Gorilla",
+   "Bonobo"
+  ],
+  "x": "Social bonds are mainly between mothers and their young. Orangutans are also the most tree-living great apes.",
+  "page": "Orangutan",
+  "evidence": "Orangutans are the most solitary of the great apes: social bonds occur primarily between mothers and their dependent offspring."
+ },
+ {
+  "topic": "diet",
+  "animal": "Orangutan",
+  "q": "What is the most important part of an orangutan's diet?",
+  "a": "Fruit",
+  "o": [
+   "Insects",
+   "Meat",
+   "Grass"
+  ],
+  "x": "They also eat leaves, bark, honey, insects and bird eggs, and they build a new sleeping nest every night.",
+  "page": "Orangutan",
+  "evidence": "Fruit is the most important component of an orangutan's diet, but they will also eat vegetation, bark, honey, insects and bird eggs."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Japanese macaque",
+  "q": "Japanese macaques, or snow monkeys, are famous for which winter habit?",
+  "a": "Bathing in hot springs",
+  "o": [
+   "Hibernating in caves",
+   "Migrating to the coast",
+   "Sleeping in burrows"
+  ],
+  "x": "They also roll snowballs for fun. Some live where snow covers the ground for months.",
+  "page": "Japanese macaque",
+  "evidence": "The macaque has other unusual behaviours, including bathing together in hot springs and rolling snowballs for fun."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Japanese macaque",
+  "q": "On Koshima Island, a young macaque called Imo began a habit that spread through her troop. What was it?",
+  "a": "Washing food in water",
+  "o": [
+   "Cracking nuts with stones",
+   "Fishing with sticks",
+   "Sliding down snowy hills"
+  ],
+  "x": "Imo washed sweet potatoes, then even dipped them in salty seawater. The habit passed down the generations.",
+  "page": "Japanese macaque",
+  "evidence": "witnessed one female, named Imo (Japanese for yam or potato), washing the food off with river water rather than brushing it off as the others were doing"
+ },
+ {
+  "topic": "bodies",
+  "animal": "Honey badger",
+  "q": "What helps a honey badger twist around freely, even when grabbed?",
+  "a": "Its very loose skin",
+  "o": [
+   "Its long tail",
+   "Extra joints in its legs",
+   "Its rubbery bones"
+  ],
+  "x": "Thick skin, strength and fierce defence mean it has few natural predators.",
+  "page": "Honey badger",
+  "evidence": "It has a fairly long body, with a distinctly thick-set and broad back, and remarkably loose skin, allowing the badger to turn and twist freely within it."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Secretarybird",
+  "q": "How does the secretarybird often kill its prey?",
+  "a": "By stomping on it",
+  "o": [
+   "By diving from high in the sky",
+   "By grabbing it underwater",
+   "By poisoning it"
+  ],
+  "x": "This tall bird of prey hunts on foot in African grasslands, standing up to 1.3 m (4 ft 3 in) tall.",
+  "page": "Secretarybird",
+  "evidence": "The secretarybird hunts and catches prey on the ground, often stomping on victims to kill them."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Honeypot ant",
+  "q": "What do honeypot ant \"repletes\" do for their colony?",
+  "a": "Store food in their swollen bodies",
+  "o": [
+   "Guard the nest entrance",
+   "Lay all the eggs",
+   "Carry leaves home"
+  ],
+  "x": "They act as living pantries, sharing the stored food when food is scarce.",
+  "page": "Honeypot ant",
+  "evidence": "Honey ants are unique in using their own bodies as living storage, used later by their fellow ants when food is otherwise scarce."
+ },
+ {
+  "topic": "diet",
+  "animal": "Brown bear",
+  "q": "About how much of a brown bear's diet comes from plants?",
+  "a": "About 90%",
+  "o": [
+   "About 10%",
+   "About 30%",
+   "None at all"
+  ],
+  "x": "It is an omnivore, but in parts of coastal Alaska it feeds mainly on spawning salmon.",
+  "page": "Brown bear",
+  "evidence": "Contrary to popular belief, the brown bear derives 90% of its diet from plants."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Mongoose",
+  "q": "What protects mongooses against snake venom?",
+  "a": "Changed nerve receptors",
+  "o": [
+   "Very thick fur",
+   "Eating antidote plants",
+   "Hollow bones"
+  ],
+  "x": "Venom toxins cannot bind to their modified receptors. At least four groups of mammals have this protection.",
+  "page": "Mongoose",
+  "evidence": "Mongooses are one of at least four known mammalian taxa with mutations in the nicotinic acetylcholine receptor that protect against snake venom."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Hognose snake",
+  "q": "If a hognose snake playing dead is turned right side up, what does it often do?",
+  "a": "Rolls onto its back again",
+  "o": [
+   "Bites at once",
+   "Slithers away quickly",
+   "Changes colour"
+  ],
+  "x": "First it hisses and spreads its neck like a cobra. Even while \"dead\", it keeps watching the threat.",
+  "page": "Hognose snake",
+  "evidence": "If they are rolled upright while in this state, they will often roll back as if insisting they really are dead."
+ },
+ {
+  "topic": "records",
+  "animal": "Ant",
+  "q": "An ant queen can live for up to about how long?",
+  "a": "30 years",
+  "o": [
+   "3 months",
+   "1 year",
+   "5 years"
+  ],
+  "x": "Worker ants usually live only 1 to 3 years.",
+  "page": "Ant",
+  "evidence": "The queens can live for up to 30 years, and workers live from 1 to 3 years."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Fire ant",
+  "q": "What do some ants, such as fire ants, do to survive floods?",
+  "a": "Link together into floating rafts",
+  "o": [
+   "Dig deeper tunnels",
+   "Hold their breath for weeks",
+   "Ride on the backs of birds"
+  ],
+  "x": "These rafts may also help ants reach and settle new islands.",
+  "page": "Ant",
+  "evidence": "Some species also form floating rafts that help them survive floods."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Ant",
+  "q": "Which of these places has no native ants?",
+  "a": "Iceland",
+  "o": [
+   "Australia",
+   "Madagascar",
+   "Japan"
+  ],
+  "x": "Ants live on every continent except Antarctica. Greenland and Hawaii also lack native ants.",
+  "page": "Ant",
+  "evidence": "They are found on all continents except Antarctica, and only a few large islands, such as Greenland, Iceland, parts of Polynesia and the Hawaiian Islands lack native ant species."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Lemur",
+  "q": "Wild lemurs live only on which island?",
+  "a": "Madagascar",
+  "o": [
+   "Borneo",
+   "Sri Lanka",
+   "Cuba"
+  ],
+  "x": "Over a dozen kinds of giant lemurs, some as big as gorillas, died out after humans reached the island.",
+  "page": "Lemur",
+  "evidence": "They are endemic to the island of Madagascar."
+ },
+ {
+  "topic": "records",
+  "animal": "Kākāpō",
+  "q": "Which is the world's only flightless parrot?",
+  "a": "Kākāpō",
+  "o": [
+   "Kea",
+   "Macaw",
+   "Cockatoo"
+  ],
+  "x": "It is also the heaviest parrot, comes out at night, and may live up to 100 years. It lives only in New Zealand.",
+  "page": "Kakapo",
+  "evidence": "It is the world's only flightless parrot, the world's heaviest parrot, and also is nocturnal, herbivorous, visibly sexually dimorphic in body size, has a low basal metabolic rate, and does not have male parental care."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Penguin",
+  "q": "Polar bears live in the Arctic. Where do wild penguins live?",
+  "a": "Almost all in the Southern Hemisphere",
+  "o": [
+   "Mostly in the Arctic",
+   "Only in Antarctica",
+   "Mostly in Northern Europe"
+  ],
+  "x": "Only one species, the Galápagos penguin, lives at and slightly north of the equator.",
+  "page": "Penguin",
+  "evidence": "Penguins are a group of flightless semi-aquatic sea birds which live almost exclusively in the Southern Hemisphere."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Galápagos penguin",
+  "q": "Which is the only penguin found north of the equator?",
+  "a": "Galápagos penguin",
+  "o": [
+   "Emperor penguin",
+   "King penguin",
+   "Little blue penguin"
+  ],
+  "x": "It is adapted to the warm equatorial climate and is the only penguin that moults twice a year.",
+  "page": "Galápagos penguin",
+  "evidence": "It is the only penguin found north of the equator."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Okapi",
+  "q": "The okapi, or \"forest giraffe\", lives wild only in which country?",
+  "a": "DR Congo",
+  "o": [
+   "Kenya",
+   "South Africa",
+   "Madagascar"
+  ],
+  "x": "It lives in the northeast of the Democratic Republic of the Congo. Europeans once called it the \"African unicorn\".",
+  "page": "Okapi",
+  "evidence": "is an artiodactyl mammal that is endemic to the northeast Democratic Republic of the Congo."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Okapi",
+  "q": "The okapi has zebra-like stripes, but which animal is its closest relative?",
+  "a": "Giraffe",
+  "o": [
+   "Zebra",
+   "Horse",
+   "Antelope"
+  ],
+  "x": "The okapi and the giraffe are the only living members of the giraffe family.",
+  "page": "Okapi",
+  "evidence": "Although it has striped markings reminiscent of zebras, it is most closely related to the giraffe."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Snow leopard",
+  "q": "Snow leopards live in which kind of habitat?",
+  "a": "High mountains of Asia",
+  "o": [
+   "Arctic sea ice",
+   "African savanna",
+   "Amazon rainforest"
+  ],
+  "x": "They live at 3,000 to 4,500 m (9,800 to 14,800 ft), from the Himalayas to Mongolia. Thick tails help them in the cold.",
+  "page": "Snow leopard",
+  "evidence": "The snow leopard is native to the mountain ranges of Asia, ranging from eastern Hindu Kush, the Himalayas and the Tibetan Plateau to southern Siberia, Mongolia and western China."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Llama",
+  "q": "Llamas have been used as pack animals for centuries by the peoples of which mountains?",
+  "a": "The Andes",
+  "o": [
+   "The Himalayas",
+   "The Alps",
+   "The Atlas Mountains"
+  ],
+  "x": "The llama is a domesticated South American camelid. It can carry about 25 to 30% of its body weight.",
+  "page": "Llama",
+  "evidence": "is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era."
+ },
+ {
+  "topic": "records",
+  "animal": "Jaguar",
+  "q": "What is the biggest cat species in the Americas?",
+  "a": "Jaguar",
+  "o": [
+   "Cougar",
+   "Ocelot",
+   "Canada lynx"
+  ],
+  "x": "It is the third-largest cat in the world and lives from the southwestern United States to northern Argentina.",
+  "page": "Jaguar",
+  "evidence": "it is the biggest cat species in the Americas and the third largest in the world."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Tasmanian devil",
+  "q": "The Tasmanian devil once lived across mainland Australia. Where is its natural home today?",
+  "a": "The island of Tasmania",
+  "o": [
+   "New Zealand",
+   "New Guinea",
+   "Western Australia"
+  ],
+  "x": "It died out on the mainland about 3,500 years ago. It is the size of a small dog with a very strong bite.",
+  "page": "Tasmanian devil",
+  "evidence": "It was formerly present across mainland Australia, but became extinct there around 3,500 years ago; it is now confined to the island of Tasmania."
+ },
+ {
+  "topic": "records",
+  "animal": "Tasmanian devil",
+  "q": "Which animal became the largest meat-eating marsupial after the thylacine died out in 1936?",
+  "a": "Tasmanian devil",
+  "o": [
+   "Koala",
+   "Numbat",
+   "Red kangaroo"
+  ],
+  "x": "For its size, the devil has one of the strongest bites of any land predator.",
+  "page": "Tasmanian devil",
+  "evidence": "The size of a small dog, the Tasmanian devil became the largest carnivorous marsupial in the world following the extinction of the thylacine in 1936."
+ },
+ {
+  "topic": "records",
+  "animal": "Galápagos tortoise",
+  "q": "What is the largest living species of tortoise?",
+  "a": "Galápagos tortoise",
+  "o": [
+   "Leopard tortoise",
+   "Gopher tortoise",
+   "Radiated tortoise"
+  ],
+  "x": "It can weigh up to 417 kg (919 lb) and often lives more than 100 years in the wild.",
+  "page": "Galápagos tortoise",
+  "evidence": "It is the largest living species of tortoise, and can weigh up to 417 kg (919 lb)."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Galápagos tortoise",
+  "q": "The Galápagos Islands were named after which animal?",
+  "a": "The giant tortoise",
+  "o": [
+   "The penguin",
+   "The marine iguana",
+   "The sea lion"
+  ],
+  "x": "Spanish explorers named the islands after the Spanish word galápago, meaning \"tortoise\".",
+  "page": "Galápagos tortoise",
+  "evidence": "Spanish explorers, who discovered the islands in the 16th century, named them after the Spanish galápago, meaning \"tortoise\"."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Quokka",
+  "q": "Rottnest Island, home of many quokkas, means \"rat nest island\". Why?",
+  "a": "An explorer thought they were giant rats",
+  "o": [
+   "The island was full of rats",
+   "Quokkas hunt the island's rats",
+   "Rats came there on Dutch ships"
+  ],
+  "x": "Dutch explorer Willem de Vlamingh named it in 1696. Quokkas live only in a small part of southwestern Australia.",
+  "page": "Quokka",
+  "evidence": "In 1696, Dutch explorer Willem de Vlamingh mistook them for giant rats, and renamed the Wadjemup Island 't Eylandt 't Rottenest, which means \"the rat nest island\" in Dutch."
+ },
+ {
+  "topic": "diet",
+  "animal": "Fossa",
+  "q": "Over half of the diet of the fossa, Madagascar's largest carnivore, is made of which animals?",
+  "a": "Lemurs",
+  "o": [
+   "Fish",
+   "Frogs",
+   "Insects"
+  ],
+  "x": "The fossa looks a bit like a small cougar. It also eats tenrecs, rodents, lizards and birds.",
+  "page": "Fossa (animal)",
+  "evidence": "Over 50% of its diet consists of lemurs, the endemic primates found on the island; tenrecs, rodents, lizards, birds, and other animals are also documented as prey."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Red panda",
+  "q": "Where does the red panda live in the wild?",
+  "a": "Eastern Himalayas and SW China",
+  "o": [
+   "The Amazon rainforest",
+   "East African savannas",
+   "Borneo's lowland forests"
+  ],
+  "x": "It lives in mountain forests with lots of bamboo. Despite its name, it is not closely related to the giant panda.",
+  "page": "Red panda",
+  "evidence": "The red panda (Ailurus fulgens), also known as the lesser panda, is a small mammal native to the eastern Himalayas and southwestern China."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Beluga whale",
+  "q": "Why is the beluga whale nicknamed the \"sea canary\"?",
+  "a": "Its high-pitched calls",
+  "o": [
+   "Its yellow skin",
+   "It eats small birds",
+   "It lives near the Canary Islands"
+  ],
+  "x": "Belugas live in the Arctic. Having no dorsal fin helps them swim under the ice.",
+  "page": "Beluga whale",
+  "evidence": "It is also known as the sea canary, due to its high-pitched calls"
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Walrus",
+  "q": "The walrus's scientific name comes from Greek for \"tooth walk\". Why?",
+  "a": "It uses its tusks to haul itself out",
+  "o": [
+   "It walks on its teeth on land",
+   "Its teeth chatter as it walks",
+   "It grows teeth on its flippers"
+  ],
+  "x": "Walruses were seen using their tusks to pull themselves out of the water onto ice.",
+  "page": "Walrus",
+  "evidence": "The compound Odobenus comes from odous (Greek for 'teeth') and baino (Greek for 'walk'), based on observations of walruses using their tusks to pull themselves out of the water."
+ },
+ {
+  "topic": "diet",
+  "animal": "Walrus",
+  "q": "What do walruses mostly search the shallow sea floor for?",
+  "a": "Clams and other bivalves",
+  "o": [
+   "Fish and squid",
+   "Penguins",
+   "Seaweed and kelp"
+  ],
+  "x": "Walruses live in the Arctic and spend much time on sea ice. Big males can weigh over 2,000 kg (4,400 lb).",
+  "page": "Walrus",
+  "evidence": "Walrus live mostly in shallow waters above the continental shelves, spending significant amounts of their lives on the sea ice looking for benthic bivalve molluscs."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Proboscis monkey",
+  "q": "The proboscis monkey, famous for its huge nose, lives only on which island?",
+  "a": "Borneo",
+  "o": [
+   "Sri Lanka",
+   "Madagascar",
+   "Java"
+  ],
+  "x": "It lives mostly in mangrove forests and coastal areas. A male's nose can be over 10 cm (4 in) long.",
+  "page": "Proboscis monkey",
+  "evidence": "It is endemic to the Southeast Asian island of Borneo and is found mostly in mangrove forests and on the coastal areas of the island."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Bonobo",
+  "q": "Bonobos and chimpanzees are separated by the Congo River. Which side do bonobos live on?",
+  "a": "South of the river",
+  "o": [
+   "North of the river",
+   "On both sides",
+   "On islands in the river"
+  ],
+  "x": "Neither ape swims well, so the river probably kept the two species apart for a very long time.",
+  "page": "Bonobo",
+  "evidence": "Bonobos live south of the river, and thereby were separated from the ancestors of the common chimpanzee, which live north of the river."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Gelada",
+  "q": "Gelada monkeys are found only in the highlands of which country?",
+  "a": "Ethiopia",
+  "o": [
+   "Kenya",
+   "Morocco",
+   "Nepal"
+  ],
+  "x": "Males have a bright red hourglass-shaped patch on the chest, giving the nickname \"bleeding-heart monkey\".",
+  "page": "Gelada",
+  "evidence": "is a species of Old World monkey found only in the Ethiopian Highlands, living at elevations of 1,800–4,400 m (5,900–14,400 ft) above sea level."
+ },
+ {
+  "topic": "diet",
+  "animal": "Vampire squid",
+  "q": "Despite its scary name, what does the vampire squid eat?",
+  "a": "Drifting bits of dead matter",
+  "o": [
+   "Blood from whales",
+   "Live fish",
+   "Shark skin"
+  ],
+  "x": "Its name comes from its dark colour and cloak-like webbing. It lives in the deep sea.",
+  "page": "Vampire squid",
+  "evidence": "The name Vampyroteuthis was reportedly inspired by its dark colour and cloaklike webbing, rather than its habits — it feeds on detritus, not blood."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Giant tube worm",
+  "q": "Giant tube worms live in big clusters around what?",
+  "a": "Deep-sea hydrothermal vents",
+  "o": [
+   "Shallow coral reefs",
+   "Sunken ships",
+   "River mouths"
+  ],
+  "x": "They can grow up to 3 m (9 ft 10 in) long and were first found in 1977 on the Galápagos Rift.",
+  "page": "Giant tube worm",
+  "evidence": "Riftia worms are sessile and are found clustered together in large colonies around deep-sea hydrothermal vents in the East Pacific Rise and the Galapagos Rift."
+ },
+ {
+  "topic": "diet",
+  "animal": "Giant tube worm",
+  "q": "How do adult giant tube worms get energy, since they have no gut?",
+  "a": "From bacteria living inside them",
+  "o": [
+   "By filtering sand grains",
+   "By catching passing shrimp",
+   "From sunlight reaching it"
+  ],
+  "x": "The bacteria use chemicals such as hydrogen sulfide from the vents to make food.",
+  "page": "Giant tube worm",
+  "evidence": "Adult Riftia worms lack a digestive system and rely on their symbiotic relationship with chemotrophic sulfur-oxidising bacteria to provide them with energy."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Olm",
+  "q": "Where does the blind, pale salamander called the olm live?",
+  "a": "In underground cave waters",
+  "o": [
+   "In high mountain lakes",
+   "In hollow trees",
+   "In desert sand"
+  ],
+  "x": "It lives in caves of southeastern Europe. People once thought olms washed out by rain were baby cave dragons.",
+  "page": "Olm",
+  "evidence": "Living in caves found in the Dinaric Alps, the genus is endemic to the waters that flow underground through the extensive limestone bedrock of the karst of Central and Southeastern Europe"
+ },
+ {
+  "topic": "habitats",
+  "animal": "Fennec fox",
+  "q": "The fennec fox lives in which kind of habitat?",
+  "a": "Deserts of North Africa",
+  "o": [
+   "Arctic tundra",
+   "Tropical rainforest",
+   "Snowy mountain forest"
+  ],
+  "x": "It is the smallest fox. Its coat, ears and kidneys are all adapted to heat and little water.",
+  "page": "Fennec fox",
+  "evidence": "The fennec fox (Vulpes zerda) is a small fox native to the deserts of North Africa, ranging from Western Sahara and Mauritania to the Sinai Peninsula."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Fennec fox",
+  "q": "What are the fennec fox's huge ears for?",
+  "a": "Losing heat and hearing prey",
+  "o": [
+   "Storing water",
+   "Scaring predators",
+   "Steering when it runs"
+  ],
+  "x": "It listens for prey moving underground. Fennec families dig big burrows in the sand.",
+  "page": "Fennec fox",
+  "evidence": "Its most distinctive feature is its unusually large ears, which serve to dissipate heat and listen for underground prey."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Thorny devil",
+  "q": "How does the thorny devil, an Australian desert lizard, drink?",
+  "a": "Skin grooves carry water to its mouth",
+  "o": [
+   "It sucks water up through its feet",
+   "It only drinks from rivers",
+   "It licks dew off rocks"
+  ],
+  "x": "Touching water with any part of its body is enough. It even shovels damp sand onto its back.",
+  "page": "Thorny devil",
+  "evidence": "The thorny devil's scales are ridged, enabling the animal to collect water by simply touching it with any part of the body, usually the limbs; capillary action transports the water to the mouth through channels in its skin."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Hoatzin",
+  "q": "What unusual feature do young hoatzin chicks have?",
+  "a": "Claws on their wings",
+  "o": [
+   "Teeth in their beaks",
+   "Gills like a fish",
+   "An extra pair of legs"
+  ],
+  "x": "The claws help chicks climb branches. If they fall into the water, they swim and climb back up.",
+  "page": "Hoatzin",
+  "evidence": "Hoatzin chicks have two claws on each wing."
+ },
+ {
+  "topic": "diet",
+  "animal": "Hoatzin",
+  "q": "What does most of the hoatzin's diet consist of?",
+  "a": "Leaves",
+  "o": [
+   "Fish",
+   "Seeds",
+   "Insects"
+  ],
+  "x": "One study found its diet was 82% leaves. It ferments plant food in its gut a bit like a cow.",
+  "page": "Hoatzin",
+  "evidence": "One study, undertaken in Venezuela, found that the hoatzin's diet was 82% leaves, 10% flowers, and 8% fruit."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Poison dart frog",
+  "q": "Poison dart frogs are native to which region?",
+  "a": "Central and South America",
+  "o": [
+   "Central Africa",
+   "Southeast Asia",
+   "Northern Australia"
+  ],
+  "x": "Their bright colours warn predators that they are toxic. The poison comes from eating ants, mites and termites.",
+  "page": "Poison dart frog",
+  "evidence": "is the common name of a group of frogs in the family Dendrobatinae which are native to tropical Central and South America."
+ },
+ {
+  "topic": "diet",
+  "animal": "Piranha",
+  "q": "Piranhas are often said to eat only meat. What is their real diet?",
+  "a": "Omnivorous, including plants",
+  "o": [
+   "Only blood",
+   "Only other piranhas",
+   "Only fruit"
+  ],
+  "x": "Diets vary a lot between species. All piranhas have a single row of sharp, interlocking teeth.",
+  "page": "Piranha",
+  "evidence": "Although often described as extremely predatory and mainly feeding on fish, their dietary habits vary extensively, and they will also take plant material, leading to their classification as omnivorous."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Amazon river dolphin",
+  "q": "Where does the pink river dolphin, or boto, live?",
+  "a": "Rivers of South America",
+  "o": [
+   "The Nile in Africa",
+   "Rivers of Australia",
+   "The Mississippi River"
+  ],
+  "x": "It lives in the Amazon and Orinoco basins and the upper Madeira River in Bolivia.",
+  "page": "Amazon river dolphin",
+  "evidence": "The Amazon river dolphin (Inia geoffrensis), also known as the boto, bufeo or pink river dolphin, is a species of toothed whale endemic to South America"
+ },
+ {
+  "topic": "habitats",
+  "animal": "Coelacanth",
+  "q": "The coelacanth was thought extinct for 66 million years. Off which country was a living one fished in 1938?",
+  "a": "South Africa",
+  "o": [
+   "Japan",
+   "Iceland",
+   "Brazil"
+  ],
+  "x": "They also live around the Comoro Islands, and a second species was found in Indonesia in the late 1990s.",
+  "page": "Coelacanth",
+  "evidence": "was described from specimens fished off the coast of South Africa from 1938 onward; they are now also known to inhabit the seas around the Comoro Islands off the east coast of Africa."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Baikal seal",
+  "q": "The Baikal seal lives only in fresh water, in a lake in which country?",
+  "a": "Russia",
+  "o": [
+   "Canada",
+   "China",
+   "Finland"
+  ],
+  "x": "It lives only in Lake Baikal in Siberia and has been there for about two million years.",
+  "page": "Baikal seal",
+  "evidence": "is a species of earless seal endemic to Lake Baikal in Siberia, Russia."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Dugong",
+  "q": "Which feature lets you tell a dugong apart from a manatee?",
+  "a": "Its dolphin-like fluked tail",
+  "o": [
+   "Its long trunk",
+   "Its back legs",
+   "Its tall dorsal fin"
+  ],
+  "x": "Manatees have rounded, paddle-like tails. The dugong grazes on seagrass meadows in the Indo-West Pacific.",
+  "page": "Dugong",
+  "evidence": "The dugong is easily distinguishable from the manatees by its fluked, dolphin-like tail; it also possesses a unique skull and teeth."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Saola",
+  "q": "The saola, or \"Asian unicorn\", lives in the forests of which countries?",
+  "a": "Vietnam and Laos",
+  "o": [
+   "India and Nepal",
+   "Kenya and Tanzania",
+   "Brazil and Peru"
+  ],
+  "x": "It was discovered in 1992 and is so rare that the last record was a camera photo in 2013.",
+  "page": "Saola",
+  "evidence": "is a forest-dwelling bovid native to the Annamite Range in Vietnam and Laos."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Vaquita",
+  "q": "The vaquita, the smallest cetacean, lives only in which body of water?",
+  "a": "The northern Gulf of California",
+  "o": [
+   "The eastern Black Sea",
+   "The southern Baltic Sea",
+   "The northern Red Sea"
+  ],
+  "x": "It has the smallest range of any whale, dolphin or porpoise, in Mexican waters.",
+  "page": "Vaquita",
+  "evidence": "is a species of porpoise endemic to the northern end of the Gulf of California in Baja California, Mexico."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "American pika",
+  "q": "How does the American pika prepare for winter?",
+  "a": "It stores plants in \"haypiles\"",
+  "o": [
+   "It migrates south",
+   "It hibernates in a nest",
+   "It digs up roots each day"
+  ],
+  "x": "This is called haying. The pika is a small relative of rabbits that lives on rocky mountain slopes.",
+  "page": "American pika",
+  "evidence": "gathering and storing plant materials in \"haypiles\" to sustain itself through the winter months, a behavior known as haying."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Kea",
+  "q": "The kea is a parrot that lives in which unusual habitat?",
+  "a": "Alpine mountains of New Zealand",
+  "o": [
+   "Arctic tundra of Canada",
+   "The Sahara Desert",
+   "Antarctic coasts"
+  ],
+  "x": "Kea live in forests and alpine areas of New Zealand's South Island, and are famous for their intelligence.",
+  "page": "Kea",
+  "evidence": "is a species of large parrot in the family Strigopidae that is endemic to the forested and alpine regions of the South Island of New Zealand."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Shoebill",
+  "q": "Where does the shoebill, a stork-like bird with a huge bill, live?",
+  "a": "Swamps of tropical East Africa",
+  "o": [
+   "Mangroves of Australia",
+   "Amazon rainforest",
+   "Coasts of Antarctica"
+  ],
+  "x": "It lives in large swamps from South Sudan to Zambia, often where papyrus and lungfish are found.",
+  "page": "Shoebill",
+  "evidence": "It lives in tropical East Africa in large swamps from South Sudan down to Zambia."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Southern cassowary",
+  "q": "What makes a southern cassowary's feet dangerous?",
+  "a": "A dagger-like claw up to 12 cm",
+  "o": [
+   "Venomous spurs on its heels",
+   "Sticky toe pads",
+   "Spiny, poisonous scales"
+  ],
+  "x": "The claw is on the inner of its three toes. It also has a horn-like casque on its head.",
+  "page": "Southern cassowary",
+  "evidence": "The three-toed feet are thick and powerful, equipped with a dagger-like claw up to 12 cm (4.7 in) on the inner toe."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Southern cassowary",
+  "q": "Southern cassowaries live in New Guinea and which other country?",
+  "a": "Australia",
+  "o": [
+   "New Zealand",
+   "South Africa",
+   "Brazil"
+  ],
+  "x": "They are found in Indonesia, Papua New Guinea and northeastern Australia.",
+  "page": "Southern cassowary",
+  "evidence": "is a large, flightless, mostly black bird, found in Indonesia, Papua New Guinea, and northeastern Australia."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Wombat",
+  "q": "Why does a wombat's pouch open backwards?",
+  "a": "To keep dirt out while it digs",
+  "o": [
+   "So the baby can see behind",
+   "To keep it cooler",
+   "So it can swim"
+  ],
+  "x": "Wombats dig big burrows with strong claws and ever-growing, rodent-like front teeth.",
+  "page": "Wombat",
+  "evidence": "The advantage of a backward-facing pouch is that when digging, the wombat does not gather soil in its pouch over its young."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Wombat",
+  "q": "What is unusual about wombat droppings?",
+  "a": "They are cube-shaped",
+  "o": [
+   "They glow in the dark",
+   "They are bright blue",
+   "They smell like flowers"
+  ],
+  "x": "Research into how wombats make cubes won an Ig Nobel Prize for Physics in 2019.",
+  "page": "Wombat",
+  "evidence": "Wombats leave distinctive cube-shaped faeces."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Camel",
+  "q": "What does a camel's hump store?",
+  "a": "Fat",
+  "o": [
+   "Water",
+   "Air",
+   "Milk"
+  ],
+  "x": "Storing water in the hump is a myth. Using the fat as energy also makes water inside the body.",
+  "page": "Camel",
+  "evidence": "It is a common myth that a camel stores water in its hump, but the humps in fact are reservoirs of fatty tissue, which can be used as a reserve source of calories, not water."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Dromedary",
+  "q": "How do camels keep sand out of their eyes in desert storms?",
+  "a": "A double row of eyelashes",
+  "o": [
+   "Very small eyes",
+   "Oily tears",
+   "Feathers around the eyes"
+  ],
+  "x": "Bushy eyebrows help too, and camels can close their nostrils to keep sand out.",
+  "page": "Dromedary",
+  "evidence": "The bushy eyebrows and the double row of eyelashes prevent sand and dust from entering the eyes during strong windstorms, and shield them from the sun's glare."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Bactrian camel",
+  "q": "The two-humped Bactrian camel is native to which region?",
+  "a": "The steppes of Central Asia",
+  "o": [
+   "The Sahara Desert",
+   "The Arabian Peninsula",
+   "The Australian outback"
+  ],
+  "x": "The wild Bactrian camel is a separate species and the only truly wild camel of the Old World.",
+  "page": "Bactrian camel",
+  "evidence": "is a camel native to the steppes of Central Asia."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Echidna",
+  "q": "What are an echidna's spines made of?",
+  "a": "Keratin, like hair and nails",
+  "o": [
+   "Bone, like ribs",
+   "Cartilage, like ears",
+   "Chitin, like insects"
+  ],
+  "x": "The spines are modified hairs. Echidnas live in Australia and New Guinea and, like the platypus, lay eggs.",
+  "page": "Echidna",
+  "evidence": "The spines are modified hairs and are made of keratin, the same fibrous protein that makes up fur, claws, nails, and horn sheaths."
+ },
+ {
+  "topic": "habitats",
+  "animal": "Aardvark",
+  "q": "The aardvark, a burrowing ant-eater, is native to which continent?",
+  "a": "Africa",
+  "o": [
+   "South America",
+   "Australia",
+   "Asia"
+  ],
+  "x": "Its name means \"earth pig\". It digs ants and termites out of their mounds at night.",
+  "page": "Aardvark",
+  "evidence": "is a medium-sized, burrowing, nocturnal mammal native to Africa."
+ },
+ {
+  "topic": "diet",
+  "animal": "Aardvark",
+  "q": "What does the aardvark eat?",
+  "a": "Ants and termites",
+  "o": [
+   "Roots and tubers",
+   "Small birds",
+   "Fish"
+  ],
+  "x": "It uses sharp claws to dig into insect mounds and its long snout to sniff out food.",
+  "page": "Aardvark",
+  "evidence": "A nocturnal feeder, the aardvark subsists on ants and termites (myrmecophagy) by using its sharp claws and powerful legs to dig the insects out of their hills, and its long snout to sniff out food."
+ },
+ {
+  "topic": "diet",
+  "animal": "Numbat",
+  "q": "The numbat of Western Australia eats almost nothing but what?",
+  "a": "Termites",
+  "o": [
+   "Eucalyptus leaves",
+   "Seeds",
+   "Small lizards"
+  ],
+  "x": "Unlike most marsupials, the numbat is active by day. It is the animal emblem of Western Australia.",
+  "page": "Numbat",
+  "evidence": "It is diurnal and its diet consists almost exclusively of termites."
+ },
+ {
+  "topic": "diet",
+  "animal": "Bearded vulture",
+  "q": "Which bird is the only known vertebrate whose diet is 70 to 90% bone?",
+  "a": "Bearded vulture",
+  "o": [
+   "Andean condor",
+   "Bald eagle",
+   "Marabou stork"
+  ],
+  "x": "Its old name \"ossifrage\" means \"bone-breaker\" in Latin.",
+  "page": "Bearded vulture",
+  "evidence": "The bearded vulture is the only known vertebrate whose diet consists of 70–90% bone."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Egyptian vulture",
+  "q": "How does the Egyptian vulture break open big eggs?",
+  "a": "It throws stones at them",
+  "o": [
+   "It rolls them off cliffs",
+   "It sits on them until they crack",
+   "It soaks them in water"
+  ],
+  "x": "Tool use is rare in birds. It also uses twigs to roll up wool for its nest.",
+  "page": "Egyptian vulture",
+  "evidence": "They also feed on the eggs of other birds, breaking larger ones by tossing a large pebble onto them."
+ },
+ {
+  "topic": "diet",
+  "animal": "Silkworm",
+  "q": "What is the silkworm's favourite food?",
+  "a": "White mulberry leaves",
+  "o": [
+   "Oak leaves",
+   "Cotton plants",
+   "Grass"
+  ],
+  "x": "Silkworms are the caterpillars of the domestic silk moth and are famous for making silk.",
+  "page": "Silkworm",
+  "evidence": "The silkworm's preferred food are the leaves of white mulberry, though they may eat other species of mulberry, and even leaves of other plants."
+ },
+ {
+  "topic": "diet",
+  "animal": "King cobra",
+  "q": "What does the king cobra mainly hunt?",
+  "a": "Other snakes",
+  "o": [
+   "Birds' eggs",
+   "Frogs",
+   "Monkeys"
+  ],
+  "x": "It even eats other king cobras. Lizards and rodents are only occasional prey.",
+  "page": "King cobra",
+  "evidence": "It chiefly hunts other snakes, including those of its own kind, although other lizards and rodents are also occasional prey."
+ },
+ {
+  "topic": "records",
+  "animal": "King cobra",
+  "q": "What is the world's longest venomous snake?",
+  "a": "King cobra",
+  "o": [
+   "Black mamba",
+   "Inland taipan",
+   "Gaboon viper"
+  ],
+  "x": "It averages 3.18 to 4 m (10.4 to 13.1 ft), with a record of 5.85 m (19.2 ft).",
+  "page": "King cobra",
+  "evidence": "With an average length of 3.18 to 4 m (10.4 to 13.1 ft) and a record length of 5.85 m (19.2 ft), it is the world's longest venomous snake and among the heaviest."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "King cobra",
+  "q": "What does a female king cobra build that no other snake builds?",
+  "a": "An above-ground nest for her eggs",
+  "o": [
+   "A silk web for her eggs",
+   "A floating raft of reeds",
+   "A tall tower of mud"
+  ],
+  "x": "She gathers material for the nest and guards the eggs throughout incubation.",
+  "page": "King cobra",
+  "evidence": "This is the only ophidian that constructs an above-ground nest for its eggs, which are purposefully and meticulously gathered and protected by the female throughout the incubation period."
+ },
+ {
+  "topic": "diet",
+  "animal": "Leopard seal",
+  "q": "Which birds are a favourite prey of the leopard seal?",
+  "a": "Penguins",
+  "o": [
+   "Albatrosses",
+   "Puffins",
+   "Seagulls"
+  ],
+  "x": "This Antarctic hunter also eats other seals, squid, krill and fish. Its teeth are about 2.5 cm (1 in) long.",
+  "page": "Leopard seal",
+  "evidence": "It feeds on a wide range of prey including its fellow pinnipeds, cephalopods, krill, fish, and birds, particularly penguins."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Osprey",
+  "q": "What helps the osprey grip slippery fish?",
+  "a": "Its outer toe can turn backwards",
+  "o": [
+   "Its feet are webbed",
+   "Its talons are sticky",
+   "It has six toes"
+  ],
+  "x": "Ospreys and owls are the only raptors with a reversible outer toe, so they can hold prey with two toes in front and two behind.",
+  "page": "Osprey",
+  "evidence": "The osprey and owls are the only raptors whose outer toes are reversible, allowing them to grasp their prey with two toes in front and two behind."
+ },
+ {
+  "topic": "bodies",
+  "animal": "Manta ray",
+  "q": "Manta rays have one of the highest what of any fish?",
+  "a": "Brain-to-body size ratios",
+  "o": [
+   "Body temperatures",
+   "Numbers of teeth",
+   "Numbers of fins"
+  ],
+  "x": "They are filter feeders that eat zooplankton. The biggest species can be 7 m (23 ft) across.",
+  "page": "Manta ray",
+  "evidence": "They have one of the highest brain-to-body ratio of all fish, advanced cognition, and may understand mirror contingencies."
+ },
+ {
+  "topic": "diet",
+  "animal": "Mosquito",
+  "q": "Which mosquitoes drink blood?",
+  "a": "Females of many species",
+  "o": [
+   "Only males",
+   "All mosquitoes",
+   "None, only nectar"
+  ],
+  "x": "All mosquitoes drink nectar. Some females need a blood meal before they can make eggs.",
+  "page": "Mosquito",
+  "evidence": "All mosquitoes drink nectar from flowers; females of many species have adapted to also drink blood."
+ },
+ {
+  "topic": "behaviour",
+  "animal": "Cone snail",
+  "q": "How does a cone snail catch its prey?",
+  "a": "With a venomous harpoon-like tooth",
+  "o": [
+   "With sticky slime",
+   "By squeezing it",
+   "With an electric shock"
+  ],
+  "x": "The barbed tooth shoots out on the end of its proboscis. Stings from some big cone snails can kill humans.",
+  "page": "Cone snail",
+  "evidence": "The tooth, which is likened to a dart or a harpoon, is barbed and can be extended some distance out from the head of the snail at the end of the proboscis."
+ },
+ {
+  "topic": "diet",
+  "animal": "Red crossbill",
+  "q": "What do crossbills use their crossed beak tips for?",
+  "a": "Getting seeds out of pine cones",
+  "o": [
+   "Catching fish",
+   "Cracking snail shells",
+   "Drilling for insects"
+  ],
+  "x": "The red crossbill is a small finch. Its mandibles cross at the tips to pry open conifer cones.",
+  "page": "Red crossbill",
+  "evidence": "Crossbills have distinctive mandibles, crossed at the tips, which enable them to extract seeds from conifer cones and other fruits."
+ }
+]

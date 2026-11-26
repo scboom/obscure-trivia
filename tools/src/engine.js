@@ -963,7 +963,8 @@ function qHead(item, k) {
       <span class="facts" style="margin:0"><span class="chip">${esc(g)}</span>${q.t && q.t !== g ? `<span class="chip mana">${esc(q.t)}</span>` : ""}</span></div>
     <h2 class="qtext">${esc(qline)}</h2>
     ${q.i ? `<img class="qimg" src="${esc(q.i)}" alt="Picture for this question" decoding="async">` : ""}
-    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}`;
+    ${card ? `<div class="cardtext">${rich(card)}</div>` : ""}
+    ${q.l ? `<ol class="evlist">${q.l.map((e, i) => `<li><span class="evk">${LET[i]}</span><span>${rich(e)}</span></li>`).join("")}</ol>` : ""}`;
 }
 function quizView() {
   const item = S.qs[S.cur], mine = S.answers[S.cur], done = mine !== null;
@@ -1063,7 +1064,7 @@ function resultsView() {
     const [qline, ...rest] = q.q.split("\n");
     const line = (who, cls, a) => a === null || a === undefined ? `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v muted">No answer</span></div>`
       : `<div class="ans"><span class="who ${cls}">${esc(who)}</span><span class="v ${a === it.correct ? "ok-t" : "no-t"}">${a === it.correct ? "✓" : "✗"} ${rich(it.opts[a])}</span>${q.v ? `<span class="v muted small">${esc(valOf(it, a))}</span>` : ""}</div>`;
-    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}${q.i ? ` <img class="rvimg" src="${esc(q.i)}" alt="" loading="lazy">` : ""}</div>
+    return `<div class="rv"><div class="q"><span class="num">${k + 1}.</span>${esc(qline)}${rest.length ? ` <span class="muted small">“${rich(rest.join(" "))}”</span>` : ""}${q.l ? ` <span class="muted small">${q.l.map((e, i) => `${LET[i]}. ${rich(e)}`).join(" · ")}</span>` : ""}${q.i ? ` <img class="rvimg" src="${esc(q.i)}" alt="" loading="lazy">` : ""}</div>
       ${line(S.meName || S.nick || "You", "you", S.answers[k])}
       ${pals.map(p => line(p.name, "pal " + (p.c || "c1"), p.answers[k])).join("")}
       ${S.answers[k] !== it.correct ? `<div class="ans"><span class="who key">Answer</span><span class="v">${rich(q.a)}</span>${q.v ? `<span class="v muted small">${esc(q.v[q.a] || "")}</span>` : ""}</div>` : ""}

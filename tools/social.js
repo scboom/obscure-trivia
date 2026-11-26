@@ -8,9 +8,10 @@ const VINYL = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/music/vi
 const SHEEP = 'data:image/png;base64,' + fs.readFileSync(outDir + '/minecraft/sheep.png').toString('base64');
 const PEELY = 'data:image/png;base64,' + fs.readFileSync(outDir + '/fortnite/peely.png').toString('base64');
 const CROWN = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/clash-royale/crown.svg').toString('base64');
+const PAW = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/animals/paw.svg').toString('base64');
 const HOOK = 'data:image/svg+xml;base64,' + fs.readFileSync(outDir + '/dead-by-daylight/hook.svg').toString('base64');
 const EARTH = 'data:image/jpeg;base64,' + fs.readFileSync(require('path').join(require('path').dirname(texPath), 'world', 'earth-social.jpg')).toString('base64');
-const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Eater&family=Spectral:wght@600;700&family=Titan+One&family=Baloo+2:wght@600&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&family=Unbounded:wght@700&family=DM+Sans:wght@500&family=Anton&family=Nunito:wght@700&display=swap">';
+const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Sniglet:wght@800&family=Nunito:wght@700&family=Abril+Fatface&family=Libre+Franklin:wght@500;800&family=Fredoka:wght@700&family=Lexend:wght@400&family=Bungee&family=Plus+Jakarta+Sans:wght@600&family=Eater&family=Spectral:wght@600;700&family=Titan+One&family=Baloo+2:wght@600&family=Inter:wght@500;700&family=Bree+Serif&family=Outfit:wght@800&family=Oswald:wght@700&family=Lilita+One&family=Rubik:wght@500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@600&family=Unbounded:wght@700&family=DM+Sans:wght@500&family=Anton&family=Nunito:wght@700&display=swap">';
 const base = '@font-face{font-family:Monocraft;src:url(' + MONO + ')}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{box-sizing:border-box;padding:70px 80px;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;font-family:Inter,system-ui,sans-serif}';
 const pages = {
   'hub': `<style>${base}body{background:radial-gradient(ellipse at 20% -10%,#2a2636 0%,transparent 55%),#121117;color:#f2efe6;justify-content:center}
@@ -27,9 +28,13 @@ const pages = {
     .fn{border-radius:12px;background:linear-gradient(180deg,#4b95ff,#2a6cf0 55%,#3b2bb8);color:#fff;font-family:Anton;font-weight:400;text-transform:uppercase;letter-spacing:.02em;box-shadow:inset 0 0 0 2px rgba(255,226,58,.7)}
     .roy{border-radius:14px;background:radial-gradient(circle at 90% 10%,rgba(255,201,40,.45),transparent 50%),linear-gradient(180deg,#2a5fd6,#163d99);color:#fff;font-family:'Titan One';font-weight:400;box-shadow:inset 0 0 0 3px rgba(255,201,40,.8)}
     .dbd{border-radius:10px;background:radial-gradient(circle at 90% 10%,rgba(200,22,30,.5),transparent 55%),linear-gradient(180deg,#24151a,#0c0a0b);color:#ece6dd;font-family:Eater,serif;font-weight:400;letter-spacing:.03em;box-shadow:inset 0 0 0 2px rgba(222,36,44,.75)}
-    .tiles{flex-wrap:wrap;max-width:1040px}</style>
+    .an{border-radius:14px;background:radial-gradient(ellipse at 0% 0%,rgba(140,210,100,.45),transparent 65%),linear-gradient(180deg,#1d5139,#0e2a1e);color:#f4f1e6;font-family:Fredoka,sans-serif;font-weight:700;box-shadow:inset 0 0 0 2px rgba(255,178,56,.6)}
+    .odd{border-radius:14px;background:linear-gradient(180deg,#24204a,#131129);color:#f3f1ff;font-family:Bungee,sans-serif;font-weight:400;box-shadow:inset 0 0 0 2px rgba(55,214,195,.6)}
+    .emj{border-radius:14px;background:linear-gradient(160deg,#ffe680,#fff1c2);color:#2b1e00;font-family:Sniglet,sans-serif;font-weight:800;box-shadow:inset 0 0 0 2px #ff5f9e}
+    .tl{border-radius:10px;background:linear-gradient(180deg,#f8f0dc,#efe1c2);color:#2e2414;font-family:'Abril Fatface',serif;font-weight:400;box-shadow:inset 0 0 0 2px #b5452b}
+    .tiles{flex-wrap:wrap;max-width:1080px;gap:14px!important}.t{height:62px!important;font-size:25px!important}</style>
     <div class="mark">?</div><h1>Obscure Trivia</h1><p>Trivia for the details only real players know.</p>
-    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t fn">OG Fortnite</div><div class="t roy">Clash Royale</div><div class="t dbd">Dead by Daylight</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t mu">Music</div><div class="t wb">This or That</div></div>`,
+    <div class="tiles"><div class="t hs">Hearthstone Battlegrounds</div><div class="t mc">Minecraft</div><div class="t fn">OG Fortnite</div><div class="t roy">Clash Royale</div><div class="t dbd">Dead by Daylight</div><div class="t an">Animals</div><div class="t odd">Odd One Out</div><div class="t emj">Emoji Puzzle</div><div class="t tl">Timeline</div><div class="t gk">General Knowledge</div><div class="t fb">Football</div><div class="t cr">Cars</div><div class="t mu">Music</div><div class="t wb">This or That</div></div>`,
   'hearthstone': `<style>${base}body{background:radial-gradient(circle at 84% 26%,rgba(255,196,96,.5) 0,rgba(255,150,50,.18) 22%,transparent 46%),radial-gradient(ellipse at 8% 115%,rgba(255,120,40,.25),transparent 55%),repeating-linear-gradient(180deg,transparent 0 102px,rgba(0,0,0,.22) 102px 106px),linear-gradient(180deg,#4b2e19,#301d10 55%,#1b100a);color:#f6e7cf;box-shadow:inset 0 0 0 3px rgba(232,180,80,.45)}
     .coin{background:url(${EMBLEM}) center/100% 100% !important;filter:drop-shadow(0 0 40px rgba(255,170,70,.55));position:absolute;top:60px;right:100px;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25),0 0 0 10px rgba(232,180,80,.16),0 0 80px rgba(255,180,80,.6);width:250px;height:250px;font-size:84px!important;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3c4 0 12%,#e8b450 38%,#a8721f 100%);color:#2a1b08;font:400 64px 'Bree Serif'}
     h1{font:400 92px/1.02 'Bree Serif',serif;margin:0}p{font-size:34px;color:#e3cfb2;margin:0}.by{font:800 26px 'Bricolage Grotesque';color:#e8b450;letter-spacing:.02em}</style>
@@ -67,6 +72,27 @@ const pages = {
     h1{font:400 78px/1.08 Eater,serif;margin:0;max-width:680px;letter-spacing:.03em;text-shadow:0 0 30px rgba(200,22,30,.6),0 6px 0 rgba(0,0,0,.7)}p{font:600 34px Spectral,serif;margin:0;color:#cfc5bb;max-width:26ch}
     .by{font:700 26px Spectral,serif;color:#ff6166;letter-spacing:.12em}</style>
     <h1>Dead by Daylight Quiz</h1><p>Killers, Survivors, perks and lore · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+  'animals': `<style>${base}body{background:url(${PAW}) right 110px top 70px/auto 52% no-repeat,radial-gradient(ellipse 60% 70% at 0% 0%,rgba(140,210,100,.4),transparent 60%),radial-gradient(circle at 82% 22%,rgba(255,190,70,.35),transparent 42%),linear-gradient(180deg,#1d5139,#143a29 55%,#0e2a1e);color:#f4f1e6;box-shadow:inset 0 0 0 3px rgba(255,178,56,.5)}
+    h1{font:700 112px/1.02 Fredoka,sans-serif;margin:0}p{font:400 34px Lexend,sans-serif;margin:0;color:#d5e3d0;max-width:24ch}
+    .by{font:700 26px Fredoka,sans-serif;color:#ffc861;letter-spacing:.06em}</style>
+    <h1>Animals Quiz</h1><p>Baby names, records, amazing bodies, breeds · 20 questions · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+  'odd-one-out': `<style>${base}body{background:radial-gradient(ellipse 60% 60% at 100% 0%,rgba(255,107,91,.32),transparent 60%),radial-gradient(ellipse 60% 60% at 0% 100%,rgba(55,214,195,.25),transparent 60%),linear-gradient(180deg,#24204a,#1a1738 60%,#131129);color:#f3f1ff}
+    .g{position:absolute;top:70px;right:110px;display:grid;grid-template-columns:150px 150px;gap:30px}.g i{width:150px;height:150px;border-radius:50%;background:#37d6c3;box-shadow:0 0 40px rgba(55,214,195,.4)}
+    .g b{width:0;height:0;margin:6px auto 0;border-left:82px solid transparent;border-right:82px solid transparent;border-bottom:142px solid #ff6b5b;filter:drop-shadow(0 0 26px rgba(255,107,91,.5))}
+    h1{font:400 92px/1.05 Bungee,sans-serif;margin:0;max-width:7ch}p{font:600 34px 'Plus Jakarta Sans',sans-serif;margin:0;color:#d6d2f5;max-width:22ch}
+    .by{font:400 26px Bungee,sans-serif;color:#ff8c7f;letter-spacing:.04em}</style>
+    <div class="g"><i></i><i></i><i></i><b></b></div><h1>Odd One Out</h1><p>Spot the one that doesn't belong · 20 rounds · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+  'emoji-puzzle': `<style>${base}body{background:radial-gradient(ellipse 60% 60% at 0% 0%,rgba(255,140,190,.6),transparent 60%),radial-gradient(ellipse 60% 60% at 100% 100%,rgba(120,200,255,.55),transparent 60%),linear-gradient(160deg,#ffe680,#fff1c2);color:#2b1e00}
+    .row{position:absolute;top:70px;right:90px;font-size:120px;letter-spacing:.06em;font-family:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif}
+    h1{font:800 110px/1.02 Sniglet,sans-serif;margin:0;max-width:7ch}p{font:700 34px Nunito,sans-serif;margin:0;color:#5a4718;max-width:24ch}
+    .by{font:800 26px Sniglet,sans-serif;color:#d6246c;letter-spacing:.04em}</style>
+    <div class="row">🦁👑🌅</div><h1>Emoji Puzzle</h1><p>Guess the film, game, song or saying · 20 puzzles · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
+  'timeline': `<style>${base}body{background:repeating-linear-gradient(0deg,rgba(122,74,36,.05) 0 1px,transparent 1px 34px),linear-gradient(180deg,#f8f0dc,#efe1c2);color:#2e2414;box-shadow:inset 0 0 0 3px #d9c7a2}
+    .line{position:absolute;top:130px;right:100px;width:420px;height:8px;border-radius:4px;background:linear-gradient(90deg,#b5452b,#e2a33a);display:flex;justify-content:space-between;align-items:center}
+    .line i{width:38px;height:38px;border-radius:50%;background:#fffaf0;border:7px solid #b5452b;box-sizing:border-box}.line i:nth-child(2),.line i:nth-child(4){transform:translateY(-40px)}
+    h1{font:400 128px/1 'Abril Fatface',serif;margin:0}p{font:500 34px 'Libre Franklin',sans-serif;margin:0;color:#5d4a2f;max-width:26ch}
+    .by{font:800 26px 'Libre Franklin',sans-serif;color:#9c3820;letter-spacing:.12em}</style>
+    <div class="line"><i></i><i></i><i></i><i></i></div><h1>Timeline</h1><p>Which came first? Put history in order · 20 rounds · solo or party</p><div class="by">OBSCURE TRIVIA</div>`,
   'minecraft': `<style>${base}body{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(14,34,8,.6)),url(${SHEEP}) right 80px top 40px/auto 44% no-repeat,repeating-conic-gradient(rgba(255,255,255,.05) 0 25%,rgba(0,0,0,0) 0 50%) 0 0/52px 52px,linear-gradient(180deg,#70b540,#5b9d32 60%,#4a8627);color:#fff}
     h1{font:400 110px/1 Monocraft,monospace;margin:0;text-shadow:6px 6px 0 #1f1f1f}p{font-size:34px;margin:0;text-shadow:2px 2px 0 #000}
     .by{font:800 26px 'Bricolage Grotesque';color:#7ad155;letter-spacing:.02em;text-shadow:2px 2px 0 #000}</style>

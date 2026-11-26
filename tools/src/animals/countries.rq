@@ -1,0 +1,10 @@
+SELECT ?c ?cLabel ?contLabel ?capLabel ?pop ?landlocked ?island ?n WHERE {
+  ?c wdt:P31 wd:Q3624078; wikibase:sitelinks ?n .
+  FILTER NOT EXISTS { ?c wdt:P576 ?end }
+  OPTIONAL { ?c wdt:P30 ?cont . }
+  OPTIONAL { ?c wdt:P36 ?cap . }
+  OPTIONAL { ?c wdt:P1082 ?pop . }
+  BIND(EXISTS { ?c wdt:P31 wd:Q123480 } AS ?landlocked)
+  BIND(EXISTS { ?c wdt:P31 wd:Q112099 } AS ?island)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

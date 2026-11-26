@@ -1,0 +1,5042 @@
+[
+ {
+  "cat": "History",
+  "event": "The Battle of Marathon is fought",
+  "date": "-0490",
+  "precision": "year",
+  "page": "Battle of Marathon",
+  "evidence": "The Battle of Marathon took place in 490 BCE during the first Persian invasion of Greece.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Julius Caesar is assassinated",
+  "date": "-0044-03-15",
+  "precision": "day",
+  "page": "Assassination of Julius Caesar",
+  "evidence": "Julius Caesar, the Roman dictator, was assassinated on the Ides of March (15 March), 44 BC, by a group of senators during a Senate session at the Curia of Pompey, located within the Theatre of Pompey in Rome.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Thermopylae is fought",
+  "date": "-0480",
+  "precision": "year",
+  "page": "Battle of Thermopylae",
+  "evidence": "The Battle of Thermopylae () was fought in 480 BC at Thermopylae between the Achaemenid Persian Empire under Xerxes and an alliance of Greek city-states led by Sparta under Leonidas I. Lasting over the course of three days, it was one of the most prominent battles of both the second Persian invasion of Greece and the",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Alexander the Great wins at Gaugamela",
+  "date": "-0331",
+  "precision": "year",
+  "page": "Battle of Gaugamela",
+  "evidence": "The Battle of Gaugamela ( GAW-gə-MEE-lə; Ancient Greek: Γαυγάμηλα, romanized: Gaugámēla, lit. 'the Camel's House'), also called the Battle of Arbela (Ἄρβηλα, Árbēla), took place in 331 BC between the forces of the Army of Macedon under Alexander the Great and the Persian Army under King Darius III.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Mount Vesuvius erupts and buries Pompeii",
+  "date": "0079",
+  "precision": "year",
+  "page": "Eruption of Mount Vesuvius in 79 AD",
+  "evidence": "In 79 AD, Mount Vesuvius, a stratovolcano located in the modern-day region of Campania, Italy, erupted, causing one of the deadliest eruptions in history.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Actium is fought",
+  "date": "-0031-09-02",
+  "precision": "day",
+  "page": "Battle of Actium",
+  "evidence": "The battle took place on 2 September 31 BC in the Ionian Sea, near the former Roman colony of Actium, Greece, and was the climax of over a decade of rivalry between Octavian and Mark Antony.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Augustus becomes the first Roman emperor",
+  "date": "-0027",
+  "precision": "year",
+  "page": "Augustus",
+  "evidence": "Augustus (born Gaius Octavius; 23 September 63 BC – 19 August AD 14), also known as Octavian (Latin: Octavianus), was the founder of the Roman Empire and the first Roman emperor from 27 BC until his death in AD 14.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Last Western Roman emperor is deposed",
+  "date": "0476-09-04",
+  "precision": "day",
+  "page": "Romulus Augustulus",
+  "evidence": "Romulus Augustus (c. 460–465 – c. 511–530), nicknamed Augustulus, was the last Roman emperor of the West from 31 October 475 until 4 September 476.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Hannibal leads his army across the Alps",
+  "date": "-0218",
+  "precision": "year",
+  "page": "Hannibal's crossing of the Alps",
+  "evidence": "Hannibal's crossing of the Alps in 218 BC was one of the major events of the Second Punic War and one of the most celebrated achievements of any military force in ancient warfare.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Qin Shi Huang unifies China",
+  "date": "-0221",
+  "precision": "year",
+  "page": "Qin Shi Huang",
+  "evidence": "By 221 BC, he had conquered all the other warring states and unified all of China, and he ascended the throne as China's first emperor.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Visigoths sack Rome",
+  "date": "0410-08-24",
+  "precision": "day",
+  "page": "Sack of Rome (410)",
+  "evidence": "The sack of Rome on 24 August 410 AD was undertaken by the Visigoths led by their king, Alaric.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Cannae is fought",
+  "date": "-0216-08-02",
+  "precision": "day",
+  "page": "Battle of Cannae",
+  "evidence": "The Battle of Cannae (; Latin: [ˈkanːae̯]) was a key engagement of the Second Punic War between the Roman Republic and Carthage, fought on 2 August 216 BC near the ancient village of Cannae in Apulia, southeast Italy.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Edict of Milan is agreed",
+  "date": "0313-02-13",
+  "precision": "day",
+  "page": "Edict of Milan",
+  "evidence": "The Edict of Milan (Latin: Edictum Mediolanense; Greek: Διάταγμα τῶν Μεδιολάνων, Diatagma tōn Mediolanōn) was the 13 February 313 AD agreement to treat Christians benevolently within the Roman Empire and allow religious freedom more broadly.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Constantinople becomes the Roman capital",
+  "date": "0330",
+  "precision": "year",
+  "page": "Constantinople",
+  "evidence": "Constantinople, the modern Istanbul, was the capital of the Roman Empire and Byzantine Empire from 330 until its takeover by the Ottoman Empire in 1453.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Julius Caesar crosses the Rubicon",
+  "date": "-0049-01",
+  "precision": "month",
+  "page": "Crossing the Rubicon",
+  "evidence": "Its meaning comes from the crossing of the Rubicon river by Julius Caesar in January 49 BC at the head of the 13th Legion.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Roman conquest of Britain begins",
+  "date": "0043",
+  "precision": "year",
+  "page": "Roman conquest of Britain",
+  "evidence": "It began in earnest in AD 43 under Emperor Claudius, and was largely completed in the southern half of Britain (most of what is now called England and Wales) by AD 87, when the Stanegate was established.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Peloponnesian War begins",
+  "date": "-0431",
+  "precision": "year",
+  "page": "Peloponnesian War",
+  "evidence": "The opening phase, called the Ten Years' War or the Archidamian War, began in 431 BC when the Spartan king Archidamus II invaded Attica with his army.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of the Teutoburg Forest is fought",
+  "date": "0009-09",
+  "precision": "month",
+  "page": "Battle of the Teutoburg Forest",
+  "evidence": "The Battle of the Teutoburg Forest, also called the Varian Disaster (Latin: Clades Variana) by Roman historians, was a major battle fought between an alliance of Germanic peoples and the Roman Empire between 8 and 11 September 9 AD, possibly near modern Kalkriese.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Cyrus the Great captures Babylon",
+  "date": "-0539",
+  "precision": "year",
+  "page": "Fall of Babylon",
+  "evidence": "The fall of Babylon occurred in 539 BCE, when the Achaemenid Empire conquered the Neo-Babylonian Empire.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The trial of Socrates takes place",
+  "date": "-0399",
+  "precision": "year",
+  "page": "Trial of Socrates",
+  "evidence": "The Trial of Socrates (399 BC) was held to determine the philosopher's guilt of two charges against the city of Athens: asebeia (impiety) and corruption of the youth.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Spartacus's slave revolt begins",
+  "date": "-0073",
+  "precision": "year",
+  "page": "Third Servile War",
+  "evidence": "The revolt began in 73 BC, with the escape of around 70 slave gladiators from a gladiator school in Capua.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Great Fire of Rome breaks out",
+  "date": "0064-07",
+  "precision": "month",
+  "page": "Great Fire of Rome",
+  "evidence": "The Great Fire of Rome (Latin: incendium magnum Romae) began on the evening of 18–19 July 64 AD.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Charlemagne is crowned emperor",
+  "date": "0800",
+  "precision": "year",
+  "page": "Charlemagne",
+  "evidence": "In 800, Charlemagne was crowned emperor in Rome by Pope Leo III.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Hastings is fought",
+  "date": "1066-10-14",
+  "precision": "day",
+  "page": "Battle of Hastings",
+  "evidence": "The Battle of Hastings was fought on 14 October 1066 between the Norman-French army of William, Duke of Normandy, and an English army under the Anglo-Saxon King Harold Godwinson, beginning the Norman Conquest of England.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "King John agrees to Magna Carta",
+  "date": "1215-06-15",
+  "precision": "day",
+  "page": "Magna Carta",
+  "evidence": "Magna Carta (Medieval Latin for \"Great Charter\"), sometimes spelled Magna Charta, is a royal charter of rights sealed by King John of England at Runnymede, near Windsor, on 15 June 1215.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The First Crusade begins",
+  "date": "1096",
+  "precision": "year",
+  "page": "First Crusade",
+  "evidence": "The First Crusade (1096–1099) was the first of a series of religious wars, or Crusades, which were initiated, supported and at times directed by the Latin Church in the Middle Ages.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Ottomans capture Constantinople",
+  "date": "1453-05-29",
+  "precision": "day",
+  "page": "Fall of Constantinople",
+  "evidence": "Constantinople, the capital city of the Byzantine Empire, was captured by the Ottoman Empire on 29 May 1453 as part of the culmination of a 53-day siege which had begun on 6 April.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Hundred Years' War begins",
+  "date": "1337",
+  "precision": "year",
+  "page": "Hundred Years' War",
+  "evidence": "The Hundred Years' War (French: Guerre de Cent Ans; 1337–1453) was a series of conflicts between the kingdoms of England and France, and a civil war in France during the late Middle Ages.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Genghis Khan founds the Mongol Empire",
+  "date": "1206",
+  "precision": "year",
+  "page": "Genghis Khan",
+  "evidence": "Temüjin formally adopted the title \"Genghis Khan\", the meaning of which is uncertain, at an assembly in 1206.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Agincourt is fought",
+  "date": "1415-10-25",
+  "precision": "day",
+  "page": "Battle of Agincourt",
+  "evidence": "It took place on 25 October 1415 (Saint Crispin's Day) near Azincourt, in northern France.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Bosworth Field is fought",
+  "date": "1485-08-22",
+  "precision": "day",
+  "page": "Battle of Bosworth Field",
+  "evidence": "Fought on 22 August 1485, the battle was won by an alliance of Lancastrians and disaffected Yorkists.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Vasco da Gama reaches India by sea",
+  "date": "1498-05-20",
+  "precision": "day",
+  "page": "Vasco da Gama",
+  "evidence": "Da Gama finally accomplished the feat when he landed at Kozhikode on 20 May 1498.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Muhammad makes the Hijra to Medina",
+  "date": "0622",
+  "precision": "year",
+  "page": "Hijrah",
+  "evidence": "In May 622, after having convened twice with members of the Medinan tribes of Aws and Khazraj at al-'Aqabah near Mina, Muhammad secretly left his home in Mecca to emigrate to their city, along with his friend, father-in-law and companion Abu Bakr.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Tours is fought",
+  "date": "0732-10-10",
+  "precision": "day",
+  "page": "Battle of Tours",
+  "evidence": "The Battle of Tours, also called the Battle of Poitiers and the Battle of the Highway of the Martyrs (Arabic: معركة بلاط الشهداء, romanized: Maʿrakat Balāṭ ash-Shuhadā'), was fought on 10 October 732, and was an important battle during the Umayyad invasion of Gaul.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The East-West Schism splits the Church",
+  "date": "1054",
+  "precision": "year",
+  "page": "East–West Schism",
+  "evidence": "The East–West Schism, also known as the Great Schism or the Schism of 1054, is the break of communion between the Catholic Church and the Eastern Orthodox Church since 1054.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Ming dynasty is founded",
+  "date": "1368",
+  "precision": "year",
+  "page": "Ming dynasty",
+  "evidence": "The Ming dynasty, officially the Great Ming, was an imperial dynasty of China that ruled from 1368 to 1644, following the collapse of the Mongol-led Yuan dynasty.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Treaty of Tordesillas is signed",
+  "date": "1494-06-07",
+  "precision": "day",
+  "page": "Treaty of Tordesillas",
+  "evidence": "The Treaty of Tordesillas, signed in Tordesillas, Spain, on 7 June 1494, and ratified in Setúbal, Portugal, divided the newly discovered lands outside Europe between the Kingdom of Portugal and the Crown of Castile, along a meridian 370 leagues (c. 2,100 km or 1,300 mi) west of the Cape Verde islands, off the west",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Peasants' Revolt breaks out in England",
+  "date": "1381",
+  "precision": "year",
+  "page": "Peasants' Revolt",
+  "evidence": "The Peasants' Revolt, also named Wat Tyler's Rebellion or the Great Uprising, was a major uprising across large parts of England in 1381.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Bannockburn is fought",
+  "date": "1314-06",
+  "precision": "month",
+  "page": "Battle of Bannockburn",
+  "evidence": "The Battle of Bannockburn (Scottish Gaelic: Blàr Allt nam Bànag or Blàr Allt a' Bhonnaich) was fought on 23–24 June 1314, between the army of Robert the Bruce, King of Scots, and the army of King Edward II of England, during the First War of Scottish Independence.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Mansa Musa makes his pilgrimage to Mecca",
+  "date": "1324",
+  "precision": "year",
+  "page": "Mansa Musa",
+  "evidence": "Musa went on Hajj to Mecca in 1324, traveling with an enormous entourage and a vast supply of gold.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Kublai Khan founds the Yuan dynasty",
+  "date": "1271",
+  "precision": "year",
+  "page": "Yuan dynasty",
+  "evidence": "In the edict titled Proclamation of the Dynastic Name issued in 1271, Kublai announced the name of the new dynasty as Great Yuan and claimed the succession of former Chinese dynasties from the Three Sovereigns and Five Emperors to the Tang dynasty.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Martin Luther writes the Ninety-five Theses",
+  "date": "1517",
+  "precision": "year",
+  "page": "Ninety-five Theses",
+  "evidence": "The Ninety-five Theses or Disputation on the Power and Efficacy of Indulgences is a list of propositions for an academic disputation written in 1517 by Martin Luther, then a professor of moral theology at the University of Wittenberg, Germany.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Magellan's expedition sets sail",
+  "date": "1519-09-20",
+  "precision": "day",
+  "page": "Magellan expedition",
+  "evidence": "The five-ship fleet left Spain on 20 September 1519 with about 270 men.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Spanish Armada sails against England",
+  "date": "1588",
+  "precision": "year",
+  "page": "Spanish Armada",
+  "evidence": "The Spanish Armada (often known as Invincible Armada, or the Enterprise of England, Spanish: Grande y Felicísima Armada, lit. 'Great and Most Fortunate Navy') was a Spanish fleet that sailed from Lisbon in late May 1588, and was the largest engagement of the undeclared Anglo-Spanish War.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Mayflower carries the Pilgrims to America",
+  "date": "1620",
+  "precision": "year",
+  "page": "Mayflower",
+  "evidence": "She was notable in that she transported a group of English families, known today as the Pilgrims, from England to the New World in 1620.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Gunpowder Plot is foiled",
+  "date": "1605",
+  "precision": "year",
+  "page": "Gunpowder Plot",
+  "evidence": "The plan was to blow up the House of Lords during the State Opening of Parliament on Tuesday 5 November 1605, as the prelude to a popular revolt in the Midlands during which King James's nine-year-old daughter, Princess Elizabeth, was to be installed as the new head of state.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Great Fire of London begins",
+  "date": "1666-09-02",
+  "precision": "day",
+  "page": "Great Fire of London",
+  "evidence": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The Kingdom of Great Britain is formed",
+  "date": "1707",
+  "precision": "year",
+  "page": "Kingdom of Great Britain",
+  "evidence": "Great Britain, officially the Kingdom of Great Britain, was a sovereign state in Western Europe from 1707 to the end of 1800.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Boston Tea Party takes place",
+  "date": "1773-12-16",
+  "precision": "day",
+  "page": "Boston Tea Party",
+  "evidence": "The Boston Tea Party was an act of protest that took place on December 16, 1773, during the American Revolution.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "US Declaration of Independence is adopted",
+  "date": "1776-07-04",
+  "precision": "day",
+  "page": "United States Declaration of Independence",
+  "evidence": "On July 4, 1776, it was adopted unanimously by the Second Continental Congress, who were convened at the Pennsylvania State House, later renamed Independence Hall, in Philadelphia.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The storming of the Bastille",
+  "date": "1789-07-14",
+  "precision": "day",
+  "page": "Storming of the Bastille",
+  "evidence": "Storming of the Bastille (French: Prise de la Bastille [pʁiz də la bastij]), also known as Fall of the Bastille, which occurred in Paris, France, on 14 July 1789, was an act of political violence by revolutionary insurgents who attempted to storm and seize control of the medieval armoury, fortress, and political",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Waterloo is fought",
+  "date": "1815-06-18",
+  "precision": "day",
+  "page": "Battle of Waterloo",
+  "evidence": "The Battle of Waterloo was fought on Sunday 18 June 1815, near Waterloo (then in the United Kingdom of the Netherlands, now in Belgium), being the last engagement with Napoleon I. The French Imperial Army under the command of Napoleon I was defeated by two armies of the Seventh Coalition.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The Battle of Trafalgar is fought",
+  "date": "1805-10-21",
+  "precision": "day",
+  "page": "Battle of Trafalgar",
+  "evidence": "The Battle of Trafalgar was a fleet action fought on 21 October 1805 off Cape Trafalgar between the Royal Navy and a combined fleet of the French and Spanish navies during the Trafalgar campaign of the War of the Third Coalition.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Napoleon is crowned Emperor of the French",
+  "date": "1804-12-02",
+  "precision": "day",
+  "page": "Coronation of Napoleon",
+  "evidence": "Napoleon was crowned Emperor of the French on December 2, 1804 (11 Frimaire, Year XIII according to the French Republican calendar, commonly used at the time in France), at Notre-Dame de Paris in Paris.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The First Fleet arrives in Australia",
+  "date": "1788-01-26",
+  "precision": "day",
+  "page": "First Fleet",
+  "evidence": "Governor Arthur Phillip rejected Botany Bay, choosing instead Port Jackson to the north as the site for the new colony; the Fleet arrived there on 26 January 1788.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The American Civil War begins",
+  "date": "1861-04-12",
+  "precision": "day",
+  "page": "American Civil War",
+  "evidence": "The American Civil War (April 12, 1861 – May 26, 1865; also known by other names) was fought in the United States between the Union (\"the North\") and the Confederacy (\"the South\"), which was formed in 1861 by Southern states that had seceded from the Union to preserve the institution of slavery.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Abraham Lincoln gives the Gettysburg Address",
+  "date": "1863-11-19",
+  "precision": "day",
+  "page": "Gettysburg Address",
+  "evidence": "Lincoln delivered the speech on the afternoon of November 19, 1863, during a formal dedication of Soldiers' National Cemetery, now known as Gettysburg National Cemetery, on the grounds where the Battle of Gettysburg had been fought four and a half months earlier, between July 1 and July 3, 1863, in Gettysburg",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The German Empire is proclaimed",
+  "date": "1871-01-18",
+  "precision": "day",
+  "page": "Proclamation of the German Empire",
+  "evidence": "The proclamation of the German Empire, also known as the Deutsche Reichsgründung, took place on January 18, 1871 after the joint victory of the German states in the Franco-Prussian War.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Meiji Restoration takes place in Japan",
+  "date": "1868",
+  "precision": "year",
+  "page": "Meiji Restoration",
+  "evidence": "The Meiji Restoration (明治維新, Meiji Ishin; also translated as the Meiji Reformation]), referred to at the time as the Honorable Restoration (御維新／御一新, Goi(s)shin), was a political event that restored the Emperor of Japan's executive power in Japan in 1868 under Emperor Meiji and led to the Westernisation of Japan.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The California Gold Rush begins",
+  "date": "1848-01-24",
+  "precision": "day",
+  "page": "California gold rush",
+  "evidence": "The California gold rush (1848–1855) was a gold rush in California, which began on January 24, 1848, when gold was found by James W. Marshall at Sutter's Mill in Coloma, California.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The USA buys Louisiana from France",
+  "date": "1803",
+  "precision": "year",
+  "page": "Louisiana Purchase",
+  "evidence": "The Louisiana Purchase (French: Vente de la Louisiane, lit. 'Sale of Louisiana') was the acquisition of the territory of Louisiana by the United States from the French First Republic in 1803.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Queen Victoria is crowned",
+  "date": "1838-06-28",
+  "precision": "day",
+  "page": "Coronation of Queen Victoria",
+  "evidence": "The coronation of Victoria as queen of the United Kingdom took place on Thursday, 28 June 1838, just over a year after she succeeded to the throne of the United Kingdom at the age of 18.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Peter the Great founds Saint Petersburg",
+  "date": "1703-05-27",
+  "precision": "day",
+  "page": "Saint Petersburg",
+  "evidence": "The city was founded by Tsar Peter the Great on 27 May 1703 on the site of a captured Swedish fortress, and was named after the apostle Saint Peter.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "First US transcontinental railroad completed",
+  "date": "1869-05-10",
+  "precision": "day",
+  "page": "First transcontinental railroad",
+  "evidence": "The railroad opened for through traffic between Sacramento and Omaha on May 10, 1869, when CPRR President Leland Stanford ceremonially tapped the gold \"Last Spike\" (later often referred to as the \"Golden Spike\") with a silver hammer at Promontory Summit.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "First crewed hot-air balloon flight",
+  "date": "1783",
+  "precision": "year",
+  "page": "Montgolfier brothers",
+  "evidence": "They invented the Montgolfière-style hot air balloon, Globe aérostatique, which launched the first confirmed piloted ascent by humans in 1783, carrying Jacques-Étienne.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Rosetta Stone is discovered",
+  "date": "1799-07",
+  "precision": "month",
+  "page": "Rosetta Stone",
+  "evidence": "It was found there in July 1799 by French army officer Pierre-François Bouchard during France's invasion of Egypt.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The USA buys Alaska from Russia",
+  "date": "1867-03-30",
+  "precision": "day",
+  "page": "Alaska Purchase",
+  "evidence": "Seward and Steckel agreed to a treaty for the sale on March 30, 1867.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Wright brothers' first powered flight",
+  "date": "1903-12-17",
+  "precision": "day",
+  "page": "Wright brothers",
+  "evidence": "They made the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903, four miles (6 km) south of Kitty Hawk, North Carolina, at what is now known as Kill Devil Hills.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "Lindbergh flies solo across the Atlantic",
+  "date": "1927-05",
+  "precision": "month",
+  "page": "Charles Lindbergh",
+  "evidence": "On May 20–21, 1927, he made the first nonstop flight from New York to Paris, a distance of 3,600 miles (5,800 km), flying alone for over 33 hours.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Titanic sinks",
+  "date": "1912-04-15",
+  "precision": "day",
+  "page": "Titanic",
+  "evidence": "RMS Titanic was a British ocean liner that sank in the early hours of 15 April 1912 after striking an iceberg on her maiden voyage from Southampton, England, to New York City.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "Napoleon invades Russia",
+  "date": "1812-06-24",
+  "precision": "day",
+  "page": "French invasion of Russia",
+  "evidence": "Beginning on 24 June 1812, the initial wave of the multinational Grande Armée crossed the Neman River, marking the entry from the Duchy of Warsaw into Russia.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Darwin sets sail on HMS Beagle",
+  "date": "1831-12-27",
+  "precision": "day",
+  "page": "Second voyage of HMS Beagle",
+  "evidence": "The second survey expedition of HMS Beagle took place from 27 December 1831 to 2 October 1836.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Gregorian calendar is introduced",
+  "date": "1582-10",
+  "precision": "month",
+  "page": "Gregorian calendar",
+  "evidence": "It went into effect in October 1582 following the papal bull Inter gravissimas issued by Pope Gregory XIII, which introduced it as a modification of, and replacement for, the Julian calendar.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "World War I begins",
+  "date": "1914-07-28",
+  "precision": "day",
+  "page": "World War I",
+  "evidence": "World War I, or the First World War (28 July 1914 – 11 November 1918), also known as the Great War, was a global conflict between two coalitions: the Allies (or Entente) and the Central Powers.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The armistice ending World War I is signed",
+  "date": "1918-11-11",
+  "precision": "day",
+  "page": "Armistice of 11 November 1918",
+  "evidence": "The Armistice of 11 November 1918 was the armistice that ended fighting on land, at sea, and in the air in World War I between the Entente and their last remaining opponent, Germany.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The October Revolution in Russia",
+  "date": "1917-11-07",
+  "precision": "day",
+  "page": "October Revolution",
+  "evidence": "It began through an insurrection in Petrograd (now Saint Petersburg) on 7 November 1917 [O.S. 25 October].",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "World War II begins",
+  "date": "1939-09-01",
+  "precision": "day",
+  "page": "World War II",
+  "evidence": "World War II, or the Second World War (1 September 1939 – 2 September 1945), was a global conflict between two coalitions: the Allies and the Axis powers.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "VE Day marks Germany's surrender in WWII",
+  "date": "1945-05-08",
+  "precision": "day",
+  "page": "Victory in Europe Day",
+  "evidence": "Victory in Europe Day is the day celebrating the formal acceptance by the Allies of World War II of Nazi Germany's unconditional surrender of its armed forces on Tuesday, 8 May 1945; it marked the official cessation of all German military operations.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "The United Nations Charter is signed",
+  "date": "1945-06-26",
+  "precision": "day",
+  "page": "United Nations",
+  "evidence": "The United Nations (UN) is an international intergovernmental organization established by the signing of the Charter of the United Nations on 26 June 1945 with the articulated mission of maintaining international peace and security, developing friendly relations among states, promoting international cooperation, and",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "India gains independence",
+  "date": "1947-08-15",
+  "precision": "day",
+  "page": "Independence Day (India)",
+  "evidence": "Independence Day is celebrated annually on 15 August as a public holiday in India commemorating the nation's independence from the United Kingdom on 15 August 1947.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The People's Republic of China is proclaimed",
+  "date": "1949-10-01",
+  "precision": "day",
+  "page": "Proclamation of the People's Republic of China",
+  "evidence": "The People's Republic of China was proclaimed by Mao Zedong, the chairman of the Chinese Communist Party (CCP), on 1 October 1949, in Tiananmen Square in Beijing.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Berlin Wall falls",
+  "date": "1989-11-09",
+  "precision": "day",
+  "page": "Fall of the Berlin Wall",
+  "evidence": "The fall of the Berlin Wall along with the fall of the inner German border occurred after a Politburo press conference on 9 November 1989 prematurely announced that East Germans could travel without restrictions after, in the decades before, hundreds had been killed by Border Troops of the German Democratic Republic",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "Construction of the Berlin Wall begins",
+  "date": "1961-08-13",
+  "precision": "day",
+  "page": "Berlin Wall",
+  "evidence": "Construction of the Berlin Wall was commenced by the government of the GDR on 13 August 1961.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "New Zealand women win the right to vote",
+  "date": "1893-09-19",
+  "precision": "day",
+  "page": "Women's suffrage in New Zealand",
+  "evidence": "The electoral bill granting women the franchise was given royal assent by Governor Lord Glasgow on 19 September 1893.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Soviet Union is dissolved",
+  "date": "1991-12-26",
+  "precision": "day",
+  "page": "Dissolution of the Soviet Union",
+  "evidence": "On 26 December 1991, the Soviet Union was formally dissolved and ceased to exist as a sovereign state.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Cuban Missile Crisis takes place",
+  "date": "1962-10",
+  "precision": "month",
+  "page": "Cuban Missile Crisis",
+  "evidence": "The crisis lasted from 16 to 28 October 1962.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Martin Luther King's \"I Have a Dream\" speech",
+  "date": "1963-08-28",
+  "precision": "day",
+  "page": "I Have a Dream",
+  "evidence": "\"I Have a Dream\" is a public speech that was delivered by American civil rights activist and Baptist minister Martin Luther King Jr. during the March on Washington for Jobs and Freedom on August 28, 1963.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Rosa Parks refuses to give up her bus seat",
+  "date": "1955",
+  "precision": "year",
+  "page": "Rosa Parks",
+  "evidence": "She is best known for her 1955 refusal to move from her seat on a bus in Montgomery, Alabama, in defiance of Jim Crow racial segregation laws, which sparked the Montgomery bus boycott.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Korean War begins",
+  "date": "1950-06-25",
+  "precision": "day",
+  "page": "Korean War",
+  "evidence": "The Korean War (25 June 1950 – 27 July 1953) was an armed conflict fought on the Korean Peninsula between North Korea (Democratic People's Republic of Korea; DPRK) and South Korea (Republic of Korea; ROK) and their allies.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Wall Street Crash begins",
+  "date": "1929-10",
+  "precision": "month",
+  "page": "Wall Street crash of 1929",
+  "evidence": "The Wall Street crash of 1929, also known as the Great Crash, was a major stock market crash in the United States which began in October 1929 with a sharp decline in prices on the New York Stock Exchange (NYSE).",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "The Treaty of Versailles is signed",
+  "date": "1919-06-28",
+  "precision": "day",
+  "page": "Treaty of Versailles",
+  "evidence": "The Treaty of Versailles was a peace treaty signed on 28 June 1919.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Queen Elizabeth II is crowned",
+  "date": "1953-06-02",
+  "precision": "day",
+  "page": "Coronation of Elizabeth II",
+  "evidence": "The coronation of Elizabeth II as queen of the United Kingdom and the other Commonwealth realms took place on 2 June 1953 at Westminster Abbey in London.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Tutankhamun's tomb is discovered",
+  "date": "1922",
+  "precision": "year",
+  "page": "Tomb of Tutankhamun",
+  "evidence": "Tutankhamun's tomb was discovered in 1922 by excavators led by Howard Carter and his patron, George Herbert, 5th Earl of Carnarvon.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Hillary and Tenzing climb Mount Everest",
+  "date": "1953-05-29",
+  "precision": "day",
+  "page": "1953 British Mount Everest expedition",
+  "evidence": "The 1953 British Mount Everest expedition was the ninth mountaineering expedition to attempt the first ascent of Mount Everest, and the first confirmed to have succeeded when Tenzing Norgay and Edmund Hillary reached the summit on 29 May 1953 at 11:30 a.m.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "Amundsen reaches the South Pole",
+  "date": "1911-12-14",
+  "precision": "day",
+  "page": "Amundsen's South Pole expedition",
+  "evidence": "He and four other crew members made it to the geographical South Pole on 14 December 1911, which was to be five weeks ahead of the British party led by Robert Falcon Scott as part of the Terra Nova Expedition.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Hong Kong is handed over to China",
+  "date": "1997-07-01",
+  "precision": "day",
+  "page": "Handover of Hong Kong",
+  "evidence": "The handover of Hong Kong from the United Kingdom of Great Britain and Northern Ireland to the People's Republic of China occurred at midnight on 1 July 1997.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Germany is reunified",
+  "date": "1990-10-03",
+  "precision": "day",
+  "page": "German reunification",
+  "evidence": "Republic of Germany (BRD), was the process of re-establishing Germany as a single sovereign state, which began on 9 November 1989 and culminated on 3 October 1990 with the dissolution of the German Democratic Republic and the integration of its re-established constituent federated states into the Federal Republic of",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Concorde enters passenger service",
+  "date": "1976-01-21",
+  "precision": "day",
+  "page": "Concorde",
+  "evidence": "Concorde entered service on 21 January 1976 with Air France from Paris-Roissy and British Airways from London Heathrow.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Euro banknotes first enter circulation",
+  "date": "2002",
+  "precision": "year",
+  "page": "Euro banknotes",
+  "evidence": "The euro banknotes, the common currency of the eurozone, have been in circulation since the first series (also called ES1) was issued in 2002.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Prince William marries Kate Middleton",
+  "date": "2011-04-29",
+  "precision": "day",
+  "page": "Wedding of Prince William and Catherine Middleton",
+  "evidence": "The wedding of Prince William and Catherine Middleton took place on Friday, 29 April 2011 at Westminster Abbey in London, England.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "King Charles III is crowned",
+  "date": "2023-05-06",
+  "precision": "day",
+  "page": "Coronation of Charles III and Camilla",
+  "evidence": "The coronation of Charles III and his wife, Camilla, as king and queen of the United Kingdom and the 14 other Commonwealth realms, took place on Saturday, 6 May 2023 at Westminster Abbey.",
+  "level": 1
+ },
+ {
+  "cat": "History",
+  "event": "South Sudan becomes independent",
+  "date": "2011-07-09",
+  "precision": "day",
+  "page": "South Sudan",
+  "evidence": "South Sudan became an independent state on 9 July 2011, following 98.8% support for independence in a January 2011 referendum.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Barack Obama becomes US president",
+  "date": "2009-01-20",
+  "precision": "day",
+  "page": "First inauguration of Barack Obama",
+  "evidence": "The first inauguration of Barack Obama as the 44th president of the United States took place on Tuesday, January 20, 2009, at the West Front of the United States Capitol in Washington, D.C. The 56th inauguration, which set a record attendance for any event held in the city, marked the commencement of the first term of",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Pope Francis is elected",
+  "date": "2013-03-13",
+  "precision": "day",
+  "page": "Pope Francis",
+  "evidence": "Following the resignation of Pope Benedict XVI, the 2013 papal conclave elected Bergoglio as pope on 13 March.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Pope Leo XIV is elected",
+  "date": "2025",
+  "precision": "year",
+  "page": "Pope Leo XIV",
+  "evidence": "Prevost's election in the 2025 conclave was unexpected by observers, as he was considered a dark horse candidate.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "World population reaches eight billion",
+  "date": "2022-11-15",
+  "precision": "day",
+  "page": "Day of Eight Billion",
+  "evidence": "The Day of Eight Billion, marked on 15 November 2022, was designated by the United Nations as the approximate day when the world population reached eight billion people.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The Paris climate agreement is adopted",
+  "date": "2015",
+  "precision": "year",
+  "page": "Paris Agreement",
+  "evidence": "The Paris Agreement was negotiated by 196 parties at the 2015 United Nations Climate Change Conference near Paris, France.",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "The United Kingdom leaves the European Union",
+  "date": "2020-01-31",
+  "precision": "day",
+  "page": "Brexit",
+  "evidence": "The UK officially left the European Union on 31 January 2020 after a withdrawal deal was passed by Parliament, but continued to participate in many EU institutions (including the single market and customs union) during an eleven-month transition period during which it was hoped that details of the post-Brexit",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Alexander Graham Bell patents the telephone",
+  "date": "1876-03-07",
+  "precision": "day",
+  "page": "Alexander Graham Bell",
+  "evidence": "His research on hearing and speech further led him to experiment with hearing devices, which eventually culminated in his being awarded the first U.S. patent for the telephone, on March 7, 1876.",
+  "level": 1
+ },
+ {
+  "cat": "Inventions",
+  "event": "Edison files his light bulb patent",
+  "date": "1879",
+  "precision": "year",
+  "page": "Incandescent light bulb",
+  "evidence": "Edison continued to improve this design and by 4 November 1879, filed for a US patent for an electric lamp",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Newcomen builds his atmospheric steam engine",
+  "date": "1712",
+  "precision": "year",
+  "page": "Newcomen atmospheric engine",
+  "evidence": "The atmospheric engine was invented by Thomas Newcomen in 1712, and is sometimes referred to as the Newcomen fire engine (see below) or Newcomen engine.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Baird demonstrates television",
+  "date": "1926-01-26",
+  "precision": "day",
+  "page": "John Logie Baird",
+  "evidence": "John Logie Baird (; 13 August 1888 – 14 June 1946) was a Scottish inventor, electrical engineer and innovator who demonstrated the world's first mechanical television system on 26 January 1926.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Morse sends \"What hath God wrought\"",
+  "date": "1844-05-24",
+  "precision": "day",
+  "page": "What hath God wrought",
+  "evidence": "\"What hath God wrought\", the official first Morse code message transmitted in the US on May 24, 1844, to officially open the Baltimore–Washington telegraph line",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The daguerreotype photo process is unveiled",
+  "date": "1839",
+  "precision": "year",
+  "page": "Daguerreotype",
+  "evidence": "Invented by Louis Daguerre and introduced worldwide in 1839, the daguerreotype was almost completely superseded by 1856 with new, less expensive processes, such as the ambrotype (collodion process), that yield more readily viewable images.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Edison invents the phonograph",
+  "date": "1877",
+  "precision": "year",
+  "page": "Phonograph",
+  "evidence": "The phonograph was invented in 1877 by Thomas Edison; Alexander Graham Bell's Volta Laboratory made several improvements in the 1880s and introduced the graphophone, including the use of wax-coated cardboard cylinders and a cutting stylus that moved from side to side in a helical groove around the record.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Karl Benz patents his motor car",
+  "date": "1886",
+  "precision": "year",
+  "page": "Benz Patent-Motorwagen",
+  "evidence": "All these cars used the same layout and belt-drive technology for which Benz received patent number DRP37435 in 1886, hence the designation.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Ford Model T is introduced",
+  "date": "1908-10-01",
+  "precision": "day",
+  "page": "Ford Model T",
+  "evidence": "The Ford Model T is an automobile that was produced by the Ford Motor Company from October 1, 1908, to May 26, 1927.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Karl Drais invents the dandy horse bicycle",
+  "date": "1817",
+  "precision": "year",
+  "page": "Dandy horse",
+  "evidence": "It was invented by Karl Drais, who called it a Laufmaschine German: [ˈlaʊfmaˌʃiːnə] 'running machine' in 1817, and patented by him in France in February 1818 as a vélocipède.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Eli Whitney invents the cotton gin",
+  "date": "1793",
+  "precision": "year",
+  "page": "Cotton gin",
+  "evidence": "A modern mechanical cotton gin was created by American inventor Eli Whitney in 1793 and patented in 1794.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The transistor is invented at Bell Labs",
+  "date": "1947",
+  "precision": "year",
+  "page": "Transistor",
+  "evidence": "The first working device was a point-contact transistor invented in 1947 by physicists John Bardeen, Walter Brattain, and William Shockley at Bell Labs who shared the 1956 Nobel Prize in Physics for their achievement.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Ernő Rubik invents the Rubik's Cube",
+  "date": "1974",
+  "precision": "year",
+  "page": "Rubik's Cube",
+  "evidence": "The Rubik's Cube (Hungarian: Rubik-kocka) is a 3D combination puzzle invented in 1974 by Hungarian sculptor and professor of architecture Ernő Rubik.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Sholes and Glidden typewriter goes on sale",
+  "date": "1874-07-01",
+  "precision": "day",
+  "page": "Sholes and Glidden typewriter",
+  "evidence": "An arms manufacturer seeking to diversify, Remington further refined the typewriter before finally placing it on the market on July 1, 1874.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Willis Carrier invents modern air conditioning",
+  "date": "1902",
+  "precision": "year",
+  "page": "Willis Carrier",
+  "evidence": "Willis Haviland Carrier (November 26, 1876 – October 7, 1950) was an American engineer, best known for inventing modern air conditioning by inventing the first electrical air conditioning unit in 1902.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "SR.N1 hovercraft makes its first public flight",
+  "date": "1959-06-11",
+  "precision": "day",
+  "page": "SR.N1",
+  "evidence": "On 11 June 1959, it performed its first flight in front of the public.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The first working laser is built",
+  "date": "1960",
+  "precision": "year",
+  "page": "Laser",
+  "evidence": "The first laser was built in 1960 by Theodore Maiman at Hughes Research Laboratories, based on theoretical work by Charles H. Townes and Arthur Leonard Schawlow and the optical amplifier patented by Gordon Gould.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Stockton and Darlington Railway opens",
+  "date": "1825-09-27",
+  "precision": "day",
+  "page": "Stockton and Darlington Railway",
+  "evidence": "The world's first public railway to use steam locomotives, its first line connected collieries near Shildon with Darlington and Stockton in County Durham, and was officially opened on 27 September 1825.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First traffic light is installed in London",
+  "date": "1868-12",
+  "precision": "month",
+  "page": "Traffic light",
+  "evidence": "Traffic lights were first introduced in December 1868 on Parliament Square in London to reduce the need for police officers to control traffic.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Cai Lun improves papermaking",
+  "date": "0105",
+  "precision": "year",
+  "page": "Cai Lun",
+  "evidence": "However, Cai's most noted innovation was in 105 CE, when he substantially improved the papermaking process with the use of tree bark, hemp waste, old rags, and fishnets.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Christiaan Huygens invents the pendulum clock",
+  "date": "1656",
+  "precision": "year",
+  "page": "Pendulum clock",
+  "evidence": "From its invention in 1656 by Christiaan Huygens, inspired by Galileo Galilei, until the 1930s, the pendulum clock was the world's most precise type of timekeeper.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Robert Fulton's North River Steamboat is built",
+  "date": "1807",
+  "precision": "year",
+  "page": "North River Steamboat",
+  "evidence": "Built in 1807, the North River Steamboat operated on the Hudson River – at that time often known as the North River – between New York City and Albany, New York.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Penny Black stamp is issued",
+  "date": "1840-05-01",
+  "precision": "day",
+  "page": "Penny Black",
+  "evidence": "It was first issued in the United Kingdom on 1 May 1840 but was not valid for use until 6 May.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Henry Cole commissions the first Christmas card",
+  "date": "1843",
+  "precision": "year",
+  "page": "Christmas card",
+  "evidence": "The first modern Christmas card was commissioned by Sir Henry Cole in 1843 and designed by John Calcott Horsley.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Levi Strauss and Jacob Davis patent blue jeans",
+  "date": "1873-05-20",
+  "precision": "day",
+  "page": "Jeans",
+  "evidence": "Often the term \"jeans\" refers to a particular style of trousers, called \"blue jeans\", with the addition of copper pocket rivets added by Jacob W. Davis in 1871 and patented by Davis and Levi Strauss on May 20, 1873.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Bakelite plastic is invented",
+  "date": "1907",
+  "precision": "year",
+  "page": "Bakelite",
+  "evidence": "It was developed by chemist Leo Baekeland in Yonkers, New York, in 1907, and patented on December 7, 1909.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Frank Whittle patents the jet engine",
+  "date": "1930",
+  "precision": "year",
+  "page": "Frank Whittle",
+  "evidence": "While writing his thesis he formulated the fundamental concepts that led to the creation of the turbojet engine, taking out a patent on his design in 1930.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Trevithick's steam locomotive first runs",
+  "date": "1804-02-21",
+  "precision": "day",
+  "page": "Richard Trevithick",
+  "evidence": "The world's first locomotive-hauled railway journey took place on 21 February 1804, when Trevithick's unnamed steam locomotive hauled a train along the tramway of the Penydarren Ironworks, in Merthyr Tydfil, Wales.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "John Kay patents the flying shuttle",
+  "date": "1733",
+  "precision": "year",
+  "page": "Flying shuttle",
+  "evidence": "The brainchild of John Kay, the flying shuttle received a patent in the year 1733 during the Industrial Revolution.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Jethro Tull perfects his seed drill",
+  "date": "1701",
+  "precision": "year",
+  "page": "Jethro Tull (agriculturist)",
+  "evidence": "He developed a horse-drawn seed drill in 1701 that economically sowed the seeds in neat rows and later developed a horse-drawn hoe.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The first Zeppelin airship flies",
+  "date": "1900-07-02",
+  "precision": "day",
+  "page": "Zeppelin LZ 1",
+  "evidence": "It was first flown from a floating hangar on Lake Constance, near Friedrichshafen in southern Germany, on 2 July 1900.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Blaise Pascal invents his calculator",
+  "date": "1642",
+  "precision": "year",
+  "page": "Pascaline",
+  "evidence": "The Pascaline (also known as the arithmetic machine or Pascal's calculator) is a mechanical calculator invented by Blaise Pascal in 1642.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "DuPont invents Teflon",
+  "date": "1938",
+  "precision": "year",
+  "page": "Polytetrafluoroethylene",
+  "evidence": "The commonly known brand name of PTFE-based composition is Teflon by Chemours, a spin-off from DuPont, which originally invented the compound in 1938.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Charles Babbage designs the Analytical Engine",
+  "date": "1837",
+  "precision": "year",
+  "page": "Analytical engine",
+  "evidence": "It was first described in 1837 as the successor to Babbage's difference engine, which was a design for a simpler mechanical calculator.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Stephenson's Rocket locomotive is built",
+  "date": "1829",
+  "precision": "year",
+  "page": "Stephenson's Rocket",
+  "evidence": "Rocket was designed and built by Robert Stephenson in 1829, and built at the Forth Street Works of his company in Newcastle upon Tyne.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The stethoscope is invented",
+  "date": "1816",
+  "precision": "year",
+  "page": "Stethoscope",
+  "evidence": "It was invented in 1816 by René Laennec and the binaural version by Arthur Leared in 1851.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First successful liquid-fuelled rocket launch",
+  "date": "1926-03-16",
+  "precision": "day",
+  "page": "Robert H. Goddard",
+  "evidence": "Robert Hutchings Goddard (October 5, 1882 – August 10, 1945) was an American physicist, inventor, and engineer credited with creating and building the world's first liquid-fueled rocket, which was successfully launched on March 16, 1926.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Parker Brothers first publishes Monopoly",
+  "date": "1935",
+  "precision": "year",
+  "page": "Monopoly (game)",
+  "evidence": "Parker Brothers first published Monopoly in 1935.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Sputnik 1 is launched",
+  "date": "1957-10-04",
+  "precision": "day",
+  "page": "Sputnik 1",
+  "evidence": "It was launched into an elliptical low Earth orbit by the Soviet Union on 4 October 1957 as part of the Soviet space program.",
+  "level": 1
+ },
+ {
+  "cat": "Space",
+  "event": "Yuri Gagarin becomes the first human in space",
+  "date": "1961-04-12",
+  "precision": "day",
+  "page": "Vostok 1",
+  "evidence": "The Vostok 3KA space capsule was launched from Baikonur Cosmodrome on 12 April 1961, with Soviet cosmonaut Yuri Gagarin aboard, making him the first human to reach orbital velocity around the Earth and to complete a full orbit around the Earth.",
+  "level": 1
+ },
+ {
+  "cat": "Space",
+  "event": "Neil Armstrong walks on the Moon",
+  "date": "1969-07",
+  "precision": "month",
+  "page": "Apollo 11",
+  "evidence": "Apollo 11 (July 16–24, 1969) was the American spaceflight that first landed humans on the Moon, and the fifth crewed mission of NASA's Apollo program.",
+  "level": 1
+ },
+ {
+  "cat": "Space",
+  "event": "John Glenn becomes first American to orbit Earth",
+  "date": "1962-02-20",
+  "precision": "day",
+  "page": "Mercury-Atlas 6",
+  "evidence": "Mercury-Atlas 6 (MA-6) was the first crewed American orbital spaceflight, which took place on February 20, 1962.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Alexei Leonov makes the first spacewalk",
+  "date": "1965-03",
+  "precision": "month",
+  "page": "Voskhod 2",
+  "evidence": "Voskhod 2 (Russian: Восход-2, lit. 'Sunrise-2') was a Soviet crewed space mission in March 1965.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Apollo 13 launches",
+  "date": "1970-04-11",
+  "precision": "day",
+  "page": "Apollo 13",
+  "evidence": "Apollo 13 (April 11–17, 1970) was the seventh crewed mission in the Apollo space program and would have been the third Moon landing.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "The Hubble Space Telescope is launched",
+  "date": "1990",
+  "precision": "year",
+  "page": "Hubble Space Telescope",
+  "evidence": "The Hubble Space Telescope (HST or Hubble) is a space telescope that was launched into low Earth orbit in 1990 on STS-31 and remains in operation.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "First module of the ISS is launched",
+  "date": "1998-11-20",
+  "precision": "day",
+  "page": "Zarya (ISS module)",
+  "evidence": "Launched on 20 November 1998 atop a Proton-K rocket, the module would serve as the ISS's primary source of power, propulsion, and guidance during its early years.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "First Space Shuttle launch",
+  "date": "1981-04-12",
+  "precision": "day",
+  "page": "STS-1",
+  "evidence": "The first orbiter, Columbia, launched on April 12, 1981, and returned on April 14, 1981, 54.5 hours later, having orbited the Earth 37 times.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Voyager 1 is launched",
+  "date": "1977-09-05",
+  "precision": "day",
+  "page": "Voyager 1",
+  "evidence": "Voyager 1 is a space probe launched by NASA on September 5, 1977, as part of the Voyager program, to study the outer Solar System and the interstellar space beyond the Sun's heliosphere.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Mars Pathfinder lands on Mars",
+  "date": "1997-07-04",
+  "precision": "day",
+  "page": "Mars Pathfinder",
+  "evidence": "Launched on December 4, 1996, by NASA aboard a Delta II booster a month after the Mars Global Surveyor, it landed on July 4, 1997, on Mars's Ares Vallis.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "The Curiosity rover lands on Mars",
+  "date": "2012-08-06",
+  "precision": "day",
+  "page": "Curiosity (rover)",
+  "evidence": "Curiosity was launched from Cape Canaveral, Florida, on November 26, 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "The Perseverance rover lands on Mars",
+  "date": "2021-02-18",
+  "precision": "day",
+  "page": "Perseverance (rover)",
+  "evidence": "Perseverance is a NASA rover that has been exploring Mars since February 18, 2021, as part of the Mars 2020 mission.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "James Webb Space Telescope is launched",
+  "date": "2021-12-25",
+  "precision": "day",
+  "page": "James Webb Space Telescope",
+  "evidence": "The Webb was launched on 25 December 2021 on an Ariane 5 rocket from Kourou, French Guiana.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Clyde Tombaugh discovers Pluto",
+  "date": "1930",
+  "precision": "year",
+  "page": "Pluto",
+  "evidence": "Pluto was discovered in 1930 by Clyde W. Tombaugh, making it the first known object in the Kuiper belt.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Pluto is reclassified as a dwarf planet",
+  "date": "2006-08",
+  "precision": "month",
+  "page": "IAU definition of planet",
+  "evidence": "In August 2006, the International Astronomical Union (IAU) adopted a new definition of the term planet, which stated that, in the Solar System, a planet is a celestial body that:",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "New Horizons flies past Pluto",
+  "date": "2015-07-14",
+  "precision": "day",
+  "page": "New Horizons",
+  "evidence": "On July 14, 2015, at 11:49 UTC, it flew 12,500 km (7,800 mi) above the surface of Pluto, which at the time was 34 AU from the Sun, making it the first spacecraft to explore the dwarf planet.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "William Herschel discovers Uranus",
+  "date": "1781",
+  "precision": "year",
+  "page": "Uranus",
+  "evidence": "Uranus is visible to the naked eye, but it is very dim and moves very slowly relative to the background stars and was not classified as a planet until 1781, when it was first observed by William Herschel.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Neptune is discovered",
+  "date": "1846-09-23",
+  "precision": "day",
+  "page": "Neptune",
+  "evidence": "Neptune was subsequently directly observed with a telescope on 23 September 1846 by Johann Gottfried Galle within a degree of the position predicted by Le Verrier.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Galileo recognises moons orbiting Jupiter",
+  "date": "1610-03",
+  "precision": "month",
+  "page": "Galilean moons",
+  "evidence": "The Galilean moons are named after Galileo Galilei, who observed them in either December 1609 or January 1610, and recognized them as satellites of Jupiter in March 1610; they remained the only known moons of Jupiter until the discovery of the fifth largest moon of Jupiter Amalthea in 1892.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Copernicus publishes his Sun-centred universe",
+  "date": "1543",
+  "precision": "year",
+  "page": "De revolutionibus orbium coelestium",
+  "evidence": "The book, first printed in 1543 CE in Nuremberg, Holy Roman Empire, offered an alternative model of the universe to Ptolemy's geocentric system, which had been widely accepted since ancient times.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "First image of a black hole is released",
+  "date": "2019-04-10",
+  "precision": "day",
+  "page": "Event Horizon Telescope",
+  "evidence": "The first image of a black hole, at the center of galaxy Messier 87, was published by the EHT Collaboration on April 10, 2019, in a series of six scientific publications.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Gravitational waves are first detected",
+  "date": "2015-09-14",
+  "precision": "day",
+  "page": "First observation of gravitational waves",
+  "evidence": "The first direct observation of gravitational waves was made on 14 September 2015 and was announced by the LIGO and Virgo collaborations on 11 February 2016.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "SpaceX's first crewed flight to the ISS",
+  "date": "2020-05-30",
+  "precision": "day",
+  "page": "Crew Dragon Demo-2",
+  "evidence": "The spacecraft, named Endeavour, launched on May 30, 2020 on a Falcon 9 rocket, and carried NASA astronauts Doug Hurley and Bob Behnken to the International Space Station in the first crewed orbital spaceflight launched from the United States since the final Space Shuttle mission in 2011, and the first ever operated",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "China's Chang'e 4 lands on the Moon's far side",
+  "date": "2019-01-03",
+  "precision": "day",
+  "page": "Chang'e 4",
+  "evidence": "It made a soft landing on the far side of the Moon, the first spacecraft to do so, on 3 January 2019.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Philae lands on a comet",
+  "date": "2014-11-12",
+  "precision": "day",
+  "page": "Philae (spacecraft)",
+  "evidence": "On 12 November 2014, Philae touched down on the comet, but it bounced when its anchoring harpoons failed to deploy and a thruster designed to hold the probe to the surface did not fire.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Assembly of the Mir space station begins",
+  "date": "1986",
+  "precision": "year",
+  "page": "Mir",
+  "evidence": "Mir was the first modular space station and was assembled in orbit from 1986 to 1996.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Luna 9 makes the first soft landing on the Moon",
+  "date": "1966-02-03",
+  "precision": "day",
+  "page": "Luna 9",
+  "evidence": "On 3 February 1966, the Luna 9 spacecraft became the first spacecraft to achieve a soft landing on the Moon and return imagery from its surface.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Viking 1 lands on Mars",
+  "date": "1976-07-20",
+  "precision": "day",
+  "page": "Viking 1",
+  "evidence": "The lander touched down on Mars on July 20, 1976, the first successful Mars lander in history.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Dennis Tito becomes the first space tourist",
+  "date": "2001",
+  "precision": "year",
+  "page": "Dennis Tito",
+  "evidence": "During mid-2001, he became the first space tourist to fund his own visit to space, when he spent nearly eight days in orbit as a crew member of ISS EP-1, a visiting mission to the International Space Station.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Huygens probe lands on Titan",
+  "date": "2005-01-14",
+  "precision": "day",
+  "page": "Huygens (spacecraft)",
+  "evidence": "Huygens separated from the Cassini orbiter on 25 December 2004, and landed on Titan on 14 January 2005 near the Adiri region.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Chandrayaan-3 lands near the Moon's south pole",
+  "date": "2023-08-23",
+  "precision": "day",
+  "page": "Chandrayaan-3",
+  "evidence": "It entered lunar orbit on 5 August, and touched down near the lunar south pole, at 69°S, on 23 August 2023 at 18:04 IST (12:34 UTC).",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Artemis I launches",
+  "date": "2022-11-16",
+  "precision": "day",
+  "page": "Artemis I",
+  "evidence": "Artemis I was launched on November 16, 2022, at 1:47:44 am EST.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Yang Liwei becomes China's first astronaut",
+  "date": "2003-10-15",
+  "precision": "day",
+  "page": "Shenzhou 5",
+  "evidence": "Shenzhou 5 (simplified Chinese: 神舟五号; traditional Chinese: 神舟五號; pinyin: Shénzhōu wǔ hào) was the first human spaceflight mission of the Chinese space program, launched on 15 October 2003.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Apollo 8 is the first crewed flight to the Moon",
+  "date": "1968-12-21",
+  "precision": "day",
+  "page": "Apollo 8",
+  "evidence": "Apollo 8 (December 21–27, 1968) was the first crewed spacecraft to leave Earth's gravitational sphere of influence, and the first human spaceflight to reach the Moon.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Apollo 17, the last crewed Moon landing",
+  "date": "1972-12",
+  "precision": "month",
+  "page": "Apollo 17",
+  "evidence": "Apollo 17 (December 7–19, 1972) was the eleventh and final crewed mission of NASA's Apollo program, the sixth and most recent time humans have set foot on the Moon.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "NASA is founded",
+  "date": "1958",
+  "precision": "year",
+  "page": "NASA",
+  "evidence": "Established in 1958 amid the Space Race, NASA succeeded the National Advisory Committee for Aeronautics (NACA) to give the US space program a distinct civilian orientation focused on peaceful applications.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "The final Space Shuttle mission lands",
+  "date": "2011-07-21",
+  "precision": "day",
+  "page": "STS-135",
+  "evidence": "STS-135 launched on July 8, 2011, and landed on July 21, 2011, following a one-day mission extension.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Tycho's supernova appears in the sky",
+  "date": "1572-11",
+  "precision": "month",
+  "page": "SN 1572",
+  "evidence": "It appeared in early November 1572 and was independently discovered by many individuals.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "The Crab Supernova is first observed",
+  "date": "1054",
+  "precision": "year",
+  "page": "SN 1054",
+  "evidence": "SN 1054, the Crab Supernova, is a supernova that was first observed on c. 10 July [O.S. c. 4 July] 1054, and remained visible until c. 12 April [O.S. c. 6 April] 1056.α",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Ceres, the first asteroid, is discovered",
+  "date": "1801-01-01",
+  "precision": "day",
+  "page": "Ceres (dwarf planet)",
+  "evidence": "It was the first object identified in the asteroid belt, discovered on 1 January 1801 by Giuseppe Piazzi at Palermo Astronomical Observatory in Sicily, and announced as a new planet.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Blue Ghost lands on the Moon",
+  "date": "2025-03-02",
+  "precision": "day",
+  "page": "Blue Ghost Mission 1",
+  "evidence": "The spacecraft soft-landed on the lunar surface on March 2, 2025, making Firefly the first commercial company to complete a fully successful soft landing on the Moon.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Alexander Fleming discovers penicillin",
+  "date": "1928",
+  "precision": "year",
+  "page": "Alexander Fleming",
+  "evidence": "His discovery in 1928 of what was later named benzylpenicillin (or penicillin G) from the mould Penicillium rubens has been described as the \"single greatest victory ever achieved over disease\".",
+  "level": 1
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Watson and Crick publish DNA's double helix",
+  "date": "1953-04-25",
+  "precision": "day",
+  "page": "Molecular Structure of Nucleic Acids: A Structure for Deoxyribose Nucleic Acid",
+  "evidence": "It was published by Francis Crick and James D. Watson in the scientific journal Nature on pages 737–738 of its 171st volume (dated 25 April 1953).",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Darwin publishes On the Origin of Species",
+  "date": "1859-11-24",
+  "precision": "day",
+  "page": "On the Origin of Species",
+  "evidence": "It was published on 24 November 1859.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Isaac Newton publishes his Principia",
+  "date": "1687",
+  "precision": "year",
+  "page": "Philosophiæ Naturalis Principia Mathematica",
+  "evidence": "The Principia is written in Latin and comprises three volumes, and was authorized (imprimatur) by Samuel Pepys, then-president of the Royal Society on 5 July 1686 and first published in 1687.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Einstein publishes his \"miracle year\" papers",
+  "date": "1905",
+  "precision": "year",
+  "page": "Annus mirabilis papers",
+  "evidence": "The annus mirabilis papers (from Latin: annus mirabilis, lit. 'miraculous year') are four papers that Albert Einstein published in the scientific journal Annalen der Physik (Annals of Physics) in 1905.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Wilhelm Röntgen discovers X-rays",
+  "date": "1895",
+  "precision": "year",
+  "page": "X-ray",
+  "evidence": "X-rays were discovered in 1895 by the German scientist Wilhelm Conrad Röntgen, who named it X-radiation to signify an unknown type of radiation.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Marie and Pierre Curie discover radium",
+  "date": "1898",
+  "precision": "year",
+  "page": "Radium",
+  "evidence": "Radium, in the form of radium chloride, was discovered by Marie and Pierre Curie in 1898 from ore mined at Jáchymov.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Mendeleev publishes his periodic table",
+  "date": "1869",
+  "precision": "year",
+  "page": "Periodic table",
+  "evidence": "The first periodic table to become generally accepted was that of the Russian chemist Dmitri Mendeleev in 1869; he formulated the periodic law as a dependence of chemical properties on atomic mass.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Smallpox is declared eradicated",
+  "date": "1980",
+  "precision": "year",
+  "page": "Smallpox",
+  "evidence": "The last naturally occurring case was diagnosed in October 1977, and the World Health Organization certified the global eradication of the disease in 1980, making smallpox the only human disease to have been eradicated.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The first human heart transplant",
+  "date": "1967-12-03",
+  "precision": "day",
+  "page": "Christiaan Barnard",
+  "evidence": "On 3 December 1967, Barnard transplanted the heart of accident victim Denise Darvall into the chest of 54-year-old Louis Washkansky, who regained full consciousness and was able to talk easily with his wife, before dying 18 days later of pneumonia, largely brought on by the anti-rejection drugs that suppressed his",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Dolly the sheep is born",
+  "date": "1996-07-05",
+  "precision": "day",
+  "page": "Dolly (sheep)",
+  "evidence": "Dolly (5 July 1996 – 14 February 2003) was a female Finn-Dorset sheep and the first mammal that was cloned from an adult somatic cell.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Human Genome Project is completed",
+  "date": "2003-04-14",
+  "precision": "day",
+  "page": "Human Genome Project",
+  "evidence": "It was declared complete on 14 April 2003, and included about 92% of the genome.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Louise Brown, first IVF baby, is born",
+  "date": "1978-07-25",
+  "precision": "day",
+  "page": "Louise Brown",
+  "evidence": "Louise Joy Brown (born 25 July 1978) is an English woman noted as the first human born following conception by in vitro fertilisation (IVF).",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Salk's polio vaccine is announced a success",
+  "date": "1955",
+  "precision": "year",
+  "page": "Polio vaccine",
+  "evidence": "The success of an inactivated (killed) polio vaccine, developed by Jonas Salk, was announced in 1955.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "First public demonstration of ether anaesthesia",
+  "date": "1846",
+  "precision": "year",
+  "page": "William T. G. Morton",
+  "evidence": "William Thomas Green Morton (August 9, 1819 – July 15, 1868) was an American dentist who first publicly demonstrated the use of inhaled ether as a surgical anesthetic in 1846.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "William Harvey describes blood circulation",
+  "date": "1628",
+  "precision": "year",
+  "page": "Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus",
+  "evidence": "et Sanguinis in Animalibus (Modern Latin for 'An Anatomical Exercise on the Motion of the Heart and Blood in Living Beings'), commonly shortened to De Motu Cordis, is the best-known work of royal physician William Harvey, which was first published in 1628 and established the circulation of blood throughout the body.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Robert Hooke publishes Micrographia",
+  "date": "1665-01",
+  "precision": "month",
+  "page": "Micrographia",
+  "evidence": "Published in January 1665, the first major publication of the Royal Society, it became the first scientific best-seller, inspiring a wide public interest in the new science of microscopy.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Higgs boson is discovered",
+  "date": "2012",
+  "precision": "year",
+  "page": "Higgs boson",
+  "evidence": "After a 40-year search, a subatomic particle with the expected properties was discovered in 2012 by the ATLAS and CMS experiments at the Large Hadron Collider (LHC) at CERN near Geneva, Switzerland.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Mendel writes his pea plant heredity paper",
+  "date": "1865",
+  "precision": "year",
+  "page": "Experiments on Plant Hybridization",
+  "evidence": "\"Experiments on Plant Hybridization\" (German: Versuche über Pflanzen-Hybriden) is a seminal paper written in 1865 and published in 1866 by Gregor Mendel, an Augustinian friar considered to be the founder of modern genetics.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Nuclear fission is discovered",
+  "date": "1938-12-19",
+  "precision": "day",
+  "page": "Nuclear fission",
+  "evidence": "Hahn and Strassmann proved that a fission reaction had taken place on 19 December 1938, and Meitner and her nephew Frisch explained it theoretically in January 1939.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "First nuclear reactor achieves chain reaction",
+  "date": "1942-12-02",
+  "precision": "day",
+  "page": "Chicago Pile-1",
+  "evidence": "On 2 December 1942, the first human-made self-sustaining nuclear chain reaction was initiated in CP-1 during an experiment led by Enrico Fermi.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Megalosaurus becomes the first named dinosaur",
+  "date": "1824",
+  "precision": "year",
+  "page": "Megalosaurus",
+  "evidence": "Megalosaurus was named in 1824 by William Buckland, becoming the first genus of dinosaur to be validly named (other than birds, not then recognized as dinosaurs).",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The World Health Organization is founded",
+  "date": "1948-04-07",
+  "precision": "day",
+  "page": "World Health Organization",
+  "evidence": "The WHO was established on 7 April 1948, and formally began its work on 1 September 1948.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Anders Celsius proposes his temperature scale",
+  "date": "1742",
+  "precision": "year",
+  "page": "Celsius",
+  "evidence": "It is named after the Swedish astronomer Anders Celsius (1701–1744), who proposed the first version of it in 1742.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "First successful kidney transplant",
+  "date": "1954",
+  "precision": "year",
+  "page": "Kidney transplantation",
+  "evidence": "The first successful kidney transplant was performed in 1954 by a team including Joseph Murray, the recipient's surgeon, and Hartwell Harrison, surgeon for the donor.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Eddington's eclipse observations test relativity",
+  "date": "1919-05-29",
+  "precision": "day",
+  "page": "Eddington experiment",
+  "evidence": "Observations of the total solar eclipse of 29 May 1919 were carried out by two expeditions, one to the West African island of Príncipe, and the other to the Brazilian town of Sobral.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Graphene is first isolated",
+  "date": "2004",
+  "precision": "year",
+  "page": "Graphene",
+  "evidence": "In 2004, the material was isolated and characterized by Andre Geim and Konstantin Novoselov at the University of Manchester using a piece of graphite and adhesive tape.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Large Hadron Collider is completed",
+  "date": "2008",
+  "precision": "year",
+  "page": "Large Hadron Collider",
+  "evidence": "It was built by the European Organization for Nuclear Research (CERN) between 1998 and 2008, in collaboration with over 10,000 scientists, and hundreds of universities and laboratories across more than 100 countries.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Royal Society is founded",
+  "date": "1660-11-28",
+  "precision": "day",
+  "page": "Royal Society",
+  "evidence": "Founded on 28 November 1660, it was granted a royal charter by King Charles II and is the oldest continuously existing scientific academy in the world.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The first Nobel Prizes are awarded",
+  "date": "1901",
+  "precision": "year",
+  "page": "Nobel Prize",
+  "evidence": "The prizes were first awarded in 1901, marking the fifth anniversary of Alfred Nobel's death.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Alfred Wegener proposes continental drift",
+  "date": "1912",
+  "precision": "year",
+  "page": "Continental drift",
+  "evidence": "The concept was independently and more fully developed by Alfred Wegener in 1912, and expanded into book form with his 1915 publication, Die Entstehung der Kontinente und Ozeane (The Origin of Continents and Oceans).",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Joseph Priestley discovers oxygen",
+  "date": "1774",
+  "precision": "year",
+  "page": "Joseph Priestley",
+  "evidence": "Priestley is credited with his independent discovery of oxygen by the thermal decomposition of mercuric oxide, having isolated it in 1774.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Avicenna completes The Canon of Medicine",
+  "date": "1025",
+  "precision": "year",
+  "page": "The Canon of Medicine",
+  "evidence": "The Canon of Medicine (Arabic: القانون في الطب, romanized: al-Qānūn fī l-ṭibb) is an encyclopedia of medicine in five books compiled by Ibn Sina (ابن سینا, Avicenna) and completed in 1025.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Fibonacci publishes Liber Abaci",
+  "date": "1202",
+  "precision": "year",
+  "page": "Liber Abaci",
+  "evidence": "The Liber Abaci or Liber Abbaci (Latin for \"The Book of Calculation\") was a 1202 Latin work on arithmetic by Leonardo of Pisa, posthumously known as Fibonacci.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "J. J. Thomson discovers the electron",
+  "date": "1897",
+  "precision": "year",
+  "page": "J. J. Thomson",
+  "evidence": "In 1897, he showed that cathode rays were composed of previously unknown negatively charged particles (now called electrons), which he calculated must have bodies much smaller than atoms and a very large charge-to-mass ratio.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Semmelweis introduces handwashing for doctors",
+  "date": "1847",
+  "precision": "year",
+  "page": "Ignaz Semmelweis",
+  "evidence": "In 1847, he proposed hand washing with chlorinated lime solutions at Vienna General Hospital's First Obstetrical Clinic, where doctors' wards had thrice the mortality of midwives' wards.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The \"Lucy\" fossil skeleton is discovered",
+  "date": "1974",
+  "precision": "year",
+  "page": "Lucy (hominid)",
+  "evidence": "It was discovered in 1974 in Ethiopia, at Hadar, a site in the Awash Valley of the Afar Triangle by Donald Johanson, a paleoanthropologist of the Cleveland Museum of Natural History.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Florence Nightingale opens her nursing school",
+  "date": "1860",
+  "precision": "year",
+  "page": "Florence Nightingale",
+  "evidence": "In 1860, she laid the foundation of professional nursing with the establishment of her nursing school at St Thomas' Hospital in London.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Google is founded",
+  "date": "1998",
+  "precision": "year",
+  "page": "Google",
+  "evidence": "Google was founded in 1998 by American computer scientists Larry Page and Sergey Brin.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "YouTube is founded",
+  "date": "2005-02-14",
+  "precision": "day",
+  "page": "YouTube",
+  "evidence": "YouTube was founded on February 14, 2005, by Chad Hurley, Jawed Karim, and Steve Chen, all of whom were former employees at PayPal.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Facebook is launched",
+  "date": "2004",
+  "precision": "year",
+  "page": "Facebook",
+  "evidence": "It was founded in 2004 by Mark Zuckerberg, along with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Twitter is launched",
+  "date": "2006-07",
+  "precision": "month",
+  "page": "X (social network)",
+  "evidence": "The platform was created in March 2006 by Jack Dorsey, Noah Glass, Biz Stone, and Evan Williams, and was launched in July of that year; initially named twttr, it was renamed Twitter some months later.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Instagram is launched",
+  "date": "2010-10",
+  "precision": "month",
+  "page": "Instagram",
+  "evidence": "Instagram was launched for iOS in October 2010 by Kevin Systrom and the Brazilian software engineer Mike Krieger.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "ChatGPT is released",
+  "date": "2022-11-30",
+  "precision": "day",
+  "page": "ChatGPT",
+  "evidence": "Developer OpenAI Release November 30, 2022",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first iPhone goes on sale",
+  "date": "2007-06-29",
+  "precision": "day",
+  "page": "IPhone (1st generation)",
+  "evidence": "After years of rumors and speculation, it was officially announced on January 9, 2007, and was released in the United States on June 29, 2007.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first iPad is released",
+  "date": "2010-04-03",
+  "precision": "day",
+  "page": "IPad (1st generation)",
+  "evidence": "On April 3, 2010, the Wi-Fi variant of the device was released in the United States, followed by the release of the \"Wi-Fi + 3G\" variant on April 30.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Apple is founded",
+  "date": "1976",
+  "precision": "year",
+  "page": "Apple Inc.",
+  "evidence": "Founded in 1976 as Apple Computer Company by Steve Jobs, Steve Wozniak and Ronald Wayne, the company was incorporated by Jobs and Wozniak as Apple Computer, Inc. the following year.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Microsoft is founded",
+  "date": "1975",
+  "precision": "year",
+  "page": "Microsoft",
+  "evidence": "Founded in 1975 by Bill Gates and Paul Allen to market BASIC interpreters for the Altair 8800, Microsoft rose to dominate the PC operating system market with MS-DOS in the mid-1980s, followed by Windows.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Amazon is founded",
+  "date": "1994",
+  "precision": "year",
+  "page": "Amazon (company)",
+  "evidence": "Founded in 1994 by Jeff Bezos in Bellevue, Washington, the company started as an online book marketplace that gradually expanded to include virtually all consumer products as well as many other categories, positioned as \"The Everything Store\".",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Wikipedia is launched",
+  "date": "2001",
+  "precision": "year",
+  "page": "Wikipedia",
+  "evidence": "Founded by Jimmy Wales and Larry Sanger in 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The World Wide Web opens to the public",
+  "date": "1993",
+  "precision": "year",
+  "page": "World Wide Web",
+  "evidence": "The Web was invented by English computer scientist Tim Berners-Lee while at CERN in 1989 and opened to the public in 1993.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Ray Tomlinson sends the first network email",
+  "date": "1971",
+  "precision": "year",
+  "page": "Ray Tomlinson",
+  "evidence": "Raymond Samuel Tomlinson (April 23, 1941 – March 5, 2016) was an American computer programmer who invented the first email program on the ARPANET system, the precursor to the Internet, in 1971; it was the first system able to send mail between users on different hosts connected to ARPANET.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Windows 95 is released",
+  "date": "1995-08-24",
+  "precision": "day",
+  "page": "Windows 95",
+  "evidence": "Windows 95 is a consumer-oriented operating system developed by Microsoft, released to manufacturing on July 14, 1995, and to retail on August 24, 1995.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Windows 1.0 is released",
+  "date": "1985-11-20",
+  "precision": "day",
+  "page": "Windows 1.0",
+  "evidence": "It was first released to manufacturing in the United States and the general public on November 20, 1985, while the European version was released as Windows 1.02 in May 1986.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first Apple Macintosh goes on sale",
+  "date": "1984-01-24",
+  "precision": "day",
+  "page": "Macintosh 128K",
+  "evidence": "Sales were strong at its initial release on January 24, 1984, at US$2,495 (equivalent to $7,700 in 2025), and reached 70,000 units on May 3, 1984.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The IBM Personal Computer is released",
+  "date": "1981-08-12",
+  "precision": "day",
+  "page": "IBM Personal Computer",
+  "evidence": "Released on August 12, 1981, it was created by a team of engineers and designers at International Business Machines (IBM), directed by William C. Lowe and Philip Don Estridge in Boca Raton, Florida.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Netflix launches its streaming service",
+  "date": "2007",
+  "precision": "year",
+  "page": "Netflix",
+  "evidence": "Launched in 2007, nearly a decade after Netflix, Inc. began its pioneering DVD-by-mail movie rental service, Netflix is the most-subscribed video on demand global streaming media service, with 325 million paid memberships in more than 190 countries as of 2026.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Spotify is founded",
+  "date": "2006-04",
+  "precision": "month",
+  "page": "Spotify",
+  "evidence": "Spotify is a Swedish freemium music streaming service provider founded in April 2006 by Daniel Ek and Martin Lorentzon.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "WhatsApp is launched",
+  "date": "2009-05",
+  "precision": "month",
+  "page": "WhatsApp",
+  "evidence": "WhatsApp was launched in May 2009.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Android is first released",
+  "date": "2008",
+  "precision": "year",
+  "page": "Android (operating system)",
+  "evidence": "First released in 2008, Android is the most popular operating system in the world with 4 billion users, and the most used operating system for smartphones.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Gmail is launched",
+  "date": "2004",
+  "precision": "year",
+  "page": "Gmail",
+  "evidence": "The service was launched as a beta version in 2004 and came out of beta in 2009.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Skype is first released",
+  "date": "2003-08-29",
+  "precision": "day",
+  "page": "Skype",
+  "evidence": "Skype was created by Niklas Zennström, Janus Friis, and four Estonian developers, and first released on August 29, 2003.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "eBay is founded",
+  "date": "1995-09",
+  "precision": "month",
+  "page": "EBay",
+  "evidence": "Sales occur either via online auctions or \"Buy It Now\" instant sales, and the company charges commissions to sellers upon sale. eBay was founded by Pierre Omidyar in September 1995.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first Apple Watch is released",
+  "date": "2015-04",
+  "precision": "month",
+  "page": "Apple Watch",
+  "evidence": "The first Apple Watch was released in April 2015, and quickly became the world's best-selling wearable device.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Linus Torvalds releases Linux",
+  "date": "1991-09-17",
+  "precision": "day",
+  "page": "Linux",
+  "evidence": "Linux ( LIN-uuks) is a family of free and open-source software Unix-like operating systems based on the Linux kernel, which was first released on 17 September 1991 by Linus Torvalds.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Reddit is founded",
+  "date": "2005-06",
+  "precision": "month",
+  "page": "Reddit",
+  "evidence": "Reddit was founded by University of Virginia roommates Steve Huffman and Alexis Ohanian in June 2005, who were joined by Aaron Swartz that November.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Napster is launched",
+  "date": "1999-06",
+  "precision": "month",
+  "page": "Napster",
+  "evidence": "It was launched in June 1999 by Shawn Fanning and Sean Parker.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Tesla is founded",
+  "date": "2003-07",
+  "precision": "month",
+  "page": "Tesla, Inc.",
+  "evidence": "The company was incorporated in July 2003 by Martin Eberhard and Marc Tarpenning as Tesla Motors.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "SpaceX is founded",
+  "date": "2002",
+  "precision": "year",
+  "page": "SpaceX",
+  "evidence": "SpaceX was founded in 2002 by Elon Musk with the goal of reducing spaceflight costs, improving the reliability of access to outer space for ordinary humans, and colonizing Mars.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Nokia is founded",
+  "date": "1865",
+  "precision": "year",
+  "page": "Nokia",
+  "evidence": "Nokia Corporation is a Finnish multinational telecommunications, information technology, and consumer electronics corporation, originally established as a pulp mill in 1865.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Sony is founded",
+  "date": "1946",
+  "precision": "year",
+  "page": "Sony",
+  "evidence": "Sony was founded in 1946 as Tokyo Tsushin Kogyo K.K. by Masaru Ibuka and Akio Morita.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Samsung is founded",
+  "date": "1938",
+  "precision": "year",
+  "page": "Samsung",
+  "evidence": "Founded in 1938 by Lee Byung-chul as a trading company, Samsung diversified into various sectors, including food processing, textiles, insurance, securities, and retail, over the next three decades.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "IBM is founded",
+  "date": "1911",
+  "precision": "year",
+  "page": "IBM",
+  "evidence": "IBM was founded in 1911 as the Computing-Tabulating-Recording Company (CTR), a holding company of manufacturers of record-keeping and measuring systems.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Intel is founded",
+  "date": "1968",
+  "precision": "year",
+  "page": "Intel",
+  "evidence": "Intel was founded in 1968 by engineers Gordon Moore and Robert Noyce, along with investor Arthur Rock, and is associated with the executive leadership and vision of Andrew Grove.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The Intel 4004 microprocessor is released",
+  "date": "1971-11-15",
+  "precision": "day",
+  "page": "Intel 4004",
+  "evidence": "The Intel 4004, released by the Intel Corporation on November 15, 1971, was the first in a long line of Intel central processing units (CPUs).",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "ENIAC computer is completed",
+  "date": "1945",
+  "precision": "year",
+  "page": "ENIAC",
+  "evidence": "ENIAC (; Electronic Numerical Integrator and Computer) was the first programmable, electronic, general-purpose digital computer, completed in 1945.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The QR code is invented",
+  "date": "1994",
+  "precision": "year",
+  "page": "QR code",
+  "evidence": "A QR code, short for quick-response code, is a type of two-dimensional matrix barcode invented in 1994 by Masahiro Hara of the Japanese company Denso Wave for labelling automobile parts.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "USB is introduced",
+  "date": "1996",
+  "precision": "year",
+  "page": "USB",
+  "evidence": "Introduced in 1996, USB was originally designed to standardize the connection of peripherals to computers, replacing various interfaces such as serial ports, parallel ports, game ports, and Apple Desktop Bus (ADB) ports.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Compact discs go on sale",
+  "date": "1982-10",
+  "precision": "month",
+  "page": "Compact disc",
+  "evidence": "First released in Japan in October 1982, the CD was the second optical disc format to reach the market, following the larger LaserDisc (LD).",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Sony launches the Walkman",
+  "date": "1979",
+  "precision": "year",
+  "page": "Walkman",
+  "evidence": "Walkman (Japanese: ウォークマン, Hepburn: Wōkuman) is a brand of portable audio players manufactured by Sony since 1979.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Google Chrome is released",
+  "date": "2008-09",
+  "precision": "month",
+  "page": "Google Chrome",
+  "evidence": "It was launched in September 2008 for Microsoft Windows, built with free and open-source (FOSS) components from Apple WebKit and Mozilla Firefox.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Bitcoin software is first released",
+  "date": "2009",
+  "precision": "year",
+  "page": "Bitcoin",
+  "evidence": "Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Siri arrives with the iPhone 4S",
+  "date": "2011-10-14",
+  "precision": "day",
+  "page": "Siri",
+  "evidence": "Two months later, Apple acquired it and integrated it into the iPhone 4s at its release on October 14, 2011, removing the separate app from the iOS App Store.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Meta's Threads app is launched",
+  "date": "2023-07-05",
+  "precision": "day",
+  "page": "Threads (social network)",
+  "evidence": "Development on Threads—internally known as \"Project 92\"—commenced in January 2023, with the platform officially launching on July 5, 2023.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Apple Vision Pro is released",
+  "date": "2024",
+  "precision": "year",
+  "page": "Apple Vision Pro",
+  "evidence": "It was announced on June 5, 2023, at Apple's Worldwide Developers Conference (WWDC) and was released first in the US, then in global territories throughout 2024.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Facebook's company renames itself Meta",
+  "date": "2021",
+  "precision": "year",
+  "page": "Meta Platforms",
+  "evidence": "In 2021, it rebranded as Meta Platforms, Inc. to reflect a strategic shift toward developing the metaverse—an interconnected digital ecosystem spanning virtual and augmented reality technologies.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "OpenAI is founded",
+  "date": "2015",
+  "precision": "year",
+  "page": "OpenAI",
+  "evidence": "OpenAI was founded in 2015 as a nonprofit, with Elon Musk and Sam Altman as co-chairs; Musk resigned in 2018.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "AlphaGo beats Go champion Lee Sedol",
+  "date": "2016-03",
+  "precision": "month",
+  "page": "AlphaGo versus Lee Sedol",
+  "evidence": "AlphaGo versus Lee Sedol, also known as the DeepMind Challenge Match, was a five-game Go match between top Go player Lee Sedol and AlphaGo, a computer Go program developed by DeepMind, played in Seoul, South Korea between the 9th and 15th of March 2016.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Deep Blue beats chess champion Garry Kasparov",
+  "date": "1997",
+  "precision": "year",
+  "page": "Deep Blue versus Garry Kasparov",
+  "evidence": "Deep Blue won a 1997 rematch, held at the Equitable Center in New York City, by 3½–2½.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "First demonstration of a computer mouse",
+  "date": "1968-12-09",
+  "precision": "day",
+  "page": "The Mother of All Demos",
+  "evidence": "It was presented at the Association for Computing Machinery / Institute of Electrical and Electronics Engineers (ACM/IEEE)—Computer Society's Fall Joint Computer Conference in San Francisco, by Douglas Engelbart, on December 9, 1968.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Alibaba is founded",
+  "date": "1999-06-28",
+  "precision": "day",
+  "page": "Alibaba Group",
+  "evidence": "Founded on 28 June 1999 in Hangzhou, Zhejiang, the company provides consumer-to-consumer (C2C), business-to-consumer (B2C), and business-to-business (B2B) sales services via Chinese and global marketplaces, as well as local consumer, digital media and entertainment, logistics, and cloud computing services.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The C programming language appears",
+  "date": "1972",
+  "precision": "year",
+  "page": "C (programming language)",
+  "evidence": "C is a general-purpose programming language created in 1972 by Dennis Ritchie.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The Apple II goes on sale",
+  "date": "1977-06-10",
+  "precision": "day",
+  "page": "Apple II",
+  "evidence": "The original model, designed by Steve Wozniak, first went on sale on June 10, 1977.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "IBM unveils the RAMAC hard disk computer",
+  "date": "1956-09-14",
+  "precision": "day",
+  "page": "IBM 305 RAMAC",
+  "evidence": "The system was publicly announced on September 14, 1956, with test units already installed at the U.S. Navy and at private corporations.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Regency TR-1 transistor radio goes on sale",
+  "date": "1954",
+  "precision": "year",
+  "page": "Regency TR-1",
+  "evidence": "The Regency TR-1 was the first commercially manufactured transistor radio, introduced in 1954.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "JVC launches the VHS video cassette",
+  "date": "1976-09-09",
+  "precision": "day",
+  "page": "VHS",
+  "evidence": "VHS (Video Home System) is a discontinued standard for consumer-level analog video recording on tape cassettes, introduced on September 9, 1976 by the Victor Company of Japan (JVC, a subsidiary of Matsushita).",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The Nokia 3310 is announced",
+  "date": "2000-09-01",
+  "precision": "day",
+  "page": "Nokia 3310",
+  "evidence": "It was announced on the 1st of September 2000, and released in the fourth quarter of the year, replacing the popular Nokia 3210.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Disney+ is launched",
+  "date": "2019-11-12",
+  "precision": "day",
+  "page": "Disney+",
+  "evidence": "Disney+ launched on November 12, 2019, in the United States, Canada and the Netherlands, followed by Australia, New Zealand and Puerto Rico later that month.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The .com domain is created",
+  "date": "1985-03",
+  "precision": "month",
+  "page": ".com",
+  "evidence": "Created in the first group of Internet domains in March of 1985, it is short for commercial, as it was originally intended for subdomains for commercial organizations.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Microsoft's Xbox Live online service launches",
+  "date": "2002-11-15",
+  "precision": "day",
+  "page": "Xbox network",
+  "evidence": "It was first made available to the original Xbox console on November 15, 2002.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Telegram messaging app is launched",
+  "date": "2013-08-14",
+  "precision": "day",
+  "page": "Telegram (software)",
+  "evidence": "It launched for iOS on 14 August 2013 and Android on 20 October 2013.",
+  "level": 3
+ },
+ {
+  "cat": "Films",
+  "event": "A Trip to the Moon is released",
+  "date": "1902",
+  "precision": "year",
+  "page": "A Trip to the Moon",
+  "evidence": "\"The Journey into the Moon\") is a 1902 French science-fiction adventure trick film written, directed and produced by Georges Méliès.",
+  "level": 3
+ },
+ {
+  "cat": "Films",
+  "event": "The Jazz Singer is released",
+  "date": "1927",
+  "precision": "year",
+  "page": "The Jazz Singer",
+  "evidence": "The Jazz Singer is a 1927 American part-talkie musical drama film directed by Alan Crosland and produced by Warner Bros. Pictures.",
+  "level": 3
+ },
+ {
+  "cat": "Films",
+  "event": "Steamboat Willie introduces Mickey Mouse",
+  "date": "1928",
+  "precision": "year",
+  "page": "Steamboat Willie",
+  "evidence": "Steamboat Willie is a 1928 American animated short film directed by Walt Disney and Ub Iwerks.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "The original King Kong film is released",
+  "date": "1933",
+  "precision": "year",
+  "page": "King Kong (1933 film)",
+  "evidence": "King Kong is a 1933 American Pre-Code adventure horror monster film directed and produced by Merian C. Cooper and Ernest B. Schoedsack, with special effects by Willis H. O'Brien and music by Max Steiner.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's Snow White and the Seven Dwarfs",
+  "date": "1937",
+  "precision": "year",
+  "page": "Snow White and the Seven Dwarfs (film)",
+  "evidence": "Snow White and the Seven Dwarfs is a 1937 American animated musical fantasy film produced by Walt Disney and released by RKO Radio Pictures, based on the 1812 German fairy tale \"Snow White\" by the Brothers Grimm.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "The Wizard of Oz film is released",
+  "date": "1939",
+  "precision": "year",
+  "page": "The Wizard of Oz",
+  "evidence": "The Wizard of Oz is a 1939 American musical fantasy film produced by Metro-Goldwyn-Mayer.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated Pinocchio is released",
+  "date": "1940",
+  "precision": "year",
+  "page": "Pinocchio (1940 film)",
+  "evidence": "Pinocchio is a 1940 American animated musical fantasy film loosely based on the 1883 Italian novel The Adventures of Pinocchio by Carlo Collodi, produced by Walt Disney and released by RKO Radio Pictures.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Casablanca is released",
+  "date": "1942",
+  "precision": "year",
+  "page": "Casablanca (film)",
+  "evidence": "Casablanca is a 1942 American romantic drama film directed by Michael Curtiz and starring Humphrey Bogart, Ingrid Bergman, and Paul Henreid.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "It's a Wonderful Life is released",
+  "date": "1946",
+  "precision": "year",
+  "page": "It's a Wonderful Life",
+  "evidence": "It's a Wonderful Life is a 1946 American Christmas fantasy drama film directed and produced by Frank Capra.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated Cinderella is released",
+  "date": "1950",
+  "precision": "year",
+  "page": "Cinderella (1950 film)",
+  "evidence": "Cinderella is a 1950 American animated musical fantasy film produced by Walt Disney Productions and released by RKO Radio Pictures.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's One Hundred and One Dalmatians",
+  "date": "1961",
+  "precision": "year",
+  "page": "One Hundred and One Dalmatians",
+  "evidence": "One Hundred and One Dalmatians (also known as 101 Dalmatians) is a 1961 American animated adventure comedy film produced by Walt Disney Productions with distribution by Buena Vista Distribution.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Dr. No, the first James Bond film, is released",
+  "date": "1962",
+  "precision": "year",
+  "page": "Dr. No (film)",
+  "evidence": "Dr. No is a 1962 spy film and the first film in the James Bond series, starring Sean Connery as the fictional MI6 agent James Bond.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's Mary Poppins is released",
+  "date": "1964",
+  "precision": "year",
+  "page": "Mary Poppins (film)",
+  "evidence": "Mary Poppins is a 1964 American musical comedy film directed by Robert Stevenson and produced by Walt Disney, with songs written and composed by the Sherman Brothers.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "The Sound of Music film is released",
+  "date": "1965",
+  "precision": "year",
+  "page": "The Sound of Music (film)",
+  "evidence": "The Sound of Music is a 1965 American musical drama film produced and directed by Robert Wise from a screenplay written by Ernest Lehman.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated The Jungle Book is released",
+  "date": "1967",
+  "precision": "year",
+  "page": "The Jungle Book (1967 film)",
+  "evidence": "The Jungle Book is a 1967 American animated musical adventure film produced by Walt Disney Productions and released by Buena Vista Distribution.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "2001: A Space Odyssey is released",
+  "date": "1968",
+  "precision": "year",
+  "page": "2001: A Space Odyssey",
+  "evidence": "2001: A Space Odyssey is a 1968 epic science fiction film produced and directed by Stanley Kubrick, who co-wrote the screenplay with Arthur C. Clarke.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Willy Wonka & the Chocolate Factory is released",
+  "date": "1971",
+  "precision": "year",
+  "page": "Willy Wonka & the Chocolate Factory",
+  "evidence": "Willy Wonka & the Chocolate Factory is a 1971 American musical fantasy film directed by Mel Stuart from a screenplay by Roald Dahl, based on Dahl's 1964 novel Charlie and the Chocolate Factory.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Jaws is released",
+  "date": "1975",
+  "precision": "year",
+  "page": "Jaws (film)",
+  "evidence": "Jaws is a 1975 American thriller film directed by Steven Spielberg, based on the 1974 novel by Peter Benchley.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The original Star Wars film is released",
+  "date": "1977",
+  "precision": "year",
+  "page": "Star Wars (film)",
+  "evidence": "Star Wars (later retitled Star Wars: Episode IV – A New Hope) is a 1977 American epic space opera film written and directed by George Lucas.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Grease is released",
+  "date": "1978",
+  "precision": "year",
+  "page": "Grease (film)",
+  "evidence": "Grease is a 1978 American musical romantic comedy film directed by Randal Kleiser (in his feature directorial debut) from a screenplay by Bronté Woodard and an adaptation by co-producer Allan Carr.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "The Empire Strikes Back is released",
+  "date": "1980",
+  "precision": "year",
+  "page": "The Empire Strikes Back",
+  "evidence": "The Empire Strikes Back (also known as Star Wars: Episode V – The Empire Strikes Back) is a 1980 American epic space opera film directed by Irvin Kershner from a screenplay by Leigh Brackett and Lawrence Kasdan, based on a story by George Lucas.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Raiders of the Lost Ark is released",
+  "date": "1981",
+  "precision": "year",
+  "page": "Raiders of the Lost Ark",
+  "evidence": "Raiders of the Lost Ark is a 1981 American action-adventure film directed by Steven Spielberg and written by Lawrence Kasdan, based on a story by George Lucas and Philip Kaufman.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "E.T. the Extra-Terrestrial is released",
+  "date": "1982",
+  "precision": "year",
+  "page": "E.T. the Extra-Terrestrial",
+  "evidence": "E.T. the Extra-Terrestrial (or simply E.T.) is a 1982 American science fantasy film produced and directed by Steven Spielberg and written by Melissa Mathison.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The original Ghostbusters is released",
+  "date": "1984",
+  "precision": "year",
+  "page": "Ghostbusters",
+  "evidence": "Ghostbusters is a 1984 American supernatural comedy film directed by Ivan Reitman and written by Dan Aykroyd and Harold Ramis.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Back to the Future is released",
+  "date": "1985",
+  "precision": "year",
+  "page": "Back to the Future",
+  "evidence": "Back to the Future is a 1985 American science fiction film directed by Robert Zemeckis and written by Zemeckis and Bob Gale.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The original Top Gun is released",
+  "date": "1986",
+  "precision": "year",
+  "page": "Top Gun",
+  "evidence": "Top Gun is a 1986 American drama film directed by Tony Scott and produced by Don Simpson and Jerry Bruckheimer, with distribution by Paramount Pictures.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated The Little Mermaid is released",
+  "date": "1989",
+  "precision": "year",
+  "page": "The Little Mermaid (1989 film)",
+  "evidence": "The Little Mermaid is a 1989 American animated musical fantasy film written and directed by John Musker and Ron Clements and produced by Musker and Howard Ashman, who also wrote the film's songs with composer Alan Menken.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Home Alone is released",
+  "date": "1990",
+  "precision": "year",
+  "page": "Home Alone",
+  "evidence": "Home Alone is a 1990 American Christmas comedy film directed by Chris Columbus and written and produced by John Hughes.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated Beauty and the Beast",
+  "date": "1991",
+  "precision": "year",
+  "page": "Beauty and the Beast (1991 film)",
+  "evidence": "Beauty and the Beast is a 1991 American animated musical romantic fantasy film directed by Gary Trousdale and Kirk Wise, written by Linda Woolverton, and based on the French fairy tale \"Beauty and the Beast\".",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated Aladdin is released",
+  "date": "1992",
+  "precision": "year",
+  "page": "Aladdin (1992 Disney film)",
+  "evidence": "Aladdin is a 1992 American animated musical fantasy film based on the Middle Eastern folk tale \"Aladdin\" from One Thousand and One Nights and produced by Walt Disney Feature Animation.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Jurassic Park is released",
+  "date": "1993",
+  "precision": "year",
+  "page": "Jurassic Park",
+  "evidence": "Jurassic Park is a 1993 American science fiction film directed by Steven Spielberg and written by Michael Crichton and David Koepp, based on Crichton's 1990 novel of the same name.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's animated The Lion King is released",
+  "date": "1994",
+  "precision": "year",
+  "page": "The Lion King",
+  "evidence": "The Lion King is a 1994 American animated musical drama film directed by Roger Allers and Rob Minkoff and written by Irene Mecchi, Jonathan Roberts, and Linda Woolverton.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Toy Story is released",
+  "date": "1995",
+  "precision": "year",
+  "page": "Toy Story",
+  "evidence": "Toy Story is a 1995 American animated adventure comedy film directed by John Lasseter, and written by Joss Whedon, Andrew Stanton, Joel Cohen, and Alec Sokolow.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "James Cameron's Titanic is released",
+  "date": "1997",
+  "precision": "year",
+  "page": "Titanic (1997 film)",
+  "evidence": "Titanic is a 1997 American historical romance film written and directed by James Cameron.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The Matrix is released",
+  "date": "1999",
+  "precision": "year",
+  "page": "The Matrix",
+  "evidence": "The Matrix is a 1999 science fiction–action film written and directed by the Wachowskis.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Shrek is released",
+  "date": "2001",
+  "precision": "year",
+  "page": "Shrek",
+  "evidence": "Shrek is a 2001 American animated fantasy comedy film directed by Andrew Adamson and Vicky Jenson, and written by Ted Elliott, Terry Rossio, Joe Stillman, and Roger S. H. Schulman, loosely based on the 1990 children's picture book Shrek! by William Steig.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The first Harry Potter film is released",
+  "date": "2001",
+  "precision": "year",
+  "page": "Harry Potter and the Philosopher's Stone (film)",
+  "evidence": "Harry Potter and the Philosopher's Stone (also known as Harry Potter and the Sorcerer's Stone in the United States, India and the Philippines) is a 2001 fantasy film directed by Chris Columbus and written by Steve Kloves, based on the 1997 novel by J. K. Rowling.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Finding Nemo is released",
+  "date": "2003",
+  "precision": "year",
+  "page": "Finding Nemo",
+  "evidence": "Finding Nemo is a 2003 American animated comedy-drama film directed by Andrew Stanton, who co-wrote it with Bob Peterson and David Reynolds.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "The Incredibles is released",
+  "date": "2004",
+  "precision": "year",
+  "page": "The Incredibles",
+  "evidence": "The Incredibles is a 2004 American animated superhero film written and directed by Brad Bird.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Pixar's Cars is released",
+  "date": "2006",
+  "precision": "year",
+  "page": "Cars (film)",
+  "evidence": "Cars is a 2006 American animated sports comedy film directed by John Lasseter, who co-wrote it with Joe Ranft, Dan Fogelman, Kiel Murray, Phil Lorin and Jorgen Klubien.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "WALL-E is released",
+  "date": "2008",
+  "precision": "year",
+  "page": "WALL-E",
+  "evidence": "WALL-E (stylized with an interpunct as WALL·E) is a 2008 American animated romantic science fiction film directed by Andrew Stanton, who co-wrote the screenplay with Jim Reardon, based on a story by Stanton and Pete Docter.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "James Cameron's Avatar is released",
+  "date": "2009",
+  "precision": "year",
+  "page": "Avatar (2009 film)",
+  "evidence": "Avatar is a 2009 epic science fiction film written and directed by James Cameron.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Toy Story 3 is released",
+  "date": "2010",
+  "precision": "year",
+  "page": "Toy Story 3",
+  "evidence": "Toy Story 3 is a 2010 American animated comedy-drama film directed by Lee Unkrich and written by Michael Arndt.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's Frozen is released",
+  "date": "2013",
+  "precision": "year",
+  "page": "Frozen (2013 film)",
+  "evidence": "Frozen is a 2013 American animated musical fantasy film produced by Walt Disney Animation Studios, loosely inspired by Hans Christian Andersen's 1844 fairy tale \"The Snow Queen\".",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Marvel's The Avengers is released",
+  "date": "2012",
+  "precision": "year",
+  "page": "The Avengers (2012 film)",
+  "evidence": "Marvel's The Avengers (titled Marvel Avengers Assemble in the United Kingdom and Ireland and commonly referred to as simply The Avengers) is a 2012 American superhero film based on the Marvel Comics superhero team the Avengers.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Pixar's Inside Out is released",
+  "date": "2015",
+  "precision": "year",
+  "page": "Inside Out",
+  "evidence": "Inside Out is a 2015 American animated coming-of-age film directed by Pete Docter who co-wrote it with Meg LeFauve and Josh Cooley.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's Zootopia is released",
+  "date": "2016",
+  "precision": "year",
+  "page": "Zootopia",
+  "evidence": "Zootopia (titled Zootropolis in some markets) is a 2016 American animated buddy cop comedy film directed by Byron Howard and Rich Moore and written by Jared Bush and Phil Johnston.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Pixar's Coco is released",
+  "date": "2017",
+  "precision": "year",
+  "page": "Coco (2017 film)",
+  "evidence": "Coco is a 2017 American animated fantasy film directed by Lee Unkrich, and written by Adrian Molina and Matthew Aldrich.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Avengers: Endgame is released",
+  "date": "2019",
+  "precision": "year",
+  "page": "Avengers: Endgame",
+  "evidence": "Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Disney's Encanto is released",
+  "date": "2021",
+  "precision": "year",
+  "page": "Encanto",
+  "evidence": "Encanto is a 2021 American animated musical fantasy comedy film directed by Jared Bush and Byron Howard, and written by Charise Castro Smith and Bush.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Top Gun: Maverick is released",
+  "date": "2022",
+  "precision": "year",
+  "page": "Top Gun: Maverick",
+  "evidence": "Top Gun: Maverick is a 2022 American action drama film directed by Joseph Kosinski and written by Ehren Kruger, Eric Warren Singer, and Christopher McQuarrie, from a story by Peter Craig and Justin Marks.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Greta Gerwig's Barbie is released",
+  "date": "2023",
+  "precision": "year",
+  "page": "Barbie (film)",
+  "evidence": "Barbie is a 2023 satirical fantasy comedy film directed by Greta Gerwig from a screenplay she wrote with her husband, Noah Baumbach.",
+  "level": 1
+ },
+ {
+  "cat": "Films",
+  "event": "Inside Out 2 is released",
+  "date": "2024",
+  "precision": "year",
+  "page": "Inside Out 2",
+  "evidence": "Inside Out 2 is a 2024 American animated coming-of-age film directed by Kelsey Mann and written by Meg LeFauve and Dave Holstein.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "A Minecraft Movie is released",
+  "date": "2025",
+  "precision": "year",
+  "page": "A Minecraft Movie",
+  "evidence": "A Minecraft Movie is a 2025 adventure comedy film based on the 2011 video game Minecraft developed and published by Mojang Studios.",
+  "level": 2
+ },
+ {
+  "cat": "Films",
+  "event": "Studio Ghibli's My Neighbor Totoro is released",
+  "date": "1988",
+  "precision": "year",
+  "page": "My Neighbor Totoro",
+  "evidence": "My Neighbor Totoro is a 1988 Japanese animated fantasy film written and directed by Hayao Miyazaki and animated by Studio Ghibli for Tokuma Shoten.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Handel's Messiah is first performed",
+  "date": "1742-04-13",
+  "precision": "day",
+  "page": "Messiah (Handel)",
+  "evidence": "It was first performed in Dublin on 13 April 1742 and received its London premiere a year later.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Vivaldi's The Four Seasons is published",
+  "date": "1725",
+  "precision": "year",
+  "page": "The Four Seasons (Vivaldi)",
+  "evidence": "They were published in 1725 in Amsterdam in what was at the time the Dutch Republic, together with eight additional concerti, as Il cimento dell'armonia e dell'inventione (The Contest Between Harmony and Invention).",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Mozart's The Magic Flute premieres",
+  "date": "1791-09-30",
+  "precision": "day",
+  "page": "The Magic Flute",
+  "evidence": "The work premiered on 30 September 1791 at Schikaneder's theatre, the Freihaus-Theater auf der Wieden in Vienna, just two months before Mozart's death.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Beethoven's Ninth Symphony premieres",
+  "date": "1824-05-07",
+  "precision": "day",
+  "page": "Symphony No. 9 (Beethoven)",
+  "evidence": "It was first performed in Vienna on 7 May 1824.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Tchaikovsky's Swan Lake premieres",
+  "date": "1877-03-04",
+  "precision": "day",
+  "page": "Swan Lake",
+  "evidence": "The ballet was premiered by the Bolshoi Ballet on 4 March [O.S. 20 February] 1877 at the Bolshoi Theatre in Moscow.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Tchaikovsky's The Nutcracker premieres",
+  "date": "1892",
+  "precision": "year",
+  "page": "The Nutcracker",
+  "evidence": "The Nutcracker (Russian: Щелкунчик, romanized: Shchelkunchik, pronounced [ɕːɪlˈkunʲtɕɪk] ), Op. 71, is an 1892 two-act classical ballet (conceived as a ballet-féerie; Russian: балет-феерия, romanized: balet-feyeriya) by Pyotr Ilyich Tchaikovsky, set on Christmas Eve at the foot of a Christmas tree in a child's",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "\"Silent Night\" is composed",
+  "date": "1818",
+  "precision": "year",
+  "page": "Silent Night",
+  "evidence": "\"Silent Night\" (German: \"Stille Nacht, heilige Nacht\") is a popular Christmas carol, composed in 1818 by Franz Xaver Gruber to lyrics by Joseph Mohr in Oberndorf bei Salzburg, Austria.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Bach presents the Brandenburg Concertos",
+  "date": "1721",
+  "precision": "year",
+  "page": "Brandenburg Concertos",
+  "evidence": "The Brandenburg Concertos (BWV 1046–1051) by Johann Sebastian Bach are a collection of six instrumental works presented by Bach to Christian Ludwig, Margrave of Brandenburg-Schwedt, in 1721 (though probably composed earlier).",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "\"Jingle Bells\" is published",
+  "date": "1857-09",
+  "precision": "month",
+  "page": "Jingle Bells",
+  "evidence": "It was published under the title \"The One Horse Open Sleigh\" in September 1857.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Gershwin's Rhapsody in Blue premieres",
+  "date": "1924-02-12",
+  "precision": "day",
+  "page": "Rhapsody in Blue",
+  "evidence": "Commissioned by bandleader Paul Whiteman, the work combines elements of classical music with jazz-influenced effects and premiered in a concert titled \"An Experiment in Modern Music\" on February 12, 1924, in Aeolian Hall, New York City.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Elvis Presley releases \"Heartbreak Hotel\"",
+  "date": "1956-01-27",
+  "precision": "day",
+  "page": "Heartbreak Hotel",
+  "evidence": "It was released as a single on January 27, 1956, Presley's first on his new record label RCA Victor.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Bill Haley records \"Rock Around the Clock\"",
+  "date": "1954-04-12",
+  "precision": "day",
+  "page": "Rock Around the Clock",
+  "evidence": "Myers claimed the song had been written specifically for Haley but, for legal reasons, Haley was unable to record it himself until April 12, 1954.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The Beatles are formed in Liverpool",
+  "date": "1960",
+  "precision": "year",
+  "page": "The Beatles",
+  "evidence": "The Beatles were an English rock band formed in Liverpool in 1960.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The Beatles release \"Love Me Do\"",
+  "date": "1962-10-05",
+  "precision": "day",
+  "page": "Love Me Do",
+  "evidence": "When the single was originally released in the United Kingdom on 5 October 1962, it peaked at number 17.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The Beatles release Sgt. Pepper's",
+  "date": "1967-05-26",
+  "precision": "day",
+  "page": "Sgt. Pepper's Lonely Hearts Club Band",
+  "evidence": "Released in the UK on 26 May 1967, Sgt. Pepper is regarded by musicologists as an early concept album that advanced the roles of sound composition, extended form, psychedelic imagery, record sleeves, and the producer in popular music.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Queen releases \"Bohemian Rhapsody\"",
+  "date": "1975",
+  "precision": "year",
+  "page": "Bohemian Rhapsody",
+  "evidence": "Released in 1975 as the lead single from the album, \"Bohemian Rhapsody\" is one of the few progressive rock songs of the 1970s to reach a mainstream audience and is now regarded as the band's signature song.",
+  "level": 1
+ },
+ {
+  "cat": "Music",
+  "event": "ABBA win Eurovision with \"Waterloo\"",
+  "date": "1974-04-06",
+  "precision": "day",
+  "page": "Eurovision Song Contest 1974",
+  "evidence": "The Eurovision Song Contest 1974 was the 19th edition of the Eurovision Song Contest, held on 6 April 1974 at the Brighton Dome in Brighton, United Kingdom, and presented by Katie Boyle.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Michael Jackson releases the album Thriller",
+  "date": "1982-11-29",
+  "precision": "day",
+  "page": "Thriller (album)",
+  "evidence": "It was released on November 29, 1982, through Epic Records.",
+  "level": 1
+ },
+ {
+  "cat": "Music",
+  "event": "Pink Floyd release The Dark Side of the Moon",
+  "date": "1973-03-01",
+  "precision": "day",
+  "page": "The Dark Side of the Moon",
+  "evidence": "The Dark Side of the Moon is the eighth studio album by the English progressive rock band Pink Floyd, released on 1 March 1973 by Capitol Records in the United States, and on 16 March 1973 by Harvest Records in the United Kingdom.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "John Lennon releases \"Imagine\"",
+  "date": "1971",
+  "precision": "year",
+  "page": "Imagine (song)",
+  "evidence": "\"Imagine\" is a song by the English musician John Lennon from his 1971 album of the same name.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Band Aid releases \"Do They Know It's Christmas?\"",
+  "date": "1984-12-07",
+  "precision": "day",
+  "page": "Do They Know It's Christmas?",
+  "evidence": "\"Do They Know It's Christmas?\" was released in the UK on 7 December 1984.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The Live Aid concerts take place",
+  "date": "1985-07-13",
+  "precision": "day",
+  "page": "Live Aid",
+  "evidence": "Live Aid was a two-venue benefit concert and music-based fund-raising initiative held on Saturday, 13 July 1985.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Nirvana releases \"Smells Like Teen Spirit\"",
+  "date": "1991",
+  "precision": "year",
+  "page": "Smells Like Teen Spirit",
+  "evidence": "It is the opening track and lead single from Nirvana's second album, Nevermind (1991), released on DGC Records.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The Spice Girls release \"Wannabe\"",
+  "date": "1996-06-26",
+  "precision": "day",
+  "page": "Wannabe",
+  "evidence": "\"Wannabe\" is the debut single by the British girl group the Spice Girls, released on 26 June 1996.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Britney Spears releases \"...Baby One More Time\"",
+  "date": "1998-09-29",
+  "precision": "day",
+  "page": "...Baby One More Time",
+  "evidence": "Released as Spears' debut single on September 29, 1998, by Jive Records, it topped the charts in over 20 countries.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Adele releases \"Rolling in the Deep\"",
+  "date": "2010-11-29",
+  "precision": "day",
+  "page": "Rolling in the Deep",
+  "evidence": "It was released on 29 November 2010 as the lead single from 21 in digital download format.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Psy releases \"Gangnam Style\"",
+  "date": "2012-07-15",
+  "precision": "day",
+  "page": "Gangnam Style",
+  "evidence": "\"Gangnam Style\" (Korean: 강남스타일; pronounced [kaŋnam sɯtʰa.iɭ]) is a K-pop song by South Korean singer Psy, released on July 15, 2012, by YG Entertainment as the lead single of his first extended play, Psy 6 (Six Rules), Part 1.",
+  "level": 1
+ },
+ {
+  "cat": "Music",
+  "event": "\"Despacito\" is released",
+  "date": "2017-01-13",
+  "precision": "day",
+  "page": "Despacito",
+  "evidence": "On January 13, 2017, it was released as the lead single from Vida, Fonsi's tenth studio album.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Billie Eilish releases \"Bad Guy\"",
+  "date": "2019-03-29",
+  "precision": "day",
+  "page": "Bad Guy (Billie Eilish song)",
+  "evidence": "It was released on March 29, 2019, by Darkroom and Interscope Records.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "BTS release \"Dynamite\"",
+  "date": "2020-08-21",
+  "precision": "day",
+  "page": "Dynamite (BTS song)",
+  "evidence": "\"Dynamite\" is a song recorded by South Korean boy band BTS, released on August 21, 2020, through Big Hit Entertainment and Sony Music Entertainment.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Taylor Swift releases \"Shake It Off\"",
+  "date": "2014-08-18",
+  "precision": "day",
+  "page": "Shake It Off",
+  "evidence": "Big Machine Records released it on August 18, 2014, to promote 1989 as Swift's first pop album after her previous country-oriented image and sound.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Taylor Swift's Eras Tour begins",
+  "date": "2023-03-17",
+  "precision": "day",
+  "page": "The Eras Tour",
+  "evidence": "Considered a landmark of her career, the tour began in Glendale, Arizona, United States, on March 17, 2023, and concluded in Vancouver, British Columbia, Canada, on December 8, 2024.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "\"All I Want for Christmas Is You\" is released",
+  "date": "1994-10-29",
+  "precision": "day",
+  "page": "All I Want for Christmas Is You",
+  "evidence": "It was released as the lead single from the album on October 29, 1994, by Columbia Records.",
+  "level": 1
+ },
+ {
+  "cat": "Music",
+  "event": "Gloria Gaynor releases \"I Will Survive\"",
+  "date": "1978-10",
+  "precision": "month",
+  "page": "I Will Survive",
+  "evidence": "\"I Will Survive\" is a song recorded by American singer Gloria Gaynor, released in October 1978 by Polydor Records as the second single from her sixth album, Love Tracks (1978).",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "MTV goes on the air",
+  "date": "1981-08-01",
+  "precision": "day",
+  "page": "MTV",
+  "evidence": "Launched on August 1, 1981, the channel originally aired music videos and related music entertainment programming guided by television personalities known as video jockeys (VJs).",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Rick Astley releases \"Never Gonna Give You Up\"",
+  "date": "1987-07-27",
+  "precision": "day",
+  "page": "Never Gonna Give You Up",
+  "evidence": "\"Never Gonna Give You Up\" is a song by English singer Rick Astley, released on 27 July 1987.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "\"White Christmas\" features in film Holiday Inn",
+  "date": "1942",
+  "precision": "year",
+  "page": "White Christmas (song)",
+  "evidence": "Written by Irving Berlin for the 1942 musical film Holiday Inn, the song won the Academy Award for Best Original Song at the 15th Academy Awards.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Sabrina Carpenter releases \"Espresso\"",
+  "date": "2024-04-11",
+  "precision": "day",
+  "page": "Espresso (song)",
+  "evidence": "Island Records released it on April 11, 2024, as the album's lead single.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "The first Eurovision Song Contest is held",
+  "date": "1956-05-24",
+  "precision": "day",
+  "page": "Eurovision Song Contest 1956",
+  "evidence": "The Eurovision Song Contest 1956, originally titled the Gran premio Eurovisione 1956 della canzone europea (English: Grand Prix of the Eurovision song competition 1956; French: Grand prix Eurovision 1956 de la chanson européenne), was the first edition of the Eurovision Song Contest, held on 24 May 1956 at the Teatro",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Pinkfong releases \"Baby Shark\"",
+  "date": "2016-06-17",
+  "precision": "day",
+  "page": "Baby Shark",
+  "evidence": "\"Baby Shark\" became popular when Pinkfong, a South Korean entertainment company, released a version of the song on June 17, 2016, with a YouTube Music video which went viral on social media, in online videos, and on the radio.",
+  "level": 2
+ },
+ {
+  "cat": "Music",
+  "event": "Mozart composes Eine kleine Nachtmusik",
+  "date": "1787",
+  "precision": "year",
+  "page": "Eine kleine Nachtmusik",
+  "evidence": "The Serenade No. 13 in G major, K. 525, also titled Eine kleine Nachtmusik, was composed in 1787 for a chamber ensemble by Wolfgang Amadeus Mozart.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "\"The Star-Spangled Banner\" poem is written",
+  "date": "1814-09-14",
+  "precision": "day",
+  "page": "The Star-Spangled Banner",
+  "evidence": "The lyrics come from the \"Defence of Fort M'Henry\", a poem written by American lawyer Francis Scott Key on September 14, 1814, after he witnessed the bombardment of Fort McHenry by the British Royal Navy during the Battle of Baltimore in the War of 1812.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "\"La Marseillaise\" is written",
+  "date": "1792",
+  "precision": "year",
+  "page": "La Marseillaise",
+  "evidence": "It was written in 1792 by Claude Joseph Rouget de Lisle in Strasbourg after the Kingdom of the French declared war against Austria, and was originally titled \"Chant de Guerre pour l'Armée du Rhin\" (\"War Song for the Army of the Rhine\").",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "Robert Burns writes \"Auld Lang Syne\"",
+  "date": "1788",
+  "precision": "year",
+  "page": "Auld Lang Syne",
+  "evidence": "The text is a Scots-language poem written by Robert Burns in 1788, but it is based on an older Scottish folk song.",
+  "level": 3
+ },
+ {
+  "cat": "Music",
+  "event": "The Woodstock music festival begins",
+  "date": "1969-08-15",
+  "precision": "day",
+  "page": "Woodstock",
+  "evidence": "The Woodstock Music and Art Fair, commonly referred to as Woodstock, was a music festival held from August 15 to 18, 1969, on Max Yasgur's dairy farm in Bethel, New York, 60 miles (95 km) southwest of the town of Woodstock.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The first modern Olympic Games are held",
+  "date": "1896-04",
+  "precision": "month",
+  "page": "1896 Summer Olympics",
+  "evidence": "Organised by the International Olympic Committee (IOC), which had been created by French aristocrat Pierre de Coubertin, the event was held in Athens, Greece, from 6 to 15 April 1896.",
+  "level": 1
+ },
+ {
+  "cat": "Sport",
+  "event": "The first FIFA World Cup begins",
+  "date": "1930-07",
+  "precision": "month",
+  "page": "1930 FIFA World Cup",
+  "evidence": "It took place in Uruguay from 13 to 30 July 1930.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Wimbledon tennis championship begins",
+  "date": "1877-07-09",
+  "precision": "day",
+  "page": "1877 Wimbledon Championship",
+  "evidence": "The tournament started on 9 July 1877, and the final – delayed for three days by rain – was played on 19 July in front of a crowd of about 200 people who each paid an entry fee of one shilling.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Tour de France is held",
+  "date": "1903",
+  "precision": "year",
+  "page": "1903 Tour de France",
+  "evidence": "The 1903 Tour de France was the first cycling race set up and sponsored by the newspaper L'Auto, ancestor of the current daily, L'Équipe.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Super Bowl is played",
+  "date": "1967-01-15",
+  "precision": "day",
+  "page": "Super Bowl I",
+  "evidence": "The first AFL–NFL World Championship Game (known retroactively as Super Bowl I and referred to in contemporaneous reports, including the game's radio broadcast, as the Super Bowl) was an American football game played on January 15, 1967, at the Los Angeles Memorial Coliseum in Los Angeles, California.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Roger Bannister runs the first four-minute mile",
+  "date": "1954-05-06",
+  "precision": "day",
+  "page": "Roger Bannister",
+  "evidence": "He accomplished this feat on 6 May 1954 at Iffley Road track in Oxford, with Chris Chataway and Chris Brasher providing the pacing.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Usain Bolt runs 100 metres in 9.58 seconds",
+  "date": "2009",
+  "precision": "year",
+  "page": "Usain Bolt",
+  "evidence": "Bolt improved upon his second 100 m world record of 9.69 with 9.58 seconds in 2009 – the biggest improvement since the start of electronic timing.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The Berlin Summer Olympics are held",
+  "date": "1936-08",
+  "precision": "month",
+  "page": "1936 Summer Olympics",
+  "evidence": "Olympiade) and branded as Berlin 1936, were an international multi-sport event held from 1 to 16 August 1936 in Berlin, Germany.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Winter Olympics open in Chamonix",
+  "date": "1924-01-25",
+  "precision": "day",
+  "page": "1924 Winter Olympics",
+  "evidence": "Organized by the French Olympic Committee and held as part of an \"International Winter Sports Week\", the competitions took place in Chamonix and Haute-Savoie, France, from 25 January to 5 February 1924.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Paralympic Games open in Rome",
+  "date": "1960-09-18",
+  "precision": "day",
+  "page": "1960 Summer Paralympics",
+  "evidence": "The Games were held in Rome, Italy from September 18 to 25, 1960, with the 1960 Summer Olympics.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Nadia Comăneci scores the first perfect 10",
+  "date": "1976",
+  "precision": "year",
+  "page": "Nadia Comăneci",
+  "evidence": "In 1976, at age 14, Comăneci was the first gymnast to be awarded a perfect score of 10.0 at the Olympic Games.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "James Naismith invents basketball",
+  "date": "1891",
+  "precision": "year",
+  "page": "Basketball",
+  "evidence": "Invented in 1891 by Canadian-American gym teacher James Naismith in Springfield, Massachusetts, in the United States, basketball has evolved to become one of the world's most popular and widely viewed sports.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "William G. Morgan invents volleyball",
+  "date": "1895",
+  "precision": "year",
+  "page": "Volleyball",
+  "evidence": "Volleyball was invented in 1895 by the American educator William G. Morgan, a YMCA physical education director in Holyoke, Massachusetts.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Rugby World Cup is held",
+  "date": "1987",
+  "precision": "year",
+  "page": "1987 Rugby World Cup",
+  "evidence": "The 1987 Rugby World Cup was the first Rugby World Cup.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Cricket World Cup begins",
+  "date": "1975-06-07",
+  "precision": "day",
+  "page": "1975 Cricket World Cup",
+  "evidence": "Organised by the International Cricket Conference (ICC), it took place in England, between 7 June and 21 June 1975.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Golf's first Open Championship is held",
+  "date": "1860-10-17",
+  "precision": "day",
+  "page": "1860 Open Championship",
+  "evidence": "to Aberdeen, Blackheath, Bruntsfield, Carnoustie Panmure, Dirleton Castle, Innerleven, Montrose, North Berwick, Perth, Musselburgh and St. Andrews (as noted in Prestwick Golf Club Archive), inviting a player known as a \"respectable caddie\" to represent each of the clubs in a tournament to be held on 17 October 1860.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "First Formula One World Championship race",
+  "date": "1950-05-13",
+  "precision": "day",
+  "page": "1950 British Grand Prix",
+  "evidence": "The 1950 British Grand Prix, formally known as The Royal Automobile Club Grand Prix d'Europe Incorporating The British Grand Prix, was a Formula One motor race held on 13 May 1950 at the Silverstone Circuit in Silverstone, England.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Football's Premier League is founded",
+  "date": "1992",
+  "precision": "year",
+  "page": "Premier League",
+  "evidence": "Fifty-one clubs have competed in the Premier League since its inception in 1992: 49 from England and two from Wales.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Michael Phelps wins eight golds at one Olympics",
+  "date": "2008",
+  "precision": "year",
+  "page": "Michael Phelps",
+  "evidence": "Four years later, when he won eight gold medals at the 2008 Beijing Games, he broke fellow American swimmer Mark Spitz's 1972 record of seven first-place finishes at any single Olympic Games.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "London hosts its third Summer Olympics",
+  "date": "2012-07-27",
+  "precision": "day",
+  "page": "2012 Summer Olympics",
+  "evidence": "The 2012 Summer Olympics, officially the Games of the XXX Olympiad and also known as London 2012, were an international multi-sport event held from 27 July to 12 August 2012 in London, England.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The \"Miracle on Ice\" hockey game is played",
+  "date": "1980-02-22",
+  "precision": "day",
+  "page": "Miracle on Ice",
+  "evidence": "It was played between the hosting United States and the Soviet Union on February 22, 1980, during the medal round of the men's ice hockey tournament.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Maradona's \"Hand of God\" goal",
+  "date": "1986-06-22",
+  "precision": "day",
+  "page": "Argentina v England (1986 FIFA World Cup)",
+  "evidence": "The Argentina 2–1 England quarter-final match of the 1986 FIFA World Cup was a football match played on 22 June 1986 between Argentina and England at Estadio Azteca in Mexico City.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "England win the football World Cup",
+  "date": "1966-07-30",
+  "precision": "day",
+  "page": "1966 FIFA World Cup final",
+  "evidence": "The 1966 FIFA World Cup final was a football match played at Wembley Stadium in London on Saturday 30 July 1966 to determine the winner of the 1966 FIFA World Cup, the eighth FIFA World Cup.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Messi's Argentina win the World Cup in Qatar",
+  "date": "2022-12-18",
+  "precision": "day",
+  "page": "2022 FIFA World Cup final",
+  "evidence": "The final match of the 2022 FIFA World Cup, the 22nd edition of FIFA's competition for men's national football teams, was played at Lusail Stadium in Lusail, Qatar, on 18 December 2022 (Qatari National Day), and was contested by Argentina and defending champions France.",
+  "level": 1
+ },
+ {
+  "cat": "Sport",
+  "event": "Tiger Woods wins his first Masters",
+  "date": "1997-04",
+  "precision": "month",
+  "page": "1997 Masters Tournament",
+  "evidence": "The 1997 Masters Tournament was the 61st Masters Tournament, held April 10–13 at Augusta National Golf Club in Augusta, Georgia.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Jackie Robinson breaks baseball's color line",
+  "date": "1947-04-15",
+  "precision": "day",
+  "page": "Jackie Robinson",
+  "evidence": "Robinson broke the color line when he started at first base for the Brooklyn Dodgers on April 15, 1947.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Bob Beamon's record-breaking long jump",
+  "date": "1968",
+  "precision": "year",
+  "page": "Bob Beamon",
+  "evidence": "Robert Beamon (born August 29, 1946) is an American former track and field athlete, best known for his world record in the long jump at the Mexico City Olympics in 1968.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Eliud Kipchoge runs a marathon in under 2 hours",
+  "date": "2019-10-12",
+  "precision": "day",
+  "page": "Ineos 1:59 Challenge",
+  "evidence": "The Ineos 1:59 Challenge, held on 12 October 2019, was an attempt by Kenyan athlete Eliud Kipchoge to break the two-hour mark for running the marathon distance, which he achieved in a time of 1:59:40.2.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The NBA is founded",
+  "date": "1946-06-06",
+  "precision": "day",
+  "page": "National Basketball Association",
+  "evidence": "The league later adopted the BAA's history and considers its founding on June 6, 1946, as its own.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "FIFA is founded",
+  "date": "1904-05-21",
+  "precision": "day",
+  "page": "FIFA",
+  "evidence": "It was founded on 21 May 1904 to oversee international competition among the national associations of Belgium, Denmark, France, Germany, the Netherlands, Spain, Sweden, and Switzerland.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first international football match is played",
+  "date": "1872-11-30",
+  "precision": "day",
+  "page": "1872 Scotland v England football match",
+  "evidence": "It took place on 30 November 1872 at Hamilton Crescent, the West of Scotland Cricket Club's ground in Partick, Glasgow.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The delayed Tokyo Summer Olympics open",
+  "date": "2021-07-23",
+  "precision": "day",
+  "page": "2020 Summer Olympics",
+  "evidence": "The 2020 Summer Olympics, officially the Games of the XXXII Olympiad and officially branded as Tokyo 2020, were an international multi-sport event held from 23 July to 8 August 2021, in Tokyo, Japan, with some of the preliminary sporting events beginning on 21 July 2021.",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "Paris hosts its third Summer Olympics",
+  "date": "2024-07-26",
+  "precision": "day",
+  "page": "2024 Summer Olympics",
+  "evidence": "The 2024 Summer Olympics (French: Les Jeux Olympiques d'été de 2024), officially the Games of the XXXIII Olympiad (French: Jeux de la XXXIIIe olympiade de l'ère moderne) and branded as Paris 2024, were an international multi-sport event held in France from 26 July to 11 August 2024, with several events starting from",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The Milan Cortina Winter Olympics are held",
+  "date": "2026-02",
+  "precision": "month",
+  "page": "2026 Winter Olympics",
+  "evidence": "The 2026 Winter Olympics (Italian: Olimpiadi invernali del 2026), officially the XXV Olympic Winter Games and commonly known as Milano Cortina 2026, were an international winter multi-sport event held from 6 to 22 February 2026, at multiple sites across Lombardy, Veneto and Trentino-Alto Adige/Südtirol, with",
+  "level": 2
+ },
+ {
+  "cat": "Sport",
+  "event": "The Ashes cricket rivalry gets its name",
+  "date": "1882",
+  "precision": "year",
+  "page": "The Ashes",
+  "evidence": "The term originated in a satirical obituary published in a British newspaper, The Sporting Times, immediately after Australia's 1882 victory at The Oval, its first Test win on English soil.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Torvill and Dean win Olympic ice dance gold",
+  "date": "1984",
+  "precision": "year",
+  "page": "Torvill and Dean",
+  "evidence": "At the Sarajevo 1984 Winter Olympics the pair won gold and became the highest-scoring figure skaters of all time for a single programme, receiving twelve perfect 6.0s and six 5.9s which included artistic impression scores of 6.0 from every judge, after skating to Maurice Ravel's Boléro.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first FIFA Women's World Cup is held",
+  "date": "1991-11",
+  "precision": "month",
+  "page": "1991 FIFA Women's World Cup",
+  "evidence": "It took place in Guangdong, China from 16 to 30 November 1991.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Spain win their first football World Cup",
+  "date": "2010-07-11",
+  "precision": "day",
+  "page": "2010 FIFA World Cup final",
+  "evidence": "The final match of the 2010 FIFA World Cup, the 19th edition of FIFA's competition for national football teams, was played at Soccer City in Johannesburg, South Africa, on 11 July 2010.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Matthew Webb swims the English Channel",
+  "date": "1875",
+  "precision": "year",
+  "page": "Matthew Webb",
+  "evidence": "In 1875, on his second attempt, Webb gained fame by successfully swimming the English Channel from Dover, England, to Cap Gris-Nez, France.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Marylebone Cricket Club is founded",
+  "date": "1787",
+  "precision": "year",
+  "page": "Marylebone Cricket Club",
+  "evidence": "The Marylebone Cricket Club (MCC) is an English cricket club founded in 1787, whose Lord's headquarters are dubbed \"the Home of Cricket\".",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The Football Association is founded",
+  "date": "1863",
+  "precision": "year",
+  "page": "The Football Association",
+  "evidence": "Formed in 1863, it is the oldest football association in the world and is responsible for overseeing all aspects of the amateur and professional game in its territory.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "The first Oxford-Cambridge Boat Race",
+  "date": "1829",
+  "precision": "year",
+  "page": "The Boat Race",
+  "evidence": "The men's race was first held in 1829 and is the second oldest inter-university sporting event in the world.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "Tony Hawk lands skateboarding's first 900",
+  "date": "1999",
+  "precision": "year",
+  "page": "Tony Hawk",
+  "evidence": "A pioneer of modern vertical skateboarding, Hawk completed the first documented \"900\" skateboarding trick in 1999.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "17-year-old Pelé helps Brazil win the World Cup",
+  "date": "1958-06-29",
+  "precision": "day",
+  "page": "1958 FIFA World Cup final",
+  "evidence": "The 1958 FIFA World Cup final took place in Råsunda Stadium, Solna (near Stockholm), Sweden, on 29 June 1958 to determine the champion of the 1958 FIFA World Cup.",
+  "level": 3
+ },
+ {
+  "cat": "Sport",
+  "event": "England win the Rugby World Cup",
+  "date": "2003-11-22",
+  "precision": "day",
+  "page": "2003 Rugby World Cup final",
+  "evidence": "The match was played at Stadium Australia in Sydney on 22 November 2003, and was contested by Australia (the tournament hosts and defending champions) and England.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Tennis for Two, an early video game, is made",
+  "date": "1958",
+  "precision": "year",
+  "page": "Tennis for Two",
+  "evidence": "Tennis for Two (also known as Computer Tennis) is a 1958 sports video game designed by the American physicist William Higinbotham at the Brookhaven National Laboratory.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Spacewar! is created",
+  "date": "1962",
+  "precision": "year",
+  "page": "Spacewar!",
+  "evidence": "Spacewar! is a space combat video game developed in 1962 by Steve Russell in collaboration with Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner, and others.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Atari releases Pong",
+  "date": "1972",
+  "precision": "year",
+  "page": "Pong",
+  "evidence": "Pong is a 1972 sports video game developed and published by Atari, Inc. for arcades.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The Magnavox Odyssey home console is released",
+  "date": "1972-09",
+  "precision": "month",
+  "page": "Magnavox Odyssey",
+  "evidence": "The hardware was designed by a small team led by Ralph H. Baer at Sanders Associates, while Magnavox completed development and released it in the United States in September 1972, in the United Kingdom in 1973, and in other European countries in 1974.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Space Invaders is released",
+  "date": "1978",
+  "precision": "year",
+  "page": "Space Invaders",
+  "evidence": "Space Invaders is a 1978 fixed shooter video game developed and published by Taito for arcades.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The original Pac-Man arcade game is released",
+  "date": "1980-05-22",
+  "precision": "day",
+  "page": "Pac-Man",
+  "evidence": "It was released in Japan on May 22, 1980 and by Midway Manufacturing in North America in October 1980.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "Donkey Kong arcade game is released",
+  "date": "1981-07-09",
+  "precision": "day",
+  "page": "Donkey Kong (1981 video game)",
+  "evidence": "It had a limited release in Japan on July 9, 1981, before receiving a wide release in the region some weeks later.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Nintendo's Famicom console is released in Japan",
+  "date": "1983-07-15",
+  "precision": "day",
+  "page": "Nintendo Entertainment System",
+  "evidence": "It was released as the Family Computer (Famicom) in Japan on July 15, 1983, and as the NES in test markets in the United States on October 18, 1985, followed by a nationwide launch on September 27, 1986.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Super Mario Bros. is released",
+  "date": "1985-09",
+  "precision": "month",
+  "page": "Super Mario Bros.",
+  "evidence": "Super Mario Bros. was released in September 1985 in Japan for the Famicom, the Japanese version of the NES.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The first Legend of Zelda game is released",
+  "date": "1986-02-21",
+  "precision": "day",
+  "page": "The Legend of Zelda (video game)",
+  "evidence": "The Legend of Zelda was released in Japan as a launch game for the Family Computer Disk System on February 21, 1986.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The original Game Boy is released",
+  "date": "1989-04-21",
+  "precision": "day",
+  "page": "Game Boy",
+  "evidence": "It was released in Japan on April 21, 1989, followed by North America on July 31, 1989 and Europe on September 28, 1990.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The first Sonic the Hedgehog game is released",
+  "date": "1991",
+  "precision": "year",
+  "page": "Sonic the Hedgehog (1991 video game)",
+  "evidence": "Sonic the Hedgehog is a 1991 platform game developed by Sonic Team and published by Sega for the Sega Genesis.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The Super Nintendo is released in Japan",
+  "date": "1990-11-21",
+  "precision": "day",
+  "page": "Super Nintendo Entertainment System",
+  "evidence": "It was released as the Super Famicom (SFC) in Japan on November 21, 1990, as the Super NES in North America on August 23, 1991, and internationally throughout 1992.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The first PlayStation is released in Japan",
+  "date": "1994-12-03",
+  "precision": "day",
+  "page": "PlayStation (console)",
+  "evidence": "It was released in Japan on 3 December 1994, followed by North America on 9 September 1995, Europe on 29 September 1995, and other regions following thereafter.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The Nintendo 64 is released",
+  "date": "1996-06-23",
+  "precision": "day",
+  "page": "Nintendo 64",
+  "evidence": "It was released in Japan on June 23, 1996, in North America on September 29, 1996, and in Europe and Australia on March 1, 1997.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The first Pokémon games are released",
+  "date": "1996",
+  "precision": "year",
+  "page": "Pokémon Red, Blue, and Yellow",
+  "evidence": "Pokémon Red Version and Pokémon Blue Version are 1996 role-playing video games (RPGs) developed by Game Freak and published by Nintendo for the Game Boy.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The first Final Fantasy game is released",
+  "date": "1987",
+  "precision": "year",
+  "page": "Final Fantasy (video game)",
+  "evidence": "Final Fantasy is a 1987 role-playing video game developed and published by Square for the Nintendo Entertainment System.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "The Sims is released",
+  "date": "2000",
+  "precision": "year",
+  "page": "The Sims (video game)",
+  "evidence": "The Sims is a 2000 social simulation video game developed by Maxis and published by Electronic Arts.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The PlayStation 2 is released",
+  "date": "2000-03-04",
+  "precision": "day",
+  "page": "PlayStation 2",
+  "evidence": "It was first released in Japan on March 4, 2000, in North America on October 26, in Europe on November 24, in Australia on November 30, and other regions thereafter.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The original Xbox is released",
+  "date": "2001-11-15",
+  "precision": "day",
+  "page": "Xbox (console)",
+  "evidence": "It was released on November 15, 2001, in North America, followed by Australia, Europe, and Japan in 2002.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "World of Warcraft is released",
+  "date": "2004-11-23",
+  "precision": "day",
+  "page": "World of Warcraft",
+  "evidence": "The game was announced in 2001 and was released for the 10th anniversary of the Warcraft franchise on November 23, 2004.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The Nintendo Wii is released",
+  "date": "2006-11-19",
+  "precision": "day",
+  "page": "Wii",
+  "evidence": "It was released on November 19, 2006, in North America, and in December 2006 for most other regions of the world.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The Xbox 360 is first launched",
+  "date": "2005",
+  "precision": "year",
+  "page": "Xbox 360",
+  "evidence": "Launched worldwide mostly between November 2005 and December 2006, the Xbox 360 was initially in short supply in many regions, including North America and Europe.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Minecraft's full version is released",
+  "date": "2011-11-18",
+  "precision": "day",
+  "page": "Minecraft",
+  "evidence": "Following its initial public alpha release as an early access title on 17 May 2009, it was formally released on 18 November 2011 for personal computers.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "Angry Birds is released",
+  "date": "2009-12-11",
+  "precision": "day",
+  "page": "Angry Birds (video game)",
+  "evidence": "Angry Birds was originally released for mobile devices on December 11, 2009, with several ports and patch updates having been produced thereafter.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Roblox is released",
+  "date": "2006",
+  "precision": "year",
+  "page": "Roblox",
+  "evidence": "It was developed by David Baszucki and Erik Cassel in 2004, and released to the public in 2006.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Fortnite is released",
+  "date": "2017",
+  "precision": "year",
+  "page": "Fortnite",
+  "evidence": "Fortnite is a 2017 online video game and game platform developed and released by Epic Games.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "Pokémon Go is released",
+  "date": "2016",
+  "precision": "year",
+  "page": "Pokémon Go",
+  "evidence": "Pokémon Go (stylized as Pokémon GO and abbreviated as PoGo) is a 2016 augmented reality (AR) mobile game originally developed and published by Niantic and since 2025 by Scopely Explore, in partnership with Nintendo and the Pokémon Company, for iOS and Android devices.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "The Nintendo Switch is released",
+  "date": "2017-03-03",
+  "precision": "day",
+  "page": "Nintendo Switch",
+  "evidence": "The Nintendo Switch is a video game console developed by Nintendo and released worldwide in most regions on March 3, 2017.",
+  "level": 1
+ },
+ {
+  "cat": "Video games",
+  "event": "Among Us is released",
+  "date": "2018-06",
+  "precision": "month",
+  "page": "Among Us",
+  "evidence": "The game allows for cross-platform play; it was released on iOS and Android devices in June 2018 and on Windows later that year in November.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Animal Crossing: New Horizons is released",
+  "date": "2020-03-20",
+  "precision": "day",
+  "page": "Animal Crossing: New Horizons",
+  "evidence": "The game was announced during a Nintendo Direct in September 2018 and after an extended development period, was released worldwide on March 20, 2020.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The PlayStation 5 is released",
+  "date": "2020-11-12",
+  "precision": "day",
+  "page": "PlayStation 5",
+  "evidence": "It was announced as the successor to the PlayStation 4 in April 2019, and was launched in Australia, Japan, New Zealand, North America, and South Korea on November 12, 2020, and worldwide a week later.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The Nintendo Switch 2 is released",
+  "date": "2025-06-05",
+  "precision": "day",
+  "page": "Nintendo Switch 2",
+  "evidence": "The Nintendo Switch 2 is a video game console developed by Nintendo and released in most regions on June 5, 2025.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Candy Crush Saga is released",
+  "date": "2012-04-12",
+  "precision": "day",
+  "page": "Candy Crush Saga",
+  "evidence": "Candy Crush Saga is a free-to-play match-three video game released by King on April 12, 2012, originally for Facebook; other versions for iOS, Android, Windows Phone, and Windows 10 followed.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Super Mario Kart is released",
+  "date": "1992-08-27",
+  "precision": "day",
+  "page": "Super Mario Kart",
+  "evidence": "The first game in the Mario Kart series, it was released in Japan on August 27, 1992, North America on September 1, 1992, and Europe on January 21, 1993.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Nintendo is founded as a playing card company",
+  "date": "1889",
+  "precision": "year",
+  "page": "Nintendo",
+  "evidence": "The history of Nintendo began when craftsman Fusajiro Yamauchi founded the company in 1889 to produce handmade hanafuda playing cards.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The Atari 2600 console is released",
+  "date": "1977",
+  "precision": "year",
+  "page": "Atari 2600",
+  "evidence": "The Atari 2600 is a home video game console developed and produced by Atari, Inc. Released c. September 1977 as the Atari Video Computer System (Atari VCS), it popularized microprocessor-based hardware and games stored on swappable ROM cartridges, a format first used with the Fairchild Channel F in 1976.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Valve's Steam platform is launched",
+  "date": "2003-09",
+  "precision": "month",
+  "page": "Steam (service)",
+  "evidence": "It was launched as a software client in September 2003 to provide video game updates automatically for Valve's games and expanded to distributing third-party titles in late 2005.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Super Mario Galaxy is released",
+  "date": "2007-11-01",
+  "precision": "day",
+  "page": "Super Mario Galaxy",
+  "evidence": "Super Mario Galaxy was released on the Wii in Japan on 1 November 2007, with other major territories getting releases for later that month.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Zelda: Tears of the Kingdom is released",
+  "date": "2023-05-12",
+  "precision": "day",
+  "page": "The Legend of Zelda: Tears of the Kingdom",
+  "evidence": "It was released on May 12, 2023, to acclaim, with praise for its expanded world, new mechanics, scale, and story, though the frame rate received criticism.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Sega's Mega Drive is released in Japan",
+  "date": "1988-10",
+  "precision": "month",
+  "page": "Sega Genesis",
+  "evidence": "Sega released it in October 1988 in Japan as the Mega Drive, and in August 1989 in North America as the Genesis.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "The first Super Smash Bros. game is released",
+  "date": "1999-01-21",
+  "precision": "day",
+  "page": "Super Smash Bros. (video game)",
+  "evidence": "It is the first game in the Super Smash Bros. series and was released in Japan on January 21, 1999; in North America on April 26, 1999; and in Europe on November 19, 1999.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "The first FIFA football video game is released",
+  "date": "1993",
+  "precision": "year",
+  "page": "FIFA International Soccer",
+  "evidence": "FIFA International Soccer (also known as FIFA 94) is a 1993 association football video game developed by EA Canada's Extended Play Productions team and published by EA Sports.",
+  "level": 3
+ },
+ {
+  "cat": "Video games",
+  "event": "Wordle is released",
+  "date": "2021-10",
+  "precision": "month",
+  "page": "Wordle",
+  "evidence": "Originally developed as a personal project for Wardle and his partner, Wordle was publicly released in October 2021.",
+  "level": 2
+ },
+ {
+  "cat": "Video games",
+  "event": "Flappy Bird is released",
+  "date": "2013-05",
+  "precision": "month",
+  "page": "Flappy Bird",
+  "evidence": "The game was released in May 2013 but received a sudden spike in popularity in early 2014, becoming a sleeper hit.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Eiffel Tower is completed",
+  "date": "1889",
+  "precision": "year",
+  "page": "Eiffel Tower",
+  "evidence": "It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+  "level": 1
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Statue of Liberty is dedicated",
+  "date": "1886-10-28",
+  "precision": "day",
+  "page": "Statue of Liberty",
+  "evidence": "The statue was dedicated on October 28, 1886.",
+  "level": 1
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Golden Gate Bridge opens",
+  "date": "1937-05-27",
+  "precision": "day",
+  "page": "Golden Gate Bridge",
+  "evidence": "The bridge opened to the public on May 27, 1937, and has undergone various retrofits and other improvement projects in the decades since.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Burj Khalifa opens",
+  "date": "2010",
+  "precision": "year",
+  "page": "Burj Khalifa",
+  "evidence": "The building was opened in 2010 as part of a new development called Downtown Dubai.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Empire State Building opens",
+  "date": "1931-05-01",
+  "precision": "day",
+  "page": "Empire State Building",
+  "evidence": "Construction started on March 17, 1930, and the building opened thirteen and a half months afterward on May 1, 1931.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Sydney Opera House opens",
+  "date": "1973-10-20",
+  "precision": "day",
+  "page": "Sydney Opera House",
+  "evidence": "Designed by Danish architect Jørn Utzon and completed by an Australian architectural team headed by Peter Hall, the building was formally opened by Queen Elizabeth II on 20 October 1973, 16 years after Utzon's 1957 selection as winner of an international design competition.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Tower Bridge in London opens",
+  "date": "1894-06-30",
+  "precision": "day",
+  "page": "Tower Bridge",
+  "evidence": "The bridge was opened by Edward, Prince of Wales, and Alexandra, Princess of Wales, on 30 June 1894.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Big Ben clock tower is completed",
+  "date": "1859",
+  "precision": "year",
+  "page": "Big Ben",
+  "evidence": "The tower was designed by Augustus Pugin and Sir Charles Barry in the Perpendicular Gothic style and was completed in 1859.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Colosseum is completed",
+  "date": "0080",
+  "precision": "year",
+  "page": "Colosseum",
+  "evidence": "Construction began under Emperor Vespasian (r. 69–79 AD) in 72 and was completed in AD 80 under his successor and heir, Titus (r. 79–81).",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of the Parthenon begins",
+  "date": "-0447",
+  "precision": "year",
+  "page": "Parthenon",
+  "evidence": "Construction started in 447 BC when the Delian League was at the peak of its power.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Hagia Sophia church is completed",
+  "date": "0537",
+  "precision": "year",
+  "page": "Hagia Sophia",
+  "evidence": "The last of three church buildings to be successively erected on the site by the Eastern Roman Empire, it was completed in AD 537, becoming the world's largest interior space and among the first to employ a fully pendentive dome.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of Notre-Dame de Paris begins",
+  "date": "1163",
+  "precision": "year",
+  "page": "Notre-Dame de Paris",
+  "evidence": "The construction of the cathedral began in 1163 under Bishop Maurice de Sully and was largely completed by 1260, though it was modified in succeeding centuries.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of Hadrian's Wall begins",
+  "date": "0122",
+  "precision": "year",
+  "page": "Hadrian's Wall",
+  "evidence": "Hadrian's Wall is a former defensive fortification of the Roman province of Britannia, begun in AD 122 in the reign of the Emperor Hadrian.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Panama Canal opens",
+  "date": "1914-08-15",
+  "precision": "day",
+  "page": "Panama Canal",
+  "evidence": "Since its inauguration on 15 August 1914, the canal has succeeded in shortening maritime communication in time and distance, invigorating maritime and economic transportation by providing a short and relatively inexpensive transit route between the two oceans, decisively influencing global trade patterns, boosting",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Suez Canal opens",
+  "date": "1869-11-17",
+  "precision": "day",
+  "page": "Suez Canal",
+  "evidence": "Construction began the following year, and the canal opened on 17 November 1869 as a single-lane waterway with passing locations in the Ballah Bypass and the Great Bitter Lake.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Channel Tunnel is completed",
+  "date": "1994",
+  "precision": "year",
+  "page": "Channel Tunnel",
+  "evidence": "The modern project was initiated by Eurotunnel in 1988 and completed in 1994, at a final cost of £4.65 billion (equivalent to £9.8 billion in 2025).",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Work on carving Mount Rushmore ends",
+  "date": "1941-10-31",
+  "precision": "day",
+  "page": "Mount Rushmore",
+  "evidence": "Each president was originally to be depicted from head to waist, but lack of funding forced construction to end on October 31, 1941, and only Washington's sculpture includes any detail below chin level.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Christ the Redeemer statue is completed",
+  "date": "1931",
+  "precision": "year",
+  "page": "Christ the Redeemer (statue)",
+  "evidence": "Constructed between 1922 and 1931, the statue is 30 metres (98 ft) high, excluding its 8-metre (26 ft) pedestal, and faces east.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Brooklyn Bridge opens",
+  "date": "1883-05-24",
+  "precision": "day",
+  "page": "Brooklyn Bridge",
+  "evidence": "Opened on May 24, 1883, the Brooklyn Bridge was the first fixed crossing of the East River.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of the Sagrada Família begins",
+  "date": "1882-03-19",
+  "precision": "day",
+  "page": "Sagrada Família",
+  "evidence": "On 19 March 1882, construction of Sagrada Família began under the architect Francisco de Paula del Villar.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The London Eye opens to the public",
+  "date": "2000",
+  "precision": "year",
+  "page": "London Eye",
+  "evidence": "When it opened to the public in 2000 it was the world's tallest Ferris wheel, until the 160-metre (525 ft) Star of Nanchang in China surpassed it in 2006.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "St. Peter's Basilica is completed",
+  "date": "1626-11-18",
+  "precision": "day",
+  "page": "St. Peter's Basilica",
+  "evidence": "Construction of the present basilica began on 18 April 1506 and was completed on 18 November 1626.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Forbidden City is completed",
+  "date": "1420",
+  "precision": "year",
+  "page": "Forbidden City",
+  "evidence": "The Forbidden City was constructed from 1406 to 1420 and was the imperial palace and winter residence of the Emperor of China from the Ming dynasty (since the Yongle Emperor in 1420) to the end of the Qing dynasty in 1924.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Disneyland's opening ceremony is held",
+  "date": "1955-07-17",
+  "precision": "day",
+  "page": "Disneyland",
+  "evidence": "Construction began in 1954 and the park was dedicated during a special televised press event on the ABC Television Network on July 17, 1955, a day before its public opening.",
+  "level": 2
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of Cologne Cathedral begins",
+  "date": "1248",
+  "precision": "year",
+  "page": "Cologne Cathedral",
+  "evidence": "Construction of Cologne Cathedral began in 1248, but was halted in the years around 1560.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "The Tokyo Skytree opens to the public",
+  "date": "2012-05-22",
+  "precision": "day",
+  "page": "Tokyo Skytree",
+  "evidence": "Skytree was completed on Leap Day, 29 February 2012, with the tower opening to the public on 22 May 2012.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of the White House begins",
+  "date": "1792",
+  "precision": "year",
+  "page": "White House",
+  "evidence": "Constructed between 1792 and 1800, its exterior walls are Aquia Creek sandstone painted white.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Saint Basil's Cathedral is completed",
+  "date": "1561",
+  "precision": "year",
+  "page": "Saint Basil's Cathedral",
+  "evidence": "It was built from 1555 to 1561 on orders from Ivan the Terrible and commemorates the capture of Kazan and Astrakhan.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Construction of Milan Cathedral begins",
+  "date": "1386",
+  "precision": "year",
+  "page": "Milan Cathedral",
+  "evidence": "The cathedral took nearly six centuries to complete, beginning construction in 1386 and its final details completed in 1965.",
+  "level": 3
+ },
+ {
+  "cat": "Landmarks",
+  "event": "Trajan's Column is completed",
+  "date": "0113-05-12",
+  "precision": "day",
+  "page": "Trajan's Column",
+  "evidence": "Completed and dedicated on 12 May 113 AD, the freestanding column is most famous for its spiral bas relief, which depicts the wars between the Romans and Dacians (101–102 and 105–106).",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Alfred Nobel patents dynamite",
+  "date": "1867",
+  "precision": "year",
+  "page": "Alfred Nobel",
+  "evidence": "Nobel's most famous invention, dynamite, was an explosive made using nitroglycerin, which was patented in 1867.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Lipperhey applies to patent the telescope",
+  "date": "1608",
+  "precision": "year",
+  "page": "History of the telescope",
+  "evidence": "The history of the telescope can be traced to before the invention of the earliest known telescope, which appeared in 1608 in the Netherlands, when a patent was submitted by Hans Lippershey, an eyeglass maker.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First call on a handheld mobile phone",
+  "date": "1973-04-03",
+  "precision": "day",
+  "page": "Martin Cooper (inventor)",
+  "evidence": "On April 3, 1973, Cooper placed the first public call from a prototype handheld portable phone (distinct from the car phone) while working at Motorola, from a Manhattan sidewalk to his counterpart at competitor Bell Labs.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "The integrated circuit is invented",
+  "date": "1958",
+  "precision": "year",
+  "page": "Jack Kilby",
+  "evidence": "Jack St. Clair Kilby (November 8, 1923 – June 20, 2005) was an American electrical engineer who took part, along with Robert Noyce of Fairchild Semiconductor, in the realization of the first integrated circuit while working at Texas Instruments in 1958.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Benjamin Franklin's kite experiment",
+  "date": "1752",
+  "precision": "year",
+  "page": "Kite experiment",
+  "evidence": "The experiment was first proposed in 1752 by Benjamin Franklin, who reportedly conducted the experiment with the assistance of his son William.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Lumière brothers' first film screening",
+  "date": "1895-12-28",
+  "precision": "day",
+  "page": "Lumière brothers",
+  "evidence": "Their first commercial public screening on 28 December 1895, for around 40 paying visitors and invited relations, has traditionally been regarded as the birth of cinema.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Volta invents the electric battery",
+  "date": "1799",
+  "precision": "year",
+  "page": "Alessandro Volta",
+  "evidence": "He invented the voltaic pile in 1799, and reported the results of his experiments in a two-part letter to the president of the Royal Society in London, which was published in 1800.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First transatlantic telegraph message is sent",
+  "date": "1858-08-16",
+  "precision": "day",
+  "page": "Transatlantic telegraph cable",
+  "evidence": "The first communications occurred on August 16, 1858, but the line speed was poor.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Humphry Davy invents his miners' safety lamp",
+  "date": "1815",
+  "precision": "year",
+  "page": "Davy lamp",
+  "evidence": "The Davy lamp is a safety lamp used in flammable atmospheres, invented in 1815 by Sir Humphry Davy.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Stephanie Kwolek invents Kevlar",
+  "date": "1965",
+  "precision": "year",
+  "page": "Kevlar",
+  "evidence": "Developed by Stephanie Kwolek at DuPont in 1965, the high-strength material was first used commercially in the early 1970s as a replacement for steel in racing tires.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First flight of a jet-powered aircraft",
+  "date": "1939-08-27",
+  "precision": "day",
+  "page": "Heinkel He 178",
+  "evidence": "On 27 August 1939, the He 178 V1, the first prototype, performed its maiden flight, piloted by Erich Warsitz.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Henry Bessemer patents his steelmaking process",
+  "date": "1856",
+  "precision": "year",
+  "page": "Bessemer process",
+  "evidence": "The modern process is named after its inventor, the Englishman Henry Bessemer, who took out a patent on the process in 1856.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Shen Kuo publishes his Dream Pool Essays",
+  "date": "1088",
+  "precision": "year",
+  "page": "Dream Pool Essays",
+  "evidence": "The Dream Pool Essays (or Dream Torrent Essays) was an extensive book written by the Chinese polymath and statesman Shen Kuo (1031–1095), published in 1088 during the Song dynasty (960–1279).",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Slinky toy is invented",
+  "date": "1943",
+  "precision": "year",
+  "page": "Slinky",
+  "evidence": "The Slinky is a helical spring toy invented and developed by American naval engineer Richard T. James in 1943 and successfully demonstrated at Gimbels department store in Philadelphia on November 27, 1945.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Mary Anderson patents the windscreen wiper",
+  "date": "1903",
+  "precision": "year",
+  "page": "Mary Anderson (inventor)",
+  "evidence": "In her 1903 U.S. patent, Anderson described her design as a “window cleaning device for electric cars and other vehicles,” a hand-operated mechanism using a blade to clear snow, ice, or sleet from the windshield.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Bubble Wrap is invented",
+  "date": "1957",
+  "precision": "year",
+  "page": "Bubble wrap",
+  "evidence": "In 1957, two inventors named Alfred Fielding and Marc Chavannes were attempting to create a three-dimensional plastic wallpaper.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Etch A Sketch toy goes on sale",
+  "date": "1960-07-12",
+  "precision": "day",
+  "page": "Etch A Sketch",
+  "evidence": "The Etch A Sketch was introduced near the peak of the Baby Boom on July 12, 1960, for $2.99 (equivalent to $33 in 2025).",
+  "level": 3
+ },
+ {
+  "cat": "History",
+  "event": "Nelson Mandela becomes South Africa's president",
+  "date": "1994",
+  "precision": "year",
+  "page": "Nelson Mandela",
+  "evidence": "Nelson Rolihlahla Mandela (18 July 1918 – 5 December 2013) was a South African anti-apartheid revolutionary, politician, and philanthropist, who served as President of South Africa from 1994 to 1999.",
+  "level": 2
+ },
+ {
+  "cat": "History",
+  "event": "Columbus first reaches the Americas",
+  "date": "1492-10-12",
+  "precision": "day",
+  "page": "Christopher Columbus",
+  "evidence": "Columbus left the Port of Palos in August 1492 with three ships and made landfall in the Americas on 12 October, ending the period of human habitation in the Americas now referred to as the pre-Columbian era.",
+  "level": 1
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Tim Berners-Lee invents the World Wide Web",
+  "date": "1989",
+  "precision": "year",
+  "page": "World Wide Web",
+  "evidence": "The Web was invented by English computer scientist Tim Berners-Lee while at CERN in 1989 and opened to the public in 1993.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "TikTok's Chinese version Douyin launches",
+  "date": "2016-09",
+  "precision": "month",
+  "page": "Douyin",
+  "evidence": "Douyin was launched by ByteDance in September 2016, and is positioned as a music short video community suitable for young people in China.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Apple releases the first iPod",
+  "date": "2001",
+  "precision": "year",
+  "page": "IPod",
+  "evidence": "The iPod is a discontinued series of portable media players and multi-purpose mobile devices that was designed and marketed by Apple from 2001 to 2022.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first Wi-Fi standard is released",
+  "date": "1997",
+  "precision": "year",
+  "page": "IEEE 802.11",
+  "evidence": "The base version of the standard was released in 1997 and has had subsequent amendments.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The Bluetooth Special Interest Group is formed",
+  "date": "1998-09",
+  "precision": "month",
+  "page": "Bluetooth Special Interest Group",
+  "evidence": "The SIG is a not-for-profit, non-stock corporation founded in September 1998.",
+  "level": 3
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "Snap Inc., maker of Snapchat, is founded",
+  "date": "2011-09",
+  "precision": "month",
+  "page": "Snap Inc.",
+  "evidence": "Snap Inc. is an American technology company, founded in September 2011, by Evan Spiegel, Bobby Murphy, and Reggie Brown, based in Santa Monica, California.",
+  "level": 2
+ },
+ {
+  "cat": "Internet & tech",
+  "event": "The first SMS text message is sent",
+  "date": "1992",
+  "precision": "year",
+  "page": "Neil Papworth",
+  "evidence": "He is known as the sender of the first ever text message (also known as SMS message) in 1992.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "Tereshkova becomes the first woman in space",
+  "date": "1963-06-16",
+  "precision": "day",
+  "page": "Valentina Tereshkova",
+  "evidence": "She was the first woman in space, having flown a solo mission on Vostok 6 on 16 June 1963.",
+  "level": 2
+ },
+ {
+  "cat": "Space",
+  "event": "First exoplanet orbiting a Sun-like star found",
+  "date": "1995",
+  "precision": "year",
+  "page": "Didier Queloz",
+  "evidence": "Together with Michel Mayor in 1995, he discovered 51 Pegasi b, the first extrasolar planet orbiting a Sun-like star, 51 Pegasi.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Edward Jenner tests the first smallpox vaccine",
+  "date": "1796",
+  "precision": "year",
+  "page": "Smallpox vaccine",
+  "evidence": "In 1796, British physician Edward Jenner demonstrated that an infection with the relatively mild cowpox virus conferred immunity against the deadly smallpox disease.",
+  "level": 2
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The first rabies vaccine is introduced",
+  "date": "1885",
+  "precision": "year",
+  "page": "Rabies vaccine",
+  "evidence": "The first rabies vaccine was introduced in 1885 and was followed by an improved version in 1908.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "Rutherford discovers the atomic nucleus",
+  "date": "1911",
+  "precision": "year",
+  "page": "Ernest Rutherford",
+  "evidence": "In 1911, he theorised that atoms have their charge concentrated in a very small nucleus.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "James Dewar invents the vacuum flask",
+  "date": "1892",
+  "precision": "year",
+  "page": "Vacuum flask",
+  "evidence": "Invented by James Dewar in 1892, the vacuum flask consists of two flasks, placed one within the other and joined at the neck.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Daimler and Maybach build the first motorcycle",
+  "date": "1885",
+  "precision": "year",
+  "page": "Daimler Reitwagen",
+  "evidence": "The Daimler Reitwagen (\"riding car\") or Einspur (\"single track\") was a motor vehicle made by Gottlieb Daimler and Wilhelm Maybach in 1885.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Neon lighting is first shown in Paris",
+  "date": "1910-12",
+  "precision": "month",
+  "page": "Neon lighting",
+  "evidence": "Georges Claude, a French engineer and inventor, presented neon tube lighting in essentially its modern form at the Paris Motor Show, December 3–18, 1910.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Play-Doh is first shown as a toy",
+  "date": "1956",
+  "precision": "year",
+  "page": "Play-Doh",
+  "evidence": "Play-Doh was demonstrated at an educational convention in 1956 and prominent department stores opened retail accounts.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Barbie doll is launched",
+  "date": "1959-03-09",
+  "precision": "day",
+  "page": "Barbie",
+  "evidence": "Barbie is a fashion doll franchise created by American businesswoman Ruth Handler, manufactured by American toy and entertainment company Mattel and introduced on March 9, 1959.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Bandai launches the Tamagotchi",
+  "date": "1996",
+  "precision": "year",
+  "page": "Tamagotchi",
+  "evidence": "Tamagotchi (Japanese: たまごっち; IPA: [tamaɡotꜜtɕi], \"Egg Watch\") is a brand of handheld digital pets marketed since 1996 by Japanese toymaker Bandai, a division of Bandai Namco Holdings.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "Momofuku Ando invents instant noodles",
+  "date": "1958",
+  "precision": "year",
+  "page": "Instant noodles",
+  "evidence": "They were launched in 1958 under the brand name Chikin Ramen.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The Diamond Sutra, oldest printed book, is made",
+  "date": "0868-05-11",
+  "precision": "day",
+  "page": "Diamond Sutra",
+  "evidence": "It dates back to May 11, 868 CE and is broadly considered to be the oldest extant printed book, although other, earlier, printed materials on paper exist that predate this artifact.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "LEDs appear as practical electronic parts",
+  "date": "1962",
+  "precision": "year",
+  "page": "Light-emitting diode",
+  "evidence": "Appearing as practical electronic components in 1962, the earliest LEDs emitted low-intensity infrared (IR) light.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "James Chadwick discovers the neutron",
+  "date": "1932",
+  "precision": "year",
+  "page": "Discovery of the neutron",
+  "evidence": "The essential nature of the atomic nucleus was established with the discovery of the neutron by James Chadwick in 1932 and the determination that it was a new elementary particle, distinct from the proton.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "The first microwave oven goes on sale",
+  "date": "1947",
+  "precision": "year",
+  "page": "Microwave oven",
+  "evidence": "American electrical engineer Percy Spencer is generally credited with developing and patenting the world's first commercial microwave oven, the Raytheon \"Radarange\", which was first sold in 1947.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "The barcode is patented",
+  "date": "1952",
+  "precision": "year",
+  "page": "Barcode",
+  "evidence": "The barcode was invented by Norman Joseph Woodland and Bernard Silver and patented in the US in 1952.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "First passenger safety elevator is installed",
+  "date": "1857-03-23",
+  "precision": "day",
+  "page": "Elisha Otis",
+  "evidence": "On March 23, 1857, he installed the first safety elevator for passenger service in the store of E.V. Haughwout & Co. in New York City.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Motorola unveils the first mobile phone for sale",
+  "date": "1983-03-06",
+  "precision": "day",
+  "page": "DynaTAC",
+  "evidence": "Unveiled on March 6, 1983, the DynaTAC was the first commercially available handheld cellular phone.",
+  "level": 2
+ },
+ {
+  "cat": "Inventions",
+  "event": "First commercial Kinetoscope film show",
+  "date": "1894-04-14",
+  "precision": "day",
+  "page": "Kinetoscope",
+  "evidence": "The completed version was publicly unveiled in Brooklyn two years later, and on April 14, 1894, the first commercial exhibition of Kinetoscopes took place in New York City, with 10 different films.",
+  "level": 3
+ },
+ {
+  "cat": "Inventions",
+  "event": "Vinyl records are introduced",
+  "date": "1948",
+  "precision": "year",
+  "page": "Phonograph record",
+  "evidence": "Unlike 78-rpm records, \"Vinyl\" records made from polyvinyl chloride (PVC) were introduced in 1948, and by 1958 they became standard, replacing the old 78s and remain so to this day; they have since been produced in various sizes and speeds, most commonly 7 in (180 mm) discs played at 45 rpm (typically for singles",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Montreal Protocol on ozone is adopted",
+  "date": "1987",
+  "precision": "year",
+  "page": "Ozone depletion",
+  "evidence": "These concerns led to the adoption of the Montreal Protocol in 1987, which bans the production of CFCs, halons, and other ozone-depleting chemicals.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The ozone hole is first discovered",
+  "date": "1982",
+  "precision": "year",
+  "page": "Ozone depletion",
+  "evidence": "In 2019, NASA reported that the ozone hole was the smallest ever since it was first discovered in 1982.",
+  "level": 3
+ },
+ {
+  "cat": "Science & medicine",
+  "event": "The Pasteur Institute is established",
+  "date": "1887",
+  "precision": "year",
+  "page": "Louis Pasteur",
+  "evidence": "He was the director of the Pasteur Institute, established in 1887, until his death, and his body was interred in a vault beneath the institute.",
+  "level": 3
+ },
+ {
+  "cat": "Space",
+  "event": "Edmond Halley realises his comet returns",
+  "date": "1705",
+  "precision": "year",
+  "page": "Halley's Comet",
+  "evidence": "Halley's periodic returns to the inner Solar System have been observed and recorded by astronomers around the world since at least 240 BC, but it was not until 1705 that the English astronomer Edmond Halley understood that these appearances were re-appearances of the same comet.",
+  "level": 3
+ }
+]

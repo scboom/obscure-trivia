@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Animals Quiz – Obscure Trivia</title>
+<meta name="description" content="A free animals quiz: 20 random questions per game on baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play solo or in party mode with up to 6 players.">
+<link rel="canonical" href="https://scboom.github.io/obscure-trivia/animals/">
+<meta name="google-site-verification" content="WFhPSjzH6ULlMofAm5JW4QaXPHvu2l7NRQUrSs7A3Ho">
+<meta property="og:site_name" content="Obscure Trivia">
+<meta property="og:title" content="Animals Quiz – Obscure Trivia">
+<meta property="og:description" content="A free animals quiz: 20 random questions per game on baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play solo or in party mode with up to 6 players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scboom.github.io/obscure-trivia/animals/">
+<meta property="og:image" content="https://scboom.github.io/obscure-trivia/animals/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f2a1f">
+<link rel="icon" href="paw.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lexend:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Animals Quiz", "url": "https://scboom.github.io/obscure-trivia/animals/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "description": "A free animals quiz: 20 random questions per game on baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play solo or in party mode with up to 6 players.", "isPartOf": {"@type": "WebSite", "name": "Obscure Trivia", "url": "https://scboom.github.io/obscure-trivia/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Obscure Trivia", "item": "https://scboom.github.io/obscure-trivia/"}, {"@type": "ListItem", "position": 2, "name": "Animals Quiz", "item": "https://scboom.github.io/obscure-trivia/animals/"}]}]}</script>
+<link rel="stylesheet" href="../assets/quiz.css?v=7acad4ddd7">
+<style>
+:root {
+  --bg: #0f2a1f;
+  --bg-art: radial-gradient(ellipse 70% 50% at 0% 0%, rgba(120, 200, 90, 0.22), transparent 60%), radial-gradient(ellipse 60% 50% at 100% 10%, rgba(255, 190, 70, 0.16), transparent 60%),
+    linear-gradient(180deg, #17432f 0%, #0f2a1f 55%, #0b2018 100%);
+  --panel: #133524; --panel-fill: linear-gradient(180deg, rgba(24, 66, 45, 0.95), rgba(16, 46, 32, 0.96)); --panel-2: #1c4a33;
+  --panel-shadow: 0 14px 34px rgba(2, 14, 8, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --line: rgba(240, 236, 220, 0.16); --line-hover: rgba(255, 178, 56, 0.8); --ink: #f4f1e6; --muted: #c4d4c0; --faint: #97ad94; --placeholder: #86a083;
+  --accent: #ffb238; --accent-ink: #2b1600; --accent-text: #ffc861; --accent-hover: #ffc252; --accent-edge: #ffd98f; --accent-shadow: 0 4px 0 #b06d10;
+  --chip-bg: rgba(255, 255, 255, 0.08); --chip-line: rgba(255, 255, 255, 0.22); --chip-ink: #f4f1e6;
+  --pal: #7fd4ff; --pal-ink: #00222e; --pal-bg: rgba(127, 212, 255, 0.13); --pal-line: rgba(127, 212, 255, 0.45);
+  --good: #8be07a; --good-ink: #0c2a05; --good-bg: rgba(139, 224, 122, 0.15); --bad: #ff7a6b; --bad-ink: #3a0904; --bad-bg: rgba(255, 122, 107, 0.15);
+  --inset: #0a1e15; --opt: rgba(20, 56, 38, 0.94); --tile: rgba(17, 48, 33, 0.94);
+  --card-bg: #f4f1e6; --card-ink: #133524; --card-line: #cfd9c6; --card-inner: #e6eedf; --card-strong: #000000;
+  --f-display: "Fredoka", "Nunito", system-ui, sans-serif; --f-body: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px; --r-panel: 18px; --r-pill: 999px; --r-key: 9px;
+  color-scheme: dark;
+}
+body { background-attachment: fixed; }
+/* a trail of faint paw prints across the page */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 64 64'%3E%3Cg fill='%23ffffff' fill-opacity='0.045' transform='rotate(-20 32 32) translate(16 16) scale(0.5)'%3E%3Cellipse cx='32' cy='43' rx='14.5' ry='12.5'/%3E%3Cellipse cx='14.5' cy='28' rx='6' ry='7.6'/%3E%3Cellipse cx='25.5' cy='16.5' rx='6' ry='8'/%3E%3Cellipse cx='38.5' cy='16.5' rx='6' ry='8'/%3E%3Cellipse cx='49.5' cy='28' rx='6' ry='7.6'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 120px 120px; }
+h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 700; letter-spacing: 0; }
+.hero h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.08; }
+.qtext { font-family: var(--f-body); font-weight: 600; font-size: clamp(1.12rem, 4vw, 1.38rem); line-height: 1.32; }
+.opt .lbl.big { font-family: var(--f-display); font-weight: 600; font-size: 1.12rem; }
+.btn.gold { font-size: 1.1rem; }
+.coin { width: 34px; height: 34px; flex: none; display: block; border-radius: 50%; background: url("paw.svg") center / 70% auto no-repeat, #1c4a33;
+  box-shadow: 0 0 0 2px #ffb238, 0 3px 8px rgba(0, 0, 0, 0.35); }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top"><div class="brand"><span class="coin" aria-hidden="true"></span><h1>Animals</h1></div><a class="btn copy" href="../">All quizzes</a></header>
+  <section class="hero">
+    <span class="eyebrow">Animals quiz</span>
+    <h2>From joeys to giant squid: how wild is your animal knowledge?</h2>
+    <p>A free animals quiz, 20 questions per game: baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals. Play on your own, or start a party of up to 6 players with a 5-letter code.</p>
+  </section>
+  <div class="loading">Loading the questions…</div>
+  <noscript><p class="center muted">This quiz needs JavaScript turned on.</p></noscript>
+</div>
+<script>window.QUIZ = {"id": "animals", "letter": "A", "short": "Animals", "icon": "", "namePh": "e.g. Koala", "eyebrow": "Animals quiz", "headline": "From joeys to giant squid: how wild is your animal knowledge?", "topics": "baby animal names, what groups of animals are called, records, amazing bodies and behaviour, habitats, diets, classification, dog and cat breeds, endangered species and national animals", "foot": "Facts come from English Wikipedia: the List of animal names, the List of national animals and each animal's own article (class and conservation status from its taxonomy box), with dog and cat breeds from Wikidata. Records, bodies, behaviour, habitat and diet questions are written from Wikipedia articles, each checked against the article's text.", "seed": "obscure-trivia-animals-v1:", "topic": "obscure-trivia/animals/v1/", "recentKey": "ot-recent-animals-v1", "sessionKey": "ot-game-animals", "bank": "questions.json", "hub": "../", "groups": {"young": "Baby animals", "younghard": "Baby animals", "group": "Animal groups", "male": "Males & females", "female": "Males & females", "adj": "Animal words", "adjrev": "Animal words", "cls": "Classification", "clspick": "Classification", "clsnot": "Classification", "legs": "Classification", "iucn": "Endangered", "iucnpick": "Endangered", "dog": "Dogs & cats", "dogpick": "Dogs & cats", "cat": "Dogs & cats", "nat": "National animals", "natrev": "National animals", "records": "Records", "bodies": "Bodies", "behaviour": "Behaviour", "habitats": "Habitats", "diet": "Diet", "dietpick": "Diet"}, "caps": {"Baby animals": 2, "Animal groups": 2, "Males & females": 1, "Animal words": 1, "Classification": 3, "Endangered": 1, "Dogs & cats": 2, "National animals": 2, "Records": 2, "Bodies": 2, "Behaviour": 2, "Habitats": 1, "Diet": 2}, "verdicts": [[19, "Top of the food chain!"], [16, "King of the jungle!"], [12, "Wise old owl."], [8, "Still a cub. Keep learning!"], [0, "Lost in the jungle. Try again!"]], "others": {"H": "../hearthstone/", "M": "../minecraft/", "N": "../fortnite/", "R": "../clash-royale/", "D": "../dead-by-daylight/", "W": "../general-knowledge/", "F": "../football/", "C": "../cars/", "S": "../music/", "T": "../this-or-that/", "B": "../this-or-that/", "X": "../odd-one-out/", "E": "../emoji-puzzle/", "Y": "../timeline/"}, "catalog": [{"letter": "H", "name": "Hearthstone Battlegrounds", "url": "../hearthstone/"}, {"letter": "M", "name": "Minecraft", "url": "../minecraft/"}, {"letter": "N", "name": "OG Fortnite", "url": "../fortnite/"}, {"letter": "R", "name": "Clash Royale", "url": "../clash-royale/"}, {"letter": "D", "name": "Dead by Daylight", "url": "../dead-by-daylight/"}, {"letter": "W", "name": "General Knowledge", "url": "../general-knowledge/"}, {"letter": "A", "name": "Animals", "url": "./"}, {"letter": "F", "name": "Football", "url": "../football/"}, {"letter": "C", "name": "Cars", "url": "../cars/"}, {"letter": "S", "name": "Music", "url": "../music/"}, {"letter": "T", "name": "This or That", "url": "../this-or-that/"}, {"letter": "X", "name": "Odd One Out", "url": "../odd-one-out/"}, {"letter": "E", "name": "Emoji Puzzle", "url": "../emoji-puzzle/"}, {"letter": "Y", "name": "Timeline", "url": "../timeline/"}]};</script>
+<script src="../assets/account.js?v=e4c5904b9b"></script>
+<script src="../assets/quiz.js?v=496bc2c8e5"></script>
+</body>
+</html>
