@@ -65,7 +65,8 @@ a { color: inherit; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
 .eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+.shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
 /* globe tile: a lit Earth in space, clean sans titles */
 .gk { border-radius: 22px; color: #f2f7ff;
@@ -212,21 +213,6 @@ a { color: inherit; }
 @keyframes odd-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
 @media (max-width: 620px) { .odd { min-height: 300px; } .odd-grid { grid-template-columns: 36px 36px; gap: 8px; } .odd-grid i { width: 36px; height: 36px; }
   .odd-grid b { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 34px; } }
-/* emoji puzzle tile: sunny yellow, candy pink and a big row of emojis */
-.emj { border-radius: 22px; color: #2b1e00;
-  background: radial-gradient(ellipse 60% 60% at 0% 0%, rgba(255, 140, 190, 0.55), transparent 60%), radial-gradient(ellipse 60% 60% at 100% 100%, rgba(120, 200, 255, 0.5), transparent 60%),
-    linear-gradient(160deg, #ffe680 0%, #fff1c2 100%);
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 3px #ffffff; }
-.emj:hover { box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25), 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 0 0 3px #ff5f9e; }
-.emj h3 { font-family: "Sniglet", sans-serif; font-weight: 800; font-size: clamp(1.9rem, 5vw, 2.4rem); }
-.emj p { color: #5a4718; font-family: "Nunito", system-ui, sans-serif; font-weight: 700; max-width: 30ch; }
-.emj .pill { border-radius: 999px; background: #ffffff; border: 2px solid rgba(43, 30, 0, 0.15); color: #2b1e00; }
-.emj .play { color: #d6246c; font-family: "Sniglet", sans-serif; font-weight: 800; }
-.emj-row { position: absolute; top: 18px; right: 22px; font-size: 2.6rem; letter-spacing: 0.05em; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.12)); }
-@media (prefers-reduced-motion: no-preference) { .emj:hover .emj-row { animation: emj-bounce .6s ease; } }
-@keyframes emj-bounce { 30% { transform: translateY(-8px) rotate(-4deg); } 60% { transform: translateY(2px) rotate(2deg); } }
-@media (max-width: 620px) { .emj { min-height: 300px; } .emj-row { font-size: 2.2rem; } }
 /* timeline tile: museum parchment, a rust-red timeline with four pins */
 .tl { border-radius: 12px; color: #2e2414;
   background: repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.05) 0 1px, transparent 1px 26px), linear-gradient(180deg, #f8f0dc, #efe1c2);
@@ -260,8 +246,6 @@ a { color: inherit; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .sect-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.015em; }
 .sect-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.shelf.games .quiz:last-child:nth-child(odd) { grid-column: auto; }
-@media (max-width: 620px) { .shelf.games .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 /* versus tile: a warm side, a cool side, a VS badge and chunky rounded type */
 .wb { border-radius: 18px; color: #1b1b2f; border: 3px solid #1b1b2f;
   background: linear-gradient(180deg, rgba(255,246,226,0) 28%, rgba(255,246,226,0.97) 64%),
@@ -299,7 +283,7 @@ a { color: inherit; }
   <header class="top"><span class="mark" aria-hidden="true">?</span><span class="brand">Obscure Trivia</span></header>
   <section class="hero"><span class="eyebrow">Error 404</span><h2>That page doesn't exist.</h2>
     <p>The link might be mistyped or out of date. Pick a quiz instead:</p></section>
-  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/dead-by-daylight/">Dead by Daylight</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/animals/">Animals</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/odd-one-out/">Odd One Out</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/emoji-puzzle/">Emoji Puzzle</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/timeline/">Timeline</a></li></ul>
+  <ul><li><a class="btn" href="https://scboom.github.io/obscure-trivia/general-knowledge/">General Knowledge</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/hearthstone/">Hearthstone Battlegrounds</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/minecraft/">Minecraft</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/fortnite/">OG Fortnite</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/clash-royale/">Clash Royale</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/dead-by-daylight/">Dead by Daylight</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/animals/">Animals</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/football/">Football</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/cars/">Cars</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/music/">Music</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/this-or-that/">This or That</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/odd-one-out/">Odd One Out</a></li><li><a class="btn" href="https://scboom.github.io/obscure-trivia/timeline/">Timeline</a></li></ul>
   <p><a href="https://scboom.github.io/obscure-trivia/">Go to the home page</a></p>
 </div>
 </body>

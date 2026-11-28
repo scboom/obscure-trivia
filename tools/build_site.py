@@ -642,58 +642,6 @@ h1, h2, h3, .bigmsg, .verdict, .code-big { font-family: var(--f-display); font-w
                   "Odd One Out is a free puzzle game, 20 rounds per game: four things, three share something, and you pick the one that doesn't belong. Animals, geography, numbers, science, food, music, sport, films, games and more. Play on your own, or start a party of up to 6 players with a 5-letter code."),
     },
     {
-        "id": "emoji", "dir": "emoji-puzzle", "bank_src": "emoji_questions.json", "section": "games", "extra": [("emoji-icon.svg", "icon.svg")],
-        "title": "Emoji Puzzle – Guess It From the Emojis – Obscure Trivia",
-        "desc": "Emoji Puzzle is a free guessing game: work out the film, TV show, video game, song, place, saying or character from a row of emojis. 20 puzzles per game. Play solo or in party mode with up to 6 players.",
-        "fonts": "family=Sniglet:wght@400;800&family=Nunito:wght@500;700;800;900",
-        "theme_color": "#ffe27a",
-        "favicon": "icon.svg",
-        "config": {
-            "id": "emoji", "letter": "E", "short": "Emoji Puzzle", "icon": "", "namePh": "e.g. Sam",
-            "eyebrow": "Guessing game", "headline": "🍿🎬❓ Can you read the emojis?",
-            "topics": "films, animated films, TV shows, video games, songs, books, places, food, sport, sayings, characters and brands",
-            "foot": "Every clue uses emojis from Emoji 13.0 (2020) or earlier, with no flags, so they show on older phones and computers too. How an emoji looks depends on your device.",
-            "seed": "obscure-trivia-emoji-v1:", "topic": "obscure-trivia/emoji/v1/", "recentKey": "ot-recent-emoji-v1", "sessionKey": "ot-game-emoji",
-            "bank": "questions.json", "hub": "../",
-            "groups": {}, "caps": {},
-            "verdicts": [[19, "🏆 Emoji master!"], [16, "🔥 On fire!"], [12, "😎 Pretty cool."], [8, "🤔 Hmm, tricky ones."], [0, "🙈 Try again!"]],
-        },
-        "theme": """
-:root {
-  --bg: #fff1c2;
-  --bg-art: radial-gradient(ellipse 70% 50% at 0% 0%, rgba(255, 140, 190, 0.35), transparent 60%), radial-gradient(ellipse 70% 50% at 100% 0%, rgba(120, 200, 255, 0.35), transparent 60%),
-    linear-gradient(180deg, #ffe680 0%, #fff1c2 45%, #fff7dc 100%);
-  --panel: #ffffff; --panel-fill: #ffffff; --panel-2: #fff6d8;
-  --panel-shadow: 0 8px 0 rgba(43, 30, 0, 0.1), 0 14px 30px rgba(120, 80, 0, 0.12);
-  --line: rgba(43, 30, 0, 0.16); --line-hover: #ff5f9e; --ink: #2b1e00; --muted: #6e5a2c; --faint: #8f7a4a; --placeholder: #a69264;
-  --accent: #ff5f9e; --accent-ink: #ffffff; --accent-text: #d6246c; --accent-hover: #ff74ab; --accent-edge: #ffa3c8; --accent-shadow: 0 4px 0 #c22e69;
-  --chip-bg: #fff6d8; --chip-line: rgba(43, 30, 0, 0.2); --chip-ink: #2b1e00;
-  --pal: #2f7fff; --pal-ink: #ffffff; --pal-bg: rgba(47, 127, 255, 0.1); --pal-line: rgba(47, 127, 255, 0.5);
-  --good: #13a85a; --good-ink: #ffffff; --good-bg: #dcf7e8; --bad: #e5384f; --bad-ink: #ffffff; --bad-bg: #fde3e6;
-  --inset: #fff9e8; --opt: #ffffff; --tile: #fffaf0;
-  --card-bg: #ffffff; --card-ink: #2b1e00; --card-line: rgba(43, 30, 0, 0.15); --card-inner: #fff3cc; --card-strong: #000000;
-  --f-display: "Sniglet", "Nunito", system-ui, sans-serif; --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --r: 16px; --r-panel: 22px; --r-pill: 999px; --r-key: 10px;
-  color-scheme: light;
-}
-h1, h2, h3, .bigmsg, .verdict, .code-big, .btn.gold { font-family: var(--f-display); font-weight: 800; letter-spacing: 0; }
-.hero h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.1; }
-.qtext { font-family: var(--f-body); font-weight: 900; font-size: clamp(1.15rem, 4vw, 1.4rem); line-height: 1.3; }
-.opt .lbl.big { font-family: var(--f-body); font-weight: 800; font-size: 1.08rem; }
-.btn.gold { font-size: 1.15rem; }
-/* the clue: one big row of emojis */
-.cardtext { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: clamp(2.3rem, 11vw, 3.4rem); line-height: 1.25;
-  text-align: center; letter-spacing: 0.06em; padding: 18px 10px; border-radius: 20px; background: #ffffff; box-shadow: inset 0 0 0 3px #ffe27a, 0 6px 0 rgba(43, 30, 0, 0.08); }
-@media (prefers-reduced-motion: no-preference) { .cardtext { animation: emoji-pop .45s cubic-bezier(.2, 1.6, .4, 1) both; } }
-@keyframes emoji-pop { from { transform: scale(.7); opacity: 0; } to { transform: none; opacity: 1; } }
-.coin { width: 34px; height: 34px; flex: none; display: block; background: url("icon.svg") center / 100% 100% no-repeat; }
-""",
-        "tile": {"cls": "emj", "title": "Emoji Puzzle", "art": '<span class="emj-row" aria-hidden="true">🦁👑🌅</span>',
-                 "blurb": "Guess the film, game, song, place or saying from a row of emojis."},
-        "intro": ("Guessing game", "🍿🎬❓ Can you read the emojis?",
-                  "Emoji Puzzle is a free guessing game, 20 puzzles per game: work out the film, TV show, video game, song, book, place, food, saying or character from a row of emojis. Play on your own, or start a party of up to 6 players with a 5-letter code."),
-    },
-    {
         "id": "timeline", "dir": "timeline", "bank_src": "timeline_questions.json", "section": "games", "extra": [("tl-icon.svg", "icon.svg")],
         "title": "Timeline – What Came First? – Obscure Trivia",
         "desc": "Timeline is a free history game: which came first, which came last, put four events in order, and what year things happened. History, inventions, space, science, tech, films, music, sport and games. 20 rounds per game, solo or in party mode with up to 6 players.",
@@ -829,11 +777,11 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 # games whose topics come from their question banks: <id>_groups.json maps each question's c to its topic
 for _q in QUIZZES:
     _gf = os.path.join(SRC, _q["id"] + "_groups.json")
-    if _q["id"] in ("odd", "emoji", "timeline") and os.path.exists(_gf):
+    if _q["id"] in ("odd", "timeline") and os.path.exists(_gf):
         _groups = json.load(open(_gf))
         _q["config"]["groups"] = _groups
         _q["config"]["caps"] = {g: 3 for g in sorted(set(_groups.values()))}
-HUB_ORDER = ["hearthstone", "minecraft", "fortnite", "royale", "dbd", "world", "animals", "football", "cars", "music", "bigger", "odd", "emoji", "timeline"]
+HUB_ORDER = ["world", "hearthstone", "minecraft", "fortnite", "royale", "dbd", "animals", "football", "cars", "music", "bigger", "odd", "timeline"]
 QUIZZES.sort(key=lambda q: HUB_ORDER.index(q["id"]) if q["id"] in HUB_ORDER else len(HUB_ORDER))
 
 BASE_CSS = """:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -963,7 +911,7 @@ for qz in QUIZZES:
 
 SECTIONS = [("quizzes", "Quizzes", "Pick a topic and answer 20 questions."),
             ("games", "Other games", "Something a bit different, with the same party codes, timer and top scores.")]
-hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on Hearthstone Battlegrounds, Minecraft: Bedrock Edition, general knowledge, football, cars, music, animals, OG Fortnite (Chapter 1), Clash Royale and Dead by Daylight, plus This or That, Odd One Out, Emoji Puzzle and Timeline head-to-head game. Play solo or in party mode with up to 6 players."
+hub_desc = "Obscure Trivia: free quizzes for the details only real players know. 20 random questions per game on general knowledge, Hearthstone Battlegrounds, Minecraft: Bedrock Edition, OG Fortnite (Chapter 1), Clash Royale, Dead by Daylight, animals, football, cars and music, plus the This or That, Odd One Out and Timeline games. Play solo or in party mode with up to 6 players."
 hub_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": "Obscure Trivia", "alternateName": ["Tavern Trivia", "Obscure Trivia quizzes"], "url": SITE}
 hub_fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%23f2efe6'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='800' text-anchor='middle' font-family='Arial,sans-serif' fill='%2315141a'%3E%3F%3C/text%3E%3C/svg%3E"
 hub_css = """
@@ -1009,7 +957,8 @@ a { color: inherit; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; font-size: 1.05rem; }
 .eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } .shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+.shelf .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 900px) { .shelf { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .shelf { grid-template-columns: 1fr; } }
 /* globe tile: a lit Earth in space, clean sans titles */
 .gk { border-radius: 22px; color: #f2f7ff;
@@ -1156,21 +1105,6 @@ a { color: inherit; }
 @keyframes odd-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
 @media (max-width: 620px) { .odd { min-height: 300px; } .odd-grid { grid-template-columns: 36px 36px; gap: 8px; } .odd-grid i { width: 36px; height: 36px; }
   .odd-grid b { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 34px; } }
-/* emoji puzzle tile: sunny yellow, candy pink and a big row of emojis */
-.emj { border-radius: 22px; color: #2b1e00;
-  background: radial-gradient(ellipse 60% 60% at 0% 0%, rgba(255, 140, 190, 0.55), transparent 60%), radial-gradient(ellipse 60% 60% at 100% 100%, rgba(120, 200, 255, 0.5), transparent 60%),
-    linear-gradient(160deg, #ffe680 0%, #fff1c2 100%);
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 3px #ffffff; }
-.emj:hover { box-shadow: 0 10px 0 rgba(0, 0, 0, 0.25), 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 0 0 3px #ff5f9e; }
-.emj h3 { font-family: "Sniglet", sans-serif; font-weight: 800; font-size: clamp(1.9rem, 5vw, 2.4rem); }
-.emj p { color: #5a4718; font-family: "Nunito", system-ui, sans-serif; font-weight: 700; max-width: 30ch; }
-.emj .pill { border-radius: 999px; background: #ffffff; border: 2px solid rgba(43, 30, 0, 0.15); color: #2b1e00; }
-.emj .play { color: #d6246c; font-family: "Sniglet", sans-serif; font-weight: 800; }
-.emj-row { position: absolute; top: 18px; right: 22px; font-size: 2.6rem; letter-spacing: 0.05em; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.12)); }
-@media (prefers-reduced-motion: no-preference) { .emj:hover .emj-row { animation: emj-bounce .6s ease; } }
-@keyframes emj-bounce { 30% { transform: translateY(-8px) rotate(-4deg); } 60% { transform: translateY(2px) rotate(2deg); } }
-@media (max-width: 620px) { .emj { min-height: 300px; } .emj-row { font-size: 2.2rem; } }
 /* timeline tile: museum parchment, a rust-red timeline with four pins */
 .tl { border-radius: 12px; color: #2e2414;
   background: repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.05) 0 1px, transparent 1px 26px), linear-gradient(180deg, #f8f0dc, #efe1c2);
@@ -1204,8 +1138,6 @@ a { color: inherit; }
 .sect-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .sect-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.55rem; letter-spacing: -0.015em; }
 .sect-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.shelf.games .quiz:last-child:nth-child(odd) { grid-column: auto; }
-@media (max-width: 620px) { .shelf.games .quiz:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 /* versus tile: a warm side, a cool side, a VS badge and chunky rounded type */
 .wb { border-radius: 18px; color: #1b1b2f; border: 3px solid #1b1b2f;
   background: linear-gradient(180deg, rgba(255,246,226,0) 28%, rgba(255,246,226,0.97) 64%),
@@ -1234,8 +1166,8 @@ a { color: inherit; }
 .locked-link:hover { color: var(--ink); border-color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("__WOOD__", TEX["wood"]).replace("__GRASS__", TEX["grass_side"])
-hub = head("Obscure Trivia – Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, General Knowledge, Animals, Football, Car & Music Quizzes", hub_desc, SITE,
-           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700&family=Fredoka:wght@700&family=Lexend:wght@400&family=Bungee&family=Plus+Jakarta+Sans:wght@400;500&family=Sniglet:wght@800&family=Nunito:wght@700&family=Abril+Fatface&family=Libre+Franklin:wght@500;800",
+hub = head("Obscure Trivia – General Knowledge, Hearthstone, Minecraft, Fortnite, Clash Royale, Dead by Daylight, Animals, Football, Car & Music Quizzes", hub_desc, SITE,
+           "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700&family=Bree+Serif&family=Outfit:wght@800&family=Atkinson+Hyperlegible&family=Oswald:wght@700&family=Barlow&family=Lilita+One&family=Rubik:wght@400;500&family=Chakra+Petch:ital,wght@1,700&family=Titillium+Web:wght@400;600&family=Unbounded:wght@700&family=DM+Sans:wght@400;500&family=Anton&family=Nunito:wght@600;800&family=Titan+One&family=Baloo+2:wght@600&family=Eater&family=Spectral:wght@600;700&family=Fredoka:wght@700&family=Lexend:wght@400&family=Bungee&family=Plus+Jakarta+Sans:wght@400;500&family=Abril+Fatface&family=Libre+Franklin:wght@500;800",
            "#121117", hub_fav, extra_head=f"<style>{hub_css}</style>", ld=hub_ld)
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>
