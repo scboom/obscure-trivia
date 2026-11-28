@@ -1105,6 +1105,27 @@ a { color: inherit; }
 @keyframes odd-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
 @media (max-width: 620px) { .odd { min-height: 300px; } .odd-grid { grid-template-columns: 36px 36px; gap: 8px; } .odd-grid i { width: 36px; height: 36px; }
   .odd-grid b { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 34px; } }
+/* the spend coins button and the blackjack tile: green felt, a wooden rim and two cards */
+.spend-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px 6px 10px; border-radius: 999px; border: 1px solid rgba(247, 192, 43, 0.55);
+  color: #f7c02b; text-decoration: none; font-weight: 700; font-size: 0.92rem; white-space: nowrap; }
+.spend-link:hover { border-color: #f7c02b; background: rgba(247, 192, 43, 0.1); }
+@media (max-width: 460px) { .spend-link { padding: 0; width: 36px; height: 36px; justify-content: center; } .spend-link span { display: none; } }
+.bjt { border-radius: 18px; color: #fff; min-height: 230px;
+  background: radial-gradient(ellipse at 50% 0%, #2f8a55 0%, #1e6b40 55%, #154f2f 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 3px #6b4a26, inset 0 0 0 6px #3e2a14; }
+.bjt:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 0 0 3px #f2c14e, inset 0 0 0 6px #3e2a14; }
+.bjt h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 2.5rem); letter-spacing: -0.01em; }
+.bjt p { color: #d6f2df; max-width: 40ch; }
+.bjt .pill { border-radius: 999px; background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(242, 193, 78, 0.6); color: #fff; }
+.bjt .play { color: #f2c14e; }
+.bjt-cards { position: absolute; top: 22px; right: 30px; display: flex; }
+.bjt-cards i { width: 62px; height: 88px; border-radius: 8px; background: #fffdf7; color: #18181b; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); display: grid; place-items: center;
+  font: 700 1.5rem Georgia, serif; font-style: normal; position: relative; transform: rotate(-8deg); }
+.bjt-cards i + i { margin-left: -18px; transform: rotate(7deg) translateY(4px); }
+.bjt-cards i.red { color: #c8102e; }
+.bjt-cards b { position: absolute; bottom: 6px; right: 8px; font-size: 1rem; }
+@media (prefers-reduced-motion: no-preference) { .bjt:hover .bjt-cards i + i { transform: rotate(14deg) translate(8px, 0); transition: transform .25s ease; } }
+@media (max-width: 620px) { .bjt { min-height: 280px; } }
 /* timeline tile: museum parchment, a rust-red timeline with four pins */
 .tl { border-radius: 12px; color: #2e2414;
   background: repeating-linear-gradient(0deg, rgba(122, 74, 36, 0.05) 0 1px, transparent 1px 26px), linear-gradient(180deg, #f8f0dc, #efe1c2);
@@ -1172,7 +1193,8 @@ hub = head("Obscure Trivia – General Knowledge, Hearthstone, Minecraft, Fortni
 hub += """<div class="wrap">
   <header class="top"><span class="mark" aria-hidden="true">?</span><h1 class="brand">Obscure Trivia</h1>
     <div class="wallet-wrap" id="wallet-wrap"><button class="wallet" id="wallet" aria-expanded="false" aria-controls="wallet-pop" aria-label="Your coins. What are coins?"><svg class="coin-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#f7c02b" stroke="#a96a00" stroke-width="1.6"/><circle cx="10" cy="10" r="5.7" fill="none" stroke="#fff1ad" stroke-width="1.5"/><path d="M6 6.6a5.4 5.4 0 0 1 3.2-2.1" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".85"/></svg><span class="wallet-n" id="wallet-n">0</span></button>
-      <div class="wallet-pop" id="wallet-pop" role="note" hidden><b id="wallet-t">0 coins</b><span>You get 1 coin for every right answer, in every quiz and game here.</span><span id="wallet-acct"></span></div></div>
+      <div class="wallet-pop" id="wallet-pop" role="note" hidden><b id="wallet-t">0 coins</b><span>You get 1 coin for every right answer, in every quiz and game here.</span><span id="wallet-acct"></span><a href="spend-coins/">Spend them on Blackjack</a></div></div>
+    <a class="spend-link" href="spend-coins/"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M4 4h10a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm2 2v12h12V9H6zm9 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg><span>Spend coins</span></a>
     <a class="acct-link" id="acct-link" href="account/" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg><span id="acct-name">Sign in</span></a></header>
   <section class="hero">
     <span class="eyebrow">Free trivia quizzes</span>
@@ -1191,6 +1213,17 @@ hub += """<div class="wrap">
 """ for q in QUIZZES if q.get("section", "quizzes") == sid) + """    </div>
   </section>
 """ for sid, stitle, sblurb in SECTIONS) + """
+  <section class="sect" aria-labelledby="h-spend">
+    <div class="sect-head"><h2 id="h-spend">Spend coins</h2><p>Every right answer wins a coin. Put them on the line here.</p></div>
+    <div class="shelf spend">
+      <a class="quiz bjt" href="spend-coins/">
+        <span class="bjt-cards" aria-hidden="true"><i>A<b>♠</b></i><i class="red">K<b>♥</b></i></span>
+        <h3>Blackjack</h3>
+        <p>Beat the dealer to 21. Win and your bet comes back doubled; a blackjack pays 3 to 2.</p>
+        <div class="meta"><span class="pill">Bet your coins</span><span class="pill">0.45% house edge</span><span class="play">Play →</span></div>
+      </a>
+    </div>
+  </section>
   <section class="joinbox">
     <h3>Got a code from a friend?</h3>
     <p>Type it in and you'll go straight to the right quiz.</p>
@@ -1365,11 +1398,50 @@ acc_page += """<div class="wrap acct">
 </body>
 </html>
 """
+
+# ------------------------------------------------------------------ the Spend coins page: Blackjack, open to everyone
+SP = os.path.join(SRC, "spend")
+os.makedirs(os.path.join(OUT, "spend-coins"), exist_ok=True)
+for fn in ("bj-core.js", "bj-sound.js", "bj-ui.js", "bj.css"):
+    shutil.copy(os.path.join(SP, fn), os.path.join(OUT, "spend-coins", fn))
+V_SP = {fn: stamp(os.path.join(OUT, "spend-coins", fn)) for fn in ("bj-core.js", "bj-sound.js", "bj-ui.js", "bj.css")}
+sp_page = head("Spend Coins: Blackjack – Obscure Trivia", "Spend the coins you win in Obscure Trivia's quizzes: play blackjack against the dealer. Win and your bet comes back doubled; a blackjack pays 3 to 2.",
+               SITE + "spend-coins/", "family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;700", "#121117", hub_fav,
+               extra_head=f"""<style>{hub_css}
+.spend {{ max-width: 760px; }}
+.back-link {{ margin-left: auto; color: var(--muted); text-decoration: none; font-weight: 700; font-size: 0.92rem; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line); }}
+.back-link:hover {{ color: var(--ink); border-color: var(--muted); }}
+.spend-tabs {{ display: flex; align-items: center; gap: 8px; padding: 4px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); width: fit-content; max-width: 100%; }}
+.spend-tabs [role="tab"] {{ border: 0; border-radius: 10px; padding: 9px 16px; font: inherit; font-weight: 800; background: var(--panel); color: var(--ink);
+  box-shadow: 0 0 0 1px var(--line); cursor: default; }}
+.spend-tabs .soon {{ color: var(--faint); font-size: 0.86rem; padding: 0 10px 0 4px; }}
+.btn.gold {{ background: #f2c14e; color: #2b1d00; }}
+.btn {{ border-radius: 10px; border: 1px solid var(--line); padding: 11px 16px; font: inherit; font-weight: 800; background: var(--panel); color: var(--ink); cursor: pointer; }}
+.btn:disabled {{ opacity: 0.5; cursor: default; }}
+.bj-deal {{ display: block; }}
+</style><link rel="stylesheet" href="bj.css?v={V_SP['bj.css']}">""")
+sp_page += """<div class="wrap spend">
+  <header class="top"><a class="mark" href="../" aria-hidden="true" tabindex="-1" style="text-decoration:none">?</a><a class="brand" href="../" style="text-decoration:none">Obscure Trivia</a>
+    <a class="back-link" href="../">All quizzes</a></header>
+  <section class="hero"><span class="eyebrow">Spend coins</span><h2>Put your coins on the line.</h2>
+    <p>Every right answer in any quiz wins you a coin. Spend them here.</p></section>
+  <div class="spend-tabs" role="tablist" aria-label="Ways to spend coins"><button role="tab" aria-selected="true" aria-controls="bj">🃏 Blackjack</button><span class="soon">More coming soon</span></div>
+""" + open(os.path.join(SP, "bj.html"), encoding="utf-8").read() + f"""
+  <p class="foot">Coins have no money value and can't be bought or cashed out. They're just for fun.</p>
+</div>
+<script src="../assets/account.js?v={V_ACC}"></script>
+<script src="bj-core.js?v={V_SP['bj-core.js']}"></script>
+<script src="bj-sound.js?v={V_SP['bj-sound.js']}"></script>
+<script src="bj-ui.js?v={V_SP['bj-ui.js']}"></script>
+</body>
+</html>
+"""
+open(os.path.join(OUT, "spend-coins", "index.html"), "w", encoding="utf-8").write(sp_page)
 os.makedirs(os.path.join(OUT, "account"), exist_ok=True)
 open(os.path.join(OUT, "account", "index.html"), "w", encoding="utf-8").write(acc_page)
 
 today = datetime.date.today().isoformat()
-urls = [SITE] + [SITE + q["dir"] + "/" for q in QUIZZES]
+urls = [SITE] + [SITE + q["dir"] + "/" for q in QUIZZES] + [SITE + "spend-coins/"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 open(os.path.join(OUT, ".nojekyll"), "w").write("")

@@ -1,0 +1,30 @@
+<section class="panel bj" id="bj">
+  <div class="panel-head"><h3>Blackjack</h3><div class="bj-top">
+    <button class="btn bj-snd" id="bj-snd" type="button" aria-pressed="true" aria-label="Sound on. Press to mute.">
+      <svg class="s-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+      <svg class="s-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6"/><path d="M22 9l-5 6"/></svg>
+    </button><span class="purse" id="bj-coins">0</span></div></div>
+  <p class="muted small" style="margin:0">Win and your bet comes back doubled; a blackjack pays 3 to 2; bust or lose and the bet is gone.</p>
+  <p class="bj-mode small" id="bj-mode"></p>
+  <div class="felt">
+    <div class="bj-shoebox" id="bj-shoebox" aria-hidden="true"></div>
+    <div class="bj-side"><span class="bj-label">Dealer <b id="bj-dtotal"></b></span><div class="cards" id="bj-dealer"></div></div>
+    <p class="bj-msg" id="bj-msg" role="status" aria-live="polite"></p>
+    <div class="bj-side"><span class="bj-label">You</span><div class="bj-hands" id="bj-hands"></div></div>
+    <span class="bj-shoe" id="bj-shoe"></span>
+  </div>
+  <div class="bj-controls" id="bj-controls"></div>
+  <details class="bj-rules"><summary>Rules and odds</summary>
+    <ul>
+      <li>Signed in to an account, your coins are bet on the server: it shuffles, deals every card and pays out. Your browser never sees the shoe or the dealer's face-down card, and every move is checked against the real hand, so the game can't be cheated.</li>
+      <li>Without an account, the same rules run in your browser and bet the coins saved in it.</li>
+      <li>A fresh 6-deck shoe is shuffled for every hand with cryptographic random numbers, so cards can't be counted.</li>
+      <li>Blackjack (an Ace and a 10-value card as your first two cards) pays 3 to 2, rounded down to whole coins. Other wins pay 1 to 1, so your bet comes back doubled. A tie (push) gives your bet back.</li>
+      <li>The dealer checks for blackjack when showing an Ace or a 10-value card, and stands on all 17s, soft 17 included.</li>
+      <li>Double down on any first two cards, also after splitting: your bet doubles and you get exactly one more card.</li>
+      <li>Split any two cards of the same value, up to 4 hands. Split Aces get one card each, and 21 on a split hand counts as 21, not blackjack.</li>
+      <li>Insurance costs half your bet when the dealer shows an Ace, and pays 2 to 1 if the dealer has blackjack.</li>
+      <li>With perfect play the house edge is about 0.45%: over a long time you keep about 99.55% of what you bet. If you leave in the middle of a hand, it waits for you to come back.</li>
+    </ul>
+  </details>
+</section>

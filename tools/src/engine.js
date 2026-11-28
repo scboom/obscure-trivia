@@ -86,7 +86,7 @@ function walletHtml() {
   walletBump = false;
   return `<div class="wallet-wrap" id="wallet-wrap">
     <button class="wallet${bump ? " bump" : ""}" id="wallet" aria-expanded="${walletOpen}" aria-label="${n.toLocaleString()} coin${n === 1 ? "" : "s"}. What are coins?">${COIN_SVG}<span class="wallet-n">${n.toLocaleString()}</span>${bump ? `<span class="plus1" aria-hidden="true">+1</span>` : ""}</button>
-    ${walletOpen ? `<div class="wallet-pop" role="note"><b>${n.toLocaleString()} coin${n === 1 ? "" : "s"}</b><span>You get 1 coin for every right answer, in every quiz and game on Obscure Trivia.</span>${accountLine()}</div>` : ""}
+    ${walletOpen ? `<div class="wallet-pop" role="note"><b>${n.toLocaleString()} coin${n === 1 ? "" : "s"}</b><span>You get 1 coin for every right answer, in every quiz and game on Obscure Trivia.</span>${accountLine()}<a href="${QUIZ.hub}spend-coins/">Spend them on Blackjack</a></div>` : ""}
   </div>`;
 }
 function accountLine() {
